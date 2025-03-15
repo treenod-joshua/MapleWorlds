@@ -1,0 +1,9 @@
+@Enum
+script UpdateAuthorityType
+	member Server = 0
+	member Client = 1
+
+	static method UpdateAuthorityType CastFrom(number value) end
+
+	static method UpdateAuthorityType CastFrom(string value) end
+end

@@ -1,0 +1,6 @@
+@Event
+script InitPlayerEvent extends EventType
+
+	constructor InitPlayerEvent() end
+
+end

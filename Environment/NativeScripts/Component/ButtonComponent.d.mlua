@@ -1,0 +1,31 @@
+---@description "Provides UI button functions."
+@Component
+script ButtonComponent extends Component
+
+	---@description "Sets the button's color according to its state."
+	---@sealed
+	property TransitionColorSet Colors
+
+	---@description "Sets the image of the button according to its state."
+	---@sealed
+	property TransitionRUIDSet ImageRUIDs
+
+	---@description "When pressing the button, it operates as if the specified keyCode was pressed."
+	---@sealed
+	property KeyboardKey KeyCode = KeyboardKey.None
+
+	---@description "This is a type for the button's state transition."
+	---@sealed
+	property TransitionType Transition = TransitionType.ColorTint
+
+	emitter EmitButtonClickEditorEvent(ButtonClickEditorEvent event) end
+
+	emitter EmitButtonClickEvent(ButtonClickEvent event) end
+
+	emitter EmitButtonPressedEvent(ButtonPressedEvent event) end
+
+	emitter EmitButtonStateChangeEditorEvent(ButtonStateChangeEditorEvent event) end
+
+	emitter EmitButtonStateChangeEvent(ButtonStateChangeEvent event) end
+
+end

@@ -1,0 +1,6 @@
+@Event
+script EditorGUIInitalizeEvent extends EventType
+
+	constructor EditorGUIInitalizeEvent() end
+
+end

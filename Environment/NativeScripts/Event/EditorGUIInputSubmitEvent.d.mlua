@@ -1,0 +1,12 @@
+@Event
+script EditorGUIInputSubmitEvent extends EventType
+
+	---@sealed
+	property string id
+
+	---@sealed
+	property string text
+
+	constructor EditorGUIInputSubmitEvent(string id = nil, string text = nil) end
+
+end

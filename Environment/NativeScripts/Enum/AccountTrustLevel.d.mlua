@@ -1,0 +1,18 @@
+---@description "The user account's authentication level. Authentication will be different depending on the account type."
+@Enum
+script AccountTrustLevel
+	---@description "If this is a Korean account, this account has not completed e-mail authentication. If this is a global account, this account has not completed either SMS or Google Authenticator authentication."
+	member Level0 = 0
+	---@description "This account has completed e-mail verification for a Korean account. This account has completed either SMS or Google Authenticator authentication for a global account. Currently, the function to distinguish between Level0 and Level1 has not been implemented, so the UserAccountTrustLevel value of Level1 is also returned as 0. The function to distinguish between Level0 and Level1 will be updated in the future."
+	member Level1 = 1
+	---@description "This account has completed e-mail authentication and identity verification for Korean accounts. This account has completed both SMS and Google Authenticator authentication for global accounts. "
+	member Level2 = 2
+	---@description "Authentication level value cannot be retrieved due to system error."
+	member Unknown = 1000000
+
+	---@description "Convert numbers to the applicable type."
+	static method AccountTrustLevel CastFrom(number value) end
+
+	---@description "Convert strings to the applicable type."
+	static method AccountTrustLevel CastFrom(string value) end
+end

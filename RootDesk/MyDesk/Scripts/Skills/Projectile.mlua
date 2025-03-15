@@ -1,0 +1,68 @@
+@Component
+script Projectile extends Component
+
+	@Sync
+	property integer direction = 0
+
+	@Sync
+	property number speed = 0
+
+	@Sync
+	property Entity target = nil
+
+	@Sync
+	property number lifetTime = 0
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		
+	end
+
+	@ExecSpace("Client")
+	method void Init(string animId, integer direction, number speed, Entity target, boolean isRotate)
+		if 0 < direction then -- 오른쪽을 향함
+			self.direction = 1
+		else
+			self.direction = -1	
+		end
+		
+		self.Entity.SpriteRendererComponent.SpriteRUID = animId
+		self.direction = direction
+		self.speed = speed
+		self.target = target
+		
+		if self.target == nil then
+			self.Entity:Destroy()
+			return
+		end
+		
+		self:RotateToTarget()
+		self:MoveToTarget()
+	end
+
+	@ExecSpace("Client")
+	method void RotateToTarget()
+		local targetPos = self.target.TransformComponent.Position
+		local myPos = self.Entity.TransformComponent.Position
+		local vec2Dif = Vector2(targetPos.x - myPos.x, targetPos.y - myPos.y)
+		local radian = math.atan(vec2Dif.y, vec2Dif.x)
+		
+		self.Entity.TransformComponent.ZRotation = math.deg((radian + math.pi))
+	end
+
+	@ExecSpace("Client")
+	method void MoveToTarget()
+		local targetSpriteRUID = self.target.SpriteRendererComponent.SpriteRUID
+		local targetCenter = _ResourceService:LoadSpriteAndWait(targetSpriteRUID).Height * 0.5
+		local targetPos = Vector2(self.target.TransformComponent.Position.x, self.target.TransformComponent.Position.y + targetCenter)
+		_TweenLogic:MoveTo(self.Entity, targetPos, 0.5, EaseType.Linear)
+		
+		local deleteFunction = function()
+			
+			self.Entity:Destroy()
+		end
+		
+		_TimerService:SetTimerOnce(deleteFunction, 0.5)
+	end
+
+end

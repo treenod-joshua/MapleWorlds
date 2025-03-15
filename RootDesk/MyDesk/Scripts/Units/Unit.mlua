@@ -1,0 +1,205 @@
+@Component
+script Unit extends Component
+
+	@Sync
+	property Entity targetTower = "f5af730d-fbdb-40ee-adeb-57c1caeda316"
+
+	@Sync
+	property Entity curTarget = nil
+
+	@Sync
+	property number moveSpeed = 1
+
+	@Sync
+	property number health = 100
+
+	@Sync
+	property number damage = 10
+
+	@Sync
+	property number attackRange = 1
+
+	@Sync
+	property number attackSpeed = 1.5
+
+	@Sync
+	property number AttackTimer = 0
+
+	@Sync
+	property string curState = "idle"
+
+	@Sync
+	property boolean isEnemy = false
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		if self.Entity.TagComponent.Tags.Count <= 0 then
+			return
+		end
+		
+		--if self.Entity.TagComponent.Tags[0] ~= "Enemy" then
+		--	self.isEnemy = true;	
+		--end
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		if self.curState == "idle" then
+			self:FindTarget()
+		elseif self.curState == "move" then
+			self:MoveToTarget(delta)
+			self:FindTarget()
+		elseif self.curState == "attack" then
+			self:Attack(delta)
+		end
+	end
+
+	@ExecSpace("Client")
+	method void FindTarget()
+		local myPos = self.Entity.TransformComponent.Position
+		local nearestEnemy = nil
+		local nearestDistance = math.huge
+		
+		if self.curState == "attack" or self.curState == "die" then
+			return
+		end
+		
+		local enemys = _EntityService:GetEntitiesByTag("Enemy")
+		
+		for _, enemy in ipairs(enemys) do
+			local enemyPos = enemy.TransformComponent.Position
+			local distance = (enemyPos - myPos).x
+			
+			if distance < nearestDistance then
+				nearestEnemy = enemy
+				nearestDistance = distance
+			end
+		end
+		
+		if nearestEnemy ~= nil and nearestEnemy ~= self.curTarget then
+			self.curTarget = nearestEnemy;
+			self:SetState("move")
+		end
+	end
+
+	@ExecSpace("Client")
+	method void MoveToTarget(number delta)
+		self:Function1(delta)
+		self:SetState("move")
+		
+		local myPos = self.Entity.TransformComponent.Position
+		local targetPos = self.curTarget.TransformComponent.Position
+		
+		local distance = math.abs(targetPos.x - myPos.x)
+		
+		if distance <= self.attackRange then
+			self:SetState("attack")
+		end
+	end
+
+	@ExecSpace("Client")
+	method void Attack(number delta)
+		if self.curTarget == nil then
+			self:SetState("idle")
+			return
+		end
+		
+		self.AttackTimer += delta;
+		
+		if self.AttackTimer >= self.attackSpeed and self.attackRange == 1 then
+			self:Melee_Attack()
+			self.AttackTimer = 0
+		elseif self.AttackTimer >= self.attackSpeed and self.attackRange > 1 then
+			self:Range_Attack("")
+			self.AttackTimer = 0
+		end
+	end
+
+	@ExecSpace("Client")
+	method void Melee_Attack()
+		if self.curState ~= "attack" then
+			return
+		end
+		
+		if self.Entity.StateAnimationComponent.ActionSheet.Keys["attack"] == nil and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
+			self:PlayTween()
+			self:Attack_Damage()
+			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e")
+		else
+			
+		end
+	end
+
+	@ExecSpace("Client")
+	method void Range_Attack(string spriteRUID)
+		if self.curState ~= "attack" then
+			return
+		end
+		
+		if self._T.projectileParent == nil then
+			self._T.projectileParent = _EntityService:GetEntityByPath("/maps/GameScene/ProjectileParent")
+		end
+		
+		local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
+			"Projectile",
+			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+			self._T.projectileParent)
+		
+		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, 3, self.curTarget, true)
+	end
+
+	@ExecSpace("Client")
+	method void PlayTween()
+		local tween = self.Entity.TweenLineComponent
+			self.Entity.TransformComponent.Position = self.Entity.TransformComponent.Position
+			
+			-- 트윈 설정
+		    tween.DestinationCoordinateType = CoordinateType.Absolute
+			tween.Positions = { Vector2(self.Entity.TransformComponent.WorldPosition.x + 1, self.Entity.TransformComponent.WorldPosition.y) }
+		    tween.Duration = 0.1 -- 이동 시간 설정
+		    tween.UseReturnTweenType = true -- 반환 동작 설정
+		    tween.ReturnDuration = 0.1 -- 돌아올 때의 이동 시간 설정
+		    tween.ReturnTweenType = EaseType.Linear -- 되돌아올 때 보간 설정
+		
+		    -- 트윈 시작
+		    tween:RestartFromCurrentPosition()
+	end
+
+	@ExecSpace("Client")
+	method void Attack_Damage()
+		self.curTarget.HitComponent:OnHit(self.Entity, self.damage, false, "", 1)
+	end
+
+	@ExecSpace("Client")
+	method void PlayEffect(string effect)
+		_EffectService:PlayEffectAttached(effect, self.Entity, Vector3(-0.5,0,0), 0, Vector3.one)
+	end
+
+	@ExecSpace("Client")
+	method void SetState(string state)
+		self.curState = state
+		
+		if self.Entity.StateAnimationComponent.ActionSheet["state"] == nil then
+			return
+		end
+		
+		self.Entity.StateComponent:ChangeState(state)
+	end
+
+	@ExecSpace("Client")
+	method void Function1(number delta)
+		if self.curTarget == nil then
+			return
+		end
+		
+		local myPos = self.Entity.TransformComponent.Position
+		local targetPos = self.curTarget.TransformComponent.Position
+		
+		local direction = Vector2(targetPos.x - myPos.x, targetPos.y - myPos.y):Normalize()
+		local newX = myPos.x + (direction.x * self.moveSpeed * delta)
+		
+		-- 기존의 Y 좌표는 유지
+		self.Entity.TransformComponent.Position = Vector3(newX, myPos.y, myPos.z)
+	end
+
+end

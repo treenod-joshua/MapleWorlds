@@ -1,0 +1,9 @@
+@Event
+script SpriteAnimPlayerForMonoEndEvent extends EventType
+
+	---@sealed
+	readonly property SpriteAnimPlayerForMono AnimPlayer
+
+	constructor SpriteAnimPlayerForMonoEndEvent() end
+
+end

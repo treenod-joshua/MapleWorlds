@@ -1,0 +1,7 @@
+@Logic
+script GameManager extends Logic
+
+	@Sync
+	property Entity EnemyTower = "f5af730d-fbdb-40ee-adeb-57c1caeda316"
+
+end

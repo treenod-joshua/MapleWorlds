@@ -1,0 +1,23 @@
+---@description "Provides UI related functions."
+@Logic
+script UILogic extends Logic
+
+	---@description "Indicates the current screen height."
+	---@sealed
+	readonly property int32 ScreenHeight
+
+	---@description "Indicates the current screen width."
+	---@sealed
+	readonly property int32 ScreenWidth
+
+	---@description "Converts screen coordinates into World coordinates."
+	---@sealed
+	@ExecSpace("ClientOnly")
+	method Vector2 ScreenToWorldPosition(Vector2 screenPosition) end
+
+	---@description "Converts World coordinates to Screen coordinates."
+	---@sealed
+	@ExecSpace("ClientOnly")
+	method Vector2 WorldToScreenPosition(Vector2 worldPosition) end
+
+end

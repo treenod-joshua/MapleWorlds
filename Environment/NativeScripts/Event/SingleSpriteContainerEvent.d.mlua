@@ -1,0 +1,15 @@
+@Event
+script SingleSpriteContainerEvent extends EventType
+
+	---@sealed
+	property string TexturePath
+
+	---@sealed
+	property boolean AllowInterrupt = true
+
+	---@sealed
+	property boolean IsSuccess = true
+
+	constructor SingleSpriteContainerEvent(string texturePath = "") end
+
+end

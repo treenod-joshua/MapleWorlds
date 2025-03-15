@@ -1,0 +1,7 @@
+---@description "The event that takes place upon completing the loading of a web page."
+@Event
+script WebLoadCompleteEvent extends EventType
+
+	constructor WebLoadCompleteEvent() end
+
+end

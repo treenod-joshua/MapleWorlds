@@ -1,0 +1,10 @@
+@Misc
+script Data
+
+	---@sealed
+	property string id
+
+	---@sealed
+	property string model
+
+end

@@ -1,0 +1,10 @@
+@Enum
+script LightType
+	member Directonal = 0
+	member Point = 1
+	member Spot = 2
+
+	static method LightType CastFrom(number value) end
+
+	static method LightType CastFrom(string value) end
+end
