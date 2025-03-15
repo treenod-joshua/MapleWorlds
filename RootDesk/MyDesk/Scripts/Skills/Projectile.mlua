@@ -13,13 +13,16 @@ script Projectile extends Component
 	@Sync
 	property number lifetTime = 0
 
+	@Sync
+	property number damage = 0
+
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
 		
 	end
 
 	@ExecSpace("Client")
-	method void Init(string animId, integer direction, number speed, Entity target, boolean isRotate)
+	method void Init(string animId, integer direction, number speed, Entity target, boolean isRotate, number damage)
 		if 0 < direction then -- 오른쪽을 향함
 			self.direction = 1
 		else
@@ -30,6 +33,7 @@ script Projectile extends Component
 		self.direction = direction
 		self.speed = speed
 		self.target = target
+		self.damage = damage
 		
 		if self.target == nil then
 			self.Entity:Destroy()
@@ -52,17 +56,15 @@ script Projectile extends Component
 
 	@ExecSpace("Client")
 	method void MoveToTarget()
-		local targetSpriteRUID = self.target.SpriteRendererComponent.SpriteRUID
-		local targetCenter = _ResourceService:LoadSpriteAndWait(targetSpriteRUID).Height * 0.5
-		local targetPos = Vector2(self.target.TransformComponent.Position.x, self.target.TransformComponent.Position.y + targetCenter)
-		_TweenLogic:MoveTo(self.Entity, targetPos, 0.5, EaseType.Linear)
+		local targetPos = Vector2(self.target.TransformComponent.Position.x, self.target.TransformComponent.Position.y + 0.5)
+		_TweenLogic:MoveTo(self.Entity, targetPos, 0.25, EaseType.Linear)
 		
 		local deleteFunction = function()
-			
+			self.target.HitComponent:OnHit(self.Entity, self.damage, false, "", 1)
 			self.Entity:Destroy()
 		end
 		
-		_TimerService:SetTimerOnce(deleteFunction, 0.5)
+		_TimerService:SetTimerOnce(deleteFunction, 0.25)
 	end
 
 end

@@ -145,7 +145,7 @@ script Unit extends Component
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self._T.projectileParent)
 		
-		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, 3, self.curTarget, true)
+		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, 3, self.curTarget, true,self.damage)
 	end
 
 	@ExecSpace("Client")
