@@ -57,14 +57,14 @@ script Projectile extends Component
 	@ExecSpace("Client")
 	method void MoveToTarget()
 		local targetPos = Vector2(self.target.TransformComponent.Position.x, self.target.TransformComponent.Position.y + 0.5)
-		_TweenLogic:MoveTo(self.Entity, targetPos, 0.25, EaseType.Linear)
+		_TweenLogic:MoveTo(self.Entity, targetPos, self.speed, EaseType.Linear)
 		
 		local deleteFunction = function()
 			self.target.HitComponent:OnHit(self.Entity, self.damage, false, "", 1)
 			self.Entity:Destroy()
 		end
 		
-		_TimerService:SetTimerOnce(deleteFunction, 0.25)
+		_TimerService:SetTimerOnce(deleteFunction, self.speed)
 	end
 
 end

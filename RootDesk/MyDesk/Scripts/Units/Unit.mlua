@@ -31,15 +31,25 @@ script Unit extends Component
 	@Sync
 	property boolean isEnemy = false
 
-	@ExecSpace("ClientOnly")
+	@Sync
+	property number projectileSpeed = 0.25
+
 	method void OnBeginPlay()
 		if self.Entity.TagComponent.Tags.Count <= 0 then
 			return
 		end
 		
-		--if self.Entity.TagComponent.Tags[0] ~= "Enemy" then
-		--	self.isEnemy = true;	
-		--end
+		if self.Entity.TagComponent.Tags[1] == "Enemy" then
+			self.isEnemy = true;	
+		end
+		
+		if self.isEnemy then
+			self.Entity.SpriteRendererComponent.FlipX = false
+		else
+			self.Entity.SpriteRendererComponent.FlipX = true
+		end
+		
+		self.Entity.StateComponent:AddState("attack", Attack)
 	end
 
 	@ExecSpace("ClientOnly")
@@ -84,17 +94,32 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void MoveToTarget(number delta)
-		self:Function1(delta)
+		self:Move(delta)
 		self:SetState("move")
 		
 		local myPos = self.Entity.TransformComponent.Position
 		local targetPos = self.curTarget.TransformComponent.Position
 		
 		local distance = math.abs(targetPos.x - myPos.x)
-		
 		if distance <= self.attackRange then
 			self:SetState("attack")
 		end
+	end
+
+	@ExecSpace("Client")
+	method void Move(number delta)
+		if self.curTarget == nil then
+			return
+		end
+		
+		local myPos = self.Entity.TransformComponent.Position
+		local targetPos = self.curTarget.TransformComponent.Position
+		
+		local direction = Vector2(targetPos.x - myPos.x, targetPos.y - myPos.y):Normalize()
+		local newX = myPos.x + (direction.x * self.moveSpeed * delta)
+		
+		-- 기존의 Y 좌표는 유지
+		self.Entity.TransformComponent.Position = Vector3(newX, myPos.y, myPos.z)
 	end
 
 	@ExecSpace("Client")
@@ -121,12 +146,13 @@ script Unit extends Component
 			return
 		end
 		
-		if self.Entity.StateAnimationComponent.ActionSheet.Keys["attack"] == nil and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
+		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
 			self:PlayTween()
 			self:Attack_Damage()
 			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e")
 		else
-			
+			self:SetState("attack")
+			self:Attack_Damage()
 		end
 	end
 
@@ -145,7 +171,7 @@ script Unit extends Component
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self._T.projectileParent)
 		
-		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, 3, self.curTarget, true,self.damage)
+		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, self.projectileSpeed, self.curTarget, true,self.damage)
 	end
 
 	@ExecSpace("Client")
@@ -175,31 +201,15 @@ script Unit extends Component
 		_EffectService:PlayEffectAttached(effect, self.Entity, Vector3(-0.5,0,0), 0, Vector3.one)
 	end
 
-	@ExecSpace("Client")
+	@ExecSpace("Server")
 	method void SetState(string state)
 		self.curState = state
 		
-		if self.Entity.StateAnimationComponent.ActionSheet["state"] == nil then
+		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey(state:lower()) == false then
 			return
 		end
 		
 		self.Entity.StateComponent:ChangeState(state)
-	end
-
-	@ExecSpace("Client")
-	method void Function1(number delta)
-		if self.curTarget == nil then
-			return
-		end
-		
-		local myPos = self.Entity.TransformComponent.Position
-		local targetPos = self.curTarget.TransformComponent.Position
-		
-		local direction = Vector2(targetPos.x - myPos.x, targetPos.y - myPos.y):Normalize()
-		local newX = myPos.x + (direction.x * self.moveSpeed * delta)
-		
-		-- 기존의 Y 좌표는 유지
-		self.Entity.TransformComponent.Position = Vector3(newX, myPos.y, myPos.z)
 	end
 
 end

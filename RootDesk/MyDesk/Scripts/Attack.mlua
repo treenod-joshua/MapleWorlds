@@ -1,0 +1,4 @@
+@State
+script Attack extends StateType
+
+end
