@@ -1308,7 +1308,7 @@
           "name": "MyMonster",
           "path": "/maps/GameScene/MyMonsterList/MyMonster",
           "nameEditable": true,
-          "enable": true,
+          "enable": false,
           "visible": true,
           "displayOrder": 0,
           "pathConstraints": "////",
@@ -1452,7 +1452,7 @@
           "name": "MyMonster2",
           "path": "/maps/GameScene/MyMonsterList/MyMonster2",
           "nameEditable": true,
-          "enable": true,
+          "enable": false,
           "visible": true,
           "displayOrder": 1,
           "pathConstraints": "////",
@@ -1554,7 +1554,7 @@
       {
         "id": "f85536af-76c0-4b5c-8ce8-4ab3fb1d1922",
         "path": "/maps/GameScene/MyMonsterList/MyMonster3",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.StateAnimationComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.MovementComponent,MOD.Core.AIWanderComponent,MOD.Core.StateComponent,MOD.Core.HitComponent,MOD.Core.DamageSkinSpawnerComponent,script.Unit,MOD.Core.TagComponent",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.StateAnimationComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.MovementComponent,MOD.Core.AIWanderComponent,MOD.Core.StateComponent,MOD.Core.HitComponent,MOD.Core.DamageSkinSpawnerComponent,script.Unit,MOD.Core.TagComponent,MOD.Core.AttackComponent",
         "jsonString": {
           "name": "MyMonster3",
           "path": "/maps/GameScene/MyMonsterList/MyMonster3",
@@ -1659,13 +1659,18 @@
             {
               "@type": "script.Unit",
               "Enable": true,
-              "damage": 25.0
+              "damage": 25.0,
+              "attackSpeed": 5.0
             },
             {
               "@type": "MOD.Core.TagComponent",
               "Tags": [
                 "MyMonster"
               ],
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.AttackComponent",
               "Enable": true
             }
           ],

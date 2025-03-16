@@ -102,7 +102,7 @@ script Unit extends Component
 		
 		local distance = math.abs(targetPos.x - myPos.x)
 		if distance <= self.attackRange then
-			self:SetState("attack")
+			self.curState = "attack"
 		end
 	end
 
@@ -152,7 +152,7 @@ script Unit extends Component
 			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e")
 		else
 			self:SetState("attack")
-			self:Attack_Damage()
+			self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
 		end
 	end
 
