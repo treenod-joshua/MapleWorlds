@@ -1,0 +1,180 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "codeblock://39ade395-963a-4c2b-90a0-0fd1ab92e753",
+  "ContentType": "x-mod/codeblock",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.23.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "CoreVersion": {
+        "Major": 0,
+        "Minor": 2
+      },
+      "ScriptVersion": {
+        "Major": 1,
+        "Minor": 1
+      },
+      "Description": "",
+      "Id": "39ade395-963a-4c2b-90a0-0fd1ab92e753",
+      "Language": 1,
+      "Name": "ingameMoneyIncome",
+      "Type": 1,
+      "Source": 0,
+      "Target": null,
+      "Properties": [
+        {
+          "Type": "table",
+          "DefaultValue": "{}",
+          "SyncDirection": 0,
+          "Attributes": [],
+          "Name": "incomeData"
+        },
+        {
+          "Type": "Component",
+          "DefaultValue": ":ingameMoneyWallet",
+          "SyncDirection": 0,
+          "Attributes": [],
+          "Name": "userWallet"
+        },
+        {
+          "Type": "number",
+          "DefaultValue": "0",
+          "SyncDirection": 0,
+          "Attributes": [],
+          "Name": "currentTs"
+        },
+        {
+          "Type": "number",
+          "DefaultValue": "0",
+          "SyncDirection": 0,
+          "Attributes": [],
+          "Name": "nextUpdateTs"
+        },
+        {
+          "Type": "Component",
+          "DefaultValue": "9d403f3e-7194-4738-911a-e1f775c1f59e:walletUI",
+          "SyncDirection": 0,
+          "Attributes": [],
+          "Name": "ControllerUI"
+        }
+      ],
+      "Methods": [
+        {
+          "Return": {
+            "Type": "void",
+            "DefaultValue": null,
+            "SyncDirection": 0,
+            "Attributes": [],
+            "Name": null
+          },
+          "Arguments": [
+            {
+              "Type": "Entity",
+              "DefaultValue": null,
+              "SyncDirection": 0,
+              "Attributes": [],
+              "Name": "enteredMap"
+            }
+          ],
+          "Code": "local loadData = _DataService:GetTable(\"meso\")\n\nlocal temp = {}\ntemp[\"id\"] = tonumber(loadData:GetCell(1,\"id\"))\ntemp[\"stage\"] = tonumber(loadData:GetCell(1,\"stage\"))\ntemp[\"init\"] = tonumber(loadData:GetCell(1,\"init\"))\ntemp[\"income\"] = tonumber(loadData:GetCell(1,\"income\"))\nself.incomeData[temp[\"id\"]] = temp\n\nself.currentTs = 0\nself.nextUpdateTs = 0",
+          "Scope": 2,
+          "ExecSpace": 2,
+          "Attributes": [],
+          "Name": "OnMapEnter"
+        },
+        {
+          "Return": {
+            "Type": "void",
+            "DefaultValue": null,
+            "SyncDirection": 0,
+            "Attributes": [],
+            "Name": null
+          },
+          "Arguments": [
+            {
+              "Type": "number",
+              "DefaultValue": null,
+              "SyncDirection": 0,
+              "Attributes": [],
+              "Name": "delta"
+            }
+          ],
+          "Code": "self.currentTs += delta\nif (self.currentTs >= self.nextUpdateTs) then\n\tself.nextUpdateTs = self.currentTs + 1\n\t\n\tself.userWallet:AddMoney(self:GetIncome(1))\nend",
+          "Scope": 2,
+          "ExecSpace": 2,
+          "Attributes": [],
+          "Name": "OnUpdate"
+        },
+        {
+          "Return": {
+            "Type": "void",
+            "DefaultValue": null,
+            "SyncDirection": 0,
+            "Attributes": [],
+            "Name": null
+          },
+          "Arguments": null,
+          "Code": "self.ControllerUI:SetIncome(self:GetIncome(1))\nself.userWallet:SetMoney(self:GetInit(1))",
+          "Scope": 2,
+          "ExecSpace": 2,
+          "Attributes": [],
+          "Name": "OnBeginPlay"
+        },
+        {
+          "Return": {
+            "Type": "integer",
+            "DefaultValue": "0",
+            "SyncDirection": 0,
+            "Attributes": [],
+            "Name": null
+          },
+          "Arguments": [
+            {
+              "Type": "integer",
+              "DefaultValue": "0",
+              "SyncDirection": 0,
+              "Attributes": [],
+              "Name": "id"
+            }
+          ],
+          "Code": "return self.incomeData[id][\"income\"]",
+          "Scope": 2,
+          "ExecSpace": 0,
+          "Attributes": [],
+          "Name": "GetIncome"
+        },
+        {
+          "Return": {
+            "Type": "integer",
+            "DefaultValue": "0",
+            "SyncDirection": 0,
+            "Attributes": [],
+            "Name": null
+          },
+          "Arguments": [
+            {
+              "Type": "integer",
+              "DefaultValue": "0",
+              "SyncDirection": 0,
+              "Attributes": [],
+              "Name": "id"
+            }
+          ],
+          "Code": "return self.incomeData[id][\"init\"]",
+          "Scope": 2,
+          "ExecSpace": 0,
+          "Attributes": [],
+          "Name": "GetInit"
+        }
+      ],
+      "EntityEventHandlers": []
+    }
+  }
+}

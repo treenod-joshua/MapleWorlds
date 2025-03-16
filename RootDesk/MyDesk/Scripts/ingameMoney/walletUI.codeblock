@@ -1,0 +1,120 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "codeblock://13e26037-f4d8-4227-a41b-8b7bb4719564",
+  "ContentType": "x-mod/codeblock",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.23.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "CoreVersion": {
+        "Major": 0,
+        "Minor": 2
+      },
+      "ScriptVersion": {
+        "Major": 1,
+        "Minor": 1
+      },
+      "Description": "",
+      "Id": "13e26037-f4d8-4227-a41b-8b7bb4719564",
+      "Language": 1,
+      "Name": "walletUI",
+      "Type": 1,
+      "Source": 0,
+      "Target": null,
+      "Properties": [
+        {
+          "Type": "integer",
+          "DefaultValue": "0",
+          "SyncDirection": 0,
+          "Attributes": [],
+          "Name": "currentMoney"
+        },
+        {
+          "Type": "integer",
+          "DefaultValue": "0",
+          "SyncDirection": 0,
+          "Attributes": [],
+          "Name": "income"
+        },
+        {
+          "Type": "Component",
+          "DefaultValue": "12c0befb-73b8-4f52-8ab8-a84a490e2e53:TextComponent",
+          "SyncDirection": 0,
+          "Attributes": [],
+          "Name": "display"
+        }
+      ],
+      "Methods": [
+        {
+          "Return": {
+            "Type": "void",
+            "DefaultValue": null,
+            "SyncDirection": 0,
+            "Attributes": [],
+            "Name": null
+          },
+          "Arguments": null,
+          "Code": "self.display.Text = string.format(\"%10d + %d\", self.currentMoney, self.income)",
+          "Scope": 2,
+          "ExecSpace": 0,
+          "Attributes": [],
+          "Name": "UpdateDisplay"
+        },
+        {
+          "Return": {
+            "Type": "void",
+            "DefaultValue": null,
+            "SyncDirection": 0,
+            "Attributes": [],
+            "Name": null
+          },
+          "Arguments": [
+            {
+              "Type": "integer",
+              "DefaultValue": "0",
+              "SyncDirection": 0,
+              "Attributes": [],
+              "Name": "newMoney"
+            }
+          ],
+          "Code": "self.currentMoney = newMoney\nself:UpdateDisplay()",
+          "Scope": 2,
+          "ExecSpace": 0,
+          "Attributes": [],
+          "Name": "SetCurrentMoney"
+        },
+        {
+          "Return": {
+            "Type": "void",
+            "DefaultValue": null,
+            "SyncDirection": 0,
+            "Attributes": [],
+            "Name": null
+          },
+          "Arguments": [
+            {
+              "Type": "integer",
+              "DefaultValue": "0",
+              "SyncDirection": 0,
+              "Attributes": [],
+              "Name": "newIncome"
+            }
+          ],
+          "Code": "self.income = newIncome\nself:UpdateDisplay() ",
+          "Scope": 2,
+          "ExecSpace": 0,
+          "Attributes": [],
+          "Name": "SetIncome"
+        }
+      ],
+      "EntityEventHandlers": []
+    }
+  }
+}

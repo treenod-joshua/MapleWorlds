@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "map://map01",
+  "EntryKey": "map://test-ingame-moeny",
   "ContentType": "x-mod/map",
   "Content": "",
   "Usage": 0,
@@ -14,18 +14,18 @@
     "Use": "Binary",
     "Entities": [
       {
-        "id": "5582f685-852e-4da2-aa91-9f0a96b1fc88",
-        "path": "/maps/map01",
+        "id": "a991d451-6869-4ed7-a0a9-b009fc6e1717",
+        "path": "/maps/test-ingame-moeny",
         "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent",
         "jsonString": {
-          "name": "map01",
-          "path": "/maps/map01",
+          "name": "test-ingame-moeny",
+          "path": "/maps/test-ingame-moeny",
           "nameEditable": false,
           "enable": true,
           "visible": true,
           "displayOrder": 0,
           "pathConstraints": "//",
-          "revision": 2,
+          "revision": 1,
           "modelId": null,
           "@components": [
             {
@@ -44,18 +44,18 @@
         }
       },
       {
-        "id": "b2efc3d9-4b68-494d-97fe-feebdb115178",
-        "path": "/maps/map01/Background",
+        "id": "aaeefbeb-8b75-4d13-bc09-c1626f1180c7",
+        "path": "/maps/test-ingame-moeny/Background",
         "componentNames": "MOD.Core.BackgroundComponent",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/map01/Background",
+          "path": "/maps/test-ingame-moeny/Background",
           "nameEditable": false,
           "enable": true,
           "visible": true,
           "displayOrder": 0,
           "pathConstraints": "///",
-          "revision": 2,
+          "revision": 1,
           "modelId": null,
           "@components": [
             {
@@ -69,18 +69,18 @@
         }
       },
       {
-        "id": "0db2eb7b-34f0-47a5-a3c7-23834cfde6a0",
-        "path": "/maps/map01/MapleMapLayer",
+        "id": "0fe242d2-a6ae-4f18-acfd-f2faf14d7bce",
+        "path": "/maps/test-ingame-moeny/MapleMapLayer",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer",
-          "path": "/maps/map01/MapleMapLayer",
+          "path": "/maps/test-ingame-moeny/MapleMapLayer",
           "nameEditable": false,
           "enable": true,
           "visible": true,
           "displayOrder": 1,
           "pathConstraints": "///",
-          "revision": 2,
+          "revision": 1,
           "origin": {
             "type": "Model",
             "entry_id": "maplemaplayer",
@@ -102,18 +102,18 @@
         }
       },
       {
-        "id": "c0bc95ea-9a77-4589-bbc2-05351fd6ba71",
-        "path": "/maps/map01/TileMap",
+        "id": "c0cc8131-0656-45f0-9947-45907b56ae27",
+        "path": "/maps/test-ingame-moeny/TileMap",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap",
-          "path": "/maps/map01/TileMap",
+          "path": "/maps/test-ingame-moeny/TileMap",
           "nameEditable": false,
           "enable": true,
           "visible": true,
           "displayOrder": 2,
           "pathConstraints": "///",
-          "revision": 2,
+          "revision": 1,
           "origin": {
             "type": "Model",
             "entry_id": "tilemap",
@@ -147,10 +147,83 @@
               "SortingLayer": "MapLayer0",
               "TileMapVersion": 1,
               "TileSetRUID": {
-                "DataId": ""
+                "DataId": "055a388951174b58826a7868852ad4d0"
               },
               "Tiles": [],
               "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "9d403f3e-7194-4738-911a-e1f775c1f59e",
+        "path": "/maps/test-ingame-moeny/ingameWalletUI",
+        "componentNames": "script.walletUI",
+        "jsonString": {
+          "name": "ingameWalletUI",
+          "path": "/maps/test-ingame-moeny/ingameWalletUI",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "displayOrder": 3,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "script.walletUI",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "30e56fbe-0041-4f0c-b15a-f6ba36a6af6e",
+        "path": "/maps/test-ingame-moeny/useWallet",
+        "componentNames": "script.ingameMoneyWallet",
+        "jsonString": {
+          "name": "useWallet",
+          "path": "/maps/test-ingame-moeny/useWallet",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "displayOrder": 4,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "script.ingameMoneyWallet",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "7394a3c4-8930-465e-86d1-4668cd7eef96",
+        "path": "/maps/test-ingame-moeny/ingameIncome",
+        "componentNames": "script.ingameMoneyIncome",
+        "jsonString": {
+          "name": "ingameIncome",
+          "path": "/maps/test-ingame-moeny/ingameIncome",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "displayOrder": 5,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "script.ingameMoneyIncome",
+              "Enable": true,
+              "userWallet": {
+                "IsRelative": false,
+                "ComponentId": "30e56fbe-0041-4f0c-b15a-f6ba36a6af6e:ingameMoneyWallet"
+              }
             }
           ],
           "@version": 1
