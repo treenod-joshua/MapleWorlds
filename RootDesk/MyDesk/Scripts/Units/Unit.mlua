@@ -26,13 +26,16 @@ script Unit extends Component
 	property number AttackTimer = 0
 
 	@Sync
-	property string curState = "idle"
+	property string curState = "stand"
 
 	@Sync
 	property boolean isEnemy = false
 
 	@Sync
 	property number projectileSpeed = 0.20
+
+	@Sync
+	property number attackTiming = 0.9
 
 	method void OnBeginPlay()
 		if self.Entity.TagComponent.Tags.Count <= 0 then
@@ -50,11 +53,12 @@ script Unit extends Component
 		end
 		
 		self.Entity.StateComponent:AddState("attack", Attack)
+		self.Entity.StateComponent:AddState("stand", Stand)
 	end
 
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
-		if self.curState == "idle" then
+		if self.curState == "stand" then
 			self:FindTarget()
 		elseif self.curState == "move" then
 			self:MoveToTarget(delta)
@@ -103,6 +107,7 @@ script Unit extends Component
 		local distance = math.abs(targetPos.x - myPos.x)
 		if distance <= self.attackRange then
 			self.curState = "attack"
+			self:SetAnimationState("stand")
 		end
 	end
 
@@ -125,7 +130,7 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method void Attack(number delta)
 		if self.curTarget == nil then
-			self:SetState("idle")
+			self:SetState("stand")
 			return
 		end
 		
@@ -152,7 +157,12 @@ script Unit extends Component
 			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e")
 		else
 			self:SetState("attack")
-			self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
+			
+			local attackFunction = function() 
+				self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
+			end
+			 
+			_TimerService:SetTimerOnce(attackFunction, self.attackTiming)
 		end
 	end
 
@@ -209,7 +219,51 @@ script Unit extends Component
 			return
 		end
 		
+		log(state.." dd "..self.curState)
+		self:SetAnimationState(state)
+	end
+
+	@ExecSpace("Server")
+	method void SetAnimationState(string state)
 		self.Entity.StateComponent:ChangeState(state)
+	end
+
+	@EventSender("Self")
+	handler HandleSpriteAnimPlayerEndEvent(SpriteAnimPlayerEndEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ClimbableSpriteRendererComponent
+		-- Space: Client
+		---------------------------------------------------------
+		-- Sender: SpriteRendererComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local AnimPlayer = event.AnimPlayer
+		---------------------------------------------------------
+		log("애니메이션 끝남")
+	end
+
+	@EventSender("Self")
+	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ClimbableSpriteRendererComponent
+		-- Space: Client
+		---------------------------------------------------------
+		-- Sender: SpriteRendererComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local FrameIndex = event.FrameIndex
+		-- local ReversePlaying = event.ReversePlaying
+		-- local TotalFrameCount = event.TotalFrameCount
+		-- local AnimPlayer = event.AnimPlayer
+		---------------------------------------------------------
+		if self.curState == "attack" then
+			self:SetAnimationState("stand")
+		end
+		
 	end
 
 end
