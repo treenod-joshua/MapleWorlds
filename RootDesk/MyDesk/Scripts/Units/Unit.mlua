@@ -32,7 +32,7 @@ script Unit extends Component
 	property boolean isEnemy = false
 
 	@Sync
-	property number projectileSpeed = 0.25
+	property number projectileSpeed = 0.20
 
 	method void OnBeginPlay()
 		if self.Entity.TagComponent.Tags.Count <= 0 then
