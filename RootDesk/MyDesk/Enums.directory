@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "directory://12923efc2bfd4fd99f9786b9ebefb10f",
+  "ContentType": "x-mod/directory",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.23.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "entry_id": "directory://12923efc2bfd4fd99f9786b9ebefb10f",
+      "name": "Enums",
+      "lock": false,
+      "folding": false,
+      "nameEditable": true
+    }
+  }
+}

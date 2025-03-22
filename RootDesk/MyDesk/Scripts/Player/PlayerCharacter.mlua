@@ -1,0 +1,8 @@
+@Component
+script PlayerCharacter extends Component
+
+	method void UseSkill(string skillID)
+		
+	end
+
+end

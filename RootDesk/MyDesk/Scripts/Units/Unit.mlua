@@ -245,6 +245,10 @@ script Unit extends Component
 		self.Entity.StateComponent:ChangeState(state)
 	end
 
+	method void GetBuff(boolean arg1)
+		
+	end
+
 	@EventSender("Self")
 	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
 		--------------- Native Event Sender Info ----------------

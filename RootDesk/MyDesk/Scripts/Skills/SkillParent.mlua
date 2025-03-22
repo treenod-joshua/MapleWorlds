@@ -1,0 +1,37 @@
+@Component
+script SkillParent extends Component
+
+	@Sync
+	property Entity caster = nil
+
+	@Sync
+	property Entity target = nil
+
+	@Sync
+	property Vector2 skillArea = Vector2(0,0)
+
+	@Sync
+	property number skillDamage = 0
+
+	@Sync
+	property number skillProjectileSpeed = 0
+
+	method void InitializeSkill(Entity caster, Entity target, Vector2 skillArea, number skillDamage, number skillProjectileSpeed)
+		self.caster = caster
+		self.target = target
+		self.skillArea = skillArea
+		self.skillDamage = skillDamage
+		self.skillProjectileSpeed = skillProjectileSpeed
+		
+	end
+
+	method void UseSkill(Entity caster, Entity target, Vector2 skillArea, number skillDamage, number skillProjectileSpeed)
+		self:InitializeSkill(caster, target, skillArea, skillDamage, skillProjectileSpeed)
+		self:ActivateSkill()
+	end
+
+	method void ActivateSkill()
+		
+	end
+
+end

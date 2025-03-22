@@ -1,0 +1,7 @@
+@Logic
+script eBuffType extends Logic
+
+	@Sync
+	property number AttackSpeedBuff = 1
+
+end
