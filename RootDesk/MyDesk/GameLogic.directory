@@ -17,10 +17,7 @@
       "name": "GameLogic",
       "lock": false,
       "folding": false,
-      "nameEditable": true,
-      "worldCoreVersion": "1.23.0.0",
-      "worldStudioVersion": "0.1.0.0",
-      "useService": 0
+      "nameEditable": true
     }
   }
 }

@@ -1,0 +1,22 @@
+@Logic
+script Utils extends Logic
+
+	method number GetRUIDTime(string ruid)
+		if _UtilLogic:IsNilorEmptyString(ruid) then
+		    return 0
+		end
+		         
+		local time = 0
+		local clip = _ResourceService:LoadAnimationClipAndWait(ruid)
+		if clip == nil then
+		    return 0
+		end
+		
+		for i = 1,#clip.Frames do
+		    time = time + clip.Frames[i].Delay
+		end
+		 
+		return time
+	end
+
+end

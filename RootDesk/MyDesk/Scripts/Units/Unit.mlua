@@ -37,6 +37,10 @@ script Unit extends Component
 	@Sync
 	property number attackTiming = 0.9
 
+	property string attackAnimationRUID = ""
+
+	property number attackAnimationPlayingTime = 0
+
 	method void OnBeginPlay()
 		if self.Entity.TagComponent.Tags.Count <= 0 then
 			return
@@ -52,8 +56,17 @@ script Unit extends Component
 			self.Entity.SpriteRendererComponent.FlipX = true
 		end
 		
+		self:InitAnimData()
+	end
+
+	method void InitAnimData()
 		self.Entity.StateComponent:AddState("attack", Attack)
 		self.Entity.StateComponent:AddState("stand", Stand)
+		
+		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
+			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
+			self.attackAnimationPlayingTime = _Utils:GetRUIDTime(self.attackAnimationRUID)
+		end
 	end
 
 	@ExecSpace("ClientOnly")
@@ -158,11 +171,15 @@ script Unit extends Component
 		else
 			self:SetState("attack")
 			
+			-- 애니메이션 배율 계산
+			local animationPlaySpeed = self.attackAnimationPlayingTime / (self.attackSpeed - 0.1)
+			self.Entity.SpriteRendererComponent.PlayRate = animationPlaySpeed
+			
 			local attackFunction = function() 
 				self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
 			end
 			 
-			_TimerService:SetTimerOnce(attackFunction, self.attackTiming)
+			_TimerService:SetTimerOnce(attackFunction, self.attackTiming / animationPlaySpeed)
 		end
 	end
 
@@ -229,22 +246,6 @@ script Unit extends Component
 	end
 
 	@EventSender("Self")
-	handler HandleSpriteAnimPlayerEndEvent(SpriteAnimPlayerEndEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: ClimbableSpriteRendererComponent
-		-- Space: Client
-		---------------------------------------------------------
-		-- Sender: SpriteRendererComponent
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local AnimPlayer = event.AnimPlayer
-		---------------------------------------------------------
-		log("애니메이션 끝남")
-	end
-
-	@EventSender("Self")
 	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
 		--------------- Native Event Sender Info ----------------
 		-- Sender: ClimbableSpriteRendererComponent
@@ -263,7 +264,6 @@ script Unit extends Component
 		if self.curState == "attack" then
 			self:SetAnimationState("stand")
 		end
-		
 	end
 
 end
