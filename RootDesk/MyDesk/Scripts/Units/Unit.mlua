@@ -23,6 +23,9 @@ script Unit extends Component
 	property number attackSpeed = 1.5
 
 	@Sync
+	property number originAttackSpeed = 0
+
+	@Sync
 	property number AttackTimer = 0
 
 	@Sync
@@ -41,6 +44,8 @@ script Unit extends Component
 
 	property number attackAnimationPlayingTime = 0
 
+	property Vector2 imageSize = Vector2(0,0)
+
 	method void OnBeginPlay()
 		if self.Entity.TagComponent.Tags.Count <= 0 then
 			return
@@ -57,6 +62,7 @@ script Unit extends Component
 		end
 		
 		self:InitAnimData()
+		self:InitData()
 	end
 
 	method void InitAnimData()
@@ -67,6 +73,26 @@ script Unit extends Component
 			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
 			self.attackAnimationPlayingTime = _Utils:GetRUIDTime(self.attackAnimationRUID)
 		end
+	end
+
+	method void InitData()
+		self.originAttackSpeed = self.attackSpeed
+		
+		_ResourceService:PreloadAsync({self.Entity.SpriteRendererComponent.SpriteRUID},
+		function() 
+			local clip = _ResourceService:LoadAnimationClipAndWait(self.Entity.SpriteRendererComponent.SpriteRUID)
+		    local firstFrameSprite = clip.Frames[1].FrameSprite
+			local pixelPerUnit = firstFrameSprite.PixelPerUnit
+		    self.imageSize= Vector2(firstFrameSprite.Width / pixelPerUnit, firstFrameSprite.Height / pixelPerUnit)
+				
+				-- X 축은 중앙에서 보정 필요 없음
+		        local centerX = 0 + (firstFrameSprite.Width / pixelPerUnit * (0.5 - 0.5)) 
+		
+		        -- Y 축은 하단 기준이므로 절반만큼 보정해야 함
+		        local centerY = 0 + (firstFrameSprite.Height / pixelPerUnit * (0.5 - 0))
+				
+				log("x : "..centerX.." y : "..centerY)
+		end)
 	end
 
 	@ExecSpace("ClientOnly")
@@ -167,7 +193,7 @@ script Unit extends Component
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
 			self:PlayTween()
 			self:Attack_Damage()
-			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e")
+			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e", Vector3(-0.5,0,0))
 		else
 			self:SetState("attack")
 			
@@ -179,7 +205,12 @@ script Unit extends Component
 				self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
 			end
 			 
-			_TimerService:SetTimerOnce(attackFunction, self.attackTiming / animationPlaySpeed)
+			local timerTiming = self.attackTiming / animationPlaySpeed
+			if timerTiming < 0 then
+				timerTiming = 0.5
+			end
+			
+			_TimerService:SetTimerOnce(attackFunction, timerTiming)
 		end
 	end
 
@@ -224,8 +255,8 @@ script Unit extends Component
 	end
 
 	@ExecSpace("Client")
-	method void PlayEffect(string effect)
-		_EffectService:PlayEffectAttached(effect, self.Entity, Vector3(-0.5,0,0), 0, Vector3.one)
+	method void PlayEffect(string effect, Vector3 pos)
+		_EffectService:PlayEffectAttached(effect, self.Entity, pos, 0, Vector3.one)
 	end
 
 	@ExecSpace("Server")
@@ -245,8 +276,22 @@ script Unit extends Component
 		self.Entity.StateComponent:ChangeState(state)
 	end
 
-	method void GetBuff(boolean arg1)
+	@ExecSpace("Client")
+	method void GetBuff(number buffType, number buffAmount, number buffTime)
+		if buffType == _eBuffType.AttackSpeedBuff then
+			self:PlayEffect("7c3028f7053541a3869a94d3fbe9088b", Vector3(0, self.imageSize.y,0))
+			if self.attackSpeed - buffAmount <= 0 then
+				self.attackSpeed = 0.5
+			else
+				self.attackSpeed -= buffAmount
+			end
+			
+			local deleteFunction = function()
+				self.attackSpeed = self.originAttackSpeed
+			end
 		
+			_TimerService:SetTimerOnce(deleteFunction, buffTime) 
+		end
 	end
 
 	@EventSender("Self")
@@ -267,6 +312,7 @@ script Unit extends Component
 		---------------------------------------------------------
 		if self.curState == "attack" then
 			self:SetAnimationState("stand")
+			self.Entity.SpriteRendererComponent.PlayRate = 1
 		end
 	end
 

@@ -511,6 +511,12 @@
           "@components": [
             {
               "@type": "MOD.Core.BackgroundComponent",
+              "SolidColor": {
+                "r": 0.5019608,
+                "g": 0.5019608,
+                "b": 0.5019608,
+                "a": 0.7058824
+              },
               "TemplateRUID": "65c4167ea7484196b890022354e5a4a4",
               "Type": 1,
               "Enable": true
@@ -1308,7 +1314,7 @@
           "name": "MyMonster",
           "path": "/maps/GameScene/MyMonsterList/MyMonster",
           "nameEditable": true,
-          "enable": false,
+          "enable": true,
           "visible": true,
           "displayOrder": 0,
           "pathConstraints": "////",
@@ -1452,7 +1458,7 @@
           "name": "MyMonster2",
           "path": "/maps/GameScene/MyMonsterList/MyMonster2",
           "nameEditable": true,
-          "enable": false,
+          "enable": true,
           "visible": true,
           "displayOrder": 1,
           "pathConstraints": "////",
@@ -1574,7 +1580,7 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": -1.84509611,
+                "x": -1.28369808,
                 "y": -2.27500033,
                 "z": 1000.0
               },

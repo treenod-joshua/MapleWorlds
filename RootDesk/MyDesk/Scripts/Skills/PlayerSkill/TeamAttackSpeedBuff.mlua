@@ -1,0 +1,40 @@
+@Component
+script TeamAttackSpeedBuff extends SkillParent
+
+	@Sync
+	property Entity caster = nil
+
+	@Sync
+	property Entity target = nil
+
+	@Sync
+	property Vector2 skillArea = Vector2(0,0)
+
+	@Sync
+	property number skillAmount = 0
+
+	@Sync
+	property number skillProjectileSpeed = 0
+
+	@Sync
+	property number skillTime = 0
+
+	method void UseSkill(Entity caster, Entity target)
+		__base:UseSkill(caster, target)
+	end
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		local myMonsterListParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
+		local myMonsters = myMonsterListParent.Children
+		
+		for index in ipairs(myMonsters) do
+			local monster = myMonsters[index]
+			
+			if monster.Enable then
+				myMonsters[index].Unit:GetBuff(_eBuffType.AttackSpeedBuff, self.skillAmount, self.skillTime)
+			end
+		end
+	end
+
+end
