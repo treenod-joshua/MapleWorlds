@@ -159,7 +159,7 @@
       {
         "id": "9d403f3e-7194-4738-911a-e1f775c1f59e",
         "path": "/maps/test-ingame-moeny/ingameWalletUI",
-        "componentNames": "script.walletUI",
+        "componentNames": "script.MesoUI",
         "jsonString": {
           "name": "ingameWalletUI",
           "path": "/maps/test-ingame-moeny/ingameWalletUI",
@@ -172,7 +172,7 @@
           "modelId": null,
           "@components": [
             {
-              "@type": "script.walletUI",
+              "@type": "script.MesoUI",
               "Enable": true
             }
           ],
@@ -182,7 +182,7 @@
       {
         "id": "30e56fbe-0041-4f0c-b15a-f6ba36a6af6e",
         "path": "/maps/test-ingame-moeny/useWallet",
-        "componentNames": "script.ingameMoneyWallet",
+        "componentNames": "script.MesoWallet",
         "jsonString": {
           "name": "useWallet",
           "path": "/maps/test-ingame-moeny/useWallet",
@@ -195,8 +195,12 @@
           "modelId": null,
           "@components": [
             {
-              "@type": "script.ingameMoneyWallet",
-              "Enable": true
+              "@type": "script.MesoWallet",
+              "Enable": true,
+              "UIController": {
+                "IsRelative": false,
+                "ComponentId": "9d403f3e-7194-4738-911a-e1f775c1f59e:MesoUI"
+              }
             }
           ],
           "@version": 1
@@ -205,7 +209,7 @@
       {
         "id": "7394a3c4-8930-465e-86d1-4668cd7eef96",
         "path": "/maps/test-ingame-moeny/ingameIncome",
-        "componentNames": "script.ingameMoneyIncome",
+        "componentNames": "script.MesoIncome",
         "jsonString": {
           "name": "ingameIncome",
           "path": "/maps/test-ingame-moeny/ingameIncome",
@@ -218,11 +222,15 @@
           "modelId": null,
           "@components": [
             {
-              "@type": "script.ingameMoneyIncome",
+              "@type": "script.MesoIncome",
               "Enable": true,
-              "userWallet": {
+              "UIController": {
                 "IsRelative": false,
-                "ComponentId": "30e56fbe-0041-4f0c-b15a-f6ba36a6af6e:ingameMoneyWallet"
+                "ComponentId": "9d403f3e-7194-4738-911a-e1f775c1f59e:MesoUI"
+              },
+              "UserWallet": {
+                "IsRelative": false,
+                "ComponentId": "30e56fbe-0041-4f0c-b15a-f6ba36a6af6e:MesoWallet"
               }
             }
           ],

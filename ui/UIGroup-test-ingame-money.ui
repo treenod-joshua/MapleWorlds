@@ -82,7 +82,7 @@
             },
             {
               "@type": "MOD.Core.UIGroupComponent",
-              "DefaultShow": false,
+              "DefaultShow": true,
               "GroupOrder": 0,
               "GroupType": 2,
               "Enable": true
