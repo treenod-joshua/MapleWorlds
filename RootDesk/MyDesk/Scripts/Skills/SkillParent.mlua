@@ -19,14 +19,14 @@ script SkillParent extends Component
 	@Sync
 	property number skillTime = 0
 
-	method void InitializeSkill(Entity caster, Entity target)
+	method void InitializeSkill(Entity caster, Entity target, Vector2 skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
 		self.caster = caster
 		self.target = target
 		
 	end
 
-	method void UseSkill(Entity caster, Entity target)
-		self:InitializeSkill(caster, target)
+	method void UseSkill(Entity caster, Entity target, Vector2 skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
+		self:InitializeSkill(caster, target, skillArea, skillAmount, skillProjectileSpeed, skillTime)
 		self:ActivateSkill()
 		self:DestroySkill()
 	end

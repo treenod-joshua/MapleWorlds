@@ -1829,6 +1829,24 @@
           ],
           "@version": 1
         }
+      },
+      {
+        "id": "fca8fb87-756a-4d19-9aa6-44cd2fb30dcc",
+        "path": "/maps/GameScene/SkillParent",
+        "componentNames": "",
+        "jsonString": {
+          "name": "SkillParent",
+          "path": "/maps/GameScene/SkillParent",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 7,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [],
+          "@version": 1
+        }
       }
     ]
   }

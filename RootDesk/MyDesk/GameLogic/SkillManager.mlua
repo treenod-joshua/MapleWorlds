@@ -1,0 +1,18 @@
+@Logic
+script SkillManager extends Logic
+
+	method void UseSkill(string skillID, Entity caster, Entity target)
+		local skillParent = _EntityService:GetEntityByPath("/maps/GameScene/SkillParent")
+		-- 해당 부분에서 DataSet을 가져와서 처리할 지
+		-- 그러면 skillID는 FireBall과 같은 형태로 두고, DataSet의 FireBall의 EntryID 및 여러 데이터를 받아와서 아래에서 스폰 처리 함.
+		-- 데이터를 받아온 뒤 소환하는게 맞는 형태로 보임
+		local skill = _SpawnService:SpawnByModelId(skillID,
+			skillID,
+			skillParent.TransformComponent.Position,
+			skillParent)
+		
+		-- skillID의 DataSet을 가져온 뒤 아래 함수 실행
+		-- skill.SkillParent:UseSkill(caster, target)
+	end
+
+end
