@@ -2,10 +2,10 @@
 script Unit extends Component
 
 	@Sync
-	property Entity targetTower = "f5af730d-fbdb-40ee-adeb-57c1caeda316"
+	property Entity curTarget = nil
 
 	@Sync
-	property Entity curTarget = nil
+	property Entity passiveSkill = nil
 
 	@Sync
 	property number moveSpeed = 1
@@ -22,7 +22,6 @@ script Unit extends Component
 	@Sync
 	property number attackSpeed = 1.5
 
-	@Sync
 	property number originAttackSpeed = 0
 
 	@Sync
@@ -47,6 +46,9 @@ script Unit extends Component
 	property Vector2 imageSize = Vector2(0,0)
 
 	method void OnBeginPlay()
+		self.Entity:AddComponent(TagComponent)
+		self.Entity.TagComponent:AddTag("MyMonster")
+		
 		if self.Entity.TagComponent.Tags.Count <= 0 then
 			return
 		end
@@ -84,15 +86,11 @@ script Unit extends Component
 		    local firstFrameSprite = clip.Frames[1].FrameSprite
 			local pixelPerUnit = firstFrameSprite.PixelPerUnit
 		    self.imageSize= Vector2(firstFrameSprite.Width / pixelPerUnit, firstFrameSprite.Height / pixelPerUnit)
-				
-				-- X 축은 중앙에서 보정 필요 없음
-		        local centerX = 0 + (firstFrameSprite.Width / pixelPerUnit * (0.5 - 0.5)) 
-		
-		        -- Y 축은 하단 기준이므로 절반만큼 보정해야 함
-		        local centerY = 0 + (firstFrameSprite.Height / pixelPerUnit * (0.5 - 0))
-				
-				log("x : "..centerX.." y : "..centerY)
 		end)
+		
+		if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
+			self.passiveSkill.PassiveSkillParent:OnStart()
+		end
 	end
 
 	@ExecSpace("ClientOnly")
@@ -140,14 +138,18 @@ script Unit extends Component
 		self:Move(delta)
 		self:SetState("move")
 		
-		local myPos = self.Entity.TransformComponent.Position
-		local targetPos = self.curTarget.TransformComponent.Position
-		
-		local distance = math.abs(targetPos.x - myPos.x)
-		if distance <= self.attackRange then
+		if self:GetDistance() <= self.attackRange then
 			self.curState = "attack"
 			self:SetAnimationState("stand")
 		end
+	end
+
+	@ExecSpace("Client")
+	method number GetDistance()
+		local myPos = self.Entity.TransformComponent.Position
+		local targetPos = self.curTarget.TransformComponent.Position
+		
+		return math.abs(targetPos.x - myPos.x)
 	end
 
 	@ExecSpace("Client")
@@ -168,7 +170,7 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void Attack(number delta)
-		if self.curTarget == nil then
+		if self.curTarget == nil or self:GetDistance() > self.attackRange then
 			self:SetState("stand")
 			return
 		end
@@ -203,6 +205,10 @@ script Unit extends Component
 			
 			local attackFunction = function() 
 				self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
+				
+				if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+					self.passiveSkill.PassiveSkillParent:OnAttack()
+				end
 			end
 			 
 			local timerTiming = self.attackTiming / animationPlaySpeed
@@ -228,6 +234,10 @@ script Unit extends Component
 			"Projectile",
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self._T.projectileParent)
+		
+		if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+			self.passiveSkill.PassiveSkillParent:OnAttack()
+		end
 		
 		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, self.projectileSpeed, self.curTarget, true,self.damage)
 	end
@@ -292,6 +302,27 @@ script Unit extends Component
 		
 			_TimerService:SetTimerOnce(deleteFunction, buffTime) 
 		end
+	end
+
+	method void OnHit(Entity attacker, number damage, boolean isCritical, number attackCount)
+		if self.health <= 0 then
+			return
+		end
+		
+		self.Entity.HitComponent:OnHit(attacker, damage, isCritical, "", attackCount)
+		self.health -= damage
+		
+		if self.health <= 0 then
+			self:OnDie()
+		end
+	end
+
+	method void OnDie()
+		if self.curState == "die" then
+			return
+		end
+		
+		self.curState = "die"
 	end
 
 	@EventSender("Self")

@@ -1,0 +1,30 @@
+@Component
+script PassiveSkillParent extends Component
+
+	property number passiveType = 0
+
+	method void OnAttack()
+		
+	end
+
+	method void OnHit()
+		
+	end
+
+	method void OnKill()
+		
+	end
+
+	method void OnStart()
+		
+	end
+
+	method void OnDie()
+		
+	end
+
+	method void Always()
+		
+	end
+
+end

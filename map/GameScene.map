@@ -1560,7 +1560,7 @@
       {
         "id": "f85536af-76c0-4b5c-8ce8-4ab3fb1d1922",
         "path": "/maps/GameScene/MyMonsterList/MyMonster3",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.StateAnimationComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.MovementComponent,MOD.Core.AIWanderComponent,MOD.Core.StateComponent,MOD.Core.HitComponent,MOD.Core.DamageSkinSpawnerComponent,script.Unit,MOD.Core.TagComponent,MOD.Core.AttackComponent",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.StateAnimationComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.MovementComponent,MOD.Core.AIWanderComponent,MOD.Core.StateComponent,MOD.Core.HitComponent,MOD.Core.DamageSkinSpawnerComponent,script.Unit,MOD.Core.AttackComponent",
         "jsonString": {
           "name": "MyMonster3",
           "path": "/maps/GameScene/MyMonsterList/MyMonster3",
@@ -1667,13 +1667,6 @@
               "Enable": true,
               "damage": 25.0,
               "attackSpeed": 1.0
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MyMonster"
-              ],
-              "Enable": true
             },
             {
               "@type": "MOD.Core.AttackComponent",
