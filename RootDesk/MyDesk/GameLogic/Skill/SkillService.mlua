@@ -1,0 +1,31 @@
+@Logic
+script SkillService extends Logic
+
+	property table skillTable = {}
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		local dataSet = _DataService:GetTable("Skill")    
+		for index = 1, dataSet:GetRowCount() do
+		    local item = {}
+			
+			item['id'] = tonumber(dataSet:GetCell(index, 'id'))
+			item['skillArea'] = tonumber(dataSet:GetCell(index, 'skillID'))
+			item['skillAmount'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
+			item['skillProjectileSpeed'] = tonumber(dataSet:GetCell(index, 'id'))
+			item['skillTime'] = tonumber(dataSet:GetCell(index, 'skillID'))
+			item['skillAttackTiming'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
+			
+			self.skillTable[item['id']] = item
+		end
+	end
+
+	method table GetAllSkill()
+		return self.skillTable
+	end
+
+	method table GetSkillById(number id)
+		return self.skillTable[id]
+	end
+
+end
