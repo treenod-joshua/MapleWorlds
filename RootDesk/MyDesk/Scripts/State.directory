@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://e5655fece5084cf3b4ac44ec26871f9e",
+  "EntryKey": "directory://fc3a8fd670ab451f975b6a48a58b339d",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://e5655fece5084cf3b4ac44ec26871f9e",
-      "name": "GameLogic",
+      "entry_id": "directory://fc3a8fd670ab451f975b6a48a58b339d",
+      "name": "State",
       "lock": false,
       "folding": false,
       "nameEditable": true

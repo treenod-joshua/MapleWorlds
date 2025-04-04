@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://e5655fece5084cf3b4ac44ec26871f9e",
+  "EntryKey": "directory://ee8bd84e481b46d296e856de25b72805",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://e5655fece5084cf3b4ac44ec26871f9e",
-      "name": "GameLogic",
+      "entry_id": "directory://ee8bd84e481b46d296e856de25b72805",
+      "name": "PlayerSkill",
       "lock": false,
       "folding": false,
       "nameEditable": true

@@ -2,16 +2,16 @@
 script Unit extends Component
 
 	@Sync
-	property Entity targetTower = "f5af730d-fbdb-40ee-adeb-57c1caeda316"
+	property Entity curTarget = nil
 
 	@Sync
-	property Entity curTarget = nil
+	property Entity passiveSkill = nil
 
 	@Sync
 	property number moveSpeed = 1
 
 	@Sync
-	property number health = 100
+	property number hp = 100
 
 	@Sync
 	property number damage = 10
@@ -22,19 +22,33 @@ script Unit extends Component
 	@Sync
 	property number attackSpeed = 1.5
 
+	property number originAttackSpeed = 0
+
 	@Sync
 	property number AttackTimer = 0
 
 	@Sync
-	property string curState = "idle"
+	property string curState = "stand"
 
 	@Sync
 	property boolean isEnemy = false
 
 	@Sync
-	property number projectileSpeed = 0.25
+	property number projectileSpeed = 0.20
+
+	@Sync
+	property number attackTiming = 0.9
+
+	property string attackAnimationRUID = ""
+
+	property number attackAnimationPlayingTime = 0
+
+	property Vector2 imageSize = Vector2(0,0)
 
 	method void OnBeginPlay()
+		self.Entity:AddComponent(TagComponent)
+		self.Entity.TagComponent:AddTag("MyMonster")
+		
 		if self.Entity.TagComponent.Tags.Count <= 0 then
 			return
 		end
@@ -49,12 +63,39 @@ script Unit extends Component
 			self.Entity.SpriteRendererComponent.FlipX = true
 		end
 		
+		self:InitAnimData()
+		self:InitData()
+	end
+
+	method void InitAnimData()
 		self.Entity.StateComponent:AddState("attack", Attack)
+		self.Entity.StateComponent:AddState("stand", Stand)
+		
+		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
+			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
+			self.attackAnimationPlayingTime = _Utils:GetRUIDTime(self.attackAnimationRUID)
+		end
+	end
+
+	method void InitData()
+		self.originAttackSpeed = self.attackSpeed
+		
+		_ResourceService:PreloadAsync({self.Entity.SpriteRendererComponent.SpriteRUID},
+		function() 
+			local clip = _ResourceService:LoadAnimationClipAndWait(self.Entity.SpriteRendererComponent.SpriteRUID)
+		    local firstFrameSprite = clip.Frames[1].FrameSprite
+			local pixelPerUnit = firstFrameSprite.PixelPerUnit
+		    self.imageSize= Vector2(firstFrameSprite.Width / pixelPerUnit, firstFrameSprite.Height / pixelPerUnit)
+		end)
+		
+		if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
+			self.passiveSkill.PassiveSkillParent:OnStart()
+		end
 	end
 
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
-		if self.curState == "idle" then
+		if self.curState == "stand" then
 			self:FindTarget()
 		elseif self.curState == "move" then
 			self:MoveToTarget(delta)
@@ -97,13 +138,18 @@ script Unit extends Component
 		self:Move(delta)
 		self:SetState("move")
 		
+		if self:GetDistance() <= self.attackRange then
+			self.curState = "attack"
+			self:SetAnimationState("stand")
+		end
+	end
+
+	@ExecSpace("Client")
+	method number GetDistance()
 		local myPos = self.Entity.TransformComponent.Position
 		local targetPos = self.curTarget.TransformComponent.Position
 		
-		local distance = math.abs(targetPos.x - myPos.x)
-		if distance <= self.attackRange then
-			self.curState = "attack"
-		end
+		return math.abs(targetPos.x - myPos.x)
 	end
 
 	@ExecSpace("Client")
@@ -124,8 +170,8 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void Attack(number delta)
-		if self.curTarget == nil then
-			self:SetState("idle")
+		if self.curTarget == nil or self:GetDistance() > self.attackRange then
+			self:SetState("stand")
 			return
 		end
 		
@@ -149,10 +195,28 @@ script Unit extends Component
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
 			self:PlayTween()
 			self:Attack_Damage()
-			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e")
+			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e", Vector3(-0.5,0,0))
 		else
 			self:SetState("attack")
-			self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
+			
+			-- 애니메이션 배율 계산
+			local animationPlaySpeed = self.attackAnimationPlayingTime / (self.attackSpeed - 0.1)
+			self.Entity.SpriteRendererComponent.PlayRate = animationPlaySpeed
+			
+			local attackFunction = function() 
+				self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
+				
+				if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+					self.passiveSkill.PassiveSkillParent:OnAttack()
+				end
+			end
+			 
+			local timerTiming = self.attackTiming / animationPlaySpeed
+			if timerTiming < 0 then
+				timerTiming = 0.5
+			end
+			
+			_TimerService:SetTimerOnce(attackFunction, timerTiming)
 		end
 	end
 
@@ -170,6 +234,10 @@ script Unit extends Component
 			"Projectile",
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self._T.projectileParent)
+		
+		if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+			self.passiveSkill.PassiveSkillParent:OnAttack()
+		end
 		
 		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, self.projectileSpeed, self.curTarget, true,self.damage)
 	end
@@ -197,8 +265,8 @@ script Unit extends Component
 	end
 
 	@ExecSpace("Client")
-	method void PlayEffect(string effect)
-		_EffectService:PlayEffectAttached(effect, self.Entity, Vector3(-0.5,0,0), 0, Vector3.one)
+	method void PlayEffect(string effect, Vector3 pos)
+		_EffectService:PlayEffectAttached(effect, self.Entity, pos, 0, Vector3.one)
 	end
 
 	@ExecSpace("Server")
@@ -209,7 +277,74 @@ script Unit extends Component
 			return
 		end
 		
+		log(state.." dd "..self.curState)
+		self:SetAnimationState(state)
+	end
+
+	@ExecSpace("Server")
+	method void SetAnimationState(string state)
 		self.Entity.StateComponent:ChangeState(state)
+	end
+
+	@ExecSpace("Client")
+	method void GetBuff(number buffType, number buffAmount, number buffTime)
+		if buffType == _eBuffType.AttackSpeedBuff then
+			self:PlayEffect("7c3028f7053541a3869a94d3fbe9088b", Vector3(0, self.imageSize.y,0))
+			if self.attackSpeed - buffAmount <= 0 then
+				self.attackSpeed = 0.5
+			else
+				self.attackSpeed -= buffAmount
+			end
+			
+			local deleteFunction = function()
+				self.attackSpeed = self.originAttackSpeed
+			end
+		
+			_TimerService:SetTimerOnce(deleteFunction, buffTime) 
+		end
+	end
+
+	method void OnHit(Entity attacker, number damage, boolean isCritical, number attackCount)
+		if self.hp <= 0 then
+			return
+		end
+		
+		self.Entity.HitComponent:OnHit(attacker, damage, isCritical, "", attackCount)
+		self.hp -= damage
+		
+		if self.hp <= 0 then
+			self:OnDie()
+		end
+	end
+
+	method void OnDie()
+		if self.curState == "die" then
+			return
+		end
+		
+		self.curState = "die"
+	end
+
+	@EventSender("Self")
+	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ClimbableSpriteRendererComponent
+		-- Space: Client
+		---------------------------------------------------------
+		-- Sender: SpriteRendererComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local FrameIndex = event.FrameIndex
+		-- local ReversePlaying = event.ReversePlaying
+		-- local TotalFrameCount = event.TotalFrameCount
+		-- local AnimPlayer = event.AnimPlayer
+		---------------------------------------------------------
+		if self.curState == "attack" then
+			self:SetAnimationState("stand")
+			self.Entity.SpriteRendererComponent.PlayRate = 1
+		end
 	end
 
 end

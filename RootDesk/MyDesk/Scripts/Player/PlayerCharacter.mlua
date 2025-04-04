@@ -1,0 +1,36 @@
+@Component
+script PlayerCharacter extends Component
+
+	@Sync
+	property string skill1 = "model://02330bcd-8b7c-4146-8d26-89f5e7aa953c"
+
+	method void SetSkill()
+		
+	end
+
+	method void UseSkill(string skillID)
+		
+	end
+
+	@EventSender("Service", "InputService")
+	handler HandleKeyDownEvent(KeyDownEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: InputService
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local key = event.key
+		---------------------------------------------------------
+		if event.key == KeyboardKey.LeftControl then
+			local skill1 = _SpawnService:SpawnByModelId(self.skill1,
+			"skill1",
+			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+			self.Entity)
+			
+			skill1.SkillParent:UseSkill(self.Entity, nil)
+			
+		end
+	end
+
+end

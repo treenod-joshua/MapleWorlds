@@ -511,6 +511,12 @@
           "@components": [
             {
               "@type": "MOD.Core.BackgroundComponent",
+              "SolidColor": {
+                "r": 0.5019608,
+                "g": 0.5019608,
+                "b": 0.5019608,
+                "a": 0.7058824
+              },
               "TemplateRUID": "65c4167ea7484196b890022354e5a4a4",
               "Type": 1,
               "Enable": true
@@ -1308,7 +1314,7 @@
           "name": "MyMonster",
           "path": "/maps/GameScene/MyMonsterList/MyMonster",
           "nameEditable": true,
-          "enable": false,
+          "enable": true,
           "visible": true,
           "displayOrder": 0,
           "pathConstraints": "////",
@@ -1452,7 +1458,7 @@
           "name": "MyMonster2",
           "path": "/maps/GameScene/MyMonsterList/MyMonster2",
           "nameEditable": true,
-          "enable": false,
+          "enable": true,
           "visible": true,
           "displayOrder": 1,
           "pathConstraints": "////",
@@ -1554,7 +1560,7 @@
       {
         "id": "f85536af-76c0-4b5c-8ce8-4ab3fb1d1922",
         "path": "/maps/GameScene/MyMonsterList/MyMonster3",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.StateAnimationComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.MovementComponent,MOD.Core.AIWanderComponent,MOD.Core.StateComponent,MOD.Core.HitComponent,MOD.Core.DamageSkinSpawnerComponent,script.Unit,MOD.Core.TagComponent,MOD.Core.AttackComponent",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.StateAnimationComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.MovementComponent,MOD.Core.AIWanderComponent,MOD.Core.StateComponent,MOD.Core.HitComponent,MOD.Core.DamageSkinSpawnerComponent,script.Unit,MOD.Core.AttackComponent",
         "jsonString": {
           "name": "MyMonster3",
           "path": "/maps/GameScene/MyMonsterList/MyMonster3",
@@ -1574,7 +1580,7 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": -1.84509611,
+                "x": -1.28369808,
                 "y": -2.27500033,
                 "z": 1000.0
               },
@@ -1660,14 +1666,7 @@
               "@type": "script.Unit",
               "Enable": true,
               "damage": 25.0,
-              "attackSpeed": 5.0
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "MyMonster"
-              ],
-              "Enable": true
+              "attackSpeed": 1.0
             },
             {
               "@type": "MOD.Core.AttackComponent",
@@ -1821,6 +1820,24 @@
               "Enable": true
             }
           ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "fca8fb87-756a-4d19-9aa6-44cd2fb30dcc",
+        "path": "/maps/GameScene/SkillParent",
+        "componentNames": "",
+        "jsonString": {
+          "name": "SkillParent",
+          "path": "/maps/GameScene/SkillParent",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 7,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [],
           "@version": 1
         }
       }

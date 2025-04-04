@@ -1,0 +1,18 @@
+@Logic
+script ePassiveType extends Logic
+
+	property number None = 0
+
+	property number OnAttack = 1
+
+	property number OnHit = 2
+
+	property number OnKill = 3
+
+	property number OnStart = 4
+
+	property number OnDie = 5
+
+	property number Always = 6
+
+end
