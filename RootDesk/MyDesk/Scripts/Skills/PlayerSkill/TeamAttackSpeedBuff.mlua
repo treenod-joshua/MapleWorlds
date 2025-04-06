@@ -31,7 +31,7 @@ script TeamAttackSpeedBuff extends SkillParent
 		for index in ipairs(myMonsters) do
 			local monster = myMonsters[index]
 			
-			if monster.Enable then
+			if monster.Enable and monster.Unit ~= nil then
 				myMonsters[index].Unit:GetBuff(_eBuffType.AttackSpeedBuff, self.skillAmount, self.skillTime)
 			end
 		end

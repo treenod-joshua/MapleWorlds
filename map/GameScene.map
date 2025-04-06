@@ -1872,107 +1872,6 @@
         }
       },
       {
-        "id": "e062415b-bf21-4731-94cf-b8fd2f48ca74",
-        "path": "/maps/GameScene/MyMonsterList/MyMonster",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.StateAnimationComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.MovementComponent,MOD.Core.AIChaseComponent,MOD.Core.StateComponent,MOD.Core.HitComponent,MOD.Core.DamageSkinSpawnerComponent,MOD.Core.TagComponent,script.Unit,MOD.Core.TriggerComponent,MOD.Core.TweenLineComponent",
-        "jsonString": {
-          "name": "MyMonster",
-          "path": "/maps/GameScene/MyMonsterList/MyMonster",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 0,
-          "pathConstraints": "////",
-          "revision": 3,
-          "origin": {
-            "type": "Model",
-            "entry_id": "3b308c48-d7a0-420c-99bf-502e034642ad",
-            "sub_entity_id": null
-          },
-          "modelId": "3b308c48-d7a0-420c-99bf-502e034642ad",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": -3.22630787,
-                "y": -2.27500033,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.StateAnimationComponent",
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "RenderSetting": 1,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.RigidbodyComponent",
-              "MoveVelocity": {
-                "x": 0.0,
-                "y": 0.0
-              },
-              "RealMoveVelocity": {
-                "x": 0.0,
-                "y": 0.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.MovementComponent",
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.AIChaseComponent",
-              "IsLegacy": false,
-              "Enable": false
-            },
-            {
-              "@type": "MOD.Core.StateComponent",
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.HitComponent",
-              "IsLegacy": false,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.DamageSkinSpawnerComponent",
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Enable": true
-            },
-            {
-              "@type": "script.Unit",
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TriggerComponent",
-              "IsLegacy": false,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TweenLineComponent",
-              "IsOriginInited": false,
-              "Enable": true
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
         "id": "a8bcaf66-ad22-436c-a292-a39a6c2756d3",
         "path": "/maps/GameScene/MyMonsterList/MyMonster2",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.StateComponent,MOD.Core.ChatBalloonComponent,MOD.Core.StateAnimationComponent,MOD.Core.NameTagComponent,script.Unit,MOD.Core.TagComponent",
@@ -1980,9 +1879,9 @@
           "name": "MyMonster2",
           "path": "/maps/GameScene/MyMonsterList/MyMonster2",
           "nameEditable": true,
-          "enable": true,
+          "enable": false,
           "visible": true,
-          "displayOrder": 1,
+          "displayOrder": 0,
           "pathConstraints": "////",
           "revision": 1,
           "origin": {
@@ -2087,9 +1986,9 @@
           "name": "MyMonster3",
           "path": "/maps/GameScene/MyMonsterList/MyMonster3",
           "nameEditable": true,
-          "enable": true,
+          "enable": false,
           "visible": true,
-          "displayOrder": 2,
+          "displayOrder": 1,
           "pathConstraints": "////",
           "revision": 1,
           "origin": {
@@ -2208,7 +2107,7 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "displayOrder": 3,
+          "displayOrder": 2,
           "pathConstraints": "////",
           "revision": 1,
           "modelId": null,
@@ -2284,7 +2183,7 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 7.55219,
+                "x": 0.5869398,
                 "y": -2.27500033,
                 "z": 999.999
               },

@@ -3,7 +3,6 @@ script UnitService extends Logic
 
 	property table UnitTable = {}
 
-	@ExecSpace("ServerOnly")
 	method void OnBeginPlay()
 		local dataSet = _DataService:GetTable("Unit")    
 		for index = 1, dataSet:GetRowCount() do
@@ -12,15 +11,15 @@ script UnitService extends Logic
 			item['id'] = tostring(dataSet:GetCell(index, 'id'))
 			item['skillID'] = tonumber(dataSet:GetCell(index, 'skillID'))
 			item['passiveSkillID'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
-			item['moveSpeed'] = tonumber(dataSet:GetCell(index, 'id'))
-			item['hp'] = tonumber(dataSet:GetCell(index, 'skillID'))
-			item['damage'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
-			item['attackRange'] = tonumber(dataSet:GetCell(index, 'id'))
-			item['attackSpeed'] = tonumber(dataSet:GetCell(index, 'skillID'))
-			item['projectileSpeed'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
-			item['attackTiming'] = tonumber(dataSet:GetCell(index, 'id'))
-			item['maxMp'] = tonumber(dataSet:GetCell(index, 'skillID'))
-			item['startMp'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
+			item['moveSpeed'] = tonumber(dataSet:GetCell(index, 'moveSpeed'))
+			item['hp'] = tonumber(dataSet:GetCell(index, 'hp'))
+			item['damage'] = tonumber(dataSet:GetCell(index, 'damage'))
+			item['attackRange'] = tonumber(dataSet:GetCell(index, 'attackRange'))
+			item['attackSpeed'] = tonumber(dataSet:GetCell(index, 'attackSpeed'))
+			item['projectileSpeed'] = tonumber(dataSet:GetCell(index, 'projectileSpeed'))
+			item['attackTiming'] = tonumber(dataSet:GetCell(index, 'attackTiming'))
+			item['maxMp'] = tonumber(dataSet:GetCell(index, 'maxMp'))
+			item['startMp'] = tonumber(dataSet:GetCell(index, 'startMp'))
 			item['summonCost'] = tonumber(dataSet:GetCell(index, 'summonCost'))
 			item['summonDelay'] = tonumber(dataSet:GetCell(index, 'summonDelay'))
 			
@@ -28,6 +27,7 @@ script UnitService extends Logic
 		end
 	end
 
+	@ExecSpace("Server")
 	method table GetUnitByID(string id)
 		return self.UnitTable[id]
 	end

@@ -11,7 +11,16 @@ script Unit extends Component
 	property number moveSpeed = 1
 
 	@Sync
+	property number maxHP = 0
+
+	@Sync
 	property number hp = 100
+
+	@Sync
+	property number maxMP = 0
+
+	@Sync
+	property number mp = 0
 
 	@Sync
 	property number damage = 10
@@ -46,6 +55,29 @@ script Unit extends Component
 	property Vector2 imageSize = Vector2(0,0)
 
 	method void OnBeginPlay()
+		
+	end
+
+	method void Spawn(table unitData)
+		self.moveSpeed = unitData["moveSpeed"]
+		self.hp = unitData["hp"]
+		self.maxHP = unitData["hp"]
+		self.damage = unitData["damage"]
+		self.attackRange = unitData["attackRange"]
+		self.attackSpeed = unitData["attackSpeed"]
+		self.originAttackSpeed = unitData["attackSpeed"]
+		self.projectileSpeed = unitData["projectileSpeed"]
+		self.attackTiming = unitData["attackTiming"]
+		self.maxMP = unitData["maxMp"]
+		self.mp = unitData["startMp"]
+		self.damage = unitData["damage"]
+		
+		self:InitTagData()
+		self:InitAnimData()
+		self:InitData()
+	end
+
+	method void InitTagData()
 		self.Entity:AddComponent(TagComponent)
 		self.Entity.TagComponent:AddTag("MyMonster")
 		
@@ -62,19 +94,12 @@ script Unit extends Component
 		else
 			self.Entity.SpriteRendererComponent.FlipX = true
 		end
-		
-		self:InitAnimData()
-		self:InitData()
-	end
-
-	method void Spawn(table unitData)
-		self.moveSpeed = unitData["unitSpeed"]
-		log("moveSpeed : "..self.moveSpeed)
 	end
 
 	method void InitAnimData()
 		self.Entity.StateComponent:AddState("attack", Attack)
 		self.Entity.StateComponent:AddState("stand", Stand)
+		self.Entity.StateComponent:AddState("move", Move)
 		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
 			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
@@ -211,7 +236,7 @@ script Unit extends Component
 			local attackFunction = function() 
 				self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
 				
-				if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+				if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
 					self.passiveSkill.PassiveSkillParent:OnAttack()
 				end
 			end
@@ -240,7 +265,7 @@ script Unit extends Component
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self._T.projectileParent)
 		
-		if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
 			self.passiveSkill.PassiveSkillParent:OnAttack()
 		end
 		
@@ -282,7 +307,6 @@ script Unit extends Component
 			return
 		end
 		
-		log(state.." dd "..self.curState)
 		self:SetAnimationState(state)
 	end
 
