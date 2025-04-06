@@ -1,0 +1,26 @@
+@Logic
+script SpawnManager extends Logic
+
+	@EventSender("Service", "InputService")
+	handler HandleKeyDownEvent(KeyDownEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: InputService
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local key = event.key
+		---------------------------------------------------------
+		if event.key == KeyboardKey.Space then
+			local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
+			local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList/MySpawnPoint")
+			local spawnEntity = _SpawnService:SpawnByModelId("model://3b308c48-d7a0-420c-99bf-502e034642ad", "Pig", spawnPos.TransformComponent.Position, spawnParent)
+			
+			local data = _UnitService:GetUnitByID("model://3b308c48-d7a0-420c-99bf-502e034642ad")
+			
+			spawnEntity.Unit:Spawn(data)
+		end
+		
+	end
+
+end

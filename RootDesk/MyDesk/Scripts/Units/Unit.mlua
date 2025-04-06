@@ -67,6 +67,11 @@ script Unit extends Component
 		self:InitData()
 	end
 
+	method void Spawn(table unitData)
+		self.moveSpeed = unitData["unitSpeed"]
+		log("moveSpeed : "..self.moveSpeed)
+	end
+
 	method void InitAnimData()
 		self.Entity.StateComponent:AddState("attack", Attack)
 		self.Entity.StateComponent:AddState("stand", Stand)
@@ -88,7 +93,7 @@ script Unit extends Component
 		    self.imageSize= Vector2(firstFrameSprite.Width / pixelPerUnit, firstFrameSprite.Height / pixelPerUnit)
 		end)
 		
-		if self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
+		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
 			self.passiveSkill.PassiveSkillParent:OnStart()
 		end
 	end

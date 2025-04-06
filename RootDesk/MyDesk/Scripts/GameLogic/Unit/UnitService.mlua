@@ -9,7 +9,7 @@ script UnitService extends Logic
 		for index = 1, dataSet:GetRowCount() do
 		    local item = {}
 			
-			item['id'] = tonumber(dataSet:GetCell(index, 'id'))
+			item['id'] = tostring(dataSet:GetCell(index, 'id'))
 			item['skillID'] = tonumber(dataSet:GetCell(index, 'skillID'))
 			item['passiveSkillID'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
 			item['moveSpeed'] = tonumber(dataSet:GetCell(index, 'id'))
@@ -28,7 +28,7 @@ script UnitService extends Logic
 		end
 	end
 
-	method table GetUnitByID(integer id)
+	method table GetUnitByID(string id)
 		return self.UnitTable[id]
 	end
 
