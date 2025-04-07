@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "directory://9ef6d2b24a4c4a8faed55d4cb493c33d",
+  "ContentType": "x-mod/directory",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.23.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "entry_id": "directory://9ef6d2b24a4c4a8faed55d4cb493c33d",
+      "name": "UnitSkill",
+      "lock": false,
+      "folding": false,
+      "nameEditable": true
+    }
+  }
+}
