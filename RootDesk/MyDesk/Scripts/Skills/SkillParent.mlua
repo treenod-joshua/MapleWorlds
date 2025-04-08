@@ -22,7 +22,10 @@ script SkillParent extends Component
 	method void InitializeSkill(Entity caster, Entity target, Vector2 skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
 		self.caster = caster
 		self.target = target
-		
+		self.skillArea = skillArea
+		self.skillAmount = skillAmount
+		self.skillProjectileSpeed = skillProjectileSpeed
+		self.skillTime = skillTime
 	end
 
 	method void UseSkill(Entity caster, Entity target, Vector2 skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
@@ -37,7 +40,18 @@ script SkillParent extends Component
 	end
 
 	method void DestroySkill()
-		self.Entity:Destroy(3)
+		self.Entity:Destroy(3 + self.skillTime)
+	end
+
+	method number IsTargetOnRight(Entity targetEntity)
+		local myX = self.Entity.TransformComponent.Position.x
+		local targetX = targetEntity.TransformComponent.Position.x
+		
+		if targetX > myX then
+		    return 1 -- 오른쪽에 있음
+		else
+		    return 0 -- 왼쪽이거나 같은 위치
+		end
 	end
 
 end

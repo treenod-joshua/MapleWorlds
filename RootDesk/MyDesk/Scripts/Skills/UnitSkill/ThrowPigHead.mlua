@@ -1,4 +1,29 @@
 @Component
-script ThrowPigHead extends Component
+script ThrowPigHead extends SkillParent
+
+	property table spawnedMissiles = {}
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		local basePos = self.Entity.TransformComponent.Position
+		local offset = { Vector3(-0.5, 2, 0), Vector3(0, 2, 0), Vector3(0.5, 2, 0) }
+		
+		for i = 1, 3 do
+		    local pos = basePos + offset[i]
+			local missile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9", "pigHead", pos, self.Entity)
+		    table.insert(self.spawnedMissiles, missile)
+		end
+		
+		
+		local attackFunction = function() 
+			for i, missile in ipairs(self.spawnedMissiles) do
+		        missile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", self:IsTargetOnRight(self.target), self.skillProjectileSpeed, self.target, false, self.skillAmount)
+		    end
+		end
+		
+		_TimerService:SetTimerOnce(attackFunction, 2.0)
+	end
 
 end
