@@ -2,11 +2,11 @@
 script SpawnManager extends Logic
 
 	@ExecSpace("Server")
-	method void Spawn()
+	method void Spawn(string modelID)
 		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
 		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList/MySpawnPoint")
-		local spawnEntity = _SpawnService:SpawnByModelId("model://3b308c48-d7a0-420c-99bf-502e034642ad", "Pig", spawnPos.TransformComponent.Position, spawnParent)
-		local data = _UnitService:GetUnitByID("model://3b308c48-d7a0-420c-99bf-502e034642ad")
+		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
+		local data = _UnitService:GetUnitByID(modelID)
 			
 		spawnEntity.Unit:Spawn(data)
 	end
@@ -21,8 +21,12 @@ script SpawnManager extends Logic
 		-- Parameters
 		-- local key = event.key
 		---------------------------------------------------------
-		if event.key == KeyboardKey.Space then
-			self:Spawn()
+		if event.key == KeyboardKey.A then
+			self:Spawn("model://3b308c48-d7a0-420c-99bf-502e034642ad")
+		elseif event.key == KeyboardKey.B then
+			self:Spawn("model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93")
+		elseif event.key == KeyboardKey.C then
+			self:Spawn("model://586c7714-0360-4f9d-b450-3d305e328c31")
 		end
 		
 	end
