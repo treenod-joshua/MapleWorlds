@@ -28,7 +28,7 @@ script PlayerCharacter extends Component
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self.Entity)
 			
-			skill1.SkillParent:UseSkill(self.Entity, nil)
+			skill1.SkillParent:UseSkill(self.Entity, nil, nil, 1, nil, 3)
 			
 		end
 	end

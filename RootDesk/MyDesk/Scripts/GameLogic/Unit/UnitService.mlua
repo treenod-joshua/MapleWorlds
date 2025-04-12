@@ -9,7 +9,7 @@ script UnitService extends Logic
 		    local item = {}
 			
 			item['id'] = tostring(dataSet:GetCell(index, 'id'))
-			item['skillID'] = tonumber(dataSet:GetCell(index, 'skillID'))
+			item['skillID'] = tostring(dataSet:GetCell(index, 'skillID'))
 			item['passiveSkillID'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
 			item['moveSpeed'] = tonumber(dataSet:GetCell(index, 'moveSpeed'))
 			item['hp'] = tonumber(dataSet:GetCell(index, 'hp'))

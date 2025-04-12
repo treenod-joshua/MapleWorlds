@@ -9,7 +9,7 @@ script ThrowPigHead extends SkillParent
 		
 		local basePos = self.Entity.TransformComponent.Position
 		local offset = { Vector3(-0.5, 2, 0), Vector3(0, 2, 0), Vector3(0.5, 2, 0) }
-		
+		log("ㅇㅇㅇ")
 		for i = 1, 3 do
 		    local pos = basePos + offset[i]
 			local missile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9", "pigHead", pos, self.Entity)

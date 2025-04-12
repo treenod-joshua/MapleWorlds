@@ -31,6 +31,7 @@ script Unit extends Component
 	@Sync
 	property number attackSpeed = 1.5
 
+	@Sync
 	property number originAttackSpeed = 0
 
 	@Sync
@@ -54,10 +55,16 @@ script Unit extends Component
 
 	property Vector2 imageSize = Vector2(0,0)
 
+	@Sync
+	property Entity activeSkill = nil
+
+	property table skillData = {}
+
 	method void OnBeginPlay()
 		
 	end
 
+	@ExecSpace("Server")
 	method void Spawn(table unitData)
 		self.moveSpeed = unitData["moveSpeed"]
 		self.hp = unitData["hp"]
@@ -72,9 +79,15 @@ script Unit extends Component
 		self.mp = unitData["startMp"]
 		self.damage = unitData["damage"]
 		
+		local skillID = unitData["skillID"]
+		local activeSkill = _EntityService:GetEntity("skillID")
+		self.skillData = _SkillService:GetSkillById(skillID)
+		self.activeSkill = _SpawnService:SpawnByModelId(skillID, self.skillData["desc"], self.Entity.TransformComponent.Position, self.Entity)
+		
 		self:InitTagData()
 		self:InitAnimData()
 		self:InitData()
+		self:InitSkillData()
 	end
 
 	method void InitTagData()
@@ -108,8 +121,6 @@ script Unit extends Component
 	end
 
 	method void InitData()
-		self.originAttackSpeed = self.attackSpeed
-		
 		_ResourceService:PreloadAsync({self.Entity.SpriteRendererComponent.SpriteRUID},
 		function() 
 			local clip = _ResourceService:LoadAnimationClipAndWait(self.Entity.SpriteRendererComponent.SpriteRUID)
@@ -121,6 +132,10 @@ script Unit extends Component
 		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
 			self.passiveSkill.PassiveSkillParent:OnStart()
 		end
+	end
+
+	method void InitSkillData()
+		-- _EntityService:GetEntity
 	end
 
 	@ExecSpace("ClientOnly")
@@ -222,6 +237,9 @@ script Unit extends Component
 			return
 		end
 		
+		-- 마나 충전
+		self:IncreaseMp()
+		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
 			self:PlayTween()
 			self:Attack_Damage()
@@ -255,6 +273,9 @@ script Unit extends Component
 		if self.curState ~= "attack" then
 			return
 		end
+		
+		-- 마나 충전
+		self:IncreaseMp()
 		
 		if self._T.projectileParent == nil then
 			self._T.projectileParent = _EntityService:GetEntityByPath("/maps/GameScene/ProjectileParent")
@@ -319,7 +340,7 @@ script Unit extends Component
 	method void GetBuff(number buffType, number buffAmount, number buffTime)
 		if buffType == _eBuffType.AttackSpeedBuff then
 			self:PlayEffect("7c3028f7053541a3869a94d3fbe9088b", Vector3(0, self.imageSize.y,0))
-			if self.attackSpeed - buffAmount <= 0 then
+			if self.attackSpeed - buffAmount <= 0.5 then
 				self.attackSpeed = 0.5
 			else
 				self.attackSpeed -= buffAmount
@@ -354,6 +375,25 @@ script Unit extends Component
 		self.curState = "die"
 	end
 
+	method void IncreaseMp()
+		if self.curState == "useSkill" then
+			return
+		end
+		
+		self.mp += 5
+		
+		if self.mp < self.maxMP then
+			return
+		end
+		
+		self.curState = "useSkill"
+	end
+
+	method void UseSkill()
+		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, self.skillData['skillArea'], self.skillData['skillAmount'], 
+			self.skillData['skillProjectileSpeed'], self.skillData['skillTime'])
+	end
+
 	@EventSender("Self")
 	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
 		--------------- Native Event Sender Info ----------------
@@ -373,6 +413,21 @@ script Unit extends Component
 		if self.curState == "attack" then
 			self:SetAnimationState("stand")
 			self.Entity.SpriteRendererComponent.PlayRate = 1
+		end
+	end
+
+	@EventSender("Service", "InputService")
+	handler HandleKeyDownEvent(KeyDownEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: InputService
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local key = event.key
+		---------------------------------------------------------
+		if event.key == KeyboardKey.Space then
+			self:UseSkill()
 		end
 	end
 

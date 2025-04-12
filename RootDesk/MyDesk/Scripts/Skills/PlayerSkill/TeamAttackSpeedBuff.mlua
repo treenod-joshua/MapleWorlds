@@ -11,7 +11,7 @@ script TeamAttackSpeedBuff extends SkillParent
 	property Vector2 skillArea = Vector2(0,0)
 
 	@Sync
-	property number skillAmount = 0
+	property number skillAmount = 1
 
 	@Sync
 	property number skillProjectileSpeed = 0
