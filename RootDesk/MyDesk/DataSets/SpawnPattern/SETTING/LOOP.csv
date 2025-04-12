@@ -1,2 +1,3 @@
-﻿id,start,end,cooltime
-1,1,0,4
+﻿id,start,end,delay
+1,1,7200,4
+2,30,31,2

@@ -155,6 +155,29 @@
           ],
           "@version": 1
         }
+      },
+      {
+        "id": "da959be6-95b6-417e-a4bc-72aece1c0bcf",
+        "path": "/maps/map01/TestSummon",
+        "componentNames": "script.MonsterSpawnService",
+        "jsonString": {
+          "name": "TestSummon",
+          "path": "/maps/map01/TestSummon",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 3,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "script.MonsterSpawnService",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
       }
     ]
   }

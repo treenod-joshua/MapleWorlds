@@ -1,0 +1,113 @@
+@Component
+script MonsterSpawnService extends Component
+
+	property table loopGroup = {}
+
+	method void OnDamage()
+		-- EVENT DAMAGED 시 호출되는 함수
+	end
+
+	method void SummonGroupCoroutine(number group)
+		local group_data = _groupRepo:GetGroupById(group)
+		local id = #self.loopGroup + 1
+		self.loopGroup[id] = {}
+		for i, g in ipairs(group_data) do
+			local value = {
+				unit = g.unit,
+				delayTs = g.delayTs
+			}
+			
+			table.insert(self.loopGroup[id], value)
+		end
+		
+		local summon
+		summon = function() 
+				if #self.loopGroup[id] == 0 then
+					return
+				end
+				
+				local value = self.loopGroup[id]
+				
+				log('summon ', value.unit)
+				
+				table.remove(self.loopGroup, 1)
+				_TimerService:SetTimerOnce(
+					summon,
+					value.dealyTs
+				)
+			end
+		
+		_TimerService:SetTimerOnce(
+			summon,
+			0
+		)
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		local patterns = _patternRepo:GetPatternByStage(1)
+		
+		for i, pattern in ipairs(patterns) do
+			if pattern.type == 'LOOP' then
+				local setting = _settingRepo:GetSettingByTypeAndId('LOOP', pattern.setting)
+				
+				local summonGroupCoroutine
+				summonGroupCoroutine = function (group) 
+					local group_data = _groupRepo:GetGroupById(group)
+					local id = #self.loopGroup + 1
+					self.loopGroup[id] = {}
+					for i, g in ipairs(group_data) do
+						local value = {}
+						value['unit'] = g.unit
+						value['delayTs'] = g.delayTs
+						
+						table.insert(self.loopGroup[id], value)
+					end
+				
+					local summon
+					summon = function() 
+							if self.loopGroup[id] == nil then
+								return
+							end
+						
+							if #self.loopGroup[id] == 0 then
+								return
+							end
+							local value = self.loopGroup[id][1]
+							
+							log('summon ', value.unit, 'group', id)
+							log('next summon delay', value.delayTs)
+							
+							table.remove(self.loopGroup[id], 1)
+						
+							_TimerService:SetTimerOnce(
+								summon,
+								value.delayTs
+							)
+						end
+				
+					_TimerService:SetTimerOnce(
+						summon,
+						0
+					)
+				end
+				
+				local id = _TimerService:SetTimerRepeat(
+					function() 
+						summonGroupCoroutine(pattern.group)
+					end, 
+					setting.delayTs, 
+					setting.startTs
+				)
+				_TimerService:SetTimerOnce(
+					function() 
+						_TimerService:ClearTimer(id) 
+					end,
+					setting.endTs
+				)
+			end
+		end
+		
+	end
+
+end

@@ -1,0 +1,39 @@
+@Logic
+script settingRepo extends Logic
+
+	property table settingTable = {}
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		self.settingTable['LOOP'] = {}
+		local loopSet = _DataService:GetTable("LOOP")    
+		for index = 1, loopSet:GetRowCount() do
+		    local item = {
+				id = tonumber(loopSet:GetCell(index, 'id')),
+				startTs = tonumber(loopSet:GetCell(index, 'start')),
+				endTs = tonumber(loopSet:GetCell(index, 'end')),
+				delayTs = tonumber(loopSet:GetCell(index, 'delay'))
+			}
+			
+			self.settingTable['LOOP'][item.id] = item
+		end
+		
+		self.settingTable['EVENT'] = {}
+		local eventSet = _DataService:GetTable("EVENT")    
+		for index = 1, eventSet:GetRowCount() do
+		    local item = {
+				id = tonumber(eventSet:GetCell(index, 'id')),
+				type = tostring(eventSet:GetCell(index, 'type')),
+				count = tonumber(eventSet:GetCell(index, 'count')),
+				delayTs = tonumber(eventSet:GetCell(index, 'delay')),
+			}
+			
+			self.settingTable['EVENT'][item.id] = item
+		end
+	end
+
+	method table GetSettingByTypeAndId(string type, integer id)
+		return self.settingTable[type][id]
+	end
+
+end
