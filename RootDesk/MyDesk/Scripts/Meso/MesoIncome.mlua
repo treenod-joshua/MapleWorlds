@@ -1,0 +1,53 @@
+@Component
+script MesoIncome extends Component
+
+	property number nextUpdateTs = 0
+
+	property table incomeData = {}
+
+	property MesoUI UIController = nil
+
+	property MesoWallet UserWallet = nil
+
+	property number incomeCooltime = 5
+
+	@Sync
+	property number currentTs = 0
+
+	method void OnBeginPlay()
+		
+		local dataSet = _DataService:GetTable("meso")
+		for i = 1, dataSet:GetRowCount() do
+			local item = {}
+			
+			item["id"] = tonumber(dataSet:GetCell(i,"id"))
+			item["init"] = tonumber(dataSet:GetCell(i,"init"))
+			item["income"] = tonumber(dataSet:GetCell(i,"income"))
+			
+			self.incomeData[item["id"]] = item
+		end        
+		
+		self.UIController:UpdateMesoIncome(self.incomeData[1]["income"])
+		
+		self.UserWallet:SetMeso(self.incomeData[1]["init"])
+		
+		self.nextUpdateTs = self.incomeCooltime
+		self.currentTs = 0
+		
+		
+	end
+
+	method void OnUpdate(number delta)
+		self.currentTs = self.currentTs + delta
+		if self.currentTs > self.nextUpdateTs then
+			self.nextUpdateTs = self.nextUpdateTs + self.incomeCooltime
+			
+			self:AddMeso()
+		end
+	end
+
+	method void AddMeso()
+		self.UserWallet:AddMeso(self.incomeData[1]["income"])
+	end
+
+end

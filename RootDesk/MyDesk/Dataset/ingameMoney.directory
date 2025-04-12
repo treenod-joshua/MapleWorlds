@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "directory://2d7c0329e5ca465fabe6539b18f594d3",
+  "ContentType": "x-mod/directory",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.23.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "entry_id": "directory://2d7c0329e5ca465fabe6539b18f594d3",
+      "name": "ingameMoney",
+      "lock": false,
+      "folding": false,
+      "nameEditable": true
+    }
+  }
+}
