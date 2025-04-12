@@ -35,4 +35,16 @@ script Tower extends Component
 		end
 	end
 
+	method void onHit(Entity attacker, number damage, boolean isCritical, number attackCount)
+		if self.hp <= 0 then
+			return
+		end
+		
+		self.Entity.HitComponent:OnHit(attacker, damage, isCritical, "", attackCount)
+		self.hp -= damage
+		
+		if self.hp <= 0 then
+		end
+	end
+
 end

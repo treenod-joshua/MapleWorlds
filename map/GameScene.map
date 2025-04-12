@@ -1777,7 +1777,7 @@
       {
         "id": "f5af730d-fbdb-40ee-adeb-57c1caeda316",
         "path": "/maps/GameScene/EnemyTower",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.Tower,MOD.Core.HitComponent",
         "jsonString": {
           "name": "EnemyTower",
           "path": "/maps/GameScene/EnemyTower",
@@ -1829,6 +1829,23 @@
               "Tags": [
                 "Enemy"
               ],
+              "Enable": true
+            },
+            {
+              "@type": "script.Tower",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.HitComponent",
+              "BoxSize": {
+                "x": 3.93,
+                "y": 6.36
+              },
+              "ColliderOffset": {
+                "x": 0.004999995,
+                "y": 0.0
+              },
+              "IsLegacy": false,
               "Enable": true
             }
           ],
@@ -2310,7 +2327,7 @@
       {
         "id": "8ed350f6-5d33-4488-8b83-92ccd146450b",
         "path": "/maps/GameScene/PlayerTower",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.Tower,MOD.Core.HitComponent",
         "jsonString": {
           "name": "PlayerTower",
           "path": "/maps/GameScene/PlayerTower",
@@ -2350,6 +2367,23 @@
             },
             {
               "@type": "MOD.Core.TagComponent",
+              "Enable": true
+            },
+            {
+              "@type": "script.Tower",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.HitComponent",
+              "BoxSize": {
+                "x": 3.25,
+                "y": 6.1
+              },
+              "ColliderOffset": {
+                "x": 0.004999995,
+                "y": 0.0
+              },
+              "IsLegacy": false,
               "Enable": true
             }
           ],
@@ -2501,6 +2535,7 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "OverrideSorting": false,
+              "Type": 3,
               "Enable": true
             }
           ],
