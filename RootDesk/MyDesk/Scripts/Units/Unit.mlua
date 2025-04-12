@@ -58,7 +58,7 @@ script Unit extends Component
 	@Sync
 	property Entity activeSkill = nil
 
-	property table skillData = {}
+	property any skillData = nil
 
 	method void OnBeginPlay()
 		

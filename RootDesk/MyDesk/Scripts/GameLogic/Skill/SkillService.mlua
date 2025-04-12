@@ -25,8 +25,17 @@ script SkillService extends Logic
 		return self.skillTable
 	end
 
-	method table GetSkillById(number id)
-		return self.skillTable[id]
+	method SkillData GetSkillById(number id)
+		local data = self.skillTable[id]
+		local returnData = SkillData()
+		
+		returnData.desc = data['desc']
+		returnData.skillArea = data['skillArea']
+		returnData.skillTime = data['skillTime']
+		returnData.skillProjectileSpeed = data['skillProjectileSpeed']
+		returnData.skillAttackTiming = data['skillAttackTiming']
+		
+		return returnData
 	end
 
 end
