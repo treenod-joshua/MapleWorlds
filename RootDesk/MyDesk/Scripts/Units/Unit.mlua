@@ -79,10 +79,10 @@ script Unit extends Component
 		self.mp = unitData["startMp"]
 		self.damage = unitData["damage"]
 		
-		local skillID = unitData["skillID"]
-		local activeSkill = _EntityService:GetEntity("skillID")
-		self.skillData = _SkillService:GetSkillById(skillID)
-		self.activeSkill = _SpawnService:SpawnByModelId(skillID, self.skillData["desc"], self.Entity.TransformComponent.Position, self.Entity)
+		--local skillID = unitData["skillID"]
+		--local activeSkill = _EntityService:GetEntity("skillID")
+		--self.skillData = _SkillService:GetSkillById(skillID)
+		--self.activeSkill = _SpawnService:SpawnByModelId(skillID, self.skillData["desc"], self.Entity.TransformComponent.Position, self.Entity)
 		
 		self:InitTagData()
 		self:InitAnimData()
@@ -389,6 +389,7 @@ script Unit extends Component
 		self.curState = "useSkill"
 	end
 
+	@ExecSpace("Client")
 	method void UseSkill()
 		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, self.skillData['skillArea'], self.skillData['skillAmount'], 
 			self.skillData['skillProjectileSpeed'], self.skillData['skillTime'])

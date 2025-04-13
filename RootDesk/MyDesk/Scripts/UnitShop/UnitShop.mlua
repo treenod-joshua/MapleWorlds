@@ -1,0 +1,26 @@
+@Component
+script UnitShop extends Component
+
+	@Sync
+	property SyncTable<Entity> shopItems
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		local shopItems = _EntityService:GetEntityByPath("/ui/UIGroup-test-ingame-money/UnitShop")
+		
+		for i = 1, 5 do
+			self.shopItems[i] = shopItems.Children[i]
+		end
+		
+		self:SetShop()
+	end
+
+	method void SetShop()
+		self.shopItems[1].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://3b308c48-d7a0-420c-99bf-502e034642ad"))
+		self.shopItems[2].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"))
+		self.shopItems[3].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://586c7714-0360-4f9d-b450-3d305e328c31"))
+		self.shopItems[4].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://3b308c48-d7a0-420c-99bf-502e034642ad"))
+		self.shopItems[5].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"))
+	end
+
+end

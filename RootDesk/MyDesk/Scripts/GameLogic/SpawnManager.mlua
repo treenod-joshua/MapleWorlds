@@ -6,7 +6,7 @@ script SpawnManager extends Logic
 		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
 		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList/MySpawnPoint")
 		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
-		local data = _UnitService:GetUnitByID(modelID)
+		local data = _UnitService:GetUnitByIDFromServer(modelID)
 			
 		spawnEntity.Unit:Spawn(data)
 	end
