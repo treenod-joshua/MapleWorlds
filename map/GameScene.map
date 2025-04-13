@@ -3553,11 +3553,11 @@
       },
       {
         "id": "03a1c87b-00aa-49d9-9d14-ada3697851e0",
-        "path": "/maps/GameScene/useWallet",
+        "path": "/maps/GameScene/userWallet",
         "componentNames": "script.MesoWallet",
         "jsonString": {
-          "name": "useWallet",
-          "path": "/maps/GameScene/useWallet",
+          "name": "userWallet",
+          "path": "/maps/GameScene/userWallet",
           "nameEditable": true,
           "enable": true,
           "visible": false,

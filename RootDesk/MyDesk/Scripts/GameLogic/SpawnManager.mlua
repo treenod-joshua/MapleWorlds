@@ -1,34 +1,23 @@
 @Logic
 script SpawnManager extends Logic
 
+	@Sync
+	property Entity userWallet = "03a1c87b-00aa-49d9-9d14-ada3697851e0"
+
 	@ExecSpace("Server")
-	method void Spawn(string modelID)
+	method void Spawn(string modelID, integer price)
+		if self.userWallet.MesoWallet:GetMeso() < price then
+			return
+		end
+		
 		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
 		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList/MySpawnPoint")
 		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
 		local data = _UnitService:GetUnitByIDFromServer(modelID)
 			
 		spawnEntity.Unit:Spawn(data)
-	end
-
-	@EventSender("Service", "InputService")
-	handler HandleKeyDownEvent(KeyDownEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: InputService
-		-- Space: Client
-		---------------------------------------------------------
 		
-		-- Parameters
-		-- local key = event.key
-		---------------------------------------------------------
-		if event.key == KeyboardKey.A then
-			self:Spawn("model://3b308c48-d7a0-420c-99bf-502e034642ad")
-		elseif event.key == KeyboardKey.B then
-			self:Spawn("model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93")
-		elseif event.key == KeyboardKey.C then
-			self:Spawn("model://586c7714-0360-4f9d-b450-3d305e328c31")
-		end
-		
+		self.userWallet.MesoWallet:UseMeso(price)
 	end
 
 end

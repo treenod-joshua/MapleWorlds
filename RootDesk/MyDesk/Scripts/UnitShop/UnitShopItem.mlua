@@ -54,7 +54,8 @@ script UnitShopItem extends Component
 		-- local Entity = event.Entity
 		---------------------------------------------------------
 		log(self.unitData['summonCost'])
-		_SpawnManager:Spawn(self.unitData['id'])
+		
+		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
 	end
 
 end

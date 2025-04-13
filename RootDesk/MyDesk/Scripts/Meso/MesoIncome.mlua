@@ -1,14 +1,18 @@
 @Component
 script MesoIncome extends Component
 
+	@Sync
 	property number nextUpdateTs = 0
 
 	property table incomeData = {}
 
+	@Sync
 	property MesoUI UIController = nil
 
+	@Sync
 	property MesoWallet UserWallet = nil
 
+	@Sync
 	property number incomeCooltime = 5
 
 	@Sync
@@ -37,6 +41,7 @@ script MesoIncome extends Component
 		
 	end
 
+	@ExecSpace("ServerOnly")
 	method void OnUpdate(number delta)
 		self.currentTs = self.currentTs + delta
 		if self.currentTs > self.nextUpdateTs then
@@ -46,6 +51,7 @@ script MesoIncome extends Component
 		end
 	end
 
+	@ExecSpace("Server")
 	method void AddMeso()
 		self.UserWallet:AddMeso(self.incomeData[1]["income"])
 	end
