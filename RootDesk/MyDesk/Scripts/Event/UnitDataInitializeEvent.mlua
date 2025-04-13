@@ -1,6 +1,0 @@
-@Event
-script UnitDataInitializeEvent extends EventType
-
-	property table unitData = {}
-
-end
