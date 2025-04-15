@@ -3,42 +3,82 @@ script MonsterSpawnService extends Component
 
 	property table loopGroup = {}
 
-	method void OnDamage()
-		-- EVENT DAMAGED 시 호출되는 함수
-	end
+	property table eventGroup = {}
 
-	method void SummonGroupCoroutine(number group)
-		local group_data = _groupRepo:GetGroupById(group)
-		local id = #self.loopGroup + 1
-		self.loopGroup[id] = {}
-		for i, g in ipairs(group_data) do
-			local value = {
-				unit = g.unit,
-				delayTs = g.delayTs
-			}
-			
-			table.insert(self.loopGroup[id], value)
+	property table timerIdList = {}
+
+	property number curTimeTs = 0
+
+	method integer GroupSummon(table group)
+		if group == nil then
+			return
 		end
 		
-		local summon
-		summon = function() 
-				if #self.loopGroup[id] == 0 then
-					return
-				end
+		if #group == 0 then
+			return
+		end
+		local value = group[1]
+		
+		log('summon ', value.unit)
+		log('next summon delay', value.delayTs)
+		
+		table.remove(group, 1)
+		
+		self.timerIdList[#self.timerIdList + 1] = _TimerService:SetTimerOnce(
+			function() self:GroupSummon(group) end,
+			value.delayTs
+		)
+	end
+
+	method void OnDamage()
+		-- EVENT DAMAGED 시 호출되는 함수
+		local damageList = self.eventGroup['DAMAGED']
+		
+		for i, g in ipairs(damageList) do
+			if g.count >= g.maxCount then
+				continue
+			end
+			
+			local delayEndTs = g.lastTs + g.delayTs
+			if self.curTimeTs < delayEndTs then
+				continue
+			end
+			
+			g.lastTs = self.curTimeTs
+			g.count = g.count + 1
+			
+			
+			local groupTable = {}
+			for i, g in ipairs(g.group) do
+				local value = {}
+				value['unit'] = g.unit
+				value['delayTs'] = g.delayTs
 				
-				local value = self.loopGroup[id]
-				
-				log('summon ', value.unit)
-				
-				table.remove(self.loopGroup, 1)
-				_TimerService:SetTimerOnce(
-					summon,
-					value.dealyTs
-				)
+				table.insert(groupTable, value)
 			end
 		
-		_TimerService:SetTimerOnce(
-			summon,
+			self.timerIdList[#self.timerIdList + 1] = _TimerService:SetTimerOnce(
+				function() self:GroupSummon(groupTable) end,
+				0
+			)
+		end
+	end
+
+	method void LoopGroupSummon(number group)
+		local group_data = _groupRepo:GetGroupById(group)
+		local groupTable = {}
+		for i, g in ipairs(group_data) do
+			local value = {}
+			value['unit'] = g.unit
+			value['delayTs'] = g.delayTs
+			
+			table.insert(groupTable, value)
+		end
+		
+		log('book summon group = ', group)
+		
+		self.timerIdList[#self.timerIdList + 1] = _TimerService:SetTimerOnce(
+			function() self:GroupSummon(groupTable) end,
 			0
 		)
 	end
@@ -46,68 +86,68 @@ script MonsterSpawnService extends Component
 	@ExecSpace("ServerOnly")
 	method void OnBeginPlay()
 		local patterns = _patternRepo:GetPatternByStage(1)
+		self.curTimeTs = 0
 		
 		for i, pattern in ipairs(patterns) do
 			if pattern.type == 'LOOP' then
 				local setting = _settingRepo:GetSettingByTypeAndId('LOOP', pattern.setting)
 				
-				local summonGroupCoroutine
-				summonGroupCoroutine = function (group) 
-					local group_data = _groupRepo:GetGroupById(group)
-					local id = #self.loopGroup + 1
-					self.loopGroup[id] = {}
-					for i, g in ipairs(group_data) do
-						local value = {}
-						value['unit'] = g.unit
-						value['delayTs'] = g.delayTs
-						
-						table.insert(self.loopGroup[id], value)
-					end
-				
-					local summon
-					summon = function() 
-							if self.loopGroup[id] == nil then
-								return
-							end
-						
-							if #self.loopGroup[id] == 0 then
-								return
-							end
-							local value = self.loopGroup[id][1]
-							
-							log('summon ', value.unit, 'group', id)
-							log('next summon delay', value.delayTs)
-							
-							table.remove(self.loopGroup[id], 1)
-						
-							_TimerService:SetTimerOnce(
-								summon,
-								value.delayTs
-							)
-						end
-				
-					_TimerService:SetTimerOnce(
-						summon,
-						0
-					)
-				end
-				
 				local id = _TimerService:SetTimerRepeat(
 					function() 
-						summonGroupCoroutine(pattern.group)
+						self:LoopGroupSummon(pattern.group)
 					end, 
 					setting.delayTs, 
 					setting.startTs
 				)
-				_TimerService:SetTimerOnce(
+				self.timerIdList[#self.timerIdList + 1] = id
+				self.timerIdList[#self.timerIdList + 1] = _TimerService:SetTimerOnce(
 					function() 
 						_TimerService:ClearTimer(id) 
 					end,
 					setting.endTs
 				)
 			end
+			
+			if pattern.type == 'EVENT' then
+				local setting = _settingRepo:GetSettingByTypeAndId('EVENT', pattern.setting)
+				local group_data = _groupRepo:GetGroupById(pattern.group)
+				
+				if self.eventGroup[setting.type] == nil then
+					self.eventGroup[setting.type] = {}
+				end
+				
+				local id = #self.eventGroup[setting.type] + 1
+				
+				local item = {}
+				item['count'] = 0
+				item['delayTs'] = setting.delayTs
+				item['maxCount'] = setting.count
+				item['lastTs'] = -1
+				item['group'] = {}
+				
+				self.eventGroup[setting.type][id] = item
+				
+				for i, g in ipairs(group_data) do
+					table.insert(self.eventGroup[setting.type][id].group, g)
+				end
+			end
 		end
 		
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnEndPlay()
+		for i, id in ipairs(self.timerIdList) do
+			_TimerService:ClearTimer(id)
+		end
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnUpdate(number delta)
+		self.curTimeTs = self.curTimeTs + delta
+		if self.curTimeTs > 3 then
+			self:OnDamage()
+		end
 	end
 
 end
