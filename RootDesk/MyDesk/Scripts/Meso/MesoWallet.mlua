@@ -2,7 +2,7 @@
 script MesoWallet extends Component
 
 	@Sync
-	property integer CurrentMeso = 0
+	property integer CurrentMeso = 20
 
 	@Sync
 	property MesoUI UIController = nil

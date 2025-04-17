@@ -58,14 +58,33 @@ script Unit extends Component
 	@Sync
 	property Entity activeSkill = nil
 
-	property any skillData = nil
+	@Sync
+	property string skillID = ""
+
+	@Sync
+	property string skillDesc = ""
+
+	@Sync
+	property number skillArea = 0
+
+	@Sync
+	property number skillAmount = 0
+
+	@Sync
+	property number skillProjectileSpeed = 0
+
+	@Sync
+	property number skillTime = 0
+
+	@Sync
+	property number skillAttackTiming = 0
 
 	method void OnBeginPlay()
 		
 	end
 
 	@ExecSpace("Server")
-	method void Spawn(table unitData)
+	method void Spawn(table unitData, table skillData)
 		self.moveSpeed = unitData["moveSpeed"]
 		self.hp = unitData["hp"]
 		self.maxHP = unitData["hp"]
@@ -79,10 +98,13 @@ script Unit extends Component
 		self.mp = unitData["startMp"]
 		self.damage = unitData["damage"]
 		
-		--local skillID = unitData["skillID"]
-		--local activeSkill = _EntityService:GetEntity("skillID")
-		--self.skillData = _SkillService:GetSkillById(skillID)
-		--self.activeSkill = _SpawnService:SpawnByModelId(skillID, self.skillData["desc"], self.Entity.TransformComponent.Position, self.Entity)
+		self.skillID = skillData['id']
+		self.skillDesc = skillData['desc']
+		self.skillArea = skillData['skillArea']
+		self.skillAmount = skillData['skillAmount']
+		self.skillProjectileSpeed = skillData['skillProjectileSpeed'] 
+		self.skillTime = skillData['skillTime']
+		self.skillAttackTiming = skillData['skillAttackTiming']
 		
 		self:InitTagData()
 		self:InitAnimData()
@@ -134,8 +156,9 @@ script Unit extends Component
 		end
 	end
 
+	@ExecSpace("Server")
 	method void InitSkillData()
-		-- _EntityService:GetEntity
+		self.activeSkill = _SpawnService:SpawnByModelId(self.skillID, self.skillDesc, self.Entity.TransformComponent.Position, self.Entity)
 	end
 
 	@ExecSpace("ClientOnly")
@@ -147,6 +170,8 @@ script Unit extends Component
 			self:FindTarget()
 		elseif self.curState == "attack" then
 			self:Attack(delta)
+		elseif self.curState == "useSkill" then
+			self:UseSkill()
 		end
 	end
 
@@ -389,10 +414,17 @@ script Unit extends Component
 		self.curState = "useSkill"
 	end
 
-	@ExecSpace("Client")
 	method void UseSkill()
-		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, self.skillData['skillArea'], self.skillData['skillAmount'], 
-			self.skillData['skillProjectileSpeed'], self.skillData['skillTime'])
+		if self.mp == 0 or self.curState ~= "useSkill" then
+			return
+		end
+		
+		self.curState = "attack"
+		self.mp = 0
+		
+		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, Vector2(self.skillArea, self.skillArea), self.skillAmount, 
+			self.skillProjectileSpeed, self.skillTime)
+		log("스킬 사용")
 	end
 
 	@EventSender("Self")

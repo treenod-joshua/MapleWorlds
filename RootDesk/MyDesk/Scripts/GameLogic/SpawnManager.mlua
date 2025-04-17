@@ -13,9 +13,10 @@ script SpawnManager extends Logic
 		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
 		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList/MySpawnPoint")
 		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
-		local data = _UnitService:GetUnitByIDFromServer(modelID)
+		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
+		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
 			
-		spawnEntity.Unit:Spawn(data)
+		spawnEntity.Unit:Spawn(unitData, skillData)
 		
 		self.userWallet.MesoWallet:UseMeso(price)
 	end

@@ -3569,6 +3569,7 @@
             {
               "@type": "script.MesoWallet",
               "Enable": true,
+              "CurrentMeso": 20,
               "UIController": {
                 "IsRelative": false,
                 "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
