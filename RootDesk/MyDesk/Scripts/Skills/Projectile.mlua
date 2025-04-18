@@ -16,11 +16,6 @@ script Projectile extends Component
 	@Sync
 	property number damage = 0
 
-	@ExecSpace("ClientOnly")
-	method void OnUpdate(number delta)
-		
-	end
-
 	@ExecSpace("Client")
 	method void Init(string animId, integer direction, number speed, Entity target, boolean isRotate, number damage)
 		if 0 < direction then -- 오른쪽을 향함
@@ -40,7 +35,10 @@ script Projectile extends Component
 			return
 		end
 		
-		self:RotateToTarget()
+		if isRotate then
+			self:RotateToTarget()
+		end
+		
 		self:MoveToTarget()
 	end
 

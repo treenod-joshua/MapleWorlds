@@ -79,6 +79,9 @@ script Unit extends Component
 	@Sync
 	property number skillAttackTiming = 0
 
+	@Sync
+	property boolean isUsingSkill = false
+
 	method void OnBeginPlay()
 		
 	end
@@ -158,7 +161,7 @@ script Unit extends Component
 
 	@ExecSpace("Server")
 	method void InitSkillData()
-		self.activeSkill = _SpawnService:SpawnByModelId(self.skillID, self.skillDesc, self.Entity.TransformComponent.Position, self.Entity)
+		self.activeSkill = _SpawnService:SpawnByModelId(self.skillID, self.skillDesc, Vector3.zero, self.Entity)
 	end
 
 	@ExecSpace("ClientOnly")
@@ -415,12 +418,13 @@ script Unit extends Component
 	end
 
 	method void UseSkill()
-		if self.mp == 0 or self.curState ~= "useSkill" then
+		if self.mp == 0 or self.curState ~= "useSkill" or self.isUsingSkill then
 			return
 		end
 		
 		self.curState = "attack"
 		self.mp = 0
+		self.isUsingSkill = true
 		
 		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, Vector2(self.skillArea, self.skillArea), self.skillAmount, 
 			self.skillProjectileSpeed, self.skillTime)
