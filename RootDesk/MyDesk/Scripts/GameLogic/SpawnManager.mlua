@@ -21,4 +21,14 @@ script SpawnManager extends Logic
 		self.userWallet.MesoWallet:UseMeso(price)
 	end
 
+	method void SpawnEnemy(string modelID)
+		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList")
+		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList/EnemySpawnPoint")
+		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
+		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
+		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
+			
+		spawnEntity.Unit:SpawnEnemy(unitData, skillData)
+	end
+
 end

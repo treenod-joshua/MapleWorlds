@@ -3153,7 +3153,7 @@
       {
         "id": "f5af730d-fbdb-40ee-adeb-57c1caeda316",
         "path": "/maps/GameScene/EnemyTower",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService",
         "jsonString": {
           "name": "EnemyTower",
           "path": "/maps/GameScene/EnemyTower",
@@ -3205,6 +3205,10 @@
               "Tags": [
                 "Enemy"
               ],
+              "Enable": true
+            },
+            {
+              "@type": "script.MonsterSpawnService",
               "Enable": true
             }
           ],
@@ -3433,6 +3437,51 @@
                 "y": 0.48
               },
               "IsLegacy": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "76dc306f-fc59-4857-bdb2-e65864bbb4a0",
+        "path": "/maps/GameScene/EnemyList/EnemySpawnPoint",
+        "componentNames": "MOD.Core.TransformComponent",
+        "jsonString": {
+          "name": "EnemySpawnPoint",
+          "path": "/maps/GameScene/EnemyList/EnemySpawnPoint",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 1,
+          "pathConstraints": "////",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 7.09,
+                "y": -1.97500038,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
               "Enable": true
             }
           ],
