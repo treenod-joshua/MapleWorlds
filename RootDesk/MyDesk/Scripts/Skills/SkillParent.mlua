@@ -31,7 +31,6 @@ script SkillParent extends Component
 	method void UseSkill(Entity caster, Entity target, Vector2 skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
 		self:InitializeSkill(caster, target, skillArea, skillAmount, skillProjectileSpeed, skillTime)
 		self:ActivateSkill()
-		self:DestroySkill()
 	end
 
 	@ExecSpace("Client")

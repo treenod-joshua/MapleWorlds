@@ -1,0 +1,29 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://83d3e5b8-6dd5-4d93-83ce-e73d364ec46e",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.23.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "AllAttack",
+      "BaseModelId": null,
+      "Id": "83d3e5b8-6dd5-4d93-83ce-e73d364ec46e",
+      "Components": [
+        "script.AllAttack"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
