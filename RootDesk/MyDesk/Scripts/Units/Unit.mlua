@@ -82,9 +82,11 @@ script Unit extends Component
 	@Sync
 	property boolean isUsingSkill = false
 
-	method void OnBeginPlay()
-		
-	end
+	@Sync
+	property Vector3 originPos = Vector3(0,0,0)
+
+	@Sync
+	property string unitName = ""
 
 	@ExecSpace("Server")
 	method void Spawn(table unitData, table skillData)
@@ -100,6 +102,7 @@ script Unit extends Component
 		self.maxMP = unitData["maxMp"]
 		self.mp = unitData["startMp"]
 		self.damage = unitData["damage"]
+		self.unitName = unitData["name"]
 		
 		self.skillID = skillData['id']
 		self.skillDesc = skillData['desc']
@@ -143,6 +146,12 @@ script Unit extends Component
 			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
 			self.attackAnimationPlayingTime = _Utils:GetRUIDTime(self.attackAnimationRUID)
 		end
+		
+		if self.isEnemy then
+			self.Entity.DamageSkinSettingComponent.DamageSkinId = "7e39645af9454fffb17a5451e9194dda"
+		else
+			self.Entity.DamageSkinSettingComponent.DamageSkinId = "436ac27fca8c448ba4bcd31bbed3ba15"
+		end
 	end
 
 	method void InitData()
@@ -157,6 +166,8 @@ script Unit extends Component
 		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
 			self.passiveSkill.PassiveSkillParent:OnStart()
 		end
+		
+		self.Entity:AddComponent(HitComponent)
 	end
 
 	@ExecSpace("Server")
@@ -166,7 +177,7 @@ script Unit extends Component
 
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
-		if self.curState == "stand" then
+		if self.curState == "stand" and self.curTarget == nil then
 			self:FindTarget()
 		elseif self.curState == "move" then
 			self:MoveToTarget(delta)
@@ -180,7 +191,7 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void FindTarget()
-		local myPos = self.Entity.TransformComponent.Position
+		local myPos = self.Entity.TransformComponent.WorldPosition
 		local nearestEnemy = nil
 		local nearestDistance = math.huge
 		
@@ -188,11 +199,17 @@ script Unit extends Component
 			return
 		end
 		
-		local enemys = _EntityService:GetEntitiesByTag("Enemy")
+		local enemies
 		
-		for _, enemy in ipairs(enemys) do
-			local enemyPos = enemy.TransformComponent.Position
-			local distance = (enemyPos - myPos).x
+		if self.isEnemy then
+			enemies = _EntityService:GetEntitiesByTag("MyMonster")
+		else 
+			enemies = _EntityService:GetEntitiesByTag("Enemy")
+		end
+		
+		for _, enemy in ipairs(enemies) do
+			local enemyPos = enemy.TransformComponent.WorldPosition
+			local distance = math.abs((enemyPos - myPos).x)
 			
 			if distance < nearestDistance then
 				nearestEnemy = enemy
@@ -219,8 +236,15 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method number GetDistance()
-		local myPos = self.Entity.TransformComponent.Position
-		local targetPos = self.curTarget.TransformComponent.Position
+		local myPos = self.Entity.TransformComponent.WorldPosition
+		local targetPos = Vector3.zero
+		
+		if (self.curTarget.StateAnimationComponent ~= nil or self.curTarget.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false) 
+			and self.curTarget.Unit.attackRange == 1 and self.curTarget.Unit.originPos ~= Vector3.zero then
+			targetPos = self.curTarget.Unit.originPos
+		else
+			targetPos = self.curTarget.TransformComponent.WorldPosition
+		end
 		
 		return math.abs(targetPos.x - myPos.x)
 	end
@@ -231,14 +255,14 @@ script Unit extends Component
 			return
 		end
 		
-		local myPos = self.Entity.TransformComponent.Position
-		local targetPos = self.curTarget.TransformComponent.Position
+		local myPos = self.Entity.TransformComponent.WorldPosition
+		local targetPos = self.curTarget.TransformComponent.WorldPosition
 		
 		local direction = Vector2(targetPos.x - myPos.x, targetPos.y - myPos.y):Normalize()
 		local newX = myPos.x + (direction.x * self.moveSpeed * delta)
 		
 		-- 기존의 Y 좌표는 유지
-		self.Entity.TransformComponent.Position = Vector3(newX, myPos.y, myPos.z)
+		self.Entity.TransformComponent.WorldPosition = Vector3(newX, myPos.y, myPos.z)
 	end
 
 	@ExecSpace("Client")
@@ -269,6 +293,7 @@ script Unit extends Component
 		self:IncreaseMp()
 		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
+			self.originPos = self.Entity.TransformComponent.WorldPosition
 			self:PlayTween()
 			self:Attack_Damage()
 			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e", Vector3(-0.5,0,0))
@@ -324,23 +349,29 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method void PlayTween()
 		local tween = self.Entity.TweenLineComponent
-			self.Entity.TransformComponent.Position = self.Entity.TransformComponent.Position
-			
-			-- 트윈 설정
-		    tween.DestinationCoordinateType = CoordinateType.Absolute
-			tween.Positions = { Vector2(self.Entity.TransformComponent.WorldPosition.x + 1, self.Entity.TransformComponent.WorldPosition.y) }
-		    tween.Duration = 0.1 -- 이동 시간 설정
-		    tween.UseReturnTweenType = true -- 반환 동작 설정
-		    tween.ReturnDuration = 0.1 -- 돌아올 때의 이동 시간 설정
-		    tween.ReturnTweenType = EaseType.Linear -- 되돌아올 때 보간 설정
 		
-		    -- 트윈 시작
-		    tween:RestartFromCurrentPosition()
+		-- 트윈 설정
+		local tweenDir = 0
+		if self.isEnemy then
+			tweenDir = -1
+		else
+			tweenDir = 1	
+		end
+		
+		tween.DestinationCoordinateType = CoordinateType.Absolute
+		tween.Positions = { Vector2(self.Entity.TransformComponent.WorldPosition.x + tweenDir, self.Entity.TransformComponent.WorldPosition.y) }
+		tween.Duration = 0.1 -- 이동 시간 설정
+		tween.UseReturnTweenType = true -- 반환 동작 설정
+		tween.ReturnDuration = 0.1 -- 돌아올 때의 이동 시간 설정
+		tween.ReturnTweenType = EaseType.Linear -- 되돌아올 때 보간 설정
+		
+		-- 트윈 시작
+		tween:RestartFromCurrentPosition()
 	end
 
 	@ExecSpace("Client")
 	method void Attack_Damage()
-		self.curTarget.HitComponent:OnHit(self.Entity, self.damage, false, "", 1)
+		self.curTarget.Unit:OnHit(self.Entity, self.damage, false, 1)
 	end
 
 	@ExecSpace("Client")
@@ -391,16 +422,19 @@ script Unit extends Component
 		self.hp -= damage
 		
 		if self.hp <= 0 then
-			self:OnDie()
+			self:OnDie(attacker)
 		end
 	end
 
-	method void OnDie()
+	method void OnDie(Entity attacker)
 		if self.curState == "die" then
 			return
 		end
 		
 		self.curState = "die"
+		
+		-- 어태커의 타겟 엔티티 제거
+		attacker.Unit.curTarget = nil
 	end
 
 	method void IncreaseMp()
@@ -418,7 +452,7 @@ script Unit extends Component
 	end
 
 	method void UseSkill()
-		if self.mp == 0 or self.curState ~= "useSkill" or self.isUsingSkill then
+		if self.mp == 0 or self.curState ~= "useSkill" or self.isUsingSkill or self.activeSkill == nil then
 			return
 		end
 		
@@ -428,7 +462,6 @@ script Unit extends Component
 		
 		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, Vector2(self.skillArea, self.skillArea), self.skillAmount, 
 			self.skillProjectileSpeed, self.skillTime)
-		log("스킬 사용")
 	end
 
 	method void SpawnEnemy(table unitData, table skillData)
@@ -444,6 +477,7 @@ script Unit extends Component
 		self.maxMP = unitData["maxMp"]
 		self.mp = unitData["startMp"]
 		self.damage = unitData["damage"]
+		self.unitName = unitData["name"]
 		
 		self.skillID = skillData['id']
 		self.skillDesc = skillData['desc']

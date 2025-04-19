@@ -28,7 +28,8 @@
         "MOD.Core.HitComponent",
         "MOD.Core.DamageSkinSpawnerComponent",
         "script.Unit",
-        "MOD.Core.AttackComponent"
+        "MOD.Core.AttackComponent",
+        "MOD.Core.DamageSkinSettingComponent"
       ],
       "Properties": [],
       "Values": [

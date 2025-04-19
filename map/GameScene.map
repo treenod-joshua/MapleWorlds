@@ -3202,9 +3202,7 @@
             },
             {
               "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "Enemy"
-              ],
+              "Tags": [],
               "Enable": true
             },
             {
@@ -3315,135 +3313,6 @@
         }
       },
       {
-        "id": "f2ee3a07-6d56-4ad6-a379-342d40e41d83",
-        "path": "/maps/GameScene/EnemyList/Enemy",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.StateAnimationComponent,MOD.Core.SpriteRendererComponent,MOD.Core.RigidbodyComponent,MOD.Core.MovementComponent,MOD.Core.AIWanderComponent,MOD.Core.StateComponent,MOD.Core.HitComponent,MOD.Core.DamageSkinSpawnerComponent,MOD.Core.TagComponent,MOD.Core.TriggerComponent",
-        "jsonString": {
-          "name": "Enemy",
-          "path": "/maps/GameScene/EnemyList/Enemy",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 0,
-          "pathConstraints": "////",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "MoveMonster",
-            "sub_entity_id": null
-          },
-          "modelId": "movemonster",
-          "@components": [
-            {
-              "@type": "MOD.Core.TransformComponent",
-              "Position": {
-                "x": -0.733974457,
-                "y": -2.29837728,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.StateAnimationComponent",
-              "ActionSheet": {
-                "move": "81f26d1496e641f886c3879214454210",
-                "stand": "d67ca1eb61d2474d8c36951808236599",
-                "hit": "4dd678f0d27e4bb88e0fac1787c5037b",
-                "die": "c431f063ce8a42b28f6e8826b53a49cd",
-                "attack": "735ed5e8fe4b401ab3a9af0119db888c"
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteRendererComponent",
-              "ActionSheet": {},
-              "EndFrameIndex": 0,
-              "RenderSetting": 1,
-              "SortingLayer": "MapLayer0",
-              "SpriteRUID": "d67ca1eb61d2474d8c36951808236599",
-              "StartFrameIndex": 0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.RigidbodyComponent",
-              "MoveVelocity": {
-                "x": 0.0,
-                "y": 0.0
-              },
-              "RealMoveVelocity": {
-                "x": 0.0,
-                "y": 0.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.MovementComponent",
-              "InputSpeed": 1.0,
-              "JumpForce": 0.0,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.AIWanderComponent",
-              "IsLegacy": false,
-              "Enable": false
-            },
-            {
-              "@type": "MOD.Core.StateComponent",
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.HitComponent",
-              "BoxSize": {
-                "x": 0.66,
-                "y": 0.96
-              },
-              "ColliderOffset": {
-                "x": -0.07999998,
-                "y": 0.48
-              },
-              "IsLegacy": false,
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.DamageSkinSpawnerComponent",
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TagComponent",
-              "Tags": [
-                "Enemy"
-              ],
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TriggerComponent",
-              "BoxSize": {
-                "x": 0.66,
-                "y": 0.96
-              },
-              "ColliderOffset": {
-                "x": -0.07999998,
-                "y": 0.48
-              },
-              "IsLegacy": false,
-              "Enable": true
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
         "id": "76dc306f-fc59-4857-bdb2-e65864bbb4a0",
         "path": "/maps/GameScene/EnemyList/EnemySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
@@ -3453,7 +3322,7 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "displayOrder": 1,
+          "displayOrder": 0,
           "pathConstraints": "////",
           "revision": 1,
           "modelId": null,

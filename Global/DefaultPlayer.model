@@ -150,7 +150,7 @@
           },
           "Value": {
             "$type": "MOD.Core.MODDataRef, MOD.Core",
-            "DataId": "6ba67548f43f48f29eb23dafd0766383"
+            "DataId": "436ac27fca8c448ba4bcd31bbed3ba15"
           }
         },
         {

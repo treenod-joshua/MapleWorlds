@@ -23,6 +23,7 @@ script UnitService extends Logic
 			item['summonCost'] = tonumber(dataSet:GetCell(index, 'summonCost'))
 			item['summonDelay'] = tonumber(dataSet:GetCell(index, 'summonDelay'))
 			item['ImageRUID'] = tostring(dataSet:GetCell(index, 'ImageRUID'))
+			item['name'] = tostring(dataSet:GetCell(index, 'name'))
 			
 			self.UnitTable[item['id']] = item
 		end

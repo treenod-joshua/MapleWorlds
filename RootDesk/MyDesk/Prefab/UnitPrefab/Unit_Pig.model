@@ -30,7 +30,8 @@
         "MOD.Core.TagComponent",
         "script.Unit",
         "MOD.Core.TriggerComponent",
-        "MOD.Core.TweenLineComponent"
+        "MOD.Core.TweenLineComponent",
+        "MOD.Core.DamageSkinSettingComponent"
       ],
       "Properties": [],
       "Values": [
@@ -345,9 +346,7 @@
           },
           "Value": {
             "$type": "MOD.Core.MODSyncList`1[[System.String, mscorlib]], MOD.Core",
-            "$values": [
-              "MyMonster"
-            ]
+            "$values": []
           }
         },
         {

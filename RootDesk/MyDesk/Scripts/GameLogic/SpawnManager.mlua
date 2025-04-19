@@ -24,9 +24,9 @@ script SpawnManager extends Logic
 	method void SpawnEnemy(string modelID)
 		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList")
 		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList/EnemySpawnPoint")
-		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
 		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
 		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
+		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "적"..unitData["name"], spawnPos.TransformComponent.Position, spawnParent)
 			
 		spawnEntity.Unit:SpawnEnemy(unitData, skillData)
 	end
