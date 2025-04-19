@@ -431,6 +431,53 @@ script Unit extends Component
 		log("스킬 사용")
 	end
 
+	method void SpawnEnemy(table unitData, table skillData)
+		self.moveSpeed = unitData["moveSpeed"]
+		self.hp = unitData["hp"]
+		self.maxHP = unitData["hp"]
+		self.damage = unitData["damage"]
+		self.attackRange = unitData["attackRange"]
+		self.attackSpeed = unitData["attackSpeed"]
+		self.originAttackSpeed = unitData["attackSpeed"]
+		self.projectileSpeed = unitData["projectileSpeed"]
+		self.attackTiming = unitData["attackTiming"]
+		self.maxMP = unitData["maxMp"]
+		self.mp = unitData["startMp"]
+		self.damage = unitData["damage"]
+		
+		self.skillID = skillData['id']
+		self.skillDesc = skillData['desc']
+		self.skillArea = skillData['skillArea']
+		self.skillAmount = skillData['skillAmount']
+		self.skillProjectileSpeed = skillData['skillProjectileSpeed'] 
+		self.skillTime = skillData['skillTime']
+		self.skillAttackTiming = skillData['skillAttackTiming']
+		
+		self:InitEnemyTagData()
+		self:InitAnimData()
+		self:InitData()
+		self:InitSkillData()
+	end
+
+	method void InitEnemyTagData()
+		self.Entity:AddComponent(TagComponent)
+		self.Entity.TagComponent:AddTag("Enemy")
+		
+		if self.Entity.TagComponent.Tags.Count <= 0 then
+			return
+		end
+		
+		if self.Entity.TagComponent.Tags[1] == "Enemy" then
+			self.isEnemy = true;	
+		end
+		
+		if self.isEnemy then
+			self.Entity.SpriteRendererComponent.FlipX = false
+		else
+			self.Entity.SpriteRendererComponent.FlipX = true
+		end
+	end
+
 	@EventSender("Self")
 	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
 		--------------- Native Event Sender Info ----------------
