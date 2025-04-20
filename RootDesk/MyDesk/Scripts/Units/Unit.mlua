@@ -523,6 +523,11 @@ script Unit extends Component
 		end
 	end
 
+	@ExecSpace("Server")
+	method void DestroyAction()
+		self.Entity:Destroy()
+	end
+
 	@EventSender("Self")
 	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
 		--------------- Native Event Sender Info ----------------
@@ -546,7 +551,7 @@ script Unit extends Component
 		
 		if self.curState == "die" then
 			log("죽음")
-			self.Entity:Destroy()
+			self:DestroyAction()
 		end
 	end
 
