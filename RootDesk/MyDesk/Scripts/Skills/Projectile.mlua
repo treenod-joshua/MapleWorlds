@@ -18,6 +18,16 @@ script Projectile extends Component
 
 	@ExecSpace("Client")
 	method void Init(string animId, integer direction, number speed, Entity target, boolean isRotate, number damage)
+		self.Entity:AddComponent(DamageSkinSettingComponent)
+		
+		if target.Unit.isEnemy then
+			-- 파란 데미지 스킨
+			self.Entity.DamageSkinSettingComponent.DamageSkinId = "436ac27fca8c448ba4bcd31bbed3ba15"
+		else
+			-- 빨간 데미지 스킨
+			self.Entity.DamageSkinSettingComponent.DamageSkinId = "7e39645af9454fffb17a5451e9194dda"
+		end
+		
 		if 0 < direction then -- 오른쪽을 향함
 			self.direction = 1
 		else

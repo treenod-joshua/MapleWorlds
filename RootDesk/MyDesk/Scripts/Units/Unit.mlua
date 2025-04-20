@@ -113,9 +113,9 @@ script Unit extends Component
 		self.skillAttackTiming = skillData['skillAttackTiming']
 		
 		self:InitTagData()
-		self:InitAnimData()
 		self:InitData()
 		self:InitSkillData()
+		self:InitAnimData()
 	end
 
 	method void InitTagData()
@@ -141,6 +141,7 @@ script Unit extends Component
 		self.Entity.StateComponent:AddState("attack", Attack)
 		self.Entity.StateComponent:AddState("stand", Stand)
 		self.Entity.StateComponent:AddState("move", Move)
+		self.Entity.StateComponent:AddState("die", Die)
 		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
 			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
@@ -148,8 +149,10 @@ script Unit extends Component
 		end
 		
 		if self.isEnemy then
+			-- 빨간 데미지 스킨
 			self.Entity.DamageSkinSettingComponent.DamageSkinId = "7e39645af9454fffb17a5451e9194dda"
 		else
+			-- 파란 데미지 스킨
 			self.Entity.DamageSkinSettingComponent.DamageSkinId = "436ac27fca8c448ba4bcd31bbed3ba15"
 		end
 	end
@@ -186,6 +189,8 @@ script Unit extends Component
 			self:Attack(delta)
 		elseif self.curState == "useSkill" then
 			self:UseSkill()
+		elseif self.curState == "die" then
+			
 		end
 	end
 
@@ -381,17 +386,23 @@ script Unit extends Component
 
 	@ExecSpace("Server")
 	method void SetState(string state)
+		if self.curState == "die" then
+			return
+		end
+		
 		self.curState = state
 		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey(state:lower()) == false then
 			return
 		end
 		
+		log("스테이트"..state)
 		self:SetAnimationState(state)
 	end
 
 	@ExecSpace("Server")
 	method void SetAnimationState(string state)
+		log("애니메이션"..state)
 		self.Entity.StateComponent:ChangeState(state)
 	end
 
@@ -431,7 +442,7 @@ script Unit extends Component
 			return
 		end
 		
-		self.curState = "die"
+		self:SetState("die")
 		
 		-- 어태커의 타겟 엔티티 제거
 		attacker.Unit.curTarget = nil
@@ -488,9 +499,9 @@ script Unit extends Component
 		self.skillAttackTiming = skillData['skillAttackTiming']
 		
 		self:InitEnemyTagData()
-		self:InitAnimData()
 		self:InitData()
 		self:InitSkillData()
+		self:InitAnimData()
 	end
 
 	method void InitEnemyTagData()
@@ -531,6 +542,11 @@ script Unit extends Component
 		if self.curState == "attack" then
 			self:SetAnimationState("stand")
 			self.Entity.SpriteRendererComponent.PlayRate = 1
+		end
+		
+		if self.curState == "die" then
+			log("죽음")
+			self.Entity:Destroy()
 		end
 	end
 
