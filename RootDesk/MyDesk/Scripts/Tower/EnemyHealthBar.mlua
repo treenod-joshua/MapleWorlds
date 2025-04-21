@@ -1,0 +1,31 @@
+@Component
+script EnemyHealthBar extends Component
+
+	property TextComponent myName = nil
+
+	property SliderComponent myHP = nil
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		local currentPath = self.Entity.Path
+		self.myName = _EntityService:GetEntityByPath(currentPath .. "/Text_name").TextComponent
+		self.myHP = _EntityService:GetEntityByPath(currentPath .. "/HP_bar").SliderComponent
+		
+		self.myHP.Value = 1
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		if _EntityService:GetEntity('f5af730d-fbdb-40ee-adeb-57c1caeda316') == nil then
+			return 
+		end
+		
+		local enemyTower = _EntityService:GetEntity('f5af730d-fbdb-40ee-adeb-57c1caeda316')
+		if enemyTower == nil then 
+			return
+		end
+		
+		self.myHP.Value = enemyTower.Tower.Hp / enemyTower.Tower.MaxHp
+	end
+
+end

@@ -14,13 +14,14 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "Model_PlayerTower",
+      "Name": "PlayerTower",
       "BaseModelId": null,
       "Id": "c8b122d4-54ef-47ce-80ac-cd59fb44b97f",
       "Components": [
         "MOD.Core.TransformComponent",
         "MOD.Core.SpriteRendererComponent",
-        "MOD.Core.TagComponent"
+        "MOD.Core.TagComponent",
+        "MOD.Core.HitComponent"
       ],
       "Properties": [],
       "Values": [
@@ -171,7 +172,7 @@
             "$type": "MODNativeType",
             "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": true
+          "Value": false
         },
         {
           "TargetType": "MOD.Core.MODEntity",
