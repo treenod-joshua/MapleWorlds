@@ -23,6 +23,7 @@ script ThrowPigHead extends SkillParent
 				 self._T.projectileParent)
 		
 			missile.SpriteRendererComponent.SpriteRUID = "238e2a90da124301b959f8b745214026"
+			missile.Projectile:SetCaster(self.Entity.Parent)
 			
 			spawnIndex += 1
 		    table.insert(self.spawnedMissiles, missile)
@@ -32,7 +33,8 @@ script ThrowPigHead extends SkillParent
 		
 		local attackFunction = function() 
 			for i, missile in ipairs(self.spawnedMissiles) do
-		        missile.Projectile:Init("238e2a90da124301b959f8b745214026", self:IsTargetOnRight(self.target), self.skillProjectileSpeed, self.target, false, self.skillAmount)
+		        missile.Projectile:SetShoot("238e2a90da124301b959f8b745214026", self:IsTargetOnRight(self.target), self.skillProjectileSpeed,
+					 self.target, false, self.skillAmount)
 		    end
 			
 			_TimerService:ClearTimer(spawnTimer)

@@ -180,14 +180,26 @@ script Unit extends Component
 
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
+		if self.curTarget ~= nil then
+			log("적 있음"..self.Entity.Name)
+		end
+		log("현재 스테이트:"..self.curState..":"..self.Entity.Name)
+		
 		if self.curState == "stand" and self.curTarget == nil then
+			log("stand 스테이트"..self.Entity.Name)
 			self:FindTarget()
 		elseif self.curState == "move" then
+		
+			log(" move 스테이트"..self.Entity.Name)
 			self:MoveToTarget(delta)
 			self:FindTarget()
 		elseif self.curState == "attack" then
+		
+			log("attack 스테이트"..self.Entity.Name)
 			self:Attack(delta)
 		elseif self.curState == "useSkill" then
+		
+			log("useSkill 스테이트"..self.Entity.Name)
 			self:UseSkill()
 		elseif self.curState == "die" then
 			
@@ -199,7 +211,6 @@ script Unit extends Component
 		local myPos = self.Entity.TransformComponent.WorldPosition
 		local nearestEnemy = nil
 		local nearestDistance = math.huge
-		
 		if self.curState == "attack" or self.curState == "die" then
 			return
 		end
@@ -224,15 +235,24 @@ script Unit extends Component
 		
 		if nearestEnemy ~= nil and nearestEnemy ~= self.curTarget then
 			self.curTarget = nearestEnemy;
+			log("적 찾는중"..self.Entity.Name)
 			self:SetState("move")
 		end
 	end
 
 	@ExecSpace("Client")
 	method void MoveToTarget(number delta)
+		if self.curTarget == nil then
+			self.curState = "stand"
+			
+			log("무브투타겟"..self.Entity.Name)
+			return
+		end
+		
 		self:Move(delta)
 		self:SetState("move")
 		
+			log("무브투타겟진입"..self.Entity.Name)
 		if self:GetDistance() <= self.attackRange then
 			self.curState = "attack"
 			self:SetAnimationState("stand")
@@ -241,10 +261,17 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method number GetDistance()
+		if isvalid(self.curTarget) == false then
+			self.curState = "stand"
+			log("겟디스턴스"..self.Entity.Name)
+			return -1
+		end
+		
+			log("겟디스턴스진입"..self.Entity.Name)
 		local myPos = self.Entity.TransformComponent.WorldPosition
 		local targetPos = Vector3.zero
 		
-		if (self.curTarget.StateAnimationComponent ~= nil or self.curTarget.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false) 
+		if (self.curTarget.StateAnimationComponent == nil or self.curTarget.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false) 
 			and self.curTarget.Unit.attackRange == 1 and self.curTarget.Unit.originPos ~= Vector3.zero then
 			targetPos = self.curTarget.Unit.originPos
 		else
@@ -257,9 +284,11 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method void Move(number delta)
 		if self.curTarget == nil then
+			log("무브"..self.Entity.Name)
 			return
 		end
 		
+			log("무브진입"..self.Entity.Name)
 		local myPos = self.Entity.TransformComponent.WorldPosition
 		local targetPos = self.curTarget.TransformComponent.WorldPosition
 		
@@ -343,12 +372,13 @@ script Unit extends Component
 			"Projectile",
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self._T.projectileParent)
+		projectile.Projectile:SetCaster(self.Entity)
 		
 		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
 			self.passiveSkill.PassiveSkillParent:OnAttack()
 		end
 		
-		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, self.projectileSpeed, self.curTarget, true,self.damage)
+		projectile.Projectile:SetShoot("1d18f288d2594495916f543ee5b6221b", 1, self.projectileSpeed, self.curTarget, true,self.damage)
 	end
 
 	@ExecSpace("Client")
@@ -390,19 +420,18 @@ script Unit extends Component
 			return
 		end
 		
+			log("셋스테이트진입"..self.Entity.Name..":"..state)
 		self.curState = state
 		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey(state:lower()) == false then
 			return
 		end
 		
-		log("스테이트"..state)
 		self:SetAnimationState(state)
 	end
 
 	@ExecSpace("Server")
 	method void SetAnimationState(string state)
-		log("애니메이션"..state)
 		self.Entity.StateComponent:ChangeState(state)
 	end
 
@@ -525,7 +554,56 @@ script Unit extends Component
 
 	@ExecSpace("Server")
 	method void DestroyAction()
+		self:DestroyProjectile()
+		self:ClearAttackerInfo()
 		self.Entity:Destroy()
+	end
+
+	@ExecSpace("Client")
+	method void DestroyProjectile()
+		-- 자신의 발사체를 모두 제거
+		local projectiles = _EntityService:GetEntityByPath('/maps/GameScene/ProjectileParent').Children
+		
+		for index in ipairs(projectiles) do
+			local projectile = projectiles[index]
+			
+			if projectile.Projectile.caster == self.Entity then
+				projectile:Destroy()
+			end
+		end
+	end
+
+	@ExecSpace("Server")
+	method void ClearAttackerInfo()
+		-- 해당 Entity를 타겟으로 하는 적들의 정보 초기화
+		local entities
+		
+		if self.isEnemy then
+			entities = _EntityService:GetEntityByPath('/maps/GameScene/MyMonsterList').Children
+		else
+			entities = _EntityService:GetEntityByPath('/maps/GameScene/EnemyList').Children
+		end
+		
+		for index in ipairs(entities) do
+			local entity = entities[index]
+			
+			if entity.Name == "MySpawnPoint" or entity.Name == "EnemySpawnPoint" then
+				continue
+			end
+			
+			self:ClearAttackerInfoInClient(entity.Id)
+		end
+	end
+
+	@ExecSpace("Client")
+	method void ClearAttackerInfoInClient(string id)
+		log("엔티티이름: "..id)
+		local entity = _EntityService:GetEntity(id)
+		
+		if isvalid(entity) and entity.Unit.curTarget ~= nil and entity.Unit.curTarget == self.Entity then
+			entity.Unit.curTarget = nil
+			entity.Unit.curState = "stand"
+		end
 	end
 
 	@EventSender("Self")
@@ -550,23 +628,7 @@ script Unit extends Component
 		end
 		
 		if self.curState == "die" then
-			log("죽음")
 			self:DestroyAction()
-		end
-	end
-
-	@EventSender("Service", "InputService")
-	handler HandleKeyDownEvent(KeyDownEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: InputService
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local key = event.key
-		---------------------------------------------------------
-		if event.key == KeyboardKey.Space then
-			self:UseSkill()
 		end
 	end
 
