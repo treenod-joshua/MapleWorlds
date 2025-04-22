@@ -3202,11 +3202,9 @@
             },
             {
               "@type": "MOD.Core.TagComponent",
-              "Tags": [],
-              "Enable": true
-            },
-            {
-              "@type": "script.MonsterSpawnService",
+              "Tags": [
+                "Enemy"
+              ],
               "Enable": true
             },
             {
@@ -3487,89 +3485,6 @@
               "curState": "tower",
               "projectileSpeed": 0.0,
               "attackTiming": 0.0
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "2f5ab07d-a23b-4671-aa23-d194bca918c1",
-        "path": "/maps/GameScene/ingameIncome",
-        "componentNames": "script.MesoIncome",
-        "jsonString": {
-          "name": "ingameIncome",
-          "path": "/maps/GameScene/ingameIncome",
-          "nameEditable": true,
-          "enable": true,
-          "visible": false,
-          "displayOrder": 9,
-          "pathConstraints": "///",
-          "revision": 1,
-          "modelId": null,
-          "@components": [
-            {
-              "@type": "script.MesoIncome",
-              "Enable": true,
-              "nextUpdateTs": 1.0,
-              "UIController": {
-                "IsRelative": false,
-                "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
-              },
-              "UserWallet": {
-                "IsRelative": false,
-                "ComponentId": "03a1c87b-00aa-49d9-9d14-ada3697851e0:MesoWallet"
-              }
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "03a1c87b-00aa-49d9-9d14-ada3697851e0",
-        "path": "/maps/GameScene/userWallet",
-        "componentNames": "script.MesoWallet",
-        "jsonString": {
-          "name": "userWallet",
-          "path": "/maps/GameScene/userWallet",
-          "nameEditable": true,
-          "enable": true,
-          "visible": false,
-          "displayOrder": 10,
-          "pathConstraints": "///",
-          "revision": 1,
-          "modelId": null,
-          "@components": [
-            {
-              "@type": "script.MesoWallet",
-              "Enable": true,
-              "CurrentMeso": 20,
-              "UIController": {
-                "IsRelative": false,
-                "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
-              }
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "1114386e-3b5e-42b4-8e05-58984bb86d48",
-        "path": "/maps/GameScene/ingameWalletUI",
-        "componentNames": "script.MesoUI",
-        "jsonString": {
-          "name": "ingameWalletUI",
-          "path": "/maps/GameScene/ingameWalletUI",
-          "nameEditable": true,
-          "enable": true,
-          "visible": false,
-          "displayOrder": 11,
-          "pathConstraints": "///",
-          "revision": 1,
-          "modelId": null,
-          "@components": [
-            {
-              "@type": "script.MesoUI",
-              "Enable": true
             }
           ],
           "@version": 1
