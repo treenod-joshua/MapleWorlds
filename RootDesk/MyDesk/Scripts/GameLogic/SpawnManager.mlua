@@ -1,30 +1,34 @@
 @Logic
 script SpawnManager extends Logic
 
-	@ExecSpace("Server")
-	method void Spawn()
-		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
-		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList/MySpawnPoint")
-		local spawnEntity = _SpawnService:SpawnByModelId("model://3b308c48-d7a0-420c-99bf-502e034642ad", "Pig", spawnPos.TransformComponent.Position, spawnParent)
-		local data = _UnitService:GetUnitByID("model://3b308c48-d7a0-420c-99bf-502e034642ad")
-			
-		spawnEntity.Unit:Spawn(data)
-	end
+	@Sync
+	property Entity userWallet = "03a1c87b-00aa-49d9-9d14-ada3697851e0"
 
-	@EventSender("Service", "InputService")
-	handler HandleKeyDownEvent(KeyDownEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: InputService
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local key = event.key
-		---------------------------------------------------------
-		if event.key == KeyboardKey.Space then
-			self:Spawn()
+	@ExecSpace("Server")
+	method void Spawn(string modelID, integer price)
+		if self.userWallet.MesoWallet:GetMeso() < price then
+			return
 		end
 		
+		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
+		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList/MySpawnPoint")
+		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
+		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
+		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
+			
+		spawnEntity.Unit:Spawn(unitData, skillData)
+		
+		self.userWallet.MesoWallet:UseMeso(price)
+	end
+
+	method void SpawnEnemy(string modelID)
+		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList")
+		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList/EnemySpawnPoint")
+		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
+		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
+		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "적"..unitData["name"], spawnPos.TransformComponent.Position, spawnParent)
+			
+		spawnEntity.Unit:SpawnEnemy(unitData, skillData)
 	end
 
 end

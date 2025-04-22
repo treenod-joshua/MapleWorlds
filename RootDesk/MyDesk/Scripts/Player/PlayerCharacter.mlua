@@ -4,12 +4,38 @@ script PlayerCharacter extends Component
 	@Sync
 	property string skill1 = "model://02330bcd-8b7c-4146-8d26-89f5e7aa953c"
 
+	@Sync
+	property string skill2 = "model://83d3e5b8-6dd5-4d93-83ce-e73d364ec46e"
+
+	@Sync
+	property Entity skill1Entity = nil
+
+	@Sync
+	property Entity skill2Entity = nil
+
+	method void OnBeginPlay()
+		
+	end
+
 	method void SetSkill()
 		
 	end
 
 	method void UseSkill(string skillID)
 		
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnMapEnter(Entity enteredMap)
+		self.skill1Entity = _SpawnService:SpawnByModelId(self.skill1,
+			"skill1",
+			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+			self.Entity)
+		
+		self.skill2Entity = _SpawnService:SpawnByModelId(self.skill2,
+			"skill2",
+			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+			self.Entity)
 	end
 
 	@EventSender("Service", "InputService")
@@ -23,13 +49,11 @@ script PlayerCharacter extends Component
 		-- local key = event.key
 		---------------------------------------------------------
 		if event.key == KeyboardKey.LeftControl then
-			local skill1 = _SpawnService:SpawnByModelId(self.skill1,
-			"skill1",
-			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
-			self.Entity)
-			
-			skill1.SkillParent:UseSkill(self.Entity, nil)
-			
+			self.skill1Entity.SkillParent:UseSkill(self.Entity, nil, nil, 1, nil, 3)
+		end
+		
+		if event.key == KeyboardKey.A then
+			self.skill2Entity.SkillParent:UseSkill(self.Entity, nil, nil, 100, nil, 3)		
 		end
 	end
 

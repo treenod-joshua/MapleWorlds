@@ -9,12 +9,13 @@ script SkillService extends Logic
 		for index = 1, dataSet:GetRowCount() do
 		    local item = {}
 			
-			item['id'] = tonumber(dataSet:GetCell(index, 'id'))
-			-- item['skillArea'] = tonumber(dataSet:GetCell(index, 'skillID'))
-			-- item['skillAmount'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
-			item['skillProjectileSpeed'] = tonumber(dataSet:GetCell(index, 'id'))
-			-- item['skillTime'] = tonumber(dataSet:GetCell(index, 'skillID'))
-			-- item['skillAttackTiming'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
+			item['id'] = tostring(dataSet:GetCell(index, 'id'))
+			item['desc'] = tostring(dataSet:GetCell(index, 'desc'))
+			item['skillArea'] = tonumber(dataSet:GetCell(index, 'skillArea'))
+			item['skillAmount'] = tonumber(dataSet:GetCell(index, 'skillAmount'))
+			item['skillProjectileSpeed'] = tonumber(dataSet:GetCell(index, 'skillProjectileSpeed'))
+			item['skillTime'] = tonumber(dataSet:GetCell(index, 'skillTime'))
+			item['skillAttackTiming'] = tonumber(dataSet:GetCell(index, 'skillAttackTiming'))
 			
 			self.skillTable[item['id']] = item
 		end
@@ -24,7 +25,13 @@ script SkillService extends Logic
 		return self.skillTable
 	end
 
-	method table GetSkillById(number id)
+	@ExecSpace("Server")
+	method table GetSkillByIDFromServer(string id)
+		return self.skillTable[id]
+	end
+
+	@ExecSpace("Client")
+	method table GetSkillByIDFromClient(string id)
 		return self.skillTable[id]
 	end
 

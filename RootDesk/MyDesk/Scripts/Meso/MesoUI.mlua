@@ -1,0 +1,29 @@
+@Component
+script MesoUI extends Component
+
+	@Sync
+	property integer currentMeso = 0
+
+	@Sync
+	property integer mesoIncome = 0
+
+	property TextComponent Display = "12c0befb-73b8-4f52-8ab8-a84a490e2e53"
+
+	@ExecSpace("ClientOnly")
+	method void UpdateDisplay()
+		self.Display.Text = string.format("%d + %d", self.currentMeso, self.mesoIncome)
+	end
+
+	@ExecSpace("Client")
+	method void UpdateCurrentMeso(integer newCurrentMeso)
+		self.currentMeso = newCurrentMeso
+		self:UpdateDisplay()
+	end
+
+	@ExecSpace("Client")
+	method void UpdateMesoIncome(integer newIncome)
+		self.mesoIncome = newIncome
+		self:UpdateDisplay()
+	end
+
+end

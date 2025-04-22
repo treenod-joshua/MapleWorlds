@@ -1,0 +1,22 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "userdataset://71d7b7a6-92f5-4410-b231-b327d65b51d4",
+  "ContentType": "x-mod/userdataset",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.23.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "name": "EVENT",
+      "id": "71d7b7a6-92f5-4410-b231-b327d65b51d4",
+      "serveronly": false,
+      "dynamicloading": 0
+    }
+  }
+}

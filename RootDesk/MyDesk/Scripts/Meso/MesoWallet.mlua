@@ -1,0 +1,45 @@
+@Component
+script MesoWallet extends Component
+
+	@Sync
+	property integer CurrentMeso = 20
+
+	@Sync
+	property MesoUI UIController = nil
+
+	method integer GetMeso()
+		return self.CurrentMeso
+	end
+
+	@ExecSpace("Server")
+	method void AddMeso(integer deposit)
+		if deposit <= 0 then
+			return
+		end
+		
+		self.CurrentMeso = self.CurrentMeso + deposit
+		
+		self.UIController:UpdateCurrentMeso(self.CurrentMeso)
+	end
+
+	@ExecSpace("Server")
+	method void UseMeso(integer withdrawal)
+		if withdrawal <= 0 or self.CurrentMeso < withdrawal then
+			return
+		end
+		
+		self.CurrentMeso -= withdrawal
+		self.UIController:UpdateCurrentMeso(self.CurrentMeso)
+	end
+
+	method integer SetMeso(integer newMeso)
+		if newMeso < 0 then
+			return -1
+		end
+		
+		self.CurrentMeso = newMeso
+		
+		return self.CurrentMeso
+	end
+
+end

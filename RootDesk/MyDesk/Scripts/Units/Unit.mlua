@@ -31,6 +31,7 @@ script Unit extends Component
 	@Sync
 	property number attackSpeed = 1.5
 
+	@Sync
 	property number originAttackSpeed = 0
 
 	@Sync
@@ -50,15 +51,49 @@ script Unit extends Component
 
 	property string attackAnimationRUID = ""
 
+	@Sync
 	property number attackAnimationPlayingTime = 0
+
+	@Sync
+	property number dieAnimationPlayingTime = 0
 
 	property Vector2 imageSize = Vector2(0,0)
 
-	method void OnBeginPlay()
-		
-	end
+	@Sync
+	property Entity activeSkill = nil
 
-	method void Spawn(table unitData)
+	@Sync
+	property string skillID = ""
+
+	@Sync
+	property string skillDesc = ""
+
+	@Sync
+	property number skillArea = 0
+
+	@Sync
+	property number skillAmount = 0
+
+	@Sync
+	property number skillProjectileSpeed = 0
+
+	@Sync
+	property number skillTime = 0
+
+	@Sync
+	property number skillAttackTiming = 0
+
+	@Sync
+	property boolean isUsingSkill = false
+
+	@Sync
+	property Vector3 originPos = Vector3(0,0,0)
+
+	@Sync
+	property string unitName = ""
+
+	@ExecSpace("Server")
+	method void Spawn(table unitData, table skillData)
 		self.moveSpeed = unitData["moveSpeed"]
 		self.hp = unitData["hp"]
 		self.maxHP = unitData["hp"]
@@ -71,10 +106,20 @@ script Unit extends Component
 		self.maxMP = unitData["maxMp"]
 		self.mp = unitData["startMp"]
 		self.damage = unitData["damage"]
+		self.unitName = unitData["name"]
+		
+		self.skillID = skillData['id']
+		self.skillDesc = skillData['desc']
+		self.skillArea = skillData['skillArea']
+		self.skillAmount = skillData['skillAmount']
+		self.skillProjectileSpeed = skillData['skillProjectileSpeed'] 
+		self.skillTime = skillData['skillTime']
+		self.skillAttackTiming = skillData['skillAttackTiming']
 		
 		self:InitTagData()
-		self:InitAnimData()
 		self:InitData()
+		self:InitSkillData()
+		self:InitAnimData()
 	end
 
 	method void InitTagData()
@@ -96,20 +141,34 @@ script Unit extends Component
 		end
 	end
 
+	@ExecSpace("Server")
 	method void InitAnimData()
 		self.Entity.StateComponent:AddState("attack", Attack)
 		self.Entity.StateComponent:AddState("stand", Stand)
 		self.Entity.StateComponent:AddState("move", Move)
+		self.Entity.StateComponent:AddState("die", Die)
 		
+		-- 공격 애니메이션 플레잉타임 가져오기
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
 			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
 			self.attackAnimationPlayingTime = _Utils:GetRUIDTime(self.attackAnimationRUID)
 		end
+		-- 죽음 애니메이션 플레잉타임 가져오기
+		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("die") then
+			local dieAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["die"]
+			self.dieAnimationPlayingTime = _Utils:GetRUIDTime(dieAnimationRUID)
+		end
+		
+		if self.isEnemy then
+			-- 빨간 데미지 스킨
+			self.Entity.DamageSkinSettingComponent.DamageSkinId = "7e39645af9454fffb17a5451e9194dda"
+		else
+			-- 파란 데미지 스킨
+			self.Entity.DamageSkinSettingComponent.DamageSkinId = "436ac27fca8c448ba4bcd31bbed3ba15"
+		end
 	end
 
 	method void InitData()
-		self.originAttackSpeed = self.attackSpeed
-		
 		_ResourceService:PreloadAsync({self.Entity.SpriteRendererComponent.SpriteRUID},
 		function() 
 			local clip = _ResourceService:LoadAnimationClipAndWait(self.Entity.SpriteRendererComponent.SpriteRUID)
@@ -121,35 +180,51 @@ script Unit extends Component
 		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
 			self.passiveSkill.PassiveSkillParent:OnStart()
 		end
+		
+		self.Entity:AddComponent(HitComponent)
+	end
+
+	@ExecSpace("Server")
+	method void InitSkillData()
+		self.activeSkill = _SpawnService:SpawnByModelId(self.skillID, self.skillDesc, Vector3.zero, self.Entity)
 	end
 
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
-		if self.curState == "stand" then
+		if self.curState == "stand" and self.curTarget == nil then
 			self:FindTarget()
 		elseif self.curState == "move" then
 			self:MoveToTarget(delta)
 			self:FindTarget()
 		elseif self.curState == "attack" then
 			self:Attack(delta)
+		elseif self.curState == "useSkill" then
+			self:UseSkill()
+		elseif self.curState == "die" then
+			
 		end
 	end
 
 	@ExecSpace("Client")
 	method void FindTarget()
-		local myPos = self.Entity.TransformComponent.Position
+		local myPos = self.Entity.TransformComponent.WorldPosition
 		local nearestEnemy = nil
 		local nearestDistance = math.huge
-		
 		if self.curState == "attack" or self.curState == "die" then
 			return
 		end
 		
-		local enemys = _EntityService:GetEntitiesByTag("Enemy")
+		local enemies
 		
-		for _, enemy in ipairs(enemys) do
-			local enemyPos = enemy.TransformComponent.Position
-			local distance = (enemyPos - myPos).x
+		if self.isEnemy then
+			enemies = _EntityService:GetEntitiesByTag("MyMonster")
+		else 
+			enemies = _EntityService:GetEntitiesByTag("Enemy")
+		end
+		
+		for _, enemy in ipairs(enemies) do
+			local enemyPos = enemy.TransformComponent.WorldPosition
+			local distance = math.abs((enemyPos - myPos).x)
 			
 			if distance < nearestDistance then
 				nearestEnemy = enemy
@@ -165,6 +240,11 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void MoveToTarget(number delta)
+		if self.curTarget == nil then
+			self.curState = "stand"
+			return
+		end
+		
 		self:Move(delta)
 		self:SetState("move")
 		
@@ -176,8 +256,20 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method number GetDistance()
-		local myPos = self.Entity.TransformComponent.Position
-		local targetPos = self.curTarget.TransformComponent.Position
+		if isvalid(self.curTarget) == false then
+			self.curState = "stand"
+			return -1
+		end
+		
+		local myPos = self.Entity.TransformComponent.WorldPosition
+		local targetPos = Vector3.zero
+		
+		if (self.curTarget.StateAnimationComponent == nil or self.curTarget.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false) 
+			and self.curTarget.Unit.attackRange == 1 and self.curTarget.Unit.originPos ~= Vector3.zero then
+			targetPos = self.curTarget.Unit.originPos
+		else
+			targetPos = self.curTarget.TransformComponent.WorldPosition
+		end
 		
 		return math.abs(targetPos.x - myPos.x)
 	end
@@ -188,14 +280,14 @@ script Unit extends Component
 			return
 		end
 		
-		local myPos = self.Entity.TransformComponent.Position
-		local targetPos = self.curTarget.TransformComponent.Position
+		local myPos = self.Entity.TransformComponent.WorldPosition
+		local targetPos = self.curTarget.TransformComponent.WorldPosition
 		
 		local direction = Vector2(targetPos.x - myPos.x, targetPos.y - myPos.y):Normalize()
 		local newX = myPos.x + (direction.x * self.moveSpeed * delta)
 		
 		-- 기존의 Y 좌표는 유지
-		self.Entity.TransformComponent.Position = Vector3(newX, myPos.y, myPos.z)
+		self.Entity.TransformComponent.WorldPosition = Vector3(newX, myPos.y, myPos.z)
 	end
 
 	@ExecSpace("Client")
@@ -222,7 +314,11 @@ script Unit extends Component
 			return
 		end
 		
+		-- 마나 충전
+		self:IncreaseMp()
+		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
+			self.originPos = self.Entity.TransformComponent.WorldPosition
 			self:PlayTween()
 			self:Attack_Damage()
 			self:PlayEffect("a05c1966e31a4c409cc263215f786d2e", Vector3(-0.5,0,0))
@@ -256,6 +352,9 @@ script Unit extends Component
 			return
 		end
 		
+		-- 마나 충전
+		self:IncreaseMp()
+		
 		if self._T.projectileParent == nil then
 			self._T.projectileParent = _EntityService:GetEntityByPath("/maps/GameScene/ProjectileParent")
 		end
@@ -264,34 +363,41 @@ script Unit extends Component
 			"Projectile",
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self._T.projectileParent)
+		projectile.Projectile:SetCaster(self.Entity)
 		
 		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
 			self.passiveSkill.PassiveSkillParent:OnAttack()
 		end
 		
-		projectile.Projectile:Init("1d18f288d2594495916f543ee5b6221b", 1, self.projectileSpeed, self.curTarget, true,self.damage)
+		projectile.Projectile:SetShoot("1d18f288d2594495916f543ee5b6221b", 1, self.projectileSpeed, self.curTarget, true,self.damage)
 	end
 
 	@ExecSpace("Client")
 	method void PlayTween()
 		local tween = self.Entity.TweenLineComponent
-			self.Entity.TransformComponent.Position = self.Entity.TransformComponent.Position
-			
-			-- 트윈 설정
-		    tween.DestinationCoordinateType = CoordinateType.Absolute
-			tween.Positions = { Vector2(self.Entity.TransformComponent.WorldPosition.x + 1, self.Entity.TransformComponent.WorldPosition.y) }
-		    tween.Duration = 0.1 -- 이동 시간 설정
-		    tween.UseReturnTweenType = true -- 반환 동작 설정
-		    tween.ReturnDuration = 0.1 -- 돌아올 때의 이동 시간 설정
-		    tween.ReturnTweenType = EaseType.Linear -- 되돌아올 때 보간 설정
 		
-		    -- 트윈 시작
-		    tween:RestartFromCurrentPosition()
+		-- 트윈 설정
+		local tweenDir = 0
+		if self.isEnemy then
+			tweenDir = -1
+		else
+			tweenDir = 1	
+		end
+		
+		tween.DestinationCoordinateType = CoordinateType.Absolute
+		tween.Positions = { Vector2(self.Entity.TransformComponent.WorldPosition.x + tweenDir, self.Entity.TransformComponent.WorldPosition.y) }
+		tween.Duration = 0.1 -- 이동 시간 설정
+		tween.UseReturnTweenType = true -- 반환 동작 설정
+		tween.ReturnDuration = 0.1 -- 돌아올 때의 이동 시간 설정
+		tween.ReturnTweenType = EaseType.Linear -- 되돌아올 때 보간 설정
+		
+		-- 트윈 시작
+		tween:RestartFromCurrentPosition()
 	end
 
 	@ExecSpace("Client")
 	method void Attack_Damage()
-		self.curTarget.HitComponent:OnHit(self.Entity, self.damage, false, "", 1)
+		self.curTarget.Unit:OnHit(self.Entity, self.damage, false, 1)
 	end
 
 	@ExecSpace("Client")
@@ -301,6 +407,10 @@ script Unit extends Component
 
 	@ExecSpace("Server")
 	method void SetState(string state)
+		if self.curState == "die" then
+			return
+		end
+		
 		self.curState = state
 		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey(state:lower()) == false then
@@ -319,7 +429,7 @@ script Unit extends Component
 	method void GetBuff(number buffType, number buffAmount, number buffTime)
 		if buffType == _eBuffType.AttackSpeedBuff then
 			self:PlayEffect("7c3028f7053541a3869a94d3fbe9088b", Vector3(0, self.imageSize.y,0))
-			if self.attackSpeed - buffAmount <= 0 then
+			if self.attackSpeed - buffAmount <= 0.5 then
 				self.attackSpeed = 0.5
 			else
 				self.attackSpeed -= buffAmount
@@ -342,16 +452,170 @@ script Unit extends Component
 		self.hp -= damage
 		
 		if self.hp <= 0 then
-			self:OnDie()
+			self:OnDie(attacker)
 		end
 	end
 
-	method void OnDie()
+	method void OnDie(Entity attacker)
 		if self.curState == "die" then
 			return
 		end
 		
-		self.curState = "die"
+		self:SetState("die")
+		
+		-- 어태커의 타겟 엔티티 제거
+		attacker.Unit.curTarget = nil
+	end
+
+	method void IncreaseMp()
+		if self.curState == "useSkill" then
+			return
+		end
+		
+		self.mp += 5
+		
+		if self.mp < self.maxMP then
+			return
+		end
+		
+		self.curState = "useSkill"
+	end
+
+	method void UseSkill()
+		if self.mp == 0 or self.curState ~= "useSkill" or self.isUsingSkill or self.activeSkill == nil then
+			return
+		end
+		
+		self.curState = "attack"
+		self.mp = 0
+		self.isUsingSkill = true
+		
+		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, Vector2(self.skillArea, self.skillArea), self.skillAmount, 
+			self.skillProjectileSpeed, self.skillTime)
+	end
+
+	method void SpawnEnemy(table unitData, table skillData)
+		self.moveSpeed = unitData["moveSpeed"]
+		self.hp = unitData["hp"]
+		self.maxHP = unitData["hp"]
+		self.damage = unitData["damage"]
+		self.attackRange = unitData["attackRange"]
+		self.attackSpeed = unitData["attackSpeed"]
+		self.originAttackSpeed = unitData["attackSpeed"]
+		self.projectileSpeed = unitData["projectileSpeed"]
+		self.attackTiming = unitData["attackTiming"]
+		self.maxMP = unitData["maxMp"]
+		self.mp = unitData["startMp"]
+		self.damage = unitData["damage"]
+		self.unitName = unitData["name"]
+		
+		self.skillID = skillData['id']
+		self.skillDesc = skillData['desc']
+		self.skillArea = skillData['skillArea']
+		self.skillAmount = skillData['skillAmount']
+		self.skillProjectileSpeed = skillData['skillProjectileSpeed'] 
+		self.skillTime = skillData['skillTime']
+		self.skillAttackTiming = skillData['skillAttackTiming']
+		
+		self:InitEnemyTagData()
+		self:InitData()
+		self:InitSkillData()
+		self:InitAnimData()
+	end
+
+	method void InitEnemyTagData()
+		self.Entity:AddComponent(TagComponent)
+		self.Entity.TagComponent:AddTag("Enemy")
+		
+		if self.Entity.TagComponent.Tags.Count <= 0 then
+			return
+		end
+		
+		if self.Entity.TagComponent.Tags[1] == "Enemy" then
+			self.isEnemy = true;	
+		end
+		
+		if self.isEnemy then
+			self.Entity.SpriteRendererComponent.FlipX = false
+		else
+			self.Entity.SpriteRendererComponent.FlipX = true
+		end
+	end
+
+	@ExecSpace("Server")
+	method void DestroyAction()
+		local spriteRenderer = self.Entity.SpriteRendererComponent
+		local tween -- tweener를 할당할 변수 미리 선언
+		local tweenAlpha = function(tweenValue)
+			if isvalid(spriteRenderer) == false then
+		        tween:Destroy()
+		    end
+		    spriteRenderer.Color.a = tweenValue
+		end
+		local dieAlphaTweenTime = 0.5
+		
+		if self.dieAnimationPlayingTime > 0 then
+			dieAlphaTweenTime = self.dieAnimationPlayingTime
+		end
+		log(dieAlphaTweenTime)
+		tween = _TweenLogic:MakeTween(spriteRenderer.Color.a, 0, dieAlphaTweenTime * 0.5, EaseType.Linear, tweenAlpha)
+		tween.LoopCount = 0
+		tween.AutoDestroy = false
+		tween:Play()
+		
+		local destroyFunction = function()
+			self:DestroyProjectile()
+			self:ClearAttackerInfo()
+			self.Entity:Destroy()
+		end
+		
+		_TimerService:SetTimerOnce(destroyFunction, dieAlphaTweenTime * 0.5)
+	end
+
+	@ExecSpace("Client")
+	method void DestroyProjectile()
+		-- 자신의 발사체를 모두 제거
+		local projectiles = _EntityService:GetEntityByPath('/maps/GameScene/ProjectileParent').Children
+		
+		for index in ipairs(projectiles) do
+			local projectile = projectiles[index]
+			
+			if projectile.Projectile.caster == self.Entity then
+				projectile:Destroy()
+			end
+		end
+	end
+
+	@ExecSpace("Server")
+	method void ClearAttackerInfo()
+		-- 해당 Entity를 타겟으로 하는 적들의 정보 초기화
+		local entities
+		
+		if self.isEnemy then
+			entities = _EntityService:GetEntityByPath('/maps/GameScene/MyMonsterList').Children
+		else
+			entities = _EntityService:GetEntityByPath('/maps/GameScene/EnemyList').Children
+		end
+		
+		for index in ipairs(entities) do
+			local entity = entities[index]
+			
+			if entity.Name == "MySpawnPoint" or entity.Name == "EnemySpawnPoint" then
+				continue
+			end
+			
+			self:ClearAttackerInfoInClient(entity.Id)
+		end
+	end
+
+	@ExecSpace("Client")
+	method void ClearAttackerInfoInClient(string id)
+		local entity = _EntityService:GetEntity(id)
+		
+		if isvalid(entity) and entity.Unit.curTarget ~= nil and entity.Unit.curTarget == self.Entity then
+			entity.Unit.curTarget = nil
+			entity.Unit:SetState("stand")
+		end
 	end
 
 	@EventSender("Self")
@@ -373,6 +637,10 @@ script Unit extends Component
 		if self.curState == "attack" then
 			self:SetAnimationState("stand")
 			self.Entity.SpriteRendererComponent.PlayRate = 1
+		end
+		
+		if self.curState == "die" then
+			self:DestroyAction()
 		end
 	end
 

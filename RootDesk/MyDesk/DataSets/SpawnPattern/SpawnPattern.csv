@@ -1,0 +1,4 @@
+﻿id,stage,group,type,setting,desc
+1,1,1,LOOP,1,반복 소환 패턴
+2,1,2,EVENT,1,피격시 소환 1회
+3,1,1,LOOP,2,웨이브 패턴

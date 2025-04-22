@@ -11,18 +11,34 @@ script Projectile extends Component
 	property Entity target = nil
 
 	@Sync
+	property Entity caster = nil
+
+	@Sync
 	property number lifetTime = 0
 
 	@Sync
 	property number damage = 0
 
-	@ExecSpace("ClientOnly")
-	method void OnUpdate(number delta)
-		
+	method void SetCaster(Entity caster)
+		self.caster = caster
 	end
 
 	@ExecSpace("Client")
-	method void Init(string animId, integer direction, number speed, Entity target, boolean isRotate, number damage)
+	method void SetShoot(string animId, integer direction, number speed, Entity target, boolean isRotate, number damage)
+		if isvalid(target) == false then
+			return
+		end
+		
+		self.Entity:AddComponent(DamageSkinSettingComponent)
+		
+		if target.Unit.isEnemy then
+			-- 파란 데미지 스킨
+			self.Entity.DamageSkinSettingComponent.DamageSkinId = "436ac27fca8c448ba4bcd31bbed3ba15"
+		else
+			-- 빨간 데미지 스킨
+			self.Entity.DamageSkinSettingComponent.DamageSkinId = "7e39645af9454fffb17a5451e9194dda"
+		end
+		
 		if 0 < direction then -- 오른쪽을 향함
 			self.direction = 1
 		else
@@ -40,7 +56,10 @@ script Projectile extends Component
 			return
 		end
 		
-		self:RotateToTarget()
+		if isRotate then
+			self:RotateToTarget()
+		end
+		
 		self:MoveToTarget()
 	end
 

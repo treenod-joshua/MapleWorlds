@@ -9,7 +9,7 @@ script UnitService extends Logic
 		    local item = {}
 			
 			item['id'] = tostring(dataSet:GetCell(index, 'id'))
-			item['skillID'] = tonumber(dataSet:GetCell(index, 'skillID'))
+			item['skillID'] = tostring(dataSet:GetCell(index, 'skillID'))
 			item['passiveSkillID'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
 			item['moveSpeed'] = tonumber(dataSet:GetCell(index, 'moveSpeed'))
 			item['hp'] = tonumber(dataSet:GetCell(index, 'hp'))
@@ -22,13 +22,20 @@ script UnitService extends Logic
 			item['startMp'] = tonumber(dataSet:GetCell(index, 'startMp'))
 			item['summonCost'] = tonumber(dataSet:GetCell(index, 'summonCost'))
 			item['summonDelay'] = tonumber(dataSet:GetCell(index, 'summonDelay'))
+			item['ImageRUID'] = tostring(dataSet:GetCell(index, 'ImageRUID'))
+			item['name'] = tostring(dataSet:GetCell(index, 'name'))
 			
 			self.UnitTable[item['id']] = item
 		end
 	end
 
 	@ExecSpace("Server")
-	method table GetUnitByID(string id)
+	method table GetUnitByIDFromServer(string id)
+		return self.UnitTable[id]
+	end
+
+	@ExecSpace("Client")
+	method table GetUnitByIDFromCleint(string id)
 		return self.UnitTable[id]
 	end
 

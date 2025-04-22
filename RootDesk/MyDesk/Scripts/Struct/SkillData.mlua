@@ -1,0 +1,14 @@
+@Struct
+script SkillData
+
+	property string desc = ""
+
+	property number skillArea = 0
+
+	property number skillProjectileSpeed = 0
+
+	property number skillTime = 0
+
+	property number skillAttackTiming = 0
+
+end

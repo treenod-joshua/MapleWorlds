@@ -1,0 +1,26 @@
+@Component
+script AllAttack extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		local enemyListParent = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList")
+		local enemies = enemyListParent.Children
+		
+		_EffectService:PlayEffect("ecb14916022b462280c1bad3ca065037", self.Entity, 
+								  Vector3(self.caster.TransformComponent.WorldPosition.x, -2.349,self.caster.TransformComponent.WorldPosition.z),
+								  0, Vector3.one)
+		
+		local hitFunction = function()
+			for index in ipairs(enemies) do
+				local monster = enemies[index]
+			
+				if monster.Enable then
+					monster.HitComponent:OnHit(self.caster, self.skillAmount, true, "", 3)
+				end
+			end
+		end
+		
+		_TimerService:SetTimerOnce(hitFunction, 3.85)
+	end
+
+end

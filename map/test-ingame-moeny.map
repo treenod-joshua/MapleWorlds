@@ -1,0 +1,242 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "map://test-ingame-moeny",
+  "ContentType": "x-mod/map",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.23.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Binary",
+    "Entities": [
+      {
+        "id": "a991d451-6869-4ed7-a0a9-b009fc6e1717",
+        "path": "/maps/test-ingame-moeny",
+        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent",
+        "jsonString": {
+          "name": "test-ingame-moeny",
+          "path": "/maps/test-ingame-moeny",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 0,
+          "pathConstraints": "//",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "MOD.Core.MapComponent",
+              "IsInstanceMap": false,
+              "TileMapMode": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.FootholdComponent",
+              "FootholdsByLayer": {},
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "aaeefbeb-8b75-4d13-bc09-c1626f1180c7",
+        "path": "/maps/test-ingame-moeny/Background",
+        "componentNames": "MOD.Core.BackgroundComponent",
+        "jsonString": {
+          "name": "Background",
+          "path": "/maps/test-ingame-moeny/Background",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 0,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "MOD.Core.BackgroundComponent",
+              "TemplateRUID": "794ad8421e2543d8a6d2c70307637450",
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "0fe242d2-a6ae-4f18-acfd-f2faf14d7bce",
+        "path": "/maps/test-ingame-moeny/MapleMapLayer",
+        "componentNames": "MOD.Core.MapLayerComponent",
+        "jsonString": {
+          "name": "MapleMapLayer",
+          "path": "/maps/test-ingame-moeny/MapleMapLayer",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 1,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "maplemaplayer",
+            "sub_entity_id": null
+          },
+          "modelId": "maplemaplayer",
+          "@components": [
+            {
+              "@type": "MOD.Core.MapLayerComponent",
+              "IsVisible": true,
+              "LayerSortOrder": 0,
+              "Locked": false,
+              "MapLayerName": "Layer1",
+              "Thumbnail": "",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "c0cc8131-0656-45f0-9947-45907b56ae27",
+        "path": "/maps/test-ingame-moeny/TileMap",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
+        "jsonString": {
+          "name": "TileMap",
+          "path": "/maps/test-ingame-moeny/TileMap",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "displayOrder": 2,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "tilemap",
+            "sub_entity_id": null
+          },
+          "modelId": "tilemap",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -0.225,
+                "y": -0.15,
+                "z": 1000.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TileMapComponent",
+              "IsOddGridPosition": false,
+              "SortingLayer": "MapLayer0",
+              "TileMapVersion": 1,
+              "TileSetRUID": {
+                "DataId": "055a388951174b58826a7868852ad4d0"
+              },
+              "Tiles": [],
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "9d403f3e-7194-4738-911a-e1f775c1f59e",
+        "path": "/maps/test-ingame-moeny/ingameWalletUI",
+        "componentNames": "script.MesoUI",
+        "jsonString": {
+          "name": "ingameWalletUI",
+          "path": "/maps/test-ingame-moeny/ingameWalletUI",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "displayOrder": 3,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "script.MesoUI",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "30e56fbe-0041-4f0c-b15a-f6ba36a6af6e",
+        "path": "/maps/test-ingame-moeny/useWallet",
+        "componentNames": "script.MesoWallet",
+        "jsonString": {
+          "name": "useWallet",
+          "path": "/maps/test-ingame-moeny/useWallet",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "displayOrder": 4,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "script.MesoWallet",
+              "Enable": true,
+              "UIController": {
+                "IsRelative": false,
+                "ComponentId": "9d403f3e-7194-4738-911a-e1f775c1f59e:MesoUI"
+              }
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "7394a3c4-8930-465e-86d1-4668cd7eef96",
+        "path": "/maps/test-ingame-moeny/ingameIncome",
+        "componentNames": "script.MesoIncome",
+        "jsonString": {
+          "name": "ingameIncome",
+          "path": "/maps/test-ingame-moeny/ingameIncome",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "displayOrder": 5,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "script.MesoIncome",
+              "Enable": true,
+              "UIController": {
+                "IsRelative": false,
+                "ComponentId": "9d403f3e-7194-4738-911a-e1f775c1f59e:MesoUI"
+              },
+              "UserWallet": {
+                "IsRelative": false,
+                "ComponentId": "30e56fbe-0041-4f0c-b15a-f6ba36a6af6e:MesoWallet"
+              }
+            }
+          ],
+          "@version": 1
+        }
+      }
+    ]
+  }
+}
