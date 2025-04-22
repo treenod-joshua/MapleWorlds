@@ -1,0 +1,36 @@
+@Component
+script Tower extends Component
+
+	@Sync
+	property number MaxHp = 100
+
+	@Sync
+	property boolean IsDestroyed = false
+
+	@Sync
+	property number Hp = 0
+
+	property Entity healthBarEntity = nil
+
+	method void OnBeginPlay()
+		self.Hp = self.MaxHp
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnSyncProperty(string name, any value)
+		
+	end
+
+	method void onHit(Entity attacker, number damage, boolean isCritical, number attackCount)
+		if self.Hp <= 0 then
+			return
+		end
+		
+		self.Entity.HitComponent:OnHit(attacker, damage, isCritical, "", attackCount)
+		self.Hp -= damage
+		
+		if self.Hp <= 0 then
+		end
+	end
+
+end
