@@ -25,6 +25,10 @@ script Projectile extends Component
 
 	@ExecSpace("Client")
 	method void SetShoot(string animId, integer direction, number speed, Entity target, boolean isRotate, number damage)
+		if isvalid(target) == false then
+			return
+		end
+		
 		self.Entity:AddComponent(DamageSkinSettingComponent)
 		
 		if target.Unit.isEnemy then

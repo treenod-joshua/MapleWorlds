@@ -43,6 +43,10 @@ script SkillParent extends Component
 	end
 
 	method number IsTargetOnRight(Entity targetEntity)
+		if isvalid(targetEntity) == false then
+			return -1
+		end
+		
 		local myX = self.Entity.TransformComponent.Position.x
 		local targetX = targetEntity.TransformComponent.Position.x
 		

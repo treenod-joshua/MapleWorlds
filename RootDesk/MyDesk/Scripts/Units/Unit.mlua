@@ -51,7 +51,11 @@ script Unit extends Component
 
 	property string attackAnimationRUID = ""
 
+	@Sync
 	property number attackAnimationPlayingTime = 0
+
+	@Sync
+	property number dieAnimationPlayingTime = 0
 
 	property Vector2 imageSize = Vector2(0,0)
 
@@ -137,15 +141,22 @@ script Unit extends Component
 		end
 	end
 
+	@ExecSpace("Server")
 	method void InitAnimData()
 		self.Entity.StateComponent:AddState("attack", Attack)
 		self.Entity.StateComponent:AddState("stand", Stand)
 		self.Entity.StateComponent:AddState("move", Move)
 		self.Entity.StateComponent:AddState("die", Die)
 		
+		-- 공격 애니메이션 플레잉타임 가져오기
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
 			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
 			self.attackAnimationPlayingTime = _Utils:GetRUIDTime(self.attackAnimationRUID)
+		end
+		-- 죽음 애니메이션 플레잉타임 가져오기
+		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("die") then
+			local dieAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["die"]
+			self.dieAnimationPlayingTime = _Utils:GetRUIDTime(dieAnimationRUID)
 		end
 		
 		if self.isEnemy then
@@ -231,15 +242,12 @@ script Unit extends Component
 	method void MoveToTarget(number delta)
 		if self.curTarget == nil then
 			self.curState = "stand"
-			
-			log("무브투타겟"..self.Entity.Name)
 			return
 		end
 		
 		self:Move(delta)
 		self:SetState("move")
 		
-			log("무브투타겟진입"..self.Entity.Name)
 		if self:GetDistance() <= self.attackRange then
 			self.curState = "attack"
 			self:SetAnimationState("stand")
@@ -250,11 +258,9 @@ script Unit extends Component
 	method number GetDistance()
 		if isvalid(self.curTarget) == false then
 			self.curState = "stand"
-			log("겟디스턴스"..self.Entity.Name)
 			return -1
 		end
 		
-			log("겟디스턴스진입"..self.Entity.Name)
 		local myPos = self.Entity.TransformComponent.WorldPosition
 		local targetPos = Vector3.zero
 		
@@ -271,11 +277,9 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method void Move(number delta)
 		if self.curTarget == nil then
-			log("무브"..self.Entity.Name)
 			return
 		end
 		
-			log("무브진입"..self.Entity.Name)
 		local myPos = self.Entity.TransformComponent.WorldPosition
 		local targetPos = self.curTarget.TransformComponent.WorldPosition
 		
@@ -540,9 +544,32 @@ script Unit extends Component
 
 	@ExecSpace("Server")
 	method void DestroyAction()
-		self:DestroyProjectile()
-		self:ClearAttackerInfo()
-		self.Entity:Destroy()
+		local spriteRenderer = self.Entity.SpriteRendererComponent
+		local tween -- tweener를 할당할 변수 미리 선언
+		local tweenAlpha = function(tweenValue)
+			if isvalid(spriteRenderer) == false then
+		        tween:Destroy()
+		    end
+		    spriteRenderer.Color.a = tweenValue
+		end
+		local dieAlphaTweenTime = 0.5
+		
+		if self.dieAnimationPlayingTime > 0 then
+			dieAlphaTweenTime = self.dieAnimationPlayingTime
+		end
+		log(dieAlphaTweenTime)
+		tween = _TweenLogic:MakeTween(spriteRenderer.Color.a, 0, dieAlphaTweenTime * 0.5, EaseType.Linear, tweenAlpha)
+		tween.LoopCount = 0
+		tween.AutoDestroy = false
+		tween:Play()
+		
+		local destroyFunction = function()
+			self:DestroyProjectile()
+			self:ClearAttackerInfo()
+			self.Entity:Destroy()
+		end
+		
+		_TimerService:SetTimerOnce(destroyFunction, dieAlphaTweenTime * 0.5)
 	end
 
 	@ExecSpace("Client")
@@ -583,7 +610,6 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void ClearAttackerInfoInClient(string id)
-		log("엔티티이름: "..id)
 		local entity = _EntityService:GetEntity(id)
 		
 		if isvalid(entity) and entity.Unit.curTarget ~= nil and entity.Unit.curTarget == self.Entity then
