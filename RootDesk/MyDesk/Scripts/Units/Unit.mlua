@@ -180,26 +180,14 @@ script Unit extends Component
 
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
-		if self.curTarget ~= nil then
-			log("적 있음"..self.Entity.Name)
-		end
-		log("현재 스테이트:"..self.curState..":"..self.Entity.Name)
-		
 		if self.curState == "stand" and self.curTarget == nil then
-			log("stand 스테이트"..self.Entity.Name)
 			self:FindTarget()
 		elseif self.curState == "move" then
-		
-			log(" move 스테이트"..self.Entity.Name)
 			self:MoveToTarget(delta)
 			self:FindTarget()
 		elseif self.curState == "attack" then
-		
-			log("attack 스테이트"..self.Entity.Name)
 			self:Attack(delta)
 		elseif self.curState == "useSkill" then
-		
-			log("useSkill 스테이트"..self.Entity.Name)
 			self:UseSkill()
 		elseif self.curState == "die" then
 			
@@ -235,7 +223,6 @@ script Unit extends Component
 		
 		if nearestEnemy ~= nil and nearestEnemy ~= self.curTarget then
 			self.curTarget = nearestEnemy;
-			log("적 찾는중"..self.Entity.Name)
 			self:SetState("move")
 		end
 	end
@@ -420,7 +407,6 @@ script Unit extends Component
 			return
 		end
 		
-			log("셋스테이트진입"..self.Entity.Name..":"..state)
 		self.curState = state
 		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey(state:lower()) == false then
@@ -602,7 +588,7 @@ script Unit extends Component
 		
 		if isvalid(entity) and entity.Unit.curTarget ~= nil and entity.Unit.curTarget == self.Entity then
 			entity.Unit.curTarget = nil
-			entity.Unit.curState = "stand"
+			entity.Unit:SetState("stand")
 		end
 	end
 
