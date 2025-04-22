@@ -79,7 +79,8 @@ script Projectile extends Component
 		_TweenLogic:MoveTo(self.Entity, targetPos, self.speed, EaseType.Linear)
 		
 		local deleteFunction = function()
-			self.target.HitComponent:OnHit(self.Entity, self.damage, false, "", 1)
+		    --self.target.HitComponent:OnHit(self.Entity, self.damage, false, "", 1)
+			self.target.Unit:OnHit(self.Entity, self.damage, false, 1)
 			self.Entity:Destroy()
 		end
 		
