@@ -25,7 +25,11 @@ script EnemyHealthBar extends Component
 			return
 		end
 		
-		self.myHP.Value = enemyTower.Tower.Hp / enemyTower.Tower.MaxHp
+		self.myHP.Value = enemyTower.Unit.hp / enemyTower.Unit.maxHP
+		
+		log("update hp", self.myHP.Value)
+		log("update hp", enemyTower.Unit.hp)
+		log("update hp", enemyTower.Unit.maxHP)
 	end
 
 end

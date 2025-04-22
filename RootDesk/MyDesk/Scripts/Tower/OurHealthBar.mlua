@@ -16,7 +16,6 @@ script OurHealthBar extends Component
 
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
-		
 		if _EntityService:GetEntity('8ed350f6-5d33-4488-8b83-92ccd146450b') == nil then
 			return 
 		end
@@ -26,7 +25,11 @@ script OurHealthBar extends Component
 			return
 		end
 		
-		self.myHP.Value = playerTower.Tower.Hp / playerTower.Tower.MaxHp
+		self.myHP.Value = playerTower.Unit.hp / playerTower.Unit.maxHP
+		
+		log("update hp", self.myHP.Value)
+		log("update hp", playerTower.Unit.hp)
+		log("update hp", playerTower.Unit.maxHP)
 	end
 
 end

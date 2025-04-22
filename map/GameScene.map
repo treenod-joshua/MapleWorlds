@@ -3153,7 +3153,7 @@
       {
         "id": "f5af730d-fbdb-40ee-adeb-57c1caeda316",
         "path": "/maps/GameScene/EnemyTower",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.Tower,MOD.Core.HitComponent,script.MonsterSpawnService",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService,script.Tower,MOD.Core.HitComponent,script.Unit",
         "jsonString": {
           "name": "EnemyTower",
           "path": "/maps/GameScene/EnemyTower",
@@ -3173,7 +3173,7 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 10.6387119,
+                "x": 10.63871,
                 "y": 0.86837554,
                 "z": 999.998047
               },
@@ -3202,7 +3202,9 @@
             },
             {
               "@type": "MOD.Core.TagComponent",
-              "Tags": [],
+              "Tags": [
+                "Enemy"
+              ],
               "Enable": true
             },
             {
@@ -3225,6 +3227,20 @@
               },
               "IsLegacy": false,
               "Enable": true
+            },
+            {
+              "@type": "script.Unit",
+              "Enable": true,
+              "moveSpeed": 0.0,
+              "maxHP": 100.0,
+              "maxMP": 0.0,
+              "damage": 0.0,
+              "attackRange": 0.0,
+              "attackSpeed": 0.0,
+              "curState": "tower",
+              "isEnemy": true,
+              "projectileSpeed": 0.0,
+              "attackTiming": 0.0
             }
           ],
           "@version": 1
@@ -3289,7 +3305,7 @@
                 "z": 0.0
               },
               "Position": {
-                "x": -3.22630787,
+                "x": -5.0,
                 "y": -2.27500033,
                 "z": 999.999
               },
@@ -3352,7 +3368,7 @@
                 "z": 0.0
               },
               "Position": {
-                "x": 7.09,
+                "x": 11.0,
                 "y": -1.97500038,
                 "z": 999.999
               },
@@ -3395,7 +3411,7 @@
       {
         "id": "8ed350f6-5d33-4488-8b83-92ccd146450b",
         "path": "/maps/GameScene/PlayerTower",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.Tower,MOD.Core.HitComponent",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,MOD.Core.HitComponent,script.Tower,script.Unit",
         "jsonString": {
           "name": "PlayerTower",
           "path": "/maps/GameScene/PlayerTower",
@@ -3435,10 +3451,9 @@
             },
             {
               "@type": "MOD.Core.TagComponent",
-              "Enable": true
-            },
-            {
-              "@type": "script.Tower",
+              "Tags": [
+                "MyMonster"
+              ],
               "Enable": true
             },
             {
@@ -3453,158 +3468,23 @@
               },
               "IsLegacy": false,
               "Enable": true
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "ed3ffd68-c248-42d2-af02-f4334142c06e",
-        "path": "/maps/GameScene/HealthBarBackground",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
-        "jsonString": {
-          "name": "HealthBarBackground",
-          "path": "/maps/GameScene/HealthBarBackground",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 9,
-          "pathConstraints": "///",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "c8b122d4-54ef-47ce-80ac-cd59fb44b97f",
-            "sub_entity_id": "832be1df-1f33-495b-b1da-f5db5c7630ba"
-          },
-          "modelId": "832be1df-1f33-495b-b1da-f5db5c7630ba",
-          "@components": [
+            },
             {
-              "@type": "MOD.Core.UITransformComponent",
-              "AlignmentOption": 0,
-              "AnchorsMax": {
-                "x": 0.5,
-                "y": 0.5
-              },
-              "AnchorsMin": {
-                "x": 0.5,
-                "y": 0.5
-              },
-              "MobileOnly": false,
-              "OffsetMax": {
-                "x": -561.800049,
-                "y": 1020.60004
-              },
-              "OffsetMin": {
-                "x": -1561.8,
-                "y": 860.600037
-              },
-              "RectSize": {
-                "x": 1000.0,
-                "y": 160.0
-              },
-              "UIMode": 2,
-              "UIScale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-              },
-              "UIVersion": 2,
-              "anchoredPosition": {
-                "x": -4.7781,
-                "y": 4.2327
-              },
-              "Rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "Position": {
-                "x": -4.7781,
-                "y": 4.2327,
-                "z": 999.999
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": -1.0
-              },
-              "Scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-              },
-              "ZRotation": 0.0,
+              "@type": "script.Tower",
               "Enable": true
             },
             {
-              "@type": "MOD.Core.SpriteGUIRendererComponent",
-              "OverrideSorting": false,
-              "Enable": true
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "a7cf5695-3099-4b8f-b668-01ff140b72b8",
-        "path": "/maps/GameScene/HealthBarBackground/HealthBar",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
-        "jsonString": {
-          "name": "HealthBar",
-          "path": "/maps/GameScene/HealthBarBackground/HealthBar",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "displayOrder": 0,
-          "pathConstraints": "////",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "c8b122d4-54ef-47ce-80ac-cd59fb44b97f",
-            "sub_entity_id": "f547bf85-3d0e-4065-8bb1-8f81f00b5140"
-          },
-          "modelId": "f547bf85-3d0e-4065-8bb1-8f81f00b5140",
-          "@components": [
-            {
-              "@type": "MOD.Core.UITransformComponent",
-              "AlignmentOption": 0,
-              "AnchorsMax": {
-                "x": 0.5,
-                "y": 0.5
-              },
-              "AnchorsMin": {
-                "x": 0.5,
-                "y": 0.5
-              },
-              "MobileOnly": false,
-              "OffsetMax": {
-                "x": 475.0,
-                "y": 58.4444427
-              },
-              "OffsetMin": {
-                "x": -475.0,
-                "y": -61.5555573
-              },
-              "RectSize": {
-                "x": 950.0,
-                "y": 120.0
-              },
-              "UIMode": 2,
-              "UIVersion": 2,
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteGUIRendererComponent",
-              "OverrideSorting": false,
-              "Type": 3,
-              "Enable": true
+              "@type": "script.Unit",
+              "Enable": true,
+              "moveSpeed": 0.0,
+              "maxHP": 100.0,
+              "maxMP": 0.0,
+              "damage": 0.0,
+              "attackRange": 0.0,
+              "attackSpeed": 0.0,
+              "curState": "tower",
+              "projectileSpeed": 0.0,
+              "attackTiming": 0.0
             }
           ],
           "@version": 1
