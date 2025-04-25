@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates how scrolling works when dragging in WebView"
 @Enum
 script DragMode

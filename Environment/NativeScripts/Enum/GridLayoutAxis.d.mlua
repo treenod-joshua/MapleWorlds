@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The alignment direction of the child UI Entity. You can set if ScrollLayoutGroupComponent is GridType."
 @Enum
 script GridLayoutAxis

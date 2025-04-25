@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when touching the collidable tile."
 @Event
 script RectTileCollisionBeginEvent extends EventType

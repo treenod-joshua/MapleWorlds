@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides a feature that can inquire about SortableDataStorage of the world."
 @Misc
 script SortableDataStoragePages

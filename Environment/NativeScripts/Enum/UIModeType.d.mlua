@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The position UI entities are drawn."
 @Enum
 script UIModeType

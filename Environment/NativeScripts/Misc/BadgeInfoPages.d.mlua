@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Inquires about the badge list searched from BadgeService in page units."
 @Misc
 script BadgeInfoPages

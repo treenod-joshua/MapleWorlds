@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event that occurs in an entity when the entity is touched in the editor environment."
 @Event
 script TouchEditorEvent extends EventType

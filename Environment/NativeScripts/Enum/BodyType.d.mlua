@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The type of physics rigid body."
 @Enum
 script BodyType

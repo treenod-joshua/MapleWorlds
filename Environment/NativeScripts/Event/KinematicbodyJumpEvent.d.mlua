@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when changing the jumping state."
 @Event
 script KinematicbodyJumpEvent extends EventType

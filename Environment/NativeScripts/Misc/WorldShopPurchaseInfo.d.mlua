@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Purchase information of the product used by WorldShopService."
 @Misc
 script WorldShopPurchaseInfo

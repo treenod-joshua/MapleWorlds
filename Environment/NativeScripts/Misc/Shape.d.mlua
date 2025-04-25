@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents a shape to be utilized for collision-related functions."
 @Misc
 script Shape

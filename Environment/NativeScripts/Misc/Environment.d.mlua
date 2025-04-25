@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides execution environment information."
 @Misc
 script Environment

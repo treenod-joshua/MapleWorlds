@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when AnimationClip change is required."
 @Event
 script AnimationClipEvent extends EventType

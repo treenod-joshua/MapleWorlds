@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised when playing the first frame of sprite animation."
 @Event
 script SpriteAnimPlayerStartFrameEvent extends EventType

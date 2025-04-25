@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs upon configuring an entity."
 @Event
 script EntityFinishedConstructEvent extends EventType

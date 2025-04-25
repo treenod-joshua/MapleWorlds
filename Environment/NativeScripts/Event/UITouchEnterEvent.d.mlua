@@ -1,3 +1,4 @@
+---@sealed
 ---@description "An event that occurs when a touch or mouse input enters the UI Entity."
 @Event
 script UITouchEnterEvent extends EventType

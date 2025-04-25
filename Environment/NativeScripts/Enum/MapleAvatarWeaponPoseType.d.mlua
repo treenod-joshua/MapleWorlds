@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Identifies the avatar's attack behavior."
 @Enum
 script MapleAvatarWeaponPoseType

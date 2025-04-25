@@ -1,3 +1,4 @@
+---@sealed
 @Event
 script SpriteAnimPlayerForMonoEndEvent extends EventType
 

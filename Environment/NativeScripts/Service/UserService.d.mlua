@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides user-related function."
 @Service
 script UserService extends Service

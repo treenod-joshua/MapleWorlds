@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The scroll direction of SliderComponent."
 @Enum
 script SliderDirection

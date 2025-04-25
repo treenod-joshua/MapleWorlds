@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script Dimension
 	member Two = 0

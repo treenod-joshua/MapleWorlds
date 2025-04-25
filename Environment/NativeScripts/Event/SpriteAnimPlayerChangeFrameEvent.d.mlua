@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised when changing the sprite animation's frame."
 @Event
 script SpriteAnimPlayerChangeFrameEvent extends EventType

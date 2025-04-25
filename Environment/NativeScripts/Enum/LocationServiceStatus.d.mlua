@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script LocationServiceStatus
 	member Stopped = 0

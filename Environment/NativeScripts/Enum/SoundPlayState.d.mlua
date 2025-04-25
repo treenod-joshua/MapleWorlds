@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Type that indicates sound playback status. Used in SoundPlayStateChangedEvent."
 @Enum
 script SoundPlayState

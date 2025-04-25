@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Displays color."
 @Misc
 script Color

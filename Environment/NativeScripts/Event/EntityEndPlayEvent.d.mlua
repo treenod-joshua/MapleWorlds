@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Event which takes place on entity's EndPlay."
 @Event
 script EntityEndPlayEvent extends EventType

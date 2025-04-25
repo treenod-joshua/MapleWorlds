@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This entity represents memory shared between rooms."
 @Misc
 script RoomSharedMemory

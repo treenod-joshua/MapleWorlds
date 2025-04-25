@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Records and retrieves information. The function does not work in the World being created."
 @Service
 script LogStorageService extends Service
@@ -13,5 +14,9 @@ script LogStorageService extends Service
 	@ReleaseOnly
 	@ExecSpace("ServerOnly")
 	method void LogPurchaseInfo(WorldShopPurchaseInfo purchaseInfo, string message) end
+
+	---@sealed
+	@ExecSpace("ServerOnly")
+	method void SendHackLog(string userId, string title, table detail, int32 cnt) end
 
 end

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Looks up the recorded information list searched in LogStorageService by pages. Using the feature is not recommended, since it is a provisional feature."
 @Misc
 script PurchaseLogPages

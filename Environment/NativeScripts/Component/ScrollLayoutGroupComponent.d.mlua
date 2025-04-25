@@ -30,6 +30,21 @@ script ScrollLayoutGroupComponent extends Component
 	---@sealed
 	property HorizontalScrollBarDirection HorizontalScrollBarDirection = HorizontalScrollBarDirection.LeftToRight
 
+	---@description "Does not perform automatic substitution when the Map Layer's name is specified in SortingLayer."
+	---@sealed
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
+	---@description "Determines the priority within the same layer. A higher number indicates higher priority."
+	---@sealed
+	@Sync
+	property int32 OrderInLayer = 0
+
+	---@description "Determines whether to set the SortingLayer and OrderInLayer values manually."
+	---@sealed
+	@Sync
+	property boolean OverrideSorting = false
+
 	---@description "Sets the free space on the top, bottom, left, and right of the layout group."
 	---@sealed
 	property RectOffset Padding
@@ -61,6 +76,11 @@ script ScrollLayoutGroupComponent extends Component
 	---@description "Sets whether to display the scrollbar automatically."
 	---@sealed
 	property ScrollBarVisibility ScrollBarVisible = ScrollBarVisibility.AlwaysShow
+
+	---@description "When two or more entities overlap, the priority is determined according to the Sorting Layer."
+	---@sealed
+	@Sync
+	property string SortingLayer = "UI"
 
 	---@description "The spacing between child UI Entities. For Vertical and Horizontal types only."
 	---@sealed
@@ -107,5 +127,9 @@ script ScrollLayoutGroupComponent extends Component
 	method void SetScrollPositionByItemIndex(int32 index) end
 
 	emitter EmitScrollPositionChangedEvent(ScrollPositionChangedEvent event) end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
 
 end

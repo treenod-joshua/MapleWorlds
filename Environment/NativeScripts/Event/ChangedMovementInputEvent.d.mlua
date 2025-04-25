@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Occurs when the movement input changes on the MovementComponent."
 @Event
 script ChangedMovementInputEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This storage has a feature of managing integer data and bringing the aligned data. The maker and release environment do not share the storage."
 @Misc
 script SortableDataStorage

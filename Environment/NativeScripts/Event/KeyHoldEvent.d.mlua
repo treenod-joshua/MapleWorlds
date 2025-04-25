@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Occurs while pressing the Key. Does not occur with a short press."
 @Event
 script KeyHoldEvent extends EventType

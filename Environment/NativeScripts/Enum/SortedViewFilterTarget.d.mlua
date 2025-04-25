@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script SortedViewFilterTarget
 	member MetadataKey = 0

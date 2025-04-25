@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The result of a single match found using the regular expression."
 @Misc
 script RegexMatch

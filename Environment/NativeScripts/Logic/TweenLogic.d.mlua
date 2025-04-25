@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides functions for Tween."
 @Logic
 script TweenLogic extends Logic

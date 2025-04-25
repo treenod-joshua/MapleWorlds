@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The alignment type of the child Entity."
 @Enum
 script ChildAlignmentType

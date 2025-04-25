@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Occurs in InputService with mouse scroll up or down."
 @Event
 script MouseScrollEvent extends EventType

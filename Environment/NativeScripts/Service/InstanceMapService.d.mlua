@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This Service is deprecated. Use RoomService."
 ---@deprecated
 @Service

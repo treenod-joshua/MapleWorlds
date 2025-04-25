@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Specifies how text outside the horizontal width is handled."
 @Enum
 script OverflowType

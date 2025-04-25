@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This Event is deprecated. Use SpriteAnimPlayerEndEvent."
 ---@deprecated
 @Event

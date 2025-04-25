@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Shows the time interval."
 @Misc
 script TimeSpan

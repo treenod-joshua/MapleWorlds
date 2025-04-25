@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents the KeyCode of the keyboard."
 @Enum
 script KeyboardKey

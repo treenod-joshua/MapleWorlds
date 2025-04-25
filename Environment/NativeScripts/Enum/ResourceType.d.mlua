@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the resource file header format. "
 @Enum
 script ResourceType

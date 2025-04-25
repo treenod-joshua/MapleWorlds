@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event occurs when entering a dialog."
 @Event
 script ChatEvent extends EventType

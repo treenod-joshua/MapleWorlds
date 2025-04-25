@@ -1,3 +1,4 @@
+---@sealed
 ---@description "An entity that exists within MSW."
 @Misc
 script Entity
@@ -29,6 +30,10 @@ script Entity
 	---@description "An identifier for an entity."
 	---@sealed
 	readonly property string Id
+
+	---@description "The entity's localization status."
+	---@sealed
+	readonly property boolean Localize = false
 
 	---@description "The model for this entity."
 	---@sealed

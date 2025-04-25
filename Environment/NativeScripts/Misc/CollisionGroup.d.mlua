@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Show a collision group."
 @Misc
 script CollisionGroup

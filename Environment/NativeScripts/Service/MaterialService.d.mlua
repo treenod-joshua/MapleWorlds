@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The service controls the properties of the material."
 @Service
 script MaterialService extends Service

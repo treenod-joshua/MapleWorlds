@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Defines how to display the scrollbar."
 @Enum
 script ScrollBarVisibility

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the badge's information."
 @Misc
 script BadgeInfo

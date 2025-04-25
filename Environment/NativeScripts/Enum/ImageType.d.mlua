@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates how the image is displayed in ImageComponent."
 @Enum
 script ImageType

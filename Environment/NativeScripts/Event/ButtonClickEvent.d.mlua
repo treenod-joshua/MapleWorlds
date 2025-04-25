@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event occurs when clicking a Button."
 @Event
 script ButtonClickEvent extends EventType

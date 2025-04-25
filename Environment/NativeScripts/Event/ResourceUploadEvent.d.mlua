@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised in ResourceService when a resource created during world play is uploaded. This event will fire on every server in the world where the resource was uploaded."
 @Event
 script ResourceUploadEvent extends EventType

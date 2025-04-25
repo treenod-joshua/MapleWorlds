@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides collision-related functions."
 @Service
 script CollisionService extends Service

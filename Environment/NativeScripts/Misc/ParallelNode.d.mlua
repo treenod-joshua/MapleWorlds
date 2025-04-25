@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Executes all child nodes simultaneously."
 @Misc
 script ParallelNode extends BTNode

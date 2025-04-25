@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs in a room when it is destroyed."
 @Event
 script RoomEndEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when RigidBodyComponent collides with the foothold."
 @Event
 script FootholdCollisionEvent extends EventType

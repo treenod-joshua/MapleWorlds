@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Occurs when changing state."
 @Event
 script StateChangeEvent extends EventType

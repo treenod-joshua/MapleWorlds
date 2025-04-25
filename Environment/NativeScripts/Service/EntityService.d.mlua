@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This provides several features related to Entity."
 @Service
 script EntityService extends Service

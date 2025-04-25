@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the stop method of TweenLineComponent."
 @Enum
 script TweenLinearStopType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Event that occurs after an Avatar falls from a ladder or rope."
 @Event
 script RigidbodyClimbableDetachEndEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Inquires about the product list searched from WorldShopService in page units."
 @Misc
 script WorldShopProductPages

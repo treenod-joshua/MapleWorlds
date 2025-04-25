@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides a feature of inquiring about the data saved in DataStorage."
 @Misc
 script DataStorageItemPages

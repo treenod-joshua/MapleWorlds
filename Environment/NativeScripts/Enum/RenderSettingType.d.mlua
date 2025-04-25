@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script RenderSettingType
 	member SceneAnimationRenderer = 0

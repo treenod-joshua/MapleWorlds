@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when leaving a specific quadrangle tile."
 @Event
 script RectTileLeaveEvent extends EventType

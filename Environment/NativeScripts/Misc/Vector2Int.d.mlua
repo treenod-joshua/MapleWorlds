@@ -1,3 +1,4 @@
+---@sealed
 ---@description "A two-dimensional integer-type vector."
 @Misc
 script Vector2Int

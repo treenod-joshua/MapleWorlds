@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The quaternion used to represent the rotation value."
 @Misc
 script Quaternion

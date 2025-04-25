@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Applies gradation."
 @Enum
 script GradientModes

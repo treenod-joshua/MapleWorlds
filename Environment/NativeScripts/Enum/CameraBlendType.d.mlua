@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This is how to create a camera transition."
 @Enum
 script CameraBlendType

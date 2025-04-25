@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the movement of the damage skin."
 @Enum
 script DamageSkinTweenType

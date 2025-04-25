@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after finishing the deserialization of an entity."
 @Event
 script EntityPostDeserializeComponentsEvent extends EventType

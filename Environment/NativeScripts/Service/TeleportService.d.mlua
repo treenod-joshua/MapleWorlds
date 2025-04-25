@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides the function to move an entity to a specific location and warp users to another World instance."
 @Service
 script TeleportService extends Service

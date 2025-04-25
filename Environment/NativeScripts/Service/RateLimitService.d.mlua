@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Enables you to limit usage of scripts and native APIs."
 @Service
 script RateLimitService extends Service

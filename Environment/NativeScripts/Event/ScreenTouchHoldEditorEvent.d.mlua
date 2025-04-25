@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs while touching the screen or clicking into the editor mode."
 @Event
 script ScreenTouchHoldEditorEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Specifies the platforms on which UI entities can be activated."
 @Enum
 script PlatformType

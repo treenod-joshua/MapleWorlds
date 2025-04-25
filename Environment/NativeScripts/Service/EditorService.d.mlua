@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides functions related to editor script."
 @Service
 script EditorService extends Service

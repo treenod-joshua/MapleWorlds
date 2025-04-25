@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The method by which sprites are drawn."
 @Enum
 script SpriteDrawMode

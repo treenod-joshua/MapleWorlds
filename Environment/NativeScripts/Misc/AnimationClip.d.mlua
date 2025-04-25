@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This class includes the metadata and Sprite for the animation output of MSW."
 @Misc
 script AnimationClip

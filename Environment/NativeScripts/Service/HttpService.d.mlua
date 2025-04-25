@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Supports a function to send an HTTP request."
 @Service
 script HttpService extends Service

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Make two Entities move relative only along a specific axis. It is used by adding it to Joints of PrismaticJointComponent."
 @Misc
 script PrismaticJoint

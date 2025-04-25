@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This information is used to identify the shared variable."
 @Misc
 script SharedVariableKeyInfo

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Sets the orientation of the horizontal scroll bar."
 @Enum
 script HorizontalScrollBarDirection

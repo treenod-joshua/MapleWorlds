@@ -1,3 +1,4 @@
+---@sealed
 ---@description "An event that occurs when an ongoing mouse drag input is being made on the UI Entity."
 @Event
 script UITouchDragEvent extends EventType

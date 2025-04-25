@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised when starting the sprite animation's playback."
 @Event
 script SpriteAnimPlayerStartEvent extends EventType

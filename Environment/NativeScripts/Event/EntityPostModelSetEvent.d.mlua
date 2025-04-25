@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after setting the target model of an entity."
 @Event
 script EntityPostModelSetEvent extends EventType

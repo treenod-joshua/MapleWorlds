@@ -1,3 +1,4 @@
+---@sealed
 @Event
 script EditorGUITabButtonEvent extends EventType
 

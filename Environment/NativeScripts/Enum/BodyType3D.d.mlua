@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script BodyType3D
 	member Kinematic = 0

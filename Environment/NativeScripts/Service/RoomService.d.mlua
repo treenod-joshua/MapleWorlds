@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This service processes room-related events."
 @Service
 script RoomService extends Service

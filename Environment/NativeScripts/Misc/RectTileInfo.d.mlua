@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents information for each tile defined in the tile set."
 @Misc
 script RectTileInfo

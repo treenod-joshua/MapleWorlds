@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the sort method."
 @Enum
 script SortDirection

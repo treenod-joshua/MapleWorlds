@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The result of processing shared variable create, update, and delete requests."
 @Misc
 script SharedVariableResult

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the shape of the damage skin."
 @Enum
 script DamageSkinTextType

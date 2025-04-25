@@ -22,6 +22,10 @@ script MapComponent extends Component
 	---@sealed
 	property float Gravity = 1
 
+	---@description "Indicates whether the map is dynamically created."
+	---@sealed
+	readonly property boolean IsDynamicMap = false
+
 	---@sealed
 	property boolean InstanceMap = false
 

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised when an entity is attached to another entity. Recommend using fallback with EntityChangedParentEvent."
 @Event
 script EntityPostAttachEntityEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This type is deprecated. Use CollisionSimulator."
 ---@deprecated
 @Misc

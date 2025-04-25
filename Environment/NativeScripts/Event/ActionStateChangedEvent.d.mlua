@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the action state changes."
 @Event
 script ActionStateChangedEvent extends EventType

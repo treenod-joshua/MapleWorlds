@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event occurs when changing the wearing state of equipment."
 @Event
 script InitMapleCostumeEvent extends EventType

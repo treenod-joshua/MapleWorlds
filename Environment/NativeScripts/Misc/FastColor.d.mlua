@@ -54,6 +54,7 @@ script FastColor
 	---@description "Initializes to the specified r, g, b, a values."
 	constructor FastColor(number r, number g, number b, number a) end
 
+	---@description "Initializes FastColor to the specified value."
 	constructor FastColor(Color color) end
 
 	---@description "Generates a copy."

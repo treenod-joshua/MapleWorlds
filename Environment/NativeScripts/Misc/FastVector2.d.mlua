@@ -37,6 +37,7 @@ script FastVector2
 	---@description "Reset FastVector2 to the specified value."
 	constructor FastVector2(number x, number y) end
 
+	---@description "Reset FastVector2 to the specified value."
 	constructor FastVector2(Vector2 vector2) end
 
 	---@description "Finds the angle between two Vectors. Returns values between 0 to 180."

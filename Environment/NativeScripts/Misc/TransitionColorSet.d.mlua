@@ -1,3 +1,4 @@
+---@sealed
 @Misc
 script TransitionColorSet
 

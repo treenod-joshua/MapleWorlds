@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents a polygonal shape utilized for collision-related functions."
 @Misc
 script PolygonShape extends Shape

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides a function to display a notification message on the screen."
 @Logic
 script ScreenMessageLogic extends Logic

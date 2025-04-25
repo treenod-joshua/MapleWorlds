@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The editor event occurs after changing the value of InputField."
 @Event
 script TextInputEndEditEditorEvent extends EventType

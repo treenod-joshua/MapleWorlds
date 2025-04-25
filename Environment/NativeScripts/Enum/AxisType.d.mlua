@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This is the control key type used in JoystickComponent."
 @Enum
 script AxisType

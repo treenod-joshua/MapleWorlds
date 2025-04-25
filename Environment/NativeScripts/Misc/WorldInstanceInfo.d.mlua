@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Inquires about the World instance list searched from WorldInstanceService."
 @Misc
 script WorldInstanceInfo

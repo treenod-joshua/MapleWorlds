@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Particle preset type used by UISpriteParticleComponent."
 @Enum
 script UISpriteParticleType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "An event that occurs when the UIMode of UITransformComponent changes."
 @Event
 script UIModeTypeChangedEvent extends EventType

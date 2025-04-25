@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised when the player uses an Action."
 @Event
 script PlayerActionEvent extends EventType

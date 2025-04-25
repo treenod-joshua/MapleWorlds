@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This provides several collision detection functions."
 @Misc
 script CollisionSimulator

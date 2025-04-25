@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs before beginning the deserialization of an entity."
 @Event
 script EntityPreDeserializeComponentsEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the current state of the TweenComponent Tweener."
 @Enum
 script TweenState

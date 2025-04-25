@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides the text translation function."
 @Service
 script LocalizationService extends Service

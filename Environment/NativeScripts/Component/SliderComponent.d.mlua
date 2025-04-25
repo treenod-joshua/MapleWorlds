@@ -34,6 +34,11 @@ script SliderComponent extends Component
 	---@sealed
 	property Vector2 HandleSize = Vector2(50.000, 50.000)
 
+	---@description "Does not perform automatic substitution when the Map Layer's name is specified in SortingLayer."
+	---@sealed
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
 	---@description "The maximum Value."
 	---@sealed
 	property float MaxValue = 1
@@ -41,6 +46,21 @@ script SliderComponent extends Component
 	---@description "The minimum Value."
 	---@sealed
 	property float MinValue = 0
+
+	---@description "Determines the priority within the same layer. A higher number indicates higher priority."
+	---@sealed
+	@Sync
+	property int32 OrderInLayer = 0
+
+	---@description "Determines whether to set the SortingLayer and OrderInLayer values manually."
+	---@sealed
+	@Sync
+	property boolean OverrideSorting = false
+
+	---@description "When two or more entities overlap, the priority is determined according to the Sorting Layer."
+	---@sealed
+	@Sync
+	property string SortingLayer = "UI"
 
 	---@description "Sets whether to use the handle."
 	---@sealed
@@ -55,5 +75,9 @@ script SliderComponent extends Component
 	property float Value = 1
 
 	emitter EmitSliderValueChangedEvent(SliderValueChangedEvent event) end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
 
 end

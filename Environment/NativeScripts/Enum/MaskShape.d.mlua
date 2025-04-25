@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents the mask shape for MaskComponent."
 @Enum
 script MaskShape

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This code represents the results of requests related to room and world instance events."
 @Enum
 script SendEventRequestResultCode

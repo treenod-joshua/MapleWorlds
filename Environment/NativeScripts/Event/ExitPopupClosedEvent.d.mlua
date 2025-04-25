@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when opening the exit pop-up."
 @Event
 script ExitPopupClosedEvent extends EventType

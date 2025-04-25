@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after applying the changed properties value of an entity."
 @Event
 script EntityPostApplyChangedPropertiesEvent extends EventType

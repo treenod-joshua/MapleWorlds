@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event occurs when a user is expelled. Can only occur on the server."
 @Event
 script UserKickEvent extends EventType

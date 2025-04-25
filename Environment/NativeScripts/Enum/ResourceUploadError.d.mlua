@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates resource upload success and failure results."
 @Enum
 script ResourceUploadError

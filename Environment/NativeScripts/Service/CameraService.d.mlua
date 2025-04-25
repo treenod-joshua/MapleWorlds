@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides camera related functions."
 @Service
 script CameraService extends Service

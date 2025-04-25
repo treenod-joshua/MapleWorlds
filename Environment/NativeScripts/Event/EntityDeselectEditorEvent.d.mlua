@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Editor event which takes place when deselecting an entity."
 @Event
 script EntityDeselectEditorEvent extends EventType

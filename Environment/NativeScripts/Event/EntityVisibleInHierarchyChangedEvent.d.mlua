@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the entity's VisibleInHierarchy changes."
 @Event
 script EntityVisibleInHierarchyChangedEvent extends EventType

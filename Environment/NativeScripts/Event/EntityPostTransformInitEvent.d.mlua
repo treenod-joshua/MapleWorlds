@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after initializing an entity's Transform."
 @Event
 script EntityPostTransformInitEvent extends EventType

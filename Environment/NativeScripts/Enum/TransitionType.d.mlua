@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Specifies the transition effect for the button. You can specify different effects depending on the state."
 @Enum
 script TransitionType

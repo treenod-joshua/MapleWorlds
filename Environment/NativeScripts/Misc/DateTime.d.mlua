@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Shows the date and time."
 @Misc
 script DateTime

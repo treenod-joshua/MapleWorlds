@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Sets the detection method for physics collision."
 @Enum
 script PhysicsCollisionDetectionMode

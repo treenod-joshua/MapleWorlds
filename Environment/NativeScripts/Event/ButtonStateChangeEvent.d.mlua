@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when changing the Button's state."
 @Event
 script ButtonStateChangeEvent extends EventType

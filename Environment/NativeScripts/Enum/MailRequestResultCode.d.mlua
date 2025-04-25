@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script MailRequestResultCode
 	member Success = 0

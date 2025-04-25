@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when TriggerComponent's area no longer overlaps."
 @Event
 script TriggerLeaveEvent extends EventType

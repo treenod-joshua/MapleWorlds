@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when changing the world where an entity belongs."
 @Event
 script EntityWorldChangedEvent extends EventType

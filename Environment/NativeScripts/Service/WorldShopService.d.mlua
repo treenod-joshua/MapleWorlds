@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides functions related to purchasing products in the world through paid goods."
 @Service
 script WorldShopService extends Service

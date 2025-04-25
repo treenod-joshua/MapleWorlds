@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Occurs once upon pressing the Key."
 @Event
 script KeyDownEvent extends EventType

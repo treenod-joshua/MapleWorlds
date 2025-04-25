@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when an entity is hit."
 @Event
 script HitEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Storage that can manage user data. The Maker and release environment do not share the storage."
 @Misc
 script UserDataStorage

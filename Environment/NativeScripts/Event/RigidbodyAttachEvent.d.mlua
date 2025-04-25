@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event occurs when the Entity attaches to another Entity using RigidbodyComponent:AttachTo(string, Vector3). Players occur on the client, other entities occur on the server."
 @Event
 script RigidbodyAttachEvent extends EventType

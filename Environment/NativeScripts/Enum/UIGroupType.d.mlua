@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the UI group type. Creators can freely modify UIGroupType for all UIGroup."
 @Enum
 script UIGroupType

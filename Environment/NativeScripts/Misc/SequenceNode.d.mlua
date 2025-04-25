@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Executes child nodes until the child node returns Failure."
 @Misc
 script SequenceNode extends BTNode

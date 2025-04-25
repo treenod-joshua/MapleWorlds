@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the user reconnects."
 @Event
 script UserReconnectEvent extends EventType

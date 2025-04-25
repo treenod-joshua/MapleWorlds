@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs in UserService when a user enters a game."
 @Event
 script UserEnterEvent extends EventType

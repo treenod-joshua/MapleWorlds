@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Use LineRendererComponent to draw lines."
 @Misc
 script LinePoint

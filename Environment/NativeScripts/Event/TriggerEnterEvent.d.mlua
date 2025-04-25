@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurts when TriggerComponent's area overlaps."
 @Event
 script TriggerEnterEvent extends EventType

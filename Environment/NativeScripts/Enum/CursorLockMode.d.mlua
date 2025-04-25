@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates how to control the mouse cursor."
 @Enum
 script CursorLockMode

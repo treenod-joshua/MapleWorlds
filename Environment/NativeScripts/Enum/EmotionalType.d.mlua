@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the facial expression of the avatar."
 @Enum
 script EmotionalType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when a player uses a portal."
 @Event
 script PortalUseEvent extends EventType

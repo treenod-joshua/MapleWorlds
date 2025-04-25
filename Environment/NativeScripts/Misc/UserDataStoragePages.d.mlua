@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides a feature that can inquire about UserDataStorage of the world."
 @Misc
 script UserDataStoragePages

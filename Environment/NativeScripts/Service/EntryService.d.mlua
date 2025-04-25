@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides features related to the entity."
 @Service
 script EntryService extends Service

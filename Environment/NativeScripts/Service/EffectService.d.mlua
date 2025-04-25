@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides the effect control function."
 @Service
 script EffectService extends Service

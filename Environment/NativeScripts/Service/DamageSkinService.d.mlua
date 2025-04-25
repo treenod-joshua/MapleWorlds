@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides functions related to damage skin."
 @Service
 script DamageSkinService extends Service

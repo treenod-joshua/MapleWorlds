@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Connect Entity at a point and have the linked Entity rotate around that point. The connected Entity will act like a wheel. It is used by adding it to Joints of WheelJointComponent."
 @Misc
 script WheelJoint

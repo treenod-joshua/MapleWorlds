@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Shows the relationship between the RigidbodyComponent and the SortingLayer of the ClimbableSpriteRendererComponent."
 @Enum
 script AutomaticLayerOption

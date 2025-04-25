@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This represents the performance result of BehaviorTree."
 @Enum
 script BehaviourTreeStatus

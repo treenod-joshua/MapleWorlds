@@ -1,3 +1,4 @@
+---@sealed
 ---@description "An event that is called when the Enter key is pressed."
 @Event
 script TextInputSubmitEditorEvent extends EventType

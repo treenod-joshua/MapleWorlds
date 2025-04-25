@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates text alignment options."
 @Enum
 script TextAlignmentType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Various spacing options."
 @Misc
 script TextRendererSpacingOption

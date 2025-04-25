@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides the ability to summon particles."
 @Service
 script ParticleService extends Service

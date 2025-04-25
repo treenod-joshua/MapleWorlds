@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after initializing the additional components of an entity."
 @Event
 script EntityPostInitAdditionalComponentsEvent extends EventType

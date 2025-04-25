@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when changing the component's SortingLayer."
 @Event
 script SortingLayerChangedEvent extends EventType

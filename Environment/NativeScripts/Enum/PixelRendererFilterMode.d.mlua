@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script PixelRendererFilterMode
 	member Point = 0

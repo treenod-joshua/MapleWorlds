@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs before filling the property value of an entity's original model."
 @Event
 script EntityPreFillOriginPropertiesEvent extends EventType

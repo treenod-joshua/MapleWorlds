@@ -154,4 +154,14 @@ script SpriteGUIRendererComponent extends Component
 
 	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
 
+	emitter EmitSpriteGUIAnimPlayerChangeFrameEvent(SpriteGUIAnimPlayerChangeFrameEvent event) end
+
+	emitter EmitSpriteGUIAnimPlayerEndEvent(SpriteGUIAnimPlayerEndEvent event) end
+
+	emitter EmitSpriteGUIAnimPlayerEndFrameEvent(SpriteGUIAnimPlayerEndFrameEvent event) end
+
+	emitter EmitSpriteGUIAnimPlayerStartEvent(SpriteGUIAnimPlayerStartEvent event) end
+
+	emitter EmitSpriteGUIAnimPlayerStartFrameEvent(SpriteGUIAnimPlayerStartFrameEvent event) end
+
 end

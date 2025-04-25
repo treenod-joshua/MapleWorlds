@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event that takes place when particle emission begins."
 @Event
 script ParticleEmitStartEvent extends EventType

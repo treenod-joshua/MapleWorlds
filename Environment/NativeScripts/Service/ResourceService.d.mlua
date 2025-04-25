@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This is a service that provides various functions for resources."
 @Service
 script ResourceService extends Service

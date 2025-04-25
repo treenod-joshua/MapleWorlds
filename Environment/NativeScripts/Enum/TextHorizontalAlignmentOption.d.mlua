@@ -1,3 +1,4 @@
+---@sealed
 ---@description "How to align horizontal text."
 @Enum
 script TextHorizontalAlignmentOption

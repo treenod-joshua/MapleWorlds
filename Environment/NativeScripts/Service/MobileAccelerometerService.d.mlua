@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Uses the accelerometer of the mobile device. It can be called when the accelerometer function is supported in the mobile device and the user device."
 @Service
 script MobileAccelerometerService extends Service

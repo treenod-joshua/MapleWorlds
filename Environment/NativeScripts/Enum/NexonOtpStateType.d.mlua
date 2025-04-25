@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates whether the user has two-factor authentication. The two-factor authentication will be different depending on the account type."
 @Enum
 script NexonOtpStateType

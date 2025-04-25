@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event which takes place upon creation of an entity."
 @Event
 script EntityCreateEvent extends EventType

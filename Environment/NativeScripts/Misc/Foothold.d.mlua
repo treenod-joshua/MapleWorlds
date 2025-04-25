@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates various kinds of information about foothold."
 @Misc
 script Foothold

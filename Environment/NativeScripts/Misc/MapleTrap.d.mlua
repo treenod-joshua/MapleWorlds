@@ -1,3 +1,4 @@
+---@sealed
 ---@description "A resource abstract class for representing the various resources of MSW."
 @Misc
 script MapleTrap

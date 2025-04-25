@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script MobileCameraStatus
 	member TakePhotoSuccess = 0

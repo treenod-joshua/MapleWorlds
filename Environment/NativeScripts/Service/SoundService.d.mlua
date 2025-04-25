@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides sound-related functions."
 @Service
 script SoundService extends Service

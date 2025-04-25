@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Editor event which takes place when deleting an entity."
 @Event
 script EntityDeleteEditorEvent extends EventType

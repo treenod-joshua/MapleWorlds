@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when changing the parent Entity of an Entity."
 @Event
 script EntityChangedParentEvent extends EventType

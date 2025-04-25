@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised after completing the camera's zoom change."
 @Event
 script CameraZoomEndEvent extends EventType

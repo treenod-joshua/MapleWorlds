@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Event used to change ActionState using the BodyAction name."
 @Event
 script BodyActionTypeChangeEvent extends EventType

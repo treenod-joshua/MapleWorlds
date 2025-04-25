@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the scrolling direction of the vertical scroll bar."
 @Enum
 script VerticalScrollBarDirection

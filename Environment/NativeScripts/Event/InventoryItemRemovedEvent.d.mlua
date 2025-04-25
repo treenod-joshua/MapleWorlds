@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when removing an item of the inventory."
 @Event
 script InventoryItemRemovedEvent extends EventType

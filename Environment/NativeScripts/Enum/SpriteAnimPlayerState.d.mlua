@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the playback state of the animation."
 @Enum
 script SpriteAnimPlayerState

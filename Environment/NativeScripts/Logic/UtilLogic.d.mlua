@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides various utilities."
 @Logic
 script UtilLogic extends Logic

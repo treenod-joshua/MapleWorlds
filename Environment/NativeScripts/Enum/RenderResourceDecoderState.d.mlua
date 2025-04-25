@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script RenderResourceDecoderState
 	member Invalid = 0

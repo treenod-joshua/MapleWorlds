@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The Event occurs when leaving the Interaction area."
 @Event
 script InteractionLeaveEvent extends EventType

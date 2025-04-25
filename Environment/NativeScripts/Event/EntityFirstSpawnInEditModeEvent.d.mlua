@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is triggered when an entity first appears in edit mode."
 @Event
 script EntityFirstSpawnInEditModeEvent extends EventType

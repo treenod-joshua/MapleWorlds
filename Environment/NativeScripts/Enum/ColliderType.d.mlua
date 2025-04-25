@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates a colliding body shape."
 @Enum
 script ColliderType

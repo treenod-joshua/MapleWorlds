@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when a chat balloon appears."
 @Event
 script ChatBalloonEvent extends EventType

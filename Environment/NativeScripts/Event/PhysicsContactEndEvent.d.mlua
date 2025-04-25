@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised when two physics rigid bodies end collision."
 @Event
 script PhysicsContactEndEvent extends EventType

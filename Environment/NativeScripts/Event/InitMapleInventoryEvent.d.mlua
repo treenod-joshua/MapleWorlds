@@ -1,3 +1,4 @@
+---@sealed
 @Event
 script InitMapleInventoryEvent extends EventType
 

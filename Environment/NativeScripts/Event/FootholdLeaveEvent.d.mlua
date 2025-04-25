@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the entity comes off of the Foothold."
 @Event
 script FootholdLeaveEvent extends EventType

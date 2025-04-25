@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is deprecated."
 ---@deprecated
 @Event

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when changing the map the entity belongs to."
 @Event
 script EntityMapChangedEvent extends EventType

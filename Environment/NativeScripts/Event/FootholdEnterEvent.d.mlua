@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the entity is attached to the Foothold."
 @Event
 script FootholdEnterEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when adding a child entity to an entity."
 @Event
 script EntityAddChildrenEvent extends EventType

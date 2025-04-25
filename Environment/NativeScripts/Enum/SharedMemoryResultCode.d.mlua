@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This code indicates the result of processing requests related to shared memory."
 @Enum
 script SharedMemoryResultCode

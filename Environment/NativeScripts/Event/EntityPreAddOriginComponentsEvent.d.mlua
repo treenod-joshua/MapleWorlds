@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs before adding the components of an entity's original model."
 @Event
 script EntityPreAddOriginComponentsEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Displays providable policy information by region."
 @Misc
 script PolicyInfo

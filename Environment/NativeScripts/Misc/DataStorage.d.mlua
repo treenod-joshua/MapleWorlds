@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This type is deprecated. Please use GetGlobalDataStorage(string), GetUserDataStorage(string), GetCreatorDataStorage(), or GetSortableDataStorage(string) of DataStorageService for the intended use."
 ---@deprecated
 @Misc

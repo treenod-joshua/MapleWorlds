@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the avatar item classification of MapleStory."
 @Enum
 script MapleAvatarItemCategory

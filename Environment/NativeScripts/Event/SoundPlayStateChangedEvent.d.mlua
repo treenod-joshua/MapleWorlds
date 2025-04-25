@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Event that occurs when the playback state of the background music for the SoundService and sound effect for the SoundComponent change."
 @Event
 script SoundPlayStateChangedEvent extends EventType

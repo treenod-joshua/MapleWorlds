@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Sets the sleep state of the collision. "
 @Enum
 script PhysicsSleepingMode

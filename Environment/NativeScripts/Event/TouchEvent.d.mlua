@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when an entity is touched. The entity must have a TouchReceiveComponent for the event to occur."
 @Event
 script TouchEvent extends EventType

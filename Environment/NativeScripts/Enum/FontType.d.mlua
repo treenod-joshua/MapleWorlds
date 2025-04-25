@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the font type."
 @Enum
 script FontType

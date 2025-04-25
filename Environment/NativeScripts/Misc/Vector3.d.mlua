@@ -1,3 +1,4 @@
+---@sealed
 ---@description "A three-dimensional vector."
 @Misc
 script Vector3

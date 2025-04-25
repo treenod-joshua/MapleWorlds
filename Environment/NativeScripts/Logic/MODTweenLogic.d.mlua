@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This is a deprecated Logic. Use TweenLogic, TweenLineComponent, TweenFloatingComponent, and TweenCircularComponent for the intended use."
 ---@deprecated
 @Logic

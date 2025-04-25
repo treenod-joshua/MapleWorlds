@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Displays the particles used by UIBasicParticleComponent."
 @Enum
 script UIBasicParticleType

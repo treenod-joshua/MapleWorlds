@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates whether rows and columns are frozen in GridViewComponent."
 @Enum
 script GridViewFixedType

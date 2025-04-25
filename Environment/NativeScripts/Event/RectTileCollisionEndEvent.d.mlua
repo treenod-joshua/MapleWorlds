@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when being freed from the collided tile."
 @Event
 script RectTileCollisionEndEvent extends EventType

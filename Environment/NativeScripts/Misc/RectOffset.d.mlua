@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents a rectangular offset."
 @Misc
 script RectOffset

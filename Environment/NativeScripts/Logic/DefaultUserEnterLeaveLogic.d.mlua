@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides functions related to user entry and exit."
 @Logic
 script DefaultUserEnterLeaveLogic extends Logic

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs before initializing the additional components of an entity."
 @Event
 script EntityPreInitAdditionalComponentsEvent extends EventType

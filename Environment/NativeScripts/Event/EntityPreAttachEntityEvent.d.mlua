@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised before an entity attaches to another entity."
 @Event
 script EntityPreAttachEntityEvent extends EventType

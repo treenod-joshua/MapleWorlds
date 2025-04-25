@@ -1,3 +1,4 @@
+---@sealed
 ---@description "An event that occurs when a touch or a mouse button input is made on the UI Entity."
 @Event
 script UITouchDownEvent extends EventType

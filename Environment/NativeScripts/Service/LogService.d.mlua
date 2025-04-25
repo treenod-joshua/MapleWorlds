@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides log-related features."
 @Service
 script LogService extends Service

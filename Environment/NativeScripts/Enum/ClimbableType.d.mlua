@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents a climbing animation."
 @Enum
 script ClimbableType

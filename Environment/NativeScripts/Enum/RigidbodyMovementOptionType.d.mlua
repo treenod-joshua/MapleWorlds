@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Sets options to apply to the RigidbodyComponent above the foothold."
 @Enum
 script RigidbodyMovementOptionType

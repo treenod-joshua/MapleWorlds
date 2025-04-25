@@ -1,3 +1,4 @@
+---@sealed
 ---@description "A list of microphones connected to the device."
 @Misc
 script MicrophoneDevice

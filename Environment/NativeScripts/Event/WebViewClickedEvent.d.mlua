@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when a click is made in the WebView."
 @Event
 script WebViewClickedEvent extends EventType

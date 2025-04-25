@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script CameraBodyType
 	member FramingTransposer = 0

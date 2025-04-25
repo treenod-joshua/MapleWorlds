@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides functions related to user input."
 @Service
 script InputService extends Service
@@ -22,7 +23,7 @@ script InputService extends Service
 	@ExecSpace("ClientOnly")
 	method boolean IsAnyKeyPressed() end
 
-	---@description "Returns true if Key is currently pressed."
+	---@description "Returns true if key is currently pressed."
 	---@sealed
 	@ExecSpace("ClientOnly")
 	method boolean IsKeyPressed(KeyboardKey key) end
@@ -42,7 +43,7 @@ script InputService extends Service
 	@ExecSpace("ClientOnly")
 	method void ResetCursor() end
 
-	---@description "Change the cursor's appearance. spriteRUID is the RUID of the sprite or the animation clip. offset is the value that indicates the cursor's relative position in measures of pixels, and if offset is (0, 0), the top left of the sprite will be the cursor's position. The cursor's shape will be reset as it moves around the room."
+	---@description "Change the cursor's appearance. spriteRUID is the RUID of the sprite or the animation clip. offset is the value that indicates the cursor's relative position in measures of pixels, and if offset is (0, 0), the sprite's Pivot will be the cursor's position. The cursor's shape will be reset as it moves around the room."
 	---@sealed
 	@ExecSpace("ClientOnly")
 	method void SetCursor(string spriteRUID, Vector2 offset) end

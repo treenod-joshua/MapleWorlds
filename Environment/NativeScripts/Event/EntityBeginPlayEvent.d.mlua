@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs on an entity's BeginPlay."
 @Event
 script EntityBeginPlayEvent extends EventType

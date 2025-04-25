@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event occurs when changing the value of InputField."
 @Event
 script TextInputValueChangeEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Storage to manage multipurpose data. The Maker and release environment do not share the storage."
 @Misc
 script GlobalDataStorage

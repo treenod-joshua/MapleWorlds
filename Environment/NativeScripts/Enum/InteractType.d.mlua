@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Sets the interaction method."
 @Enum
 script InteractType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Occurs once upon pressing and releasing the Key. Does not occur with a short press."
 @Event
 script KeyReleaseEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Captures all or part of the screen."
 @Service
 script ScreenshotService extends Service

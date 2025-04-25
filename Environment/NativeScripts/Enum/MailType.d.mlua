@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script MailType
 	member Normal = 0

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The class contains meta information (e.g., pivot, border, etc.), which is to express the image of the MSW, and the texture binary of the image."
 @Misc
 script Sprite

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The avatar's eyes blink periodically."
 @Enum
 script MapleAvatarFaceActionState

@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script LightType
 	member Directonal = 0

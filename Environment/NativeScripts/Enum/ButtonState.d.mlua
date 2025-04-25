@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates a button state."
 @Enum
 script ButtonState

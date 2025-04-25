@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Can search and replace strings using regular expressions. Regular expressions have a time limit, so it will fail if not completed in time."
 @Misc
 script Regex

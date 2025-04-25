@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the product type."
 @Enum
 script WorldShopProductType

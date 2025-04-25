@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents particles used by BasicParticleComponent."
 @Enum
 script BasicParticleType

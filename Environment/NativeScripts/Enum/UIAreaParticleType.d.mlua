@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Particle preset type that is used in UIAreaParticleComponent."
 @Enum
 script UIAreaParticleType

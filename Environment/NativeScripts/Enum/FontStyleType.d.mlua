@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Expresses fonts in various ways."
 @Enum
 script FontStyleType

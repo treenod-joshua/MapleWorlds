@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the anchor's reference point."
 @Enum
 script AlignmentType

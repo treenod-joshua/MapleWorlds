@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates a row of the data table produced by users."
 @Misc
 script UserDataRow extends Data

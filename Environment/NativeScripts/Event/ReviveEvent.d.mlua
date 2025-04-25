@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is fired when the target is revived."
 @Event
 script ReviveEvent extends EventType

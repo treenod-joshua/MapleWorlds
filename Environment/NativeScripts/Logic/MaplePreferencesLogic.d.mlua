@@ -1,3 +1,4 @@
+---@sealed
 ---@description "MapleStory settings and variable values are provided as properties."
 @Logic
 script MaplePreferencesLogic extends Logic

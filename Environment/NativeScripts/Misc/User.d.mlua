@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The user's information."
 @Misc
 script User
@@ -25,5 +26,10 @@ script User
 	---@description "The user's unique identifier. It can be used in the targetUserId parameter of the Client execution space control function."
 	---@sealed
 	readonly property string UserId
+
+	---@description "Shows the region where the user account was registered. Can be used when trying to categorize accounts by region. The maker always returns AccountRegion.Unknown."
+	---@sealed
+	@ExecSpace("ServerOnly")
+	method AccountRegion GetAccountRegion() end
 
 end

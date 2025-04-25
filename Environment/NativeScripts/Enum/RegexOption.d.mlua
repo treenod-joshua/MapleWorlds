@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Can specify the options needed for regular expressions."
 @Enum
 script RegexOption

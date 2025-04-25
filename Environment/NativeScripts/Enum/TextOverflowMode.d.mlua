@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Determines what to do when the text exceeds the text box's width."
 @Enum
 script TextOverflowMode

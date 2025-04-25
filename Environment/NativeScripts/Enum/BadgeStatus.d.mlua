@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the registration state of the badge."
 @Enum
 script BadgeStatus

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised when two physics rigid bodies begin to collide."
 @Event
 script PhysicsContactBeginEvent extends EventType

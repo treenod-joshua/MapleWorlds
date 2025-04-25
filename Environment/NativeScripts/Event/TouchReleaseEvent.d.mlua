@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when an entity is released from the touch. The entity must have a TouchReceiveComponent for the event to occur. Cannot be triggered by a short touch."
 @Event
 script TouchReleaseEvent extends EventType

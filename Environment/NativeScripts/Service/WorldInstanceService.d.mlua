@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This service processes events between world instances."
 @Service
 script WorldInstanceService extends Service
@@ -15,6 +16,11 @@ script WorldInstanceService extends Service
 	---@sealed
 	@ExecSpace("ServerOnly")
 	method void DeleteSharedMemoryAsync(string name, func<SharedMemoryResultCode> callbackFunction) end
+
+	---@description "Confirms which regional server the world instance is running in. Maker always returns Division.Unknown."
+	---@sealed
+	@ExecSpace("ServerOnly")
+	method Division GetDivision() end
 
 	---@description "Returns a shared memory entity between rooms in the same world instance. If a shared memory with the same name already exists, obtains the existing one; if not, creates a new one."
 	---@sealed

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Displays shaders that material can use."
 @Enum
 script ShaderType

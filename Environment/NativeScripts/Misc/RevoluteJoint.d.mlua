@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Connect the two Entities at a point and have them rotate around that point. It is used by adding it to Joints of RevoluteJointComponent."
 @Misc
 script RevoluteJoint

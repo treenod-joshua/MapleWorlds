@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the entity's EnabledInHierarchy changes."
 @Event
 script EntityEnabledInHierarchyChangedEvent extends EventType

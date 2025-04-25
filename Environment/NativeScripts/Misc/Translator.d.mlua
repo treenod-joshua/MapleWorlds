@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides LocaleDataSet inquiry function for translation."
 @Misc
 script Translator

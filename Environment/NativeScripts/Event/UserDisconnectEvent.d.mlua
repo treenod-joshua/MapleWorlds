@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the user's network connection is unstable or disconnected."
 @Event
 script UserDisconnectEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "It indicates the screen recording method."
 @Enum
 script ScreenRecordMode

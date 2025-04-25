@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Occurs once upon pressing and releasing the Key."
 @Event
 script KeyUpEvent extends EventType

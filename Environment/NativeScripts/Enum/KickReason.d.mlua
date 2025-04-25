@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the reason for the user's expulsion."
 @Enum
 script KickReason

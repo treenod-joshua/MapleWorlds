@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Uses the gravity sensor of the mobile device. It can be called when the gravity sensor function is supported in the mobile device and the user device."
 @Service
 script MobileGyroscopeService extends Service

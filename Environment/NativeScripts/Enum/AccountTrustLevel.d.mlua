@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The user account's authentication level. Authentication will be different depending on the account type."
 @Enum
 script AccountTrustLevel

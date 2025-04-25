@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the data format contained in the Content sent by the Http request."
 @Enum
 script HttpContentType

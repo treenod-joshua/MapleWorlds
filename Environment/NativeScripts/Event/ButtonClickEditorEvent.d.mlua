@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The editor event occurs when clicking the Button."
 @Event
 script ButtonClickEditorEvent extends EventType

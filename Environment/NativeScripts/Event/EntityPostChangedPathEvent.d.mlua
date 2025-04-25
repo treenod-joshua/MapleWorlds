@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after changing an entity's path."
 @Event
 script EntityPostChangedPathEvent extends EventType

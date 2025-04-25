@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when entering a specific quadrangle tile."
 @Event
 script RectTileEnterEvent extends EventType

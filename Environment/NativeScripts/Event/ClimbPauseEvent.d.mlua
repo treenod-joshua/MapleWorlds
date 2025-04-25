@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is fired when riding on an object and stopping."
 @Event
 script ClimbPauseEvent extends EventType

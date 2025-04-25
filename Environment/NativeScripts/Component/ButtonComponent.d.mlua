@@ -6,6 +6,11 @@ script ButtonComponent extends Component
 	---@sealed
 	property TransitionColorSet Colors
 
+	---@description "Does not perform automatic substitution when the Map Layer's name is specified in SortingLayer."
+	---@sealed
+	@Sync
+	property boolean IgnoreMapLayerCheck = false
+
 	---@description "Sets the image of the button according to its state."
 	---@sealed
 	property TransitionRUIDSet ImageRUIDs
@@ -13,6 +18,21 @@ script ButtonComponent extends Component
 	---@description "When pressing the button, it operates as if the specified keyCode was pressed."
 	---@sealed
 	property KeyboardKey KeyCode = KeyboardKey.None
+
+	---@description "Determines the priority within the same layer. A higher number indicates higher priority."
+	---@sealed
+	@Sync
+	property int32 OrderInLayer = 0
+
+	---@description "Determines whether to set the SortingLayer and OrderInLayer values manually."
+	---@sealed
+	@Sync
+	property boolean OverrideSorting = false
+
+	---@description "When two or more entities overlap, the priority is determined according to the Sorting Layer."
+	---@sealed
+	@Sync
+	property string SortingLayer = "UI"
 
 	---@description "This is a type for the button's state transition."
 	---@sealed
@@ -27,5 +47,9 @@ script ButtonComponent extends Component
 	emitter EmitButtonStateChangeEditorEvent(ButtonStateChangeEditorEvent event) end
 
 	emitter EmitButtonStateChangeEvent(ButtonStateChangeEvent event) end
+
+	emitter EmitOrderInLayerChangedEvent(OrderInLayerChangedEvent event) end
+
+	emitter EmitSortingLayerChangedEvent(SortingLayerChangedEvent event) end
 
 end

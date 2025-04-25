@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the Entity is destroyed."
 @Event
 script EntityDestroyEvent extends EventType

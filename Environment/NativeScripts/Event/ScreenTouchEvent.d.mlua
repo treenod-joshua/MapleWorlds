@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when touching the screen or clicking."
 @Event
 script ScreenTouchEvent extends EventType

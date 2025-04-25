@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides the ability for users to obtain badges or to view badge information."
 @Service
 script BadgeService extends Service

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This service shares videos or images recorded by ScreenRecordService on social media. Only available on mobile devices."
 @Service
 script MobileShareService extends Service

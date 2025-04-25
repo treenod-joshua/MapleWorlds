@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Defines how the image is scaled, sized, and pivoted."
 @Enum
 script PreserveSpriteType

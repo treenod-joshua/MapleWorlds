@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script Rigidbody3DType
 	member Collider = 0

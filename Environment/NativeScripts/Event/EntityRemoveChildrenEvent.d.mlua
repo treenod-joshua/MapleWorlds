@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after removing a child entity of an entity."
 @Event
 script EntityRemoveChildrenEvent extends EventType

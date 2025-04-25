@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides a timer function that can call a function after a certain period of time or call it repeatedly."
 @Service
 script TimerService extends Service

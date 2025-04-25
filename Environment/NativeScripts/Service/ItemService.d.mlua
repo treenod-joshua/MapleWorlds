@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides item related functions."
 @Service
 script ItemService extends Service

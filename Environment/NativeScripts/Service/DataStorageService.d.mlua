@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides several DataStorage access functions."
 @Service
 script DataStorageService extends Service

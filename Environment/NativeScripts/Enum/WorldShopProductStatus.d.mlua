@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the sales state of the product."
 @Enum
 script WorldShopProductStatus

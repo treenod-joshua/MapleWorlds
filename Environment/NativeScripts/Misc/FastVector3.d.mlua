@@ -47,6 +47,7 @@ script FastVector3
 	---@description "Initializes FastVector3 to the specified value."
 	constructor FastVector3(number x, number y, number z) end
 
+	---@description "Initializes FastVector3 to the specified value."
 	constructor FastVector3(Vector3 vector3) end
 
 	---@description "Finds the angle between two Vectors. Returns values between 0 to 180."

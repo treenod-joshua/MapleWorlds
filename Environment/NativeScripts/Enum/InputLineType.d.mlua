@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Specifies how to enter."
 @Enum
 script InputLineType

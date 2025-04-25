@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Identifies the specific animation of the avatar. Receives an event as BodyActionStateChangeEvent and outputs the avatar animation. It corresponds to the ActionSheet value of AvatarStateAnimationComponent."
 @Enum
 script MapleAvatarBodyActionState

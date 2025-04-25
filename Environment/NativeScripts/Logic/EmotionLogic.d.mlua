@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This is the superclass of all logic. Provides basic functions of logic."
 @Logic
 script EmotionLogic extends Logic

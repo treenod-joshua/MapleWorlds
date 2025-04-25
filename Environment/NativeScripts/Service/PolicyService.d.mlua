@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides the ability to look up policy information for each region."
 @Service
 script PolicyService extends Service

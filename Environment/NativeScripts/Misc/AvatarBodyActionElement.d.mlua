@@ -1,3 +1,4 @@
+---@sealed
 ---@description "AvatarBodyActionState represents various kinds of information."
 @Misc
 script AvatarBodyActionElement

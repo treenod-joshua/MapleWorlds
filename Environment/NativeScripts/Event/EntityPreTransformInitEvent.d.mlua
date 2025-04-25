@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs before initializing an entity's Transform."
 @Event
 script EntityPreTransformInitEvent extends EventType

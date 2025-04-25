@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates tween operation."
 @Misc
 script Tweener

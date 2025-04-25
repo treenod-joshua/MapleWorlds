@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the Tweener iteration method."
 @Enum
 script TweenLoopType

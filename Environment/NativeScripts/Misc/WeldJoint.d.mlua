@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Constrains the relative rotation and movement of two Entities. It is used by adding it to Joints of WeldJointComponent."
 @Misc
 script WeldJoint

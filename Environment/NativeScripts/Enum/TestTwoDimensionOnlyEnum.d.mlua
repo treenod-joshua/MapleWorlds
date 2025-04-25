@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script TestTwoDimensionOnlyEnum
 	member TestEnum = 0

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when initializing the inventory. InventoryComponent related functions will work normally after the event."
 @Event
 script InventoryItemInitEvent extends EventType

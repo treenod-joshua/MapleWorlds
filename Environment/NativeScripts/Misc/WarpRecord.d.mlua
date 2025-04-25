@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the record of users doing warp."
 @Misc
 script WarpRecord

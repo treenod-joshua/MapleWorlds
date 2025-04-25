@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after setting an entity's original model."
 @Event
 script EntityPostOriginSetEvent extends EventType

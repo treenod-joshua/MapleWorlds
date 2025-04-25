@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs before setting the target model of an entity."
 @Event
 script EntityPreModelSetEvent extends EventType

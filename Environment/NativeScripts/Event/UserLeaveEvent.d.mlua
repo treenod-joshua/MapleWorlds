@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs in UserService when a user exits a game."
 @Event
 script UserLeaveEvent extends EventType

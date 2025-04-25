@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the background type."
 @Enum
 script BackgroundType

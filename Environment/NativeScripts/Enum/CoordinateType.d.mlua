@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates a positional representation."
 @Enum
 script CoordinateType

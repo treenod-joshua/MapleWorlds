@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The starting position for aligning child UI entities according to the size of the parent entity. You can set if ScrollLayoutComponent is GridType."
 @Enum
 script GridLayoutCorner

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This is a user-created data table."
 @Misc
 script LocaleDataSet

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "An event that occurs when a touch or mouse input is released on the UI Entity."
 @Event
 script UITouchUpEvent extends EventType

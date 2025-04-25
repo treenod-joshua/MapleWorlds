@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the grade of the badge."
 @Enum
 script BadgeGrade

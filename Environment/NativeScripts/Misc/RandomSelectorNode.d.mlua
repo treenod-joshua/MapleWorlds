@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Randomly selects and executes a child node."
 @Misc
 script RandomSelectorNode extends BTNode

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents a circle shape to be utilized for collision-related functions."
 @Misc
 script CircleShape extends Shape

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates data saved in SortableDataStorage."
 @Misc
 script SortableDataStorageItem

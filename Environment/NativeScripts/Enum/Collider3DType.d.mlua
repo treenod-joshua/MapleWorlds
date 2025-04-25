@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script Collider3DType
 	member Box = 1

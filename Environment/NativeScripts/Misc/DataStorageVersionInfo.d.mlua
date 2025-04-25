@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents the data version information of DataStorage."
 @Misc
 script DataStorageVersionInfo

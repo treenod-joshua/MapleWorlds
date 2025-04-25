@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script SortedViewFilterOp
 	member Equal = 0

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs before setting an entity's original copy."
 @Event
 script EntityPreOriginSetEvent extends EventType

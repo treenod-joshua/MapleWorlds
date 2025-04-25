@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The alignment direction of the child UI Entity in ScrollLayoutGroupComponent."
 @Enum
 script LayoutGroupType

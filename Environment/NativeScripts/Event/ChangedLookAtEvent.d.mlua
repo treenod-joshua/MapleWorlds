@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This occurs when changing the direction for the character to face in the PlayerControllerComponent."
 @Event
 script ChangedLookAtEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when an entity attacks. Occurs in AttackComponent."
 @Event
 script AttackEvent extends EventType

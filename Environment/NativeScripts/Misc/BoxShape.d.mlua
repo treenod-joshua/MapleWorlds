@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents a rectangular shape to be utilized for collision-related functions."
 @Misc
 script BoxShape extends Shape

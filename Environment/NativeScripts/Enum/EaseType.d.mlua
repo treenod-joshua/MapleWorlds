@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The shape of a graph that shows the change in values over time. The graph shape is flattened in the order of Expo > Quint > Quart > Cubic > Quad > Sine > Linear."
 @Enum
 script EaseType

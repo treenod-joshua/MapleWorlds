@@ -1,3 +1,4 @@
+---@sealed
 ---@description "How to align vertical text."
 @Enum
 script TextVerticalAlignmentOption

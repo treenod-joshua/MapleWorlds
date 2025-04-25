@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Occurs in InputService when you widen or narrow the gap while touching two places on the screen."
 @Event
 script PinchInOutEvent extends EventType

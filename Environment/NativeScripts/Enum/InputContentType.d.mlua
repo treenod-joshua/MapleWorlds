@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the type that can be input to TextInputComponent."
 @Enum
 script InputContentType

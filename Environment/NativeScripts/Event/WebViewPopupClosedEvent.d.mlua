@@ -1,3 +1,4 @@
+---@sealed
 ---@description "The event that takes place when an open web page is closed. "
 @Event
 script WebViewPopupClosedEvent extends EventType

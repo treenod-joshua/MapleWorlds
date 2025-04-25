@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the screen recording state."
 @Enum
 script ScreenRecordStartResult

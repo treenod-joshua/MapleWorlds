@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Indicates the screenshot capture result."
 @Enum
 script ScreenshotError

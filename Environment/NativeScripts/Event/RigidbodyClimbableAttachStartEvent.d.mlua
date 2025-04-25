@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This Event occurs before the Avatar climbs the ladder or rope."
 @Event
 script RigidbodyClimbableAttachStartEvent extends EventType

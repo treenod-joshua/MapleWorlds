@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Shows the day of the week."
 @Enum
 script DayOfWeekType

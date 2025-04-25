@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event is raised when playing the last frame of sprite animation."
 @Event
 script SpriteAnimPlayerEndFrameEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Used when setting the axis in the UI system."
 @Enum
 script UITransformAxis

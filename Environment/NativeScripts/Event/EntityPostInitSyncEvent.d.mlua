@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after finishing the InitSync of an entity."
 @Event
 script EntityPostInitSyncEvent extends EventType

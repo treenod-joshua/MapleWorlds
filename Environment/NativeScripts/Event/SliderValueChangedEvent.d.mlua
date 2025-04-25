@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when changing the Slider value."
 @Event
 script SliderValueChangedEvent extends EventType

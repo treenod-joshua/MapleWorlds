@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Represents data saved in DataStorage."
 @Misc
 script DataStorageItem

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs from InputService when the mouse moves. "
 @Event
 script MouseMoveEvent extends EventType

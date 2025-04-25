@@ -1,3 +1,4 @@
+---@sealed
 @Enum
 script PhotoResolution
 	member Landscape_HD = 0

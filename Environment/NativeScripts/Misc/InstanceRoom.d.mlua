@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Provides instance room related functions."
 @Misc
 script InstanceRoom

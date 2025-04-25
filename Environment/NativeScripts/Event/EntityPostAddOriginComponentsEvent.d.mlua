@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs after adding the components of the original model of the entity."
 @Event
 script EntityPostAddOriginComponentsEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when editing an item of the inventory."
 @Event
 script InventoryItemModifiedEvent extends EventType

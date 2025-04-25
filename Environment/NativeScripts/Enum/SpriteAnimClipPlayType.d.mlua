@@ -1,3 +1,4 @@
+---@sealed
 ---@description "Specifies how the animation plays."
 @Enum
 script SpriteAnimClipPlayType

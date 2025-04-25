@@ -1,3 +1,4 @@
+---@sealed
 ---@description "This event occurs when the Face Action state changes."
 @Event
 script FaceActionStateChangeEvent extends EventType

@@ -1,3 +1,4 @@
+---@sealed
 ---@description "You can use this storage in all the worlds owned by the creator, and it shares the saved data. The Maker and release environment do not share the storage."
 @Misc
 script CreatorDataStorage
