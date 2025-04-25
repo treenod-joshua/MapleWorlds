@@ -463,8 +463,17 @@ script Unit extends Component
 		
 		self:SetState("die")
 		
+		-- 죽는 애니메이션이 없는 경우 직접 처리
+		if self.dieAnimationPlayingTime == 0 then
+			self:DestroyAction()
+		end
+		
 		-- 어태커의 타겟 엔티티 제거
-		attacker.Unit.curTarget = nil
+		if attacker.Unit ~= nil then
+			attacker.Unit.curTarget = nil
+		else
+			attacker.Projectile.caster.Unit.curTarget = nil
+		end
 	end
 
 	method void IncreaseMp()
@@ -557,7 +566,7 @@ script Unit extends Component
 		if self.dieAnimationPlayingTime > 0 then
 			dieAlphaTweenTime = self.dieAnimationPlayingTime
 		end
-		log(dieAlphaTweenTime)
+		
 		tween = _TweenLogic:MakeTween(spriteRenderer.Color.a, 0, dieAlphaTweenTime * 0.5, EaseType.Linear, tweenAlpha)
 		tween.LoopCount = 0
 		tween.AutoDestroy = false
