@@ -14,8 +14,12 @@ script AllAttack extends SkillParent
 			for index in ipairs(enemies) do
 				local monster = enemies[index]
 			
+				if monster.Name == "EnemySpawnPoint" then
+					continue
+				end
+				
 				if monster.Enable then
-					monster.HitComponent:OnHit(self.caster, self.skillAmount, true, "", 3)
+					monster.Unit:OnHit(self.caster, self.skillAmount, true, 5)
 				end
 			end
 		end
