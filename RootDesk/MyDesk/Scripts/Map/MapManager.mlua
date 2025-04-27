@@ -1,0 +1,60 @@
+@Component
+script MapManager extends Component
+
+	property table mapInfo = {}
+
+	@Sync
+	property SyncTable<Entity> entityList
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		local currentMap = self.Entity.MapComponent
+		
+		self.mapInfo["Left"] = currentMap.LeftBottom.x
+		self.mapInfo["Bottom"] = currentMap.LeftBottom.y
+		self.mapInfo["Right"] = currentMap.RightTop.x
+		self.mapInfo["Top"] = currentMap.RightTop.x
+		self.mapInfo["Width"] = 256
+		self.mapInfo["Height"] = 192
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		self:UpdateMinimap()
+	end
+
+	@ExecSpace("Client")
+	method void UpdateMinimap()
+		local minimapSpriteEntity = _EntityService:GetEntityByPath("/ui/DefaultGroup/Minimap Group/Minimap Background")
+		local playerIcon = minimapSpriteEntity:GetChildByName("PlayerIcon")
+		local localPlayer = _UserService.LocalPlayer
+		local playerPosition = localPlayer.TransformComponent.Position
+		
+		local iconPosX = ((playerPosition.x - self.mapInfo["Left"]) / (self.mapInfo["Right"] - self.mapInfo["Left"]))
+		 * self.mapInfo["Width"]
+		
+		local iconPosY = ((playerPosition.y - self.mapInfo["Bottom"]) / (self.mapInfo["Top"] - self.mapInfo["Bottom"]))
+		 * self.mapInfo["Height"]
+		
+		for index in ipairs(self.entityList) do
+			-- 몬스터 미니맵에 등록 필요
+		end
+		
+		playerIcon.UITransformComponent.anchoredPosition = Vector2(iconPosX, iconPosY)
+	end
+
+	@ExecSpace("Client")
+	method void AddEntityList(Entity entity)
+		local index = _Utils:GetSyncTableLength(self.entityList)
+		
+		self.entityList[index + 1] = entity
+	end
+
+	@ExecSpace("Client")
+	method void RemoveEntityList(Entity entity)
+		local index = _Utils:GetSyncTableIndex(self.entityList, self.Entity)
+		
+		self.entityList[index] = nil
+	end
+
+end

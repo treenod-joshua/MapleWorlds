@@ -19,4 +19,23 @@ script Utils extends Logic
 		return time
 	end
 
+	method number GetSyncTableLength(SyncTable<Entity> syncTable)
+		local length = 0
+		    for _ in pairs(syncTable) do
+		        length += 1
+		    end
+		 
+		return length
+	end
+
+	method number GetSyncTableIndex(SyncTable<Entity> syncTable, Entity entity)
+		for index in ipairs(syncTable) do
+			if entity == syncTable[index] then
+				return index
+			end
+		end
+		
+		return 1
+	end
+
 end

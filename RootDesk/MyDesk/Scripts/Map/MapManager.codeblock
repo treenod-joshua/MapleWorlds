@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://8467319f-22af-48cc-9876-87e33a3b02d3",
+  "EntryKey": "codeblock://90974b2f-aa60-4449-87d9-06c6c9037e65",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,10 +22,10 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "8467319f-22af-48cc-9876-87e33a3b02d3",
+      "Id": "90974b2f-aa60-4449-87d9-06c6c9037e65",
       "Language": 1,
-      "Name": "Utils",
-      "Type": 5,
+      "Name": "MapManager",
+      "Type": 1,
       "Source": 0,
       "Target": null
     }

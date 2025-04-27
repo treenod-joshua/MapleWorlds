@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://c25788eac86744efb853ac3001cfd78a",
+  "EntryKey": "directory://c6832e81a43947238071262086e4b630",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,11 +13,11 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://c25788eac86744efb853ac3001cfd78a",
-      "name": "MyDesk",
+      "entry_id": "directory://c6832e81a43947238071262086e4b630",
+      "name": "Map",
       "lock": false,
       "folding": false,
-      "nameEditable": false
+      "nameEditable": true
     }
   }
 }

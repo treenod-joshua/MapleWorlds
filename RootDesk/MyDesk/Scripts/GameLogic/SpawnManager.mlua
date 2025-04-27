@@ -18,6 +18,9 @@ script SpawnManager extends Logic
 			
 		spawnEntity.Unit:Spawn(unitData, skillData)
 		
+		local map = _EntityService:GetEntityByPath('/maps/GameScene')
+		map.MapManager:AddEntityList(spawnEntity)
+				
 		self.userWallet.MesoWallet:UseMeso(price)
 	end
 
