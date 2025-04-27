@@ -292,11 +292,12 @@ script Unit extends Component
 		local myPos = self.Entity.TransformComponent.WorldPosition
 		local targetPos = self.curTarget.TransformComponent.WorldPosition
 		
-		local direction = Vector2(targetPos.x - myPos.x, targetPos.y - myPos.y):Normalize()
+		local direction = Vector2(targetPos.x - myPos.x, 0):Normalize()
 		local newX = myPos.x + (direction.x * self.moveSpeed * delta)
 		
 		-- 기존의 Y 좌표는 유지
 		self.Entity.TransformComponent.WorldPosition = Vector3(newX, myPos.y, myPos.z)
+		self.originPos = self.Entity.TransformComponent.WorldPosition
 	end
 
 	@ExecSpace("Client")

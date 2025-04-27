@@ -26,6 +26,7 @@ script Projectile extends Component
 	@ExecSpace("Client")
 	method void SetShoot(string animId, integer direction, number speed, Entity target, boolean isRotate, number damage)
 		if isvalid(target) == false then
+			self.Entity:Destroy()
 			return
 		end
 		
@@ -79,8 +80,11 @@ script Projectile extends Component
 		_TweenLogic:MoveTo(self.Entity, targetPos, self.speed, EaseType.Linear)
 		
 		local deleteFunction = function()
-			self.target.Unit:OnHit(self.Entity, self.damage, false, 1)
-			self.Entity:Destroy()
+			
+			if isvalid(self.target) then
+				self.target.Unit:OnHit(self.Entity, self.damage, false, 1)
+				self.Entity:Destroy()
+			end	
 		end
 		
 		_TimerService:SetTimerOnce(deleteFunction, self.speed)
