@@ -2538,10 +2538,10 @@
           "revision": 1,
           "origin": {
             "type": "Model",
-            "entry_id": "uisprite",
+            "entry_id": "48188e8b-dfa5-4a31-aa08-9e4a1e9218b3",
             "sub_entity_id": null
           },
-          "modelId": "uisprite",
+          "modelId": "48188e8b-dfa5-4a31-aa08-9e4a1e9218b3",
           "@components": [
             {
               "@type": "MOD.Core.UITransformComponent",
@@ -2572,11 +2572,6 @@
                 "y": 16.0
               },
               "UIMode": 1,
-              "UIScale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-              },
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": 0.0,
@@ -2593,22 +2588,11 @@
                 "z": 0.0,
                 "w": 1.0
               },
-              "Scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-              },
               "Enable": true
             },
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "OverrideSorting": false,
-              "Color": {
-                "r": 1.0,
-                "g": 0.0,
-                "b": 0.0,
-                "a": 1.0
-              },
               "Enable": true
             }
           ],

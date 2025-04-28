@@ -123,6 +123,7 @@ script Unit extends Component
 		self:InitData()
 		self:InitSkillData()
 		self:InitAnimData()
+		self:CreateMinimapIcon(false)
 	end
 
 	method void InitTagData()
@@ -546,6 +547,7 @@ script Unit extends Component
 		self:InitData()
 		self:InitSkillData()
 		self:InitAnimData()
+		self:CreateMinimapIcon(true)
 	end
 
 	method void InitEnemyTagData()
@@ -641,6 +643,12 @@ script Unit extends Component
 			entity.Unit.curTarget = nil
 			entity.Unit:SetState("stand")
 		end
+	end
+
+	@ExecSpace("Client")
+	method void CreateMinimapIcon(boolean isEnemy)
+		local map = _EntityService:GetEntityByPath('/maps/GameScene')
+		map.MapManager:AddEntityList(self.Entity, isEnemy)
 	end
 
 	@EventSender("Self")

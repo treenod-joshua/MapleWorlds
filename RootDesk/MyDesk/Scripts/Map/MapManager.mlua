@@ -36,16 +36,39 @@ script MapManager extends Component
 		local iconPosY = ((playerPosition.y - self.mapInfo["Bottom"]) / (self.mapInfo["Top"] - self.mapInfo["Bottom"]))
 		 * self.mapInfo["Height"]
 		
+		local iconList = minimapSpriteEntity.Children
+		local iconIndex = 2
+		
 		for index in ipairs(self.entityList) do
 			-- 몬스터 미니맵에 등록 필요
+			
+			if isvalid(self.entityList[index]) == false then
+				continue
+			end
+			
+			local entityPosition = self.entityList[index].TransformComponent.Position
+			local entityPosX = ((entityPosition.x - self.mapInfo["Left"]) / (self.mapInfo["Right"] - self.mapInfo["Left"])) * self.mapInfo["Width"]
+			local entityPosY = ((entityPosition.y - self.mapInfo["Bottom"]) / (self.mapInfo["Top"] - self.mapInfo["Bottom"])) * self.mapInfo["Height"]
+			
+			iconList[iconIndex].UITransformComponent.anchoredPosition = Vector2(entityPosX, entityPosY)
+			iconIndex += 1
 		end
 		
 		playerIcon.UITransformComponent.anchoredPosition = Vector2(iconPosX, iconPosY)
 	end
 
 	@ExecSpace("Client")
-	method void AddEntityList(Entity entity)
+	method void AddEntityList(Entity entity, boolean isEnemy)
 		local index = _Utils:GetSyncTableLength(self.entityList)
+		local minimapSpriteEntity = _EntityService:GetEntityByPath("/ui/DefaultGroup/Minimap Group/Minimap Background")
+		
+		local icon = _SpawnService:SpawnByModelId("model://48188e8b-dfa5-4a31-aa08-9e4a1e9218b3", "icon"..index + 1, Vector3.zero, minimapSpriteEntity)
+		
+		if isEnemy then
+			icon.SpriteGUIRendererComponent.Color = Color.red
+		else
+			icon.SpriteGUIRendererComponent.Color = Color.green
+		end
 		
 		self.entityList[index + 1] = entity
 	end
@@ -53,6 +76,11 @@ script MapManager extends Component
 	@ExecSpace("Client")
 	method void RemoveEntityList(Entity entity)
 		local index = _Utils:GetSyncTableIndex(self.entityList, self.Entity)
+		local minimapSpriteEntity = _EntityService:GetEntityByPath("/ui/DefaultGroup/Minimap Group/Minimap Background")
+		
+		local entityCount = minimapSpriteEntity.Children.Count
+		
+		_EntityService:Destroy(minimapSpriteEntity.Children[entityCount])
 		
 		self.entityList[index] = nil
 	end

@@ -17,9 +17,6 @@ script SpawnManager extends Logic
 		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
 			
 		spawnEntity.Unit:Spawn(unitData, skillData)
-		
-		local map = _EntityService:GetEntityByPath('/maps/GameScene')
-		map.MapManager:AddEntityList(spawnEntity)
 				
 		self.userWallet.MesoWallet:UseMeso(price)
 	end

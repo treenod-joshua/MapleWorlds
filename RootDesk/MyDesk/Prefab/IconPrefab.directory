@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://78e681e3ac004d80a1adca9874e198de",
+  "EntryKey": "directory://5ccc1f644ef64134a7f87eb1f4818983",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://78e681e3ac004d80a1adca9874e198de",
-      "name": "Prefab",
+      "entry_id": "directory://5ccc1f644ef64134a7f87eb1f4818983",
+      "name": "IconPrefab",
       "lock": false,
       "folding": false,
       "nameEditable": true
