@@ -476,7 +476,7 @@ script Unit extends Component
 		
 		-- 맵마다 Path 다르게 설정 필요
 		local map = _EntityService:GetEntityByPath('/maps/GameScene')
-		map.MapManager:RemoveEntityList(self.Entity)
+		map.MinimapManager:RemoveEntityList(self.Entity)
 		
 		-- 죽는 애니메이션이 없는 경우 직접 처리
 		if self.dieAnimationPlayingTime == 0 then
@@ -648,7 +648,7 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method void CreateMinimapIcon(boolean isEnemy)
 		local map = _EntityService:GetEntityByPath('/maps/GameScene')
-		map.MapManager:AddEntityList(self.Entity, isEnemy)
+		map.MinimapManager:AddEntityList(self.Entity, isEnemy)
 	end
 
 	@EventSender("Self")

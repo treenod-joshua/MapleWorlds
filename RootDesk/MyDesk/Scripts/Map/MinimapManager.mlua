@@ -1,0 +1,115 @@
+@Component
+script MinimapManager extends Component
+
+	property table mapInfo = {}
+
+	property table entityList = {}
+
+	property table entityIconMap = {}
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		local currentMap = self.Entity.MapComponent
+		
+		self.mapInfo["Left"] = currentMap.LeftBottom.x
+		self.mapInfo["Bottom"] = currentMap.LeftBottom.y
+		self.mapInfo["Right"] = currentMap.RightTop.x
+		self.mapInfo["Top"] = currentMap.RightTop.x
+		self.mapInfo["Width"] = 256
+		self.mapInfo["Height"] = 192
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		self:UpdateMinimap()
+	end
+
+	@ExecSpace("Client")
+	method void UpdateMinimap()
+		local minimapSpriteEntity = _EntityService:GetEntityByPath("/ui/DefaultGroup/Minimap Group/Minimap Background")
+		if minimapSpriteEntity == nil then
+		        return
+		end
+		
+		-- 플레이어 위치 가져오기
+		local localPlayer = _UserService.LocalPlayer
+		if not isvalid(localPlayer) then
+		    return
+		end
+		
+		local playerPosition = localPlayer.TransformComponent.Position
+		local iconPosX = ((playerPosition.x - self.mapInfo["Left"]) / (self.mapInfo["Right"] - self.mapInfo["Left"])) * self.mapInfo["Width"]
+		local iconPosY = ((playerPosition.y - self.mapInfo["Bottom"]) / (self.mapInfo["Top"] - self.mapInfo["Bottom"])) * self.mapInfo["Height"]
+		
+		-- 플레이어 아이콘 배치
+		local playerIcon = minimapSpriteEntity:GetChildByName("PlayerIcon")
+		if isvalid(playerIcon) then
+		    playerIcon.UITransformComponent.anchoredPosition = Vector2(iconPosX, iconPosY + 2.5)
+		end
+		
+		-- 엔티티 아이콘 배치
+		for index, entity in pairs(self.entityList) do
+			log("포문 진입 전")
+		    if isvalid(entity) then
+		        local uidStr = tostring(entity.Id)
+		        local icon = self.entityIconMap[uidStr]
+		
+				log("포문 진입 후 1")
+		        if isvalid(icon) then
+					log("포문 진입 후 2")
+		            local entityPosition = entity.TransformComponent.Position
+		            local entityPosX = ((entityPosition.x - self.mapInfo["Left"]) / (self.mapInfo["Right"] - self.mapInfo["Left"])) * self.mapInfo["Width"]
+		            local entityPosY = ((entityPosition.y - self.mapInfo["Bottom"]) / (self.mapInfo["Top"] - self.mapInfo["Bottom"])) * self.mapInfo["Height"]
+		
+		            icon.UITransformComponent.anchoredPosition = Vector2(entityPosX, entityPosY + 2.5)
+		        end
+		    end
+		end
+	end
+
+	@ExecSpace("Client")
+	method void AddEntityList(Entity entity, boolean isEnemy)
+		local minimapSpriteEntity = _EntityService:GetEntityByPath("/ui/DefaultGroup/Minimap Group/Minimap Background")
+		if minimapSpriteEntity == nil then
+			return
+		end
+		
+		local icon = _SpawnService:SpawnByModelId("model://48188e8b-dfa5-4a31-aa08-9e4a1e9218b3", "icon"..entity.Name, Vector3.zero, minimapSpriteEntity)
+		
+		if isEnemy then
+			icon.SpriteGUIRendererComponent.Color = Color.red
+		else
+			icon.SpriteGUIRendererComponent.Color = Color.green
+		end
+		
+		self.entityList[entity.Id] = entity
+		self.entityIconMap[entity.Id] = icon
+	end
+
+	@ExecSpace("Client")
+	method void RemoveEntityList(Entity entity)
+		local minimapSpriteEntity = _EntityService:GetEntityByPath("/ui/DefaultGroup/Minimap Group/Minimap Background")
+		if not isvalid(minimapSpriteEntity) or not isvalid(entity) then
+			
+		end
+		
+		-- UID를 문자열로 변환하여 map에서 검색
+		local uidStr = tostring(entity.Id)
+		
+		-- 아이콘이 존재하면 제거
+		local icon = self.entityIconMap[uidStr]
+		if isvalid(icon) then
+		    _EntityService:Destroy(icon)
+		    self.entityIconMap[uidStr] = nil
+		end
+		
+		-- entityList에서도 제거
+		for e in pairs(self.entityList) do
+		    if e == entity then
+		        self.entityList[e.Id] = nil
+		        break
+		    end
+		end
+	end
+
+end

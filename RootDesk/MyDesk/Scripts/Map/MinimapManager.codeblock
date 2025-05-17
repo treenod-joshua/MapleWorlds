@@ -24,7 +24,7 @@
       "Description": "",
       "Id": "90974b2f-aa60-4449-87d9-06c6c9037e65",
       "Language": 1,
-      "Name": "MapManager",
+      "Name": "MinimapManager",
       "Type": 1,
       "Source": 0,
       "Target": null

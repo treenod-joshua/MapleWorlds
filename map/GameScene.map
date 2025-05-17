@@ -16,7 +16,7 @@
       {
         "id": "af6976c0-fe90-4203-ba28-4b321cc2bb11",
         "path": "/maps/GameScene",
-        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MapManager",
+        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MinimapManager",
         "jsonString": {
           "name": "GameScene",
           "path": "/maps/GameScene",
@@ -853,7 +853,7 @@
               "Enable": true
             },
             {
-              "@type": "script.MapManager",
+              "@type": "script.MinimapManager",
               "Enable": true
             }
           ],
