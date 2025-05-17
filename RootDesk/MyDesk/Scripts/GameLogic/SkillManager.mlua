@@ -1,6 +1,25 @@
 @Logic
 script SkillManager extends Logic
 
+	property table allSkillData = {}
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		local loadData = _DataService:GetTable("AllSkillData")
+		
+		for i = 1, loadData:GetRowCount() do
+			local temp = {}
+			
+			temp["id"] = tonumber(loadData:GetCell(i, "id"))
+			temp["name"] = (loadData:GetCell(i, "name"))
+			temp["desc"] = (loadData:GetCell(i, "desc"))
+			temp["modelID"] = (loadData:GetCell(i, "modelID"))
+			temp["icon"] = (loadData:GetCell(i, "icon"))
+			
+			self.allSkillData[temp["id"]] = temp
+		end
+	end
+
 	method void UseSkill(string skillID, Entity caster, Entity target)
 		local skillParent = _EntityService:GetEntityByPath("/maps/GameScene/SkillParent")
 		-- 해당 부분에서 DataSet을 가져와서 처리할 지

@@ -1,0 +1,22 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "userdataset://6b1639ce-c430-4445-af4d-1c0998792c37",
+  "ContentType": "x-mod/userdataset",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "name": "AllSkillData",
+      "id": "6b1639ce-c430-4445-af4d-1c0998792c37",
+      "serveronly": false,
+      "dynamicloading": 0
+    }
+  }
+}
