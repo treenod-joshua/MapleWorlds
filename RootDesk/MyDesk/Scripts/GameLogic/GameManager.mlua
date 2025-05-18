@@ -1,15 +1,15 @@
 @Logic
 script GameManager extends Logic
 
-	property Entity uiSkillSelect = "d4478cf8-c4c8-4432-a5e4-d142e5e4f3cb"
+	property Entity uiSkillSelect = "ec7b9d8d-b2c2-4ee8-b95c-58564c8a4763"
 
 	property SyncTable<Entity> skillBtn
 
 	method void OpenSkillSelect()
-		_TweenLogic:MoveTo(self.uiSkillSelect, Vector2(0, -400), 0.3, EaseType.BounceEaseInOut)
+		_TweenLogic:MoveTo(self.uiSkillSelect, Vector2(0, 0), 0.3, EaseType.CircEaseIn)
 		
 		-- 선택창에 스킬 정보 넣기
-		local data = {1, 2, 3, 4, 5, 6}
+		local data = {1, 2, 3}
 		
 		for i = 1, 3 do
 			local number = math.random(1, #data)
@@ -26,7 +26,7 @@ script GameManager extends Logic
 	end
 
 	method void CloseSkillSelect()
-		_TweenLogic:MoveTo(self.uiSkillSelect, Vector2(0, -800), 0.3, EaseType.BounceEaseInOut)
+		_TweenLogic:MoveTo(self.uiSkillSelect, Vector2(0, -800), 0.3, EaseType.CircEaseOut)
 	end
 
 	@ExecSpace("ClientOnly")
@@ -46,7 +46,7 @@ script GameManager extends Logic
 		-- Parameters
 		local key = event.key
 		---------------------------------------------------------
-		if key == KeyboardKey.Alpha1 then
+		if key == KeyboardKey.C then
 			self:OpenSkillSelect()
 		end
 	end

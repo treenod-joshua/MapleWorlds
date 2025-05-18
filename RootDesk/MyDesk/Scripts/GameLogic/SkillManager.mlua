@@ -34,4 +34,9 @@ script SkillManager extends Logic
 		-- skill.SkillParent:UseSkill(caster, target)
 	end
 
+	method void GetSkill(string skillID)
+		
+		-- _SpawnService:SpawnByModelId(self.allSkillData[skillID]["modelID"], self.allSkillData[skillID]["name"], Vector3.zero, _UserService.LocalPlayer)
+	end
+
 end

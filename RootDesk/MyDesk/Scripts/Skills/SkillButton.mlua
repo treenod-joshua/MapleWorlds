@@ -1,0 +1,21 @@
+@Component
+script SkillButton extends Component
+
+	@Sync
+	property string skillID = ""
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		local Entity = event.Entity
+		---------------------------------------------------------
+		_SkillManager:GetSkill(self.skillID)
+		_GameManager:CloseSkillSelect()
+	end
+
+end
