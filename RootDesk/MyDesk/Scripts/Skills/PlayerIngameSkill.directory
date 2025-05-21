@@ -1,20 +1,20 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://ee8bd84e481b46d296e856de25b72805",
+  "EntryKey": "directory://16d7fd35039f49c4b8721e4240ebc747",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
   "UsePublish": 1,
   "UseService": 0,
-  "CoreVersion": "1.23.0.0",
+  "CoreVersion": "1.24.0.0",
   "StudioVersion": "0.1.0.0",
   "DynamicLoading": 0,
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://ee8bd84e481b46d296e856de25b72805",
-      "name": "PlayerSkill",
+      "entry_id": "directory://16d7fd35039f49c4b8721e4240ebc747",
+      "name": "PlayerIngameSkill",
       "lock": false,
       "folding": false,
       "nameEditable": true

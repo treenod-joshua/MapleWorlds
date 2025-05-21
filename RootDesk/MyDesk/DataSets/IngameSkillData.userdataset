@@ -13,7 +13,7 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "name": "AllSkillData",
+      "name": "IngameSkillData",
       "id": "6b1639ce-c430-4445-af4d-1c0998792c37",
       "serveronly": false,
       "dynamicloading": 0

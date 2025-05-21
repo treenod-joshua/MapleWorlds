@@ -17,9 +17,9 @@ script GameManager extends Logic
 			
 			table.remove(data, number)
 			
-			self.skillBtn[i].Children[1].SpriteGUIRendererComponent.ImageRUID = _SkillManager.allSkillData[skillID]["icon"]
-			self.skillBtn[i].Children[2].TextComponent.Text = _SkillManager.allSkillData[skillID]["name"]
-			self.skillBtn[i].Children[3].TextComponent.Text = _SkillManager.allSkillData[skillID]["desc"]
+			self.skillBtn[i].Children[1].SpriteGUIRendererComponent.ImageRUID = _SkillManager.ingameSkillData[skillID]["icon"]
+			self.skillBtn[i].Children[2].TextComponent.Text = _SkillManager.ingameSkillData[skillID]["name"]
+			self.skillBtn[i].Children[3].TextComponent.Text = _SkillManager.ingameSkillData[skillID]["desc"]
 			self.skillBtn[i].SkillButton.skillID = skillID
 		end
 		

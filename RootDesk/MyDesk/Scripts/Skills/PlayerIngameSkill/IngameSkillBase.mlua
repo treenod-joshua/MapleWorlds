@@ -1,0 +1,11 @@
+@Component
+script IngameSkillBase extends Component
+
+	@Sync
+	property number amount = 0
+
+	method void Init(number amount)
+		self.amount = amount
+	end
+
+end

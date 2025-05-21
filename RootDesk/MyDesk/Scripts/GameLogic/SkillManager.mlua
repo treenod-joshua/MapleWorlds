@@ -1,11 +1,11 @@
 @Logic
 script SkillManager extends Logic
 
-	property table allSkillData = {}
+	property table ingameSkillData = {}
 
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
-		local loadData = _DataService:GetTable("AllSkillData")
+		local loadData = _DataService:GetTable("IngameSkillData")
 		
 		for i = 1, loadData:GetRowCount() do
 			local temp = {}
@@ -15,8 +15,9 @@ script SkillManager extends Logic
 			temp["desc"] = (loadData:GetCell(i, "desc"))
 			temp["modelID"] = (loadData:GetCell(i, "modelID"))
 			temp["icon"] = (loadData:GetCell(i, "icon"))
+			temp["amount"] = tonumber(loadData:GetCell(i, "amount"))
 			
-			self.allSkillData[temp["id"]] = temp
+			self.ingameSkillData[temp["id"]] = temp
 		end
 	end
 
@@ -35,8 +36,9 @@ script SkillManager extends Logic
 	end
 
 	method void GetSkill(string skillID)
+		local skill = _SpawnService:SpawnByModelId(self.ingameSkillData[skillID]["modelID"], self.ingameSkillData[skillID]["name"], Vector3.zero, _UserService.LocalPlayer)
+		skill.
 		
-		-- _SpawnService:SpawnByModelId(self.allSkillData[skillID]["modelID"], self.allSkillData[skillID]["name"], Vector3.zero, _UserService.LocalPlayer)
 	end
 
 end
