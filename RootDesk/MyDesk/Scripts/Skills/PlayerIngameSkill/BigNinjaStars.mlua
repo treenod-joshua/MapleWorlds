@@ -1,15 +1,15 @@
 @Component
-script BigNinjaStars extends IngameSkillBase
+script BigNinjaStars extends Component
 
-	property number lifeTime = 3
+	property number damage = 0
 
 	property number time = 0
 
-	property number speed = 1
+	property number lifeTime = 0
 
-	@ExecSpace("ServerOnly")
+	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
-		self.Entity.TransformComponent.Position = self.Entity.TransformComponent.Position + Vector3(1, 0, 0) * self.speed
+		self.Entity.TransformComponent.Position = self.Entity.TransformComponent.Position + Vector3(1, 0, 0) * 2
 		
 		self.time += delta;
 		if self.time >= self.lifeTime then

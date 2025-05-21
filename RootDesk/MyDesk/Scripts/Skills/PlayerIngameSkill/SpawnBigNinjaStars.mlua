@@ -1,0 +1,23 @@
+@Component
+script SpawnBigNinjaStars extends IngameSkillBase
+
+	property number time = 0
+
+	property number spawnTime = 0
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		self.time += delta
+		
+		if self.time >= self.coolTime then
+			self:SpawnNinjaStars()
+			self.time = 0
+		end
+	end
+
+	method void SpawnNinjaStars()
+		local star = _SpawnService:SpawnByModelId("model://1b6f3c0a-0729-4e10-95b1-c8d75e253beb", "BigNinjaStars", self.player.TransformComponent.Position, self.Entity)
+		star.BigNinjaStars.damage = self.amount 
+	end
+
+end

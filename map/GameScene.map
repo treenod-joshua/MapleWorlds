@@ -3600,6 +3600,83 @@
           ],
           "@version": 1
         }
+      },
+      {
+        "id": "71815d56-2f70-40cf-ac2a-4a048da66716",
+        "path": "/maps/GameScene/BigNinjaStars",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "BigNinjaStars",
+          "path": "/maps/GameScene/BigNinjaStars",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 12,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "1b6f3c0a-0729-4e10-95b1-c8d75e253beb",
+            "sub_entity_id": null
+          },
+          "modelId": "1b6f3c0a-0729-4e10-95b1-c8d75e253beb",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -444.166443,
+                "y": 187.8734
+              },
+              "OffsetMin": {
+                "x": -516.166443,
+                "y": 115.8734
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 72.0,
+                "y": 72.0
+              },
+              "UIMode": 2,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": -2.160749,
+                "y": 0.683430254
+              },
+              "Position": {
+                "x": -2.160749,
+                "y": 0.683430254,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "OverrideSorting": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
       }
     ]
   }

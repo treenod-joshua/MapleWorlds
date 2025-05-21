@@ -4,8 +4,16 @@ script IngameSkillBase extends Component
 	@Sync
 	property number amount = 0
 
-	method void Init(number amount)
+	@Sync
+	property number coolTime = 0
+
+	@Sync
+	property Entity player = nil
+
+	method void Init(number amount, number coolTime)
 		self.amount = amount
+		self.coolTime = coolTime
+		self.player = _UserService.LocalPlayer
 	end
 
 end

@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://6f4299d2-e35f-4898-9432-0a366e1e0e7e",
+  "EntryKey": "codeblock://038a9ba6-224e-454b-baec-64d3fae7fa38",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,12 +22,12 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "6f4299d2-e35f-4898-9432-0a366e1e0e7e",
+      "Id": "038a9ba6-224e-454b-baec-64d3fae7fa38",
       "Language": 1,
-      "Name": "BigNinjaStars",
+      "Name": "SpawnBigNinjaStars",
       "Type": 1,
       "Source": 0,
-      "Target": null
+      "Target": "codeblock://b8bd6a8b-51c2-4cec-93c3-26fc15bd7453"
     }
   }
 }

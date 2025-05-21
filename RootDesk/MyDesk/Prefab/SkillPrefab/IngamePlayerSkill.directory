@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://c4bd9ad82ad6455695267e437b87cc57",
+  "EntryKey": "directory://7c96d92e071b4fdc8865a9f5ac5e55a2",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://c4bd9ad82ad6455695267e437b87cc57",
-      "name": "SkillPrefab",
+      "entry_id": "directory://7c96d92e071b4fdc8865a9f5ac5e55a2",
+      "name": "IngamePlayerSkill",
       "lock": false,
       "folding": false,
       "nameEditable": true

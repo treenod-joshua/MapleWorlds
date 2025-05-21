@@ -16,6 +16,7 @@ script SkillManager extends Logic
 			temp["modelID"] = (loadData:GetCell(i, "modelID"))
 			temp["icon"] = (loadData:GetCell(i, "icon"))
 			temp["amount"] = tonumber(loadData:GetCell(i, "amount"))
+			temp["coolTime"] = tonumber(loadData:GetCell(i, "coolTime"))
 			
 			self.ingameSkillData[temp["id"]] = temp
 		end
@@ -37,7 +38,7 @@ script SkillManager extends Logic
 
 	method void GetSkill(string skillID)
 		local skill = _SpawnService:SpawnByModelId(self.ingameSkillData[skillID]["modelID"], self.ingameSkillData[skillID]["name"], Vector3.zero, _UserService.LocalPlayer)
-		skill.
+		skill.IngameSkillBase:Init(self.ingameSkillData[skillID]["amount"], self.ingameSkillData[skillID]["coolTime"])
 		
 	end
 
