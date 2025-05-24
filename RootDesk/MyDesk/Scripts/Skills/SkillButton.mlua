@@ -2,7 +2,7 @@
 script SkillButton extends Component
 
 	@Sync
-	property string skillID = ""
+	property number skillID = 0
 
 	@EventSender("Self")
 	handler HandleButtonClickEvent(ButtonClickEvent event)

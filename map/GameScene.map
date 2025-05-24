@@ -3604,7 +3604,7 @@
       {
         "id": "71815d56-2f70-40cf-ac2a-4a048da66716",
         "path": "/maps/GameScene/BigNinjaStars",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.BigNinjaStars",
         "jsonString": {
           "name": "BigNinjaStars",
           "path": "/maps/GameScene/BigNinjaStars",
@@ -3617,10 +3617,10 @@
           "revision": 1,
           "origin": {
             "type": "Model",
-            "entry_id": "1b6f3c0a-0729-4e10-95b1-c8d75e253beb",
+            "entry_id": "4c9b1ce6-aaf8-44f6-bf0b-426b911757b3",
             "sub_entity_id": null
           },
-          "modelId": "1b6f3c0a-0729-4e10-95b1-c8d75e253beb",
+          "modelId": "4c9b1ce6-aaf8-44f6-bf0b-426b911757b3",
           "@components": [
             {
               "@type": "MOD.Core.UITransformComponent",
@@ -3672,6 +3672,10 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "script.BigNinjaStars",
               "Enable": true
             }
           ],

@@ -3,7 +3,6 @@ script SkillManager extends Logic
 
 	property table ingameSkillData = {}
 
-	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		local loadData = _DataService:GetTable("IngameSkillData")
 		
@@ -17,9 +16,21 @@ script SkillManager extends Logic
 			temp["icon"] = (loadData:GetCell(i, "icon"))
 			temp["amount"] = tonumber(loadData:GetCell(i, "amount"))
 			temp["coolTime"] = tonumber(loadData:GetCell(i, "coolTime"))
+			temp["maxLevel"] = tonumber(loadData:GetCell(i, "maxLevel"))
 			
 			self.ingameSkillData[temp["id"]] = temp
 		end
+	end
+
+	@ExecSpace("Client")
+	method void GetSkill(number skillID)
+		local skill = _SpawnService:SpawnByModelId(self.ingameSkillData[skillID]["modelID"], self.ingameSkillData[skillID]["name"], Vector3.zero, _UserService.LocalPlayer)
+		skill.IngameSkillBase:Init(self.ingameSkillData[skillID]["amount"], self.ingameSkillData[skillID]["coolTime"])
+	end
+
+	@ExecSpace("Client")
+	method table GetSkillData(number skillID)
+		return self.ingameSkillData[skillID]
 	end
 
 	method void UseSkill(string skillID, Entity caster, Entity target)
@@ -34,12 +45,6 @@ script SkillManager extends Logic
 		
 		-- skillID의 DataSet을 가져온 뒤 아래 함수 실행
 		-- skill.SkillParent:UseSkill(caster, target)
-	end
-
-	method void GetSkill(string skillID)
-		local skill = _SpawnService:SpawnByModelId(self.ingameSkillData[skillID]["modelID"], self.ingameSkillData[skillID]["name"], Vector3.zero, _UserService.LocalPlayer)
-		skill.IngameSkillBase:Init(self.ingameSkillData[skillID]["amount"], self.ingameSkillData[skillID]["coolTime"])
-		
 	end
 
 end

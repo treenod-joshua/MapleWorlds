@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "model://1b6f3c0a-0729-4e10-95b1-c8d75e253beb",
+  "EntryKey": "model://4c9b1ce6-aaf8-44f6-bf0b-426b911757b3",
   "ContentType": "x-mod/model",
   "Content": "",
   "Usage": 0,
@@ -16,10 +16,11 @@
       "Version": 1,
       "Name": "BigNinjaStars",
       "BaseModelId": null,
-      "Id": "1b6f3c0a-0729-4e10-95b1-c8d75e253beb",
+      "Id": "4c9b1ce6-aaf8-44f6-bf0b-426b911757b3",
       "Components": [
         "MOD.Core.UITransformComponent",
-        "MOD.Core.SpriteGUIRendererComponent"
+        "MOD.Core.SpriteGUIRendererComponent",
+        "script.BigNinjaStars"
       ],
       "Properties": [],
       "Values": [
@@ -152,6 +153,20 @@
         },
         {
           "TargetType": "MOD.Core.UITransformComponent",
+          "Name": "Rotation",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "MOD.Core.MODVector3, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+          },
+          "Value": {
+            "$type": "MOD.Core.MODVector3, MOD.Core",
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "TargetType": "MOD.Core.UITransformComponent",
           "Name": "Position",
           "ValueType": {
             "$type": "MODNativeType",
@@ -178,6 +193,15 @@
             "z": 0.0,
             "w": 1.0
           }
+        },
+        {
+          "TargetType": "MOD.Core.UITransformComponent",
+          "Name": "ZRotation",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": 0.0
         },
         {
           "TargetType": "MOD.Core.UITransformComponent",
@@ -257,6 +281,15 @@
         },
         {
           "TargetType": "MOD.Core.SpriteGUIRendererComponent",
+          "Name": "Enable",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": true
+        },
+        {
+          "TargetType": "script.BigNinjaStars",
           "Name": "Enable",
           "ValueType": {
             "$type": "MODNativeType",
