@@ -24,8 +24,42 @@ script SkillManager extends Logic
 
 	@ExecSpace("Client")
 	method void GetSkill(number skillID)
-		local skill = _SpawnService:SpawnByModelId(self.ingameSkillData[skillID]["modelID"], self.ingameSkillData[skillID]["name"], Vector3.zero, _UserService.LocalPlayer)
-		skill.IngameSkillBase:Init(self.ingameSkillData[skillID]["amount"], self.ingameSkillData[skillID]["coolTime"])
+		local player = _UserService.LocalPlayer
+		local currentIngameSkills = player.PlayerCharacter.ingameSkills
+		local baseData = self.ingameSkillData[skillID]
+		
+		if not baseData then
+		    log("⚠ skillID ["..tostring(skillID).."] 에 대한 데이터가 없습니다.")
+		    return
+		end
+		
+		local currentLevel = currentIngameSkills[skillID] or 0  -- 최소 1레벨로 기본
+		
+		if currentLevel == 0 then
+			-- 스킬을 처음 획득 하는 부분
+			local skill = _SpawnService:SpawnByModelId(baseData["modelID"], baseData["name"], Vector3.zero, _UserService.LocalPlayer)
+			if not skill or not skill.IngameSkillBase then
+				return
+			end
+		
+			-- 스킬 1레벨 등록
+			player.PlayerCharacter:SetIngameSkill(skillID, 1)
+		
+			local amount = baseData["amount"]
+			local coolTime = baseData["coolTime"]
+		
+			-- 스킬 초기화
+			skill.IngameSkillBase:Init(amount, coolTime)
+		else
+			-- 이미 스킬이 있는 경우
+			local childSkill = player:GetChildByName(baseData["name"])
+			if not childSkill or not childSkill.IngameSkillBase then
+				return
+			end
+			
+			player.PlayerCharacter:SetIngameSkill(skillID, currentLevel + 1)
+			childSkill.IngameSkillBase:LevelUp()
+		end
 	end
 
 	@ExecSpace("Client")

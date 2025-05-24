@@ -10,10 +10,17 @@ script IngameSkillBase extends Component
 	@Sync
 	property Entity player = nil
 
+	@Sync
+	property number skillLevel = 0
+
 	method void Init(number amount, number coolTime)
 		self.amount = amount
 		self.coolTime = coolTime
 		self.player = _UserService.LocalPlayer
+	end
+
+	method void LevelUp()
+		self.skillLevel += 1
 	end
 
 end

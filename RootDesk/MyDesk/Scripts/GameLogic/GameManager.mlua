@@ -9,19 +9,45 @@ script GameManager extends Logic
 	method void OpenSkillSelect()
 		_TweenLogic:MoveTo(self.uiSkillSelect, Vector2(0, 0), 0.3, EaseType.CircEaseIn)
 		
-		-- 선택창에 스킬 정보 넣기
-		local data = {1, 2, 3}
+		local currentIngameSkills = _UserService.LocalPlayer.PlayerCharacter.ingameSkills
+		local allSkillData = _SkillManager.ingameSkillData
 		
-		for i = 1, 3 do
-			local number = math.random(1, #data)
-			local skillID = data[number]
-			local skillData = _SkillManager:GetSkillData(skillID)
-			table.remove(data, number)
-			
-			self.skillBtn[i].Children[1].SpriteGUIRendererComponent.ImageRUID = skillData["icon"]
-			self.skillBtn[i].Children[2].TextComponent.Text = skillData["name"]
-			self.skillBtn[i].Children[3].TextComponent.Text = skillData["desc"]
-			self.skillBtn[i].SkillButton.skillID = skillID
+		-- 후보 스킬 목록 생성
+		local availableSkills = {}
+		for skillID, baseData in pairs(allSkillData) do
+		    local currentLevel = currentIngameSkills[skillID] or 0
+		    if currentLevel < baseData["maxLevel"] then
+		        table.insert(availableSkills, skillID)
+		    end
+		end
+		
+		-- 선택할 수 있는 스킬 수 결정 (최대 3개)
+		local choiceCount = math.min(3, #availableSkills)
+		if choiceCount == 0 then
+		    log("⚠ 선택할 수 있는 스킬이 없습니다.")
+		    return
+		end
+		
+		-- 랜덤으로 3개 뽑기
+		for i = 1, choiceCount do
+		    local index = math.random(1, #availableSkills)
+		    local skillID = availableSkills[index]
+		    local skillData = allSkillData[skillID]
+		    table.remove(availableSkills, index)  -- 같은 스킬 중복 방지
+		
+		    -- UI 버튼에 정보 넣기
+		    self.skillBtn[i].Children[1].SpriteGUIRendererComponent.ImageRUID = skillData["icon"]
+		    self.skillBtn[i].Children[2].TextComponent.Text = skillData["name"]
+		    self.skillBtn[i].Children[3].TextComponent.Text = skillData["desc"]
+		    self.skillBtn[i].SkillButton.skillID = skillID
+		end
+		
+		-- 만약 선택지 수가 3개 미만이면 나머지 버튼은 비활성화
+		for i = choiceCount + 1, 3 do
+		    self.skillBtn[i].Children[1].SpriteGUIRendererComponent.ImageRUID = ""
+		    self.skillBtn[i].Children[2].TextComponent.Text = ""
+		    self.skillBtn[i].Children[3].TextComponent.Text = ""
+		    self.skillBtn[i].SkillButton.skillID = nil
 		end
 	end
 

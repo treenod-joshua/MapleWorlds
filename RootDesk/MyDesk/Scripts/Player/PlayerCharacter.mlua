@@ -13,6 +13,8 @@ script PlayerCharacter extends Component
 	@Sync
 	property Entity skill2Entity = nil
 
+	property table ingameSkills = {}
+
 	method void OnBeginPlay()
 		
 	end
@@ -36,6 +38,10 @@ script PlayerCharacter extends Component
 			"skill2",
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self.Entity)
+	end
+
+	method void SetIngameSkill(number skillID, number skillLevel)
+		self.ingameSkills[skillID] = skillLevel;
 	end
 
 	@EventSender("Service", "InputService")
