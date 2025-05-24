@@ -12,6 +12,12 @@ script UnitShopItem extends Component
 	@Sync
 	property Entity priceLabel = nil
 
+	@Sync
+	property integer id = 0
+
+	@Sync
+	property UnitShop shop = nil
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		self:SetEntity()
@@ -25,8 +31,10 @@ script UnitShopItem extends Component
 	end
 
 	@ExecSpace("ClientOnly")
-	method void Initialize(table unitData)
+	method void Initialize(table unitData, integer id, UnitShop shop)
 		self.unitData = unitData
+		self.id = id
+		self.shop = shop
 		
 		self:SetEntity()
 		self:SetSprite()
@@ -56,6 +64,7 @@ script UnitShopItem extends Component
 		log(self.unitData['summonCost'])
 		
 		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
+		self.shop:OnSpawn(self.id)
 	end
 
 end

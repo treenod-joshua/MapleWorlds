@@ -4,23 +4,59 @@ script UnitShop extends Component
 	@Sync
 	property SyncTable<Entity> shopItems
 
+	@Sync
+	property SyncTable<string> summonPools
+
+	@Sync
+	property SyncTable<integer> summonQueue
+
+	@Sync
+	property SyncTable<integer> summonDeck
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		local shopItems = _EntityService:GetEntityByPath("/ui/UIGroup-test-ingame-money/UnitShop")
 		
 		for i = 1, 5 do
 			self.shopItems[i] = shopItems.Children[i]
+			table.insert(self.summonDeck, i)
+		end
+		
+		for i = 6, 8 do
+			table.insert(self.summonQueue, i)
+		end
+		
+		-- init 배열 단계, DB에서 가져오게 개선 필요
+		self.summonPools[1] = "model://3b308c48-d7a0-420c-99bf-502e034642ad"
+		self.summonPools[2] = "model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"
+		self.summonPools[3] = "model://586c7714-0360-4f9d-b450-3d305e328c31"
+		self.summonPools[4] = "model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"
+		self.summonPools[5] = "model://3b308c48-d7a0-420c-99bf-502e034642ad"
+		self.summonPools[6] = "model://586c7714-0360-4f9d-b450-3d305e328c31"
+		self.summonPools[7] = "model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"
+		self.summonPools[8] = "model://3b308c48-d7a0-420c-99bf-502e034642ad"
+		
+		-- 소환 배열을 섞는다.
+		for i = 1, #self.summonPools - 1 do
+			local j = math.random(i, #self.summonPools)
+			self.summonPools[i], self.summonPools[j] = self.summonPools[j], self.summonPools[i]
 		end
 		
 		self:SetShop()
 	end
 
 	method void SetShop()
-		self.shopItems[1].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://3b308c48-d7a0-420c-99bf-502e034642ad"))
-		self.shopItems[2].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"))
-		self.shopItems[3].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://586c7714-0360-4f9d-b450-3d305e328c31"))
-		self.shopItems[4].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://3b308c48-d7a0-420c-99bf-502e034642ad"))
-		self.shopItems[5].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint("model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"))
+		for i, v in ipairs(self.summonDeck) do
+			self.shopItems[i].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint(self.summonPools[v]),i, self)
+		end
+	end
+
+	method void OnSpawn(integer id)
+		table.insert(self.summonQueue, self.summonDeck[id])
+		self.summonDeck[id] = self.summonQueue[self.summonCount]
+		table.remove(self.summonQueue, 1)
+		
+		self:SetShop()
 	end
 
 end
