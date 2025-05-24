@@ -53,7 +53,7 @@ script UnitShop extends Component
 
 	method void OnSpawn(integer id)
 		table.insert(self.summonQueue, self.summonDeck[id])
-		self.summonDeck[id] = self.summonQueue[self.summonCount]
+		self.summonDeck[id] = self.summonQueue[1]
 		table.remove(self.summonQueue, 1)
 		
 		self:SetShop()
