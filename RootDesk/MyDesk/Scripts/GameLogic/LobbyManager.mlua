@@ -1,0 +1,4 @@
+@Logic
+script LobbyManager extends Logic
+
+end
