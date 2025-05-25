@@ -29,6 +29,10 @@ script PlayerCharacter extends Component
 
 	@ExecSpace("ServerOnly")
 	method void OnMapEnter(Entity enteredMap)
+		if enteredMap.Name == "LobbyScene" then
+			self.Entity.Visible = false
+		end
+		
 		self.skill1Entity = _SpawnService:SpawnByModelId(self.skill1,
 			"skill1",
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
@@ -38,6 +42,7 @@ script PlayerCharacter extends Component
 			"skill2",
 			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
 			self.Entity)
+		
 	end
 
 	method void SetIngameSkill(number skillID, number skillLevel)

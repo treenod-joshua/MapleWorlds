@@ -1,4 +1,9 @@
 @Logic
 script LobbyManager extends Logic
 
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		
+	end
+
 end

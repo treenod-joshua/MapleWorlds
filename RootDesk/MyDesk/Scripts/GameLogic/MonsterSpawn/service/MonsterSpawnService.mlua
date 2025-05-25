@@ -84,58 +84,6 @@ script MonsterSpawnService extends Component
 		)
 	end
 
-	@ExecSpace("ServerOnly")
-	method void OnBeginPlay()
-		local patterns = _patternRepo:GetPatternByStage(1)
-		self.curTimeTs = 0
-		
-		for i, pattern in ipairs(patterns) do
-			if pattern.type == 'LOOP' then
-				local setting = _settingRepo:GetSettingByTypeAndId('LOOP', pattern.setting)
-				
-				local id = _TimerService:SetTimerRepeat(
-					function() 
-						self:LoopGroupSummon(pattern.group)
-					end, 
-					setting.delayTs, 
-					setting.startTs
-				)
-				self.timerIdList[#self.timerIdList + 1] = id
-				self.timerIdList[#self.timerIdList + 1] = _TimerService:SetTimerOnce(
-					function() 
-						_TimerService:ClearTimer(id) 
-					end,
-					setting.endTs
-				)
-			end
-			
-			if pattern.type == 'EVENT' then
-				local setting = _settingRepo:GetSettingByTypeAndId('EVENT', pattern.setting)
-				local group_data = _groupRepo:GetGroupById(pattern.group)
-				
-				if self.eventGroup[setting.type] == nil then
-					self.eventGroup[setting.type] = {}
-				end
-				
-				local id = #self.eventGroup[setting.type] + 1
-				
-				local item = {}
-				item['count'] = 0
-				item['delayTs'] = setting.delayTs
-				item['maxCount'] = setting.count
-				item['lastTs'] = -1
-				item['group'] = {}
-				
-				self.eventGroup[setting.type][id] = item
-				
-				for i, g in ipairs(group_data) do
-					table.insert(self.eventGroup[setting.type][id].group, g)
-				end
-			end
-		end
-		
-	end
-
 	@ExecSpace("ClientOnly")
 	method void OnEndPlay()
 		for i, id in ipairs(self.timerIdList) do
@@ -149,6 +97,59 @@ script MonsterSpawnService extends Component
 		if self.curTimeTs > 3 then
 			self:OnDamage()
 		end
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnMapEnter(Entity enteredMap)
+		local settingFunction = function() 
+			local patterns = _patternRepo:GetPatternByStage(1)
+			self.curTimeTs = 0
+		
+			for i, pattern in ipairs(patterns) do
+				if pattern.type == 'LOOP' then
+					local setting = _settingRepo:GetSettingByTypeAndId('LOOP', pattern.setting)
+				
+					local id = _TimerService:SetTimerRepeat(
+						function() 
+							self:LoopGroupSummon(pattern.group)
+						end, 
+						setting.delayTs, 
+						setting.startTs)
+					self.timerIdList[#self.timerIdList + 1] = id
+					self.timerIdList[#self.timerIdList + 1] = _TimerService:SetTimerOnce(
+						function() 
+							_TimerService:ClearTimer(id) 
+						end,
+						setting.endTs)
+				end
+			
+				if pattern.type == 'EVENT' then
+					local setting = _settingRepo:GetSettingByTypeAndId('EVENT', pattern.setting)
+					local group_data = _groupRepo:GetGroupById(pattern.group)
+				
+					if self.eventGroup[setting.type] == nil then
+						self.eventGroup[setting.type] = {}
+					end
+				
+					local id = #self.eventGroup[setting.type] + 1
+				
+					local item = {}
+					item['count'] = 0
+					item['delayTs'] = setting.delayTs
+					item['maxCount'] = setting.count
+					item['lastTs'] = -1
+					item['group'] = {}
+				
+					self.eventGroup[setting.type][id] = item
+				
+					for i, g in ipairs(group_data) do
+						table.insert(self.eventGroup[setting.type][id].group, g)
+					end
+				end
+			end
+		end
+		
+		_TimerService:SetTimerOnce(settingFunction, 1)
 	end
 
 end
