@@ -3,8 +3,6 @@ script SpawnBigNinjaStars extends IngameSkillBase
 
 	property number time = 0
 
-	property number spawnTime = 0
-
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
 		self.time += delta
@@ -16,8 +14,10 @@ script SpawnBigNinjaStars extends IngameSkillBase
 	end
 
 	method void SpawnNinjaStars()
-		local star = _SpawnService:SpawnByModelId("model://4c9b1ce6-aaf8-44f6-bf0b-426b911757b3", "BigNinjaStars", self.player.TransformComponent.Position, self.Entity)
-		star.BigNinjaStars.damage = self.amount 
+		local projectileParent = _EntityService:GetEntityByPath("/maps/GameScene/ProjectileParent")
+		local star = _SpawnService:SpawnByModelId("model://4c9b1ce6-aaf8-44f6-bf0b-426b911757b3", "BigNinjaStars", self.player.TransformComponent.Position + Vector3(0, 0.4, 0), projectileParent)
+		
+		star.BigNinjaStars:Init(self.player, self.amount)
 	end
 
 end

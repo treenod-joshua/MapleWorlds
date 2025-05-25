@@ -5,16 +5,42 @@ script BigNinjaStars extends Component
 
 	property number time = 0
 
-	property number lifeTime = 0
+	property number lifeTime = 2
+
+	@Sync
+	property Entity player = nil
+
+	method void Init(Entity player, number damage)
+		self.player = player
+		self.damage = damage
+	end
 
 	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
-		self.Entity.TransformComponent.Position = self.Entity.TransformComponent.Position + Vector3(1, 0, 0) * 2
+		self.Entity.TransformComponent.Position = self.Entity.TransformComponent.Position + Vector3(0.1, 0, 0)
 		
 		self.time += delta;
 		if self.time >= self.lifeTime then
 			self.Entity:Destroy()
 		end
+	end
+
+	@EventSender("Self")
+	handler HandleTriggerEnterEvent(TriggerEnterEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: TriggerComponent
+		-- Space: Server, Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local TriggerBodyEntity = event.TriggerBodyEntity
+		---------------------------------------------------------
+		if event.TriggerBodyEntity.Unit == nil or event.TriggerBodyEntity.Name == "EnemyTower" then
+			return
+		end
+		
+		log("맞음:"..event.TriggerBodyEntity.Name)
+		event.TriggerBodyEntity.Unit:OnHit(self.player, self.damage, false, 1)
 	end
 
 end

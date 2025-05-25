@@ -1,4 +1,4 @@
 ﻿id,name,desc,modelID,icon,amount,coolTime,maxLevel
-1,표창 던지기,큰 표창을 앞으로 던집니다.,model://c47719b5-0142-4d3c-a520-5530e125c00b,0807bdcf057f40b5acd8b4491e86fa84,5,2,6
+1,표창 던지기,큰 표창을 앞으로 던집니다.|큰 표창을 <color=#FF0000>더 빠르게</color> 던집니다.,model://c47719b5-0142-4d3c-a520-5530e125c00b,0807bdcf057f40b5acd8b4491e86fa84,5,2,6
 2,표창 표창,큰 표표창,"""""",701c426dd45e4b6d89980a494df7fde1,5,2,1
 3,표표표창,표표표창,"""""",43fc59faa7c34e11a10f48a63c331886,5,2,1

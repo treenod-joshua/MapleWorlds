@@ -459,6 +459,7 @@ script Unit extends Component
 			return
 		end
 		
+		log("맞음"..self.Entity.Name)
 		self.Entity.HitComponent:OnHit(attacker, damage, isCritical, "", attackCount)
 		self.hp -= damage
 		
@@ -607,7 +608,7 @@ script Unit extends Component
 		for index in ipairs(projectiles) do
 			local projectile = projectiles[index]
 			
-			if projectile.Projectile.caster == self.Entity then
+			if projectile.Projectile ~= nil and projectile.Projectile.caster == self.Entity then
 				projectile:Destroy()
 			end
 		end

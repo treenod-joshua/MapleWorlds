@@ -35,10 +35,16 @@ script GameManager extends Logic
 		    local skillData = allSkillData[skillID]
 		    table.remove(availableSkills, index)  -- 같은 스킬 중복 방지
 		
+			local currentLevel = currentIngameSkills[skillID] or 0
+		    local descList = _UtilLogic:Split(skillData["desc"], "|")
+		    local descIndex = math.min(currentLevel + 1, #descList)  -- 선택창은 "다음 레벨" 설명을 보여주기 위해 +1
+		
+		    local selectedDesc = descList[descIndex] or "설명이 없습니다."
+		
 		    -- UI 버튼에 정보 넣기
 		    self.skillBtn[i].Children[1].SpriteGUIRendererComponent.ImageRUID = skillData["icon"]
 		    self.skillBtn[i].Children[2].TextComponent.Text = skillData["name"]
-		    self.skillBtn[i].Children[3].TextComponent.Text = skillData["desc"]
+		    self.skillBtn[i].Children[3].TextComponent.Text = selectedDesc
 		    self.skillBtn[i].SkillButton.skillID = skillID
 		end
 		
