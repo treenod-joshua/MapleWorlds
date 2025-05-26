@@ -3,7 +3,7 @@ script groupRepo extends Logic
 
 	property table groupTable = {}
 
-	@ExecSpace("ServerOnly")
+	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		local dataSet = _DataService:GetTable("SpawnGroup")    
 		for index = 1, dataSet:GetRowCount() do

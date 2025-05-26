@@ -9,6 +9,7 @@ script MonsterSpawnService extends Component
 
 	property number curTimeTs = 0
 
+	@ExecSpace("Server")
 	method integer GroupSummon(table group)
 		if group == nil then
 			return
@@ -91,16 +92,25 @@ script MonsterSpawnService extends Component
 		end
 	end
 
-	@ExecSpace("ServerOnly")
+	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
+		-- 
+		if true then
+			return
+		end
+		
 		self.curTimeTs = self.curTimeTs + delta
 		if self.curTimeTs > 3 then
 			self:OnDamage()
 		end
 	end
 
-	@ExecSpace("ServerOnly")
+	@ExecSpace("ClientOnly")
 	method void OnMapEnter(Entity enteredMap)
+		if enteredMap.Name ~= "GameScene" then
+			return
+		end
+		
 		local settingFunction = function() 
 			local patterns = _patternRepo:GetPatternByStage(1)
 			self.curTimeTs = 0

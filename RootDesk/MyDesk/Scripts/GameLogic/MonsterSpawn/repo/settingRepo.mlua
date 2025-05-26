@@ -3,7 +3,7 @@ script settingRepo extends Logic
 
 	property table settingTable = {}
 
-	@ExecSpace("ServerOnly")
+	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		self.settingTable['LOOP'] = {}
 		local loopSet = _DataService:GetTable("LOOP")    

@@ -1,0 +1,19 @@
+@Component
+script AdventureButton extends Component
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		log("로그로그")
+		
+		_TeleportService:TeleportToMapPosition(_UserService.LocalPlayer, Vector3.zero, "GameScene")
+	end
+
+end
