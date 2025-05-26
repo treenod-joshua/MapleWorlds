@@ -11,9 +11,7 @@ script AdventureButton extends Component
 		-- Parameters
 		-- local Entity = event.Entity
 		---------------------------------------------------------
-		log("로그로그")
-		
-		_TeleportService:TeleportToMapPosition(_UserService.LocalPlayer, Vector3.zero, "GameScene")
+		_LobbyManager:EnableAdventureMap()
 	end
 
 end

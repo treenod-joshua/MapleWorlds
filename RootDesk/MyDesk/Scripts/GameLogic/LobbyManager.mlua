@@ -1,9 +1,20 @@
 @Logic
 script LobbyManager extends Logic
 
-	@ExecSpace("ServerOnly")
-	method void OnBeginPlay()
+	property Entity lobbyUI = "e32de8bd-90f4-426f-9d45-b84091bfeab2"
+
+	property Entity adventureMapUI = "7e55cb24-2aa1-4c1e-a0dc-4307358872ab"
+
+	method void EnableAdventureMap()
+		self.adventureMapUI.Enable = true
+	end
+
+	method void StartAdventure()
+		self.lobbyUI.Enable = false
 		
+		-- 데이터 세팅 필요
+		
+		_TeleportService:TeleportToMapPosition(_UserService.LocalPlayer, Vector3.zero, "GameScene")
 	end
 
 end
