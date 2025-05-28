@@ -23,7 +23,7 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 5,
           "pathConstraints": "//",
           "revision": 1,
@@ -98,15 +98,15 @@
       },
       {
         "id": "847fe505-dd41-4eef-89ab-c33aaceec548",
-        "path": "/ui/Lobby_UI/UIButton",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.AdventureButton",
+        "path": "/ui/Lobby_UI/AdventureEnterButton",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
         "jsonString": {
-          "name": "UIButton",
-          "path": "/ui/Lobby_UI/UIButton",
+          "name": "AdventureEnterButton",
+          "path": "/ui/Lobby_UI/AdventureEnterButton",
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 0,
           "pathConstraints": "///",
           "revision": 1,
@@ -213,10 +213,6 @@
               },
               "OverrideSorting": false,
               "Enable": true
-            },
-            {
-              "@type": "script.AdventureButton",
-              "Enable": true
             }
           ],
           "@version": 1
@@ -224,15 +220,15 @@
       },
       {
         "id": "96dd2453-7113-4806-9ae0-5a344e5f5838",
-        "path": "/ui/Lobby_UI/UIButton/UIText",
+        "path": "/ui/Lobby_UI/AdventureEnterButton/UIText",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "UIText",
-          "path": "/ui/Lobby_UI/UIButton/UIText",
+          "path": "/ui/Lobby_UI/AdventureEnterButton/UIText",
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 0,
           "pathConstraints": "////",
           "revision": 1,
@@ -344,8 +340,8 @@
           "path": "/ui/Lobby_UI/AdventureMap",
           "nameEditable": true,
           "enable": true,
-          "visible": true,
-          "localize": false,
+          "visible": false,
+          "localize": true,
           "displayOrder": 1,
           "pathConstraints": "///",
           "revision": 1,
@@ -364,12 +360,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 50.0,
-                "y": 50.0
+                "x": 84.3577,
+                "y": 63.9976
               },
               "OffsetMin": {
-                "x": -50.0,
-                "y": -50.0
+                "x": -15.6423,
+                "y": -36.0024
               },
               "Pivot": {
                 "x": 0.5,
@@ -382,12 +378,17 @@
               "UIMode": 1,
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 0.0,
-                "y": 0.0
+                "x": 34.3577,
+                "y": 13.9976
               },
-              "Position": {
+              "Rotation": {
                 "x": 0.0,
                 "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 34.3577,
+                "y": 13.9976,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -396,6 +397,7 @@
                 "z": 0.0,
                 "w": 1.0
               },
+              "ZRotation": 0.0,
               "Enable": true
             }
           ],
@@ -412,7 +414,7 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 0,
           "pathConstraints": "////",
           "revision": 0,
@@ -547,7 +549,7 @@
                 "x": 1400.0,
                 "y": 900.0
               },
-              "Constraint": 0,
+              "Constraint": 1,
               "ConstraintCount": 1,
               "GridSpacing": {
                 "x": 10.0,
@@ -556,10 +558,10 @@
               "HorizontalScrollBarDirection": 0,
               "OverrideSorting": false,
               "Padding": {
-                "left": 10,
-                "right": 10,
-                "top": 10,
-                "bottom": 10
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
               },
               "ReverseArrangement": false,
               "ScrollBarBackgroundColor": {
@@ -575,11 +577,11 @@
                 "a": 1.0
               },
               "ScrollBarThickness": 20.0,
-              "ScrollBarVisible": 1,
+              "ScrollBarVisible": 2,
               "Spacing": 0.0,
               "StartAxis": 0,
               "StartCorner": 0,
-              "Type": 2,
+              "Type": 0,
               "UseScroll": true,
               "VerticalScrollBarDirection": 2,
               "Enable": true
@@ -590,15 +592,15 @@
       },
       {
         "id": "0aab8a18-00cc-4625-b8d8-ddadb97d0cbd",
-        "path": "/ui/Lobby_UI/AdventureMap/AdventureMap/Map",
+        "path": "/ui/Lobby_UI/AdventureMap/AdventureMap/Map_1",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
-          "name": "Map",
-          "path": "/ui/Lobby_UI/AdventureMap/AdventureMap/Map",
+          "name": "Map_1",
+          "path": "/ui/Lobby_UI/AdventureMap/AdventureMap/Map_1",
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 0,
           "pathConstraints": "/////",
           "revision": 1,
@@ -622,12 +624,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 1410.0,
-                "y": -10.0
+                "x": 1400.0,
+                "y": 0.0
               },
               "OffsetMin": {
-                "x": 10.0,
-                "y": -910.0
+                "x": 0.0,
+                "y": -900.0
               },
               "Pivot": {
                 "x": 0.5,
@@ -645,8 +647,8 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 710.0,
-                "y": -460.0
+                "x": 700.0,
+                "y": -450.0
               },
               "Rotation": {
                 "x": 0.0,
@@ -654,8 +656,8 @@
                 "z": 0.0
               },
               "Position": {
-                "x": 710.0,
-                "y": -460.0,
+                "x": 700.0,
+                "y": -450.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -690,6 +692,138 @@
         }
       },
       {
+        "id": "fcd985b8-a1fa-4b0a-8750-37f38ca3d63d",
+        "path": "/ui/Lobby_UI/AdventureMap/AdventureMap/Map_1/UIButton",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.MapButton",
+        "jsonString": {
+          "name": "UIButton",
+          "path": "/ui/Lobby_UI/AdventureMap/AdventureMap/Map_1/UIButton",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "//////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -246.0682,
+                "y": 198.7388
+              },
+              "OffsetMin": {
+                "x": -297.0682,
+                "y": 147.7388
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 51.0,
+                "y": 51.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": -271.5682,
+                "y": 173.2388
+              },
+              "Position": {
+                "x": -271.5682,
+                "y": 173.2388,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "994450703b734c27b4f1e5bade602933"
+              },
+              "OverrideSorting": false,
+              "Type": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "script.MapButton",
+              "Enable": true,
+              "chapterIndex": 1,
+              "mapIndex": 1
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
         "id": "2282d936-9b79-4552-8045-126d4afa4063",
         "path": "/ui/Lobby_UI/AdventureMap/Close Button",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
@@ -699,7 +833,7 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 1,
           "pathConstraints": "////",
           "revision": 1,

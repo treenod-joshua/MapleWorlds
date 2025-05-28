@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "map://gamescene",
+  "EntryKey": "map://chapter1",
   "ContentType": "x-mod/map",
   "Content": "",
   "Usage": 0,
@@ -15,12 +15,12 @@
     "Entities": [
       {
         "id": "af6976c0-fe90-4203-ba28-4b321cc2bb11",
-        "path": "/maps/GameScene",
+        "path": "/maps/Chapter1",
         "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MinimapManager",
         "jsonString": {
-          "name": "GameScene",
-          "path": "/maps/GameScene",
-          "nameEditable": false,
+          "name": "Chapter1",
+          "path": "/maps/Chapter1",
+          "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": false,
@@ -862,11 +862,11 @@
       },
       {
         "id": "d227e205-c1dc-4fa0-a354-fab7d4c35f54",
-        "path": "/maps/GameScene/Background",
+        "path": "/maps/Chapter1/Background",
         "componentNames": "MOD.Core.BackgroundComponent",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/GameScene/Background",
+          "path": "/maps/Chapter1/Background",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -894,11 +894,11 @@
       },
       {
         "id": "672dad33-0310-4230-a5e8-4d17a99ed6e8",
-        "path": "/maps/GameScene/MapleMapLayer",
+        "path": "/maps/Chapter1/MapleMapLayer",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer",
-          "path": "/maps/GameScene/MapleMapLayer",
+          "path": "/maps/Chapter1/MapleMapLayer",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -928,11 +928,11 @@
       },
       {
         "id": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
-        "path": "/maps/GameScene/TileMap",
+        "path": "/maps/Chapter1/TileMap",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap",
-          "path": "/maps/GameScene/TileMap",
+          "path": "/maps/Chapter1/TileMap",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -3169,11 +3169,11 @@
       },
       {
         "id": "f5af730d-fbdb-40ee-adeb-57c1caeda316",
-        "path": "/maps/GameScene/EnemyTower",
+        "path": "/maps/Chapter1/EnemyTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService,script.Tower,MOD.Core.HitComponent,script.Unit",
         "jsonString": {
           "name": "EnemyTower",
-          "path": "/maps/GameScene/EnemyTower",
+          "path": "/maps/Chapter1/EnemyTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3266,11 +3266,11 @@
       },
       {
         "id": "b168cb7e-a9ac-4c6f-9973-0835d991e49b",
-        "path": "/maps/GameScene/ProjectileParent",
+        "path": "/maps/Chapter1/ProjectileParent",
         "componentNames": "",
         "jsonString": {
           "name": "ProjectileParent",
-          "path": "/maps/GameScene/ProjectileParent",
+          "path": "/maps/Chapter1/ProjectileParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3285,11 +3285,11 @@
       },
       {
         "id": "587b7214-1aa5-439d-a136-59ddc47e728e",
-        "path": "/maps/GameScene/MyMonsterList",
+        "path": "/maps/Chapter1/MyMonsterList",
         "componentNames": "",
         "jsonString": {
           "name": "MyMonsterList",
-          "path": "/maps/GameScene/MyMonsterList",
+          "path": "/maps/Chapter1/MyMonsterList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3304,11 +3304,11 @@
       },
       {
         "id": "72fb79bb-414b-4712-9e76-d77bc3f8a2fa",
-        "path": "/maps/GameScene/MyMonsterList/MySpawnPoint",
+        "path": "/maps/Chapter1/MyMonsterList/MySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "MySpawnPoint",
-          "path": "/maps/GameScene/MyMonsterList/MySpawnPoint",
+          "path": "/maps/Chapter1/MyMonsterList/MySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3350,11 +3350,11 @@
       },
       {
         "id": "94590250-3c52-4bf9-a9f2-5656ba5ff992",
-        "path": "/maps/GameScene/EnemyList",
+        "path": "/maps/Chapter1/EnemyList",
         "componentNames": "",
         "jsonString": {
           "name": "EnemyList",
-          "path": "/maps/GameScene/EnemyList",
+          "path": "/maps/Chapter1/EnemyList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3369,11 +3369,11 @@
       },
       {
         "id": "76dc306f-fc59-4857-bdb2-e65864bbb4a0",
-        "path": "/maps/GameScene/EnemyList/EnemySpawnPoint",
+        "path": "/maps/Chapter1/EnemyList/EnemySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "EnemySpawnPoint",
-          "path": "/maps/GameScene/EnemyList/EnemySpawnPoint",
+          "path": "/maps/Chapter1/EnemyList/EnemySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3415,11 +3415,11 @@
       },
       {
         "id": "fca8fb87-756a-4d19-9aa6-44cd2fb30dcc",
-        "path": "/maps/GameScene/SkillParent",
+        "path": "/maps/Chapter1/SkillParent",
         "componentNames": "",
         "jsonString": {
           "name": "SkillParent",
-          "path": "/maps/GameScene/SkillParent",
+          "path": "/maps/Chapter1/SkillParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3434,11 +3434,11 @@
       },
       {
         "id": "8ed350f6-5d33-4488-8b83-92ccd146450b",
-        "path": "/maps/GameScene/PlayerTower",
+        "path": "/maps/Chapter1/PlayerTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,MOD.Core.HitComponent,script.Tower,script.Unit",
         "jsonString": {
           "name": "PlayerTower",
-          "path": "/maps/GameScene/PlayerTower",
+          "path": "/maps/Chapter1/PlayerTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3517,11 +3517,11 @@
       },
       {
         "id": "2f5ab07d-a23b-4671-aa23-d194bca918c1",
-        "path": "/maps/GameScene/ingameIncome",
+        "path": "/maps/Chapter1/ingameIncome",
         "componentNames": "script.MesoIncome",
         "jsonString": {
           "name": "ingameIncome",
-          "path": "/maps/GameScene/ingameIncome",
+          "path": "/maps/Chapter1/ingameIncome",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -3550,11 +3550,11 @@
       },
       {
         "id": "03a1c87b-00aa-49d9-9d14-ada3697851e0",
-        "path": "/maps/GameScene/userWallet",
+        "path": "/maps/Chapter1/userWallet",
         "componentNames": "script.MesoWallet",
         "jsonString": {
           "name": "userWallet",
-          "path": "/maps/GameScene/userWallet",
+          "path": "/maps/Chapter1/userWallet",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -3579,11 +3579,11 @@
       },
       {
         "id": "1114386e-3b5e-42b4-8e05-58984bb86d48",
-        "path": "/maps/GameScene/ingameWalletUI",
+        "path": "/maps/Chapter1/ingameWalletUI",
         "componentNames": "script.MesoUI",
         "jsonString": {
           "name": "ingameWalletUI",
-          "path": "/maps/GameScene/ingameWalletUI",
+          "path": "/maps/Chapter1/ingameWalletUI",
           "nameEditable": true,
           "enable": true,
           "visible": false,

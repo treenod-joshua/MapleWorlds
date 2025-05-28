@@ -1,7 +1,7 @@
 @Component
 script AdventureButton extends Component
 
-	@EventSender("Self")
+	@EventSender("Entity", "847fe505-dd41-4eef-89ab-c33aaceec548")
 	handler HandleButtonClickEvent(ButtonClickEvent event)
 		--------------- Native Event Sender Info ----------------
 		-- Sender: ButtonComponent
@@ -11,7 +11,20 @@ script AdventureButton extends Component
 		-- Parameters
 		-- local Entity = event.Entity
 		---------------------------------------------------------
-		_LobbyManager:EnableAdventureMap()
+		_LobbyManager:SetAdventureMapEnable(true)
+	end
+
+	@EventSender("Entity", "2282d936-9b79-4552-8045-126d4afa4063")
+	handler HandleButtonClickEvent2(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		_LobbyManager:SetAdventureMapEnable(false)
 	end
 
 end

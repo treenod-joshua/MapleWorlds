@@ -1,0 +1,23 @@
+@Component
+script MapButton extends Component
+
+	@Sync
+	property integer chapterIndex = 0
+
+	@Sync
+	property integer mapIndex = 0
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		_LobbyManager:StartAdventure(self.chapterIndex, self.mapIndex)
+	end
+
+end

@@ -10,8 +10,8 @@ script SpawnManager extends Logic
 			return
 		end
 		
-		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList")
-		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/MyMonsterList/MySpawnPoint")
+		local spawnParent = _EntityService:GetEntityByPath("/maps/Chapter1/MyMonsterList")
+		local spawnPos = _EntityService:GetEntityByPath("/maps/Chapter1/MyMonsterList/MySpawnPoint")
 		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
 		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
 		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
@@ -22,8 +22,8 @@ script SpawnManager extends Logic
 	end
 
 	method void SpawnEnemy(string modelID)
-		local spawnParent = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList")
-		local spawnPos = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList/EnemySpawnPoint")
+		local spawnParent = _EntityService:GetEntityByPath("/maps/Chapter1/EnemyList")
+		local spawnPos = _EntityService:GetEntityByPath("/maps/Chapter1/EnemyList/EnemySpawnPoint")
 		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
 		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
 		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "적"..unitData["name"], spawnPos.TransformComponent.Position, spawnParent)

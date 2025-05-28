@@ -16,7 +16,7 @@
       {
         "id": "a4849af0-6f41-497b-bad7-e4b0d227b00f",
         "path": "/maps/LobbyScene",
-        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent",
+        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.AdventureButton",
         "jsonString": {
           "name": "LobbyScene",
           "path": "/maps/LobbyScene",
@@ -38,6 +38,10 @@
             {
               "@type": "MOD.Core.FootholdComponent",
               "FootholdsByLayer": {},
+              "Enable": true
+            },
+            {
+              "@type": "script.AdventureButton",
               "Enable": true
             }
           ],

@@ -107,7 +107,7 @@ script MonsterSpawnService extends Component
 
 	@ExecSpace("ClientOnly")
 	method void OnMapEnter(Entity enteredMap)
-		if enteredMap.Name ~= "GameScene" then
+		if enteredMap.Name ~= "Chapter1" then
 			return
 		end
 		

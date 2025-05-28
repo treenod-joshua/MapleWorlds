@@ -648,7 +648,7 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void CreateMinimapIcon(boolean isEnemy)
-		local map = _EntityService:GetEntityByPath('/maps/GameScene')
+		local map = _EntityService:GetEntityByPath('/maps/Chapter1')
 		map.MinimapManager:AddEntityList(self.Entity, isEnemy)
 	end
 

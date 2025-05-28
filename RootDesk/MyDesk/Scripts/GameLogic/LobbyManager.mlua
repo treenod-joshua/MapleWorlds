@@ -5,16 +5,16 @@ script LobbyManager extends Logic
 
 	property Entity adventureMapUI = "7e55cb24-2aa1-4c1e-a0dc-4307358872ab"
 
-	method void EnableAdventureMap()
-		self.adventureMapUI.Enable = true
+	method void SetAdventureMapEnable(boolean isActive)
+		self.adventureMapUI.Visible = isActive
 	end
 
-	method void StartAdventure()
+	method void StartAdventure(integer chapterIndex, integer mapIndex)
 		self.lobbyUI.Enable = false
 		
 		-- 데이터 세팅 필요
 		
-		_TeleportService:TeleportToMapPosition(_UserService.LocalPlayer, Vector3.zero, "GameScene")
+		_TeleportService:TeleportToMapPosition(_UserService.LocalPlayer, Vector3.zero, "Chapter"..chapterIndex)
 	end
 
 end
