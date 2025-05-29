@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "map://chapter1",
+  "EntryKey": "map://chapter2",
   "ContentType": "x-mod/map",
   "Content": "",
   "Usage": 0,
@@ -14,12 +14,12 @@
     "Use": "Binary",
     "Entities": [
       {
-        "id": "af6976c0-fe90-4203-ba28-4b321cc2bb11",
-        "path": "/maps/Chapter1",
+        "id": "52208fbe-6885-4086-9b04-e361eb4dee1c",
+        "path": "/maps/Chapter2",
         "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MinimapManager",
         "jsonString": {
-          "name": "Chapter1",
-          "path": "/maps/Chapter1",
+          "name": "Chapter2",
+          "path": "/maps/Chapter2",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -49,7 +49,7 @@
               "FootholdsByLayer": {
                 "1": [
                   {
-                    "Length": 1.29,
+                    "Length": 1.22000027,
                     "NextFootholdId": 2,
                     "PreviousFootholdId": 20,
                     "groupID": 1,
@@ -64,15 +64,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 1,
                     "StartPoint": {
-                      "x": -6.24,
-                      "y": -2.45
+                      "x": -6.17,
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": -4.95,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -96,15 +96,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 2,
                     "StartPoint": {
                       "x": -4.95,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": -4.05,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -128,15 +128,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 3,
                     "StartPoint": {
                       "x": -4.05,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": -3.14999986,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -160,15 +160,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 4,
                     "StartPoint": {
                       "x": -3.14999986,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": -2.24999976,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -177,7 +177,7 @@
                     "IsDynamic": false
                   },
                   {
-                    "Length": 0.9,
+                    "Length": 0.899999738,
                     "NextFootholdId": 6,
                     "PreviousFootholdId": 4,
                     "groupID": 1,
@@ -192,15 +192,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 5,
                     "StartPoint": {
                       "x": -2.24999976,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
-                      "x": -1.34999979,
-                      "y": -2.45
+                      "x": -1.35,
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -224,15 +224,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 6,
                     "StartPoint": {
                       "x": -1.35,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": -0.449999958,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -256,15 +256,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 7,
                     "StartPoint": {
                       "x": -0.45,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 0.449999958,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -288,15 +288,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 8,
                     "StartPoint": {
                       "x": 0.450000018,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 1.35,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -320,15 +320,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 9,
                     "StartPoint": {
                       "x": 1.34999979,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 2.25,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -352,15 +352,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 10,
                     "StartPoint": {
-                      "x": 2.24999976,
-                      "y": -2.45
+                      "x": 2.25,
+                      "y": -2.57000017
                     },
                     "EndPoint": {
-                      "x": 3.14999986,
-                      "y": -2.45
+                      "x": 3.15,
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -384,15 +384,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 11,
                     "StartPoint": {
                       "x": 3.14999986,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 4.04999971,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -416,15 +416,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 12,
                     "StartPoint": {
                       "x": 4.05,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 4.95,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -448,15 +448,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 13,
                     "StartPoint": {
-                      "x": 4.95,
-                      "y": -2.45
+                      "x": 4.95000029,
+                      "y": -2.57000017
                     },
                     "EndPoint": {
-                      "x": 5.84999943,
-                      "y": -2.45
+                      "x": 5.85,
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -480,15 +480,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 14,
                     "StartPoint": {
                       "x": 5.85,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 6.74999952,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -512,15 +512,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 15,
                     "StartPoint": {
                       "x": 6.75,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 7.64999962,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -544,15 +544,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 16,
                     "StartPoint": {
                       "x": 7.65,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 8.549999,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -576,15 +576,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 17,
                     "StartPoint": {
-                      "x": 8.55,
-                      "y": -2.45
+                      "x": 8.549999,
+                      "y": -2.57000017
                     },
                     "EndPoint": {
-                      "x": 9.45,
-                      "y": -2.45
+                      "x": 9.449999,
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -608,15 +608,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 18,
                     "StartPoint": {
                       "x": 9.45,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
                       "x": 10.3499994,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -625,7 +625,7 @@
                     "IsDynamic": false
                   },
                   {
-                    "Length": 1.29000092,
+                    "Length": 1.21999931,
                     "NextFootholdId": 23,
                     "PreviousFootholdId": 18,
                     "groupID": 1,
@@ -640,15 +640,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 19,
                     "StartPoint": {
                       "x": 10.3499994,
-                      "y": -2.45
+                      "y": -2.57000017
                     },
                     "EndPoint": {
-                      "x": 11.64,
-                      "y": -2.45
+                      "x": 11.5699987,
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 1.0,
@@ -657,7 +657,7 @@
                     "IsDynamic": false
                   },
                   {
-                    "Length": 0.8499999,
+                    "Length": 0.73,
                     "NextFootholdId": 1,
                     "PreviousFootholdId": 21,
                     "groupID": 1,
@@ -672,15 +672,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 20,
                     "StartPoint": {
-                      "x": -6.24,
-                      "y": -3.3
+                      "x": -6.17,
+                      "y": -3.30000019
                     },
                     "EndPoint": {
-                      "x": -6.24,
-                      "y": -2.45
+                      "x": -6.17,
+                      "y": -2.57000017
                     },
                     "Variance": {
                       "x": 0.0,
@@ -704,14 +704,14 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 21,
                     "StartPoint": {
-                      "x": -6.24,
+                      "x": -6.17,
                       "y": -3.9
                     },
                     "EndPoint": {
-                      "x": -6.24,
+                      "x": -6.17,
                       "y": -3.30000019
                     },
                     "Variance": {
@@ -736,14 +736,14 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 22,
                     "StartPoint": {
-                      "x": -6.24,
+                      "x": -6.17,
                       "y": -4.50000048
                     },
                     "EndPoint": {
-                      "x": -6.24,
+                      "x": -6.17,
                       "y": -3.90000033
                     },
                     "Variance": {
@@ -753,7 +753,7 @@
                     "IsDynamic": false
                   },
                   {
-                    "Length": 0.8499999,
+                    "Length": 0.73,
                     "NextFootholdId": 24,
                     "PreviousFootholdId": 19,
                     "groupID": 1,
@@ -768,15 +768,15 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 23,
                     "StartPoint": {
-                      "x": 11.64,
-                      "y": -2.45
+                      "x": 11.5699987,
+                      "y": -2.57000017
                     },
                     "EndPoint": {
-                      "x": 11.64,
-                      "y": -3.3
+                      "x": 11.5699987,
+                      "y": -3.30000019
                     },
                     "Variance": {
                       "x": 0.0,
@@ -800,14 +800,14 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 24,
                     "StartPoint": {
-                      "x": 11.64,
+                      "x": 11.5699987,
                       "y": -3.30000019
                     },
                     "EndPoint": {
-                      "x": 11.64,
+                      "x": 11.5699987,
                       "y": -3.9
                     },
                     "Variance": {
@@ -832,14 +832,14 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
+                    "OwnerId": "721badbd-d714-466e-ae9a-f284125bf2fc",
                     "Id": 25,
                     "StartPoint": {
-                      "x": 11.64,
+                      "x": 11.5699987,
                       "y": -3.90000033
                     },
                     "EndPoint": {
-                      "x": 11.64,
+                      "x": 11.5699987,
                       "y": -4.50000048
                     },
                     "Variance": {
@@ -861,12 +861,12 @@
         }
       },
       {
-        "id": "d227e205-c1dc-4fa0-a354-fab7d4c35f54",
-        "path": "/maps/Chapter1/Background",
+        "id": "559f0c51-a827-4069-be7b-bc24755c230d",
+        "path": "/maps/Chapter2/Background",
         "componentNames": "MOD.Core.BackgroundComponent",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/Chapter1/Background",
+          "path": "/maps/Chapter2/Background",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -884,7 +884,7 @@
                 "b": 0.5019608,
                 "a": 0.7058824
               },
-              "TemplateRUID": "65c4167ea7484196b890022354e5a4a4",
+              "TemplateRUID": "d84241f17de344a097f5b96ac914f1d2",
               "Type": 1,
               "Enable": true
             }
@@ -893,12 +893,12 @@
         }
       },
       {
-        "id": "672dad33-0310-4230-a5e8-4d17a99ed6e8",
-        "path": "/maps/Chapter1/MapleMapLayer",
+        "id": "35b433d6-13c2-4a7d-b6bd-bdf9d6983339",
+        "path": "/maps/Chapter2/MapleMapLayer",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer",
-          "path": "/maps/Chapter1/MapleMapLayer",
+          "path": "/maps/Chapter2/MapleMapLayer",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -927,12 +927,12 @@
         }
       },
       {
-        "id": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
-        "path": "/maps/Chapter1/TileMap",
+        "id": "721badbd-d714-466e-ae9a-f284125bf2fc",
+        "path": "/maps/Chapter2/TileMap",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap",
-          "path": "/maps/Chapter1/TileMap",
+          "path": "/maps/Chapter2/TileMap",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -973,7 +973,7 @@
               "SortingLayer": "MapLayer0",
               "TileMapVersion": 1,
               "TileSetRUID": {
-                "DataId": "46701ff2021b4d1fb21fbf5790b1ab14"
+                "DataId": "48afa7d90aa24fadae9c52f30977342e"
               },
               "Tiles": [
                 {
@@ -3168,12 +3168,12 @@
         }
       },
       {
-        "id": "f5af730d-fbdb-40ee-adeb-57c1caeda316",
-        "path": "/maps/Chapter1/EnemyTower",
+        "id": "d7bf6eea-ff80-45d6-a504-6dd6bfa465f5",
+        "path": "/maps/Chapter2/EnemyTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService,script.Tower,MOD.Core.HitComponent,script.Unit",
         "jsonString": {
           "name": "EnemyTower",
-          "path": "/maps/Chapter1/EnemyTower",
+          "path": "/maps/Chapter2/EnemyTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3191,8 +3191,8 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 10.63871,
-                "y": 0.86837554,
+                "x": 10.5195436,
+                "y": 0.6099999,
                 "z": 999.998047
               },
               "QuaternionRotation": {
@@ -3265,12 +3265,12 @@
         }
       },
       {
-        "id": "b168cb7e-a9ac-4c6f-9973-0835d991e49b",
-        "path": "/maps/Chapter1/ProjectileParent",
+        "id": "a6998ff4-a17d-49ce-8152-affd03910a69",
+        "path": "/maps/Chapter2/ProjectileParent",
         "componentNames": "",
         "jsonString": {
           "name": "ProjectileParent",
-          "path": "/maps/Chapter1/ProjectileParent",
+          "path": "/maps/Chapter2/ProjectileParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3284,12 +3284,12 @@
         }
       },
       {
-        "id": "587b7214-1aa5-439d-a136-59ddc47e728e",
-        "path": "/maps/Chapter1/MyMonsterList",
+        "id": "ae5966cf-bae8-4a9d-b61c-ac6afb471238",
+        "path": "/maps/Chapter2/MyMonsterList",
         "componentNames": "",
         "jsonString": {
           "name": "MyMonsterList",
-          "path": "/maps/Chapter1/MyMonsterList",
+          "path": "/maps/Chapter2/MyMonsterList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3303,12 +3303,12 @@
         }
       },
       {
-        "id": "72fb79bb-414b-4712-9e76-d77bc3f8a2fa",
-        "path": "/maps/Chapter1/MyMonsterList/MySpawnPoint",
+        "id": "a4011a52-ac3c-48d6-8ad3-8a85c50448ab",
+        "path": "/maps/Chapter2/MyMonsterList/MySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "MySpawnPoint",
-          "path": "/maps/Chapter1/MyMonsterList/MySpawnPoint",
+          "path": "/maps/Chapter2/MyMonsterList/MySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3349,12 +3349,12 @@
         }
       },
       {
-        "id": "94590250-3c52-4bf9-a9f2-5656ba5ff992",
-        "path": "/maps/Chapter1/EnemyList",
+        "id": "78efac26-bc15-4983-80b7-bc10c0d93842",
+        "path": "/maps/Chapter2/EnemyList",
         "componentNames": "",
         "jsonString": {
           "name": "EnemyList",
-          "path": "/maps/Chapter1/EnemyList",
+          "path": "/maps/Chapter2/EnemyList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3368,12 +3368,12 @@
         }
       },
       {
-        "id": "76dc306f-fc59-4857-bdb2-e65864bbb4a0",
-        "path": "/maps/Chapter1/EnemyList/EnemySpawnPoint",
+        "id": "4f22310c-ae76-4be7-a0a6-52e4bf2cbac7",
+        "path": "/maps/Chapter2/EnemyList/EnemySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "EnemySpawnPoint",
-          "path": "/maps/Chapter1/EnemyList/EnemySpawnPoint",
+          "path": "/maps/Chapter2/EnemyList/EnemySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3414,12 +3414,12 @@
         }
       },
       {
-        "id": "fca8fb87-756a-4d19-9aa6-44cd2fb30dcc",
-        "path": "/maps/Chapter1/SkillParent",
+        "id": "9377da5c-5c19-4a79-bf7c-78c3b936a3af",
+        "path": "/maps/Chapter2/SkillParent",
         "componentNames": "",
         "jsonString": {
           "name": "SkillParent",
-          "path": "/maps/Chapter1/SkillParent",
+          "path": "/maps/Chapter2/SkillParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3433,12 +3433,12 @@
         }
       },
       {
-        "id": "8ed350f6-5d33-4488-8b83-92ccd146450b",
-        "path": "/maps/Chapter1/PlayerTower",
+        "id": "af1d6380-8423-458e-abc8-46ecf24d750c",
+        "path": "/maps/Chapter2/PlayerTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,MOD.Core.HitComponent,script.Tower,script.Unit",
         "jsonString": {
           "name": "PlayerTower",
-          "path": "/maps/Chapter1/PlayerTower",
+          "path": "/maps/Chapter2/PlayerTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3456,8 +3456,8 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": -4.877951,
-                "y": 0.676622868,
+                "x": -4.9573884,
+                "y": 0.479999781,
                 "z": 999.998047
               },
               "QuaternionRotation": {
@@ -3516,12 +3516,12 @@
         }
       },
       {
-        "id": "2f5ab07d-a23b-4671-aa23-d194bca918c1",
-        "path": "/maps/Chapter1/ingameIncome",
+        "id": "98fc82ce-536b-43d2-bdc9-a31446896a12",
+        "path": "/maps/Chapter2/ingameIncome",
         "componentNames": "script.MesoIncome",
         "jsonString": {
           "name": "ingameIncome",
-          "path": "/maps/Chapter1/ingameIncome",
+          "path": "/maps/Chapter2/ingameIncome",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -3549,12 +3549,12 @@
         }
       },
       {
-        "id": "03a1c87b-00aa-49d9-9d14-ada3697851e0",
-        "path": "/maps/Chapter1/userWallet",
+        "id": "37fa340a-1dd5-4172-b629-db11b53cc373",
+        "path": "/maps/Chapter2/userWallet",
         "componentNames": "script.MesoWallet",
         "jsonString": {
           "name": "userWallet",
-          "path": "/maps/Chapter1/userWallet",
+          "path": "/maps/Chapter2/userWallet",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -3578,12 +3578,12 @@
         }
       },
       {
-        "id": "1114386e-3b5e-42b4-8e05-58984bb86d48",
-        "path": "/maps/Chapter1/ingameWalletUI",
+        "id": "4197098a-3f53-4cea-b3a4-5675e3334149",
+        "path": "/maps/Chapter2/ingameWalletUI",
         "componentNames": "script.MesoUI",
         "jsonString": {
           "name": "ingameWalletUI",
-          "path": "/maps/Chapter1/ingameWalletUI",
+          "path": "/maps/Chapter2/ingameWalletUI",
           "nameEditable": true,
           "enable": true,
           "visible": false,
