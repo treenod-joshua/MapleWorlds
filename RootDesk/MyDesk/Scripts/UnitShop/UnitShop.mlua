@@ -30,7 +30,7 @@ script UnitShop extends Component
 		self.summonPools[1] = "model://3b308c48-d7a0-420c-99bf-502e034642ad"
 		self.summonPools[2] = "model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"
 		self.summonPools[3] = "model://586c7714-0360-4f9d-b450-3d305e328c31"
-		self.summonPools[4] = "model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"
+		self.summonPools[4] = "model://5aac7c14-9173-4d47-96f1-5fc5429e36c4"
 		self.summonPools[5] = "model://3b308c48-d7a0-420c-99bf-502e034642ad"
 		self.summonPools[6] = "model://586c7714-0360-4f9d-b450-3d305e328c31"
 		self.summonPools[7] = "model://5d6f5ebf-7c8e-44a9-ad72-0ce3c51a0d93"
