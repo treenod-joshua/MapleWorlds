@@ -1,13 +1,30 @@
 @Logic
 script GameManager extends Logic
 
-	property Entity uiSkillSelect = "ec7b9d8d-b2c2-4ee8-b95c-58564c8a4763"
+	property Entity skillSelectUI = "ec7b9d8d-b2c2-4ee8-b95c-58564c8a4763"
 
 	property SyncTable<Entity> skillBtn
 
+	property Entity shopUI = "e0ec4a39-4a35-4e17-95aa-c16dee01f5fa"
+
+	property Entity infoUI = "a07f182a-214a-414d-b995-9863eaa71d62"
+
+	@Sync
+	property integer chapterIndex = 0
+
+	@Sync
+	property integer mapIndex = 0
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		for i = 1, 3 do
+			table.insert(self.skillBtn, self.skillSelectUI.Children[i])
+		end
+	end
+
 	@ExecSpace("Client")
 	method void OpenSkillSelect()
-		_TweenLogic:MoveTo(self.uiSkillSelect, Vector2(0, 0), 0.3, EaseType.CircEaseIn)
+		_TweenLogic:MoveTo(self.skillSelectUI, Vector2(0, 0), 0.3, EaseType.CircEaseIn)
 		
 		local currentIngameSkills = _UserService.LocalPlayer.PlayerCharacter.ingameSkills
 		local allSkillData = _SkillManager.ingameSkillData
@@ -59,14 +76,33 @@ script GameManager extends Logic
 
 	@ExecSpace("Client")
 	method void CloseSkillSelect()
-		_TweenLogic:MoveTo(self.uiSkillSelect, Vector2(0, -800), 0.3, EaseType.CircEaseOut)
+		_TweenLogic:MoveTo(self.skillSelectUI, Vector2(0, -800), 0.3, EaseType.CircEaseOut)
 	end
 
-	@ExecSpace("ClientOnly")
-	method void OnBeginPlay()
-		for i = 1, 3 do
-			table.insert(self.skillBtn, self.uiSkillSelect.Children[i])
-		end
+	@ExecSpace("Server")
+	method void GameStart(integer chapterIndex, integer mapIndex)
+		self.chapterIndex = chapterIndex
+		self.mapIndex = mapIndex
+		
+		self:EnableUI()
+		-- 인게임 UI 활성화
+	end
+
+	method void GameEnd()
+		
+	end
+
+	method string GetGameMapName()
+		return "/maps/Chapter"..self.chapterIndex
+	end
+
+	@ExecSpace("Client")
+	method void EnableUI()
+		-- 인게임 UI 활성화
+		self.shopUI.Enable = true
+		self.shopUI.Visible = true
+		self.infoUI.Enable = true
+		self.infoUI.Visible = true
 	end
 
 	@EventSender("Service", "InputService")

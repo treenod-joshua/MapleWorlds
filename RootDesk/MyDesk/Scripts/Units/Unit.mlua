@@ -367,7 +367,7 @@ script Unit extends Component
 		self:IncreaseMp()
 		
 		if self._T.projectileParent == nil then
-			self._T.projectileParent = _EntityService:GetEntityByPath("/maps/GameScene/ProjectileParent")
+			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 		end
 		
 		local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
@@ -476,7 +476,7 @@ script Unit extends Component
 		self:SetState("die")
 		
 		-- 맵마다 Path 다르게 설정 필요
-		local map = _EntityService:GetEntityByPath('/maps/GameScene')
+		local map = _EntityService:GetEntityByPath(_GameManager:GetGameMapName())
 		map.MinimapManager:RemoveEntityList(self.Entity)
 		
 		-- 죽는 애니메이션이 없는 경우 직접 처리
@@ -603,7 +603,7 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method void DestroyProjectile()
 		-- 자신의 발사체를 모두 제거
-		local projectiles = _EntityService:GetEntityByPath('/maps/GameScene/ProjectileParent').Children
+		local projectiles = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/ProjectileParent').Children
 		
 		for index in ipairs(projectiles) do
 			local projectile = projectiles[index]
@@ -620,9 +620,9 @@ script Unit extends Component
 		local entities
 		
 		if self.isEnemy then
-			entities = _EntityService:GetEntityByPath('/maps/GameScene/MyMonsterList').Children
+			entities = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/MyMonsterList').Children
 		else
-			entities = _EntityService:GetEntityByPath('/maps/GameScene/EnemyList').Children
+			entities = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/EnemyList').Children
 		end
 		
 		for index in ipairs(entities) do

@@ -15,7 +15,7 @@ script UnitShop extends Component
 
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
-		local shopItems = _EntityService:GetEntityByPath("/ui/UIGroup-test-ingame-money/UnitShop")
+		local shopItems = _EntityService:GetEntityByPath("/ui/Ingame_Shop_Group/UnitShop")
 		
 		for i = 1, 5 do
 			self.shopItems[i] = shopItems.Children[i]

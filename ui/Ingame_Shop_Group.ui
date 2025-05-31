@@ -15,11 +15,11 @@
     "Entities": [
       {
         "id": "e0ec4a39-4a35-4e17-95aa-c16dee01f5fa",
-        "path": "/ui/UIGroup-test-ingame-money",
+        "path": "/ui/Ingame_Shop_Group",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.UIGroupComponent,MOD.Core.CanvasGroupComponent",
         "jsonString": {
-          "name": "UIGroup-test-ingame-money",
-          "path": "/ui/UIGroup-test-ingame-money",
+          "name": "Ingame_Shop_Group",
+          "path": "/ui/Ingame_Shop_Group",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -83,7 +83,7 @@
             },
             {
               "@type": "MOD.Core.UIGroupComponent",
-              "DefaultShow": true,
+              "DefaultShow": false,
               "GroupOrder": 0,
               "GroupType": 2,
               "Enable": true
@@ -98,11 +98,11 @@
       },
       {
         "id": "5dbe1335-94c3-42c0-b96c-39699647165f",
-        "path": "/ui/UIGroup-test-ingame-money/UISprite",
+        "path": "/ui/Ingame_Shop_Group/UISprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UISprite",
-          "path": "/ui/UIGroup-test-ingame-money/UISprite",
+          "path": "/ui/Ingame_Shop_Group/UISprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -179,11 +179,11 @@
       },
       {
         "id": "12c0befb-73b8-4f52-8ab8-a84a490e2e53",
-        "path": "/ui/UIGroup-test-ingame-money/UISprite/ingame_money",
+        "path": "/ui/Ingame_Shop_Group/UISprite/ingame_money",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "ingame_money",
-          "path": "/ui/UIGroup-test-ingame-money/UISprite/ingame_money",
+          "path": "/ui/Ingame_Shop_Group/UISprite/ingame_money",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -284,11 +284,11 @@
       },
       {
         "id": "a1122338-69bf-4cfb-bc84-0ddb77681be1",
-        "path": "/ui/UIGroup-test-ingame-money/UISprite/PriceSprite_1",
+        "path": "/ui/Ingame_Shop_Group/UISprite/PriceSprite_1",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "PriceSprite_1",
-          "path": "/ui/UIGroup-test-ingame-money/UISprite/PriceSprite_1",
+          "path": "/ui/Ingame_Shop_Group/UISprite/PriceSprite_1",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -379,11 +379,11 @@
       },
       {
         "id": "fa5581b7-25d8-40c7-8b0f-ea16534303e2",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop",
+        "path": "/ui/Ingame_Shop_Group/UnitShop",
         "componentNames": "MOD.Core.UITransformComponent,script.UnitShop",
         "jsonString": {
           "name": "UnitShop",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop",
+          "path": "/ui/Ingame_Shop_Group/UnitShop",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -456,11 +456,11 @@
       },
       {
         "id": "cb595dd5-566f-4345-a4b9-bdc63a3c0687",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_1",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
         "jsonString": {
           "name": "UnitShopItem_1",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_1",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -598,11 +598,11 @@
       },
       {
         "id": "2c9f2db2-34b2-41b9-b7e9-c57c7246534b",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_1/UnitSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1/UnitSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UnitSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_1/UnitSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1/UnitSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -682,11 +682,11 @@
       },
       {
         "id": "44e3f96f-1f1d-46bf-a376-b3ab38021aa8",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_1/PriceSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1/PriceSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "PriceSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_1/PriceSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1/PriceSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -767,11 +767,11 @@
       },
       {
         "id": "001d3a8d-f330-40f6-a189-ccb327d8b117",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_1/PriceLabel",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1/PriceLabel",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "PriceLabel",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_1/PriceLabel",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1/PriceLabel",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -872,11 +872,11 @@
       },
       {
         "id": "5adf0056-aa30-4963-9835-e4c4bebaa83d",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_2",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
         "jsonString": {
           "name": "UnitShopItem_2",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_2",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1015,11 +1015,11 @@
       },
       {
         "id": "c3f00819-fd21-4f9d-a28c-4bcac8b4fa63",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_2/UnitSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2/UnitSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UnitSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_2/UnitSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2/UnitSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1100,11 +1100,11 @@
       },
       {
         "id": "ca2ea223-302c-4383-8fc5-038d631a56dc",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_2/PriceSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2/PriceSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "PriceSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_2/PriceSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2/PriceSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1185,11 +1185,11 @@
       },
       {
         "id": "df2d7718-3d07-4fec-8450-8bc4b88106b2",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_2/PriceLabel",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2/PriceLabel",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "PriceLabel",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_2/PriceLabel",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2/PriceLabel",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1291,11 +1291,11 @@
       },
       {
         "id": "a64b684b-c4fb-4767-9772-a986e9b17bf2",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_3",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
         "jsonString": {
           "name": "UnitShopItem_3",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_3",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1434,11 +1434,11 @@
       },
       {
         "id": "b316e4d1-fa76-4c7f-acae-eec79dbd78c4",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_3/UnitSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3/UnitSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UnitSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_3/UnitSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3/UnitSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1519,11 +1519,11 @@
       },
       {
         "id": "40397ef6-9afe-4522-9973-9c67b522e767",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_3/PriceSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3/PriceSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "PriceSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_3/PriceSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3/PriceSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1604,11 +1604,11 @@
       },
       {
         "id": "086a9880-9893-4c3c-a151-9f9e17d5e890",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_3/PriceLabel",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3/PriceLabel",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "PriceLabel",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_3/PriceLabel",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3/PriceLabel",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1710,11 +1710,11 @@
       },
       {
         "id": "9e4ec0f0-1648-4be7-837b-ce38269456ef",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_4",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
         "jsonString": {
           "name": "UnitShopItem_4",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_4",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1853,11 +1853,11 @@
       },
       {
         "id": "97a5bd73-0f48-4ecb-bca6-4bc1a6dd36c2",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_4/UnitSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4/UnitSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UnitSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_4/UnitSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4/UnitSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1938,11 +1938,11 @@
       },
       {
         "id": "fb9cc643-68af-44f3-aa4a-03ef3d13bc77",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_4/PriceSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4/PriceSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "PriceSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_4/PriceSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4/PriceSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2023,11 +2023,11 @@
       },
       {
         "id": "c3160027-b587-4f62-9650-3589d285d8db",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_4/PriceLabel",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4/PriceLabel",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "PriceLabel",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_4/PriceLabel",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4/PriceLabel",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2129,11 +2129,11 @@
       },
       {
         "id": "7d682fe8-0d2e-40bb-80a0-b58796358d67",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_5",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_5",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
         "jsonString": {
           "name": "UnitShopItem_5",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_5",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_5",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2272,11 +2272,11 @@
       },
       {
         "id": "33129c75-88af-497b-b8ce-f249d0e024d7",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_5/UnitSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_5/UnitSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UnitSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_5/UnitSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_5/UnitSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2357,11 +2357,11 @@
       },
       {
         "id": "9a752222-2ca5-4d4c-afa1-dd24f3bef2cc",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_5/PriceSprite",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_5/PriceSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "PriceSprite",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_5/PriceSprite",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_5/PriceSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2442,11 +2442,11 @@
       },
       {
         "id": "c76afa6e-09e9-4632-a9c0-e928b7368971",
-        "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_5/PriceLabel",
+        "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_5/PriceLabel",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "PriceLabel",
-          "path": "/ui/UIGroup-test-ingame-money/UnitShop/UnitShopItem_5/PriceLabel",
+          "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_5/PriceLabel",
           "nameEditable": true,
           "enable": true,
           "visible": true,

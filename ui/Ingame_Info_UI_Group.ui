@@ -15,11 +15,11 @@
     "Entities": [
       {
         "id": "a07f182a-214a-414d-b995-9863eaa71d62",
-        "path": "/ui/Ingame_UI_Group",
+        "path": "/ui/Ingame_Info_UI_Group",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.UIGroupComponent,MOD.Core.CanvasGroupComponent",
         "jsonString": {
-          "name": "Ingame_UI_Group",
-          "path": "/ui/Ingame_UI_Group",
+          "name": "Ingame_Info_UI_Group",
+          "path": "/ui/Ingame_Info_UI_Group",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -111,11 +111,11 @@
       },
       {
         "id": "7579544d-34e7-498a-b4ac-a3a55f7ea0e2",
-        "path": "/ui/Ingame_UI_Group/Button_Attack",
+        "path": "/ui/Ingame_Info_UI_Group/Button_Attack",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
         "jsonString": {
           "name": "Button_Attack",
-          "path": "/ui/Ingame_UI_Group/Button_Attack",
+          "path": "/ui/Ingame_Info_UI_Group/Button_Attack",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -296,11 +296,11 @@
       },
       {
         "id": "1cd31d72-530f-4728-b3ed-9d1482805048",
-        "path": "/ui/Ingame_UI_Group/Button_Attack/UISprite",
+        "path": "/ui/Ingame_Info_UI_Group/Button_Attack/UISprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UISprite",
-          "path": "/ui/Ingame_UI_Group/Button_Attack/UISprite",
+          "path": "/ui/Ingame_Info_UI_Group/Button_Attack/UISprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -433,11 +433,11 @@
       },
       {
         "id": "6d572265-445d-4d43-800b-797e6eaee3f6",
-        "path": "/ui/Ingame_UI_Group/Button_Jump",
+        "path": "/ui/Ingame_Info_UI_Group/Button_Jump",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
         "jsonString": {
           "name": "Button_Jump",
-          "path": "/ui/Ingame_UI_Group/Button_Jump",
+          "path": "/ui/Ingame_Info_UI_Group/Button_Jump",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -618,11 +618,11 @@
       },
       {
         "id": "a1e28731-624c-4a73-89c5-bdd74382d93e",
-        "path": "/ui/Ingame_UI_Group/Button_Jump/UISprite",
+        "path": "/ui/Ingame_Info_UI_Group/Button_Jump/UISprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UISprite",
-          "path": "/ui/Ingame_UI_Group/Button_Jump/UISprite",
+          "path": "/ui/Ingame_Info_UI_Group/Button_Jump/UISprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -755,11 +755,11 @@
       },
       {
         "id": "02c6fd20-fdb0-4b80-bbd3-2241e929c46d",
-        "path": "/ui/Ingame_UI_Group/UIJoystick",
+        "path": "/ui/Ingame_Info_UI_Group/UIJoystick",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.JoystickComponent",
         "jsonString": {
           "name": "UIJoystick",
-          "path": "/ui/Ingame_UI_Group/UIJoystick",
+          "path": "/ui/Ingame_Info_UI_Group/UIJoystick",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -898,11 +898,11 @@
       },
       {
         "id": "5dc473b4-ea5e-477b-8d56-b0a7e2507279",
-        "path": "/ui/Ingame_UI_Group/UIChat",
+        "path": "/ui/Ingame_Info_UI_Group/UIChat",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ChatComponent",
         "jsonString": {
           "name": "UIChat",
-          "path": "/ui/Ingame_UI_Group/UIChat",
+          "path": "/ui/Ingame_Info_UI_Group/UIChat",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1041,11 +1041,11 @@
       },
       {
         "id": "56b57caf-6149-4d94-9af4-2457ce12c575",
-        "path": "/ui/Ingame_UI_Group/OurHealthBar",
+        "path": "/ui/Ingame_Info_UI_Group/OurHealthBar",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.OurHealthBar",
         "jsonString": {
           "name": "OurHealthBar",
-          "path": "/ui/Ingame_UI_Group/OurHealthBar",
+          "path": "/ui/Ingame_Info_UI_Group/OurHealthBar",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1191,11 +1191,11 @@
       },
       {
         "id": "417b31d5-5b1a-4ca4-a5fa-5f90cbf3be3c",
-        "path": "/ui/Ingame_UI_Group/OurHealthBar/Bg_statinfo",
+        "path": "/ui/Ingame_Info_UI_Group/OurHealthBar/Bg_statinfo",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "Bg_statinfo",
-          "path": "/ui/Ingame_UI_Group/OurHealthBar/Bg_statinfo",
+          "path": "/ui/Ingame_Info_UI_Group/OurHealthBar/Bg_statinfo",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1329,11 +1329,11 @@
       },
       {
         "id": "2c9fe52f-76e1-4dcb-97c0-abd9b38d46e5",
-        "path": "/ui/Ingame_UI_Group/OurHealthBar/Text_name",
+        "path": "/ui/Ingame_Info_UI_Group/OurHealthBar/Text_name",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "Text_name",
-          "path": "/ui/Ingame_UI_Group/OurHealthBar/Text_name",
+          "path": "/ui/Ingame_Info_UI_Group/OurHealthBar/Text_name",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1514,11 +1514,11 @@
       },
       {
         "id": "27867a56-d09f-4976-af28-e518a44ecd51",
-        "path": "/ui/Ingame_UI_Group/OurHealthBar/HP_bar",
+        "path": "/ui/Ingame_Info_UI_Group/OurHealthBar/HP_bar",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.SliderComponent",
         "jsonString": {
           "name": "HP_bar",
-          "path": "/ui/Ingame_UI_Group/OurHealthBar/HP_bar",
+          "path": "/ui/Ingame_Info_UI_Group/OurHealthBar/HP_bar",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1694,11 +1694,11 @@
       },
       {
         "id": "d47ff959-a22e-469c-b99f-c03ffa7ab18b",
-        "path": "/ui/Ingame_UI_Group/EnemyHealthBar",
+        "path": "/ui/Ingame_Info_UI_Group/EnemyHealthBar",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.EnemyHealthBar",
         "jsonString": {
           "name": "EnemyHealthBar",
-          "path": "/ui/Ingame_UI_Group/EnemyHealthBar",
+          "path": "/ui/Ingame_Info_UI_Group/EnemyHealthBar",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1841,11 +1841,11 @@
       },
       {
         "id": "a0e98648-e81e-4783-969c-1d46c7c3526b",
-        "path": "/ui/Ingame_UI_Group/EnemyHealthBar/Bg_statinfo",
+        "path": "/ui/Ingame_Info_UI_Group/EnemyHealthBar/Bg_statinfo",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "Bg_statinfo",
-          "path": "/ui/Ingame_UI_Group/EnemyHealthBar/Bg_statinfo",
+          "path": "/ui/Ingame_Info_UI_Group/EnemyHealthBar/Bg_statinfo",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1980,11 +1980,11 @@
       },
       {
         "id": "2a5ec7ec-1089-49e8-bbe7-917d9ee9521a",
-        "path": "/ui/Ingame_UI_Group/EnemyHealthBar/Text_name",
+        "path": "/ui/Ingame_Info_UI_Group/EnemyHealthBar/Text_name",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "Text_name",
-          "path": "/ui/Ingame_UI_Group/EnemyHealthBar/Text_name",
+          "path": "/ui/Ingame_Info_UI_Group/EnemyHealthBar/Text_name",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2166,11 +2166,11 @@
       },
       {
         "id": "e428c7de-bb19-470b-ab06-1b0128932a8f",
-        "path": "/ui/Ingame_UI_Group/EnemyHealthBar/HP_bar",
+        "path": "/ui/Ingame_Info_UI_Group/EnemyHealthBar/HP_bar",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.SliderComponent",
         "jsonString": {
           "name": "HP_bar",
-          "path": "/ui/Ingame_UI_Group/EnemyHealthBar/HP_bar",
+          "path": "/ui/Ingame_Info_UI_Group/EnemyHealthBar/HP_bar",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2347,11 +2347,11 @@
       },
       {
         "id": "02920c0b-bb23-4784-bd61-0e71ae9e2dcd",
-        "path": "/ui/Ingame_UI_Group/Minimap Group",
+        "path": "/ui/Ingame_Info_UI_Group/Minimap Group",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.MapComponent,MOD.Core.FootholdComponent",
         "jsonString": {
           "name": "Minimap Group",
-          "path": "/ui/Ingame_UI_Group/Minimap Group",
+          "path": "/ui/Ingame_Info_UI_Group/Minimap Group",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2431,11 +2431,11 @@
       },
       {
         "id": "ac74bcb3-0029-42f8-b072-16e542bd9f27",
-        "path": "/ui/Ingame_UI_Group/Minimap Group/Minimap Background",
+        "path": "/ui/Ingame_Info_UI_Group/Minimap Group/Minimap Background",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "Minimap Background",
-          "path": "/ui/Ingame_UI_Group/Minimap Group/Minimap Background",
+          "path": "/ui/Ingame_Info_UI_Group/Minimap Group/Minimap Background",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2530,11 +2530,11 @@
       },
       {
         "id": "5e7ea3b1-35e1-45d3-9eb6-91708dd49f5f",
-        "path": "/ui/Ingame_UI_Group/Minimap Group/Minimap Background/PlayerIcon",
+        "path": "/ui/Ingame_Info_UI_Group/Minimap Group/Minimap Background/PlayerIcon",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "PlayerIcon",
-          "path": "/ui/Ingame_UI_Group/Minimap Group/Minimap Background/PlayerIcon",
+          "path": "/ui/Ingame_Info_UI_Group/Minimap Group/Minimap Background/PlayerIcon",
           "nameEditable": true,
           "enable": true,
           "visible": true,
