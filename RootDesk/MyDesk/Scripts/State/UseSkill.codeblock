@@ -24,7 +24,7 @@
       "Description": "",
       "Id": "6ca9f9d5-7bb0-47e7-b23a-e5a3bbbedfef",
       "Language": 1,
-      "Name": "Skill",
+      "Name": "UseSkill",
       "Type": 8,
       "Source": 0,
       "Target": null

@@ -30,9 +30,15 @@ script ThrowSnailShell1 extends SkillParent
 		        self.target,
 		        false,
 		        self.skillAmount)
+			
+			-- 스킬 사용 완료 처리
+			if self.caster.Unit.curState == "die" then
+				return
+			end
 		
 		    -- 스킬 사용 완료 처리
-		    self.caster.Unit.isUsingSkill = false
+			self.caster.Unit.isUsingSkill = false
+			self.caster.Unit.curState = "attack"
 		end, 0.25)
 	end
 

@@ -40,7 +40,12 @@ script ThrowPigHead extends SkillParent
 			_TimerService:ClearTimer(spawnTimer)
 			
 			-- 스킬 사용 완료 처리
+			if self.caster.Unit.curState == "die" then
+				return
+			end
+			
 			self.caster.Unit.isUsingSkill = false
+			self.caster.Unit.curState = "attack"
 			self.spawnedMissiles = {}
 		end
 		

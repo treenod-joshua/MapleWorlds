@@ -151,7 +151,7 @@ script Unit extends Component
 		self.Entity.StateComponent:AddState("stand", Stand)
 		self.Entity.StateComponent:AddState("move", Move)
 		self.Entity.StateComponent:AddState("die", Die)
-		self.Entity.StateComponent:AddState("skill", Skill)
+		self.Entity.StateComponent:AddState("useSkill", UseSkill)
 		
 		-- 공격 애니메이션 플레잉타임 가져오기
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
@@ -201,6 +201,8 @@ script Unit extends Component
 		if self.isSpawnEnd == false then
 			return
 		end
+		
+		log("이름 : "..self.unitName.."   스테이트:"..self.curState)
 		
 		if self.curState == "stand" and self.curTarget == nil then
 			self:FindTarget()
@@ -326,9 +328,6 @@ script Unit extends Component
 			return
 		end
 		
-		-- 마나 충전
-		self:IncreaseMp()
-		
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
 			self.originPos = self.Entity.TransformComponent.WorldPosition
 			self:PlayTween()
@@ -347,6 +346,9 @@ script Unit extends Component
 				if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
 					self.passiveSkill.PassiveSkillParent:OnAttack()
 				end
+		
+				-- 마나 충전
+				self:IncreaseMp()
 			end
 			 
 			local timerTiming = self.attackTiming / animationPlaySpeed
@@ -405,6 +407,13 @@ script Unit extends Component
 		
 		-- 트윈 시작
 		tween:RestartFromCurrentPosition()
+		
+		local increaseMPFunction = function()
+			-- 마나 충전
+			self:IncreaseMp()	
+		end
+		
+		_TimerService:SetTimerOnce(increaseMPFunction, 0.2)
 	end
 
 	@ExecSpace("Client")
@@ -429,12 +438,12 @@ script Unit extends Component
 			return
 		end
 		
+		log("애니메이션"..state)
 		self:SetAnimationState(state)
 	end
 
 	@ExecSpace("Server")
 	method void SetAnimationState(string state)
-		log("스테이트"..state)
 		self.Entity.StateComponent:ChangeState(state)
 	end
 
@@ -477,6 +486,12 @@ script Unit extends Component
 		
 		self:SetState("die")
 		
+		-- 스킬 엔티티 제거
+		local skillEntity = self.Entity.Children[1]
+		if skillEntity ~= nil then
+			skillEntity:Destroy()
+		end
+		
 		-- 맵마다 Path 다르게 설정 필요
 		local map = _EntityService:GetEntityByPath(_GameManager:GetGameMapName())
 		map.MinimapManager:RemoveEntityList(self.Entity)
@@ -507,7 +522,8 @@ script Unit extends Component
 			return
 		end
 		
-		self.curState = "useSkill"
+		self:SetState("useSkill")
+		-- self.curState = "useSkill"
 	end
 
 	method void UseSkill()
@@ -515,7 +531,6 @@ script Unit extends Component
 			return
 		end
 		
-		self.curState = "attack"
 		self.mp = 0
 		self.isUsingSkill = true
 		

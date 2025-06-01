@@ -82,7 +82,7 @@
             "$type": "MOD.Core.MODSyncDictionary`2[[System.String, mscorlib],[System.String, mscorlib]], MOD.Core",
             "move": "3c61d6bfa8ba4b5e8a1674816037c9d2",
             "stand": "72fc26baf0fe4a24aea38b8b061d9178",
-            "skill": "e307f497944c430aa7b6ec2f8ff5c09f",
+            "useskill": "e307f497944c430aa7b6ec2f8ff5c09f",
             "hit": "592df23466864bf68842a7d4372cf05f",
             "die": "c48d8af8c0b14b52876e5844607a7782"
           }
