@@ -1,0 +1,4 @@
+@State
+script Skill extends StateType
+
+end

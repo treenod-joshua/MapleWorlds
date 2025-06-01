@@ -1,0 +1,82 @@
+@Component
+script SlimeJump extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		-- 점프: y 좌표 올리기
+		local originPos = self.caster.TransformComponent.WorldPosition
+		
+		self.caster.Unit.isUsingSkill = true
+		self.caster.Unit:SetState("skill")
+		local jumpPos = Vector2(originPos.x, originPos.y + 1)
+		_TweenLogic:MoveTo(self.caster, jumpPos, 0.25, EaseType.Linear)
+		
+		-- 1초 후 아래로 떨어지며 공격
+		_TimerService:SetTimerOnce(function()
+			local dropPos = Vector2(originPos.x, originPos.y)
+			_TweenLogic:MoveTo(self.caster, dropPos, 0.25, EaseType.Linear)
+		    
+			-- Tween 끝난 뒤 후처리 (0.25초 후 실행)
+		    _TimerService:SetTimerOnce(function()
+		        _EffectService:PlayEffectAttached("b803d7da0da346f0bec889ff7237f577", self.caster, Vector3.zero, 0, Vector3.one)
+		        self:AttackNearbyEnemies()
+		
+		        self.caster.Unit.isUsingSkill = false
+		        self.caster.Unit:SetState("stand")
+		    end, 0.25)
+		end, 1)
+	end
+
+	method table AttackNearbyEnemies()
+		local pos = self.caster.TransformComponent.WorldPosition
+		local allEntities
+		
+		if self.caster.Unit.isEnemy then
+			allEntities = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/MyMonsterList').Children
+		else
+			allEntities = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/EnemyList').Children
+		end
+		
+		local nearbyEnemies = {}
+		
+		for _, entity in ipairs(allEntities) do
+		    if entity ~= self.caster and entity.HitComponent then
+		        local targetPos = entity.TransformComponent.WorldPosition
+		        local distance = (targetPos - pos).x
+		        if distance <= self.skillArea then
+		            table.insert(nearbyEnemies, entity)
+		        end
+		    end
+		end
+		
+		if #nearbyEnemies == 0 then return end
+		
+		-- 3명 랜덤 선택
+		local selected = {}
+		while #selected < math.min(3, #nearbyEnemies) do
+		    local index = math.random(1, #nearbyEnemies)
+		    local target = nearbyEnemies[index]
+		    if not self:tableContains(selected, target) then
+		        table.insert(selected, target)
+		    end
+		end
+		
+		-- 데미지 주기
+		for _, target in ipairs(selected) do
+		    target.Unit:OnHit(self.caster, self.skillAmount, false, 1)
+		end
+	end
+
+	method boolean tableContains(table tbl, Entity element)
+		for _, value in pairs(tbl) do
+		    if value == element then
+		        return true
+		    end
+		end
+		
+		return false
+	end
+
+end

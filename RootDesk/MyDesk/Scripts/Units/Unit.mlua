@@ -151,6 +151,7 @@ script Unit extends Component
 		self.Entity.StateComponent:AddState("stand", Stand)
 		self.Entity.StateComponent:AddState("move", Move)
 		self.Entity.StateComponent:AddState("die", Die)
+		self.Entity.StateComponent:AddState("skill", Skill)
 		
 		-- 공격 애니메이션 플레잉타임 가져오기
 		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
@@ -433,6 +434,7 @@ script Unit extends Component
 
 	@ExecSpace("Server")
 	method void SetAnimationState(string state)
+		log("스테이트"..state)
 		self.Entity.StateComponent:ChangeState(state)
 	end
 
@@ -517,7 +519,7 @@ script Unit extends Component
 		self.mp = 0
 		self.isUsingSkill = true
 		
-		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, Vector2(self.skillArea, self.skillArea), self.skillAmount, 
+		self.activeSkill.SkillParent:UseSkill(self.Entity, self.curTarget, self.skillArea, self.skillAmount, 
 			self.skillProjectileSpeed, self.skillTime)
 	end
 

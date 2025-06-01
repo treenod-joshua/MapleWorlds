@@ -8,7 +8,7 @@ script SkillParent extends Component
 	property Entity target = nil
 
 	@Sync
-	property Vector2 skillArea = Vector2(0,0)
+	property integer skillArea = 0
 
 	@Sync
 	property number skillAmount = 0
@@ -19,7 +19,7 @@ script SkillParent extends Component
 	@Sync
 	property number skillTime = 0
 
-	method void InitializeSkill(Entity caster, Entity target, Vector2 skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
+	method void InitializeSkill(Entity caster, Entity target, integer skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
 		self.caster = caster
 		self.target = target
 		self.skillArea = skillArea
@@ -28,7 +28,7 @@ script SkillParent extends Component
 		self.skillTime = skillTime
 	end
 
-	method void UseSkill(Entity caster, Entity target, Vector2 skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
+	method void UseSkill(Entity caster, Entity target, integer skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
 		self:InitializeSkill(caster, target, skillArea, skillAmount, skillProjectileSpeed, skillTime)
 		self:ActivateSkill()
 	end

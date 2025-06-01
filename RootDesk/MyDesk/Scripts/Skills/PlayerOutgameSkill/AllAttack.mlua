@@ -3,7 +3,7 @@ script AllAttack extends SkillParent
 
 	@ExecSpace("Client")
 	method void ActivateSkill()
-		local enemyListParent = _EntityService:GetEntityByPath("/maps/GameScene/EnemyList")
+		local enemyListParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/EnemyList")
 		local enemies = enemyListParent.Children
 		
 		_EffectService:PlayEffect("ecb14916022b462280c1bad3ca065037", self.Entity, 
