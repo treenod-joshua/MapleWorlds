@@ -76,7 +76,7 @@ script Projectile extends Component
 
 	@ExecSpace("Client")
 	method void MoveToTarget()
-		local targetPos = Vector2(self.target.TransformComponent.Position.x, self.target.TransformComponent.Position.y + 0.5)
+		local targetPos = Vector2(self.target.TransformComponent.Position.x, self.target.TransformComponent.Position.y)
 		_TweenLogic:MoveTo(self.Entity, targetPos, self.speed, EaseType.Linear)
 		
 		local deleteFunction = function()

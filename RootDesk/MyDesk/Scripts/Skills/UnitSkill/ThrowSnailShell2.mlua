@@ -1,5 +1,5 @@
 @Component
-script ThrowSnailShell1 extends SkillParent
+script ThrowSnailShell2 extends SkillParent
 
 	property table spawnedMissiles = {}
 
@@ -15,16 +15,16 @@ script ThrowSnailShell1 extends SkillParent
 		
 		-- 발사체 1개 생성
 		local missile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
-		     "snailShell_1",
+		     "snailShell_2",
 		     basePos + Vector3(-0.2, 0.2, 0),
 		     self._T.projectileParent)
 		
-		missile.SpriteRendererComponent.SpriteRUID = "927d463a046b48869cffa1eeaf8e3f5a"
+		missile.SpriteRendererComponent.SpriteRUID = "949561b1a5cf40ca8de72e66b9df3e6d"
 		missile.Projectile:SetCaster(self.Entity.Parent)
 		
 		-- 0.25초 후 발사
 		_TimerService:SetTimerOnce(function()
-		    missile.Projectile:SetShoot("927d463a046b48869cffa1eeaf8e3f5a",
+		    missile.Projectile:SetShoot("949561b1a5cf40ca8de72e66b9df3e6d",
 		        self:IsTargetOnRight(self.target),
 		        self.skillProjectileSpeed,
 		        self.target,

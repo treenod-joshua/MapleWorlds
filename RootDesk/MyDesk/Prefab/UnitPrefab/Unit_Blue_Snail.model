@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "model://586c7714-0360-4f9d-b450-3d305e328c31",
+  "EntryKey": "model://f2205e74-b8c8-4103-a768-59b58f8e2f55",
   "ContentType": "x-mod/model",
   "Content": "",
   "Usage": 0,
@@ -14,9 +14,9 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "Unit_Warrior",
+      "Name": "Unit_Blue_Snail",
       "BaseModelId": null,
-      "Id": "586c7714-0360-4f9d-b450-3d305e328c31",
+      "Id": "f2205e74-b8c8-4103-a768-59b58f8e2f55",
       "Components": [
         "MOD.Core.TransformComponent",
         "MOD.Core.StateAnimationComponent",
@@ -26,10 +26,10 @@
         "MOD.Core.StateComponent",
         "MOD.Core.HitComponent",
         "MOD.Core.DamageSkinSpawnerComponent",
-        "script.Unit",
-        "MOD.Core.AttackComponent",
         "MOD.Core.DamageSkinSettingComponent",
-        "MOD.Core.TriggerComponent"
+        "MOD.Core.TriggerComponent",
+        "script.Unit",
+        "MOD.Core.TweenLineComponent"
       ],
       "Properties": [],
       "Values": [
@@ -42,9 +42,9 @@
           },
           "Value": {
             "$type": "MOD.Core.MODVector3, MOD.Core",
-            "x": -1.28369808,
-            "y": -2.27500033,
-            "z": 1000.0
+            "x": -0.6204662,
+            "y": -1.69400764,
+            "z": 999.999
           }
         },
         {
@@ -60,20 +60,6 @@
             "y": 0.0,
             "z": 0.0,
             "w": 1.0
-          }
-        },
-        {
-          "TargetType": "MOD.Core.TransformComponent",
-          "Name": "Scale",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector3, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
-          },
-          "Value": {
-            "$type": "MOD.Core.MODVector3, MOD.Core",
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0
           }
         },
         {
@@ -94,11 +80,10 @@
           },
           "Value": {
             "$type": "MOD.Core.MODSyncDictionary`2[[System.String, mscorlib],[System.String, mscorlib]], MOD.Core",
-            "move": "6e4a50ecfedb416c9aec2e876ea71c80",
-            "stand": "d4ffccd5bfb64413aab571dfd8722fe9",
-            "attack": "2fee18134cc04dc39bb969893a494c8c",
-            "hit": "7df19857329f4148b52b9e5f08e5b0da",
-            "die": "68899afbb50e44e58e65c887f6ca2cdb"
+            "move": "ca6e5b65e1d643838ba920fbbeb32d8f",
+            "stand": "0c69164656d24f64bd1a1f6ee4019dff",
+            "hit": "938c814d2142406c8a6480ee2b025ac3",
+            "die": "af2e35a7899d4cc18e4f4aec7f8e9f06"
           }
         },
         {
@@ -164,7 +149,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "d4ffccd5bfb64413aab571dfd8722fe9"
+          "Value": "0c69164656d24f64bd1a1f6ee4019dff"
         },
         {
           "TargetType": "MOD.Core.SpriteRendererComponent",
@@ -264,8 +249,8 @@
           },
           "Value": {
             "$type": "MOD.Core.MODVector2, MOD.Core",
-            "x": 1.15,
-            "y": 0.87
+            "x": 0.35,
+            "y": 0.34
           }
         },
         {
@@ -277,8 +262,8 @@
           },
           "Value": {
             "$type": "MOD.Core.MODVector2, MOD.Core",
-            "x": -0.13499999,
-            "y": 0.425
+            "x": 0.0150000006,
+            "y": 0.17
           }
         },
         {
@@ -309,7 +294,25 @@
           "Value": true
         },
         {
-          "TargetType": "script.Unit",
+          "TargetType": "MOD.Core.DamageSkinSettingComponent",
+          "Name": "Enable",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": true
+        },
+        {
+          "TargetType": "MOD.Core.TriggerComponent",
+          "Name": "IsLegacy",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": false
+        },
+        {
+          "TargetType": "MOD.Core.TriggerComponent",
           "Name": "Enable",
           "ValueType": {
             "$type": "MODNativeType",
@@ -319,24 +322,6 @@
         },
         {
           "TargetType": "script.Unit",
-          "Name": "damage",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-          },
-          "Value": 25.0
-        },
-        {
-          "TargetType": "script.Unit",
-          "Name": "attackSpeed",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-          },
-          "Value": 1.0
-        },
-        {
-          "TargetType": "MOD.Core.AttackComponent",
           "Name": "Enable",
           "ValueType": {
             "$type": "MODNativeType",
@@ -363,57 +348,13 @@
           "Value": true
         },
         {
-          "TargetType": "MOD.Core.DamageSkinSettingComponent",
-          "Name": "Enable",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-          },
-          "Value": true
-        },
-        {
-          "TargetType": "MOD.Core.TriggerComponent",
-          "Name": "BoxSize",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
-          },
-          "Value": {
-            "$type": "MOD.Core.MODVector2, MOD.Core",
-            "x": 1.15,
-            "y": 0.87
-          }
-        },
-        {
-          "TargetType": "MOD.Core.TriggerComponent",
-          "Name": "ColliderOffset",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
-          },
-          "Value": {
-            "$type": "MOD.Core.MODVector2, MOD.Core",
-            "x": -0.13499999,
-            "y": 0.425
-          }
-        },
-        {
-          "TargetType": "MOD.Core.TriggerComponent",
-          "Name": "IsLegacy",
+          "TargetType": "MOD.Core.TweenLineComponent",
+          "Name": "AutoStart",
           "ValueType": {
             "$type": "MODNativeType",
             "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
           "Value": false
-        },
-        {
-          "TargetType": "MOD.Core.TriggerComponent",
-          "Name": "Enable",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-          },
-          "Value": true
         }
       ],
       "EventLinks": [],

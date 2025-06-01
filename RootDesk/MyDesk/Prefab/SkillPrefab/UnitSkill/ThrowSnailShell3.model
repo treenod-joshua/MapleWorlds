@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://aaa6135a-d47e-4d6e-9f48-aec11af2bd4c",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "ThrowSnailShell3",
+      "BaseModelId": null,
+      "Id": "aaa6135a-d47e-4d6e-9f48-aec11af2bd4c",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.ThrowSnailShell3"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
