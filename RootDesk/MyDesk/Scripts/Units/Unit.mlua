@@ -254,7 +254,7 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method void MoveToTarget(number delta)
 		if self.curTarget == nil then
-			self.curState = "stand"
+			self:SetState("stand")
 			return
 		end
 		
@@ -262,7 +262,7 @@ script Unit extends Component
 		self:SetState("move")
 		
 		if self:GetDistance() <= self.attackRange then
-			self.curState = "attack"
+			self:SetState("attack")
 			self:SetAnimationState("stand")
 		end
 	end
@@ -270,7 +270,7 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method number GetDistance()
 		if isvalid(self.curTarget) == false then
-			self.curState = "stand"
+			self:SetState("stand")
 			return -1
 		end
 		
@@ -426,7 +426,7 @@ script Unit extends Component
 		_EffectService:PlayEffectAttached(effect, self.Entity, pos, 0, Vector3.one)
 	end
 
-	@ExecSpace("Server")
+	@ExecSpace("Client")
 	method void SetState(string state)
 		if self.curState == "die" then
 			return
@@ -523,7 +523,6 @@ script Unit extends Component
 		end
 		
 		self:SetState("useSkill")
-		-- self.curState = "useSkill"
 	end
 
 	method void UseSkill()
