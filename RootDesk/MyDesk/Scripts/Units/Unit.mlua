@@ -95,6 +95,12 @@ script Unit extends Component
 	@Sync
 	property boolean isSpawnEnd = false
 
+	@Sync
+	property string projectileSpriteRUID = ""
+
+	@Sync
+	property integer currentTimerID = 0
+
 	@ExecSpace("Server")
 	method void Spawn(table unitData, table skillData)
 		self.moveSpeed = unitData["moveSpeed"]
@@ -109,6 +115,7 @@ script Unit extends Component
 		self.maxMP = unitData["maxMp"]
 		self.mp = unitData["startMp"]
 		self.damage = unitData["damage"]
+		self.projectileSpriteRUID = unitData["projectileSpriteRUID"]
 		self.unitName = unitData["name"]
 		
 		self.skillID = skillData['id']
@@ -317,7 +324,7 @@ script Unit extends Component
 			self:Melee_Attack()
 			self.AttackTimer = 0
 		elseif self.AttackTimer >= self.attackSpeed and self.attackRange > 1 then
-			self:Range_Attack("")
+			self:Range_Attack()
 			self.AttackTimer = 0
 		end
 	end
@@ -361,7 +368,7 @@ script Unit extends Component
 	end
 
 	@ExecSpace("Client")
-	method void Range_Attack(string spriteRUID)
+	method void Range_Attack()
 		if self.curState ~= "attack" then
 			return
 		end
@@ -383,7 +390,7 @@ script Unit extends Component
 			self.passiveSkill.PassiveSkillParent:OnAttack()
 		end
 		
-		projectile.Projectile:SetShoot("1d18f288d2594495916f543ee5b6221b", 1, self.projectileSpeed, self.curTarget, true,self.damage)
+		projectile.Projectile:SetShoot(self.projectileSpriteRUID, 1, self.projectileSpeed, self.curTarget, true,self.damage)
 	end
 
 	@ExecSpace("Client")
@@ -450,18 +457,22 @@ script Unit extends Component
 	@ExecSpace("Client")
 	method void GetBuff(number buffType, number buffAmount, number buffTime)
 		if buffType == _eBuffType.AttackSpeedBuff then
-			self:PlayEffect("7c3028f7053541a3869a94d3fbe9088b", Vector3(0, self.imageSize.y,0))
 			if self.attackSpeed - buffAmount <= 0.5 then
 				self.attackSpeed = 0.5
 			else
 				self.attackSpeed -= buffAmount
 			end
 			
+			if self.currentTimerID ~= 0 then
+				_TimerService:ClearTimer(self.currentTimerID)
+			end
+			
 			local deleteFunction = function()
+				self.currentTimerID = 0
 				self.attackSpeed = self.originAttackSpeed
 			end
 		
-			_TimerService:SetTimerOnce(deleteFunction, buffTime) 
+			self.currentTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
 		end
 	end
 
@@ -550,6 +561,7 @@ script Unit extends Component
 		self.maxMP = unitData["maxMp"]
 		self.mp = unitData["startMp"]
 		self.damage = unitData["damage"]
+		self.projectileSpriteRUID = unitData["projectileSpriteRUID"]
 		self.unitName = unitData["name"]
 		
 		self.skillID = skillData['id']
@@ -624,7 +636,7 @@ script Unit extends Component
 		for index in ipairs(projectiles) do
 			local projectile = projectiles[index]
 			
-			if projectile.Projectile ~= nil and projectile.Projectile.caster == self.Entity then
+			if projectile.Projectile ~= nil and projectile.Projectile.caster == self.Entity or isvalid(projectile.Projectile.caster) == false then
 				projectile:Destroy()
 			end
 		end

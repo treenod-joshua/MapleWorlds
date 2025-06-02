@@ -1,0 +1,16 @@
+@Component
+script SporeBooster extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		_EffectService:PlayEffectAttached("367e8d056ca645609c1cf3644c1701cc", self.caster, Vector3(0, self.caster.Unit.imageSize.y, 0) , 0, Vector3.one)
+		self.caster.Unit:GetBuff(_eBuffType.AttackSpeedBuff, self.skillAmount, self.skillTime)
+		
+		-- 스킬 사용 종료 처리
+		self.caster.Unit.isUsingSkill = false
+		self.caster.Unit:SetState("move")
+	end
+
+end

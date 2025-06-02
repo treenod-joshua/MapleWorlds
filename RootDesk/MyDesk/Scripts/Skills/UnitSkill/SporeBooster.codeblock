@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://abb128bc-4791-46ba-a12b-80efdd299eda",
+  "EntryKey": "codeblock://303adaec-b4e5-4d33-b57b-4a9a659f596f",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,12 +22,12 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "abb128bc-4791-46ba-a12b-80efdd299eda",
+      "Id": "303adaec-b4e5-4d33-b57b-4a9a659f596f",
       "Language": 1,
-      "Name": "UnitService",
-      "Type": 5,
+      "Name": "SporeBooster",
+      "Type": 1,
       "Source": 0,
-      "Target": null
+      "Target": "codeblock://465afc70-0300-4f88-809a-ac205109680f"
     }
   }
 }
