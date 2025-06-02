@@ -57,6 +57,7 @@ script Unit extends Component
 	@Sync
 	property number dieAnimationPlayingTime = 0
 
+	@Sync
 	property Vector2 imageSize = Vector2(0,0)
 
 	@Sync
