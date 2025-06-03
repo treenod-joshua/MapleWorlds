@@ -1,0 +1,9 @@
+@Component
+script UserData extends Component
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		_UserDataManager:SyncUser(self.Entity.Name)
+	end
+
+end
