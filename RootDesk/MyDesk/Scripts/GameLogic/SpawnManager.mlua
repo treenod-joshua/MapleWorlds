@@ -6,7 +6,7 @@ script SpawnManager extends Logic
 
 	@ExecSpace("Server")
 	method void Spawn(string modelID, integer price)
-		if self.userWallet.MesoWallet:GetMeso() < price then
+		if not self:IsCanSpawn(price) then
 			return
 		end
 		
@@ -18,7 +18,7 @@ script SpawnManager extends Logic
 			
 		spawnEntity.Unit:Spawn(unitData, skillData)
 				
-		self.userWallet.MesoWallet:UseMeso(price)
+		self:GetUserWallet().MesoWallet:UseMeso(price)
 	end
 
 	method void SpawnEnemy(string modelID)
@@ -29,6 +29,15 @@ script SpawnManager extends Logic
 		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "적"..unitData["name"], spawnPos.TransformComponent.Position, spawnParent)
 			
 		spawnEntity.Unit:SpawnEnemy(unitData, skillData)
+	end
+
+	method boolean IsCanSpawn(integer price)
+		log(self:GetUserWallet().MesoWallet:GetMeso(), price)
+		return self:GetUserWallet().MesoWallet:GetMeso() >= price
+	end
+
+	method Entity GetUserWallet()
+		return _EntityService:GetEntityByPath("/maps/Chapter1/userWallet")
 	end
 
 end

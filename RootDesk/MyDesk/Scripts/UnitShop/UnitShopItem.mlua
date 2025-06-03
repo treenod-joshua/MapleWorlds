@@ -61,7 +61,11 @@ script UnitShopItem extends Component
 		-- Parameters
 		-- local Entity = event.Entity
 		---------------------------------------------------------
-		log(self.unitData['summonCost'])
+		
+		if not _SpawnManager:IsCanSpawn(self.unitData['summonCost'])then
+			log(self.unitData['summonCost'], "not enough money")
+			return
+		end
 		
 		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
 		self.shop:OnSpawn(self.id)
