@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "directory://fd3b612d6d0d46899108e5252a6ef5e4",
+  "ContentType": "x-mod/directory",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "entry_id": "directory://fd3b612d6d0d46899108e5252a6ef5e4",
+      "name": "Pool",
+      "lock": false,
+      "folding": false,
+      "nameEditable": true
+    }
+  }
+}
