@@ -359,6 +359,7 @@ script Unit extends Component
 					self.passiveSkill.PassiveSkillParent:OnAttack()
 				end
 		
+		
 				-- 마나 충전
 				self:IncreaseMp()
 			end
@@ -702,7 +703,9 @@ script Unit extends Component
 		
 		if isvalid(entity) and entity.Unit.curTarget ~= nil and entity.Unit.curTarget == self.Entity then
 			entity.Unit.curTarget = nil
-			entity.Unit:SetState("stand")
+			if entity.Unit.curState ~= "useSkill" then
+				entity.Unit:SetState("stand")
+			end
 		end
 	end
 
