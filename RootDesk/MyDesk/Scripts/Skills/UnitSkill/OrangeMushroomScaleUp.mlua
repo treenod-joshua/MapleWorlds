@@ -1,0 +1,4 @@
+@Component
+script OrangeMushroomScaleUp extends SkillParent
+
+end
