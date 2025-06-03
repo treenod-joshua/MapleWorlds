@@ -17,6 +17,9 @@ script Unit extends Component
 	property number hp = 100
 
 	@Sync
+	property number originMaxHP = 0
+
+	@Sync
 	property number maxMP = 0
 
 	@Sync
@@ -107,6 +110,7 @@ script Unit extends Component
 		self.moveSpeed = unitData["moveSpeed"]
 		self.hp = unitData["hp"]
 		self.maxHP = unitData["hp"]
+		self.originMaxHP = unitData["hp"]
 		self.damage = unitData["damage"]
 		self.attackRange = unitData["attackRange"]
 		self.attackSpeed = unitData["attackSpeed"]
@@ -457,6 +461,8 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void GetBuff(number buffType, number buffAmount, number buffTime)
+		local deleteFunction
+		
 		if buffType == _eBuffType.AttackSpeedBuff then
 			if self.attackSpeed - buffAmount <= 0.5 then
 				self.attackSpeed = 0.5
@@ -468,12 +474,36 @@ script Unit extends Component
 				_TimerService:ClearTimer(self.currentTimerID)
 			end
 			
-			local deleteFunction = function()
-				self.currentTimerID = 0
-				self.attackSpeed = self.originAttackSpeed
-			end
+			if buffTime ~= 0 then
+				deleteFunction = function()
+					self.currentTimerID = 0
+					self.attackSpeed = self.originAttackSpeed
+				end
 		
-			self.currentTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
+				self.currentTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
+			end
+		elseif buffType == _eBuffType.MaxHealthMultiplyBuff then
+			local addHP = self.maxHP * buffAmount - self.maxHP
+			
+			self.maxHP = self.maxHP * buffAmount
+			self.hp += addHP
+		
+			if self.currentTimerID ~= 0 then
+				_TimerService:ClearTimer(self.currentTimerID)
+			end
+			
+			if buffTime ~= 0 then
+				deleteFunction = function()
+					self.currentTimerID = 0
+					self.maxHP = self.originMaxHP
+					
+					if self.hp >= self.maxHP then
+						self.hp = self.maxHP
+					end
+				end
+		
+				self.currentTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
+			end
 		end
 	end
 
@@ -553,6 +583,7 @@ script Unit extends Component
 		self.moveSpeed = unitData["moveSpeed"]
 		self.hp = unitData["hp"]
 		self.maxHP = unitData["hp"]
+		self.originMaxHP = unitData["hp"]
 		self.damage = unitData["damage"]
 		self.attackRange = unitData["attackRange"]
 		self.attackSpeed = unitData["attackSpeed"]
