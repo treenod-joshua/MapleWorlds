@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://ec0570317ff741c99932295fa8f523af",
+  "EntryKey": "directory://38e67bce55a245ab805a4506a5b97bc4",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,7 +13,7 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://ec0570317ff741c99932295fa8f523af",
+      "entry_id": "directory://38e67bce55a245ab805a4506a5b97bc4",
       "name": "Gacha",
       "lock": false,
       "folding": false,

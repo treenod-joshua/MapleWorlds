@@ -13,7 +13,7 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "name": "Item_ver_0",
+      "name": "Gacha_ver_0",
       "id": "b1fa793a-26ca-4dc4-a00c-70e546af038d",
       "serveronly": false,
       "dynamicloading": 0

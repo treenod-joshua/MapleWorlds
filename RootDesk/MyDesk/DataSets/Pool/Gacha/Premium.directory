@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://c0f5deb1d48e4e888e02c5beebb5365f",
+  "EntryKey": "directory://08977579dbc745e2b0c1a5ad0b975f29",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://c0f5deb1d48e4e888e02c5beebb5365f",
-      "name": "Item",
+      "entry_id": "directory://08977579dbc745e2b0c1a5ad0b975f29",
+      "name": "Premium",
       "lock": false,
       "folding": false,
       "nameEditable": true

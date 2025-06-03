@@ -36,6 +36,7 @@ script UnitShop extends Component
 		self.summonPools[7] = "model://eacb328a-428a-474c-b7e3-cb313b099806"
 		self.summonPools[8] = "model://eacb328a-428a-474c-b7e3-cb313b099806"
 		
+		math.randomseed(os.time())
 		-- 소환 배열을 섞는다.
 		for i = 1, #self.summonPools - 1 do
 			local j = math.random(i, #self.summonPools)

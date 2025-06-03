@@ -1,0 +1,36 @@
+@Logic
+script RandomPicker extends Logic
+
+	method table RadomPickFromTable(table pool)
+		local res = {}
+		local totalRaio = 0
+		
+		math.randomseed(os.time())
+		
+		for index, value in ipairs(pool) do
+		    totalRaio += value["ratio"]
+		end
+		
+		if totalRaio == 0 then
+			error("invalid data: total ratio is 0")
+		end
+		
+		local pick = math.random(totalRaio)
+		
+		for index, value in ipairs(pool) do
+		    totalRaio += value["ratio"]
+		end
+		
+		local accRatio = 0
+		for index, value in ipairs(pool) do
+			accRatio += value["ratio"]
+			if pick <= accRatio then
+				return value
+			end
+		end
+		
+		
+		error("fail to pick from pool")
+	end
+
+end
