@@ -2,6 +2,9 @@
 script eBuffType extends Logic
 
 	@Sync
-	property number AttackSpeedBuff = 1
+	property integer AttackSpeedBuff = 1
+
+	@Sync
+	property integer MaxHealthMultiplyBuff = 2
 
 end

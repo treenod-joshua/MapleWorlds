@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://5e2a52f4-b4c8-4629-8131-a4b5761c1553",
+  "EntryKey": "codeblock://caaa5ea9-640b-43fc-b704-fcbf8b5ceb73",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,10 +22,10 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "5e2a52f4-b4c8-4629-8131-a4b5761c1553",
+      "Id": "caaa5ea9-640b-43fc-b704-fcbf8b5ceb73",
       "Language": 1,
-      "Name": "eBuffType",
-      "Type": 5,
+      "Name": "DelayAttackComponent",
+      "Type": 1,
       "Source": 0,
       "Target": null
     }

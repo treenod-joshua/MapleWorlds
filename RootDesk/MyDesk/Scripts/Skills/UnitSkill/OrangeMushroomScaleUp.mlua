@@ -1,4 +1,21 @@
 @Component
 script OrangeMushroomScaleUp extends SkillParent
 
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		local spriteRenderer = self.Entity.SpriteRendererComponent
+		local scaleTween = _TweenLogic:ScaleTo(self.caster, Vector2(self.caster.TransformComponent.Scale.x + 0.5, self.caster.TransformComponent.Scale.y + 0.5),
+			 1, EaseType.BounceEaseInOut)
+		self.caster.Unit:GetBuff(_eBuffType.MaxHealthMultiplyBuff, self.skillAmount, self.skillTime)
+		
+		local endFunction = function()
+			self.caster.Unit.isUsingSkill = false
+			self.caster.Unit:SetState("move")
+		end
+		
+		_TimerService:SetTimerOnce(endFunction, 1)
+	end
+
 end

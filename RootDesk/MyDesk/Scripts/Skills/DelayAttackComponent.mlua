@@ -1,0 +1,43 @@
+@Component
+script DelayAttackComponent extends Component
+
+	@Sync
+	property number attackDamage = 0
+
+	@Sync
+	property Entity caster = nil
+
+	method void Init(number attackDamage, Entity caster)
+		self.attackDamage = attackDamage
+		self.caster = caster
+		
+		-- Rotation이 아닌 FlipX로 뒤집기에, 콜라이더도 뒤집어주는 처리
+		if self.Entity.SpriteRendererComponent.FlipX then
+		    self.Entity.TriggerComponent.ColliderOffset.x = self.Entity.TriggerComponent.ColliderOffset.x * -1
+		end
+	end
+
+	@EventSender("Self")
+	handler HandleTriggerEnterEvent(TriggerEnterEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: TriggerComponent
+		-- Space: Server, Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local TriggerBodyEntity = event.TriggerBodyEntity
+		---------------------------------------------------------
+		if event.TriggerBodyEntity.Unit == nil or event.TriggerBodyEntity.Name == "EnemyTower" or event.TriggerBodyEntity.Name == "MyTower" then
+			return
+		end
+		
+		
+		if self.caster.Unit.isEnemy and event.TriggerBodyEntity.Unit.isEnemy == false then -- 적 유닛이 발사했으면서 아군 유닛일 경우
+			event.TriggerBodyEntity.Unit:OnHit(self.caster, self.attackDamage, false, 3)
+		elseif self.caster.Unit.isEnemy == false and event.TriggerBodyEntity.Unit.isEnemy then -- 아군 유닛이 발사했으면서 적 유닛일 경우
+			log("겹침 발생")
+			event.TriggerBodyEntity.Unit:OnHit(self.caster, self.attackDamage, false, 3)
+		end
+	end
+
+end
