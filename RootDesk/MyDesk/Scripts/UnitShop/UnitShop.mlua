@@ -32,9 +32,9 @@ script UnitShop extends Component
 		self.summonPools[3] = "model://5aac7c14-9173-4d47-96f1-5fc5429e36c4"
 		self.summonPools[4] = "model://eacb328a-428a-474c-b7e3-cb313b099806"
 		self.summonPools[5] = "model://f37a2185-c6a9-43b6-90ea-75d69a3305f4"
-		self.summonPools[6] = "model://62f3f55c-28fa-4151-bb73-39758b57801a"
-		self.summonPools[7] = "model://4a6f379a-312c-4ba4-8837-8b4a2a117b60"
-		self.summonPools[8] = "model://eacb328a-428a-474c-b7e3-cb313b099806"
+		self.summonPools[6] = "model://54485d61-c78c-4bb8-b5b8-f6bd51d4633d"
+		self.summonPools[7] = "model://54485d61-c78c-4bb8-b5b8-f6bd51d4633d"
+		self.summonPools[8] = "model://54485d61-c78c-4bb8-b5b8-f6bd51d4633d"
 		
 		math.randomseed(os.time())
 		-- 소환 배열을 섞는다.

@@ -150,7 +150,7 @@ script Unit extends Component
 			self.isEnemy = true;	
 		end
 		
-		if self.isEnemy then
+		if self.isEnemy and self.Entity.SpriteRendererComponent ~= nil then
 			self.Entity.SpriteRendererComponent.FlipX = false
 		else
 			self.Entity.SpriteRendererComponent.FlipX = true
