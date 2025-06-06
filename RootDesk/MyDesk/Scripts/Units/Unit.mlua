@@ -108,6 +108,9 @@ script Unit extends Component
 	@Sync
 	property boolean isUsableCharacter = false
 
+	@Sync
+	property string animationName = ""
+
 	@ExecSpace("Server")
 	method void Spawn(table unitData, table skillData)
 		self.moveSpeed = unitData["moveSpeed"]
@@ -125,6 +128,7 @@ script Unit extends Component
 		self.damage = unitData["damage"]
 		self.projectileSpriteRUID = unitData["projectileSpriteRUID"]
 		self.unitName = unitData["name"]
+		self.animationName = unitData["animationName"]
 		
 		self.skillID = skillData['id']
 		self.skillDesc = skillData['desc']
@@ -452,29 +456,29 @@ script Unit extends Component
 		
 		self:SetState("attack")
 		
-		if self.isUsableCharacter then
-			local event = ActionStateChangedEvent()
-			event.CoreActionName = "swingT1"
-			event.PartsActionName = "swingT1"
-		
-			event.PlayRate = 1
-		    event.PlayType = SpriteAnimClipPlayType.Onetime
-		
-		    self.Entity:SendEvent(event)
-		end
-		
 		if self._T.projectileParent == nil then
 			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 		end
 		if self.isUsableCharacter then
 			local animationPlaySpeed = 1 / (self.attackSpeed - 0.1)
 			self.Entity.AvatarRendererComponent.PlayRate = animationPlaySpeed
+			
+			if self.isUsableCharacter then
+				local event = ActionStateChangedEvent()
+				event.CoreActionName = self.animationName
+				event.PartsActionName = self.animationName
+		
+				event.PlayRate = 1
+			   	event.PlayType = SpriteAnimClipPlayType.Onetime
 				
+				self.Entity.AvatarRendererComponent:GetBodyEntity():SendEvent(event)
+			end
+			
 			local attackFunction = function()
 				if self.curState == "die" then
 					return
 				end
-				
+		
 				local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
 					"Projectile",
 					self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
@@ -726,6 +730,7 @@ script Unit extends Component
 		self.damage = unitData["damage"]
 		self.projectileSpriteRUID = unitData["projectileSpriteRUID"]
 		self.unitName = unitData["name"]
+		self.animationName = unitData["animationName"]
 		
 		self.skillID = skillData['id']
 		self.skillDesc = skillData['desc']
@@ -902,24 +907,6 @@ script Unit extends Component
 		if self.curState == "die" then
 			self:DestroyAction()
 		end
-	end
-
-	@EventSender("Self")
-	handler HandleActionStateChangedEvent(ActionStateChangedEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: AvatarBodyActionSelectorComponent
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local CoreActionName = event.CoreActionName
-		-- local EndFrameIndex = event.EndFrameIndex
-		-- local PartsActionName = event.PartsActionName
-		-- local PlayRate = event.PlayRate
-		-- local PlayType = event.PlayType
-		-- local StartFrameIndex = event.StartFrameIndex
-		---------------------------------------------------------
-		log("이벤트 발생")
 	end
 
 end
