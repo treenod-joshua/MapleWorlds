@@ -90,7 +90,7 @@ script Unit extends Component
 	@Sync
 	property boolean isUsingSkill = false
 
-	@Sync
+	@TargetUserSync
 	property Vector3 originPos = Vector3(0,0,0)
 
 	@Sync
@@ -104,6 +104,9 @@ script Unit extends Component
 
 	@Sync
 	property integer currentTimerID = 0
+
+	@Sync
+	property boolean isUsableCharacter = false
 
 	@ExecSpace("Server")
 	method void Spawn(table unitData, table skillData)
@@ -150,11 +153,24 @@ script Unit extends Component
 			self.isEnemy = true;	
 		end
 		
-		if self.Entity.SpriteRendererComponent ~= nil then
+		-- 유저형 캐릭터 설정
+		if self.Entity.SpriteRendererComponent == nil then
+			self.isUsableCharacter = true
+		end
+		
+		if self.isUsableCharacter == false then
 			if self.isEnemy then
 				self.Entity.SpriteRendererComponent.FlipX = false
 			else
 				self.Entity.SpriteRendererComponent.FlipX = true
+			end
+		else
+			self.Entity.AvatarRendererComponent.ShowDefaultWeaponEffects = false
+			
+			if self.isEnemy then
+				self.Entity.TransformComponent.Rotation = Vector3(0, 0, 0)
+			else
+				self.Entity.TransformComponent.Rotation = Vector3(0, 180, 0)
 			end
 		end
 	end
@@ -167,16 +183,19 @@ script Unit extends Component
 		self.Entity.StateComponent:AddState("die", Die)
 		self.Entity.StateComponent:AddState("useSkill", UseSkill)
 		
-		-- 공격 애니메이션 플레잉타임 가져오기
-		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
-			self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
-			self.attackAnimationPlayingTime = _Utils:GetRUIDTime(self.attackAnimationRUID)
+		if self.isUsableCharacter == false then
+			-- 공격 애니메이션 플레잉타임 가져오기
+			if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") then
+				self.attackAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["attack"]
+				self.attackAnimationPlayingTime = _Utils:GetRUIDTime(self.attackAnimationRUID)
+			end
+			-- 죽음 애니메이션 플레잉타임 가져오기
+			if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("die") then
+				local dieAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["die"]
+				self.dieAnimationPlayingTime = _Utils:GetRUIDTime(dieAnimationRUID)
+			end
 		end
-		-- 죽음 애니메이션 플레잉타임 가져오기
-		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("die") then
-			local dieAnimationRUID = self.Entity.StateAnimationComponent.ActionSheet["die"]
-			self.dieAnimationPlayingTime = _Utils:GetRUIDTime(dieAnimationRUID)
-		end
+		
 		
 		if self.isEnemy then
 			-- 빨간 데미지 스킨
@@ -190,6 +209,16 @@ script Unit extends Component
 	end
 
 	method void InitData()
+		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
+			self.passiveSkill.PassiveSkillParent:OnStart()
+		end
+		
+		self.Entity:AddComponent(HitComponent)
+		
+		if self.isUsableCharacter then
+			return
+		end
+		
 		_ResourceService:PreloadAsync({self.Entity.SpriteRendererComponent.SpriteRUID},
 		function() 
 			local clip = _ResourceService:LoadAnimationClipAndWait(self.Entity.SpriteRendererComponent.SpriteRUID)
@@ -198,11 +227,6 @@ script Unit extends Component
 		    self.imageSize= Vector2(firstFrameSprite.Width / pixelPerUnit, firstFrameSprite.Height / pixelPerUnit)
 		end)
 		
-		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnStart then
-			self.passiveSkill.PassiveSkillParent:OnStart()
-		end
-		
-		self.Entity:AddComponent(HitComponent)
 	end
 
 	@ExecSpace("Server")
@@ -342,7 +366,8 @@ script Unit extends Component
 			return
 		end
 		
-		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
+		if (self.isUsableCharacter == false and self.Entity.StateAnimationComponent.ActionSheet:ContainsKey("attack") == false)
+			and self.Entity.TweenLineComponent.CurrentState ~= TweenState.Playing then
 			self.originPos = self.Entity.TransformComponent.WorldPosition
 			self:PlayTween()
 			self:Attack_Damage()
@@ -350,28 +375,61 @@ script Unit extends Component
 		else
 			self:SetState("attack")
 			
-			-- 애니메이션 배율 계산
-			local animationPlaySpeed = self.attackAnimationPlayingTime / (self.attackSpeed - 0.1)
-			self.Entity.SpriteRendererComponent.PlayRate = animationPlaySpeed
-			
-			local attackFunction = function() 
-				self.Entity.AttackComponent:Attack(Vector2.one, Vector2.one, "")
+			-- 유저형의 캐릭터일 경우 
+			if self.isUsableCharacter then
+				local animationPlaySpeed = 1 / (self.attackSpeed - 0.1)
+				self.Entity.AvatarRendererComponent.PlayRate = animationPlaySpeed
 				
-				if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
-					self.passiveSkill.PassiveSkillParent:OnAttack()
+				local attackFunction = function() 
+					self:Attack_Damage()
+		
+					log("이름 : "..self.unitName.."   공격:"..self.curState)
+				
+					if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+						self.passiveSkill.PassiveSkillParent:OnAttack()
+					end
+					-- 마나 충전
+					self:IncreaseMp()
 				end
+				
+				local timerTiming = self.attackTiming / animationPlaySpeed
+				if timerTiming < 0 then
+					timerTiming = 0.5
+				end
+				
+				_TimerService:SetTimerOnce(attackFunction, timerTiming)
 		
+				-- 공격 애니메이션이 끝난 후 상태 복귀
+				local animEndTime = 1 / animationPlaySpeed
+				_TimerService:SetTimerOnce(function()
+					self:SetAnimationState("stand")
+					self.Entity.AvatarRendererComponent.PlayRate = 1
+				end, animEndTime)
+				
+				log("타이밍: "..animationPlaySpeed.. "  ,"..timerTiming.."  ,"..animEndTime)
 		
-				-- 마나 충전
-				self:IncreaseMp()
-			end
-			 
-			local timerTiming = self.attackTiming / animationPlaySpeed
-			if timerTiming < 0 then
-				timerTiming = 0.5
-			end
+			else
+				local animationPlaySpeed = self.attackAnimationPlayingTime / (self.attackSpeed - 0.1)
+				self.Entity.SpriteRendererComponent.PlayRate = animationPlaySpeed
+				
+				local attackFunction = function() 
+					self:Attack_Damage()
+					
+					if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+						self.passiveSkill.PassiveSkillParent:OnAttack()
+					end
 			
-			_TimerService:SetTimerOnce(attackFunction, timerTiming)
+					-- 마나 충전
+					self:IncreaseMp()
+				end
+				 
+				local timerTiming = self.attackTiming / animationPlaySpeed
+				if timerTiming < 0 then
+					timerTiming = 0.5
+				end
+				
+				_TimerService:SetTimerOnce(attackFunction, timerTiming)
+			end
 		end
 	end
 
@@ -449,7 +507,7 @@ script Unit extends Component
 		
 		self.curState = state
 		
-		if self.Entity.StateAnimationComponent.ActionSheet:ContainsKey(state:lower()) == false then
+		if (self.isUsableCharacter == false and self.Entity.StateAnimationComponent.ActionSheet:ContainsKey(state:lower()) == false) then
 			return
 		end
 		
@@ -626,41 +684,56 @@ script Unit extends Component
 			self.isEnemy = true;	
 		end
 		
-		if self.isEnemy then
-			self.Entity.SpriteRendererComponent.FlipX = false
+		-- 유저형 캐릭터 설정
+		if self.Entity.SpriteRendererComponent == nil then
+			self.isUsableCharacter = true;
+		end
+		
+		if self.isUsableCharacter == false then
+			if self.isEnemy then
+				self.Entity.SpriteRendererComponent.FlipX = false
+			else
+				self.Entity.SpriteRendererComponent.FlipX = true
+			end
 		else
-			self.Entity.SpriteRendererComponent.FlipX = true
+			if self.isEnemy then
+				self.Entity.TransformComponent.Scale.x = 1
+			else
+				self.Entity.TransformComponent.Scale.x = -1
+			end
 		end
 	end
 
 	@ExecSpace("Server")
 	method void DestroyAction()
-		local spriteRenderer = self.Entity.SpriteRendererComponent
-		local tween -- tweener를 할당할 변수 미리 선언
-		local tweenAlpha = function(tweenValue)
-			if isvalid(spriteRenderer) == false then
-		        tween:Destroy()
-		    end
-		    spriteRenderer.Color.a = tweenValue
+		if self.isUsableCharacter == false then
+			local spriteRenderer = self.Entity.SpriteRendererComponent
+			local tween -- tweener를 할당할 변수 미리 선언
+			local tweenAlpha = function(tweenValue)
+				if isvalid(spriteRenderer) == false then
+			        tween:Destroy()
+			    end
+			    spriteRenderer.Color.a = tweenValue
+			end
+			local dieAlphaTweenTime = 0.5
+			
+			if self.dieAnimationPlayingTime > 0 then
+				dieAlphaTweenTime = self.dieAnimationPlayingTime
+			end
+			
+			tween = _TweenLogic:MakeTween(spriteRenderer.Color.a, 0, dieAlphaTweenTime * 0.5, EaseType.Linear, tweenAlpha)
+			tween.LoopCount = 0
+			tween.AutoDestroy = false
+			tween:Play()
+			
+			local destroyFunction = function()
+				self:DestroyProjectile()
+				self:ClearAttackerInfo()
+				self.Entity:Destroy()
+			end
+			
+			_TimerService:SetTimerOnce(destroyFunction, dieAlphaTweenTime * 0.5)	
 		end
-		local dieAlphaTweenTime = 0.5
-		
-		if self.dieAnimationPlayingTime > 0 then
-			dieAlphaTweenTime = self.dieAnimationPlayingTime
-		end
-		
-		tween = _TweenLogic:MakeTween(spriteRenderer.Color.a, 0, dieAlphaTweenTime * 0.5, EaseType.Linear, tweenAlpha)
-		tween.LoopCount = 0
-		tween.AutoDestroy = false
-		tween:Play()
-		
-		local destroyFunction = function()
-			self:DestroyProjectile()
-			self:ClearAttackerInfo()
-			self.Entity:Destroy()
-		end
-		
-		_TimerService:SetTimerOnce(destroyFunction, dieAlphaTweenTime * 0.5)
 	end
 
 	@ExecSpace("Client")
@@ -735,6 +808,7 @@ script Unit extends Component
 		---------------------------------------------------------
 		if self.curState == "attack" then
 			self:SetAnimationState("stand")
+		
 			self.Entity.SpriteRendererComponent.PlayRate = 1
 		end
 		

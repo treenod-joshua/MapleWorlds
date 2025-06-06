@@ -14,7 +14,7 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "TestNewbie",
+      "Name": "Unit_Heal",
       "BaseModelId": null,
       "Id": "54485d61-c78c-4bb8-b5b8-f6bd51d4633d",
       "Components": [
@@ -29,7 +29,8 @@
         "MOD.Core.DamageSkinSettingComponent",
         "MOD.Core.TriggerComponent",
         "MOD.Core.AvatarStateAnimationComponent",
-        "script.Unit"
+        "script.Unit",
+        "MOD.Core.AttackComponent"
       ],
       "Properties": [],
       "Values": [
@@ -364,6 +365,70 @@
             "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
           "Value": true
+        },
+        {
+          "TargetType": "MOD.Core.AvatarStateAnimationComponent",
+          "Name": "StateToAvatarBodyActionSheet",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "MOD.Core.MODSyncDictionary`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[MOD.Core.AvatarBodyActionElement, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null]], MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+          },
+          "Value": {
+            "$type": "MOD.Core.MODSyncDictionary`2[[System.String, mscorlib],[MOD.Core.AvatarBodyActionElement, MOD.Core]], MOD.Core",
+            "STAND": {
+              "AvatarBodyActionStateName": "stand",
+              "PlayRate": 1.0
+            },
+            "MOVE": {
+              "AvatarBodyActionStateName": "walk",
+              "PlayRate": 1.68
+            },
+            "ATTACK": {
+              "AvatarBodyActionStateName": "attack",
+              "PlayRate": 1.33
+            },
+            "HIT": {
+              "AvatarBodyActionStateName": "hit",
+              "PlayRate": 1.0
+            },
+            "CROUCH": {
+              "AvatarBodyActionStateName": "crouch",
+              "PlayRate": 1.0
+            },
+            "FALL": {
+              "AvatarBodyActionStateName": "fall",
+              "PlayRate": 1.0
+            },
+            "JUMP": {
+              "AvatarBodyActionStateName": "fall",
+              "PlayRate": 1.0
+            },
+            "CLIMB": {
+              "AvatarBodyActionStateName": "rope",
+              "PlayRate": 1.0
+            },
+            "LADDER": {
+              "AvatarBodyActionStateName": "ladder",
+              "PlayRate": 1.0
+            },
+            "DIE": {
+              "AvatarBodyActionStateName": "dead",
+              "PlayRate": 1.0
+            },
+            "SIT": {
+              "AvatarBodyActionStateName": "sit",
+              "PlayRate": 1.0
+            }
+          }
+        },
+        {
+          "TargetType": "MOD.Core.AvatarRendererComponent",
+          "Name": "OrderInLayer",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": 2
         }
       ],
       "EventLinks": [],

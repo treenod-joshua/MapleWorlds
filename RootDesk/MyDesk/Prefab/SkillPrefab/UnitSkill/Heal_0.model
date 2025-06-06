@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://1ce5e265-6b5c-42fb-aceb-737aed6e07cf",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Heal_0",
+      "BaseModelId": null,
+      "Id": "1ce5e265-6b5c-42fb-aceb-737aed6e07cf",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Heal_0"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

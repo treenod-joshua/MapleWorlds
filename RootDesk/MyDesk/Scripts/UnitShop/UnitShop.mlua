@@ -27,9 +27,9 @@ script UnitShop extends Component
 		end
 		
 		-- init 배열 단계, DB에서 가져오게 개선 필요
-		self.summonPools[1] = "model://f2205e74-b8c8-4103-a768-59b58f8e2f55"
-		self.summonPools[2] = "model://af857ac1-d3ad-4509-b262-6a938c2a717c"
-		self.summonPools[3] = "model://5aac7c14-9173-4d47-96f1-5fc5429e36c4"
+		self.summonPools[1] = "model://586c7714-0360-4f9d-b450-3d305e328c31"
+		self.summonPools[2] = "model://586c7714-0360-4f9d-b450-3d305e328c31"
+		self.summonPools[3] = "model://586c7714-0360-4f9d-b450-3d305e328c31"
 		self.summonPools[4] = "model://eacb328a-428a-474c-b7e3-cb313b099806"
 		self.summonPools[5] = "model://f37a2185-c6a9-43b6-90ea-75d69a3305f4"
 		self.summonPools[6] = "model://54485d61-c78c-4bb8-b5b8-f6bd51d4633d"
