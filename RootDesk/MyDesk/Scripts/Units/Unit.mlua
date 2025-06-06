@@ -216,6 +216,7 @@ script Unit extends Component
 		self.Entity:AddComponent(HitComponent)
 		
 		if self.isUsableCharacter then
+			self.imageSize = Vector2.one * 0.5
 			return
 		end
 		
@@ -277,7 +278,7 @@ script Unit extends Component
 			local enemyPos = enemy.TransformComponent.WorldPosition
 			local distance = math.abs((enemyPos - myPos).x)
 			
-			if distance < nearestDistance then
+			if distance < nearestDistance and enemy.Unit.curState ~= "die" then
 				nearestEnemy = enemy
 				nearestDistance = distance
 			end
@@ -380,10 +381,12 @@ script Unit extends Component
 				local animationPlaySpeed = 1 / (self.attackSpeed - 0.1)
 				self.Entity.AvatarRendererComponent.PlayRate = animationPlaySpeed
 				
-				local attackFunction = function() 
+				local attackFunction = function()
+					if self.curState == "die" then
+						return
+					end
+					
 					self:Attack_Damage()
-		
-					log("이름 : "..self.unitName.."   공격:"..self.curState)
 				
 					if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
 						self.passiveSkill.PassiveSkillParent:OnAttack()
@@ -402,6 +405,10 @@ script Unit extends Component
 				-- 공격 애니메이션이 끝난 후 상태 복귀
 				local animEndTime = 1 / animationPlaySpeed
 				_TimerService:SetTimerOnce(function()
+					if self.curState == "die" then
+						return
+					end
+					
 					self:SetAnimationState("stand")
 					self.Entity.AvatarRendererComponent.PlayRate = 1
 				end, animEndTime)
@@ -413,6 +420,10 @@ script Unit extends Component
 				self.Entity.SpriteRendererComponent.PlayRate = animationPlaySpeed
 				
 				local attackFunction = function() 
+					if self.curState == "die" then
+						return
+					end
+		
 					self:Attack_Damage()
 					
 					if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
@@ -482,6 +493,9 @@ script Unit extends Component
 		tween:RestartFromCurrentPosition()
 		
 		local increaseMPFunction = function()
+			if self.curState == "die" then
+				return
+			end
 			-- 마나 충전
 			self:IncreaseMp()	
 		end
@@ -588,16 +602,14 @@ script Unit extends Component
 		end
 		
 		self:SetState("die")
-		
-		-- 스킬 엔티티 제거
-		local skillEntity = self.Entity.Children[1]
-		if skillEntity ~= nil then
-			skillEntity:Destroy()
-		end
+		self:ClearSkill()
 		
 		-- 맵마다 Path 다르게 설정 필요
 		local map = _EntityService:GetEntityByPath(_GameManager:GetGameMapName())
 		map.MinimapManager:RemoveEntityList(self.Entity)
+		
+		self:DestroyProjectile()
+		self:ClearAttackerInfo()
 		
 		-- 죽는 애니메이션이 없는 경우 직접 처리
 		if self.dieAnimationPlayingTime == 0 then
@@ -608,9 +620,9 @@ script Unit extends Component
 		if attacker.PlayerCharacter ~= nil then
 			return
 		elseif attacker.Unit ~= nil then
-			attacker.Unit.curTarget = nil
+			-- attacker.Unit.curTarget = nil
 		else
-			attacker.Projectile.caster.Unit.curTarget = nil
+			-- attacker.Projectile.caster.Unit.curTarget = nil
 		end
 	end
 
@@ -706,7 +718,13 @@ script Unit extends Component
 
 	@ExecSpace("Server")
 	method void DestroyAction()
-		if self.isUsableCharacter == false then
+		if self.isUsableCharacter then
+			local destroyFunction = function()
+				self.Entity:Destroy()
+			end
+			
+			_TimerService:SetTimerOnce(destroyFunction, 5)
+		else
 			local spriteRenderer = self.Entity.SpriteRendererComponent
 			local tween -- tweener를 할당할 변수 미리 선언
 			local tweenAlpha = function(tweenValue)
@@ -727,8 +745,6 @@ script Unit extends Component
 			tween:Play()
 			
 			local destroyFunction = function()
-				self:DestroyProjectile()
-				self:ClearAttackerInfo()
 				self.Entity:Destroy()
 			end
 			
@@ -780,6 +796,8 @@ script Unit extends Component
 			entity.Unit.curTarget = nil
 			if entity.Unit.curState ~= "useSkill" then
 				entity.Unit:SetState("stand")
+				entity.Unit.AttackTimer = 0
+				entity.SpriteRendererComponent.PlayRate = 1
 			end
 		end
 	end
@@ -788,6 +806,18 @@ script Unit extends Component
 	method void CreateMinimapIcon(boolean isEnemy)
 		local map = _EntityService:GetEntityByPath('/maps/Chapter1')
 		map.MinimapManager:AddEntityList(self.Entity, isEnemy)
+	end
+
+	@ExecSpace("Server")
+	method void ClearSkill()
+		-- 스킬 엔티티 제거
+		for i = 1, self.Entity.Children.Count do
+		    local child = self.Entity.Children[i]
+		    if child.SkillParent ~= nil then
+		        child:Destroy()
+		        break
+		    end
+		end
 	end
 
 	@EventSender("Self")
@@ -808,7 +838,6 @@ script Unit extends Component
 		---------------------------------------------------------
 		if self.curState == "attack" then
 			self:SetAnimationState("stand")
-		
 			self.Entity.SpriteRendererComponent.PlayRate = 1
 		end
 		
