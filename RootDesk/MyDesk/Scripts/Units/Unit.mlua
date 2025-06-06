@@ -450,24 +450,82 @@ script Unit extends Component
 			return
 		end
 		
-		-- 마나 충전
-		self:IncreaseMp()
+		self:SetState("attack")
+		
+		if self.isUsableCharacter then
+			local event = ActionStateChangedEvent()
+			event.CoreActionName = "swingT1"
+			event.PartsActionName = "swingT1"
+		
+			event.PlayRate = 1
+		    event.PlayType = SpriteAnimClipPlayType.Onetime
+		
+		    self.Entity:SendEvent(event)
+		end
 		
 		if self._T.projectileParent == nil then
 			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 		end
+		if self.isUsableCharacter then
+			local animationPlaySpeed = 1 / (self.attackSpeed - 0.1)
+			self.Entity.AvatarRendererComponent.PlayRate = animationPlaySpeed
+				
+			local attackFunction = function()
+				if self.curState == "die" then
+					return
+				end
+				
+				local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
+					"Projectile",
+					self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+					self._T.projectileParent)
+				projectile.Projectile:SetCaster(self.Entity)
 		
-		local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
-			"Projectile",
-			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
-			self._T.projectileParent)
-		projectile.Projectile:SetCaster(self.Entity)
+				if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+					self.passiveSkill.PassiveSkillParent:OnAttack()
+				end
 		
-		if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
-			self.passiveSkill.PassiveSkillParent:OnAttack()
+				projectile.Projectile:SetShoot(self.projectileSpriteRUID, 1, self.projectileSpeed, self.curTarget, true,self.damage)
+				
+				-- 마나 충전
+				self:IncreaseMp()
+			end
+			
+			local timerTiming = self.attackTiming / animationPlaySpeed
+			if timerTiming < 0 then
+				timerTiming = 0.5
+			end
+			
+			_TimerService:SetTimerOnce(attackFunction, timerTiming)
+		
+			-- 공격 애니메이션이 끝난 후 상태 복귀
+			local animEndTime = 1 / animationPlaySpeed
+			_TimerService:SetTimerOnce(function()
+				if self.curState == "die" then
+					return
+				end
+				
+				self:SetAnimationState("stand")
+				self.Entity.AvatarRendererComponent.PlayRate = 1
+			end, animEndTime)
+			
+			log("타이밍: "..animationPlaySpeed.. "  ,"..timerTiming.."  ,"..animEndTime)
+		else
+			local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
+					"Projectile",
+					self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+					self._T.projectileParent)
+				projectile.Projectile:SetCaster(self.Entity)
+		
+			if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
+				self.passiveSkill.PassiveSkillParent:OnAttack()
+			end
+		
+			projectile.Projectile:SetShoot(self.projectileSpriteRUID, 1, self.projectileSpeed, self.curTarget, true,self.damage)
+				
+				-- 마나 충전
+			self:IncreaseMp()
 		end
-		
-		projectile.Projectile:SetShoot(self.projectileSpriteRUID, 1, self.projectileSpeed, self.curTarget, true,self.damage)
 	end
 
 	@ExecSpace("Client")
@@ -525,7 +583,7 @@ script Unit extends Component
 			return
 		end
 		
-		log("애니메이션"..state)
+		log(self.unitName.."애니메이션"..state)
 		self:SetAnimationState(state)
 	end
 
@@ -844,6 +902,24 @@ script Unit extends Component
 		if self.curState == "die" then
 			self:DestroyAction()
 		end
+	end
+
+	@EventSender("Self")
+	handler HandleActionStateChangedEvent(ActionStateChangedEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: AvatarBodyActionSelectorComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local CoreActionName = event.CoreActionName
+		-- local EndFrameIndex = event.EndFrameIndex
+		-- local PartsActionName = event.PartsActionName
+		-- local PlayRate = event.PlayRate
+		-- local PlayType = event.PlayType
+		-- local StartFrameIndex = event.StartFrameIndex
+		---------------------------------------------------------
+		log("이벤트 발생")
 	end
 
 end
