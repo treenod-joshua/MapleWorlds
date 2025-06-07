@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://579ac36d-39b8-4990-a9f0-7bcdb5700ed8",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "LuckySeven",
+      "BaseModelId": null,
+      "Id": "579ac36d-39b8-4990-a9f0-7bcdb5700ed8",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.LuckySeven"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

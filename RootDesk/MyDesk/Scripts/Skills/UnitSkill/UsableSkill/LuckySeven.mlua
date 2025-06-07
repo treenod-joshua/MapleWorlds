@@ -1,0 +1,57 @@
+@Component
+script LuckySeven extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		if self._T.projectileParent == nil then
+			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
+		end
+		
+		local event = ActionStateChangedEvent()
+		event.CoreActionName = self.caster.Unit.animationName
+		event.PartsActionName = self.caster.Unit.animationName
+		
+		event.PlayRate = 1
+		event.PlayType = SpriteAnimClipPlayType.Onetime
+				
+		self.caster.AvatarRendererComponent:GetBodyEntity():SendEvent(event)
+		
+		local basePos = self.Entity.TransformComponent.WorldPosition
+		local index = 0
+		
+		local function spawnMissile()
+			local missile = _SpawnService:SpawnByModelId(
+				"model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
+				"ninja_stars",
+				basePos,
+				self._T.projectileParent
+			)
+		
+			missile.SpriteRendererComponent.SpriteRUID = "bfa25e5caf38486a943c8468383715fb"
+			missile.Projectile:SetCaster(self.caster)
+			missile.Projectile:SetShoot("bfa25e5caf38486a943c8468383715fb", self:IsTargetOnRight(self.target), self.skillProjectileSpeed
+			, self.target, false, self.skillAmount)
+			
+			index += 1
+			
+			if index == 2 then
+				-- 스킬 사용 완료 처리
+				if self.caster.Unit.curState == "die" then
+					return
+				end
+			
+				self.caster.Unit.isUsingSkill = false
+				self.caster.Unit.curState = "attack"
+			end
+		end
+		
+		-- 첫 번째 발사: 즉시
+		spawnMissile()
+		
+		-- 두 번째 발사: 0.1초 후
+		_TimerService:SetTimerOnce(spawnMissile, 0.15)
+	end
+
+end

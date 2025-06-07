@@ -10,6 +10,7 @@ script UnitService extends Logic
 			
 			item['id'] = tostring(dataSet:GetCell(index, 'id'))
 			item['skillID'] = tostring(dataSet:GetCell(index, 'skillID'))
+			item['isUsableCharacter'] = tonumber(dataSet:GetCell(index, 'isUsableCharacter'))
 			item['passiveSkillID'] = tonumber(dataSet:GetCell(index, 'passiveSkillID'))
 			item['moveSpeed'] = tonumber(dataSet:GetCell(index, 'moveSpeed'))
 			item['hp'] = tonumber(dataSet:GetCell(index, 'hp'))
@@ -26,6 +27,7 @@ script UnitService extends Logic
 			item['projectileSpriteRUID'] = tostring(dataSet:GetCell(index, 'projectileSpriteRUID'))
 			item['name'] = tostring(dataSet:GetCell(index, 'name'))
 			item['animationName'] = tostring(dataSet:GetCell(index, 'animationName'))
+			
 			
 			self.UnitTable[item['id']] = item
 		end
