@@ -348,6 +348,7 @@ script Unit extends Component
 	method void Attack(number delta)
 		if self.curTarget == nil or self:GetDistance() > self.attackRange then
 			self:SetState("stand")
+			self.curTarget = nil
 			return
 		end
 		
@@ -501,7 +502,6 @@ script Unit extends Component
 				self.Entity.AvatarRendererComponent.PlayRate = 1
 		
 				self:IncreaseMp()
-				log("마나 회복")
 			end, animEndTime)
 		else
 			local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
@@ -846,6 +846,7 @@ script Unit extends Component
 			if entity.Unit.curState ~= "useSkill" then
 				entity.Unit:SetState("stand")
 				entity.Unit.AttackTimer = 0
+				log("잉잉")
 				
 				if entity.Unit.isUsableCharacter then
 					entity.AvatarRendererComponent.PlayRate = 1

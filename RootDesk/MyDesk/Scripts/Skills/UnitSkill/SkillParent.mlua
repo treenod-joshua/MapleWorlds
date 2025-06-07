@@ -42,6 +42,23 @@ script SkillParent extends Component
 		self.Entity:Destroy(3 + self.skillTime)
 	end
 
+	method void SkillEnd()
+		if self.caster.Unit.curState == "die" then
+			return
+		end
+			
+		self.caster.Unit.isUsingSkill = false
+		
+		if self.target.Unit.curState == "die" or isvalid(self.target) == false then
+			self.caster.Unit.curState = "stand"
+			self.caster.Unit.curTarget = nil
+			log("잉")
+			return
+		end
+		
+		self.caster.Unit.curState = "attack"
+	end
+
 	method number IsTargetOnRight(Entity targetEntity)
 		if isvalid(targetEntity) == false then
 			return -1
