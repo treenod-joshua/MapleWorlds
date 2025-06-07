@@ -820,10 +820,10 @@ script Unit extends Component
 		-- 자신의 발사체를 모두 제거
 		local projectiles = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/ProjectileParent').Children
 		
-		for index in ipairs(projectiles) do
-			local projectile = projectiles[index]
-			
-			if projectile.Projectile ~= nil and projectile.Projectile.caster == self.Entity or isvalid(projectile.Projectile.caster) == false then
+		for index, projectile in pairs(projectiles) do
+			local data = projectile.Projectile
+			log("캐스터 :"..projectile.Projectile.caster.Unit.unitName)
+			if data ~= nil and (data.caster == self.Entity or not isvalid(data.caster)) then
 				projectile:Destroy()
 			end
 		end

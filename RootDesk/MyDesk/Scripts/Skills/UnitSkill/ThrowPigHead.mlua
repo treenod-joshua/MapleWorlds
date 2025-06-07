@@ -8,7 +8,7 @@ script ThrowPigHead extends SkillParent
 		__base:ActivateSkill()
 		
 		if self._T.projectileParent == nil then
-			self._T.projectileParent = _EntityService:GetEntityByPath("/maps/GameScene/ProjectileParent")
+			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 		end
 		
 		local spawnDelay = 0.25
@@ -23,7 +23,7 @@ script ThrowPigHead extends SkillParent
 				 self._T.projectileParent)
 		
 			missile.SpriteRendererComponent.SpriteRUID = "238e2a90da124301b959f8b745214026"
-			missile.Projectile:SetCaster(self.Entity.Parent)
+			missile.Projectile:SetCaster(self.caster)
 			
 			spawnIndex += 1
 		    table.insert(self.spawnedMissiles, missile)

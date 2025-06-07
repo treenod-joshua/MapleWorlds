@@ -79,10 +79,6 @@ script Projectile extends Component
 		local targetPos = Vector2(self.target.TransformComponent.Position.x + (self.target.Unit.imageSize.x / 2),
 			 self.target.TransformComponent.Position.y + (self.target.Unit.imageSize.y / 2))
 		
-		if self.caster.Unit.unitName == "Spore" then
-			log("스포어 타겟 이미지 사이즈 X:"..self.target.Unit.imageSize.x.."   Y:"..self.target.Unit.imageSize.y)
-			log("스포어 타겟 위치 X:"..targetPos.x.."   Y:"..targetPos.y)
-		end
 		_TweenLogic:MoveTo(self.Entity, targetPos, self.speed, EaseType.Linear)
 		
 		local deleteFunction = function()
@@ -90,6 +86,7 @@ script Projectile extends Component
 				self.target.Unit:OnHit(self.Entity, self.damage, false, 1)
 			end	
 			
+			log("투사체 제거")
 			self.Entity:Destroy()
 		end
 		
