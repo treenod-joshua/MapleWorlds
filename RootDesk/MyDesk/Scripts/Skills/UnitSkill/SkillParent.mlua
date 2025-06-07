@@ -52,7 +52,6 @@ script SkillParent extends Component
 		if self.target.Unit.curState == "die" or isvalid(self.target) == false then
 			self.caster.Unit.curState = "stand"
 			self.caster.Unit.curTarget = nil
-			log("잉")
 			return
 		end
 		

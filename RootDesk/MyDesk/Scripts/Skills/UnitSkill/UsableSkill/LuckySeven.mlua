@@ -15,6 +15,11 @@ script LuckySeven extends SkillParent
 		
 		local basePos = self.Entity.TransformComponent.WorldPosition
 		
+		local options = {
+		    FlipX = true,  -- 좌우 반전
+		}
+		_EffectService:PlayEffectAttached("cf9c9a3f22b744e1a8093c3e5b58275b", self.caster, Vector3(0, 0.1, 0) , 0, Vector3.one, false, options)
+		
 		local function spawnMissile()
 			local missile = _SpawnService:SpawnByModelId(
 				"model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
