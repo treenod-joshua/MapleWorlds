@@ -1,0 +1,10 @@
+@Logic
+script Time extends Logic
+
+	property number Deltatime = 0
+
+	method void OnUpdate(number delta)
+		self.Deltatime = delta
+	end
+
+end

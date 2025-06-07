@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "directory://e20dabbb49654f0ba4ba03ef510f1aa6",
+  "ContentType": "x-mod/directory",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "entry_id": "directory://e20dabbb49654f0ba4ba03ef510f1aa6",
+      "name": "MotionPackage",
+      "lock": false,
+      "folding": false,
+      "nameEditable": true
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@Logic
+script DataManager extends Logic
+
+	property table motionData = {}
+
+	method table loadMotionData(string motionname)
+		if self.motionData[motionname] then
+			return self.motionData[motionname]
+		end
+		local data = _DataService:GetTable('MotionData')
+		local row = data:FindRow('motionName', motionname)
+		local info = _HttpService:JSONDecode(row:GetItem('info'))
+		self.motionData[motionname] = info
+		return info
+	end
+
+end

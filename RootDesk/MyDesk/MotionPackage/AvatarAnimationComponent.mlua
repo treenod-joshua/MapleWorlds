@@ -1,0 +1,129 @@
+@Component
+script AvatarAnimationComponent extends Component
+
+	property AvatarRendererComponent avatar = nil
+
+	property Entity body = nil
+
+	property Entity face = nil
+
+	@ExecSpace("ClientOnly")
+	method void OnInitialize()
+		self._T.ev = ActionStateChangedEvent("", "", 1, SpriteAnimClipPlayType.Loop, 0, 0)
+		self.avatar = self.Entity.AvatarRendererComponent
+		self.body = self.avatar:GetBodyEntity()
+		self.face = self.avatar:GetFaceEntity()
+		local root = self.avatar:GetAvatarRootEntity()
+		local rootTransform = root.TransformComponent
+		local pc= self.Entity.PlayerControllerComponent
+		
+		self._T.execute = function(motionName, index)
+			local info = _DataManager:loadMotionData(motionName)
+			---@type ActionStateChangedEvent
+			local ev = self._T.ev
+			local action = info[index].action
+			if action then
+				ev.CoreActionName = action
+				ev.PartsActionName = action
+			else
+				ev.CoreActionName = motionName
+				ev.PartsActionName = motionName
+			end
+			ev.StartFrameIndex = index-1
+			ev.EndFrameIndex = index-1
+			
+			local pos = info[index].pos
+			local dir = pc.LookDirectionX > 0 and -1 or 1
+			if pos then
+				local decode= _UtilLogic:Split(pos, ',')
+				rootTransform.Position = Vector3(dir*tonumber(decode[1])/100, -tonumber(decode[2])/100, 0)
+			else
+				rootTransform.Position = Vector3.zero
+			end
+			
+			local rotation = info[index].rotation or 0
+			if rotation then
+				rootTransform.ZRotation = -rotation*dir
+			end
+		
+			self.body:SendEvent(ev)
+		end
+	end
+
+	@ExecSpace("Client")
+	method void PlayOnce(string motionName, number playRate)
+		if self._T.serial then
+			_TimerService:ClearTimer(self._T.serial)
+			self._T.serial = nil
+		end
+		
+		local nextDelay = 0
+		local index = 0
+		local motionData = _DataManager:loadMotionData(motionName)
+		
+		local function play()
+			nextDelay -= _Time.Deltatime
+			if nextDelay <= 0 then
+				index += 1
+				local info = motionData[index]
+				if info then
+					self._T.execute(motionName, index)
+					nextDelay = math.abs(info.delay/(1000 * playRate))
+				else
+					_TimerService:ClearTimer(self._T.serial)
+					self._T.serial = nil
+				end
+			end
+		end
+		
+		self._T.serial = _TimerService:SetTimerRepeat(play, 0, 0)
+	end
+
+	@ExecSpace("Client")
+	method void PlayRepeat(string motionName, number playRate)
+		if self._T.serial then
+			_TimerService:ClearTimer(self._T.serial)
+			self._T.serial = nil
+		end
+		
+		local nextDelay = 0
+		local index = 0
+		local motionData = _DataManager:loadMotionData(motionName)
+		local movement = self.Entity.MovementComponent
+		local function play()
+			if motionName == 'ladder' and movement.IsClimbPaused then return end
+			nextDelay -= _Time.Deltatime
+			if nextDelay <= 0 then
+				index += 1
+				local info = motionData[index]
+				if info then
+					self._T.execute(motionName, index)
+					if info.delay then
+						nextDelay = math.abs(info.delay/(1000 * playRate))
+					else
+						nextDelay = 0
+					end
+				else
+					index = 0
+				end
+			end
+		end
+		
+		self._T.serial = _TimerService:SetTimerRepeat(play, 0, 0)
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnEndPlay()
+		if self._T.serial then
+			_TimerService:ClearTimer(self._T.serial)
+			self._T.serial = nil
+		end
+	end
+
+	@ExecSpace("ClientOnly")
+	@EventSender("Self")
+	handler actionStart(ActionStart event)
+		self:PlayOnce(event.motionName, event.playRate)
+	end
+
+end
