@@ -52,10 +52,10 @@ script SkillParent extends Component
 		if self.caster.Unit.curState == "die" then
 			return
 		end
-		log("엔드 호출")
+		
 		self.caster.Unit.isUsingSkill = false
 		
-		if self.target.Unit.curState == "die" or isvalid(self.target) == false then
+		if not isvalid(self.target) or self.target.Unit.curState == "die" then
 			self.caster.Unit.curState = "stand"
 			self.caster.Unit.curTarget = nil
 			return

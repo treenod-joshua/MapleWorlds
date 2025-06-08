@@ -865,6 +865,14 @@ script Unit extends Component
 		end
 	end
 
+	method Vector3 GetTargetingPos()
+		if self.isUsableCharacter then
+			return Vector3(0, 0.3, 0)
+		else
+			return Vector3(self.imageSize.x * 0.5, self.imageSize.y * 0.5, 0)
+		end
+	end
+
 	@EventSender("Self")
 	handler HandleSpriteAnimPlayerEndFrameEvent(SpriteAnimPlayerEndFrameEvent event)
 		--------------- Native Event Sender Info ----------------
