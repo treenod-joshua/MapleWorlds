@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "model://6515208c-13e8-4aac-8ef4-1fc4ff3743dc",
+  "EntryKey": "model://03ab7c9d-7c9d-40c9-8835-6086c96a8114",
   "ContentType": "x-mod/model",
   "Content": "",
   "Usage": 0,
@@ -14,9 +14,9 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "Unit_LuckySeven",
+      "Name": "Unit_MagicClaw",
       "BaseModelId": null,
-      "Id": "6515208c-13e8-4aac-8ef4-1fc4ff3743dc",
+      "Id": "03ab7c9d-7c9d-40c9-8835-6086c96a8114",
       "Components": [
         "MOD.Core.CostumeManagerComponent",
         "MOD.Core.TransformComponent",
@@ -52,7 +52,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "78f46ee3ca7f4543948759bd68c90c62"
+          "Value": "e72340e953214ea384748e4251cdbfab"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -61,7 +61,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "2604960e721b43a7a29890abd05cbd36"
+          "Value": "430cd4d189bc4cc4bbcf2088af3d3be3"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -88,7 +88,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "ce073997978f4248b03c628dad9bbe11"
+          "Value": "061712eadf7d4357a6c306dfd5368860"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -97,7 +97,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "759d3d0fea9b4b68b0826aa8918a872d"
+          "Value": "d8d81f5eae9a4749a5906c22a0d62111"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -390,6 +390,10 @@
               "AvatarBodyActionStateName": "walk",
               "PlayRate": 1.68
             },
+            "ATTACK2": {
+              "AvatarBodyActionStateName": "attack",
+              "PlayRate": 1.33
+            },
             "HIT": {
               "AvatarBodyActionStateName": "hit",
               "PlayRate": 1.0
@@ -456,7 +460,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "985e44451afc4730a46eb206716e7ecf"
+          "Value": ""
         },
         {
           "TargetType": "MOD.Core.AvatarBodyActionSelectorComponent",
@@ -465,7 +469,144 @@
             "$type": "MODNativeType",
             "type": "MOD.Core.MapleAvatarBodyActionState, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
           },
-          "Value": 3
+          "Value": 1
+        },
+        {
+          "TargetType": "MOD.Core.AvatarBodyActionSelectorComponent",
+          "Name": "StateActionDicForNative",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Collections.Generic.Dictionary`2[[MOD.Core.MapleAvatarBodyActionState, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.List`1[[MOD.Core.MapleAvatarActionStateElement, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": {
+            "$type": "System.Collections.Generic.Dictionary`2[[MOD.Core.MapleAvatarBodyActionState, MOD.Core],[System.Collections.Generic.List`1[[MOD.Core.MapleAvatarActionStateElement, MOD.Core]], mscorlib]], mscorlib",
+            "Stand": [
+              {
+                "CoreActionName": "stand1",
+                "PartsActionName": "",
+                "PlayType": 2
+              },
+              {
+                "CoreActionName": "stand2",
+                "PartsActionName": "",
+                "PlayType": 2
+              }
+            ],
+            "Walk": [
+              {
+                "CoreActionName": "walk1",
+                "PartsActionName": "",
+                "PlayType": 1
+              },
+              {
+                "CoreActionName": "walk2",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Attack": [
+              {
+                "CoreActionName": "alert",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Alert": [
+              {
+                "CoreActionName": "alert",
+                "PartsActionName": "",
+                "PlayType": 2
+              }
+            ],
+            "Hit": [
+              {
+                "CoreActionName": "alert",
+                "PartsActionName": "",
+                "PlayType": 2
+              }
+            ],
+            "Crouch": [
+              {
+                "CoreActionName": "prone",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Fall": [
+              {
+                "CoreActionName": "jump",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Sit": [
+              {
+                "CoreActionName": "sit",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Rope": [
+              {
+                "CoreActionName": "rope",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Ladder": [
+              {
+                "CoreActionName": "ladder",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Dead": [
+              {
+                "CoreActionName": "dead",
+                "PartsActionName": "stand1",
+                "PlayType": 1
+              }
+            ],
+            "Blink": [
+              {
+                "CoreActionName": "blink",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Fly": [
+              {
+                "CoreActionName": "fly",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ],
+            "Heal": [
+              {
+                "CoreActionName": "heal",
+                "PartsActionName": "",
+                "PlayType": 1
+              }
+            ]
+          }
+        },
+        {
+          "TargetType": "MOD.Core.AvatarBodyActionSelectorComponent",
+          "Name": "Enable",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": true
+        },
+        {
+          "TargetType": "script.AvatarAnimationComponent",
+          "Name": "Enable",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": true
         }
       ],
       "EventLinks": [],

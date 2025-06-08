@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://ae6b2c61-0216-40d4-ab60-6f04f96bf9eb",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "MagicClaw",
+      "BaseModelId": null,
+      "Id": "ae6b2c61-0216-40d4-ab60-6f04f96bf9eb",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.MagicClaw"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

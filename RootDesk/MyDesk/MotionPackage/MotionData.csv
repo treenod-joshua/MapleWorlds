@@ -54,7 +54,7 @@ arrowEruption,"[{'action': 'swingT1', 'frame': '1', 'delay': '-120'}, {'action':
 magic1,"[{'action': 'shootF', 'frame': '1', 'delay': '-900'}, {'action': 'swingO3', 'frame': '1', 'delay': '200'}, {'action': 'swingO3', 'frame': '2', 'delay': '200'}]"
 magic2,"[{'action': 'alert', 'frame': '0', 'delay': '-350'}, {'action': 'alert', 'frame': '1', 'delay': '350'}, {'action': 'alert', 'frame': '2', 'delay': '350'}]"
 magic3,"[{'action': 'stand1', 'frame': '0', 'delay': '-300'}, {'action': 'stand1', 'frame': '1', 'delay': '300'}, {'action': 'stand1', 'frame': '2', 'delay': '300'}]"
-magic4,"[{'action': 'swingO3', 'frame': '0', 'delay': '-800'}, {'action': 'swingO3', 'frame': '1', 'delay': '300'}, {'action': 'swingO3', 'frame': '2', 'delay': '300'}]"
+magic4,"[{'action': 'swingO3', 'frame': '0', 'delay': '800'}, {'action': 'swingO3', 'frame': '1', 'delay': '300'}, {'action': 'swingO3', 'frame': '2', 'delay': '300'}]"
 magic5,"[{'action': 'alert', 'frame': '0', 'delay': '-720'}, {'action': 'alert', 'frame': '1', 'delay': '240'}, {'action': 'alert', 'frame': '2', 'delay': '240'}]"
 magic6,"[{'action': 'alert', 'frame': '0', 'delay': '-300'}, {'action': 'alert', 'frame': '1', 'delay': '420'}]"
 explosion,"[{'action': 'alert', 'frame': '2', 'delay': '-30'}, {'action': 'swingO2', 'frame': '1', 'delay': '-60', 'pos': '6, 0'}, {'action': 'swingO2', 'frame': '0', 'delay': '-270', 'pos': '3, 0'}, {'action': 'stabO2', 'frame': '1', 'delay': '-30', 'pos': '-3, 0'}, {'action': 'stabO2', 'frame': '1', 'delay': '480', 'pos': '-3, 0'}]"
