@@ -384,10 +384,6 @@
               "AvatarBodyActionStateName": "walk",
               "PlayRate": 1.68
             },
-            "ATTACK": {
-              "AvatarBodyActionStateName": "attack",
-              "PlayRate": 1.33
-            },
             "HIT": {
               "AvatarBodyActionStateName": "hit",
               "PlayRate": 1.0

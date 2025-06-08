@@ -17,7 +17,7 @@ script AvatarAnimationComponent extends Component
 		local rootTransform = root.TransformComponent
 		
 		self._T.execute = function(motionName, index)
-			local info = _DataManager:loadMotionData(motionName)
+			local info = _DataManager:LoadMotionData(motionName)
 			---@type ActionStateChangedEvent
 			local ev = self._T.ev
 			local action = info[index].action
@@ -58,7 +58,7 @@ script AvatarAnimationComponent extends Component
 		
 		local nextDelay = 0
 		local index = 0
-		local motionData = _DataManager:loadMotionData(motionName)
+		local motionData = _DataManager:LoadMotionData(motionName)
 		
 		-- 원래 위치와 회전 백업
 		local root = self.avatar:GetAvatarRootEntity()
@@ -99,7 +99,7 @@ script AvatarAnimationComponent extends Component
 		
 		local nextDelay = 0
 		local index = 0
-		local motionData = _DataManager:loadMotionData(motionName)
+		local motionData = _DataManager:LoadMotionData(motionName)
 		local function play()
 			nextDelay -= _Time.Deltatime
 			if nextDelay <= 0 then

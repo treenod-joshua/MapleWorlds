@@ -38,16 +38,4 @@ script Utils extends Logic
 		return 1
 	end
 
-	method number GetAvatarAnimLength(string animName)
-		local animLengths = {
-				swingO2 = 0.8,
-				stand1 = 1.0,
-				walk = 0.8,
-				jump = 0.65,
-				attack1 = 0.6
-			}
-		
-		return animLengths[animName]
-	end
-
 end

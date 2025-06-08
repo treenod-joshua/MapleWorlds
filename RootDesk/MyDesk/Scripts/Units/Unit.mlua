@@ -380,8 +380,20 @@ script Unit extends Component
 			
 			-- 유저형의 캐릭터일 경우 
 			if self.isUsableCharacter then
-				local animationPlaySpeed = 1 / (self.attackSpeed - 0.1)
-				self.Entity.AvatarRendererComponent.PlayRate = animationPlaySpeed
+				local animationPlayTime = _DataManager:GetMotionDuration(self.animationName)
+				local animationPlaySpeed = animationPlayTime / (self.attackSpeed - 0.1)
+		
+				self.Entity.AvatarAnimationComponent:PlayOnce(self.animationName, animationPlaySpeed, function()
+					if self.curState == "die" then
+						return
+					end
+					
+					self:SetAnimationState("stand")
+					self.Entity.AvatarRendererComponent.PlayRate = 1
+		
+					-- 마나 충전
+					self:IncreaseMp()
+				end)
 				
 				local attackFunction = function()
 					if self.curState == "die" then
@@ -393,8 +405,6 @@ script Unit extends Component
 					if self.passiveSkill ~= nil and self.passiveSkill.PassiveSkillParent.passiveType == _ePassiveType.OnAttack then
 						self.passiveSkill.PassiveSkillParent:OnAttack()
 					end
-					-- 마나 충전
-					self:IncreaseMp()
 				end
 				
 				local timerTiming = self.attackTiming / animationPlaySpeed
@@ -403,20 +413,6 @@ script Unit extends Component
 				end
 				
 				_TimerService:SetTimerOnce(attackFunction, timerTiming)
-		
-				-- 공격 애니메이션이 끝난 후 상태 복귀
-				local animEndTime = 1 / animationPlaySpeed
-				_TimerService:SetTimerOnce(function()
-					if self.curState == "die" then
-						return
-					end
-					
-					self:SetAnimationState("stand")
-					self.Entity.AvatarRendererComponent.PlayRate = 1
-				end, animEndTime)
-				
-				log("타이밍: "..animationPlaySpeed.. "  ,"..timerTiming.."  ,"..animEndTime)
-		
 			else
 				local animationPlaySpeed = self.attackAnimationPlayingTime / (self.attackSpeed - 0.1)
 				self.Entity.SpriteRendererComponent.PlayRate = animationPlaySpeed
@@ -459,12 +455,19 @@ script Unit extends Component
 		end
 		
 		if self.isUsableCharacter then
-			local body = self.Entity.AvatarRendererComponent:GetBodyEntity()
-			local animationPlayTime = _Utils:GetAvatarAnimLength(self.animationName)
+			local animationPlayTime = _DataManager:GetMotionDuration(self.animationName)
 			local animationPlaySpeed = animationPlayTime / (self.attackSpeed - 0.1)
-			local event = ActionStateChangedEvent(self.animationName, self.animationName, animationPlaySpeed, SpriteAnimClipPlayType.Onetime)	
-			
-			body:SendEvent(event)
+				
+			self.Entity.AvatarAnimationComponent:PlayOnce(self.animationName, animationPlaySpeed, function()
+				if self.curState == "die" then
+					return
+				end
+				
+				self:SetAnimationState("stand")
+				self.Entity.AvatarRendererComponent.PlayRate = 1
+		
+				self:IncreaseMp()
+			end)
 			
 			local attackFunction = function()
 				if self.curState == "die" then
@@ -490,19 +493,6 @@ script Unit extends Component
 			end
 			
 			_TimerService:SetTimerOnce(attackFunction, timerTiming)
-		
-			-- 공격 애니메이션이 끝난 후 상태 복귀
-			local animEndTime = animationPlayTime / animationPlaySpeed
-			_TimerService:SetTimerOnce(function()
-				if self.curState == "die" then
-					return
-				end
-				
-				self:SetAnimationState("stand")
-				self.Entity.AvatarRendererComponent.PlayRate = 1
-		
-				self:IncreaseMp()
-			end, animEndTime)
 		else
 			local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
 					"Projectile",

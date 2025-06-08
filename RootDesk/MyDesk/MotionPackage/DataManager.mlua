@@ -3,7 +3,7 @@ script DataManager extends Logic
 
 	property table motionData = {}
 
-	method table loadMotionData(string motionname)
+	method table LoadMotionData(string motionname)
 		if self.motionData[motionname] then
 			return self.motionData[motionname]
 		end
@@ -12,6 +12,29 @@ script DataManager extends Logic
 		local info = _HttpService:JSONDecode(row:GetItem('info'))
 		self.motionData[motionname] = info
 		return info
+	end
+
+	method number GetMotionDuration(string motionName)
+		-- 기존 캐시 체크
+		if self.motionData[motionName] == nil then
+			local data = _DataService:GetTable("MotionData")
+			local row = data:FindRow("motionName", motionName)
+			if not row then
+				return 0
+			end
+		
+			local decoded = _HttpService:JSONDecode(row:GetItem("info"))
+			self.motionData[motionName] = decoded
+		end
+		
+		local motion = self.motionData[motionName]
+		local total = 0
+		for _, step in ipairs(motion) do
+			total += step.delay or 0
+		end
+		
+		-- 밀리초 기준이므로, 초 단위로 변환해서 반환
+		return total / 1000
 	end
 
 end
