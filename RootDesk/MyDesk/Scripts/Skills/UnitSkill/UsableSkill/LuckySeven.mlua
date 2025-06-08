@@ -9,9 +9,7 @@ script LuckySeven extends SkillParent
 			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 		end
 		
-		local animTIme = _Utils:GetAvatarAnimLength(self.caster.Unit.animationName)
-		local event = ActionStateChangedEvent(self.caster.Unit.animationName, self.caster.Unit.animationName, 1, SpriteAnimClipPlayType.Onetime)
-		self.caster.AvatarRendererComponent:GetBodyEntity():SendEvent(event)
+		self:CallAnimation()
 		
 		local basePos = self.Entity.TransformComponent.WorldPosition
 		
@@ -40,9 +38,9 @@ script LuckySeven extends SkillParent
 		_TimerService:SetTimerOnce(spawnMissile, 0.15 + self.caster.Unit.attackTiming)
 		
 		-- 애니메이션 완료 이후 스킬 완료 처리
-		_TimerService:SetTimerOnce(function()
-			self:SkillEnd()
-		end, animTIme)
+		--_TimerService:SetTimerOnce(function()
+		--	self:SkillEnd()
+		--end, animTIme)
 	end
 
 end

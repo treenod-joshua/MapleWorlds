@@ -30,7 +30,8 @@
         "MOD.Core.TriggerComponent",
         "MOD.Core.AvatarStateAnimationComponent",
         "script.Unit",
-        "MOD.Core.AttackComponent"
+        "MOD.Core.AttackComponent",
+        "script.AvatarAnimationComponent"
       ],
       "Properties": [],
       "Values": [

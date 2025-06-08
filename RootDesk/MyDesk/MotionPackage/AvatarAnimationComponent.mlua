@@ -15,7 +15,6 @@ script AvatarAnimationComponent extends Component
 		self.face = self.avatar:GetFaceEntity()
 		local root = self.avatar:GetAvatarRootEntity()
 		local rootTransform = root.TransformComponent
-		local pc= self.Entity.PlayerControllerComponent
 		
 		self._T.execute = function(motionName, index)
 			local info = _DataManager:loadMotionData(motionName)
@@ -33,9 +32,9 @@ script AvatarAnimationComponent extends Component
 			ev.EndFrameIndex = index-1
 			
 			local pos = info[index].pos
-			local dir = pc.LookDirectionX > 0 and -1 or 1
+			local dir = 1
 			if pos then
-				local decode= _UtilLogic:Split(pos, ',')
+				local decode = _UtilLogic:Split(pos, ',')
 				rootTransform.Position = Vector3(dir*tonumber(decode[1])/100, -tonumber(decode[2])/100, 0)
 			else
 				rootTransform.Position = Vector3.zero
@@ -51,7 +50,7 @@ script AvatarAnimationComponent extends Component
 	end
 
 	@ExecSpace("Client")
-	method void PlayOnce(string motionName, number playRate)
+	method void PlayOnce(string motionName, number playRate, any callback)
 		if self._T.serial then
 			_TimerService:ClearTimer(self._T.serial)
 			self._T.serial = nil
@@ -60,6 +59,12 @@ script AvatarAnimationComponent extends Component
 		local nextDelay = 0
 		local index = 0
 		local motionData = _DataManager:loadMotionData(motionName)
+		
+		-- 원래 위치와 회전 백업
+		local root = self.avatar:GetAvatarRootEntity()
+		local rootTransform = root.TransformComponent
+		local originalPosition = rootTransform.Position:Clone()
+		local originalZRotation = rootTransform.ZRotation
 		
 		local function play()
 			nextDelay -= _Time.Deltatime
@@ -72,6 +77,12 @@ script AvatarAnimationComponent extends Component
 				else
 					_TimerService:ClearTimer(self._T.serial)
 					self._T.serial = nil
+					
+					-- 원래 위치와 회전 복원
+					rootTransform.Position = originalPosition
+					rootTransform.ZRotation = originalZRotation
+		
+					if callback then callback() end
 				end
 			end
 		end
@@ -89,9 +100,7 @@ script AvatarAnimationComponent extends Component
 		local nextDelay = 0
 		local index = 0
 		local motionData = _DataManager:loadMotionData(motionName)
-		local movement = self.Entity.MovementComponent
 		local function play()
-			if motionName == 'ladder' and movement.IsClimbPaused then return end
 			nextDelay -= _Time.Deltatime
 			if nextDelay <= 0 then
 				index += 1
@@ -123,7 +132,7 @@ script AvatarAnimationComponent extends Component
 	@ExecSpace("ClientOnly")
 	@EventSender("Self")
 	handler actionStart(ActionStart event)
-		self:PlayOnce(event.motionName, event.playRate)
+		self:PlayOnce(event.motionName, event.playRate, event.callback)
 	end
 
 end

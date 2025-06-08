@@ -31,7 +31,8 @@
         "MOD.Core.AvatarStateAnimationComponent",
         "script.Unit",
         "MOD.Core.AttackComponent",
-        "MOD.Core.AvatarBodyActionSelectorComponent"
+        "MOD.Core.AvatarBodyActionSelectorComponent",
+        "script.AvatarAnimationComponent"
       ],
       "Properties": [],
       "Values": [
