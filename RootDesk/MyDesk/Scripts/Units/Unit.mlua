@@ -293,7 +293,7 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void MoveToTarget(number delta)
-		if self.curTarget == nil then
+		if self.curTarget == nil or not isvalid(self.curTarget) then
 			self:SetState("stand")
 			return
 		end
@@ -310,8 +310,10 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method number GetDistance()
-		if isvalid(self.curTarget) == false then
+		if not isvalid(self.curTarget) then
 			self:SetState("stand")
+			log("리턴")
+			-- 여기가 문제가 아님
 			return -1
 		end
 		

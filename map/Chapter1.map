@@ -16,7 +16,7 @@
       {
         "id": "af6976c0-fe90-4203-ba28-4b321cc2bb11",
         "path": "/maps/Chapter1",
-        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MinimapManager",
+        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MinimapManager,MOD.Core.SoundComponent",
         "jsonString": {
           "name": "Chapter1",
           "path": "/maps/Chapter1",
@@ -854,6 +854,14 @@
             },
             {
               "@type": "script.MinimapManager",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SoundComponent",
+              "AudioClipRUID": "bcc73825742745089f771fbb23c881e9",
+              "Bgm": true,
+              "Loop": true,
+              "PlayOnEnable": true,
               "Enable": true
             }
           ],
