@@ -19,8 +19,8 @@ script TeamAttackSpeedBuff extends SkillParent
 	@Sync
 	property number skillTime = 0
 
-	method void UseSkill(Entity caster, Entity target, integer skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
-		__base:UseSkill(caster, target, skillArea, skillAmount, skillProjectileSpeed, skillTime)
+	method void UseSkill(Entity caster, Entity target, integer skillArea, number skillAmount, number skillProjectileSpeed, number skillTime, number skillAttackTiming)
+		__base:UseSkill(caster, target, skillArea, skillAmount, skillProjectileSpeed, skillTime, skillAttackTiming)
 	end
 
 	@ExecSpace("Client")

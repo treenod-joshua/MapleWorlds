@@ -14,7 +14,7 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "Unit_MagicClaw",
+      "Name": "Unit_Magic_Claw",
       "BaseModelId": null,
       "Id": "03ab7c9d-7c9d-40c9-8835-6086c96a8114",
       "Components": [

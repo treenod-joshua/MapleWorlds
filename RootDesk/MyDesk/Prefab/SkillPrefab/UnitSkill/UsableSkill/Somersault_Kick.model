@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://93974711-a0b2-466c-b77f-0816a9db8252",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Somersault_Kick",
+      "BaseModelId": null,
+      "Id": "93974711-a0b2-466c-b77f-0816a9db8252",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Somersault_Kick"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

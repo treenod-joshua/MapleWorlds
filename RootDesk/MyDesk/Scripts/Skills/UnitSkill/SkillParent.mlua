@@ -19,17 +19,21 @@ script SkillParent extends Component
 	@Sync
 	property number skillTime = 0
 
-	method void InitializeSkill(Entity caster, Entity target, integer skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
+	@Sync
+	property number skillAttackTiming = 0
+
+	method void InitializeSkill(Entity caster, Entity target, integer skillArea, number skillAmount, number skillProjectileSpeed, number skillTime, number skillAttackTiming)
 		self.caster = caster
 		self.target = target
 		self.skillArea = skillArea
 		self.skillAmount = skillAmount
 		self.skillProjectileSpeed = skillProjectileSpeed
 		self.skillTime = skillTime
+		self.skillAttackTiming = skillAttackTiming
 	end
 
-	method void UseSkill(Entity caster, Entity target, integer skillArea, number skillAmount, number skillProjectileSpeed, number skillTime)
-		self:InitializeSkill(caster, target, skillArea, skillAmount, skillProjectileSpeed, skillTime)
+	method void UseSkill(Entity caster, Entity target, integer skillArea, number skillAmount, number skillProjectileSpeed, number skillTime, number skillAttackTiming)
+		self:InitializeSkill(caster, target, skillArea, skillAmount, skillProjectileSpeed, skillTime, skillAttackTiming)
 		self:ActivateSkill()
 	end
 
@@ -42,8 +46,8 @@ script SkillParent extends Component
 		self.Entity:Destroy(3 + self.skillTime)
 	end
 
-	method void CallAnimation()
-		self.caster.AvatarAnimationComponent:PlayOnce(self.caster.Unit.animationName, 1, function()
+	method void CallAnimation(string skillName)
+		self.caster.AvatarAnimationComponent:PlayOnce(skillName, 1, function()
 			self:SkillEnd()
 		end)
 	end

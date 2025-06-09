@@ -1,5 +1,5 @@
 @Component
-script MagicClaw extends SkillParent
+script Magic_Claw extends SkillParent
 
 	@ExecSpace("Client")
 	method void ActivateSkill()
@@ -8,7 +8,7 @@ script MagicClaw extends SkillParent
 		-- 시전 지연 시간 
 		local castDelay = 0.85
 		
-		self:CallAnimation()
+		self:CallAnimation(self.caster.Unit.animationName)
 		
 		-- 공격 처리 함수
 		local function performMagicClaw()

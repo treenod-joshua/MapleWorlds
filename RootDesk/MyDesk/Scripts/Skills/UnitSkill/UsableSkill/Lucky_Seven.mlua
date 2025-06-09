@@ -1,5 +1,5 @@
 @Component
-script LuckySeven extends SkillParent
+script Lucky_Seven extends SkillParent
 
 	@ExecSpace("Client")
 	method void ActivateSkill()
@@ -9,7 +9,7 @@ script LuckySeven extends SkillParent
 			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 		end
 		
-		self:CallAnimation()
+		self:CallAnimation(self.caster.Unit.animationName)
 		
 		local basePos = self.Entity.TransformComponent.WorldPosition
 		
@@ -36,11 +36,6 @@ script LuckySeven extends SkillParent
 		_TimerService:SetTimerOnce(spawnMissile, self.caster.Unit.attackTiming)
 		-- 두 번째 발사: 공격 모션 발생 0.15초 후
 		_TimerService:SetTimerOnce(spawnMissile, 0.15 + self.caster.Unit.attackTiming)
-		
-		-- 애니메이션 완료 이후 스킬 완료 처리
-		--_TimerService:SetTimerOnce(function()
-		--	self:SkillEnd()
-		--end, animTIme)
 	end
 
 end
