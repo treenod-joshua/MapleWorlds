@@ -298,13 +298,14 @@ script Unit extends Component
 			return
 		end
 		
-		self:Move(delta)
-		self:SetState("move")
-		
 		if self:GetDistance() <= self.attackRange then
 			self:SetState("attack")
 			self:SetAnimationState("stand")
+			return
 		end
+		
+		self:Move(delta)
+		self:SetState("move")
 	end
 
 	@ExecSpace("Client")
