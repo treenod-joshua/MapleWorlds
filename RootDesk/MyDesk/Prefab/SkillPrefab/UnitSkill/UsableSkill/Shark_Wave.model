@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "model://ae6b2c61-0216-40d4-ab60-6f04f96bf9eb",
+  "EntryKey": "model://8141fe69-bed1-4d28-80b3-04d5fca81889",
   "ContentType": "x-mod/model",
   "Content": "",
   "Usage": 0,
@@ -14,12 +14,12 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "MagicClaw",
+      "Name": "Shark_Wave",
       "BaseModelId": null,
-      "Id": "ae6b2c61-0216-40d4-ab60-6f04f96bf9eb",
+      "Id": "8141fe69-bed1-4d28-80b3-04d5fca81889",
       "Components": [
         "MOD.Core.TransformComponent",
-        "script.Magic_Claw"
+        "script.Shark_Wave"
       ],
       "Properties": [],
       "Values": [],

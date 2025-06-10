@@ -1,0 +1,74 @@
+@Component
+script NonTargetProjectile extends Component
+
+	@Sync
+	property Entity caster = nil
+
+	@Sync
+	property number damage = 0
+
+	@Sync
+	property number destroyTime = 0
+
+	@Sync
+	property number moveSpeed = 0
+
+	@Sync
+	property boolean isEnemy = false
+
+	@Sync
+	property number time = 0
+
+	method void Init(Entity caster, number damage, number destroyTime, boolean isEnemy, number moveSpeed)
+		self.caster = caster;
+		self.damage = damage;
+		self.destroyTime = destroyTime;
+		self.moveSpeed = moveSpeed;
+		self.isEnemy = isEnemy;
+		
+		if isEnemy then
+			self.Entity.SpriteGUIRendererComponent.FlipX = false
+		else
+			self.Entity.SpriteGUIRendererComponent.FlipX = true
+		end
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		local dir
+		if self.isEnemy then
+			dir = Vector3(-0.1, 0, 0)
+		else
+			dir = Vector3(0.1, 0, 0)
+		end
+		
+		self.Entity.TransformComponent.Position = self.Entity.TransformComponent.Position + dir * self.moveSpeed
+		
+		self.time += delta;
+		if self.time >= self.destroyTime then
+			self.Entity:Destroy()
+		end
+	end
+
+	@EventSender("Self")
+	handler HandleTriggerEnterEvent(TriggerEnterEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: TriggerComponent
+		-- Space: Server, Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local TriggerBodyEntity = event.TriggerBodyEntity
+		---------------------------------------------------------
+		if event.TriggerBodyEntity.Unit == nil then
+			return
+		end
+		
+		if self.isEnemy and not event.TriggerBodyEntity.Unit.isEnemy then
+			event.TriggerBodyEntity.Unit:OnHit(self.caster, self.damage, false, 1)
+		elseif not self.isEnemy and event.TriggerBodyEntity.Unit.isEnemy then
+			event.TriggerBodyEntity.Unit:OnHit(self.caster, self.damage, false, 1)
+		end
+	end
+
+end

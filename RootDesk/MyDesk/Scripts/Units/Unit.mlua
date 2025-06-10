@@ -287,7 +287,13 @@ script Unit extends Component
 		
 		if nearestEnemy ~= nil and nearestEnemy ~= self.curTarget then
 			self.curTarget = nearestEnemy;
-			self:SetState("move")
+		
+			if self:GetDistance() <= self.attackRange then
+				self:SetState("attack")
+				self:SetAnimationState("stand")
+			else
+				self:SetState("move")
+			end
 		end
 	end
 
@@ -800,7 +806,7 @@ script Unit extends Component
 		
 		for index, projectile in pairs(projectiles) do
 			local data = projectile.Projectile
-			log("캐스터 :"..projectile.Projectile.caster.Unit.unitName)
+			
 			if data ~= nil and (data.caster == self.Entity or not isvalid(data.caster)) then
 				projectile:Destroy()
 			end
