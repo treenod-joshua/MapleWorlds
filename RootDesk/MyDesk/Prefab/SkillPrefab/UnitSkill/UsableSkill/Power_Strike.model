@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "model://579ac36d-39b8-4990-a9f0-7bcdb5700ed8",
+  "EntryKey": "model://cbccb296-505c-41a1-b094-324eeb0d2813",
   "ContentType": "x-mod/model",
   "Content": "",
   "Usage": 0,
@@ -14,12 +14,12 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "LuckySeven",
+      "Name": "Power_Strike",
       "BaseModelId": null,
-      "Id": "579ac36d-39b8-4990-a9f0-7bcdb5700ed8",
+      "Id": "cbccb296-505c-41a1-b094-324eeb0d2813",
       "Components": [
         "MOD.Core.TransformComponent",
-        "script.Lucky_Seven"
+        "script.Power_Strike"
       ],
       "Properties": [],
       "Values": [],
