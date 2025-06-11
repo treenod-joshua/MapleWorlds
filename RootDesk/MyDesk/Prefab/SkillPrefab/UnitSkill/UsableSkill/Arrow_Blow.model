@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://04c59422-e4b7-4cf4-a6aa-0b3a289f43b0",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Arrow_Blow",
+      "BaseModelId": null,
+      "Id": "04c59422-e4b7-4cf4-a6aa-0b3a289f43b0",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Arrow_Blow"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

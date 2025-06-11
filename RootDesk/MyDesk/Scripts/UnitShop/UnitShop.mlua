@@ -33,8 +33,8 @@ script UnitShop extends Component
 		self.summonPools[4] = "model://6515208c-13e8-4aac-8ef4-1fc4ff3743dc"
 		self.summonPools[5] = "model://6515208c-13e8-4aac-8ef4-1fc4ff3743dc"
 		self.summonPools[6] = "model://ecfafcc5-4753-42ad-b097-2db304e47a1d"
-		self.summonPools[7] = "model://ecfafcc5-4753-42ad-b097-2db304e47a1d"
-		self.summonPools[8] = "model://ecfafcc5-4753-42ad-b097-2db304e47a1d"
+		self.summonPools[7] = "model://ddbe8a80-64a9-49e0-8dba-ccb2ffa4f887"
+		self.summonPools[8] = "model://ddbe8a80-64a9-49e0-8dba-ccb2ffa4f887"
 		
 		math.randomseed(os.time())
 		-- 소환 배열을 섞는다.
