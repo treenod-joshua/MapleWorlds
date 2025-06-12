@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://a4875bb0-35ef-4ad8-9fa7-ad87600aa616",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "SpawnSnail",
+      "BaseModelId": null,
+      "Id": "a4875bb0-35ef-4ad8-9fa7-ad87600aa616",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.SpawnSnail"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
