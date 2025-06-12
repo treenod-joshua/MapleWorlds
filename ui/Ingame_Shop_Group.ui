@@ -2580,20 +2580,20 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": -550.1682,
-                "y": 57.475708
+                "x": 334.187531,
+                "y": 517.3437
               },
               "OffsetMin": {
-                "x": -934.993042,
-                "y": -327.349121
+                "x": -362.691559,
+                "y": 238.101135
               },
               "Pivot": {
                 "x": 0.5,
                 "y": 0.5
               },
               "RectSize": {
-                "x": 384.824829,
-                "y": 384.824829
+                "x": 696.8791,
+                "y": 279.242554
               },
               "UIMode": 1,
               "UIScale": {
@@ -2603,12 +2603,12 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": -742.5806,
-                "y": -134.9367
+                "x": -14.252,
+                "y": 377.7224
               },
               "Position": {
-                "x": -742.5806,
-                "y": -134.9367,
+                "x": -14.252,
+                "y": 377.7224,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -2738,7 +2738,7 @@
           "name": "Button",
           "path": "/ui/Ingame_Shop_Group/Test_ScrollVIew/Button",
           "nameEditable": true,
-          "enable": true,
+          "enable": false,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
