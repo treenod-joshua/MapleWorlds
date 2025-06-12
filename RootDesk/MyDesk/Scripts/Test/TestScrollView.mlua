@@ -7,17 +7,8 @@ script TestScrollView extends Component
 	method void OnBeginPlay()
 		for id, unitData in pairs(_UnitService.UnitTable) do
 				local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity)
-				
-		
-		        -- 이미지 설정 (ImageComponent 필요)
-		        local imageComp = button.SpriteGUIRendererComponent
-		        if imageComp ~= nil then
-		            imageComp.ImageRUID = unitData["ImageRUID"]
-		        end
-		
-		        -- 클릭 이벤트 연결
-				
-		    end
+				button.TestButton:Set(unitData["id"], unitData["ImageRUID"])
+		end
 	end
 
 end

@@ -1,0 +1,25 @@
+@Component
+script TestButton extends Component
+
+	@Sync
+	property string ID = ""
+
+	method void Set(string ID, string ImageRUID)
+		self.ID = ID
+		self.Entity.SpriteGUIRendererComponent.ImageRUID = ImageRUID
+	end
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		_SpawnManager:Spawn(self.ID, 0)
+	end
+
+end

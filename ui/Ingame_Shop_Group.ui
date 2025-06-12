@@ -2733,7 +2733,7 @@
       {
         "id": "7b3a9bd0-b032-47b3-a488-66f941c7e3bc",
         "path": "/ui/Ingame_Shop_Group/Test_ScrollVIew/Button",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.TestButton",
         "jsonString": {
           "name": "Button",
           "path": "/ui/Ingame_Shop_Group/Test_ScrollVIew/Button",
@@ -2849,6 +2849,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "script.TestButton",
               "Enable": true
             }
           ],
