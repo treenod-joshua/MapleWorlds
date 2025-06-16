@@ -23,7 +23,6 @@
         "MOD.Core.SpriteRendererComponent",
         "MOD.Core.RigidbodyComponent",
         "MOD.Core.MovementComponent",
-        "MOD.Core.AIWanderComponent",
         "MOD.Core.StateComponent",
         "MOD.Core.HitComponent",
         "MOD.Core.DamageSkinSpawnerComponent",
@@ -234,24 +233,6 @@
           "Value": true
         },
         {
-          "TargetType": "MOD.Core.AIWanderComponent",
-          "Name": "IsLegacy",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-          },
-          "Value": false
-        },
-        {
-          "TargetType": "MOD.Core.AIWanderComponent",
-          "Name": "Enable",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-          },
-          "Value": true
-        },
-        {
           "TargetType": "MOD.Core.StateComponent",
           "Name": "Enable",
           "ValueType": {
@@ -410,6 +391,15 @@
             "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
           "Value": true
+        },
+        {
+          "TargetType": "MOD.Core.TweenLineComponent",
+          "Name": "AutoStart",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": false
         }
       ],
       "EventLinks": [],
