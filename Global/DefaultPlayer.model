@@ -19,7 +19,8 @@
       "Id": "defaultplayer",
       "Components": [
         "script.PlayerCharacter",
-        "script.UserData"
+        "script.UserData",
+        "script.AvatarAnimationComponent"
       ],
       "Properties": [],
       "Values": [

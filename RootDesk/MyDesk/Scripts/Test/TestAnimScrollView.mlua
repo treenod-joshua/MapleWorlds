@@ -1,0 +1,18 @@
+@Component
+script TestAnimScrollView extends Component
+
+	property Entity buttonPrefab = "7321a67f-49dd-4b97-8343-dd1da7da6e36"
+
+	method void Init()
+		local dataSet = _DataService:GetTable("MotionData")
+		
+		for index = 1, dataSet:GetRowCount() do
+		    local motionName = tostring(dataSet:GetCell(index, "motionName"))
+		
+		    -- 버튼 생성
+		    local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity)
+		    button.TestAnimButton:Set(motionName)
+		end
+	end
+
+end

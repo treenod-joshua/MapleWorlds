@@ -844,7 +844,6 @@ script Unit extends Component
 			if entity.Unit.curState ~= "useSkill" then
 				entity.Unit:SetState("stand")
 				entity.Unit.AttackTimer = 0
-				log("잉잉")
 				
 				if entity.Unit.isUsableCharacter then
 					entity.AvatarRendererComponent.PlayRate = 1

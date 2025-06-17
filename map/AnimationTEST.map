@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "map://lobbyscene",
+  "EntryKey": "map://animationtest",
   "ContentType": "x-mod/map",
   "Content": "",
   "Usage": 0,
@@ -14,12 +14,12 @@
     "Use": "Binary",
     "Entities": [
       {
-        "id": "a4849af0-6f41-497b-bad7-e4b0d227b00f",
-        "path": "/maps/LobbyScene",
-        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.AdventureButton",
+        "id": "27405220-189d-4ad9-87f0-0d8f13e367ca",
+        "path": "/maps/AnimationTEST",
+        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent",
         "jsonString": {
-          "name": "LobbyScene",
-          "path": "/maps/LobbyScene",
+          "name": "AnimationTEST",
+          "path": "/maps/AnimationTEST",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -39,22 +39,18 @@
               "@type": "MOD.Core.FootholdComponent",
               "FootholdsByLayer": {},
               "Enable": true
-            },
-            {
-              "@type": "script.AdventureButton",
-              "Enable": true
             }
           ],
           "@version": 1
         }
       },
       {
-        "id": "df60d5a0-18c6-44a8-8a6d-fb859f8abfa4",
-        "path": "/maps/LobbyScene/Background",
+        "id": "5ac21df0-c336-4978-bab0-d1aad5982dfe",
+        "path": "/maps/AnimationTEST/Background",
         "componentNames": "MOD.Core.BackgroundComponent",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/LobbyScene/Background",
+          "path": "/maps/AnimationTEST/Background",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -66,12 +62,6 @@
           "@components": [
             {
               "@type": "MOD.Core.BackgroundComponent",
-              "SolidColor": {
-                "r": 0.5019608,
-                "g": 0.5019608,
-                "b": 0.5019608,
-                "a": 0.7058824
-              },
               "TemplateRUID": "794ad8421e2543d8a6d2c70307637450",
               "Type": 1,
               "Enable": true
@@ -81,12 +71,12 @@
         }
       },
       {
-        "id": "f50f99bc-b749-4d24-8e92-33456520fe84",
-        "path": "/maps/LobbyScene/MapleMapLayer",
+        "id": "c426b825-50dd-4736-bf02-ef0a496ceb1c",
+        "path": "/maps/AnimationTEST/MapleMapLayer",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer",
-          "path": "/maps/LobbyScene/MapleMapLayer",
+          "path": "/maps/AnimationTEST/MapleMapLayer",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -107,7 +97,7 @@
               "LayerSortOrder": 0,
               "Locked": false,
               "MapLayerName": "Layer1",
-              "Thumbnail": "",
+              "Thumbnail": null,
               "Enable": true
             }
           ],
@@ -115,15 +105,15 @@
         }
       },
       {
-        "id": "311ef650-4f9e-4c44-8604-ac56e795751c",
-        "path": "/maps/LobbyScene/TileMap",
+        "id": "78e4324a-6858-4492-9d49-169389523ec7",
+        "path": "/maps/AnimationTEST/TileMap",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap",
-          "path": "/maps/LobbyScene/TileMap",
+          "path": "/maps/AnimationTEST/TileMap",
           "nameEditable": false,
-          "enable": false,
-          "visible": false,
+          "enable": true,
+          "visible": true,
           "localize": false,
           "displayOrder": 2,
           "pathConstraints": "///",

@@ -1,0 +1,17 @@
+@Component
+script TestAnimButton extends Component
+
+	@Sync
+	property string ID = ""
+
+	method void Set(string ID)
+		self.ID = ID
+		self.Entity.Children[1].TextComponent.Text = ID
+	end
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		_UserService.LocalPlayer.AvatarAnimationComponent:PlayOnce(self.ID, 1, nil)
+	end
+
+end
