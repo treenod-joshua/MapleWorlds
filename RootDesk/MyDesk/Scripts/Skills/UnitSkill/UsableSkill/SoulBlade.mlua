@@ -1,0 +1,4 @@
+@Component
+script SoulBlade extends SkillParent
+
+end
