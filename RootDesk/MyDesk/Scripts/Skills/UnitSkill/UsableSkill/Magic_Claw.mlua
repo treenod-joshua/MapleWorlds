@@ -11,7 +11,7 @@ script Magic_Claw extends SkillParent
 		self:CallAnimation(self.caster.Unit.animationName)
 		
 		-- 공격 처리 함수
-		local function performMagicClaw()
+		local function EffectMagicClaw()
 			if not isvalid(self.target) or self.target.Unit.curState == "die" and self.caster.Unit.curTarget ~= nil then
 				self.target = self.caster.Unit.curTarget
 			end
@@ -29,7 +29,7 @@ script Magic_Claw extends SkillParent
 		end
 		
 		-- 시전 딜레이 후 스킬 실행
-		_TimerService:SetTimerOnce(performMagicClaw, castDelay)
+		_TimerService:SetTimerOnce(EffectMagicClaw, castDelay)
 	end
 
 end

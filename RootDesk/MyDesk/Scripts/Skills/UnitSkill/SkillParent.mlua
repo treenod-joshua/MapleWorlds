@@ -83,4 +83,60 @@ script SkillParent extends Component
 		end
 	end
 
+	method table AttackNearByEnemies(integer attackCount, integer targetCount)
+		local nearbyEnemies = self:FindNearByEnemies()
+		
+		if #nearbyEnemies == 0 then return end
+		
+		-- 3명 랜덤 선택
+		local selected = {}
+		while #selected < math.min(targetCount, #nearbyEnemies) do
+		    local index = math.random(1, #nearbyEnemies)
+		    local target = nearbyEnemies[index]
+		    if not self:tableContains(selected, target) then
+		        table.insert(selected, target)
+		    end
+		end
+		
+		-- 데미지 주기
+		for _, target in ipairs(selected) do
+		    target.Unit:OnHit(self.caster, self.skillAmount, false, attackCount)
+		end
+	end
+
+	method table FindNearByEnemies()
+		local pos = self.caster.TransformComponent.WorldPosition
+		local allEntities
+		
+		if self.caster.Unit.isEnemy then
+			allEntities = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/MyMonsterList').Children
+		else
+			allEntities = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/EnemyList').Children
+		end
+		
+		local nearbyEnemies = {}
+		
+		for _, entity in ipairs(allEntities) do
+		    if entity ~= self.caster and entity.HitComponent then
+		        local targetPos = entity.TransformComponent.WorldPosition
+		        local distance = (targetPos - pos).x
+		        if distance <= self.skillArea then
+		            table.insert(nearbyEnemies, entity)
+		        end
+		    end
+		end
+		
+		return nearbyEnemies
+	end
+
+	method boolean tableContains(table tbl, Entity element)
+		for _, value in pairs(tbl) do
+		    if value == element then
+		        return true
+		    end
+		end
+		
+		return false
+	end
+
 end
