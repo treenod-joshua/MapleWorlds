@@ -1,0 +1,24 @@
+@Component
+script UIMyInfoMain extends Component
+
+	property TextComponent myName = nil
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		local currentPath = self.Entity.Path
+		self.myName = _EntityService:GetEntityByPath(currentPath .. "/UIUserInfo").TextComponent
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		if _UserService.LocalPlayer == nil then
+			return
+		end
+		local player = _UserService.LocalPlayer.PlayerComponent
+		if player == nil then
+			return
+		end
+		self.myName.Text = player.Nickname
+	end
+
+end
