@@ -7,12 +7,12 @@ script DelayAttackComponent extends Component
 	@Sync
 	property Entity caster = nil
 
-	method void Init(number attackDamage, Entity caster)
+	method void Init(number attackDamage, Entity caster, boolean isRotate)
 		self.attackDamage = attackDamage
 		self.caster = caster
 		
 		-- Rotation이 아닌 FlipX로 뒤집기에, 콜라이더도 뒤집어주는 처리
-		if self.Entity.SpriteRendererComponent.FlipX then
+		if isRotate then
 		    self.Entity.TriggerComponent.ColliderOffset.x = self.Entity.TriggerComponent.ColliderOffset.x * -1
 		end
 	end

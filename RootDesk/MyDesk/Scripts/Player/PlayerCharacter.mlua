@@ -60,11 +60,11 @@ script PlayerCharacter extends Component
 		-- local key = event.key
 		---------------------------------------------------------
 		if event.key == KeyboardKey.LeftControl then
-			self.skill1Entity.SkillParent:UseSkill(self.Entity, nil, nil, 1, nil, 3)
+		--	self.skill1Entity.SkillParent:UseSkill(self.Entity, nil, nil, 1, nil, 3)
 		end
 		
 		if event.key == KeyboardKey.A then
-			self.skill2Entity.SkillParent:UseSkill(self.Entity, nil, nil, 100, nil, 3)		
+		--	self.skill2Entity.SkillParent:UseSkill(self.Entity, nil, nil, 100, nil, 3)		
 		end
 	end
 

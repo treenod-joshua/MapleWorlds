@@ -9,7 +9,7 @@ script StumpLaser extends SkillParent
 		local deleteTime = _Utils:GetRUIDTime(laser.SpriteRendererComponent.SpriteRUID)
 		
 		laser.SpriteRendererComponent.FlipX = self.caster.Unit.isEnemy == false
-		laser.DelayAttackComponent:Init(self.skillAmount, self.caster)
+		laser.DelayAttackComponent:Init(self.skillAmount, self.caster, self.caster.Unit.isEnemy == false)
 		
 		local damageFunction = function()
 			laser.TriggerComponent.Enable = true
