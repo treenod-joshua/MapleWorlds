@@ -1,4 +1,13 @@
 @Component
 script Nimble_Feet extends SkillParent
 
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		_EffectService:PlayEffectAttached("288b2ca13ae34efc987c49ac0bb22f79", self.caster, Vector3(0, 0, 0) , 0, Vector3.one)
+		self.caster.Unit:GetBuff(_eBuffType.AttackSpeedBuff, self.skillAmount, self.skillTime)
+		self:SkillEnd()
+	end
+
 end

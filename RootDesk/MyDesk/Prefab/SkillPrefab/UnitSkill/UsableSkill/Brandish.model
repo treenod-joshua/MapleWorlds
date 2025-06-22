@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://9a424e9c-7381-4a2b-bdd3-ee3c17217cec",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Brandish",
+      "BaseModelId": null,
+      "Id": "9a424e9c-7381-4a2b-bdd3-ee3c17217cec",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Brandish"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

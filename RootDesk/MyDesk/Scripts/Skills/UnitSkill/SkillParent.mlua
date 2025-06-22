@@ -52,6 +52,14 @@ script SkillParent extends Component
 		end)
 	end
 
+	method void CallSequenceAnimation(string skillName1, number rate1, string skillName2, number rate2)
+		self.caster.AvatarAnimationComponent:PlayOnce(skillName1, rate1, function()
+			self.caster.AvatarAnimationComponent:PlayOnce(skillName2, rate2, function()
+				self:SkillEnd()
+			end)
+		end)
+	end
+
 	method void SkillEnd()
 		if self.caster.Unit.curState == "die" then
 			return
