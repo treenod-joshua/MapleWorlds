@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://b9f14213-84ff-40e0-8f75-06218e4abfb1",
+  "EntryKey": "codeblock://b0cddf6b-eca2-4ebb-9389-697fa560eba7",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,9 +22,9 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "b9f14213-84ff-40e0-8f75-06218e4abfb1",
+      "Id": "b0cddf6b-eca2-4ebb-9389-697fa560eba7",
       "Language": 1,
-      "Name": "SoulBlade",
+      "Name": "Triple_Impact",
       "Type": 1,
       "Source": 0,
       "Target": "codeblock://465afc70-0300-4f88-809a-ac205109680f"

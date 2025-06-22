@@ -4,9 +4,9 @@ script TestAnimButton extends Component
 	@Sync
 	property string ID = ""
 
-	method void Set(string ID)
+	method void Set(string ID, integer index)
 		self.ID = ID
-		self.Entity.Children[1].TextComponent.Text = ID
+		self.Entity.Children[1].TextComponent.Text = index..": "..ID
 	end
 
 	@EventSender("Self")

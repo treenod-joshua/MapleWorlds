@@ -11,7 +11,7 @@ script TestAnimScrollView extends Component
 		
 		    -- 버튼 생성
 		    local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity)
-		    button.TestAnimButton:Set(motionName)
+		    button.TestAnimButton:Set(motionName, index)
 		end
 	end
 

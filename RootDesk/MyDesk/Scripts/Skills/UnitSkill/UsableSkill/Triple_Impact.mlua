@@ -1,20 +1,21 @@
 @Component
-script BreezeArrow extends SkillParent
+script Triple_Impact extends SkillParent
 
 	@ExecSpace("Client")
 	method void ActivateSkill()
 		__base:ActivateSkill()
 		
-		local arrow = _SpawnService:SpawnByModelId("model://107d481a-51a2-45c3-966f-9146c3c31cd8", "Breeze_Arrow", Vector3(0.1, 0, 0), self.caster)
-		local deleteTime = _Utils:GetRUIDTime(arrow.SpriteRendererComponent.SpriteRUID)
+		self:CallAnimation("PFTripleImpact")
+		
+		local arrow
+		local deleteTime
+		
+		arrow = _SpawnService:SpawnByModelId("model://f211b028-7675-45a4-84c4-5b2d9ac761fa", "TripleImpact", Vector3(0.1, 2, 0), self.caster)
+		deleteTime = _Utils:GetRUIDTime(arrow.SpriteRendererComponent.SpriteRUID)
 		
 		arrow.SpriteRendererComponent.FlipX = self.caster.Unit.isEnemy == true
 		arrow.DelayAttackComponent:Init(self.skillAmount, self.caster, self.caster.Unit.isEnemy == false)
 		
-		local options = {
-		    FlipX = true,  -- 좌우 반전
-		}
-		_EffectService:PlayEffectAttached("ee5acf09f4a24ea2b3e4d1a75133efde", self.caster, Vector3(0, 0.1, 0) , 0, Vector3.one, false, options)
 		
 		local damageFunction = function()
 			arrow.TriggerComponent.Enable = true
@@ -23,8 +24,6 @@ script BreezeArrow extends SkillParent
 		local deleteFunction = function()
 			-- 스킬 사용 종료 처리
 			_EntityService:Destroy(arrow)
-			self.caster.Unit.isUsingSkill = false
-			self.caster.Unit:SetState("move")
 		end
 		
 		-- 레이저 발사 타이밍에 데미지 입히는 처리

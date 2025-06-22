@@ -1,5 +1,5 @@
 @Component
-script SoulBlade extends SkillParent
+script Soul_Blade extends SkillParent
 
 	@ExecSpace("Client")
 	method void ActivateSkill()
