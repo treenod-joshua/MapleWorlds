@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://a7ada1ce-4e60-47d9-a480-106ba1f71322",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Nimble_Feet",
+      "BaseModelId": null,
+      "Id": "a7ada1ce-4e60-47d9-a480-106ba1f71322",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Nimble_Feet"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@Component
+script Nimble_Feet extends SkillParent
+
+end
