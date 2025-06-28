@@ -19,7 +19,7 @@
       "Id": "70cee685-0553-4afa-b27b-6a3ba7223234",
       "Components": [
         "MOD.Core.TransformComponent",
-        "script.SoulBlade"
+        "script.Soul_Blade"
       ],
       "Properties": [],
       "Values": [],

@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "model://ca2034fa-1edb-46dc-ac7c-dbe0d56222b7",
+  "EntryKey": "model://211bb3cb-cf49-4193-8d6a-65b3c54ac830",
   "ContentType": "x-mod/model",
   "Content": "",
   "Usage": 0,
@@ -14,12 +14,12 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "Breeze_Arrow",
+      "Name": "Explosion",
       "BaseModelId": null,
-      "Id": "ca2034fa-1edb-46dc-ac7c-dbe0d56222b7",
+      "Id": "211bb3cb-cf49-4193-8d6a-65b3c54ac830",
       "Components": [
         "MOD.Core.TransformComponent",
-        "script.Breeze_Arrow"
+        "script.Explosion"
       ],
       "Properties": [],
       "Values": [],
