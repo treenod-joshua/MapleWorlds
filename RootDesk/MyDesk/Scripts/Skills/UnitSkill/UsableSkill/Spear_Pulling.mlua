@@ -1,0 +1,35 @@
+@Component
+script Spear_Pulling extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		self:CallAnimation("spearPulling")
+		
+		local spear
+		local deleteTime
+		
+		spear = _SpawnService:SpawnByModelId("model://82c7591e-020a-47be-b1fc-a9991ab6e500", "SpearPulling", Vector3(0.1, 0, 0), self.caster)
+		deleteTime = _Utils:GetRUIDTime(spear.SpriteRendererComponent.SpriteRUID)
+		
+		spear.SpriteRendererComponent.FlipX = self.caster.Unit.isEnemy == true
+		spear.DelayAttackComponent:Init(self.skillAmount, self.caster, self.caster.Unit.isEnemy == false)
+		
+		
+		local damageFunction = function()
+			spear.TriggerComponent.Enable = true
+		end
+		
+		local deleteFunction = function()
+			-- 스킬 사용 종료 처리
+			_EntityService:Destroy(spear)
+		end
+		
+		-- 타이밍에 데미지 입히는 처리
+		_TimerService:SetTimerOnce(damageFunction, self.skillAttackTiming)
+		-- 스킬 사용 종료 처리
+		_TimerService:SetTimerOnce(deleteFunction, deleteTime)
+	end
+
+end

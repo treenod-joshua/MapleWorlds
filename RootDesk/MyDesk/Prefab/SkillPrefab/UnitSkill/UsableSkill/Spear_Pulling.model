@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://dbef34b4-5ef8-46f7-b54c-8c40b77bbd8b",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Spear_Pulling",
+      "BaseModelId": null,
+      "Id": "dbef34b4-5ef8-46f7-b54c-8c40b77bbd8b",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Spear_Pulling"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
