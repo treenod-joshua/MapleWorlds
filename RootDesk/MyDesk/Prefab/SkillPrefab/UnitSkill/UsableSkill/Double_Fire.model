@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://7520a864-3ad4-46a8-9b25-d75ee984c6d9",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Double_Fire",
+      "BaseModelId": null,
+      "Id": "7520a864-3ad4-46a8-9b25-d75ee984c6d9",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Double_Fire"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

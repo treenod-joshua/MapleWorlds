@@ -28,8 +28,15 @@ script AvatarAnimationComponent extends Component
 				ev.CoreActionName = motionName
 				ev.PartsActionName = motionName
 			end
-			ev.StartFrameIndex = index-1
-			ev.EndFrameIndex = index-1
+			
+			if info[index].frame ~= nil then
+				ev.StartFrameIndex = info[index].frame
+				ev.EndFrameIndex = info[index].frame
+			else
+				ev.StartFrameIndex = index-1
+				ev.EndFrameIndex = index-1
+		
+			end
 			
 			local pos = info[index].pos
 			local dir = 1
