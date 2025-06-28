@@ -9,20 +9,20 @@ script Double_Fire extends SkillParent
 			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 		end
 		
-		self:CallAnimation(self.caster.Unit.animationName)
+		self:CallAnimation("doublefire")
 		
 		local basePos = self.Entity.TransformComponent.WorldPosition
 		
 		local options = {
 		    FlipX = true,  -- 좌우 반전
 		}
-		_EffectService:PlayEffectAttached("21d3f2eb72284632b9916896cbf8aaf6", self.caster, Vector3(0, 0.1, 0) , 0, Vector3.one, false, options)
+		_EffectService:PlayEffectAttached("21d3f2eb72284632b9916896cbf8aaf6", self.caster, Vector3(0, 0, 0) , 0, Vector3.one, false, options)
 		
 		local function spawnMissile()
 			local missile = _SpawnService:SpawnByModelId(
 				"model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
 				"bullet",
-				basePos + (Vector3.up * 0.3),
+				basePos,
 				self._T.projectileParent
 			)
 		

@@ -39,7 +39,6 @@ script BigNinjaStars extends Component
 			return
 		end
 		
-		log("맞음:"..event.TriggerBodyEntity.Name)
 		event.TriggerBodyEntity.Unit:OnHit(self.player, self.damage, false, 1)
 	end
 

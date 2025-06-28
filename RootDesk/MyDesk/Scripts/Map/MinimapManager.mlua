@@ -49,14 +49,11 @@ script MinimapManager extends Component
 		
 		-- 엔티티 아이콘 배치
 		for index, entity in pairs(self.entityList) do
-			log("포문 진입 전")
 		    if isvalid(entity) then
 		        local uidStr = tostring(entity.Id)
 		        local icon = self.entityIconMap[uidStr]
 		
-				log("포문 진입 후 1")
 		        if isvalid(icon) then
-					log("포문 진입 후 2")
 		            local entityPosition = entity.TransformComponent.Position
 		            local entityPosX = ((entityPosition.x - self.mapInfo["Left"]) / (self.mapInfo["Right"] - self.mapInfo["Left"])) * self.mapInfo["Width"]
 		            local entityPosY = ((entityPosition.y - self.mapInfo["Bottom"]) / (self.mapInfo["Top"] - self.mapInfo["Bottom"])) * self.mapInfo["Height"]

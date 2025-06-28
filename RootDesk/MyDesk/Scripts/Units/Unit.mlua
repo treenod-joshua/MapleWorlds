@@ -248,8 +248,6 @@ script Unit extends Component
 			return
 		end
 		
-		log("이름 : "..self.unitName.."   스테이트:"..self.curState)
-		
 		if self.curState == "stand" and self.curTarget == nil then
 			self:FindTarget()
 		elseif self.curState == "move" then
@@ -326,8 +324,6 @@ script Unit extends Component
 	method number GetDistance()
 		if not isvalid(self.curTarget) then
 			self:SetState("stand")
-			log("리턴")
-			-- 여기가 문제가 아님
 			return -1
 		end
 		
@@ -493,7 +489,7 @@ script Unit extends Component
 		
 				local projectile = _SpawnService:SpawnByModelId("model://cd38ad89-1c52-45f2-8d86-d6be27475ba9",
 					"Projectile",
-					self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+					self.Entity.TransformComponent.WorldPosition + Vector3(0.5, 0.3, 0),
 					self._T.projectileParent)
 				projectile.Projectile:SetCaster(self.Entity)
 		
@@ -583,7 +579,6 @@ script Unit extends Component
 			return
 		end
 		
-		log(self.unitName.."애니메이션"..state)
 		self:SetAnimationState(state)
 	end
 
@@ -645,7 +640,6 @@ script Unit extends Component
 			return
 		end
 		
-		log("맞음"..self.Entity.Name)
 		self.Entity.HitComponent:OnHit(attacker, damage, isCritical, "", attackCount)
 		self.hp -= damage
 		

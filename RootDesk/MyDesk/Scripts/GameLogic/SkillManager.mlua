@@ -29,7 +29,6 @@ script SkillManager extends Logic
 		local baseData = self.ingameSkillData[skillID]
 		
 		if not baseData then
-		    log("⚠ skillID ["..tostring(skillID).."] 에 대한 데이터가 없습니다.")
 		    return
 		end
 		

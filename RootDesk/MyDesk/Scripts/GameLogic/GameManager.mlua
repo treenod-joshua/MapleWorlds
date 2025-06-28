@@ -41,7 +41,6 @@ script GameManager extends Logic
 		-- 선택할 수 있는 스킬 수 결정 (최대 3개)
 		local choiceCount = math.min(3, #availableSkills)
 		if choiceCount == 0 then
-		    log("⚠ 선택할 수 있는 스킬이 없습니다.")
 		    return
 		end
 		

@@ -5,7 +5,7 @@ script Brandish extends SkillParent
 	method void ActivateSkill()
 		__base:ActivateSkill()
 		
-		self:CallSequenceAnimation("brandish2", 2, "brandish1", 1.5)
+		self:CallAnimation("brandish2")
 		local options = {
 		    FlipX = true,  -- 좌우 반전
 		}
