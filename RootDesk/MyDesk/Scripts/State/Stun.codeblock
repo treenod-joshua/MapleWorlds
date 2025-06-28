@@ -1,13 +1,13 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://a1254a81-a315-4bea-95fc-30fdc65e251b",
+  "EntryKey": "codeblock://c785efd6-9f5e-4265-bc2e-252034f73385",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
   "UsePublish": 1,
   "UseService": 0,
-  "CoreVersion": "1.23.0.0",
+  "CoreVersion": "1.24.0.0",
   "StudioVersion": "0.1.0.0",
   "DynamicLoading": 0,
   "ContentProto": {
@@ -22,10 +22,10 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "a1254a81-a315-4bea-95fc-30fdc65e251b",
+      "Id": "c785efd6-9f5e-4265-bc2e-252034f73385",
       "Language": 1,
-      "Name": "TestType",
-      "Type": 9,
+      "Name": "Stun",
+      "Type": 8,
       "Source": 0,
       "Target": null
     }

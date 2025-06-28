@@ -1,0 +1,7 @@
+@Logic
+script eDebuffType extends Logic
+
+	@Sync
+	property number Stun = 1
+
+end

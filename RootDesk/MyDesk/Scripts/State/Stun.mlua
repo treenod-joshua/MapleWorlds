@@ -1,0 +1,4 @@
+@State
+script Stun extends StateType
+
+end

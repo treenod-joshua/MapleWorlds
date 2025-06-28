@@ -111,6 +111,12 @@ script Unit extends Component
 	@Sync
 	property string animationName = ""
 
+	@Sync
+	property number stunTime = 0
+
+	@Sync
+	property number stunTimeCounter = 0
+
 	@ExecSpace("Server")
 	method void Spawn(table unitData, table skillData)
 		self.moveSpeed = unitData["moveSpeed"]
@@ -253,6 +259,8 @@ script Unit extends Component
 			self:Attack(delta)
 		elseif self.curState == "useSkill" then
 			self:UseSkill()
+		elseif self.curState == "stun" then
+			
 		elseif self.curState == "die" then
 			
 		end
@@ -673,6 +681,27 @@ script Unit extends Component
 			-- attacker.Unit.curTarget = nil
 		else
 			-- attacker.Projectile.caster.Unit.curTarget = nil
+		end
+	end
+
+	method void GetDebuff(number debuffType, number debuffAmount, number debuffTime)
+		local deleteFunction
+		
+		if debuffType == _eDebuffType.Stun then
+			self.curState = "stun"
+			self.stunTime = debuffTime
+		end
+	end
+
+	method void OnStun(number delta)
+		if self.curState ~= "stun" or self.curState == "die" then
+			return
+		end
+		
+		self.stunTimeCounter += delta
+		
+		if self.stunTimeCounter >= self.stunTime then
+			self.curState = "stand"
 		end
 	end
 

@@ -1,6 +1,0 @@
-@Struct
-script TestType
-
-	property number NewValue1 = 0
-
-end
