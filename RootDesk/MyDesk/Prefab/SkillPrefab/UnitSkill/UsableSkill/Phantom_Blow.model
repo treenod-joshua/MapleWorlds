@@ -18,7 +18,8 @@
       "BaseModelId": null,
       "Id": "6263327f-9682-4a49-9023-c4389ffd4d2b",
       "Components": [
-        "MOD.Core.TransformComponent"
+        "MOD.Core.TransformComponent",
+        "script.Phantom_Blow"
       ],
       "Properties": [],
       "Values": [],
