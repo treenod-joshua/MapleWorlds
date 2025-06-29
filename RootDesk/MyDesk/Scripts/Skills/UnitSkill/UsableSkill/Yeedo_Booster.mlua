@@ -1,0 +1,14 @@
+@Component
+script Yeedo_Booster extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		_EffectService:PlayEffectAttached("2196093c814147f284f87cdab417a7c2", self.caster, Vector3(0, self.caster.Unit.imageSize.y, 0) , 0, Vector3.one)
+		self.caster.Unit:GetBuff(_eBuffType.AttackSpeedBuff, self.skillAmount, self.skillTime)
+		
+		self:SkillEnd()
+	end
+
+end

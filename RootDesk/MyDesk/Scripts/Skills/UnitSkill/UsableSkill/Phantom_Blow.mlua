@@ -1,0 +1,4 @@
+@Component
+script Phantom_Blow extends SkillParent
+
+end

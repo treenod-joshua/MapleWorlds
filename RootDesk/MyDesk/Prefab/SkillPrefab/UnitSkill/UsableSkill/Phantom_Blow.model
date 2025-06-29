@@ -1,0 +1,29 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://6263327f-9682-4a49-9023-c4389ffd4d2b",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Phantom_Blow",
+      "BaseModelId": null,
+      "Id": "6263327f-9682-4a49-9023-c4389ffd4d2b",
+      "Components": [
+        "MOD.Core.TransformComponent"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
