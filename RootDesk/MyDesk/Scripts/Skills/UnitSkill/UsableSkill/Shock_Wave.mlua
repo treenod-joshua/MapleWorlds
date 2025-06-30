@@ -1,0 +1,55 @@
+@Component
+script Shock_Wave extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		self:CallAnimation("shockwave")
+		
+		if self._T.projectileParent == nil then
+			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
+		end
+		
+		local options = {
+		    FlipX = true,  -- 좌우 반전
+			OrderInLayer = 0,
+		}
+		
+		_EffectService:PlayEffectAttached("b43ff36b9c8544b88acee9ce595bfaf2", self.caster, Vector3(0.3, 0, 0) , 0, Vector3.one, false, options)
+		
+		-- 기본 위치와 방향 설정
+		local index = 1
+		local timer
+		
+		local function shockWave()
+			local spawnOffset = Vector3(1 + (0.75 * index), 0, 0)  -- 거리 간격 조절
+		    local spawnPosition = self.caster.TransformComponent.WorldPosition + spawnOffset
+			
+		    local wave = _SpawnService:SpawnByModelId("model://0a0f1076-2f19-467f-bbe3-80c07a324192", "ShockWave"..index, spawnPosition, self._T.projectileParent)
+		    local deleteTime = _Utils:GetRUIDTime(wave.SpriteRendererComponent.SpriteRUID)
+		
+		    wave.DelayAttackComponent:Init(self.skillAmount, self.caster, false)
+		
+		    local damageFunction = function()
+		        wave.TriggerComponent.Enable = true
+		    end
+		
+		    local deleteFunction = function()
+		        _EntityService:Destroy(wave)
+		    end
+		
+		    _TimerService:SetTimerOnce(damageFunction, 0.8)
+		    _TimerService:SetTimerOnce(deleteFunction, deleteTime)
+			
+			index += 1
+			
+			if index == 4 then
+				_TimerService:ClearTimer(timer)
+			end
+		end
+		
+		timer = _TimerService:SetTimerRepeat(shockWave, 0.2)
+	end
+
+end
