@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://73591be0-57d2-44f5-87e1-4968a3c00140",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Dragon_Purse",
+      "BaseModelId": null,
+      "Id": "73591be0-57d2-44f5-87e1-4968a3c00140",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Dragon_Purse"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

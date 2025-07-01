@@ -1,0 +1,27 @@
+@Component
+script Dragon_Purse extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		self:CallAnimation(self.caster.Unit.animationName)
+		
+		local options = {
+		    FlipX = true,  -- 좌우 반전
+		}
+		_EffectService:PlayEffectAttached("32eff4d4e0fe4abb92415cbafac88463", self.caster, Vector3.zero , 0, Vector3.one, false, options)
+		
+		local function spawnDragonFunction()
+			local projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
+			local dragon = _SpawnService:SpawnByModelId("model://d67daccb-d02b-4a52-83a5-f518917cbb89", "Dragon_Purse", self.caster.TransformComponent.WorldPosition + Vector3(1, 0.5, 0), projectileParent)
+		
+			dragon.NonTargetProjectile:Init(self.caster, self.skillAmount, self.skillTime, self.caster.Unit.isEnemy, self.skillProjectileSpeed)
+			log("드래곤"..tostring(dragon.TransformComponent.WorldPosition))
+		end
+		
+		-- 첫 번째 발사: 공격 모션 발생
+		_TimerService:SetTimerOnce(spawnDragonFunction, self.skillAttackTiming)
+	end
+
+end
