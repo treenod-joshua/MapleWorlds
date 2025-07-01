@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://a1bb00ea-4c9e-44c6-a78c-984d4879d89d",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Triple_Throw",
+      "BaseModelId": null,
+      "Id": "a1bb00ea-4c9e-44c6-a78c-984d4879d89d",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Triple_Throw"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
