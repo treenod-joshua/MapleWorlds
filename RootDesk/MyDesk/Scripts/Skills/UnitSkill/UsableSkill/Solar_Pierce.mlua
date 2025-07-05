@@ -1,0 +1,36 @@
+@Component
+script Solar_Pierce extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		-- d16084b8fa9e4cce8d04a8ce9517554a
+		
+		self:CallAnimation("SMsolarPierce")
+		
+		local spear
+		local deleteTime
+		
+		spear = _SpawnService:SpawnByModelId("model://175cd31c-82ed-4ab3-83a6-3d6bd995928a", "SolarPierce", Vector3(0.1, 0, 0), self.caster)
+		deleteTime = _Utils:GetRUIDTime(spear.SpriteRendererComponent.SpriteRUID)
+		
+		spear.SpriteRendererComponent.FlipX = self.caster.Unit.isEnemy == true
+		spear.DelayAttackComponent:Init(self.skillAmount, self.caster, self.caster.Unit.isEnemy == false)
+		
+		
+		local damageFunction = function()
+			spear.TriggerComponent.Enable = true
+		end
+		
+		local deleteFunction = function()
+			-- 스킬 사용 종료 처리
+			_EntityService:Destroy(spear)
+		end
+		
+		-- 타이밍에 데미지 입히는 처리
+		_TimerService:SetTimerOnce(damageFunction, self.skillAttackTiming)
+		-- 스킬 사용 종료 처리
+		_TimerService:SetTimerOnce(deleteFunction, deleteTime)
+	end
+
+end
