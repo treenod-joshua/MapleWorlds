@@ -1,9 +1,27 @@
 @Component
 script UserData extends Component
 
+	@Sync
+	property number Level = 0
+
+	@Sync
+	property number CurrentExp = 0
+
 	@ExecSpace("ServerOnly")
-	method void OnBeginPlay()
-		_UserDataManager:SyncUser(self.Entity.Name)
+	method boolean Save()
+		local uid = _UserService.LocalPlayer.PlayerComponent.UserId
+		local ds = _DataStorageService:GetUserDataStorage(uid)
+		
+		ds:TransactSetAndWait(self.data)
+		
+		
+		
+		return true
+	end
+
+	method boolean Load()
+		
+		return true
 	end
 
 end

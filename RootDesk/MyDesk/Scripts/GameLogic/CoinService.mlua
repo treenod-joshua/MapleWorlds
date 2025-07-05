@@ -1,177 +1,90 @@
 @Logic
 script CoinService extends Logic
 
-	property string FirstCoin = "first_coin"
+	@Sync
+	property integer FirstFreeCoin = 0
 
-	property string SecondCoin = "second_coin"
+	@Sync
+	property integer FirstPaidCoin = 0
 
-	property string GameCoin = "game_coin"
+	@Sync
+	property integer SecondFreeCoin = 0
 
-	@ExecSpace("Server")
-	method string GetCoinByType(string userId, string coinType)
-		local resp = {
-			free = 0,
-			paid = 0,
-			total = 0,
-			code = 0
-		}
+	@Sync
+	property integer SeconPaidCoin = 0
+
+	@ExecSpace("ServerOnly")
+	method integer SAVE()
+		local uid = _UserService.LocalPlayer.PlayerComponent.UserId
+		local ds = _DataStorageService:GetUserDataStorage(uid)
 		
-		if not self:_isValidCoinType(coinType) then
-			resp.code = -1
-			return _HttpService:JSONEncode(resp)
+		local data = {}
+		
+		data["FirstFreeCoin"] = tostring(self.FirstFreeCoin)
+		data["FirstPaidCoin"] = tostring(self.FirstPaidCoin)
+		data["SecondFreeCoin"] = tostring(self.SecondFreeCoin)
+		data["SeconPaidCoin"] = tostring(self.SeconPaidCoin)
+		
+		return ds:SetAndWait("COIN", _HttpService:JSONEncode(data))
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer LOAD()
+		local uid = _UserService.LocalPlayer.PlayerComponent.UserId
+		local ds = _DataStorageService:GetUserDataStorage(uid)
+		
+		local errCode, res = ds:GetAndWait("COIN")
+		if errCode ~= 0 then
+			return errCode
 		end
 		
-		local userDS = _DataStorageService:GetUserDataStorage(userId)
+		local resTable = _HttpService:JSONDecode(res)
 		
-		local errCode, data = userDS:GetAndWait(coinType)
+		return 0
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer INIT()
+		self.FirstFreeCoin = 0
+		self.FirstPaidCoin = 0
+		self.SecondFreeCoin = 0
+		self.SeconPaidCoin = 0
+		
+		return self:SAVE()
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		local errCode = self:LOAD()
+		
 		if errCode == 1000002 then
-			local newData = {
-				free = 0,
-				paid = 0,
-				ver = 0
-			}
-			errCode = userDS:SetAndWait(coinType, _HttpService:JSONEncode(newData))
+			errCode = self:INIT()
 		end
 		
-		if not errCode == 0 then
-			resp.code = errCode
-			return _HttpService:JSONEncode(resp)
+		if errCode > 0 then
+			local uid = _UserService.LocalPlayer.PlayerComponent.UserId
+			log_error(uid, "COIN SERVICE FAIL TO GET OR CREATE, code: ", errCode)
+			_UserService:KickUser(uid, KickReason.WorldError)
 		end
-		
-		local coinData = _HttpService:JSONDecode(data)
-		
-		resp.free = coinData.free
-		resp.paid = coinData.paid
-		resp.total = coinData.free + coinData.paid
-		
-		return _HttpService:JSONEncode(resp)
-		
 	end
 
-	@ExecSpace("Server")
-	method string SetCoinByType(string userId, string coinType, string newData)
-		local newCoinData = _HttpService:JSONDecode(newData)
+	@EventSender("Service", "UserService")
+	handler HandleUserLeaveEvent(UserLeaveEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: UserService
+		-- Space: Server
+		---------------------------------------------------------
 		
-		local resp = {
-			free = newCoinData.free,
-			paid = newCoinData.paid,
-			total = newCoinData.free + newCoinData.paid,
-			code = 0
-		}
+		-- Parameters
+		local ProfileCode = event.ProfileCode
+		local UserId = event.UserId
 		
-		if not self:_isValidCoinType(coinType) then
-			resp.code = -1
-			return _HttpService:JSONEncode(resp)
+		local user = _UserService.LocalPlayer.PlayerComponent
+		if user.UserId ~= UserId or user.ProfileCode ~= ProfileCode then
+			return
 		end
 		
-		local userDS = _DataStorageService:GetUserDataStorage(userId)
-		
-		local data = {
-			free = newCoinData.free,
-			paid = newCoinData.paid,
-			ver = 0
-		}
-		local errCode = userDS:SetAndWait(coinType, _HttpService:JSONEncode(data))
-		if not errCode == 0 then
-			resp.code = errCode
-			return _HttpService:JSONEncode(resp)
-		end
-		
-		return _HttpService:JSONEncode(resp)
-	end
-
-	@ExecSpace("Server")
-	method string UseCoinByType(string userId, string coinType, integer amount)
-		local resp = {
-			free = 0,
-			paid = 0,
-			total = 0,
-			code = 0
-		}
-		
-		local coinRes = self:GetCoinByType(userId, coinType)
-		local userCoin = _HttpService:JSONDecode(coinRes)
-		
-		if userCoin.total < amount then
-			resp.code = -1
-			return _HttpService:JSONEncode(resp)
-		end
-		
-		local newUserCoin={
-			free = userCoin.free,
-			paid = userCoin.paid
-		}
-		
-		if userCoin.paid >= amount then
-			newUserCoin.paid = newUserCoin.paid - amount
-			return self:SetCoinByType(userId, coinType, _HttpService:JSONEncode(newUserCoin))
-		end
-		
-		newUserCoin.paid = 0
-		newUserCoin.free = userCoin.total - amount
-		
-		return self:SetCoinByType(userId, coinType, _HttpService:JSONEncode(newUserCoin))
-	end
-
-	@ExecSpace("Server")
-	method string AddPaidCoinByType(string userId, string coinType, integer amount)
-		local resp = {
-			free = 0,
-			paid = 0,
-			total = 0,
-			code = 0
-		}
-		
-		local coinRes = self:GetCoinByType(userId, coinType)
-		local userCoin = _HttpService:JSONDecode(coinRes)
-		
-		if amount < 0 then
-			resp.code = -1
-			return _HttpService:JSONEncode(resp)
-		end
-		
-		userCoin.paid = userCoin.paid + amount
-		
-		return self:SetCoinByType(userId, coinType, _HttpService:JSONEncode(userCoin))
-	end
-
-	method string AddFreeCoinByType(string userId, string coinType, integer amount)
-		local resp = {
-			free = 0,
-			paid = 0,
-			total = 0,
-			code = 0
-		}
-		
-		
-		
-		local coinRes = self:GetCoinByType(userId, coinType)
-		local userCoin = _HttpService:JSONDecode(coinRes)
-		
-		if amount < 0 then
-			resp.code = -1
-			return _HttpService:JSONEncode(resp)
-		end
-		
-		userCoin.free = userCoin.free + amount
-		
-		return self:SetCoinByType(userId, coinType, _HttpService:JSONEncode(userCoin))
-	end
-
-	method boolean _isValidCoinType(string coinType)
-		if coinType == self.FirstCoin then
-			return true
-		end
-		
-		if coinType == self.SecondCoin then
-			return true
-		end
-		
-		if coinType == self.GameCoin then
-			return true
-		end
-		
-		return false
+		self:SAVE()
 	end
 
 end
