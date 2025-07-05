@@ -60,6 +60,10 @@ script SkillParent extends Component
 		end)
 	end
 
+	method void CallLoopAnimation(string skillName)
+		self.caster.AvatarAnimationComponent:PlayRepeat(skillName, 1)
+	end
+
 	method void SkillEnd()
 		if self.caster.Unit.curState == "die" then
 			return

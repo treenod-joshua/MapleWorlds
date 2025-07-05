@@ -19,12 +19,16 @@ script NonTargetProjectile extends Component
 	@Sync
 	property number time = 0
 
-	method void Init(Entity caster, number damage, number destroyTime, boolean isEnemy, number moveSpeed)
+	@Sync
+	property boolean isHitDestroy = false
+
+	method void Init(Entity caster, number damage, number destroyTime, boolean isEnemy, number moveSpeed, boolean isHitDestroy)
 		self.caster = caster;
 		self.damage = damage;
 		self.destroyTime = destroyTime;
 		self.moveSpeed = moveSpeed;
 		self.isEnemy = isEnemy;
+		self.isHitDestroy = isHitDestroy
 		
 		if isEnemy then
 			self.Entity.SpriteGUIRendererComponent.FlipX = false
@@ -52,23 +56,25 @@ script NonTargetProjectile extends Component
 
 	@EventSender("Self")
 	handler HandleTriggerEnterEvent(TriggerEnterEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: TriggerComponent
-		-- Space: Server, Client
-		---------------------------------------------------------
+		local function destroyFunction()
+			if self.isHitDestroy then
+				_EntityService:Destroy(self.Entity)
+			end
+		end
 		
-		-- Parameters
-		-- local TriggerBodyEntity = event.TriggerBodyEntity
-		---------------------------------------------------------
 		if event.TriggerBodyEntity.Unit == nil then
 			return
 		end
 		
 		if self.isEnemy and not event.TriggerBodyEntity.Unit.isEnemy then
 			event.TriggerBodyEntity.Unit:OnHit(self.caster, self.damage, false, 1)
+			destroyFunction()
 		elseif not self.isEnemy and event.TriggerBodyEntity.Unit.isEnemy then
 			event.TriggerBodyEntity.Unit:OnHit(self.caster, self.damage, false, 1)
+			destroyFunction()
 		end
+		
+		
 	end
 
 end

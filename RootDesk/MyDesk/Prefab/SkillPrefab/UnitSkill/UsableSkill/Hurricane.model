@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://13e44c4c-9e5a-4265-8f70-bf32b4d9a5a8",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Hurricane",
+      "BaseModelId": null,
+      "Id": "13e44c4c-9e5a-4265-8f70-bf32b4d9a5a8",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Hurricane"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

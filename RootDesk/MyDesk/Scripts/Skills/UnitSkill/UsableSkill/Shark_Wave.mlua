@@ -16,7 +16,7 @@ script Shark_Wave extends SkillParent
 			local projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 			local shark = _SpawnService:SpawnByModelId("model://f965022f-573a-433a-abe1-5e9125ef4d4c", "Shark_Wave", self.caster.TransformComponent.Position + Vector3(1, 0.5, 0), projectileParent)
 		
-			shark.NonTargetProjectile:Init(self.caster, self.skillAmount, self.skillTime, self.caster.Unit.isEnemy, self.skillProjectileSpeed)
+			shark.NonTargetProjectile:Init(self.caster, self.skillAmount, self.skillTime, self.caster.Unit.isEnemy, self.skillProjectileSpeed, false)
 		end
 		
 		-- 첫 번째 발사: 공격 모션 발생

@@ -16,7 +16,7 @@ script Soul_Blade extends SkillParent
 			local projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
 			local shark = _SpawnService:SpawnByModelId("model://353e9212-63fa-4f55-83aa-500cf769899d", "Soul_Blade", self.caster.TransformComponent.Position + Vector3(1, 0.5, 0), projectileParent)
 		
-			shark.NonTargetProjectile:Init(self.caster, self.skillAmount, self.skillTime, self.caster.Unit.isEnemy, 1.5)
+			shark.NonTargetProjectile:Init(self.caster, self.skillAmount, self.skillTime, self.caster.Unit.isEnemy, 1.5, false)
 		end
 		
 		-- 첫 번째 발사: 공격 모션 발생
