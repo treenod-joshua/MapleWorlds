@@ -1,0 +1,41 @@
+@Component
+script Inferno_Rise extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		self:CallAnimation("FWinfernoFox")
+		
+		if self._T.projectileParent == nil then
+			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
+		end
+		
+		local inferno
+		local deleteTime
+		local spawnOffset = Vector3(2.25, 0, 0)  -- 거리 간격 조절
+		local spawnPosition = self.caster.TransformComponent.WorldPosition + spawnOffset
+		
+		inferno = _SpawnService:SpawnByModelId("model://56a62023-e6bd-400e-b510-bbaab289d337", "InfernoRise", spawnPosition, self._T.projectileParent)
+		deleteTime = _Utils:GetRUIDTime(inferno.SpriteRendererComponent.SpriteRUID)
+		
+		inferno.SpriteRendererComponent.FlipX = self.caster.Unit.isEnemy == true
+		inferno.DelayAttackComponent:Init(self.skillAmount, self.caster, self.caster.Unit.isEnemy == false)
+		
+		
+		local damageFunction = function()
+			inferno.TriggerComponent.Enable = true
+		end
+		
+		local deleteFunction = function()
+			-- 스킬 사용 종료 처리
+			_EntityService:Destroy(inferno)
+		end
+		
+		-- 타이밍에 데미지 입히는 처리
+		_TimerService:SetTimerOnce(damageFunction, self.skillAttackTiming)
+		-- 스킬 사용 종료 처리
+		_TimerService:SetTimerOnce(deleteFunction, deleteTime)
+	end
+
+end
