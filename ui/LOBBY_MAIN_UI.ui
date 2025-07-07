@@ -99,7 +99,7 @@
       {
         "id": "43df29d4-8c2f-419c-80cb-2e613cd56ec5",
         "path": "/ui/LOBBY_MAIN_UI/UIMoney",
-        "componentNames": "MOD.Core.UITransformComponent",
+        "componentNames": "MOD.Core.UITransformComponent,script.UICoinInfo",
         "jsonString": {
           "name": "UIMoney",
           "path": "/ui/LOBBY_MAIN_UI/UIMoney",
@@ -162,6 +162,10 @@
                 "z": 0.0,
                 "w": 1.0
               },
+              "Enable": true
+            },
+            {
+              "@type": "script.UICoinInfo",
               "Enable": true
             }
           ],
@@ -454,11 +458,11 @@
       },
       {
         "id": "7464da40-4c4e-4d03-bf43-1c604979c323",
-        "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIPlayCoinPanel/TextPlayCoin",
+        "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIPlayCoinPanel/TextCoin",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
-          "name": "TextPlayCoin",
-          "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIPlayCoinPanel/TextPlayCoin",
+          "name": "TextCoin",
+          "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIPlayCoinPanel/TextCoin",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1151,11 +1155,11 @@
       },
       {
         "id": "5f6edc14-9dbb-4042-a68e-c30dcc4f9eeb",
-        "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIFirstCoinPanel/TextFirstCoin",
+        "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIFirstCoinPanel/TextCoin",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
-          "name": "TextFirstCoin",
-          "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIFirstCoinPanel/TextFirstCoin",
+          "name": "TextCoin",
+          "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIFirstCoinPanel/TextCoin",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1337,7 +1341,7 @@
       {
         "id": "9b3aef3e-d13d-4e4e-b04e-296f17fc468b",
         "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIFirstCoinPanel/UIButton",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UIAddCoinTest",
         "jsonString": {
           "name": "UIButton",
           "path": "/ui/LOBBY_MAIN_UI/UIMoney/UIFirstCoinPanel/UIButton",
@@ -1471,6 +1475,11 @@
               },
               "OverrideSorting": false,
               "Enable": true
+            },
+            {
+              "@type": "script.UIAddCoinTest",
+              "Enable": true,
+              "IsFirstCoin": true
             }
           ],
           "@version": 1
@@ -1848,11 +1857,11 @@
       },
       {
         "id": "f86d67cc-7155-4b42-bec6-c5a8af9a5b8b",
-        "path": "/ui/LOBBY_MAIN_UI/UIMoney/UISecondCoinPanel/TextSecondCoin",
+        "path": "/ui/LOBBY_MAIN_UI/UIMoney/UISecondCoinPanel/TextCoin",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
-          "name": "TextSecondCoin",
-          "path": "/ui/LOBBY_MAIN_UI/UIMoney/UISecondCoinPanel/TextSecondCoin",
+          "name": "TextCoin",
+          "path": "/ui/LOBBY_MAIN_UI/UIMoney/UISecondCoinPanel/TextCoin",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -2035,7 +2044,7 @@
       {
         "id": "1fc879a3-92c1-498b-a13d-557650914151",
         "path": "/ui/LOBBY_MAIN_UI/UIMoney/UISecondCoinPanel/UIButton",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UIAddCoinTest",
         "jsonString": {
           "name": "UIButton",
           "path": "/ui/LOBBY_MAIN_UI/UIMoney/UISecondCoinPanel/UIButton",
@@ -2169,6 +2178,10 @@
               },
               "OverrideSorting": false,
               "Enable": true
+            },
+            {
+              "@type": "script.UIAddCoinTest",
+              "Enable": true
             }
           ],
           "@version": 1
@@ -2264,7 +2277,7 @@
       {
         "id": "f9efd55c-85e9-4f5a-9e5b-fbcf9839620f",
         "path": "/ui/LOBBY_MAIN_UI/UIUser",
-        "componentNames": "MOD.Core.UITransformComponent,script.UIMyInfoMain",
+        "componentNames": "MOD.Core.UITransformComponent,script.UIUserInfo",
         "jsonString": {
           "name": "UIUser",
           "path": "/ui/LOBBY_MAIN_UI/UIUser",
@@ -2330,7 +2343,7 @@
               "Enable": true
             },
             {
-              "@type": "script.UIMyInfoMain",
+              "@type": "script.UIUserInfo",
               "Enable": true
             }
           ],
@@ -3218,6 +3231,7 @@
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "RaycastTarget": true,
               "Enable": true
             },
             {

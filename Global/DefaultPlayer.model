@@ -20,7 +20,8 @@
       "Components": [
         "script.PlayerCharacter",
         "script.UserData",
-        "script.AvatarAnimationComponent"
+        "script.AvatarAnimationComponent",
+        "script.UserBillingComponent"
       ],
       "Properties": [],
       "Values": [

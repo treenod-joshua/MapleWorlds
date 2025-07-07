@@ -1,0 +1,173 @@
+@Logic
+script BillingService extends Logic
+
+	@Sync
+	property integer FirstFreeCoin = 0
+
+	@Sync
+	property integer FirstPaidCoin = 0
+
+	@Sync
+	property integer SecondFreeCoin = 0
+
+	@Sync
+	property integer SecondPaidCoin = 0
+
+	@ExecSpace("ServerOnly")
+	method integer SAVE(string uid)
+		local ds = _DataStorageService:GetUserDataStorage(uid)
+		
+		local data = {}
+		
+		data["FirstFreeCoin"] = tostring(self.FirstFreeCoin)
+		data["FirstPaidCoin"] = tostring(self.FirstPaidCoin)
+		data["SecondFreeCoin"] = tostring(self.SecondFreeCoin)
+		data["SecondPaidCoin"] = tostring(self.SecondPaidCoin)
+		
+		local save =  _HttpService:JSONEncode(data)
+		
+		log(save)
+		
+		return ds:SetAndWait("COIN",save)
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer LOAD(string uid)
+		local ds = _DataStorageService:GetUserDataStorage(uid)
+		
+		local errCode, res = ds:GetAndWait("COIN")
+		if errCode ~= 0 then
+			return errCode
+		end
+		
+		local resTable = _HttpService:JSONDecode(res)
+		
+		self.FirstFreeCoin = resTable["FirstFreeCoin"]
+		self.FirstPaidCoin = resTable["FirstPaidCoin"]
+		self.SecondFreeCoin = resTable["SecondFreeCoin"]
+		self.SecondPaidCoin = resTable["SecondPaidCoin"]
+		
+		return 0
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer LOAD_OR_INIT(string uid)
+		local errCode = self:LOAD(uid)
+		
+		if errCode == 1000002 then
+			self.FirstFreeCoin = 0
+			self.FirstPaidCoin = 0
+			self.SecondFreeCoin = 0
+			self.SecondPaidCoin = 0
+			
+			return self:SAVE(uid)
+		end
+		
+		if errCode > 0 then
+			log_error(uid, "BILLING SERVICE FAIL TO GET OR CREATE, code: ", errCode)
+			_UserService:KickUser(uid, KickReason.WorldError)
+		end
+		
+		return 0
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer PurchaseFirstCoin(string userId, string productId)
+		local loadErr =  self:LOAD(userId) 
+		if loadErr ~= 0 then
+			return loadErr
+		end
+		
+		return self:SAVE(userId)
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer PurchaseSecondCoin(string userId, string productId)
+		local loadErr =  self:LOAD(userId) 
+		if loadErr ~= 0 then
+			return loadErr
+		end
+		
+		return self:SAVE(userId)
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer ExchangeCoin(string userId, string productId)
+		local loadErr =  self:LOAD(userId) 
+		if loadErr ~= 0 then
+			return loadErr
+		end
+		
+		return self:SAVE(userId)
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer UseFirstCoin(string userId, integer usage)
+		local loadErr =  self:LOAD(userId) 
+		if loadErr ~= 0 then
+			return loadErr
+		end
+		
+		return self:SAVE(userId)
+	end
+
+	@ExecSpace("ServerOnly")
+	method integer UseSecondCoin(string userId, integer usage)
+		local loadErr =  self:LOAD(userId) 
+		if loadErr ~= 0 then
+			return loadErr
+		end
+		
+		return self:SAVE(userId)
+	end
+
+	@ExecSpace("Server")
+	method integer AddFirstFreeCoin(string userId, integer addCoin)
+		local loadErr =  self:LOAD(userId) 
+		if loadErr ~= 0 then
+			return loadErr
+		end
+		
+		if addCoin <= 0 then
+			return 11
+		end
+		
+		self.FirstFreeCoin += addCoin
+		
+		return self:SAVE(userId)
+	end
+
+	@ExecSpace("Server")
+	method integer AddSecondFreeCoin(string userId, integer addCoin)
+		local loadErr =  self:LOAD(userId) 
+		if loadErr ~= 0 then
+			return loadErr
+		end
+		
+		if addCoin <= 0 then
+			return 12
+		end
+		
+		log("ADD SECOND COIN", addCoin,"TO USER", userId)
+		
+		self.SecondFreeCoin += addCoin
+		
+		return self:SAVE(userId)
+	end
+
+	@ExecSpace("ServerOnly")
+	@EventSender("Service", "UserService")
+	handler HandleUserLeaveEvent(UserLeaveEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: UserService
+		-- Space: Server
+		---------------------------------------------------------
+		
+		-- Parameters
+		local ProfileCode = event.ProfileCode
+		local UserId = event.UserId
+		
+		self:SAVE(UserId)
+	end
+
+end

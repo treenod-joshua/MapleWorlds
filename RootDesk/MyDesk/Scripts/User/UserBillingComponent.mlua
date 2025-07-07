@@ -1,0 +1,45 @@
+@Component
+script UserBillingComponent extends Component
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		local uid = self.Entity.PlayerComponent.UserId
+		local res = _BillingService:LOAD_OR_INIT(uid)
+		log(uid, " result of _BillingService:LOAD_OR_INIT ", res)
+	end
+
+	@ExecSpace("ClientOnly")
+	method integer GetFirstCoin()
+		local uid = self.Entity.PlayerComponent.UserId
+		local freeCoin = _BillingService.FirstFreeCoin
+		local paidCoin = _BillingService.FirstPaidCoin
+		
+		if freeCoin < 0 then
+			return -1
+		end
+		
+		if paidCoin < 0 then
+			return -1
+		end
+		
+		return freeCoin + paidCoin
+	end
+
+	@ExecSpace("ClientOnly")
+	method integer GetSecondCoin()
+		local uid = self.Entity.PlayerComponent.UserId
+		local freeCoin = _BillingService.SecondFreeCoin
+		local paidCoin = _BillingService.SecondPaidCoin
+		
+		if freeCoin < 0 then
+			return -1
+		end
+		
+		if paidCoin < 0 then
+			return -1
+		end
+		
+		return freeCoin + paidCoin
+	end
+
+end

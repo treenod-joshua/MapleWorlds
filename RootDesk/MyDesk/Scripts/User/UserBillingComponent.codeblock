@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://c3d47041-37e0-4fcb-aabb-c41d6844e3f1",
+  "EntryKey": "codeblock://ac551fe9-8f04-42dd-8f68-f1a2ba04a533",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -19,12 +19,12 @@
       },
       "ScriptVersion": {
         "Major": 1,
-        "Minor": 0
+        "Minor": 1
       },
       "Description": "",
-      "Id": "c3d47041-37e0-4fcb-aabb-c41d6844e3f1",
+      "Id": "ac551fe9-8f04-42dd-8f68-f1a2ba04a533",
       "Language": 1,
-      "Name": "UIMyInfoMain",
+      "Name": "UserBillingComponent",
       "Type": 1,
       "Source": 0,
       "Target": null

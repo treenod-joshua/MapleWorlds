@@ -1,0 +1,29 @@
+@Component
+script UICoinInfo extends Component
+
+	@Sync
+	property TextComponent FirstCoin = nil
+
+	@Sync
+	property TextComponent SecondCoin = nil
+
+	@Sync
+	property TextComponent PlayCoin = nil
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		local currentPath = self.Entity.Path
+		self.FirstCoin = _EntityService:GetEntityByPath(currentPath .. "/UIFirstCoinPanel/TextCoin").TextComponent
+		self.SecondCoin = _EntityService:GetEntityByPath(currentPath .. "/UISecondCoinPanel/TextCoin").TextComponent
+		self.PlayCoin = _EntityService:GetEntityByPath(currentPath .. "/UIPlayCoinPanel/TextCoin").TextComponent
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		local userBillingComp = _UserService.LocalPlayer.UserBillingComponent
+		
+		self.FirstCoin.Text = tostring(userBillingComp:GetFirstCoin())
+		self.SecondCoin.Text = tostring(userBillingComp:GetSecondCoin())
+	end
+
+end

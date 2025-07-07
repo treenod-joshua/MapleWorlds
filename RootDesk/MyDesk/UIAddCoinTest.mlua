@@ -1,0 +1,40 @@
+@Component
+script UIAddCoinTest extends Component
+
+	@Sync
+	property string userId = ""
+
+	@Sync
+	property boolean IsFirstCoin = false
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		self.userId = _UserService.LocalPlayer.PlayerComponent.UserId
+	end
+
+	@ExecSpace("ClientOnly")
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		
+		log("add coin to " .. self.userId)
+		local res = 0
+		if self.IsFirstCoin == true then
+			res = _BillingService:AddFirstFreeCoin(self.userId, 100)
+		end
+		
+		if self.IsFirstCoin == false then
+			res = _BillingService:AddSecondFreeCoin(self.userId, 100)
+		end
+		
+		log("add result" .. res)
+	end
+
+end

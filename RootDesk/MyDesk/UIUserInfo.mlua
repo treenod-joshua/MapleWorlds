@@ -1,5 +1,5 @@
 @Component
-script UIMyInfoMain extends Component
+script UIUserInfo extends Component
 
 	property TextComponent myName = nil
 
@@ -7,10 +7,7 @@ script UIMyInfoMain extends Component
 	method void OnBeginPlay()
 		local currentPath = self.Entity.Path
 		self.myName = _EntityService:GetEntityByPath(currentPath .. "/UIUserInfo").TextComponent
-	end
-
-	@ExecSpace("ClientOnly")
-	method void OnUpdate(number delta)
+		
 		if _UserService.LocalPlayer == nil then
 			return
 		end
