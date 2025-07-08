@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://0cca65cd-8ba3-4be3-9a5c-3697a48679e8",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Spiral_Vortex",
+      "BaseModelId": null,
+      "Id": "0cca65cd-8ba3-4be3-9a5c-3697a48679e8",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.Spiral_Vortex"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
