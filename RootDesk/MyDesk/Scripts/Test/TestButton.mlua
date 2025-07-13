@@ -20,6 +20,7 @@ script TestButton extends Component
 		-- local Entity = event.Entity
 		---------------------------------------------------------
 		_SpawnManager:Spawn(self.ID, 0)
+		_SpawnManager:SpawnEnemy(self.ID)
 	end
 
 end

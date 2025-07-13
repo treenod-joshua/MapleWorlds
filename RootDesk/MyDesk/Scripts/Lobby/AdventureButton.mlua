@@ -1,6 +1,11 @@
 @Component
 script AdventureButton extends Component
 
+	@ExecSpace("Server")
+	method void Function1()
+		_GameManager.isTest = true
+	end
+
 	@EventSender("Entity", "847fe505-dd41-4eef-89ab-c33aaceec548")
 	handler HandleButtonClickEvent(ButtonClickEvent event)
 		--------------- Native Event Sender Info ----------------
@@ -39,6 +44,25 @@ script AdventureButton extends Component
 		entity.Enable = true
 		entity.Visible = true
 		view.TestAnimScrollView:Init()
+	end
+
+	@EventSender("Entity", "6d1273b1-fd8b-49d2-a1e1-7dd81900a9fd")
+	handler HandleButtonClickEvent4(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		_LobbyManager.lobbyUI.Enable = false
+		
+		self:Function1()
+		-- 데이터 세팅 필요
+		
+		_TeleportService:TeleportToMapPosition(_UserService.LocalPlayer, Vector3.zero, "TestMap")
+		_GameManager:GameStart(1, 1)
 	end
 
 end

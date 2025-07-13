@@ -38,4 +38,8 @@ script Utils extends Logic
 		return 1
 	end
 
+	method string Function1()
+		
+	end
+
 end
