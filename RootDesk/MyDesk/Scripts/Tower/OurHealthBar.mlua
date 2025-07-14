@@ -1,16 +1,11 @@
 @Component
 script OurHealthBar extends Component
 
-	property TextComponent myName = nil
-
 	property SliderComponent myHP = nil
 
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
-		local currentPath = self.Entity.Path
-		self.myName = _EntityService:GetEntityByPath(currentPath .. "/Text_name").TextComponent
-		self.myHP = _EntityService:GetEntityByPath(currentPath .. "/HP_bar").SliderComponent
-		
+		self.myHP = self.Entity.SliderComponent
 		self.myHP.Value = 1
 	end
 
@@ -26,10 +21,6 @@ script OurHealthBar extends Component
 		end
 		
 		self.myHP.Value = playerTower.Unit.hp / playerTower.Unit.maxHP
-		
-		log("update hp", self.myHP.Value)
-		log("update hp", playerTower.Unit.hp)
-		log("update hp", playerTower.Unit.maxHP)
 	end
 
 end
