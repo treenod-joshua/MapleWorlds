@@ -1189,7 +1189,7 @@
                 "a": 1.0
               },
               "FillRectImageRUID": {
-                "DataId": "48611b3a163a46ceb0d19c625b730213"
+                "DataId": "513642590f7e41c1b96b28cb2c5c60dd"
               },
               "FillRectPadding": {
                 "left": 3,
@@ -1827,7 +1827,7 @@
       {
         "id": "f13faf2f-4e20-4065-aab7-7ec65e6daee9",
         "path": "/ui/Ingame_Info_UI_Group/CenterUI",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.EnemyHealthBar",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "CenterUI",
           "path": "/ui/Ingame_Info_UI_Group/CenterUI",
@@ -1958,14 +1958,6 @@
               "RaycastTarget": false,
               "Type": 1,
               "Enable": true
-            },
-            {
-              "@type": "script.EnemyHealthBar",
-              "Enable": true,
-              "myHP": {
-                "IsRelative": false,
-                "ComponentId": "e428c7de-bb19-470b-ab06-1b0128932a8f:SliderComponent"
-              }
             }
           ],
           "@version": 1
@@ -2226,7 +2218,7 @@
       {
         "id": "06ff416c-e15b-4b9c-8f2c-1bd2809a70d0",
         "path": "/ui/Ingame_Info_UI_Group/UserInfo",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.EnemyHealthBar",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UserInfo",
           "path": "/ui/Ingame_Info_UI_Group/UserInfo",
@@ -2357,14 +2349,6 @@
               "RaycastTarget": false,
               "Type": 1,
               "Enable": true
-            },
-            {
-              "@type": "script.EnemyHealthBar",
-              "Enable": true,
-              "myHP": {
-                "IsRelative": false,
-                "ComponentId": "e428c7de-bb19-470b-ab06-1b0128932a8f:SliderComponent"
-              }
             }
           ],
           "@version": 1
