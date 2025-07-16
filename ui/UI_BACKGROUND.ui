@@ -253,7 +253,7 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "ImageRUID": {
-                "DataId": "6f4722d0577d457c80d8f75d4716e2b3"
+                "DataId": "7f69732de11449ffbcd1762fbf3e1e0b"
               },
               "MaterialId": "",
               "OverrideSorting": false,
@@ -351,7 +351,7 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "ImageRUID": {
-                "DataId": "7fc93009068349db9502b8e738b2511c"
+                "DataId": "7bbc82ac5fad494dbb3e259fcddb697c"
               },
               "MaterialId": "",
               "OverrideSorting": false,
