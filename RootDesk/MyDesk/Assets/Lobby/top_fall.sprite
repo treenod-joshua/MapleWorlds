@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "sprite://f72d4b3215554e7caf335ae0729addf3",
+  "ContentType": "x-mod/sprite",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "upload_keyname": "00/e0/00e0695f42384c1399da18f0bce6694b/sprite/f72d4b3215554e7caf335ae0729addf3/638882668144141969",
+      "upload_hash": "4227304D4EFCF9D6F1D1853CF7F3BC8599DF7FD7C3C680FF9C43DCDF9293C368",
+      "name": "top_fall",
+      "resource_guid": "f72d4b3215554e7caf335ae0729addf3",
+      "resource_version": "68779f3e9b18e3c3796e823f"
+    }
+  }
+}

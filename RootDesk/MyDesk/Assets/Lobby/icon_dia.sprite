@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "sprite://f7001858a22a40e7becd74d307aac218",
+  "ContentType": "x-mod/sprite",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "upload_keyname": "00/e0/00e0695f42384c1399da18f0bce6694b/sprite/f7001858a22a40e7becd74d307aac218/638882668139981798",
+      "upload_hash": "D38F7A3D46F9E9D7A74ABB145F948120A61E55B1BC711F7C46B9A075E04798E3",
+      "name": "icon_dia",
+      "resource_guid": "f7001858a22a40e7becd74d307aac218",
+      "resource_version": "68779f3e036813c6e85615a1"
+    }
+  }
+}

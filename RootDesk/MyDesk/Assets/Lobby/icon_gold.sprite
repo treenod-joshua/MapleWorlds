@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "sprite://8d0c62a4c2b242a6805166dee8b7570f",
+  "ContentType": "x-mod/sprite",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "upload_keyname": "00/e0/00e0695f42384c1399da18f0bce6694b/sprite/8d0c62a4c2b242a6805166dee8b7570f/638882668144009295",
+      "upload_hash": "B50ED5CCA1805CC23D25BEBE8B9D430A27539727FC1BD5C2AD52D705B009A541",
+      "name": "icon_gold",
+      "resource_guid": "8d0c62a4c2b242a6805166dee8b7570f",
+      "resource_version": "68779f3e5e183c1666ade078"
+    }
+  }
+}

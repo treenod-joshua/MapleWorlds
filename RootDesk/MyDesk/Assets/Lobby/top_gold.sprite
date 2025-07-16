@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "sprite://dbf78ea6acaa439f9dfe31521f9fa390",
+  "ContentType": "x-mod/sprite",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "upload_keyname": "00/e0/00e0695f42384c1399da18f0bce6694b/sprite/dbf78ea6acaa439f9dfe31521f9fa390/638882668144191511",
+      "upload_hash": "AEAF3D72B1B2E59C22FF9701D74EC26E9EC6014A406825D176EFF331B4D664C5",
+      "name": "top_gold",
+      "resource_guid": "dbf78ea6acaa439f9dfe31521f9fa390",
+      "resource_version": "68779f3ee60ea21d3686175e"
+    }
+  }
+}

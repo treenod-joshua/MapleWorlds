@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "sprite://d53b5ee8f5724311a7db639f50ebaa1c",
+  "ContentType": "x-mod/sprite",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "upload_keyname": "00/e0/00e0695f42384c1399da18f0bce6694b/sprite/d53b5ee8f5724311a7db639f50ebaa1c/638882668144112617",
+      "upload_hash": "F4BE3D07E200B9CC77492A4711FFE74ED91E11102CB06991C0B4C79D1FBAD94F",
+      "name": "navi_off",
+      "resource_guid": "d53b5ee8f5724311a7db639f50ebaa1c",
+      "resource_version": "68779f3eea7878c08225e568"
+    }
+  }
+}

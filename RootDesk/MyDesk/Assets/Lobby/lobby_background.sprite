@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "sprite://7fc93009068349db9502b8e738b2511c",
+  "ContentType": "x-mod/sprite",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "upload_keyname": "00/e0/00e0695f42384c1399da18f0bce6694b/sprite/7fc93009068349db9502b8e738b2511c/638882668135447396",
+      "upload_hash": "9EA1C22360E17A49F14615C2364B2EA78C05AD36263DDD69EFC9D18823A68007",
+      "name": "lobby_background",
+      "resource_guid": "7fc93009068349db9502b8e738b2511c",
+      "resource_version": "68779f3daa454efdd8d38106"
+    }
+  }
+}

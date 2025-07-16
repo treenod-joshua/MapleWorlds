@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "sprite://167f9bdd1e534d54b769f78747fa884c",
+  "ContentType": "x-mod/sprite",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.24.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "upload_keyname": "00/e0/00e0695f42384c1399da18f0bce6694b/sprite/167f9bdd1e534d54b769f78747fa884c/638882668139846335",
+      "upload_hash": "56D518F25DF66F67FE6C79AD70F3207B6059F208C539023CE76C90D9D73BAAD3",
+      "name": "icon_fall",
+      "resource_guid": "167f9bdd1e534d54b769f78747fa884c",
+      "resource_version": "68779f3e9b18e3c3796e823e"
+    }
+  }
+}
