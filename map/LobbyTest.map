@@ -56,8 +56,8 @@
           "name": "Background",
           "path": "/maps/LobbyTest/Background",
           "nameEditable": false,
-          "enable": false,
-          "visible": false,
+          "enable": true,
+          "visible": true,
           "localize": false,
           "displayOrder": 0,
           "pathConstraints": "///",
@@ -72,8 +72,8 @@
                 "b": 0.5019608,
                 "a": 0.7058824
               },
-              "TemplateRUID": "79cf249e1519401795aad717096dbf6f",
-              "Type": 3,
+              "TemplateRUID": "00b8dca73af940ed93bf6d25a5aae41e",
+              "Type": 1,
               "WebUrl": "7fc93009068349db9502b8e738b2511c",
               "Enable": true
             }
@@ -1528,30 +1528,6 @@
                   "tileIndex": 0
                 }
               ],
-              "Enable": true
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "d5ea5ebd-afff-43f4-b071-faab9eb3bf5e",
-        "path": "/maps/LobbyTest/MainUI",
-        "componentNames": "script.UIMain",
-        "jsonString": {
-          "name": "MainUI",
-          "path": "/maps/LobbyTest/MainUI",
-          "nameEditable": true,
-          "enable": true,
-          "visible": false,
-          "localize": false,
-          "displayOrder": 3,
-          "pathConstraints": "///",
-          "revision": 1,
-          "modelId": null,
-          "@components": [
-            {
-              "@type": "script.UIMain",
               "Enable": true
             }
           ],

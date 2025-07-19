@@ -1,16 +1,25 @@
 @Component
 script UIMain extends Component
 
+	@Sync
+	property boolean IsUserVisible = true
+
 	@ExecSpace("ClientOnly")
 	method void OnMapEnter(Entity enteredMap)
-		local MainUIEntity = _EntityService:GetEntityByPath("/ui/UI_MONEY")
-		MainUIEntity:SetEnable(true)
-		
-		local BackgroundUI = _EntityService:GetEntityByPath("/ui/UI_BACKGROUND")
-		BackgroundUI:SetEnable(true)
-		
-		local oldUIEntity = _EntityService:GetEntityByPath("/ui/Lobby_UI")
-		oldUIEntity:SetEnable(false)
+		if enteredMap.Name == "LobbyTest" then
+			local MainUIEntity = _EntityService:GetEntityByPath("/ui/UI_MONEY")
+			MainUIEntity:SetEnable(true)
+			
+			local oldUIEntity = _EntityService:GetEntityByPath("/ui/Lobby_UI")
+			oldUIEntity:SetEnable(false)
+			
+			self.IsUserVisible = false
+		end
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnUpdate(number delta)
+		self.Entity:SetVisible(self.IsUserVisible)
 	end
 
 end

@@ -21,7 +21,8 @@
         "script.PlayerCharacter",
         "script.UserData",
         "script.AvatarAnimationComponent",
-        "script.UserBillingComponent"
+        "script.UserBillingComponent",
+        "script.UIMain"
       ],
       "Properties": [],
       "Values": [

@@ -23,8 +23,8 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
-          "displayOrder": 8,
+          "localize": true,
+          "displayOrder": 0,
           "pathConstraints": "//",
           "revision": 1,
           "origin": {
@@ -109,7 +109,7 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 0,
           "pathConstraints": "///",
           "revision": 1,
@@ -149,6 +149,11 @@
                 "x": 0.0,
                 "y": 0.0
               },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
               "Position": {
                 "x": 0.0,
                 "y": 0.0,
@@ -160,6 +165,7 @@
                 "z": 0.0,
                 "w": 1.0
               },
+              "ZRotation": 0.0,
               "Enable": true
             }
           ],
@@ -176,7 +182,7 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 0,
           "pathConstraints": "////",
           "revision": 1,
@@ -274,7 +280,7 @@
           "nameEditable": true,
           "enable": true,
           "visible": true,
-          "localize": false,
+          "localize": true,
           "displayOrder": 1,
           "pathConstraints": "////",
           "revision": 1,
