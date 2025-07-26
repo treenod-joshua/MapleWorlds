@@ -15,12 +15,20 @@ script UnitShopItem extends Component
 	property Entity priceLabel = nil
 
 	@Sync
+	property Entity unitAvartarRenderer = nil
+
+	@Sync
 	property integer id = 0
 
 	@Sync
 	property UnitShop shop = nil
 
 	property Entity unitInfoUI = "cc09e962-b96a-4b3f-a20e-e48ff46bd5ef"
+
+	property integer shopItemIndex = 0
+
+	@Sync
+	property Entity unitEntity = nil
 
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
@@ -32,9 +40,10 @@ script UnitShopItem extends Component
 		self.unitSprite = self.Entity.Children[1]
 		self.priceSprite = self.Entity.Children[2]
 		self.priceLabel = self.Entity.Children[3]
+		self.unitAvartarRenderer = self.Entity.Children[4]
 	end
 
-	@ExecSpace("ClientOnly")
+	@ExecSpace("Client")
 	method void Initialize(table unitData, integer id, UnitShop shop, table skillData)
 		self.unitData = unitData
 		self.id = id
@@ -46,9 +55,40 @@ script UnitShopItem extends Component
 		self:SetLabel()
 	end
 
-	@ExecSpace("ClientOnly")
+	@ExecSpace("Client")
 	method void SetSprite()
-		self.unitSprite.SpriteGUIRendererComponent.ImageRUID = self.unitData['ImageRUID']
+		if self.unitData['isUsableCharacter'] == 0 then
+			self.unitAvartarRenderer.Visible = false
+			self.unitSprite.SpriteGUIRendererComponent.ImageRUID = self.unitData['ImageRUID']
+		else
+			self.unitSprite.Visible = false
+			self:SetCostume()
+		end
+		
+	end
+
+	method void SetCostume()
+		local entity = _SpawnService:SpawnByModelId(self.unitData['id'], "Pig", Vector3.zero, self.Entity)
+		entity.Visible = false
+		entity.Enable = false
+		
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomBodyEquip = entity.CostumeManagerComponent.CustomBodyEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomCapEquip = entity.CostumeManagerComponent.CustomCapEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomCapeEquip = entity.CostumeManagerComponent.CustomCapeEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomCoatEquip = entity.CostumeManagerComponent.CustomCoatEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomEarAccessoryEquip = entity.CostumeManagerComponent.CustomEarAccessoryEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomEarEquip = entity.CostumeManagerComponent.CustomEarEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomEyeAccessoryEquip = entity.CostumeManagerComponent.CustomEyeAccessoryEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomFaceAccessoryEquip = entity.CostumeManagerComponent.CustomFaceAccessoryEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomFaceEquip = entity.CostumeManagerComponent.CustomFaceEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomGloveEquip = entity.CostumeManagerComponent.CustomGloveEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomHairEquip = entity.CostumeManagerComponent.CustomHairEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomLongcoatEquip = entity.CostumeManagerComponent.CustomLongcoatEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomOneHandedWeaponEquip = entity.CostumeManagerComponent.CustomOneHandedWeaponEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomPantsEquip = entity.CostumeManagerComponent.CustomPantsEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomShoesEquip = entity.CostumeManagerComponent.CustomShoesEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomSubWeaponEquip = entity.CostumeManagerComponent.CustomSubWeaponEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomTwoHandedWeaponEquip = entity.CostumeManagerComponent.CustomTwoHandedWeaponEquip
 	end
 
 	method void SetLabel()
@@ -57,15 +97,6 @@ script UnitShopItem extends Component
 
 	@EventSender("Self")
 	handler HandleButtonClickEvent(ButtonClickEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: ButtonComponent
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local Entity = event.Entity
-		---------------------------------------------------------
-		
 		if not _SpawnManager:IsCanSpawn(self.unitData['summonCost'])then
 			return
 		end
@@ -76,16 +107,6 @@ script UnitShopItem extends Component
 
 	@EventSender("Self")
 	handler HandleUITouchDownEvent(UITouchDownEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: UITouchReceiveComponent
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local Entity = event.Entity
-		-- local TouchId = event.TouchId
-		-- local TouchPoint = event.TouchPoint
-		---------------------------------------------------------
 		if event.TouchId ~= -2 then
 			return
 		end 
@@ -96,18 +117,29 @@ script UnitShopItem extends Component
 
 	@EventSender("Self")
 	handler HandleUITouchExitEvent(UITouchExitEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: UITouchReceiveComponent
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local Entity = event.Entity
-		-- local TouchId = event.TouchId
-		-- local TouchPoint = event.TouchPoint
-		------------------------------------------------------
-		
 		self.unitInfoUI.Visible = false
+	end
+
+	@EventSender("Service", "InputService")
+	handler HandleKeyDownEvent(KeyDownEvent event)
+		local isKeyDown = false
+		
+		if event.key == KeyboardKey.Q and self.shopItemIndex == 1 then
+			isKeyDown = true
+		elseif event.key == KeyboardKey.W and self.shopItemIndex == 2 then
+			isKeyDown = true
+		elseif event.key == KeyboardKey.E and self.shopItemIndex == 3 then
+			isKeyDown = true
+		elseif event.key == KeyboardKey.R and self.shopItemIndex == 4 then
+			isKeyDown = true	
+		end
+		
+		if not isKeyDown or not _SpawnManager:IsCanSpawn(self.unitData['summonCost']) then
+			return
+		end
+		
+		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
+		self.shop:OnSpawn(self.id)
 	end
 
 end

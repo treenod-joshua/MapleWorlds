@@ -9,6 +9,8 @@ script GameManager extends Logic
 
 	property Entity infoUI = "a07f182a-214a-414d-b995-9863eaa71d62"
 
+	property Entity unitShop = "fa5581b7-25d8-40c7-8b0f-ea16534303e2"
+
 	@Sync
 	property integer chapterIndex = 0
 
@@ -109,6 +111,8 @@ script GameManager extends Logic
 		self.shopUI.Visible = true
 		self.infoUI.Enable = true
 		self.infoUI.Visible = true
+		
+		self.unitShop.UnitShop:InitShop()
 	end
 
 	@EventSender("Service", "InputService")
