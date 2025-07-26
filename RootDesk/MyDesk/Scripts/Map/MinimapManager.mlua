@@ -15,7 +15,7 @@ script MinimapManager extends Component
 		self.mapInfo["Bottom"] = currentMap.LeftBottom.y
 		self.mapInfo["Right"] = currentMap.RightTop.x
 		self.mapInfo["Top"] = currentMap.RightTop.x
-		self.mapInfo["Width"] = 400
+		self.mapInfo["Width"] = 300
 		self.mapInfo["Height"] = 192
 	end
 

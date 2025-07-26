@@ -6,6 +6,9 @@ script UnitShopItem extends Component
 	property table skillData = {}
 
 	@Sync
+	property Entity frameSprite = nil
+
+	@Sync
 	property Entity unitSprite = nil
 
 	@Sync
@@ -37,6 +40,7 @@ script UnitShopItem extends Component
 
 	@ExecSpace("ClientOnly")
 	method void SetEntity()
+		self.frameSprite = self.Entity
 		self.unitSprite = self.Entity.Children[1]
 		self.priceSprite = self.Entity.Children[2]
 		self.priceLabel = self.Entity.Children[3]
@@ -112,6 +116,12 @@ script UnitShopItem extends Component
 		end 
 		
 		self.unitInfoUI.Visible = true
+		
+		
+		local iconTransform = self.frameSprite.UITransformComponent
+		local iconPos = iconTransform.anchoredPosition
+		
+		self.unitInfoUI.UITransformComponent.anchoredPosition = Vector2(iconPos.x, iconPos.y + 150)
 		self.unitInfoUI.UnitInfo:UpdateInfo(self.unitData, self.skillData)
 	end
 

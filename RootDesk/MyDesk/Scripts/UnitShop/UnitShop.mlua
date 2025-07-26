@@ -31,7 +31,7 @@ script UnitShop extends Component
 	method void InitShop()
 		local shopItems = _EntityService:GetEntityByPath("/ui/Ingame_Shop_Group/UnitShop")
 		
-		for i = 1, 4 do
+		for i = 1, 5 do
 			self.shopItems[i] = shopItems.Children[i]
 			table.insert(self.summonDeck, i)
 		end
