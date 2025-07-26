@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://78e681e3ac004d80a1adca9874e198de",
+  "EntryKey": "directory://9f3ce172c1dc4c83bf95b0387062ee3d",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://78e681e3ac004d80a1adca9874e198de",
-      "name": "Prefab",
+      "entry_id": "directory://9f3ce172c1dc4c83bf95b0387062ee3d",
+      "name": "Lobby",
       "lock": false,
       "folding": false,
       "nameEditable": true

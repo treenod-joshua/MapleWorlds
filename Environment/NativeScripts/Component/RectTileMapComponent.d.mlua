@@ -37,15 +37,15 @@ script RectTileMapComponent extends Component
 	@Sync
 	property string TileSetRUID
 
-	---@description "Places tiles in a quadrangle area ""from"" to ""to"". tileIndex is the index number of the tile."
+	---@description "Places tiles in a quadrangle area \"\"from\"\" to \"\"to\"\". tileIndex is the index number of the tile."
 	---@sealed
 	method void BoxFill(int32 tileIndex, Vector2Int from, Vector2Int to) end
 
-	---@description "Places tiles in a quadrangle area from ""from"" to ""to"". tileName is the Name property of the tile."
+	---@description "Places tiles in a quadrangle area from \"\"from\"\" to \"\"to\"\". tileName is the Name property of the tile."
 	---@sealed
 	method void BoxFill(string tileName, Vector2Int from, Vector2Int to) end
 
-	---@description "Removes tiles in the quadrangle area ""from"" to ""to""."
+	---@description "Removes tiles in the quadrangle area \"\"from\"\" to \"\"to\"\"."
 	---@sealed
 	method void BoxRemove(Vector2Int from, Vector2Int to) end
 

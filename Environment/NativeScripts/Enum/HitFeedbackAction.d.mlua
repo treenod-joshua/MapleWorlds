@@ -1,6 +1,5 @@
 ---@sealed
 ---@description "This Enum is no longer used."
----@deprecated
 @Enum
 script HitFeedbackAction
 	---@description "This Enum is no longer used."

@@ -1,0 +1,4014 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "ui://701c6938-68d9-499a-b153-57f6aee2bcaf",
+  "ContentType": "x-mod/ui",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.25.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Binary",
+    "Entities": [
+      {
+        "id": "701c6938-68d9-499a-b153-57f6aee2bcaf",
+        "path": "/ui/LobbyInfoUI",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.UIGroupComponent,MOD.Core.CanvasGroupComponent",
+        "jsonString": {
+          "name": "LobbyInfoUI",
+          "path": "/ui/LobbyInfoUI",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 8,
+          "pathConstraints": "//",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uigroup",
+            "sub_entity_id": null
+          },
+          "modelId": "uigroup",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 1920.0,
+                "y": 1080.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UIGroupComponent",
+              "DefaultShow": false,
+              "GroupOrder": 8,
+              "GroupType": 2,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.CanvasGroupComponent",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "9fab3852-a065-42b0-a6b1-4321fc15780e",
+        "path": "/ui/LobbyInfoUI/MoneyUI",
+        "componentNames": "MOD.Core.UITransformComponent,script.UICoinInfo",
+        "jsonString": {
+          "name": "MoneyUI",
+          "path": "/ui/LobbyInfoUI/MoneyUI",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 619.6571,
+                "y": 508.0
+              },
+              "OffsetMin": {
+                "x": -319.6571,
+                "y": 408.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 939.3142,
+                "y": 100.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 150.0,
+                "y": 458.0
+              },
+              "Position": {
+                "x": 150.0,
+                "y": 458.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "script.UICoinInfo",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "476d94ed-a86b-47d2-8524-7309848ac4ab",
+        "path": "/ui/LobbyInfoUI/MoneyUI/UIPlayCoinPanel",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "UIPlayCoinPanel",
+          "path": "/ui/LobbyInfoUI/MoneyUI/UIPlayCoinPanel",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -183.1326,
+                "y": 27.23006
+              },
+              "OffsetMin": {
+                "x": -416.867218,
+                "y": -27.23006
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 233.7346,
+                "y": 54.46012
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": -299.9999,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": -299.9999,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "60df7ce880fe4d39bd7c4ff7f9843449"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "PreserveSprite": 0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "cd189c5f-dc67-4fc9-827a-af573b981cbe",
+        "path": "/ui/LobbyInfoUI/MoneyUI/UIPlayCoinPanel/TextCoin",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
+        "jsonString": {
+          "name": "TextCoin",
+          "path": "/ui/LobbyInfoUI/MoneyUI/UIPlayCoinPanel/TextCoin",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "/////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UIText",
+            "sub_entity_id": null
+          },
+          "modelId": "uitext",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 10,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -10.0,
+                "y": 30.0
+              },
+              "OffsetMin": {
+                "x": 60.0,
+                "y": -30.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 163.7346,
+                "y": 60.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 25.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 25.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "3e9d52ed52d64794bbd6f72bab8ee3d9"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "PreserveSprite": 0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 90.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 2.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 2.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TextComponent",
+              "Alignment": 5,
+              "Bold": false,
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "Font": 0,
+              "FontColor": {
+                "r": 0.9254902,
+                "g": 0.929411769,
+                "b": 0.929411769,
+                "a": 1.0
+              },
+              "FontSize": 27,
+              "MaxSize": 40,
+              "MinSize": 10,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.2
+              },
+              "OutlineDistance": {
+                "x": 2.0,
+                "y": -2.0
+              },
+              "OutlineWidth": 2.0,
+              "Overflow": 2,
+              "OverrideSorting": false,
+              "Padding": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+              },
+              "SizeFit": false,
+              "Text": "0",
+              "UseOutLine": true,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "b21b8426-bcca-47fa-bb8f-5fad9a31e03f",
+        "path": "/ui/LobbyInfoUI/MoneyUI/UIFirstCoinPanel",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "UIFirstCoinPanel",
+          "path": "/ui/LobbyInfoUI/MoneyUI/UIFirstCoinPanel",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 1,
+          "pathConstraints": "////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 121.360306,
+                "y": 27.23006
+              },
+              "OffsetMin": {
+                "x": -112.3743,
+                "y": -27.23006
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 233.7346,
+                "y": 54.46012
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 4.493,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 4.493,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "12d25f06e2584e3d80d41269dd17d2c2"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "PreserveSprite": 0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "a1c8e15d-ddae-4eef-8d87-b16fd8e8116b",
+        "path": "/ui/LobbyInfoUI/MoneyUI/UIFirstCoinPanel/TextCoin",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
+        "jsonString": {
+          "name": "TextCoin",
+          "path": "/ui/LobbyInfoUI/MoneyUI/UIFirstCoinPanel/TextCoin",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "/////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UIText",
+            "sub_entity_id": null
+          },
+          "modelId": "uitext",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 10,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -10.0,
+                "y": 30.0
+              },
+              "OffsetMin": {
+                "x": 60.0,
+                "y": -30.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 163.7346,
+                "y": 60.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 25.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 25.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "3e9d52ed52d64794bbd6f72bab8ee3d9"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "PreserveSprite": 0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 90.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 2.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 2.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TextComponent",
+              "Alignment": 5,
+              "Bold": false,
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "Font": 0,
+              "FontColor": {
+                "r": 0.9254902,
+                "g": 0.929411769,
+                "b": 0.929411769,
+                "a": 1.0
+              },
+              "FontSize": 27,
+              "MaxSize": 40,
+              "MinSize": 10,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.2
+              },
+              "OutlineDistance": {
+                "x": 2.0,
+                "y": -2.0
+              },
+              "OutlineWidth": 2.0,
+              "Overflow": 2,
+              "OverrideSorting": false,
+              "Padding": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+              },
+              "SizeFit": false,
+              "Text": "0",
+              "UseOutLine": true,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "d5cbc892-cf49-4ae4-9f34-ef33a4f3dbd3",
+        "path": "/ui/LobbyInfoUI/MoneyUI/UISecondCoinPanel",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "UISecondCoinPanel",
+          "path": "/ui/LobbyInfoUI/MoneyUI/UISecondCoinPanel",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 2,
+          "pathConstraints": "////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 416.8673,
+                "y": 27.23006
+              },
+              "OffsetMin": {
+                "x": 183.13269,
+                "y": -27.23006
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 233.7346,
+                "y": 54.46012
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 300.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 300.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "36efcb2cfef544a7bef7b6d693b6f994"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "PreserveSprite": 0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "399b1d9b-b187-4780-858f-cff2b64af439",
+        "path": "/ui/LobbyInfoUI/MoneyUI/UISecondCoinPanel/TextCoin",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
+        "jsonString": {
+          "name": "TextCoin",
+          "path": "/ui/LobbyInfoUI/MoneyUI/UISecondCoinPanel/TextCoin",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "/////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UIText",
+            "sub_entity_id": null
+          },
+          "modelId": "uitext",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 10,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -10.0,
+                "y": 30.0
+              },
+              "OffsetMin": {
+                "x": 60.0,
+                "y": -30.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 163.7346,
+                "y": 60.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 25.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 25.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "3e9d52ed52d64794bbd6f72bab8ee3d9"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "PreserveSprite": 0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 90.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 2.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 2.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TextComponent",
+              "Alignment": 5,
+              "Bold": false,
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "Font": 0,
+              "FontColor": {
+                "r": 0.9254902,
+                "g": 0.929411769,
+                "b": 0.929411769,
+                "a": 1.0
+              },
+              "FontSize": 27,
+              "MaxSize": 40,
+              "MinSize": 10,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.2
+              },
+              "OutlineDistance": {
+                "x": 2.0,
+                "y": -2.0
+              },
+              "OutlineWidth": 2.0,
+              "Overflow": 2,
+              "OverrideSorting": false,
+              "Padding": {
+                "left": 0,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+              },
+              "SizeFit": false,
+              "Text": "0",
+              "UseOutLine": true,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "74993b66-4341-412a-a880-d35ed90464c9",
+        "path": "/ui/LobbyInfoUI/UserDeckUI",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "UserDeckUI",
+          "path": "/ui/LobbyInfoUI/UserDeckUI",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 50.0,
+                "y": 50.0000153
+              },
+              "OffsetMin": {
+                "x": -50.0,
+                "y": -49.9999847
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 100.0,
+                "y": 100.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 1.70620879E-05
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 1.70620879E-05,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "27ff1052-c8b4-41b5-b5d1-23e324320eeb",
+        "path": "/ui/LobbyInfoUI/StageSelectUI",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "StageSelectUI",
+          "path": "/ui/LobbyInfoUI/StageSelectUI",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 2,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -200.0,
+                "y": -200.0
+              },
+              "OffsetMin": {
+                "x": 200.0,
+                "y": 200.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 1520.0,
+                "y": 680.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "4d40b9ff-cdef-419f-99dd-452137132cfe",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ScrollLayoutGroupComponent",
+        "jsonString": {
+          "name": "StageSelectScroll",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -1040.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 480.0,
+                "y": 680.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": -520.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": -520.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "adf619e2efc84d4ab93e5236b73771c7"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ScrollLayoutGroupComponent",
+              "CellSize": {
+                "x": 600.0,
+                "y": 100.0
+              },
+              "Constraint": 0,
+              "ConstraintCount": 1,
+              "GridSpacing": {
+                "x": 10.0,
+                "y": 10.0
+              },
+              "HorizontalScrollBarDirection": 0,
+              "OverrideSorting": false,
+              "Padding": {
+                "left": 20,
+                "right": 20,
+                "top": 20,
+                "bottom": 20
+              },
+              "ReverseArrangement": false,
+              "ScrollBarBackgroundColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.4
+              },
+              "ScrollBarHandleColor": {
+                "r": 0.5,
+                "g": 0.5,
+                "b": 0.5,
+                "a": 1.0
+              },
+              "ScrollBarThickness": 20.0,
+              "ScrollBarVisible": 1,
+              "Spacing": 5.0,
+              "StartAxis": 0,
+              "StartCorner": 0,
+              "Type": 1,
+              "UseScroll": true,
+              "VerticalScrollBarDirection": 2,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "b844ad9b-cb71-4334-be37-00b71fa894d1",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_1",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "Select_1",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_1",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 4,
+              "AnchorsMax": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 460.0,
+                "y": -20.0
+              },
+              "OffsetMin": {
+                "x": 20.0,
+                "y": -88.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 240.0,
+                "y": -54.0
+              },
+              "Position": {
+                "x": 240.0,
+                "y": -54.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ab9ffed0-5774-46b1-8ddc-7d4eb5d382a5",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_1/LockImage",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "LockImage",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_1/LockImage",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "//////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "1c4bbbf764e84f0482d4482cdcae9f57"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "b801a85e-ab5c-458c-8df3-7c15fd0070da",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_1/StageSelect",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "jsonString": {
+          "name": "StageSelect",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_1/StageSelect",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "//////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "e4d4f1bad154412b8ac75fd01b1ba3f5"
+              },
+              "OverrideSorting": false,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "dcad47fb-a8e1-4a54-acd4-12639a12fd45",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_2",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "Select_2",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_2",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 4,
+              "AnchorsMax": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 460.0,
+                "y": -93.0
+              },
+              "OffsetMin": {
+                "x": 20.0,
+                "y": -161.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 240.0,
+                "y": -127.0
+              },
+              "Position": {
+                "x": 240.0,
+                "y": -127.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "b81c4858-9eb7-449b-97a9-6398da1bd09a",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_2/LockImage",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "LockImage",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_2/LockImage",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "//////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "1c4bbbf764e84f0482d4482cdcae9f57"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "47cbef71-3567-4539-abb3-ed24d6542dcd",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_2/StageSelect",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "jsonString": {
+          "name": "StageSelect",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_2/StageSelect",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "//////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "e4d4f1bad154412b8ac75fd01b1ba3f5"
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ce510323-cdbc-41bd-8692-aaf0a57897ed",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_3",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "Select_3",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_3",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 2,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 4,
+              "AnchorsMax": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 460.0,
+                "y": -166.0
+              },
+              "OffsetMin": {
+                "x": 20.0,
+                "y": -234.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 240.0,
+                "y": -200.0
+              },
+              "Position": {
+                "x": 240.0,
+                "y": -200.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "0e5849cc-4336-40cc-ba94-21e926f8043c",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_3/LockImage",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "LockImage",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_3/LockImage",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "//////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "1c4bbbf764e84f0482d4482cdcae9f57"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "11f53032-a13e-4898-b1d9-e7e96911e51b",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_3/StageSelect",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "jsonString": {
+          "name": "StageSelect",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_3/StageSelect",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "//////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "e4d4f1bad154412b8ac75fd01b1ba3f5"
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "e051a131-0576-4a60-bbc2-7e65895712e7",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_4",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "Select_4",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_4",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 3,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 4,
+              "AnchorsMax": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 460.0,
+                "y": -239.0
+              },
+              "OffsetMin": {
+                "x": 20.0,
+                "y": -307.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 240.0,
+                "y": -273.0
+              },
+              "Position": {
+                "x": 240.0,
+                "y": -273.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "563c363a-8542-42bf-ae2b-9dfd90a3bb87",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_4/LockImage",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "LockImage",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_4/LockImage",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "//////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "1c4bbbf764e84f0482d4482cdcae9f57"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "50784aa8-3064-4539-81c7-815f4723ded7",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_4/StageSelect",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "jsonString": {
+          "name": "StageSelect",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_4/StageSelect",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "//////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "e4d4f1bad154412b8ac75fd01b1ba3f5"
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "5dca8530-bb4e-46ae-b582-a620fb2f5ee3",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_5",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "Select_5",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_5",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 4,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 4,
+              "AnchorsMax": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 460.0,
+                "y": -312.0
+              },
+              "OffsetMin": {
+                "x": 20.0,
+                "y": -380.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 240.0,
+                "y": -346.0
+              },
+              "Position": {
+                "x": 240.0,
+                "y": -346.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "99ff3b6b-67c7-47cc-aad5-de70d5cdf0d0",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_5/UISprite",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "UISprite",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_5/UISprite",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "//////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OffsetMin": {
+                "x": -1.0,
+                "y": -1.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 442.0,
+                "y": 70.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "9f1eeeee3536440d92f146b70e66457f"
+              },
+              "OverrideSorting": false,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "RaycastTarget": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "9c2734e8-4bb4-4be4-b217-d01baa289ba3",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_5/LockImage",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "LockImage",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_5/LockImage",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "//////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "1c4bbbf764e84f0482d4482cdcae9f57"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "a2d59a74-c95a-4e3d-acf5-6ae8992ac453",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_5/StageSelect",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "jsonString": {
+          "name": "StageSelect",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_5/StageSelect",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 2,
+          "pathConstraints": "//////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "e4d4f1bad154412b8ac75fd01b1ba3f5"
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "d699ca27-d21f-43b6-aa44-b9a3f314ba63",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_6",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "Select_6",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_6",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 5,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 4,
+              "AnchorsMax": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 460.0,
+                "y": -385.0
+              },
+              "OffsetMin": {
+                "x": 20.0,
+                "y": -453.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 240.0,
+                "y": -419.0
+              },
+              "Position": {
+                "x": 240.0,
+                "y": -419.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "f6fdad75-86ca-4a39-b474-46f3945b0b5d",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_6/LockImage",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "LockImage",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_6/LockImage",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "//////",
+          "revision": 0,
+          "origin": {
+            "type": "Model",
+            "entry_id": "UISprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "AnimClipPlayType": 0,
+              "EndFrameIndex": 2147483647,
+              "ImageRUID": {
+                "DataId": "1c4bbbf764e84f0482d4482cdcae9f57"
+              },
+              "LocalPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "OverrideSorting": false,
+              "PlayRate": 1.0,
+              "SortingLayer": "MapLayer0",
+              "StartFrameIndex": 0,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "DropShadow": false,
+              "DropShadowAngle": 30.0,
+              "DropShadowColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.72
+              },
+              "DropShadowDistance": 32.0,
+              "FillAmount": 1.0,
+              "FillCenter": true,
+              "FillClockWise": true,
+              "FillMethod": 0,
+              "FillOrigin": 0,
+              "FlipX": false,
+              "FlipY": false,
+              "FrameColumn": 1,
+              "FrameRate": 0,
+              "FrameRow": 1,
+              "Outline": false,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 3.0,
+              "RaycastTarget": true,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "e7ec3b47-87ae-4cbf-8869-e6903b84730e",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_6/StageSelect",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "jsonString": {
+          "name": "StageSelect",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageSelectScroll/Select_6/StageSelect",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "//////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 440.0,
+                "y": 68.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "e4d4f1bad154412b8ac75fd01b1ba3f5"
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": false
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "6f2a3df5-46e0-4b1b-a96d-923a3a4a4cb4",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "StageInfoPanel",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 1,
+          "pathConstraints": "////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 500.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 1020.0,
+                "y": 680.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 250.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 250.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "adf619e2efc84d4ab93e5236b73771c7"
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "92e2ddd9-53cc-4f7d-8ba8-8212ba98b351",
+        "path": "/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel/UISprite",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "UISprite",
+          "path": "/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel/UISprite",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 0,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "OffsetMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 1020.0,
+                "y": 680.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "6f5fe3cfb8504bee8dc7496bc025aad8"
+              },
+              "OverrideSorting": false,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "RaycastTarget": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "cc66e4c4-8f3a-4745-afb5-d316845c068e",
+        "path": "/ui/LobbyInfoUI/ChapterSelectUI",
+        "componentNames": "MOD.Core.UITransformComponent",
+        "jsonString": {
+          "name": "ChapterSelectUI",
+          "path": "/ui/LobbyInfoUI/ChapterSelectUI",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 3,
+          "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uiempty",
+            "sub_entity_id": null
+          },
+          "modelId": "uiempty",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 50.0,
+                "y": 50.0000153
+              },
+              "OffsetMin": {
+                "x": -50.0,
+                "y": -49.9999847
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 100.0,
+                "y": 100.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 1.70620879E-05
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 1.70620879E-05,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      }
+    ]
+  }
+}

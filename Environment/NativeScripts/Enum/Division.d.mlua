@@ -8,6 +8,8 @@ script Division
 	member Oregon = 1
 	---@description "The Frankfurt region."
 	member Frankfurt = 2
+	---@description "The Tokyo2 region."
+	member Tokyo2 = 3
 	---@description "An internal error has occurred."
 	member Unknown = -1
 

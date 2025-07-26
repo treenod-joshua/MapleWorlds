@@ -236,6 +236,8 @@ script Entity
 
 	emitter EmitEntityVisibleInHierarchyChangedEvent(EntityVisibleInHierarchyChangedEvent event) end
 
+	emitter EmitComponentEnabledInHierarchyChangedEvent(ComponentEnabledInHierarchyChangedEvent event) end
+
 	emitter EmitFadeInStartEvent(FadeInStartEvent event) end
 
 	emitter EmitFadeInEndEvent(FadeInEndEvent event) end

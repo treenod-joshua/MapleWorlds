@@ -11,7 +11,7 @@ script RoomService extends Service
 	---@sealed
 	readonly property string RoomKey
 
-	---@description "The key of the static room. A string constant (""__main__"") is used as the RoomKey of the static room."
+	---@description "The key of the static room. A string constant (\"\"__main__\"\") is used as the RoomKey of the static room."
 	---@sealed
 	readonly property string StaticRoomKey
 

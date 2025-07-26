@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://558744b2-cfa7-4acb-ba09-032320cdc544",
+  "EntryKey": "codeblock://53b55cb0-2fc9-4550-8b6b-34676f58602f",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,9 +22,9 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "558744b2-cfa7-4acb-ba09-032320cdc544",
+      "Id": "53b55cb0-2fc9-4550-8b6b-34676f58602f",
       "Language": 1,
-      "Name": "UIMain",
+      "Name": "LobbyUI",
       "Type": 1,
       "Source": 0,
       "Target": null

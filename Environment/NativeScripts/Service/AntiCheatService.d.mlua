@@ -1,0 +1,28 @@
+---@sealed
+---@description "This is the superclass of all Services. Provides basic functions of Service."
+@Service
+script AntiCheatService extends Service
+
+	---@sealed
+	@ExecSpace("ServerOnly")
+	method void LogValue(string userId, string name, string value, Dictionary<string, string> extras) end
+
+	---@sealed
+	@ExecSpace("ServerOnly")
+	method void SendActionLog(int32 type, string userId, table extra) end
+
+	---@sealed
+	@ExecSpace("ServerOnly")
+	method void SendHackLog(string userId, string title, table detail, int32 cnt) end
+
+	---@sealed
+	@ExecSpace("ClientOnly")
+	method int32 SendScreenShotLog(string desc) end
+
+	---@sealed
+	@ExecSpace("ServerOnly")
+	method boolean WarpAdminToWorldInstanceAndWait(string userId, string destinationWorldInstanceId) end
+
+	emitter EmitStartBotDetectionEvent(StartBotDetectionEvent event) end
+
+end
