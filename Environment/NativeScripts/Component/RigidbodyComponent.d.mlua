@@ -2,6 +2,14 @@
 @Component
 script RigidbodyComponent extends Component
 
+	---@description "Calibrates speed in midair. The higher the value, the faster the speed."
+	---@sealed
+	property float AirAccelerationX = 1
+
+	---@description "Calibrates how quickly x-axis movement speed stops when there is no input while in midair."
+	---@sealed
+	property float AirDecelerationX = 1
+
 	---@description "When true, the character on the rotating or slanted ladder will be affected by the shape of the ladder. When false, the character is not affected by the slant or rotation of the ladder."
 	---@sealed
 	@Sync
@@ -10,6 +18,18 @@ script RigidbodyComponent extends Component
 	---@description "Controls the speed of bouncing up when jumping down."
 	---@sealed
 	property float DownJumpSpeed = 2
+
+	---@description "If KinematicMove is true, jumping can be allowed or not allowed."
+	---@sealed
+	property boolean EnableKinematicMoveJump = true
+
+	---@description "Calibrates max x-axis speed limit while in the air."
+	---@sealed
+	property float FallSpeedMaxX = 1
+
+	---@description "Calibrates max y-axis speed limit while in the air."
+	---@sealed
+	property float FallSpeedMaxY = 1
 
 	---@description "Gravity value. Related to the drop velocity when moving mid-air. The bigger the input value, the faster the drop velocity is."
 	---@sealed
@@ -23,8 +43,8 @@ script RigidbodyComponent extends Component
 	---@sealed
 	property boolean IsBlockVerticalLine = false
 
-	---@description "This is a deprecated property. Use the RectTile mode."
-	---@deprecated
+	---@description "This property is deprecated. It will cease to function from core version 1.26.0.0 on. Please use the KinematicMove property."
+	---@obsolete
 	---@sealed
 	property boolean IsQuaterViewMove = false
 
@@ -35,6 +55,14 @@ script RigidbodyComponent extends Component
 	---@description "Sets the character's hang time when jumping."
 	---@sealed
 	property float JumpBias = 0.03
+
+	---@description "If true, movement will change to top-down vertical and horizontal movement."
+	---@sealed
+	property boolean KinematicMove = false
+
+	---@description "Set the movement speed. Operates if KinematicMove is true."
+	---@sealed
+	property Vector2 KinematicMoveAcceleration = Vector2(1.000, 1.000)
 
 	---@description "Sets the relationship between the RigidbodyComponent and SortingLayer values of foothold, ladder, and rope."
 	---@sealed
@@ -49,13 +77,13 @@ script RigidbodyComponent extends Component
 	---@sealed
 	property Vector2 MoveVelocity
 
-	---@description "This property is deprecated. Use the RectTile mode."
-	---@deprecated
+	---@description "This property is deprecated. It will cease to function from core version 1.26.0.0 on. Please use the KinematicMoveAcceleration property."
+	---@obsolete
 	---@sealed
 	property float QuaterViewAccelerationX = 1
 
-	---@description "This property is deprecated. Use the RectTile mode."
-	---@deprecated
+	---@description "This property is deprecated. It will cease to function from core version 1.26.0.0 on. Please use the KinematicMoveAcceleration property."
+	---@obsolete
 	---@sealed
 	property float QuaterViewAccelerationY = 1
 

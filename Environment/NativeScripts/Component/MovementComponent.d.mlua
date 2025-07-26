@@ -2,7 +2,7 @@
 @Component
 script MovementComponent extends Component
 
-	---@description "The X-axis force of the control. The higher the value is, the faster the movement speed. In the case of using KinematicbodyComponent, it also affects the Y-axis."
+	---@description "Set the movement speed. The higher the value, the faster the speed. If RigidbodyComponent is true, affects horizontal speed. If KinematicMove is true, affects both vertical and horizontal speed. If KinamaticbodyComponent is true, affects both vertical and horizontal speed. If SideviewbodyComponent is true, affects horizontal speed."
 	---@sealed
 	@Sync
 	property float InputSpeed = 1
@@ -12,7 +12,7 @@ script MovementComponent extends Component
 	@Sync
 	readonly property boolean IsClimbPaused = true
 
-	---@description "The Y-axis force of the manipulation. The bigger the value is, the higher the jump."
+	---@description "Set the jump strength. The bigger the value is, the higher the jump."
 	---@sealed
 	@Sync
 	property float JumpForce = 0

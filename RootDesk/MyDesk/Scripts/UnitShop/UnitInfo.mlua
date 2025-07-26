@@ -1,4 +1,16 @@
 @Component
 script UnitInfo extends Component
 
+	property Entity skillIcon = "ba388bea-827f-4d80-b794-a20574cc2ff3"
+
+	property Entity skillName = "8751e2b9-42ba-4922-b66c-6be51c3a3b0c"
+
+	property Entity skillDesc = "daecdffa-9216-47c8-bd8b-b7c1a61cb879"
+
+	method void UpdateInfo(table unitData, table skillData)
+		self.skillIcon.SpriteGUIRendererComponent.ImageRUID = unitData['ImageRUID']
+		self.skillName.TextComponent.Text = unitData['name']
+		self.skillDesc.TextComponent.Text = skillData['desc']
+	end
+
 end

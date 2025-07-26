@@ -27,7 +27,7 @@ script WorldInstanceService extends Service
 	@ExecSpace("ServerOnly")
 	method SharedMemoryResultCode, WorldInstanceSharedMemory GetSharedMemory(string name) end
 
-	---@description "Inquires about WorldInstanceInfo for the current World in page units. You can see the query result with the returned Entity. The script executions are suspended while performing."
+	---@description "Inquires about WorldInstanceInfo for the current World in page units. You can see the query result with the returned Entity. The script executions are suspended while performing. This function only works in the release environment. If executed in the Maker, false and nil will be returned."
 	---@sealed
 	@ReleaseOnly
 	@ExecSpace("ServerOnly")

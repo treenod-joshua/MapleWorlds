@@ -48,7 +48,8 @@ script UnitShop extends Component
 
 	method void SetShop()
 		for i, v in ipairs(self.summonDeck) do
-			self.shopItems[i].UnitShopItem:Initialize(_UnitService:GetUnitByIDFromCleint(self.summonPools[v]),i, self)
+			local unitData = _UnitService:GetUnitByIDFromCleint(self.summonPools[v])
+			self.shopItems[i].UnitShopItem:Initialize(unitData,i, self, _SkillService:GetSkillByIDFromClient(unitData['skillID']))
 		end
 	end
 

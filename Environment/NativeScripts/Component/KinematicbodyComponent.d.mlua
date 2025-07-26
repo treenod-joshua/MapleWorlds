@@ -1,4 +1,4 @@
----@description "Controls the movement of RigidbodyComponent and Entity. It provides convenient movement-related functions while easily modifying jumping power and speed."
+---@description "Vertical and horizontal movement and collision control for top-down gameplay with RectTiles. Gravity does not affect acceleration and deceleration. Used if the tile map is RectTile."
 @Component
 script KinematicbodyComponent extends Component
 

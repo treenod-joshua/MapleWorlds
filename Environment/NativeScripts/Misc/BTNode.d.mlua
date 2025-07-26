@@ -2,7 +2,7 @@
 @Misc
 script BTNode
 
-	---@description "Can use only when AIComponent's IsLegacy property's value is true. When the value is set up as true and the node is running, other nodes will not be executed."
+	---@description "This property is deprecated."
 	---@deprecated
 	---@sealed
 	property boolean ExclusiveExecutionWhenRunning = false

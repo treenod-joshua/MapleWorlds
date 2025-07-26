@@ -3,7 +3,6 @@ script SkillService extends Logic
 
 	property table skillTable = {}
 
-	@ExecSpace("ServerOnly")
 	method void OnBeginPlay()
 		local dataSet = _DataService:GetTable("Skill")    
 		for index = 1, dataSet:GetRowCount() do

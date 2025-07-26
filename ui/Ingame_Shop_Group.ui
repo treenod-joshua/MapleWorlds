@@ -7,7 +7,7 @@
   "Usage": 0,
   "UsePublish": 1,
   "UseService": 0,
-  "CoreVersion": "1.24.0.0",
+  "CoreVersion": "1.25.0.0",
   "StudioVersion": "0.1.0.0",
   "DynamicLoading": 0,
   "ContentProto": {
@@ -559,7 +559,7 @@
       {
         "id": "cb595dd5-566f-4345-a4b9-bdc63a3c0687",
         "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "UnitShopItem_1",
           "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_1",
@@ -690,6 +690,10 @@
             },
             {
               "@type": "script.UnitShopItem",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -983,7 +987,7 @@
       {
         "id": "a5e0b5b7-724c-4eb1-972e-ee08ad3c8750",
         "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "UnitShopItem_2",
           "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_2",
@@ -1115,6 +1119,10 @@
             },
             {
               "@type": "script.UnitShopItem",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -1410,7 +1418,7 @@
       {
         "id": "9810d44d-9a45-48d4-bb00-193106357e0e",
         "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "UnitShopItem_3",
           "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_3",
@@ -1542,6 +1550,10 @@
             },
             {
               "@type": "script.UnitShopItem",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -1837,7 +1849,7 @@
       {
         "id": "37ad596e-2db8-4222-9afd-c7188f3514c1",
         "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitShopItem,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "UnitShopItem_4",
           "path": "/ui/Ingame_Shop_Group/UnitShop/UnitShopItem_4",
@@ -1969,6 +1981,10 @@
             },
             {
               "@type": "script.UnitShopItem",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -4376,10 +4392,17 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "ImageRUID": {
-                "DataId": "eb25237c9c3d2f642a84bfb3c0cfd830"
+                "DataId": "e773ed45d24f4aaf826eb27a32a0ed80"
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "FlipX": false,
               "Outline": true,
               "OutlineColor": {
                 "r": 1.0,

@@ -3,6 +3,8 @@ script UnitShopItem extends Component
 
 	property table unitData = {}
 
+	property table skillData = {}
+
 	@Sync
 	property Entity unitSprite = nil
 
@@ -18,6 +20,8 @@ script UnitShopItem extends Component
 	@Sync
 	property UnitShop shop = nil
 
+	property Entity unitInfoUI = "cc09e962-b96a-4b3f-a20e-e48ff46bd5ef"
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		self:SetEntity()
@@ -31,10 +35,11 @@ script UnitShopItem extends Component
 	end
 
 	@ExecSpace("ClientOnly")
-	method void Initialize(table unitData, integer id, UnitShop shop)
+	method void Initialize(table unitData, integer id, UnitShop shop, table skillData)
 		self.unitData = unitData
 		self.id = id
 		self.shop = shop
+		self.skillData = skillData
 		
 		self:SetEntity()
 		self:SetSprite()
@@ -44,7 +49,6 @@ script UnitShopItem extends Component
 	@ExecSpace("ClientOnly")
 	method void SetSprite()
 		self.unitSprite.SpriteGUIRendererComponent.ImageRUID = self.unitData['ImageRUID']
-		-- self.unitSprite.SpriteGUIRendererComponent:SetNativeSize()
 	end
 
 	method void SetLabel()
@@ -68,6 +72,42 @@ script UnitShopItem extends Component
 		
 		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
 		self.shop:OnSpawn(self.id)
+	end
+
+	@EventSender("Self")
+	handler HandleUITouchDownEvent(UITouchDownEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: UITouchReceiveComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		-- local TouchId = event.TouchId
+		-- local TouchPoint = event.TouchPoint
+		---------------------------------------------------------
+		if event.TouchId ~= -2 then
+			return
+		end 
+		
+		self.unitInfoUI.Visible = true
+		self.unitInfoUI.UnitInfo:UpdateInfo(self.unitData, self.skillData)
+	end
+
+	@EventSender("Self")
+	handler HandleUITouchExitEvent(UITouchExitEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: UITouchReceiveComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		-- local TouchId = event.TouchId
+		-- local TouchPoint = event.TouchPoint
+		------------------------------------------------------
+		
+		self.unitInfoUI.Visible = false
 	end
 
 end
