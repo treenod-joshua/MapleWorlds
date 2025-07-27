@@ -1,0 +1,50 @@
+@Component
+script StageSelectItemUI extends Component
+
+	property Entity LockImage = nil
+
+	property Entity SelectImage = nil
+
+	property Entity EnabledButton = nil
+
+	property Entity DisabledButton = nil
+
+	method void SetImage(string newImageRUID)
+		self.EnabledButton.SpriteGUIRendererComponent.ImageRUID = newImageRUID
+		self.DisabledButton.SpriteGUIRendererComponent.ImageRUID = newImageRUID
+	end
+
+	method void SetSelected()
+		self.LockImage:SetVisible(false)
+		self.SelectImage:SetVisible(true)
+		self.EnabledButton:SetEnable(true)
+		self.DisabledButton:SetEnable(false)
+	end
+
+	method void SetNotSelected()
+		self.LockImage:SetVisible(false)
+		self.SelectImage:SetVisible(false)
+		self.EnabledButton:SetEnable(true)
+		self.DisabledButton:SetEnable(false)
+	end
+
+	method void SetLocked()
+		self.LockImage:SetVisible(true)
+		self.SelectImage:SetVisible(false)
+		self.EnabledButton:SetEnable(false)
+		self.DisabledButton:SetEnable(true)
+	end
+
+	method void AddCallback(any callback)
+		self.EnabledButton.StageSelectorClickHandler:AddCallback(callback)
+	end
+
+	method void Init()
+		local selfPath = self.Entity.Path
+		self.LockImage = _EntityService:GetEntityByPath(selfPath .. "/LockImage")
+		self.SelectImage = _EntityService:GetEntityByPath(selfPath .. "/SelectImage")
+		self.EnabledButton = _EntityService:GetEntityByPath(selfPath .. "/SelectButtonEnable")
+		self.DisabledButton = _EntityService:GetEntityByPath(selfPath .. "/SelectButtonDisable")
+	end
+
+end

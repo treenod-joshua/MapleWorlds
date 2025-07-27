@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "directory://1b6168afa5a44395a96a1f8f0b0a9a7f",
+  "ContentType": "x-mod/directory",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.25.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "entry_id": "directory://1b6168afa5a44395a96a1f8f0b0a9a7f",
+      "name": "StageSelect",
+      "lock": false,
+      "folding": false,
+      "nameEditable": true
+    }
+  }
+}
