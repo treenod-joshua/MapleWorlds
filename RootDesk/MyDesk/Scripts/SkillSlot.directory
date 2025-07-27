@@ -1,0 +1,23 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "directory://ce54ed20ca8e4cd7a4a93c1cee8cf657",
+  "ContentType": "x-mod/directory",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.25.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "entry_id": "directory://ce54ed20ca8e4cd7a4a93c1cee8cf657",
+      "name": "SkillSlot",
+      "lock": false,
+      "folding": false,
+      "nameEditable": true
+    }
+  }
+}

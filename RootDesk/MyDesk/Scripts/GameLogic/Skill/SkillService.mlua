@@ -9,12 +9,15 @@ script SkillService extends Logic
 		    local item = {}
 			
 			item['id'] = tostring(dataSet:GetCell(index, 'id'))
+			item['skillName'] = tostring(dataSet:GetCell(index, 'skillName'))
 			item['desc'] = tostring(dataSet:GetCell(index, 'desc'))
 			item['skillArea'] = tonumber(dataSet:GetCell(index, 'skillArea'))
 			item['skillAmount'] = tonumber(dataSet:GetCell(index, 'skillAmount'))
 			item['skillProjectileSpeed'] = tonumber(dataSet:GetCell(index, 'skillProjectileSpeed'))
 			item['skillTime'] = tonumber(dataSet:GetCell(index, 'skillTime'))
 			item['skillAttackTiming'] = tonumber(dataSet:GetCell(index, 'skillAttackTiming'))
+			item['coolTime'] = tonumber(dataSet:GetCell(index, 'coolTime'))
+			item['skillIcon'] = tostring(dataSet:GetCell(index, 'skillIcon'))
 			
 			self.skillTable[item['id']] = item
 		end

@@ -24,7 +24,7 @@ script AllAttack extends SkillParent
 			end
 		end
 		
-		_TimerService:SetTimerOnce(hitFunction, 3.85)
+		_TimerService:SetTimerOnce(hitFunction, self.skillAttackTiming)
 	end
 
 end

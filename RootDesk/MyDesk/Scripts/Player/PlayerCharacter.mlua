@@ -15,16 +15,36 @@ script PlayerCharacter extends Component
 
 	property table ingameSkills = {}
 
-	method void OnBeginPlay()
+	property table skillData1 = {}
+
+	property table skillData2 = {}
+
+	method void SetSkill(table skillData1, table skillData2)
+		self.skillData1 = skillData1
+		self.skillData2 = skillData2
 		
+		-- TODO : 아래 부분을 db나 데이터셋에서 장착한 스킬 바탕으로 생성해줘야 함.
+		-- 또 게임이 끝나면 생성된 스킬은 제거 필요
+		
+		self.skill1Entity = _SpawnService:SpawnByModelId(self.skillData1['id'],
+			"skill1",
+			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+			self.Entity)
+		
+		self.skill2Entity = _SpawnService:SpawnByModelId(self.skillData2['id'],
+			"skill2",
+			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
+			self.Entity)
 	end
 
-	method void SetSkill()
-		
-	end
-
-	method void UseSkill(string skillID)
-		
+	method void UseSkill(integer skillIndex)
+		if skillIndex == 1 then
+			self.skill1Entity.SkillParent:UseSkill(self.Entity, nil, self.skillData1['skillArea'], self.skillData1['skillAmount'], self.skillData1['skillProjectileSpeed']
+				, self.skillData1['skillTime'], self.skillData1['skillAttackTiming'])
+		else
+			self.skill2Entity.SkillParent:UseSkill(self.Entity, nil, self.skillData2['skillArea'], self.skillData2['skillAmount'], self.skillData2['skillProjectileSpeed']
+				, self.skillData2['skillTime'], self.skillData2['skillAttackTiming'])
+		end
 	end
 
 	@ExecSpace("ServerOnly")
@@ -32,40 +52,10 @@ script PlayerCharacter extends Component
 		if enteredMap.Name == "LobbyScene" then
 			self.Entity.Visible = false
 		end
-		
-		self.skill1Entity = _SpawnService:SpawnByModelId(self.skill1,
-			"skill1",
-			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
-			self.Entity)
-		
-		self.skill2Entity = _SpawnService:SpawnByModelId(self.skill2,
-			"skill2",
-			self.Entity.TransformComponent.WorldPosition + (Vector3.up * 0.3),
-			self.Entity)
-		
 	end
 
 	method void SetIngameSkill(number skillID, number skillLevel)
 		self.ingameSkills[skillID] = skillLevel;
-	end
-
-	@EventSender("Service", "InputService")
-	handler HandleKeyDownEvent(KeyDownEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: InputService
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local key = event.key
-		---------------------------------------------------------
-		if event.key == KeyboardKey.LeftControl then
-		--	self.skill1Entity.SkillParent:UseSkill(self.Entity, nil, nil, 1, nil, 3)
-		end
-		
-		if event.key == KeyboardKey.A then
-		--	self.skill2Entity.SkillParent:UseSkill(self.Entity, nil, nil, 100, nil, 3)		
-		end
 	end
 
 end

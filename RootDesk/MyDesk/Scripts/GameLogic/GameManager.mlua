@@ -11,6 +11,8 @@ script GameManager extends Logic
 
 	property Entity unitShop = "fa5581b7-25d8-40c7-8b0f-ea16534303e2"
 
+	property Entity skillSlots = "847312aa-e2d9-4375-9707-b0a2000cf8c0"
+
 	@Sync
 	property integer chapterIndex = 0
 
@@ -88,6 +90,7 @@ script GameManager extends Logic
 		self.chapterIndex = chapterIndex
 		self.mapIndex = mapIndex
 		
+		self:SetPlayerCharacter()
 		self:EnableUI()
 		-- 인게임 UI 활성화
 	end
@@ -113,6 +116,21 @@ script GameManager extends Logic
 		self.infoUI.Visible = true
 		
 		self.unitShop.UnitShop:InitShop()
+		
+		for i = 1, 2 do
+		    local child = self.skillSlots.Children[i]
+		    if child ~= nil then
+				child.SkillSlot:Initialize()
+		    end
+		end
+	end
+
+	@ExecSpace("Client")
+	method void SetPlayerCharacter()
+		local skill1 = _SkillService:GetSkillByIDFromClient('model://83d3e5b8-6dd5-4d93-83ce-e73d364ec46e')
+		local skill2 = _SkillService:GetSkillByIDFromClient('model://02330bcd-8b7c-4146-8d26-89f5e7aa953c')
+		
+		_UserService.LocalPlayer.PlayerCharacter:SetSkill(skill1, skill2)
 	end
 
 	@EventSender("Service", "InputService")

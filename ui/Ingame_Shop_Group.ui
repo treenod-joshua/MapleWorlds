@@ -3716,17 +3716,100 @@
         }
       },
       {
-        "id": "fcab51c6-6514-411d-a900-7e7c77e20d84",
-        "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_1",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "id": "847312aa-e2d9-4375-9707-b0a2000cf8c0",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots",
+        "componentNames": "MOD.Core.UITransformComponent",
         "jsonString": {
-          "name": "SkillSlot_1",
-          "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_1",
+          "name": "SkillSlots",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
-          "displayOrder": 5,
+          "displayOrder": 3,
+          "pathConstraints": "///",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 50.0002,
+                "y": 50.0002
+              },
+              "OffsetMin": {
+                "x": -49.9998,
+                "y": -49.9998
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 100.0,
+                "y": 100.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0002,
+                "y": 0.0002
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0002,
+                "y": 0.0002,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "fcab51c6-6514-411d-a900-7e7c77e20d84",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_1",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.SkillSlot,MOD.Core.UITouchReceiveComponent",
+        "jsonString": {
+          "name": "SkillSlot_1",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_1",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
           "pathConstraints": "////",
           "revision": 1,
           "origin": {
@@ -3749,12 +3832,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 345.0,
-                "y": -275.638
+                "x": 344.9997,
+                "y": -275.6381
               },
               "OffsetMin": {
-                "x": 195.0,
-                "y": -425.638
+                "x": 194.9997,
+                "y": -425.6381
               },
               "Pivot": {
                 "x": 0.5,
@@ -3772,12 +3855,12 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 270.0,
-                "y": -350.638
+                "x": 269.9997,
+                "y": -350.6381
               },
               "Position": {
-                "x": 270.0,
-                "y": -400.638,
+                "x": 269.9997,
+                "y": -400.6381,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -3846,6 +3929,15 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "script.SkillSlot",
+              "Enable": true,
+              "skillIndex": 1
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -3854,11 +3946,11 @@
       },
       {
         "id": "b9df6fb5-cf78-4557-8ccf-628161c76ad4",
-        "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_1/UnitSprite",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_1/SkillIcon",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
-          "name": "UnitSprite",
-          "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_1/UnitSprite",
+          "name": "SkillIcon",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_1/SkillIcon",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3923,7 +4015,7 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "ImageRUID": {
-                "DataId": "a1a253716b3549b39841dc0c33bb80d1"
+                "DataId": "8598af8e001f4aca9be71ce85e03b505"
               },
               "LocalScale": {
                 "x": 1.0,
@@ -3939,12 +4031,12 @@
         }
       },
       {
-        "id": "2554adbb-4b94-4d00-8e43-2728646770cb",
-        "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_1/PriceSprite",
+        "id": "8f3b1dc1-9b85-439a-8cf5-c5a75d9ca29b",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_1/CoolTimeSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
-          "name": "PriceSprite",
-          "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_1/PriceSprite",
+          "name": "CoolTimeSprite",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_1/CoolTimeSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3972,12 +4064,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 60.0003,
-                "y": -33.5958
+                "x": 59.5001,
+                "y": 65.0001
               },
               "OffsetMin": {
-                "x": -59.9997,
-                "y": -58.5958
+                "x": -60.4999,
+                "y": -54.9999
               },
               "Pivot": {
                 "x": 0.5,
@@ -3985,17 +4077,17 @@
               },
               "RectSize": {
                 "x": 120.0,
-                "y": 25.0
+                "y": 120.0
               },
               "UIMode": 1,
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 0.0003,
-                "y": -46.0958
+                "x": -0.4999008,
+                "y": 5.0001
               },
               "Position": {
-                "x": 0.0003,
-                "y": -46.0958,
+                "x": -0.4999008,
+                "y": 5.0001,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -4009,7 +4101,7 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "ImageRUID": {
-                "DataId": "507127bd90274cdebc5247dbe9ae392e"
+                "DataId": "e363fe71863482e40954b62b58bf4ac8"
               },
               "LocalScale": {
                 "x": 1.0,
@@ -4017,7 +4109,11 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
-              "Type": 1,
+              "FillAmount": 0.0,
+              "FillClockWise": false,
+              "FillMethod": 4,
+              "FillOrigin": 2,
+              "Type": 3,
               "Enable": true
             }
           ],
@@ -4025,12 +4121,12 @@
         }
       },
       {
-        "id": "2b1b406a-5fd3-43ee-9485-4b4155cc4722",
-        "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_1/PriceLabel",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
+        "id": "b61ca9f9-db39-4620-8b51-9300588bf769",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_1/KeySprite",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
-          "name": "PriceLabel",
-          "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_1/PriceLabel",
+          "name": "KeySprite",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_1/KeySprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4040,38 +4136,38 @@
           "revision": 1,
           "origin": {
             "type": "Model",
-            "entry_id": "uitext",
+            "entry_id": "uisprite",
             "sub_entity_id": null
           },
-          "modelId": "uitext",
+          "modelId": "uisprite",
           "@components": [
             {
               "@type": "MOD.Core.UITransformComponent",
-              "AlignmentOption": 1,
+              "AlignmentOption": 0,
               "AnchorsMax": {
-                "x": 0.0,
+                "x": 0.5,
                 "y": 0.5
               },
               "AnchorsMin": {
-                "x": 0.0,
+                "x": 0.5,
                 "y": 0.5
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 130.0,
-                "y": -36.0
+                "x": 62.5,
+                "y": 62.5
               },
               "OffsetMin": {
-                "x": 30.0,
-                "y": -56.0
+                "x": 37.5,
+                "y": 37.5
               },
               "Pivot": {
                 "x": 0.5,
                 "y": 0.5
               },
               "RectSize": {
-                "x": 100.0,
-                "y": 20.0
+                "x": 25.0,
+                "y": 25.0
               },
               "UIMode": 1,
               "UIScale": {
@@ -4081,12 +4177,12 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 80.0,
-                "y": -46.0
+                "x": 50.0,
+                "y": 50.0
               },
               "Position": {
-                "x": 5.0,
-                "y": -46.0,
+                "x": 50.0,
+                "y": 50.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -4104,34 +4200,23 @@
             },
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "d1d4c32ebd824797925ea5f2c1c497ce"
+              },
+              "LocalScale": {
+                "x": 1.25,
+                "y": 1.25
+              },
               "OverrideSorting": false,
+              "PreserveSprite": 2,
               "SortingLayer": "MapLayer0",
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.TextComponent",
-              "Alignment": 4,
-              "Bold": true,
-              "Font": 2,
-              "FontColor": {
+              "Color": {
                 "r": 1.0,
                 "g": 1.0,
                 "b": 1.0,
                 "a": 1.0
               },
-              "OutlineColor": {
-                "r": 0.0,
-                "g": 0.0,
-                "b": 0.0,
-                "a": 1.0
-              },
-              "OutlineDistance": {
-                "x": 1.0,
-                "y": -1.0
-              },
-              "OverrideSorting": false,
-              "Text": "10000",
-              "UseOutLine": true,
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -4140,16 +4225,16 @@
       },
       {
         "id": "568ee84c-535d-4ca8-bf96-b98ca123a04e",
-        "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_2",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_2",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.SkillSlot,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "SkillSlot_2",
-          "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_2",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_2",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
-          "displayOrder": 6,
+          "displayOrder": 1,
           "pathConstraints": "////",
           "revision": 1,
           "origin": {
@@ -4172,12 +4257,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 505.000031,
-                "y": -275.638
+                "x": 504.9998,
+                "y": -275.6381
               },
               "OffsetMin": {
-                "x": 355.000031,
-                "y": -425.638
+                "x": 354.9998,
+                "y": -425.6381
               },
               "Pivot": {
                 "x": 0.5,
@@ -4195,12 +4280,12 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 430.000031,
-                "y": -350.638
+                "x": 429.9998,
+                "y": -350.6381
               },
               "Position": {
-                "x": 430.000031,
-                "y": -400.638,
+                "x": 429.9998,
+                "y": -400.6381,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -4270,6 +4355,15 @@
               },
               "OverrideSorting": false,
               "Enable": true
+            },
+            {
+              "@type": "script.SkillSlot",
+              "Enable": true,
+              "skillIndex": 2
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
+              "Enable": true
             }
           ],
           "@version": 1
@@ -4277,11 +4371,11 @@
       },
       {
         "id": "57eb593b-dfea-48c0-9341-08e159dfdc31",
-        "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_2/UnitSprite",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_2/SkillIcon",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
-          "name": "UnitSprite",
-          "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_2/UnitSprite",
+          "name": "SkillIcon",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_2/SkillIcon",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4362,12 +4456,12 @@
         }
       },
       {
-        "id": "06169332-1fc8-48c3-bb56-3c607597e25b",
-        "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_2/PriceSprite",
+        "id": "705da771-8368-4f55-b3bb-20c7dde1c55c",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_2/CoolTimeSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
-          "name": "PriceSprite",
-          "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_2/PriceSprite",
+          "name": "CoolTimeSprite",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_2/CoolTimeSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4395,12 +4489,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 60.0003,
-                "y": -33.5958
+                "x": 59.5001,
+                "y": 65.0001
               },
               "OffsetMin": {
-                "x": -59.9997,
-                "y": -58.5958
+                "x": -60.4999,
+                "y": -54.9999
               },
               "Pivot": {
                 "x": 0.5,
@@ -4408,93 +4502,7 @@
               },
               "RectSize": {
                 "x": 120.0,
-                "y": 25.0
-              },
-              "UIMode": 1,
-              "UIVersion": 2,
-              "anchoredPosition": {
-                "x": 0.0003,
-                "y": -46.0958
-              },
-              "Position": {
-                "x": 0.0003,
-                "y": -46.0958,
-                "z": 0.0
-              },
-              "QuaternionRotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-              },
-              "Enable": true
-            },
-            {
-              "@type": "MOD.Core.SpriteGUIRendererComponent",
-              "ImageRUID": {
-                "DataId": "507127bd90274cdebc5247dbe9ae392e"
-              },
-              "LocalScale": {
-                "x": 1.0,
-                "y": 1.0
-              },
-              "OverrideSorting": false,
-              "SortingLayer": "MapLayer0",
-              "Type": 1,
-              "Enable": true
-            }
-          ],
-          "@version": 1
-        }
-      },
-      {
-        "id": "c2de3623-936d-46f0-8fc4-9caf7ba88ee9",
-        "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_2/PriceLabel",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
-        "jsonString": {
-          "name": "PriceLabel",
-          "path": "/ui/Ingame_Shop_Group/UnitShop/SkillSlot_2/PriceLabel",
-          "nameEditable": true,
-          "enable": true,
-          "visible": true,
-          "localize": true,
-          "displayOrder": 2,
-          "pathConstraints": "/////",
-          "revision": 1,
-          "origin": {
-            "type": "Model",
-            "entry_id": "uitext",
-            "sub_entity_id": null
-          },
-          "modelId": "uitext",
-          "@components": [
-            {
-              "@type": "MOD.Core.UITransformComponent",
-              "AlignmentOption": 1,
-              "AnchorsMax": {
-                "x": 0.0,
-                "y": 0.5
-              },
-              "AnchorsMin": {
-                "x": 0.0,
-                "y": 0.5
-              },
-              "MobileOnly": false,
-              "OffsetMax": {
-                "x": 130.0,
-                "y": -36.0
-              },
-              "OffsetMin": {
-                "x": 30.0,
-                "y": -56.0
-              },
-              "Pivot": {
-                "x": 0.5,
-                "y": 0.5
-              },
-              "RectSize": {
-                "x": 100.0,
-                "y": 20.0
+                "y": 120.0
               },
               "UIMode": 1,
               "UIScale": {
@@ -4504,12 +4512,12 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 80.0,
-                "y": -46.0
+                "x": -0.4999008,
+                "y": 5.0001
               },
               "Position": {
-                "x": 5.0,
-                "y": -46.0,
+                "x": -0.4999008,
+                "y": 5.0001,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -4527,34 +4535,123 @@
             },
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "e363fe71863482e40954b62b58bf4ac8"
+              },
+              "LocalScale": {
+                "x": 1.0,
+                "y": 1.0
+              },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "FillAmount": 0.0,
+              "FillClockWise": false,
+              "FillMethod": 4,
+              "FillOrigin": 2,
+              "Type": 3,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ee4596b4-31bb-4e1d-8f8b-989f7babc434",
+        "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_2/KeySprite",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "KeySprite",
+          "path": "/ui/Ingame_Shop_Group/SkillSlots/SkillSlot_2/KeySprite",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 2,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 62.5,
+                "y": 62.5
+              },
+              "OffsetMin": {
+                "x": 37.5,
+                "y": 37.5
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 25.0,
+                "y": 25.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 50.0,
+                "y": 50.0
+              },
+              "Position": {
+                "x": 50.0,
+                "y": 50.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
               "Enable": true
             },
             {
-              "@type": "MOD.Core.TextComponent",
-              "Alignment": 4,
-              "Bold": true,
-              "Font": 2,
-              "FontColor": {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "68e3367c97b943caa955d28fda7eedf0"
+              },
+              "LocalScale": {
+                "x": 1.25,
+                "y": 1.25
+              },
+              "OverrideSorting": false,
+              "PreserveSprite": 2,
+              "SortingLayer": "MapLayer0",
+              "Color": {
                 "r": 1.0,
                 "g": 1.0,
                 "b": 1.0,
                 "a": 1.0
               },
-              "OutlineColor": {
-                "r": 0.0,
-                "g": 0.0,
-                "b": 0.0,
-                "a": 1.0
-              },
-              "OutlineDistance": {
-                "x": 1.0,
-                "y": -1.0
-              },
-              "OverrideSorting": false,
-              "Text": "10000",
-              "UseOutLine": true,
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -4572,7 +4669,7 @@
           "enable": false,
           "visible": true,
           "localize": true,
-          "displayOrder": 3,
+          "displayOrder": 4,
           "pathConstraints": "///",
           "revision": 0,
           "origin": {
@@ -4885,7 +4982,7 @@
           "enable": true,
           "visible": false,
           "localize": true,
-          "displayOrder": 4,
+          "displayOrder": 5,
           "pathConstraints": "///",
           "revision": 1,
           "origin": {

@@ -1,0 +1,116 @@
+@Component
+script SkillSlot extends Component
+
+	@Sync
+	property integer skillIndex = 0
+
+	@Sync
+	property Entity skillIcon = nil
+
+	@Sync
+	property Entity coolTimeSprite = nil
+
+	property Entity unitInfoUI = "cc09e962-b96a-4b3f-a20e-e48ff46bd5ef"
+
+	@Sync
+	property number skillCoolTime = 0
+
+	@Sync
+	property number remainingTime = 0
+
+	method void Initialize()
+		self.skillIcon = self.Entity.Children[1]
+		self.coolTimeSprite = self.Entity.Children[2]
+		
+		self:SetSprite()
+	end
+
+	method void SetSprite()
+		local imageRUID
+		if self.skillIndex == 1 then
+			imageRUID = _UserService.LocalPlayer.PlayerCharacter.skillData1['skillIcon']
+			self.skillCoolTime = _UserService.LocalPlayer.PlayerCharacter.skillData1['coolTime']
+		else
+			imageRUID = _UserService.LocalPlayer.PlayerCharacter.skillData2['skillIcon']
+			self.skillCoolTime = _UserService.LocalPlayer.PlayerCharacter.skillData2['coolTime']
+		end
+		
+		self.skillIcon.SpriteGUIRendererComponent.ImageRUID = imageRUID
+	end
+
+	method void UpdateCoolTime(number deltaTime)
+		if self.remainingTime > 0 then
+		        self.remainingTime = self.remainingTime - deltaTime
+		        if self.remainingTime < 0 then
+		            self.remainingTime = 0
+		        end
+		
+		        local fillRatio = self.remainingTime / self.skillCoolTime
+		        self.coolTimeSprite.SpriteGUIRendererComponent.FillAmount = fillRatio
+		    end
+	end
+
+	method void OnUpdate(number delta)
+		self:UpdateCoolTime(delta)
+	end
+
+	method void UseSkill()
+		if self.remainingTime > 0 then
+			return
+		end
+		
+		self.remainingTime = self.skillCoolTime
+		_UserService.LocalPlayer.PlayerCharacter:UseSkill(self.skillIndex)
+	end
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		self:UseSkill()
+	end
+
+	@EventSender("Service", "InputService")
+	handler HandleKeyDownEvent(KeyDownEvent event)
+		local isKeyDown = false
+		
+		if event.key == KeyboardKey.D and self.skillIndex == 1 then
+			isKeyDown = true
+		elseif event.key == KeyboardKey.F and self.skillIndex == 2 then
+			isKeyDown = true
+		end
+		
+		if not isKeyDown then
+			return
+		end
+		
+		self:UseSkill()
+	end
+
+	@EventSender("Self")
+	handler HandleUITouchDownEvent(UITouchDownEvent event)
+		if event.TouchId ~= -2 then
+			return
+		end 
+		
+		self.unitInfoUI.Visible = true
+		
+		
+		local iconTransform = self.Entity.UITransformComponent
+		local iconPos = iconTransform.anchoredPosition
+		local skillData
+		if self.skillIndex == 1 then
+			skillData = _UserService.LocalPlayer.PlayerCharacter.skillData1
+		else
+			skillData = _UserService.LocalPlayer.PlayerCharacter.skillData2
+		end
+		
+		
+		self.unitInfoUI.UITransformComponent.anchoredPosition = Vector2(iconPos.x, iconPos.y + 150)
+		self.unitInfoUI.UnitInfo:UpdateInfo(skillData)
+	end
+
+	@EventSender("Self")
+	handler HandleUITouchExitEvent(UITouchExitEvent event)
+		self.unitInfoUI.Visible = false
+	end
+
+end

@@ -122,7 +122,7 @@ script UnitShopItem extends Component
 		local iconPos = iconTransform.anchoredPosition
 		
 		self.unitInfoUI.UITransformComponent.anchoredPosition = Vector2(iconPos.x, iconPos.y + 150)
-		self.unitInfoUI.UnitInfo:UpdateInfo(self.unitData, self.skillData)
+		self.unitInfoUI.UnitInfo:UpdateInfo(self.skillData)
 	end
 
 	@EventSender("Self")
