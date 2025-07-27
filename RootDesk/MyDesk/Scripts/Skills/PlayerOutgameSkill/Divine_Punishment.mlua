@@ -1,0 +1,48 @@
+@Component
+script Divine_Punishment extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		-- 1aa895b11b1b4e708e5f549a7ab0dc56 생성
+		-- 85964d2eaeae4e22b5490563bf4b247b 지속
+		-- b4134c0268974cbcbc780d46541ecbde 종료
+		
+		if self._T.projectileParent == nil then
+			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
+		end
+		
+		
+		local divine_punishment
+		local deleteTime
+		local spawnOffset = Vector3(2.25, 0, 0)  -- 거리 간격 조절
+		local spawnPosition = self.caster.TransformComponent.WorldPosition + spawnOffset
+		
+		_EffectService:PlayEffectAttached("1aa895b11b1b4e708e5f549a7ab0dc56", self._T.projectileParent, spawnPosition , 0, Vector3.one, false)
+		
+		divine_punishment = _SpawnService:SpawnByModelId("model://192727cd-29b3-403b-9972-10c4ce0f6d76", "Divine_Punishment", spawnPosition, self._T.projectileParent)
+		deleteTime = self.skillTime
+		
+		divine_punishment.DelayAttackComponent:Init(self.skillAmount, self.caster, false)
+		
+		local spawnFunction = function()
+			
+		end
+		
+		local damageFunction = function()
+			divine_punishment.TriggerComponent.Enable = true
+		end
+		
+		local deleteFunction = function()
+			-- 스킬 사용 종료 처리
+			_EntityService:Destroy(divine_punishment)
+		end
+		
+		-- 타이밍에 데미지 입히는 처리
+		_TimerService:SetTimerOnce(damageFunction, self.skillAttackTiming)
+		-- 스킬 사용 종료 처리
+		_TimerService:SetTimerOnce(deleteFunction, deleteTime)
+	end
+
+end
