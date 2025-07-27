@@ -879,7 +879,7 @@ script Unit extends Component
 
 	@ExecSpace("Client")
 	method void CreateMinimapIcon(boolean isEnemy)
-		local map = _EntityService:GetEntityByPath("/ui/Ingame_Info_UI_Group/Minimap Group")
+		local map = _EntityService:GetEntityByPath(_GameManager:GetGameMapName())
 		map.MinimapManager:AddEntityList(self.Entity, isEnemy)
 	end
 

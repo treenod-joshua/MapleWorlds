@@ -1035,6 +1035,11 @@
                 "x": 0.0,
                 "y": 20.0
               },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
               "Position": {
                 "x": 0.0,
                 "y": 20.0,
@@ -1046,6 +1051,7 @@
                 "z": 0.0,
                 "w": 1.0
               },
+              "ZRotation": 0.0,
               "Enable": true
             },
             {
@@ -4103,16 +4109,20 @@
               "ImageRUID": {
                 "DataId": "e363fe71863482e40954b62b58bf4ac8"
               },
-              "LocalScale": {
-                "x": 1.0,
-                "y": 1.0
-              },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 0.193359375,
+                "g": 0.193359375,
+                "b": 0.193359375,
+                "a": 1.0
+              },
               "FillAmount": 0.0,
               "FillClockWise": false,
               "FillMethod": 4,
               "FillOrigin": 2,
+              "Outline": true,
+              "OutlineWidth": 1.5,
               "Type": 3,
               "Enable": true
             }
@@ -4440,7 +4450,7 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "ImageRUID": {
-                "DataId": "a1a253716b3549b39841dc0c33bb80d1"
+                "DataId": "8598af8e001f4aca9be71ce85e03b505"
               },
               "LocalScale": {
                 "x": 1.0,
@@ -4544,10 +4554,20 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 0.193359375,
+                "g": 0.193359375,
+                "b": 0.193359375,
+                "a": 1.0
+              },
+              "DropShadow": false,
               "FillAmount": 0.0,
+              "FillCenter": true,
               "FillClockWise": false,
               "FillMethod": 4,
               "FillOrigin": 2,
+              "Outline": true,
+              "OutlineWidth": 1.5,
               "Type": 3,
               "Enable": true
             }
