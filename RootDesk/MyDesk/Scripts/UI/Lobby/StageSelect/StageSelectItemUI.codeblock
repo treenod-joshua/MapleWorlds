@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://558744b2-cfa7-4acb-ba09-032320cdc544",
+  "EntryKey": "codeblock://b7f94b34-0be5-48f9-9274-a8be60daee40",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,9 +22,9 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "558744b2-cfa7-4acb-ba09-032320cdc544",
+      "Id": "b7f94b34-0be5-48f9-9274-a8be60daee40",
       "Language": 1,
-      "Name": "UIMain",
+      "Name": "StageSelectItemUI",
       "Type": 1,
       "Source": 0,
       "Target": null

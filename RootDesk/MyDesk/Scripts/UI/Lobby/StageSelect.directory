@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://78e681e3ac004d80a1adca9874e198de",
+  "EntryKey": "directory://1b6168afa5a44395a96a1f8f0b0a9a7f",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://78e681e3ac004d80a1adca9874e198de",
-      "name": "Prefab",
+      "entry_id": "directory://1b6168afa5a44395a96a1f8f0b0a9a7f",
+      "name": "StageSelect",
       "lock": false,
       "folding": false,
       "nameEditable": true

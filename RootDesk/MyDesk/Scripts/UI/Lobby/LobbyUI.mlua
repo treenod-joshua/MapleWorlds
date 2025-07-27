@@ -1,0 +1,4 @@
+@Component
+script LobbyUI extends Component
+
+end

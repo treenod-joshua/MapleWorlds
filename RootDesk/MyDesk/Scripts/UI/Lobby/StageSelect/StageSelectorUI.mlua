@@ -1,0 +1,57 @@
+@Component
+script StageSelectorUI extends Component
+
+	property Entity StageInfoPanel = nil
+
+	property table SelectButtonList = {}
+
+	method void SetEnable()
+		local data = {}
+		
+		local path = self.Entity.Path
+		local openStage = 4
+		local selectStage = 3
+		
+		self.StageInfoPanel = _EntityService:GetEntityByPath(path .. "/StageInfoPanel/panel")
+		
+		for i = 1, 6 do
+			local entity = _EntityService:GetEntityByPath(path .. "/StageSelectScroll/Select_" .. tostring(i))
+			self.SelectButtonList[i] = entity
+			entity.StageSelectItemUI:AddCallback(function() self:ClickButtonHanddler(i) end)
+			
+			if i <= openStage then
+				entity.StageSelectItemUI:SetNotSelected()
+			end
+			
+			if i > openStage then
+				entity.StageSelectItemUI:SetLocked()
+			end
+			
+			if i == selectStage then
+				entity.StageSelectItemUI:SetSelected()
+			end
+		end
+		
+		
+	end
+
+	method void ClickButtonHanddler(integer id)
+		local openStage = 4
+		
+		for i, entity in ipairs(self.SelectButtonList) do
+			if i > openStage then
+				continue
+			end
+			entity.StageSelectItemUI:SetNotSelected()
+			if i == id then
+				entity.StageSelectItemUI:SetSelected()
+			end
+		end
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		self:SetEnable()
+	end
+
+end
