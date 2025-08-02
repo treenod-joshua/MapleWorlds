@@ -1,0 +1,56 @@
+@Logic
+script UserDeckService extends Logic
+
+	@ExecSpace("Server")
+	method integer SAVE(string uid)
+		local ds = _DataStorageService:GetUserDataStorage(uid)
+		
+		local data = {}
+		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
+		
+		-- TODO: 테스트용 저장 코드
+		playerDeck:RefreshDeck()
+		
+		-- userDeck을 순회해서 배열로 복사
+		local deckList = {}
+		for i, modelId in ipairs(playerDeck.userDeck) do
+		    table.insert(deckList, modelId)
+		end
+		
+		data["UserDeck"] = deckList
+		
+		local save =  _HttpService:JSONEncode(data)
+		
+		log(save)
+		
+		return ds:SetAndWait("DECK",save)
+		
+	end
+
+	@ExecSpace("Server")
+	method integer LOAD(string uid)
+		local ds = _DataStorageService:GetUserDataStorage(uid)
+		
+		local errCode, res = ds:GetAndWait("DECK")
+		if errCode ~= 0 then
+			return errCode
+		end
+		
+		local resTable = _HttpService:JSONDecode(res)
+		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
+		
+		playerDeck:SetUserDeckInClient(resTable["UserDeck"])
+		
+		return 0
+	end
+
+	@ExecSpace("ServerOnly")
+	@EventSender("Service", "UserService")
+	handler HandleUserLeaveEvent(UserLeaveEvent event)
+		local ProfileCode = event.ProfileCode
+		local UserId = event.UserId
+		
+		self:SAVE(UserId)
+	end
+
+end

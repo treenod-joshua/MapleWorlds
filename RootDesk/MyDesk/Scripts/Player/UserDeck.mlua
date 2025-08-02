@@ -1,0 +1,30 @@
+@Component
+script UserDeck extends Component
+
+	property table userDeck = {}
+
+	method void OnBeginPlay()
+		_UserDeckService:LOAD(self.Entity.PlayerComponent.UserId)
+	end
+
+	method void LoadUserDeck()
+		
+	end
+
+	method void RefreshDeck()
+		self.userDeck[1] = "model://5730b7e6-b3cd-40dc-81ef-f635ccc27507"
+		self.userDeck[2] = "model://5730b7e6-b3cd-40dc-81ef-f635ccc27507"
+		self.userDeck[3] = "model://5730b7e6-b3cd-40dc-81ef-f635ccc27507"
+		self.userDeck[4] = "model://6515208c-13e8-4aac-8ef4-1fc4ff3743dc"
+		self.userDeck[5] = "model://6515208c-13e8-4aac-8ef4-1fc4ff3743dc"
+		self.userDeck[6] = "model://ecfafcc5-4753-42ad-b097-2db304e47a1d"
+		self.userDeck[7] = "model://ddbe8a80-64a9-49e0-8dba-ccb2ffa4f887"
+		self.userDeck[8] = "model://ddbe8a80-64a9-49e0-8dba-ccb2ffa4f887"
+	end
+
+	@ExecSpace("Client")
+	method void SetUserDeckInClient(table deckData)
+		self.userDeck = deckData
+	end
+
+end
