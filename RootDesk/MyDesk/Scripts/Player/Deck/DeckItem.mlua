@@ -1,0 +1,4 @@
+@Component
+script DeckItem extends Component
+
+end
