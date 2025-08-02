@@ -10,9 +10,16 @@ script StageSelectorUI extends Component
 		local data = {}
 		
 		local path = self.Entity.Path
-		local openStage = 3
-		local selectStage = 2
-		local chapterId = 1
+		
+		local userStage = _UserService.LocalPlayer.UserStage
+		local loadErr = userStage:LOAD()
+		if loadErr > 0 then
+			userStage:SAVE()
+		end
+		
+		local openStage = userStage.openStage
+		local selectStage = userStage.selectStage
+		local chapterId = userStage.selectChapter
 		
 		local stageDataList = _StageService:GetStageByChapter(chapterId)
 		local stageCount = #stageDataList
@@ -50,7 +57,11 @@ script StageSelectorUI extends Component
 	end
 
 	method void ClickButtonHanddler(integer id)
-		local openStage = 4
+		local userStage = _UserService.LocalPlayer.UserStage
+		userStage:LOAD()
+		local openStage = userStage.openStage
+		local selectStage = userStage.selectStage
+		local chapterId = userStage.selectChapter
 		
 		local stageDataList = _StageService:GetStageByChapter(1)
 		

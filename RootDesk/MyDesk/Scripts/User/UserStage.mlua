@@ -1,0 +1,65 @@
+@Component
+script UserStage extends Component
+
+	@Sync
+	property number openStage = 1
+
+	@Sync
+	property number openChapter = 1
+
+	@Sync
+	property number selectStage = 1
+
+	@Sync
+	property number selectChapter = 1
+
+	@ExecSpace("Server")
+	method integer SAVE()
+		local data = {}
+		
+		data["openStage"] = self.openStage
+		data["openChapter"] = self.openChapter
+		data["selectStage"] = self.selectStage
+		data["selectChapter"] = self.selectChapter
+		
+		local jsonData = _HttpService:JSONEncode(data)
+		
+		local userStorage = _DataStorageService:GetUserDataStorage(self.Entity.PlayerComponent.UserId)
+		
+		return userStorage:SetAndWait("stage", jsonData)
+	end
+
+	@ExecSpace("Server")
+	method integer LOAD()
+		local userStorage = _DataStorageService:GetUserDataStorage(self.Entity.PlayerComponent.UserId)
+		
+		local getErr, jsonData = userStorage:GetAndWait("stage")
+		
+		if getErr ~= 0 then
+			return getErr
+		end
+		
+		if jsonData == nil then
+			return 100012
+		end
+		
+		local data = _HttpService:JSONDecode(jsonData)
+		
+		self.openStage = data["openStage"]
+		self.openChapter = data["openChapter"]
+		self.selectStage = data["selectStage"]
+		self.selectChapter = data["selectChapter"]
+	end
+
+	@ExecSpace("ServerOnly")
+	method void OnBeginPlay()
+		if self:LOAD() ~= 0 then
+			self.openStage = 1
+			self.openChapter = 1
+			self.selectStage = 1
+			self.selectChapter = 1
+			self:SAVE()
+		end
+	end
+
+end
