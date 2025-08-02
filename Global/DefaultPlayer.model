@@ -23,9 +23,7 @@
         "script.AvatarAnimationComponent",
         "script.UserBillingComponent",
         "script.UIMain",
-        "script.UserStage",
-        "script.UserDeck",
-        "MOD.Core.TagComponent"
+        "script.UserStage"
       ],
       "Properties": [],
       "Values": [
@@ -238,20 +236,6 @@
             "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
           "Value": true
-        },
-        {
-          "TargetType": "MOD.Core.TagComponent",
-          "Name": "Tags",
-          "ValueType": {
-            "$type": "MODNativeType",
-            "type": "MOD.Core.MODSyncList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
-          },
-          "Value": {
-            "$type": "MOD.Core.MODSyncList`1[[System.String, mscorlib]], MOD.Core",
-            "$values": [
-              "Player"
-            ]
-          }
         }
       ],
       "EventLinks": [],
