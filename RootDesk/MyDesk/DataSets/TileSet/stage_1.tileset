@@ -1,8 +1,8 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "userdataset://bfcfedb3-2a54-4c28-b16a-d1fd36e22a75",
-  "ContentType": "x-mod/userdataset",
+  "EntryKey": "tileset://ed7ae72d-ac4d-404e-b8f3-07909411e9c9",
+  "ContentType": "x-mod/tileset",
   "Content": "",
   "Usage": 0,
   "UsePublish": 1,
@@ -13,10 +13,9 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "name": "SpawnGroup",
-      "id": "bfcfedb3-2a54-4c28-b16a-d1fd36e22a75",
-      "serveronly": false,
-      "dynamicloading": 0
+      "name": "stage_1",
+      "id": "tileset://ed7ae72d-ac4d-404e-b8f3-07909411e9c9",
+      "datas": []
     }
   }
 }

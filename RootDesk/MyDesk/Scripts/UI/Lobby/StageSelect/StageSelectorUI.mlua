@@ -16,6 +16,7 @@ script StageSelectorUI extends Component
 		
 		for i = 1, 6 do
 			local entity = _EntityService:GetEntityByPath(path .. "/StageSelectScroll/Select_" .. tostring(i))
+			entity.StageSelectItemUI:Init()
 			self.SelectButtonList[i] = entity
 			entity.StageSelectItemUI:AddCallback(function() self:ClickButtonHanddler(i) end)
 			

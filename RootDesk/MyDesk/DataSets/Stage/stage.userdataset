@@ -1,21 +1,21 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "userdataset://bfcfedb3-2a54-4c28-b16a-d1fd36e22a75",
+  "EntryKey": "userdataset://a0a31326-6f77-4106-b998-04c8653b92df",
   "ContentType": "x-mod/userdataset",
   "Content": "",
   "Usage": 0,
   "UsePublish": 1,
-  "UseService": 0,
+  "UseService": 1,
   "CoreVersion": "1.25.0.0",
   "StudioVersion": "0.1.0.0",
   "DynamicLoading": 0,
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "name": "SpawnGroup",
-      "id": "bfcfedb3-2a54-4c28-b16a-d1fd36e22a75",
-      "serveronly": false,
+      "name": "stage",
+      "id": "a0a31326-6f77-4106-b998-04c8653b92df",
+      "serveronly": true,
       "dynamicloading": 0
     }
   }
