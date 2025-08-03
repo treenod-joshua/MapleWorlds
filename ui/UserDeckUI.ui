@@ -99,7 +99,7 @@
       {
         "id": "86dd9665-0a31-4aba-a48d-84e052dc38ca",
         "path": "/ui/UserDeckUI/UserDeck",
-        "componentNames": "MOD.Core.UITransformComponent",
+        "componentNames": "MOD.Core.UITransformComponent,script.UserDeckUI",
         "jsonString": {
           "name": "UserDeck",
           "path": "/ui/UserDeckUI/UserDeck",
@@ -163,6 +163,10 @@
                 "w": 1.0
               },
               "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "script.UserDeckUI",
               "Enable": true
             }
           ],
