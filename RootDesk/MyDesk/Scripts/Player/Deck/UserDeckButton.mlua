@@ -5,6 +5,11 @@ script UserDeckButton extends Component
 
 	@EventSender("Self")
 	handler HandleButtonClickEvent(ButtonClickEvent event)
+		local lobbyInfoUI = _EntityService:GetEntityByPath("/ui/LobbyInfoUI")
+		
+		lobbyInfoUI.Enable = false
+		lobbyInfoUI.Visible = false
+		
 		self.userDeckUI.Enable = true
 		self.userDeckUI.Visible = true
 		

@@ -10,6 +10,11 @@ script UserDeckSaveButton extends Component
 		
 		self.userDeckUI.Enable = false
 		self.userDeckUI.Visible = false
+		
+		local lobbyInfoUI = _EntityService:GetEntityByPath("/ui/LobbyInfoUI")
+		
+		lobbyInfoUI.Enable = true
+		lobbyInfoUI.Visible = true
 	end
 
 end
