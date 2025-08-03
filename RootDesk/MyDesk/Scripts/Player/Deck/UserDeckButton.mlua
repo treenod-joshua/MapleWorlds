@@ -13,7 +13,9 @@ script UserDeckButton extends Component
 		-- Parameters
 		-- local Entity = event.Entity
 		---------------------------------------------------------
+		self.userDeckUI.Enable = true
 		self.userDeckUI.Visible = true
+		
 		self.userDeckUI.Children[1].UserDeckUI:OpenUserDeckUI()
 	end
 

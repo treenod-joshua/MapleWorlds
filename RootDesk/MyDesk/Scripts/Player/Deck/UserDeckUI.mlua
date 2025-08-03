@@ -4,10 +4,9 @@ script UserDeckUI extends Component
 	@Sync
 	property SyncTable<Entity> deckItems
 
-	@ExecSpace("ServerOnly")
-	method void OnInitialize()
+	method void OnBeginPlay()
 		for i = 1, 8 do
-			self.deckItems[i] = self.Entity.Children[i]
+			self.deckItems[i] = self.Entity.Children[1].Children[i]
 		end
 	end
 
