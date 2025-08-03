@@ -19,7 +19,7 @@ script UserDeck extends Component
 		self.userDeck[5] = "model://6515208c-13e8-4aac-8ef4-1fc4ff3743dc"
 		self.userDeck[6] = "model://ecfafcc5-4753-42ad-b097-2db304e47a1d"
 		self.userDeck[7] = "model://ddbe8a80-64a9-49e0-8dba-ccb2ffa4f887"
-		self.userDeck[8] = "model://ddbe8a80-64a9-49e0-8dba-ccb2ffa4f887"
+		self.userDeck[8] = ""
 	end
 
 	@ExecSpace("Client")

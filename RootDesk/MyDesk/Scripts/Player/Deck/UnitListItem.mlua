@@ -1,12 +1,9 @@
 @Component
-script DeckItem extends Component
+script UnitListItem extends Component
 
 	property table unitData = {}
 
 	property table skillData = {}
-
-	@Sync
-	property Entity redDotSprite = nil
 
 	@Sync
 	property Entity unitSprite = nil
@@ -18,45 +15,32 @@ script DeckItem extends Component
 	property Entity unitName = nil
 
 	@Sync
-	property Entity unitFrameSprite = nil
+	property Entity skillDesc = nil
 
 	method void Init(table unitData, table skillData)
 		self.unitData = unitData
 		self.skillData = skillData
 		
-		self.redDotSprite = self.Entity.Children[2]
-		self.unitSprite = self.Entity.Children[3]
-		self.unitAvartarRenderer = self.Entity.Children[4]
-		self.unitName = self.Entity.Children[5]
-		self.unitFrameSprite = self.Entity
+		self.unitSprite = self.Entity.Children[1]
+		self.unitAvartarRenderer = self.Entity.Children[2]
+		self.unitName = self.Entity.Children[3]
+		self.skillDesc = self.Entity.Children[4]
 		
 		self:RefreshUI()
 	end
 
 	method void RefreshUI()
-		-- 해당 슬롯에 장착한 유닛이 없을 경우
-		if self.unitData == nil then
-			self.redDotSprite.Visible = true
-			self.unitSprite.Visible = false
-			self.unitName.Visible = false
+		if self.unitData['isUsableCharacter'] == 0 then
 			self.unitAvartarRenderer.Visible = false
-			-- + 버튼 프레임
-			self.unitFrameSprite.SpriteGUIRendererComponent.ImageRUID = "9242c303445244c5b1c123f453423ff3" 
+			self.unitSprite.SpriteGUIRendererComponent.ImageRUID = self.unitData['ImageRUID']
 		else
-			self.redDotSprite.Visible = false
-			-- 일반 프레임
-			self.unitFrameSprite.SpriteGUIRendererComponent.ImageRUID = "9cabdd08cb834cbab689c6219db5db05"
-			self.unitName.TextComponent.Text = self.unitData['name']
-			
-			if self.unitData['isUsableCharacter'] == 0 then
-				self.unitAvartarRenderer.Visible = false
-				self.unitSprite.SpriteGUIRendererComponent.ImageRUID = self.unitData['ImageRUID']
-			else
-				self.unitSprite.Visible = false
-				self:SetCostume()
-			end
-			
+			self.unitSprite.Visible = false
+			self:SetCostume()
 		end
+		
+		self.unitName.TextComponent.Text = self.unitData['name']
+		self.skillDesc.TextComponent.Text = self.skillData['desc']
+		
 	end
 
 	method void SetCostume()
@@ -81,16 +65,6 @@ script DeckItem extends Component
 		self.unitAvartarRenderer.CostumeManagerComponent.CustomShoesEquip = entity.CostumeManagerComponent.CustomShoesEquip
 		self.unitAvartarRenderer.CostumeManagerComponent.CustomSubWeaponEquip = entity.CostumeManagerComponent.CustomSubWeaponEquip
 		self.unitAvartarRenderer.CostumeManagerComponent.CustomTwoHandedWeaponEquip = entity.CostumeManagerComponent.CustomTwoHandedWeaponEquip
-	end
-
-	@EventSender("Self")
-	handler HandleButtonClickEvent(ButtonClickEvent event)
-		local userDeckUI = _EntityService:GetEntityByPath("/ui/UserDeckUI/UserDeck").UserDeckUI
-		
-		userDeckUI.unitListUI.Enable = true
-		userDeckUI.unitListUI.Visible = true
-		
-		userDeckUI.unitListUI.UnitListUI:OpenListUI()
 	end
 
 end

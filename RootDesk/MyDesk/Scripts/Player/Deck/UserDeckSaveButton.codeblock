@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://cd6cfabd-b56f-4a7a-84f3-1155d3afe4c6",
+  "EntryKey": "codeblock://a437dd32-502c-4dbb-a6ea-c7a2464b86c4",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,9 +22,9 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "cd6cfabd-b56f-4a7a-84f3-1155d3afe4c6",
+      "Id": "a437dd32-502c-4dbb-a6ea-c7a2464b86c4",
       "Language": 1,
-      "Name": "TestScrollView",
+      "Name": "UserDeckSaveButton",
       "Type": 1,
       "Source": 0,
       "Target": null

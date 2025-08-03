@@ -4,6 +4,8 @@ script UserDeckUI extends Component
 	@Sync
 	property SyncTable<Entity> deckItems
 
+	property Entity unitListUI = "f5ef7754-322c-4be8-b304-f738905288d0"
+
 	method void OnBeginPlay()
 		for i = 1, 8 do
 			self.deckItems[i] = self.Entity.Children[1].Children[i]
@@ -15,7 +17,10 @@ script UserDeckUI extends Component
 		 
 		for i = 1, 8 do
 			local unitData = _UnitService:GetUnitByIDFromCleint(playerDeck.userDeck[i])
-			local skillData = _SkillService:GetSkillByIDFromClient(unitData['skillID'])
+			local skillData
+			if unitData ~= nil then
+				skillData = _SkillService:GetSkillByIDFromClient(unitData['skillID'])
+			end
 			
 			self.deckItems[i].DeckItem:Init(unitData, skillData)
 		end

@@ -5,14 +5,6 @@ script UserDeckButton extends Component
 
 	@EventSender("Self")
 	handler HandleButtonClickEvent(ButtonClickEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: ButtonComponent
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local Entity = event.Entity
-		---------------------------------------------------------
 		self.userDeckUI.Enable = true
 		self.userDeckUI.Visible = true
 		

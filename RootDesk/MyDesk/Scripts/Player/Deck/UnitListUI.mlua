@@ -1,0 +1,24 @@
+@Component
+script UnitListUI extends Component
+
+	property Entity buttonPrefab = "2c18dbdf-eb72-47df-8d73-0fdc655fa195"
+
+	method void OnBeginPlay()
+		for id, unitData in pairs(_UnitService.UnitTable) do
+		    local skillData = nil
+		
+		    -- unitData가 nil이 아니고 skillID가 존재할 경우
+		    if unitData and unitData["skillID"] then
+		        skillData = _SkillService:GetSkillByIDFromClient(unitData["skillID"])
+		    end
+		
+		    local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity)
+		    button.UnitListItem:Init(unitData, skillData)
+		end
+	end
+
+	method void OpenListUI()
+		
+	end
+
+end
