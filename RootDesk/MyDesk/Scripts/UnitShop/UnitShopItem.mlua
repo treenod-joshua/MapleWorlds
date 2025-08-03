@@ -72,7 +72,7 @@ script UnitShopItem extends Component
 	end
 
 	method void SetCostume()
-		local entity = _SpawnService:SpawnByModelId(self.unitData['id'], "Pig", Vector3.zero, self.Entity)
+		local entity = _SpawnService:SpawnByModelId(self.unitData['id'], "Avatar", Vector3.zero, self.Entity)
 		entity.Visible = false
 		entity.Enable = false
 		

@@ -1,4 +1,86 @@
 @Component
 script DeckItem extends Component
 
+	property table unitData = {}
+
+	property table skillData = {}
+
+	@Sync
+	property Entity redDotSprite = nil
+
+	@Sync
+	property Entity unitSprite = nil
+
+	@Sync
+	property Entity unitAvartarRenderer = nil
+
+	@Sync
+	property Entity unitName = nil
+
+	@Sync
+	property Entity unitFrameSprite = nil
+
+	method void Init(table unitData, table skillData)
+		self.unitData = unitData
+		self.skillData = skillData
+		
+		self.redDotSprite = self.Entity.Children[2]
+		self.unitSprite = self.Entity.Children[3]
+		self.unitAvartarRenderer = self.Entity.Children[4]
+		self.unitName = self.Entity.Children[5]
+		self.unitFrameSprite = self.Entity
+		
+		self:RefreshUI()
+	end
+
+	method void RefreshUI()
+		-- 해당 슬롯에 장착한 유닛이 없을 경우
+		if self.unitData == nil then
+			self.redDotSprite.Visible = true
+			self.unitSprite.Visible = false
+			self.unitName.Visible = false
+			self.unitAvartarRenderer.Visible = false
+			-- + 버튼 프레임
+			self.unitFrameSprite.SpriteGUIRendererComponent.ImageRUID = "9242c303445244c5b1c123f453423ff3" 
+		else
+			self.redDotSprite.Visible = false
+			-- 일반 프레임
+			self.unitFrameSprite.SpriteGUIRendererComponent.ImageRUID = "9cabdd08cb834cbab689c6219db5db05"
+			self.unitName.TextComponent.Text = self.unitData['name']
+			
+			if self.unitData['isUsableCharacter'] == 0 then
+				self.unitAvartarRenderer.Visible = false
+				self.unitSprite.SpriteGUIRendererComponent.ImageRUID = self.unitData['ImageRUID']
+			else
+				self.unitSprite.Visible = false
+				self:SetCostume()
+			end
+			
+		end
+	end
+
+	method void SetCostume()
+		local entity = _SpawnService:SpawnByModelId(self.unitData['id'], "Avatar", Vector3.zero, self.Entity)
+		entity.Visible = false
+		entity.Enable = false
+		
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomBodyEquip = entity.CostumeManagerComponent.CustomBodyEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomCapEquip = entity.CostumeManagerComponent.CustomCapEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomCapeEquip = entity.CostumeManagerComponent.CustomCapeEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomCoatEquip = entity.CostumeManagerComponent.CustomCoatEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomEarAccessoryEquip = entity.CostumeManagerComponent.CustomEarAccessoryEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomEarEquip = entity.CostumeManagerComponent.CustomEarEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomEyeAccessoryEquip = entity.CostumeManagerComponent.CustomEyeAccessoryEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomFaceAccessoryEquip = entity.CostumeManagerComponent.CustomFaceAccessoryEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomFaceEquip = entity.CostumeManagerComponent.CustomFaceEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomGloveEquip = entity.CostumeManagerComponent.CustomGloveEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomHairEquip = entity.CostumeManagerComponent.CustomHairEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomLongcoatEquip = entity.CostumeManagerComponent.CustomLongcoatEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomOneHandedWeaponEquip = entity.CostumeManagerComponent.CustomOneHandedWeaponEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomPantsEquip = entity.CostumeManagerComponent.CustomPantsEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomShoesEquip = entity.CostumeManagerComponent.CustomShoesEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomSubWeaponEquip = entity.CostumeManagerComponent.CustomSubWeaponEquip
+		self.unitAvartarRenderer.CostumeManagerComponent.CustomTwoHandedWeaponEquip = entity.CostumeManagerComponent.CustomTwoHandedWeaponEquip
+	end
+
 end

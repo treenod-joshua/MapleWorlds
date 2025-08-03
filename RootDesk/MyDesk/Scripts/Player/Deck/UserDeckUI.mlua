@@ -1,0 +1,25 @@
+@Component
+script UserDeckUI extends Component
+
+	@Sync
+	property SyncTable<Entity> deckItems
+
+	@ExecSpace("ServerOnly")
+	method void OnInitialize()
+		for i = 1, 8 do
+			self.deckItems[i] = self.Entity.Children[i]
+		end
+	end
+
+	method void OpenUserDeckUI()
+		 local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
+		 
+		for i = 1, 8 do
+			local unitData = _UnitService:GetUnitByIDFromCleint(playerDeck.userDeck[i])
+			local skillData = _SkillService:GetSkillByIDFromClient(unitData['skillID'])
+			
+			self.deckItems[i].DeckItem:Init(unitData, skillData)
+		end
+	end
+
+end
