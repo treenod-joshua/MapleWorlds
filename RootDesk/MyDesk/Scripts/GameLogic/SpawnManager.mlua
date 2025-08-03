@@ -23,8 +23,8 @@ script SpawnManager extends Logic
 
 	@ExecSpace("Server")
 	method void SpawnEnemy(string modelID)
-		local spawnParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/EnemyList")
-		local spawnPos = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/EnemyList/EnemySpawnPoint")
+		local spawnParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName() .."/EnemyList")
+		local spawnPos = _EntityService:GetEntityByPath(_GameManager:GetGameMapName() .."/EnemyList/EnemySpawnPoint")
 		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
 		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
 		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "적"..unitData["name"], spawnPos.TransformComponent.Position, spawnParent)
@@ -38,7 +38,7 @@ script SpawnManager extends Logic
 	end
 
 	method Entity GetUserWallet()
-		return _EntityService:GetEntityByPath("/maps/Chapter1/userWallet")
+		return _EntityService:GetEntityByPath(_GameManager:GetGameMapName() .. "/userWallet")
 	end
 
 end

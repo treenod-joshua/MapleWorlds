@@ -7,10 +7,10 @@ script MesoIncome extends Component
 	property table incomeData = {}
 
 	@Sync
-	property MesoUI UIController = nil
+	property MesoUI UIController = "151d7236-98de-419c-a804-2c150c12d6ae"
 
 	@Sync
-	property MesoWallet UserWallet = nil
+	property MesoWallet UserWallet = "cc1d0323-9041-4ead-8cde-646ca0b26e89"
 
 	@Sync
 	property number incomeCooltime = 5

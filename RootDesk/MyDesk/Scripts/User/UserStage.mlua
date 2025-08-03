@@ -2,16 +2,16 @@
 script UserStage extends Component
 
 	@Sync
-	property number openStage = 1
+	property integer openStage = 1
 
 	@Sync
-	property number openChapter = 1
+	property integer openChapter = 1
 
 	@Sync
-	property number selectStage = 1
+	property integer selectStage = 1
 
 	@Sync
-	property number selectChapter = 1
+	property integer selectChapter = 1
 
 	@ExecSpace("Server")
 	method integer SAVE()
@@ -45,10 +45,12 @@ script UserStage extends Component
 		
 		local data = _HttpService:JSONDecode(jsonData)
 		
-		self.openStage = data["openStage"]
-		self.openChapter = data["openChapter"]
-		self.selectStage = data["selectStage"]
-		self.selectChapter = data["selectChapter"]
+		self.openStage = tonumber(data["openStage"])
+		self.openChapter = tonumber(data["openChapter"])
+		self.selectStage = tonumber(data["selectStage"])
+		self.selectChapter = tonumber(data["selectChapter"])
+		
+		return 0
 	end
 
 	@ExecSpace("ServerOnly")

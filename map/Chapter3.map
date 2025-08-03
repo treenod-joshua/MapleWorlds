@@ -1,25 +1,25 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "map://testmap",
+  "EntryKey": "map://chapter3",
   "ContentType": "x-mod/map",
   "Content": "",
   "Usage": 0,
   "UsePublish": 1,
   "UseService": 0,
-  "CoreVersion": "1.24.0.0",
+  "CoreVersion": "1.25.0.0",
   "StudioVersion": "0.1.0.0",
   "DynamicLoading": 0,
   "ContentProto": {
     "Use": "Binary",
     "Entities": [
       {
-        "id": "744fcb64-e75b-4a52-bf18-6911f5df4911",
-        "path": "/maps/TestMap",
+        "id": "b1b6772f-ef0b-47dc-8a10-b61683cc0211",
+        "path": "/maps/Chapter3",
         "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MinimapManager,MOD.Core.SoundComponent",
         "jsonString": {
-          "name": "TestMap",
-          "path": "/maps/TestMap",
+          "name": "Chapter3",
+          "path": "/maps/Chapter3",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -64,7 +64,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 1,
                     "StartPoint": {
                       "x": -6.24,
@@ -96,7 +96,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 2,
                     "StartPoint": {
                       "x": -4.95,
@@ -128,7 +128,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 3,
                     "StartPoint": {
                       "x": -4.05,
@@ -160,7 +160,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 4,
                     "StartPoint": {
                       "x": -3.14999986,
@@ -192,7 +192,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 5,
                     "StartPoint": {
                       "x": -2.24999976,
@@ -224,7 +224,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 6,
                     "StartPoint": {
                       "x": -1.35,
@@ -256,7 +256,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 7,
                     "StartPoint": {
                       "x": -0.45,
@@ -288,7 +288,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 8,
                     "StartPoint": {
                       "x": 0.450000018,
@@ -320,7 +320,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 9,
                     "StartPoint": {
                       "x": 1.34999979,
@@ -352,7 +352,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 10,
                     "StartPoint": {
                       "x": 2.24999976,
@@ -384,7 +384,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 11,
                     "StartPoint": {
                       "x": 3.14999986,
@@ -416,7 +416,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 12,
                     "StartPoint": {
                       "x": 4.05,
@@ -448,7 +448,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 13,
                     "StartPoint": {
                       "x": 4.95,
@@ -480,7 +480,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 14,
                     "StartPoint": {
                       "x": 5.85,
@@ -512,7 +512,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 15,
                     "StartPoint": {
                       "x": 6.75,
@@ -544,7 +544,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 16,
                     "StartPoint": {
                       "x": 7.65,
@@ -576,7 +576,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 17,
                     "StartPoint": {
                       "x": 8.55,
@@ -608,7 +608,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 18,
                     "StartPoint": {
                       "x": 9.45,
@@ -640,7 +640,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 19,
                     "StartPoint": {
                       "x": 10.3499994,
@@ -672,7 +672,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 20,
                     "StartPoint": {
                       "x": -6.24,
@@ -704,7 +704,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 21,
                     "StartPoint": {
                       "x": -6.24,
@@ -736,7 +736,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 22,
                     "StartPoint": {
                       "x": -6.24,
@@ -768,7 +768,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 23,
                     "StartPoint": {
                       "x": 11.64,
@@ -800,7 +800,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 24,
                     "StartPoint": {
                       "x": 11.64,
@@ -832,7 +832,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
+                    "OwnerId": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
                     "Id": 25,
                     "StartPoint": {
                       "x": 11.64,
@@ -869,12 +869,12 @@
         }
       },
       {
-        "id": "73d8d135-0f40-4542-bf7c-d6ceba9760b7",
-        "path": "/maps/TestMap/Background",
+        "id": "9246cf37-40cd-4cb9-a043-5a09bee2ddd2",
+        "path": "/maps/Chapter3/Background",
         "componentNames": "MOD.Core.BackgroundComponent",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/TestMap/Background",
+          "path": "/maps/Chapter3/Background",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -901,12 +901,12 @@
         }
       },
       {
-        "id": "ea755ccc-bee3-4dd5-8f88-6f251d5b3a03",
-        "path": "/maps/TestMap/MapleMapLayer",
+        "id": "8751a0a2-1941-4c22-9fde-d7fa19dc0115",
+        "path": "/maps/Chapter3/MapleMapLayer",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer",
-          "path": "/maps/TestMap/MapleMapLayer",
+          "path": "/maps/Chapter3/MapleMapLayer",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -935,12 +935,12 @@
         }
       },
       {
-        "id": "0b044232-352e-4a3b-9f53-5b5c93cd2e1f",
-        "path": "/maps/TestMap/TileMap",
+        "id": "2ffd4518-acb8-4432-8141-937a1bb4f9ee",
+        "path": "/maps/Chapter3/TileMap",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap",
-          "path": "/maps/TestMap/TileMap",
+          "path": "/maps/Chapter3/TileMap",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -3176,12 +3176,12 @@
         }
       },
       {
-        "id": "d5a4654f-096a-4603-970b-8e65ddd0a206",
-        "path": "/maps/TestMap/EnemyTower",
+        "id": "7233bf51-7b1e-4cc5-ab66-2e454f638497",
+        "path": "/maps/Chapter3/EnemyTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService,script.Tower,MOD.Core.HitComponent,script.Unit",
         "jsonString": {
           "name": "EnemyTower",
-          "path": "/maps/TestMap/EnemyTower",
+          "path": "/maps/Chapter3/EnemyTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3199,8 +3199,8 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 10.5805264,
-                "y": 0.741631269,
+                "x": 10.63871,
+                "y": 0.86837554,
                 "z": 999.998047
               },
               "QuaternionRotation": {
@@ -3273,12 +3273,12 @@
         }
       },
       {
-        "id": "2e00a90e-95dc-4416-bbe2-d5c7dd7e9864",
-        "path": "/maps/TestMap/ProjectileParent",
+        "id": "004e536c-9aa8-4e0c-b765-9a517ad23edf",
+        "path": "/maps/Chapter3/ProjectileParent",
         "componentNames": "",
         "jsonString": {
           "name": "ProjectileParent",
-          "path": "/maps/TestMap/ProjectileParent",
+          "path": "/maps/Chapter3/ProjectileParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3292,12 +3292,12 @@
         }
       },
       {
-        "id": "fb707b44-1201-4e3e-b0a8-c135d9d9161b",
-        "path": "/maps/TestMap/MyMonsterList",
+        "id": "bc1549d6-e3e9-402b-9e86-266ce6a99d51",
+        "path": "/maps/Chapter3/MyMonsterList",
         "componentNames": "",
         "jsonString": {
           "name": "MyMonsterList",
-          "path": "/maps/TestMap/MyMonsterList",
+          "path": "/maps/Chapter3/MyMonsterList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3311,12 +3311,12 @@
         }
       },
       {
-        "id": "f793b445-e361-4fce-a55c-6743363f9e0d",
-        "path": "/maps/TestMap/MyMonsterList/MySpawnPoint",
+        "id": "8860cd33-633c-4da1-a3e1-88338cd393b7",
+        "path": "/maps/Chapter3/MyMonsterList/MySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "MySpawnPoint",
-          "path": "/maps/TestMap/MyMonsterList/MySpawnPoint",
+          "path": "/maps/Chapter3/MyMonsterList/MySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3357,12 +3357,12 @@
         }
       },
       {
-        "id": "968b021b-2378-4d33-b482-daa66da8f304",
-        "path": "/maps/TestMap/EnemyList",
+        "id": "2bf43f31-b2b1-4562-af6b-b164b854095d",
+        "path": "/maps/Chapter3/EnemyList",
         "componentNames": "",
         "jsonString": {
           "name": "EnemyList",
-          "path": "/maps/TestMap/EnemyList",
+          "path": "/maps/Chapter3/EnemyList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3376,12 +3376,12 @@
         }
       },
       {
-        "id": "3b6de5b4-5242-4d5c-9cac-1b351080a281",
-        "path": "/maps/TestMap/EnemyList/EnemySpawnPoint",
+        "id": "46c32ad7-ae3e-4a66-b2b3-67f7229c9e54",
+        "path": "/maps/Chapter3/EnemyList/EnemySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "EnemySpawnPoint",
-          "path": "/maps/TestMap/EnemyList/EnemySpawnPoint",
+          "path": "/maps/Chapter3/EnemyList/EnemySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3422,12 +3422,12 @@
         }
       },
       {
-        "id": "0b6807ff-d5b9-4d35-96a7-a2b1bd12d852",
-        "path": "/maps/TestMap/SkillParent",
+        "id": "5b81f330-7cc5-4028-b0df-eb37b9c774a0",
+        "path": "/maps/Chapter3/SkillParent",
         "componentNames": "",
         "jsonString": {
           "name": "SkillParent",
-          "path": "/maps/TestMap/SkillParent",
+          "path": "/maps/Chapter3/SkillParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3441,12 +3441,12 @@
         }
       },
       {
-        "id": "7298e0be-f906-4c81-a5f8-319b69059559",
-        "path": "/maps/TestMap/PlayerTower",
+        "id": "77578bfe-e1ba-4a2b-9289-943401756498",
+        "path": "/maps/Chapter3/PlayerTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,MOD.Core.HitComponent,script.Tower,script.Unit",
         "jsonString": {
           "name": "PlayerTower",
-          "path": "/maps/TestMap/PlayerTower",
+          "path": "/maps/Chapter3/PlayerTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3529,12 +3529,12 @@
         }
       },
       {
-        "id": "bf9d420d-ff89-4ef4-8878-a3fce4c71ef7",
-        "path": "/maps/TestMap/ingameIncome",
+        "id": "e6fd9684-dbef-4f9b-abe0-1304e01a1da3",
+        "path": "/maps/Chapter3/ingameIncome",
         "componentNames": "script.MesoIncome",
         "jsonString": {
           "name": "ingameIncome",
-          "path": "/maps/TestMap/ingameIncome",
+          "path": "/maps/Chapter3/ingameIncome",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -3550,11 +3550,11 @@
               "nextUpdateTs": 1.0,
               "UIController": {
                 "IsRelative": false,
-                "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
+                "ComponentId": "151d7236-98de-419c-a804-2c150c12d6ae:MesoUI"
               },
               "UserWallet": {
                 "IsRelative": false,
-                "ComponentId": "03a1c87b-00aa-49d9-9d14-ada3697851e0:MesoWallet"
+                "ComponentId": "cc1d0323-9041-4ead-8cde-646ca0b26e89:MesoWallet"
               }
             }
           ],
@@ -3562,12 +3562,12 @@
         }
       },
       {
-        "id": "b771f6ce-ad97-4213-a9e4-79b76dada5e0",
-        "path": "/maps/TestMap/userWallet",
+        "id": "cc1d0323-9041-4ead-8cde-646ca0b26e89",
+        "path": "/maps/Chapter3/userWallet",
         "componentNames": "script.MesoWallet",
         "jsonString": {
           "name": "userWallet",
-          "path": "/maps/TestMap/userWallet",
+          "path": "/maps/Chapter3/userWallet",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -3583,7 +3583,7 @@
               "CurrentMeso": 20,
               "UIController": {
                 "IsRelative": false,
-                "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
+                "ComponentId": "151d7236-98de-419c-a804-2c150c12d6ae:MesoUI"
               }
             }
           ],
@@ -3591,12 +3591,12 @@
         }
       },
       {
-        "id": "9b7a7639-78d7-427b-a340-db4516dfad88",
-        "path": "/maps/TestMap/ingameWalletUI",
+        "id": "151d7236-98de-419c-a804-2c150c12d6ae",
+        "path": "/maps/Chapter3/ingameWalletUI",
         "componentNames": "script.MesoUI",
         "jsonString": {
           "name": "ingameWalletUI",
-          "path": "/maps/TestMap/ingameWalletUI",
+          "path": "/maps/Chapter3/ingameWalletUI",
           "nameEditable": true,
           "enable": true,
           "visible": false,

@@ -12,14 +12,13 @@ script StageSelectorUI extends Component
 		local path = self.Entity.Path
 		
 		local userStage = _UserService.LocalPlayer.UserStage
-		local loadErr = userStage:LOAD()
-		if loadErr > 0 then
-			userStage:SAVE()
-		end
+		userStage:LOAD()
 		
 		local openStage = userStage.openStage
 		local selectStage = userStage.selectStage
 		local chapterId = userStage.selectChapter
+		
+		log(chapterId)
 		
 		local stageDataList = _StageService:GetStageByChapter(chapterId)
 		local stageCount = #stageDataList
@@ -73,6 +72,7 @@ script StageSelectorUI extends Component
 			if i == id then
 				entity.StageSelectItemUI:SetSelected()
 				self.StageInfoPanel.SpriteGUIRendererComponent.ImageRUID = stageDataList[i].info
+				userStage.selectStage = stageDataList[i].id
 			end
 		end
 	end

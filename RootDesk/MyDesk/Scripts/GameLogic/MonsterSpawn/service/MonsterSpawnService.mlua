@@ -111,8 +111,14 @@ script MonsterSpawnService extends Component
 			return
 		end
 		
+		self:SetStage(1)
+	end
+
+	method void SetStage(integer targetStage)
+		log("current stage is " .. targetStage)
+		
 		local settingFunction = function() 
-			local patterns = _patternRepo:GetPatternByStage(1)
+			local patterns = _patternRepo:GetPatternByStage(targetStage)
 			self.curTimeTs = 0
 		
 			for i, pattern in ipairs(patterns) do

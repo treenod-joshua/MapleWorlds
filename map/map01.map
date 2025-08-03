@@ -1,0 +1,159 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "map://map01",
+  "ContentType": "x-mod/map",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.25.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Binary",
+    "Entities": [
+      {
+        "id": "4f5ddb80-679e-4bbf-8fae-6f5144659d33",
+        "path": "/maps/map01",
+        "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent",
+        "jsonString": {
+          "name": "map01",
+          "path": "/maps/map01",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": -1,
+          "pathConstraints": "",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "MOD.Core.MapComponent",
+              "IsInstanceMap": false,
+              "TileMapMode": 0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.FootholdComponent",
+              "FootholdsByLayer": {},
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "bb9f8355-1fe7-410a-9417-5a23cd92c517",
+        "path": "/maps/map01/Background",
+        "componentNames": "MOD.Core.BackgroundComponent",
+        "jsonString": {
+          "name": "Background",
+          "path": "/maps/map01/Background",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": -1,
+          "pathConstraints": "",
+          "revision": 1,
+          "modelId": null,
+          "@components": [
+            {
+              "@type": "MOD.Core.BackgroundComponent",
+              "TemplateRUID": "794ad8421e2543d8a6d2c70307637450",
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "c9b10924-d399-4103-8eea-c27e5bf312f0",
+        "path": "/maps/map01/MapleMapLayer",
+        "componentNames": "MOD.Core.MapLayerComponent",
+        "jsonString": {
+          "name": "MapleMapLayer",
+          "path": "/maps/map01/MapleMapLayer",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": -1,
+          "pathConstraints": "",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "maplemaplayer",
+            "sub_entity_id": null
+          },
+          "modelId": "maplemaplayer",
+          "@components": [
+            {
+              "@type": "MOD.Core.MapLayerComponent",
+              "IsVisible": true,
+              "LayerSortOrder": 0,
+              "Locked": false,
+              "MapLayerName": "Layer1",
+              "Thumbnail": null,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "13fdf5dd-badb-47bc-9363-57f89093cf86",
+        "path": "/maps/map01/TileMap",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
+        "jsonString": {
+          "name": "TileMap",
+          "path": "/maps/map01/TileMap",
+          "nameEditable": false,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": -1,
+          "pathConstraints": "",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "tilemap",
+            "sub_entity_id": null
+          },
+          "modelId": "tilemap",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 1000.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TileMapComponent",
+              "SortingLayer": "MapLayer0",
+              "TileMapVersion": 1,
+              "TileSetRUID": {
+                "DataId": "0e680c74c46e4bc095821b6f21db8ead"
+              },
+              "Tiles": [],
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      }
+    ]
+  }
+}

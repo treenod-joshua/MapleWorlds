@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://b801090e-b2fc-4cfc-a16e-b1b1744e4186",
+  "EntryKey": "codeblock://dcc556b6-d31d-4c60-9eed-9a3ebc87333e",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,9 +22,9 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "b801090e-b2fc-4cfc-a16e-b1b1744e4186",
+      "Id": "dcc556b6-d31d-4c60-9eed-9a3ebc87333e",
       "Language": 1,
-      "Name": "MonsterSpawnService",
+      "Name": "StartUI",
       "Type": 1,
       "Source": 0,
       "Target": null
