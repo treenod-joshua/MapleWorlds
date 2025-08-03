@@ -24,7 +24,8 @@
         "script.UserBillingComponent",
         "script.UIMain",
         "script.UserStage",
-        "MOD.Core.TagComponent"
+        "MOD.Core.TagComponent",
+        "script.UserDeck"
       ],
       "Properties": [],
       "Values": [
