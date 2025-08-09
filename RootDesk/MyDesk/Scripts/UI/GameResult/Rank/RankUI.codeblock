@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://63e05ff5-ff9e-4431-a354-03f04a3fa80b",
+  "EntryKey": "codeblock://2f7b40ac-a816-49ea-925c-82176e1faaeb",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,10 +22,10 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "63e05ff5-ff9e-4431-a354-03f04a3fa80b",
+      "Id": "2f7b40ac-a816-49ea-925c-82176e1faaeb",
       "Language": 1,
-      "Name": "BillingService",
-      "Type": 5,
+      "Name": "RankUI",
+      "Type": 1,
       "Source": 0,
       "Target": null
     }

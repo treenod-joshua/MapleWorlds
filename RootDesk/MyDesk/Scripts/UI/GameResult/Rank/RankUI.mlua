@@ -1,0 +1,51 @@
+@Component
+script RankUI extends Component
+
+	@ExecSpace("ClientOnly")
+	method void UpdateRankData(string userName, integer userScore)
+		local currentRankTable = _RankingService:GetTop3RankTable()
+		local path = self.Entity.Path
+		
+		local rankTable = {}
+		local userRank = -1
+		for _, user in ipairs(currentRankTable) do
+			if user.score <= userScore then
+				rankTable[#rankTable + 1] = user
+				break
+			end
+			
+			rankTable[#rankTable + 1] = {name=userName, score=userScore}
+			userRank = #rankTable
+			rankTable[#rankTable + 1] = user
+		end
+		
+		rankTable[4] = {name=userName, score=userScore}
+		
+		for i = 1, 4 do
+			local textComp = _EntityService:GetEntityByPath(path .. "/Rank_" .. tostring(i) .. "/UIText").TextComponent
+			local user = rankTable[i]
+			
+			if user.name == userName then
+				textComp.Text = self:GetRankText(userRank, user.name, user.score)
+			end
+			
+			textComp.Text = self:GetRankText(i, user.name, user.score)
+		end
+		
+	end
+
+	method string GetRankText(integer rank, string name, integer score)
+		local strRank = tostring(rank)
+		if rank > 3 then
+			strRank = "4+"
+		end
+		
+		return "#" .. strRank .." [" ..   name .. "] " .. tostring(score)
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnBeginPlay()
+		self:UpdateRankData("frank", 110)
+	end
+
+end
