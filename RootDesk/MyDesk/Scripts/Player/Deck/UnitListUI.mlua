@@ -6,7 +6,14 @@ script UnitListUI extends Component
 	@Sync
 	property number itemIndex = 0
 
-	method void OnBeginPlay()
+	method void OpenListUI(integer index)
+		self:RemoveItem()
+		self:SetItemList()
+		
+		self.itemIndex = index
+	end
+
+	method void SetItemList()
 		-- 1) 덱에 장착된 유닛 ID를 set로 만들기
 		local equipped = {}
 		local player = _EntityService:GetEntityByTag("Player")
@@ -38,8 +45,22 @@ script UnitListUI extends Component
 		
 	end
 
-	method void OpenListUI(integer index)
-		self.itemIndex = index
+	method void RemoveItem()
+		local root = self.Entity.Children[1]
+		if not root or not root.Children then return end
+		
+		local toRemove = {}
+		for idx, child in ipairs(root.Children) do
+			if idx ~= 1 and child.UnitListItem then
+				table.insert(toRemove, child)
+			end
+		end
+		
+		for _, e in ipairs(toRemove) do
+			if e.Destroy then
+				e:Destroy()
+			end
+		end
 	end
 
 end
