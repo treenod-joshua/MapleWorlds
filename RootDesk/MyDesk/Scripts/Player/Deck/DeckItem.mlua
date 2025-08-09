@@ -20,6 +20,9 @@ script DeckItem extends Component
 	@Sync
 	property Entity unitFrameSprite = nil
 
+	@Sync
+	property integer itemIndex = 0
+
 	method void Init(table unitData, table skillData)
 		self.unitData = unitData
 		self.skillData = skillData
@@ -44,6 +47,9 @@ script DeckItem extends Component
 			self.unitFrameSprite.SpriteGUIRendererComponent.ImageRUID = "9242c303445244c5b1c123f453423ff3" 
 		else
 			self.redDotSprite.Visible = false
+			self.unitSprite.Visible = true
+			self.unitName.Visible = true
+			self.unitAvartarRenderer.Visible = true
 			-- 일반 프레임
 			self.unitFrameSprite.SpriteGUIRendererComponent.ImageRUID = "9cabdd08cb834cbab689c6219db5db05"
 			self.unitName.TextComponent.Text = self.unitData['name']
@@ -90,7 +96,7 @@ script DeckItem extends Component
 		userDeckUI.unitListUI.Enable = true
 		userDeckUI.unitListUI.Visible = true
 		
-		userDeckUI.unitListUI.UnitListUI:OpenListUI()
+		userDeckUI.unitListUI.UnitListUI:OpenListUI(self.itemIndex)
 	end
 
 end

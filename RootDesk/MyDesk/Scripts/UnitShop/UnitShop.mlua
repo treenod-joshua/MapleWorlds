@@ -14,16 +14,35 @@ script UnitShop extends Component
 	property SyncTable<integer> summonDeck
 
 	method void SetShop()
-		for i, v in ipairs(self.summonDeck) do
-			local unitData = _UnitService:GetUnitByIDFromCleint(self.summonPools[v])
-			self.shopItems[i].UnitShopItem:Initialize(unitData,i, self, _SkillService:GetSkillByIDFromClient(unitData['skillID']))
+		-- 1~4: 실제 사용 가능 카드
+		for slot = 1, 4 do
+			local poolIndex	= self.summonDeck[slot]
+			local unitID	= poolIndex and self.summonPools[poolIndex]
+			local unitData	= unitID and _UnitService:GetUnitByIDFromClient(unitID) or nil
+			local skillData	= (unitData and unitData.skillID) and _SkillService:GetSkillByIDFromClient(unitData.skillID) or nil
+		
+			self.shopItems[slot].UnitShopItem:Initialize(unitData, slot, self, skillData)
 		end
+		
+		-- 5: 다음 카드 미리보기 (큐의 맨 앞)
+		local previewIdx	= self.summonQueue[1]
+		local previewID		= previewIdx and self.summonPools[previewIdx]
+		local previewUD		= previewID and _UnitService:GetUnitByIDFromClient(previewID) or nil
+		local previewSD		= (previewUD and previewUD.skillID) and _SkillService:GetSkillByIDFromClient(previewUD.skillID) or nil
+		
+		self.shopItems[5].UnitShopItem:Initialize(previewUD, PREVIEW_SLOT, self, previewSD)
 	end
 
 	method void OnSpawn(integer id)
-		table.insert(self.summonQueue, self.summonDeck[id])
-		self.summonDeck[id] = self.summonQueue[1]
-		table.remove(self.summonQueue, 1)
+		if id < 1 or id > 4 then return end
+		
+		local usedIdx = self.summonDeck[id]
+		if not usedIdx then return end
+		
+		-- 사용한 인덱스를 큐 뒤로, 큐 앞을 꺼내 슬롯 채우기
+		table.insert(self.summonQueue, usedIdx)
+		local nextIdx = table.remove(self.summonQueue, 1)
+		self.summonDeck[id] = nextIdx
 		
 		self:SetShop()
 	end
@@ -33,24 +52,32 @@ script UnitShop extends Component
 		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
 		local deckList = playerDeck.userDeck
 		
+		-- UI 슬롯 연결 (4 + 1 preview)
 		for i = 1, 5 do
 			self.shopItems[i] = shopItems.Children[i]
-			table.insert(self.summonDeck, i)
 		end
 		
-		for i = 6, 8 do
-			table.insert(self.summonQueue, i)
+		-- 덱(최대 8장) -> 풀에 채우기
+		for i = 1, 8 do
+			local modelId = deckList[i]
+			if modelId and modelId ~= 0 then
+				table.insert(self.summonPools, modelId)
+			end
 		end
 		
-		for i, modelId in ipairs(deckList) do
-		    self.summonPools[i] = modelId
-		end
-		
+		-- 셔플 (서버에서 한 번만 셔플/동기화 권장)
 		math.randomseed(os.time())
-		-- 소환 배열을 섞는다.
-		for i = 1, #self.summonPools - 1 do
-			local j = math.random(i, #self.summonPools)
+		for i = #self.summonPools, 2, -1 do
+			local j = math.random(1, i)
 			self.summonPools[i], self.summonPools[j] = self.summonPools[j], self.summonPools[i]
+		end
+		
+		-- 앞 4장은 화면, 나머지는 큐
+		for i = 1, 4 do
+			self.summonDeck[i] = i
+		end
+		for i = 4 + 1, 8 do
+			table.insert(self.summonQueue, i)
 		end
 		
 		self:SetShop()

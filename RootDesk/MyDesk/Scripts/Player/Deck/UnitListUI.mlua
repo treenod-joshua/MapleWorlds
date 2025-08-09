@@ -3,22 +3,45 @@ script UnitListUI extends Component
 
 	property Entity buttonPrefab = "2c18dbdf-eb72-47df-8d73-0fdc655fa195"
 
+	@Sync
+	property number itemIndex = 0
+
 	method void OnBeginPlay()
-		for id, unitData in pairs(_UnitService.UnitTable) do
-		    local skillData = nil
 		
-		    -- unitData가 nil이 아니고 skillID가 존재할 경우
-		    if unitData and unitData["skillID"] then
-		        skillData = _SkillService:GetSkillByIDFromClient(unitData["skillID"])
+		
+		-- 1) 덱에 장착된 유닛 ID를 set로 만들기
+		local equipped = {}
+		local player = _EntityService:GetEntityByTag("Player")
+		if player and player.UserDeck and player.UserDeck.userDeck then
+		    for i = 1, 8 do
+		        local uid = player.UserDeck.userDeck[i]
+		        if uid ~= nil then
+		            equipped[uid] = true
+		        end
 		    end
-		
-		    local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity)
-		    button.UnitListItem:Init(unitData, skillData)
 		end
+		
+		-- 2) 유닛 리스트 출력 (덱에 있는 건 제외)
+		for id, unitData in pairs(_UnitService.UnitTable) do
+		    -- unitData['id']가 있으면 그걸 우선 사용, 없으면 key 사용
+		    local unitId = unitData and unitData["id"] or id
+		
+		    -- 덱에 있는 유닛이면 스킵
+		    if unitData and not equipped[unitId] then
+		        local skillData = nil
+		        if unitData["skillID"] then
+		            skillData = _SkillService:GetSkillByIDFromClient(unitData["skillID"])
+		        end
+		
+		        local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity)
+		        button.UnitListItem:Init(unitData, skillData)
+		    end
+		end
+		
 	end
 
-	method void OpenListUI()
-		
+	method void OpenListUI(integer index)
+		self.itemIndex = index
 	end
 
 end
