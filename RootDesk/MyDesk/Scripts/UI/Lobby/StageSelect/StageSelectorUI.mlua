@@ -5,22 +5,18 @@ script StageSelectorUI extends Component
 
 	property table SelectButtonList = {}
 
-	@ExecSpace("ClientOnly")
-	method void SetEnable()
-		local data = {}
-		
+	@Sync
+	property UserStage userStage = nil
+
+	method void UpdateData()
 		local path = self.Entity.Path
 		
-		local userStage = _UserService.LocalPlayer.UserStage
-		userStage:LOAD()
+		local openStage = self.userStage.openStage
+		local selectStage = self.userStage.selectStage
+		local selectChapter = self.userStage.selectChapter
+		local openChapter = self.userStage.openChapter
 		
-		local openStage = userStage.openStage
-		local selectStage = userStage.selectStage
-		local chapterId = userStage.selectChapter
-		
-		log(chapterId)
-		
-		local stageDataList = _StageService:GetStageByChapter(chapterId)
+		local stageDataList = _StageService:GetStageByChapter(selectChapter)
 		local stageCount = #stageDataList
 		
 		self.StageInfoPanel = _EntityService:GetEntityByPath(path .. "/StageInfoPanel/panel")
@@ -31,6 +27,7 @@ script StageSelectorUI extends Component
 				entity:SetEnable(false)
 				continue
 			end
+			entity:SetEnable(true)
 			
 			entity.StageSelectItemUI:Init()
 			self.SelectButtonList[i] = entity
@@ -46,7 +43,7 @@ script StageSelectorUI extends Component
 				entity.StageSelectItemUI:SetLocked()
 			end
 			
-			if i == selectStage then
+			if i == openStage then
 				entity.StageSelectItemUI:SetSelected()
 				self.StageInfoPanel.SpriteGUIRendererComponent.ImageRUID = stageDataList[i].info
 			end
@@ -56,13 +53,12 @@ script StageSelectorUI extends Component
 	end
 
 	method void ClickButtonHanddler(integer id)
-		local userStage = _UserService.LocalPlayer.UserStage
-		userStage:LOAD()
-		local openStage = userStage.openStage
-		local selectStage = userStage.selectStage
-		local chapterId = userStage.selectChapter
+		local openStage = self.userStage.openStage
+		local selectStage = self.userStage.selectStage
+		local selectChapter = self.userStage.selectChapter
+		local openChapter = self.userStage.openChapter
 		
-		local stageDataList = _StageService:GetStageByChapter(1)
+		local stageDataList = _StageService:GetStageByChapter(selectChapter)
 		
 		for i, entity in ipairs(self.SelectButtonList) do
 			if i > openStage then
@@ -72,14 +68,14 @@ script StageSelectorUI extends Component
 			if i == id then
 				entity.StageSelectItemUI:SetSelected()
 				self.StageInfoPanel.SpriteGUIRendererComponent.ImageRUID = stageDataList[i].info
-				userStage.selectStage = stageDataList[i].id
+				self.userStage.selectStage = stageDataList[i].id
 			end
 		end
 	end
 
-	@ExecSpace("ClientOnly")
-	method void OnBeginPlay()
-		self:SetEnable()
+	method void SetUserStageComp(UserStage newComp)
+		self.userStage = newComp
+		newComp.updateList[#newComp.updateList + 1] = function() self:UpdateData() end
 	end
 
 end

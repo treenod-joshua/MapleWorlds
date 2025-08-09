@@ -2,16 +2,18 @@
 script UserStage extends Component
 
 	@Sync
-	property integer openStage = 1
+	property integer openStage = 0
 
 	@Sync
-	property integer openChapter = 1
+	property integer openChapter = 0
 
 	@Sync
-	property integer selectStage = 1
+	property integer selectStage = 0
 
 	@Sync
-	property integer selectChapter = 1
+	property integer selectChapter = 0
+
+	property table updateList = {}
 
 	@ExecSpace("Server")
 	method integer SAVE()
@@ -61,6 +63,15 @@ script UserStage extends Component
 			self.selectStage = 1
 			self.selectChapter = 1
 			self:SAVE()
+		end
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnSyncProperty(string name, any value)
+		if name == "openStage" or name == "openChapter" or name == "selectStage" or name == "selectChapter" then
+			for i, cb in ipairs(self.updateList) do
+				cb()
+			end
 		end
 	end
 
