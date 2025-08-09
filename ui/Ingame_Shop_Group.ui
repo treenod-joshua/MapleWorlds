@@ -5277,7 +5277,9 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
-              "BestFit": false,
+              "BestFit": true,
+              "ConstraintX": 146.0,
+              "ConstraintY": 45.0,
               "Font": 1,
               "FontColor": {
                 "r": 1.0,
@@ -5299,8 +5301,10 @@
                 "y": -1.0
               },
               "OverrideSorting": false,
-              "SizeFit": true,
+              "SizeFit": false,
               "Text": "매직 클로",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -5513,7 +5517,9 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
-              "BestFit": false,
+              "BestFit": true,
+              "ConstraintX": 262.0,
+              "ConstraintY": 17.0,
               "Font": 1,
               "FontColor": {
                 "r": 1.0,
@@ -5523,8 +5529,8 @@
               },
               "FontSize": 15,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 15,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,

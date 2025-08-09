@@ -7,8 +7,6 @@ script UnitListUI extends Component
 	property number itemIndex = 0
 
 	method void OnBeginPlay()
-		
-		
 		-- 1) 덱에 장착된 유닛 ID를 set로 만들기
 		local equipped = {}
 		local player = _EntityService:GetEntityByTag("Player")
@@ -33,7 +31,7 @@ script UnitListUI extends Component
 		            skillData = _SkillService:GetSkillByIDFromClient(unitData["skillID"])
 		        end
 		
-		        local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity)
+		        local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity.Children[1])
 		        button.UnitListItem:Init(unitData, skillData)
 		    end
 		end

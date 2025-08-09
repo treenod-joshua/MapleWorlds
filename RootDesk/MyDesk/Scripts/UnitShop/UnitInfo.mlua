@@ -7,6 +7,12 @@ script UnitInfo extends Component
 
 	property Entity skillDesc = "daecdffa-9216-47c8-bd8b-b7c1a61cb879"
 
+	method void OnBeginPlay()
+		self.skillIcon = self.Entity.Children[1]
+		self.skillName = self.Entity.Children[2]
+		self.skillDesc = self.Entity.Children[4]
+	end
+
 	method void UpdateInfo(table skillData)
 		if skillData ~= nil then
 			self.skillIcon.SpriteGUIRendererComponent.ImageRUID = skillData['skillIcon']

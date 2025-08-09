@@ -272,7 +272,7 @@
       {
         "id": "d1e60812-0e24-452d-908d-d784c01fc208",
         "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_1",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "DeckItem_1",
           "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_1",
@@ -407,6 +407,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -904,7 +908,10 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
               "Bold": false,
+              "ConstraintX": 45.0,
+              "ConstraintY": 18.0,
               "Font": 3,
               "FontColor": {
                 "r": 1.0,
@@ -914,8 +921,8 @@
               },
               "FontSize": 18,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 18,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,
@@ -928,7 +935,10 @@
               },
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
+              "SizeFit": false,
               "Text": "슬라임",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -939,7 +949,7 @@
       {
         "id": "956e0478-5b54-4aee-9bc0-cdb68cb7e62b",
         "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_2",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "DeckItem_2",
           "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_2",
@@ -1075,6 +1085,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -1574,7 +1588,10 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
               "Bold": false,
+              "ConstraintX": 45.0,
+              "ConstraintY": 18.0,
               "Font": 3,
               "FontColor": {
                 "r": 1.0,
@@ -1584,8 +1601,8 @@
               },
               "FontSize": 18,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 18,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,
@@ -1598,7 +1615,10 @@
               },
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
+              "SizeFit": false,
               "Text": "슬라임",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -1609,7 +1629,7 @@
       {
         "id": "2d2ba2ee-e99e-43f5-8c28-6a6e0043286b",
         "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_3",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "DeckItem_3",
           "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_3",
@@ -1745,6 +1765,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -2244,7 +2268,10 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
               "Bold": false,
+              "ConstraintX": 45.0,
+              "ConstraintY": 18.0,
               "Font": 3,
               "FontColor": {
                 "r": 1.0,
@@ -2254,8 +2281,8 @@
               },
               "FontSize": 18,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 18,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,
@@ -2268,7 +2295,10 @@
               },
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
+              "SizeFit": false,
               "Text": "슬라임",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -2279,7 +2309,7 @@
       {
         "id": "ccda6b47-d836-49a2-9ae4-a3f94c1a1c01",
         "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_4",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "DeckItem_4",
           "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_4",
@@ -2415,6 +2445,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -2914,7 +2948,10 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
               "Bold": false,
+              "ConstraintX": 45.0,
+              "ConstraintY": 18.0,
               "Font": 3,
               "FontColor": {
                 "r": 1.0,
@@ -2924,8 +2961,8 @@
               },
               "FontSize": 18,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 18,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,
@@ -2938,7 +2975,10 @@
               },
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
+              "SizeFit": false,
               "Text": "슬라임",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -2949,7 +2989,7 @@
       {
         "id": "ebb6d276-a982-4d57-b97a-6e3557fbf3eb",
         "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_5",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "DeckItem_5",
           "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_5",
@@ -3085,6 +3125,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -3584,7 +3628,10 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
               "Bold": false,
+              "ConstraintX": 45.0,
+              "ConstraintY": 18.0,
               "Font": 3,
               "FontColor": {
                 "r": 1.0,
@@ -3594,8 +3641,8 @@
               },
               "FontSize": 18,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 18,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,
@@ -3608,7 +3655,10 @@
               },
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
+              "SizeFit": false,
               "Text": "슬라임",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -3619,7 +3669,7 @@
       {
         "id": "284fbf75-da86-4612-9e0e-cd99a800ec63",
         "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_6",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "DeckItem_6",
           "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_6",
@@ -3755,6 +3805,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -4254,7 +4308,10 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
               "Bold": false,
+              "ConstraintX": 45.0,
+              "ConstraintY": 18.0,
               "Font": 3,
               "FontColor": {
                 "r": 1.0,
@@ -4264,8 +4321,8 @@
               },
               "FontSize": 18,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 18,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,
@@ -4278,7 +4335,10 @@
               },
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
+              "SizeFit": false,
               "Text": "슬라임",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -4289,7 +4349,7 @@
       {
         "id": "652e79af-b8a6-4246-9c43-5e84aa5dc3d1",
         "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_7",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "DeckItem_7",
           "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_7",
@@ -4425,6 +4485,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -4924,7 +4988,10 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
               "Bold": false,
+              "ConstraintX": 45.0,
+              "ConstraintY": 18.0,
               "Font": 3,
               "FontColor": {
                 "r": 1.0,
@@ -4934,8 +5001,8 @@
               },
               "FontSize": 18,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 18,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,
@@ -4948,7 +5015,10 @@
               },
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
+              "SizeFit": false,
               "Text": "슬라임",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -4959,7 +5029,7 @@
       {
         "id": "48160a60-b5bb-488a-8945-a85dd10ec960",
         "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_8",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.DeckItem,MOD.Core.ButtonComponent,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "DeckItem_8",
           "path": "/ui/UserDeckUI/UserDeck/DeckFrame/DeckItem_8",
@@ -5095,6 +5165,10 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
               "Enable": true
             }
           ],
@@ -5594,7 +5668,10 @@
             },
             {
               "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
               "Bold": false,
+              "ConstraintX": 45.0,
+              "ConstraintY": 18.0,
               "Font": 3,
               "FontColor": {
                 "r": 1.0,
@@ -5604,8 +5681,8 @@
               },
               "FontSize": 18,
               "IsRichText": true,
-              "MaxSize": 40,
-              "MinSize": 10,
+              "MaxSize": 18,
+              "MinSize": 1,
               "OutlineColor": {
                 "r": 0.0,
                 "g": 0.0,
@@ -5618,7 +5695,10 @@
               },
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
+              "SizeFit": false,
               "Text": "슬라임",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }
@@ -5871,9 +5951,9 @@
         }
       },
       {
-        "id": "f5ef7754-322c-4be8-b304-f738905288d0",
+        "id": "6842c710-d474-4a17-a497-3f26d4842aed",
         "path": "/ui/UserDeckUI/UserDeck/UnitListUI",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.ScrollLayoutGroupComponent,script.UnitListUI,MOD.Core.SpriteGUIRendererComponent",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.UnitListUI",
         "jsonString": {
           "name": "UnitListUI",
           "path": "/ui/UserDeckUI/UserDeck/UnitListUI",
@@ -5883,6 +5963,106 @@
           "localize": true,
           "displayOrder": 2,
           "pathConstraints": "////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 600.0,
+                "y": 385.0
+              },
+              "OffsetMin": {
+                "x": -600.0,
+                "y": -315.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 1200.0,
+                "y": 700.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 35.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 35.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "adf619e2efc84d4ab93e5236b73771c7"
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "script.UnitListUI",
+              "Enable": true,
+              "buttonPrefab": {
+                "tempEntityId": null,
+                "IsRelative": false,
+                "EntityId": "2c18dbdf-eb72-47df-8d73-0fdc655fa195"
+              },
+              "itemIndex": 0.0
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "f5ef7754-322c-4be8-b304-f738905288d0",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.ScrollLayoutGroupComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "UnitListUIScroll",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "/////",
           "revision": 1,
           "modelId": null,
           "@components": [
@@ -5899,20 +6079,20 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 425.0,
-                "y": 250.0
+                "x": 525.0,
+                "y": 350.0
               },
               "OffsetMin": {
-                "x": -425.0,
-                "y": -250.0
+                "x": -525.0,
+                "y": -350.0
               },
               "Pivot": {
                 "x": 0.5,
                 "y": 0.5
               },
               "RectSize": {
-                "x": 850.0,
-                "y": 500.0
+                "x": 1050.0,
+                "y": 700.0
               },
               "UIMode": 1,
               "UIScale": {
@@ -5939,7 +6119,7 @@
                 "x": 0.0,
                 "y": 0.0,
                 "z": 0.0,
-                "w": -1.0
+                "w": 1.0
               },
               "Scale": {
                 "x": 1.0,
@@ -5955,34 +6135,59 @@
                 "x": 200.0,
                 "y": 200.0
               },
+              "ChildAlignment": 0,
+              "Constraint": 0,
+              "ConstraintCount": 1,
+              "GridChildAlignment": 0,
               "GridSpacing": {
                 "x": 220.0,
                 "y": 10.0
               },
+              "HorizontalScrollBarDirection": 0,
+              "IgnoreMapLayerCheck": false,
+              "OrderInLayer": 0,
               "OverrideSorting": false,
               "Padding": {
-                "left": 120,
-                "right": 0,
-                "top": 20,
-                "bottom": 200
+                "left": 100,
+                "right": 120,
+                "top": 35,
+                "bottom": 0
               },
               "ReverseArrangement": false,
+              "ScrollBarBackgroundColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.4
+              },
+              "ScrollBarBgImageRUID": null,
+              "ScrollBarHandleColor": {
+                "r": 0.5,
+                "g": 0.5,
+                "b": 0.5,
+                "a": 1.0
+              },
+              "ScrollBarHandleImageRUID": null,
+              "ScrollBarThickness": 20.0,
               "ScrollBarVisible": 2,
+              "SortingLayer": "UI",
               "Spacing": 250.0,
-              "StartAxis": 0,
+              "StartAxis": 1,
+              "StartCorner": 0,
               "Type": 2,
-              "Enable": true
-            },
-            {
-              "@type": "script.UnitListUI",
+              "UseScroll": true,
+              "VerticalScrollBarDirection": 2,
               "Enable": true
             },
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
-              "ImageRUID": {
-                "DataId": "adf619e2efc84d4ab93e5236b73771c7"
-              },
               "OverrideSorting": false,
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.0
+              },
               "Enable": true
             }
           ],
@@ -5991,17 +6196,17 @@
       },
       {
         "id": "2c18dbdf-eb72-47df-8d73-0fdc655fa195",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitListItem",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitListItem,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "UnitListItem",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem",
           "nameEditable": true,
           "enable": false,
-          "visible": false,
+          "visible": true,
           "localize": true,
           "displayOrder": 0,
-          "pathConstraints": "/////",
+          "pathConstraints": "//////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -6024,11 +6229,11 @@
               "MobileOnly": false,
               "OffsetMax": {
                 "x": 320.0,
-                "y": -20.0
+                "y": -50.0
               },
               "OffsetMin": {
                 "x": 120.0,
-                "y": -220.0
+                "y": -250.0
               },
               "Pivot": {
                 "x": 0.5,
@@ -6042,11 +6247,11 @@
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": 220.0,
-                "y": -120.0
+                "y": -150.0
               },
               "Position": {
                 "x": 220.0,
-                "y": -120.0,
+                "y": -150.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -6118,6 +6323,10 @@
             {
               "@type": "script.UnitListItem",
               "Enable": true
+            },
+            {
+              "@type": "MOD.Core.UITouchReceiveComponent",
+              "Enable": true
             }
           ],
           "@version": 1
@@ -6125,17 +6334,17 @@
       },
       {
         "id": "4e73338f-c4d7-4cec-be88-600441ffb25a",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem/UnitSprite",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UnitSprite",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem/UnitSprite",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
-          "pathConstraints": "//////",
+          "pathConstraints": "///////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -6222,17 +6431,17 @@
       },
       {
         "id": "7db7c97f-dd17-4391-b338-daa98ae3988e",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem/UnitAvartar",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitAvartar",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.AvatarGUIRendererComponent,MOD.Core.CostumeManagerComponent",
         "jsonString": {
           "name": "UnitAvartar",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem/UnitAvartar",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitAvartar",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 1,
-          "pathConstraints": "//////",
+          "pathConstraints": "///////",
           "revision": 1,
           "modelId": null,
           "@components": [
@@ -6322,17 +6531,17 @@
       },
       {
         "id": "2a7941f5-9ad5-4130-a786-9d088f5c9fef",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem/UnitName",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitName",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "UnitName",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem/UnitName",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitName",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 2,
-          "pathConstraints": "//////",
+          "pathConstraints": "///////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -6446,17 +6655,17 @@
       },
       {
         "id": "947c7f8a-2fb6-4766-a46c-18d9f02119cf",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem/SkillDesc",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/SkillDesc",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "SkillDesc",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListItem/SkillDesc",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/SkillDesc",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 3,
-          "pathConstraints": "//////",
+          "pathConstraints": "///////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -6562,6 +6771,587 @@
               "OutlineWidth": 0.1,
               "OverrideSorting": false,
               "Text": "슬라임이 공격을 합니다. 슬라임이 공격을 합니다. 슬라임이 공격을 합니다.",
+              "UseOutLine": true,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "53e0a15f-931e-46fe-b601-b05b2575fe14",
+        "path": "/ui/UserDeckUI/UserDeck/UnitInfo",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,script.UnitInfo",
+        "jsonString": {
+          "name": "UnitInfo",
+          "path": "/ui/UserDeckUI/UserDeck/UnitInfo",
+          "nameEditable": true,
+          "enable": true,
+          "visible": false,
+          "localize": true,
+          "displayOrder": 3,
+          "pathConstraints": "////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 280.0,
+                "y": 76.0004
+              },
+              "OffsetMin": {
+                "x": -120.0,
+                "y": -173.9996
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 400.0,
+                "y": 250.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 80.0,
+                "y": -48.9996
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 80.0,
+                "y": -48.9996,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "5e1626341c064c9fa3a83e8f0957f4b2"
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.6699219
+              },
+              "Enable": true
+            },
+            {
+              "@type": "script.UnitInfo",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "66c59dd1-89aa-47ca-b13e-1a28b5fdf7db",
+        "path": "/ui/UserDeckUI/UserDeck/UnitInfo/SkillIcon",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "SkillIcon",
+          "path": "/ui/UserDeckUI/UserDeck/UnitInfo/SkillIcon",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -80.0,
+                "y": 105.0
+              },
+              "OffsetMin": {
+                "x": -180.0,
+                "y": 5.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 100.0,
+                "y": 100.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": -130.0,
+                "y": 55.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": -130.0,
+                "y": 55.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "94300e64009b4471af950cac9af83f33"
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Outline": true,
+              "OutlineColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 5.0,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "a634ac73-cdf5-4165-b130-2e2b464d5493",
+        "path": "/ui/UserDeckUI/UserDeck/UnitInfo/SkillName",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
+        "jsonString": {
+          "name": "SkillName",
+          "path": "/ui/UserDeckUI/UserDeck/UnitInfo/SkillName",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 1,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uitext",
+            "sub_entity_id": null
+          },
+          "modelId": "uitext",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 119.400604,
+                "y": 83.4561
+              },
+              "OffsetMin": {
+                "x": -26.5994,
+                "y": 38.4561
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 146.0,
+                "y": 45.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 46.4006,
+                "y": 60.9561
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 46.4006,
+                "y": 60.9561,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
+              "ConstraintX": 146.0,
+              "ConstraintY": 45.0,
+              "Font": 1,
+              "FontColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "FontSize": 40,
+              "MaxSize": 40,
+              "MinSize": 10,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineDistance": {
+                "x": 1.0,
+                "y": -1.0
+              },
+              "OverrideSorting": false,
+              "SizeFit": false,
+              "Text": "매직 클로",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
+              "UseOutLine": true,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "2ae354f9-3f60-440b-986b-a0dee6c25c9e",
+        "path": "/ui/UserDeckUI/UserDeck/UnitInfo/line",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
+        "jsonString": {
+          "name": "line",
+          "path": "/ui/UserDeckUI/UserDeck/UnitInfo/line",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 2,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 197.5,
+                "y": -17.4998
+              },
+              "OffsetMin": {
+                "x": -197.5,
+                "y": -22.4998
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 395.0,
+                "y": 5.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": -19.9998
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": -19.9998,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "e773ed45d24f4aaf826eb27a32a0ed80"
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "FlipX": false,
+              "Outline": true,
+              "OutlineColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "OutlineWidth": 1.0,
+              "Type": 1,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "f9679a48-677d-41fe-b6a2-302ca33b12ce",
+        "path": "/ui/UserDeckUI/UserDeck/UnitInfo/SkillDesc",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
+        "jsonString": {
+          "name": "SkillDesc",
+          "path": "/ui/UserDeckUI/UserDeck/UnitInfo/SkillDesc",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 3,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uitext",
+            "sub_entity_id": null
+          },
+          "modelId": "uitext",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 180.0,
+                "y": -30.0
+              },
+              "OffsetMin": {
+                "x": -180.0,
+                "y": -110.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 360.0,
+                "y": 80.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": -70.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": -70.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TextComponent",
+              "BestFit": true,
+              "ConstraintX": 262.0,
+              "ConstraintY": 17.0,
+              "Font": 1,
+              "FontColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "FontSize": 15,
+              "IsRichText": true,
+              "MaxSize": 15,
+              "MinSize": 1,
+              "OutlineColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+              },
+              "OutlineDistance": {
+                "x": 1.0,
+                "y": -1.0
+              },
+              "OverrideSorting": false,
+              "SizeFit": false,
+              "Text": "MP를 소비하여 전방의 적들을 연속 공격한다.",
+              "UseConstraintX": false,
+              "UseConstraintY": false,
               "UseOutLine": true,
               "Enable": true
             }

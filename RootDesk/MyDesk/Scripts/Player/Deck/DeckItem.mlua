@@ -23,6 +23,8 @@ script DeckItem extends Component
 	@Sync
 	property integer itemIndex = 0
 
+	property Entity unitInfoUI = "53e0a15f-931e-46fe-b601-b05b2575fe14"
+
 	method void Init(table unitData, table skillData)
 		self.unitData = unitData
 		self.skillData = skillData
@@ -34,6 +36,12 @@ script DeckItem extends Component
 		self.unitFrameSprite = self.Entity
 		
 		self:RefreshUI()
+	end
+
+	@ExecSpace("Client")
+	method void SetDataInClient(table unitData, table skillData)
+		self.unitData = unitData
+		self.skillData = skillData
 	end
 
 	method void RefreshUI()
@@ -94,9 +102,35 @@ script DeckItem extends Component
 		local userDeckUI = _EntityService:GetEntityByPath("/ui/UserDeckUI/UserDeck").UserDeckUI
 		
 		userDeckUI.unitListUI.Enable = true
-		userDeckUI.unitListUI.Visible = true
 		
 		userDeckUI.unitListUI.UnitListUI:OpenListUI(self.itemIndex)
+		
+		userDeckUI.unitListUI.Visible = true
+	end
+
+	@EventSender("Self")
+	handler HandleUITouchDownEvent(UITouchDownEvent event)
+		if event.TouchId ~= -2 then
+			return
+		end 
+		
+		local iconTransform = self.Entity.UITransformComponent
+		local iconPos = iconTransform.anchoredPosition
+		
+		self.unitInfoUI.UITransformComponent.anchoredPosition = Vector2(iconPos.x + 300, iconPos.y + 150)
+		self.unitInfoUI.UnitInfo:UpdateInfo(self.skillData)
+		
+		self.unitInfoUI.Visible = true
+	end
+
+	@EventSender("Self")
+	handler HandleUITouchExitEvent(UITouchExitEvent event)
+		self.unitInfoUI.Visible = false
+	end
+
+	@EventSender("Self")
+	handler HandleUITouchUpEvent(UITouchUpEvent event)
+		self.unitInfoUI.Visible = false
 	end
 
 end
