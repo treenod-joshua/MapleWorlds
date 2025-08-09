@@ -63,9 +63,11 @@ script UnitShopItem extends Component
 	method void SetSprite()
 		if self.unitData['isUsableCharacter'] == 0 then
 			self.unitAvartarRenderer.Visible = false
+			self.unitSprite.Visible = true
 			self.unitSprite.SpriteGUIRendererComponent.ImageRUID = self.unitData['ImageRUID']
 		else
 			self.unitSprite.Visible = false
+			self.unitAvartarRenderer.Visible = true
 			self:SetCostume()
 		end
 		

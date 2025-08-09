@@ -39,7 +39,7 @@ script UnitService extends Logic
 	end
 
 	@ExecSpace("Client")
-	method table GetUnitByIDFromCleint(string id)
+	method table GetUnitByIDFromClient(string id)
 		return self.UnitTable[id]
 	end
 

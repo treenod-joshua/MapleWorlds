@@ -8,8 +8,7 @@ script UserDeckService extends Logic
 		local data = {}
 		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
 		
-		-- TODO: 테스트용 저장 코드
-		playerDeck:RefreshDeck()
+		-- playerDeck:SaveUserDeck()
 		
 		-- userDeck을 순회해서 배열로 복사
 		local deckList = {}

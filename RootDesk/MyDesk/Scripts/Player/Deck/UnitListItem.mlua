@@ -67,4 +67,17 @@ script UnitListItem extends Component
 		self.unitAvartarRenderer.CostumeManagerComponent.CustomTwoHandedWeaponEquip = entity.CostumeManagerComponent.CustomTwoHandedWeaponEquip
 	end
 
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
+		local userDeckUI = _EntityService:GetEntityByPath("/ui/UserDeckUI/UserDeck").UserDeckUI
+		local unitListUI = _EntityService:GetEntityByPath("/ui/UserDeckUI/UserDeck/UnitListUI").UnitListUI
+		local index = unitListUI.itemIndex
+		
+		userDeckUI.deckItems[index].DeckItem:Init(self.unitData, self.skillData)
+		userDeckUI.unitListUI.Enable = false
+		userDeckUI.unitListUI.Visible = false
+		playerDeck:SetDeckItem(self.unitData['id'], index)
+	end
+
 end
