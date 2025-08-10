@@ -179,7 +179,7 @@ script GameManager extends Logic
 
 	@ExecSpace("Client")
 	method void SetPlayerCharacter()
-		local skill1 = _SkillService:GetSkillByIDFromClient('model://c95b0210-bbd1-4d0c-8f60-478b83fa5f58')
+		local skill1 = _SkillService:GetSkillByIDFromClient('model://83d3e5b8-6dd5-4d93-83ce-e73d364ec46e')
 		local skill2 = _SkillService:GetSkillByIDFromClient('model://02330bcd-8b7c-4146-8d26-89f5e7aa953c')
 		
 		_UserService.LocalPlayer.PlayerCharacter:SetSkill(skill1, skill2)
