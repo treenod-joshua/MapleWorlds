@@ -13,7 +13,7 @@ script MesoIncome extends Component
 	property MesoWallet UserWallet = "cc1d0323-9041-4ead-8cde-646ca0b26e89"
 
 	@Sync
-	property number incomeCooltime = 5
+	property number incomeCooltime = 0.1
 
 	@Sync
 	property number currentTs = 0
