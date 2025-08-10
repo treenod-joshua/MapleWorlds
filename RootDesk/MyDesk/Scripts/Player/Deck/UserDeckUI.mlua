@@ -4,7 +4,7 @@ script UserDeckUI extends Component
 	@Sync
 	property SyncTable<Entity> deckItems
 
-	property Entity unitListUI = "f5ef7754-322c-4be8-b304-f738905288d0"
+	property Entity unitListUI = "6842c710-d474-4a17-a497-3f26d4842aed"
 
 	method void OnBeginPlay()
 		for i = 1, 8 do

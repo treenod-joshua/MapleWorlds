@@ -21,7 +21,6 @@ script UserDeckService extends Logic
 		local save =  _HttpService:JSONEncode(data)
 		
 		log(save)
-		
 		return ds:SetAndWait("DECK",save)
 		
 	end
@@ -39,6 +38,8 @@ script UserDeckService extends Logic
 		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
 		
 		playerDeck:SetUserDeckInClient(resTable["UserDeck"])
+		
+		log(resTable)
 		
 		return 0
 	end

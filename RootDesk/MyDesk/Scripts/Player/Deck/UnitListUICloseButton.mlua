@@ -1,0 +1,12 @@
+@Component
+script UnitListUICloseButton extends Component
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		local unitListUI = _EntityService:GetEntityByPath("/ui/UserDeckUI/UserDeck/UnitListUI")
+		
+		unitListUI.Enable = false
+		unitListUI.Visible = false
+	end
+
+end
