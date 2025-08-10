@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://3669a115-fd06-46fc-8128-47a9137eb16a",
+  "EntryKey": "codeblock://1a1baae2-c75b-42c5-8ce9-85915d9ca9a2",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,9 +22,9 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "3669a115-fd06-46fc-8128-47a9137eb16a",
+      "Id": "1a1baae2-c75b-42c5-8ce9-85915d9ca9a2",
       "Language": 1,
-      "Name": "AvatarAnimationComponent",
+      "Name": "FailPopup",
       "Type": 1,
       "Source": 0,
       "Target": null
