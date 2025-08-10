@@ -47,4 +47,13 @@ script UnitService extends Logic
 		return self.UnitTable
 	end
 
+	method table GetUnitList()
+		local list = {}
+		for k,v in pairs(self.UnitTable) do
+			list[#list + 1] = v
+		end
+		
+		return list
+	end
+
 end

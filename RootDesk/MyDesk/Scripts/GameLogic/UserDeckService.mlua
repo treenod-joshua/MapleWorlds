@@ -28,14 +28,41 @@ script UserDeckService extends Logic
 	@ExecSpace("Server")
 	method integer LOAD(string uid)
 		local ds = _DataStorageService:GetUserDataStorage(uid)
+		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
 		
 		local errCode, res = ds:GetAndWait("DECK")
 		if errCode ~= 0 then
 			return errCode
 		end
 		
+		if res == nil then
+			log(res)
+			local deckList = {}
+			local data = {}
+			
+			local allUnit = _UnitService:GetUnitList()
+			
+			math.randomseed(os.time())
+			for i = #allUnit, 2, -1 do
+				local j = math.random(1, i)
+				allUnit[i], allUnit[j] = allUnit[j], allUnit[i]
+			end
+			
+			for i = 1,8 do
+				deckList[i] = allUnit[i].id
+			end
+			
+			log(deckList)
+			
+			playerDeck:SetUserDeckInClient(deckList)
+			
+			data["UserDeck"] = deckList
+			local save =  _HttpService:JSONEncode(data)
+		
+			return ds:SetAndWait("DECK",save)
+		end
+		
 		local resTable = _HttpService:JSONDecode(res)
-		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
 		
 		playerDeck:SetUserDeckInClient(resTable["UserDeck"])
 		
