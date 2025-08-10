@@ -2643,12 +2643,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 1778.62012,
-                "y": -53.3379974
+                "x": 1768.62012,
+                "y": -58.3379974
               },
               "OffsetMin": {
-                "x": 1578.62012,
-                "y": -123.338
+                "x": 1588.62012,
+                "y": -118.338
               },
               "Pivot": {
                 "x": 0.5,
@@ -3389,7 +3389,7 @@
             },
             {
               "@type": "MOD.Core.AvatarBodyActionSelectorComponent",
-              "ActionState": 10,
+              "ActionState": 1,
               "StateActionDic": {
                 "Stand": [
                   {
