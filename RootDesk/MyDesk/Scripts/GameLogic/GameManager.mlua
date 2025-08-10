@@ -30,6 +30,9 @@ script GameManager extends Logic
 	@Sync
 	property boolean isPlaying = false
 
+	@Sync
+	property integer timer = 0
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		for i = 1, 3 do
@@ -106,7 +109,15 @@ script GameManager extends Logic
 	end
 
 	method void GameEnd()
+		-- 인게임 UI 비활성화
+		self.shopUI.Enable = false
+		self.shopUI.Visible = false
+		self.infoUI.Enable = false
+		self.infoUI.Visible = false
 		
+		self:ClearObjects()
+		self:ClearTimer()
+		self:ClearGameData()
 	end
 
 	method string GetGameMapName()
@@ -143,12 +154,79 @@ script GameManager extends Logic
 		_UserService.LocalPlayer.PlayerCharacter:SetSkill(skill1, skill2)
 	end
 
+	method void ClearObjects()
+		local myMonsterList = _EntityService:GetEntityByPath(self:GetGameMapName().."/MyMonsterList")
+		local enemyList = _EntityService:GetEntityByPath(self:GetGameMapName().."/EnemyList")
+		local skillParent = _EntityService:GetEntityByPath(self:GetGameMapName().."/SkillParent")
+		local ProjectileParent = _EntityService:GetEntityByPath(self:GetGameMapName().."/ProjectileParent")
+		local minimap = _EntityService:GetEntityByPath("/ui/Ingame_Info_UI_Group/Minimap Group/Minimap Background")
+		local timeText = _EntityService:GetEntityByPath("/ui/Ingame_Info_UI_Group/CenterUI/TimeText")
+		
+		-- 첫 번째 자식은 유지
+		self:DestroyChildren(myMonsterList, true)
+		self:DestroyChildren(enemyList, true)
+		self:DestroyChildrenInClient(minimap, true)
+		
+		-- 전부 삭제
+		self:DestroyChildren(skillParent, false)
+		self:DestroyChildren(ProjectileParent, false)
+		
+		timeText.TextComponent.Text = "0:00"
+	end
+
+	@ExecSpace("Server")
+	method void DestroyChildren(Entity entity, boolean keepFirst)
+		if not entity or not entity.Children then return end
+			local targets = {}
+			for idx, child in ipairs(entity.Children) do
+				if not keepFirst or idx ~= 1 then
+					table.insert(targets, child)
+				end
+			end
+			for _, e in ipairs(targets) do
+				if e and e.Destroy then
+					e:Destroy()
+				end
+			end
+	end
+
+	@ExecSpace("Client")
+	method void DestroyChildrenInClient(Entity entity, boolean keepFirst)
+		if not entity or not entity.Children then return end
+			local targets = {}
+			for idx, child in ipairs(entity.Children) do
+				if not keepFirst or idx ~= 1 then
+					table.insert(targets, child)
+				end
+			end
+			for _, e in ipairs(targets) do
+				if e and e.Destroy then
+					e:Destroy()
+				end
+			end
+	end
+
 	@ExecSpace("Client")
 	method void SetTimer()
-		_TimerService:SetTimerRepeat(function()
+		self.timer = _TimerService:SetTimerRepeat(function()
 			self.playTime += 1.0
 			self.timeText.TextComponent.Text = self:FormatMMSS(self.playTime)
 		end, 1.0, 0)
+	end
+
+	@ExecSpace("Client")
+	method void ClearTimer()
+		self.playTime = 0
+		_TimerService:ClearTimer(self.timer)
+	end
+
+	@ExecSpace("Server")
+	method void ClearGameData()
+		self.isPlaying = false
+		
+		local mesoWallet = _EntityService:GetEntityByPath(_GameManager:GetGameMapName() .. "/userWallet")
+		
+		mesoWallet.MesoWallet:SetMeso(0)
 	end
 
 	method string FormatMMSS(number time)
