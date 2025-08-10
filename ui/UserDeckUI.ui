@@ -6160,16 +6160,20 @@
                 "b": 1.0,
                 "a": 0.4
               },
-              "ScrollBarBgImageRUID": null,
+              "ScrollBarBgImageRUID": {
+                "DataId": "97d5249da9b018d4aade47fc3613f1df"
+              },
               "ScrollBarHandleColor": {
                 "r": 0.5,
                 "g": 0.5,
                 "b": 0.5,
                 "a": 1.0
               },
-              "ScrollBarHandleImageRUID": null,
+              "ScrollBarHandleImageRUID": {
+                "DataId": "97d5249da9b018d4aade47fc3613f1df"
+              },
               "ScrollBarThickness": 20.0,
-              "ScrollBarVisible": 2,
+              "ScrollBarVisible": 1,
               "SortingLayer": "UI",
               "Spacing": 250.0,
               "StartAxis": 1,

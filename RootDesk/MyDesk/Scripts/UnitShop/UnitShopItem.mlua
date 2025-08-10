@@ -108,7 +108,8 @@ script UnitShopItem extends Component
 		end
 		
 		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
-		self.shop:OnSpawn(self.id)
+		
+		self.shop:OnSpawn(self.id, self.unitData['summonCost'])
 	end
 
 	@EventSender("Self")
@@ -155,7 +156,8 @@ script UnitShopItem extends Component
 		end
 		
 		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
-		self.shop:OnSpawn(self.id)
+		
+		self.shop:OnSpawn(self.id, self.unitData['summonCost'])
 	end
 
 end
