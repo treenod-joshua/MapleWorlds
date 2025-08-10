@@ -67,17 +67,28 @@ script UserStage extends Component
 	end
 
 	@ExecSpace("Server")
-	method void SetClearStage()
-		if self.selectStage < self.openStage then
+	method void SetClearStage(integer selectStage)
+		if selectStage < self.openStage then
+			self:SAVE()
 			return
 		end
 		
 		if self.openStage > 5 then
+			self:SAVE()
 			return
 		end
 		
-		self.openStage = self.openStage + 1
-		self.selectStage = self.selectStage + 1
+		local nextOpenStage = self.openStage + 1
+		
+		if self.openStage == selectStage then
+			self.selectStage = nextOpenStage
+			if self.selectStage > 5 then
+				self.selectStage = 5
+			end
+		end
+		
+		self.openStage = nextOpenStage
+		self:SAVE()
 	end
 
 	@ExecSpace("ClientOnly")

@@ -249,27 +249,18 @@ script GameManager extends Logic
 		return string.format("%d:%02d", m, ss)
 	end
 
-	@ExecSpace("Server")
+	@ExecSpace("Client")
 	method void StageClear()
 		local playTime = DateTime.UtcNow.Elapsed - self.playStartTs 
 		
-		local user = _UserService.LocalPlayer
-		local userStage = user.UserStage
+		local userName = _UserService.LocalPlayer.PlayerComponent.Nickname
+		
+		local userStage = _UserService.LocalPlayer.UserStage
+		
+		userStage:SetClearStage(userStage.selectStage)
 		
 		local key = _RankingService:GetRankKeyByTable({chapter=userStage.selectChapter, stage=userStage.selectStage})
-		_RankingService:AddPoint(key, user.PlayerComponent.Nickname, playTime)
-		
-		userStage:SetClearStage()
-		userStage:SAVE()
-		
-		self:EnableStageClearUI()
-	end
-
-	@ExecSpace("Client")
-	method void EnableStageClearUI()
-		local playTime = DateTime.UtcNow.Elapsed - self.playStartTs 
-		
-		local userName = _UserService.LocalPlayer.PlayerComponent.Nickname
+		_RankingService:AddPoint(key, userName, playTime)
 		
 		self.rankUI:UpdateRankData(userName, playTime)
 		

@@ -43,7 +43,7 @@ script StageSelectorUI extends Component
 				entity.StageSelectItemUI:SetLocked()
 			end
 			
-			if i == openStage then
+			if i == selectStage then
 				entity.StageSelectItemUI:SetSelected()
 				self.StageInfoPanel.SpriteGUIRendererComponent.ImageRUID = stageDataList[i].info
 			end

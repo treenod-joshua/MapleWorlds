@@ -8,29 +8,32 @@ script RankUI extends Component
 		
 		local rankTable = {}
 		local userRank = -1
-		for _, ranker in ipairs(currentRankTable) do
-			if userRank > 0 then
-				rankTable[#rankTable + 1] = ranker
-				continue
+		for rank, ranker in ipairs(currentRankTable) do	
+			if ranker.name == userName then
+				if ranker.score > userScore then
+					ranker.score = userScore
+				end
+				userRank = rank
 			end
 			
-			if ranker.score <= userScore then
-				rankTable[#rankTable + 1] = ranker
-				continue
-			end
-			
-			rankTable[#rankTable + 1] = {name=userName, score=userScore}
-			userRank = #rankTable
 			rankTable[#rankTable + 1] = ranker
+		end
+		
+		if userRank < 0 then
+			rankTable[#rankTable + 1] = {name=userName, score=userScore}
+		end
+		
+		table.sort(rankTable, function(a,b) return a.score < b.score end)
+		
+		if #rankTable == 5 and rankTable[#rankTable].name == userName then
+			rankTable[4] = rankTable[5]
 		end
 		
 		for i = 1, 4 do
 			local textComp = _EntityService:GetEntityByPath(path .. "/Rank_" .. tostring(i) .. "/UIText").TextComponent
 			local user = rankTable[i]
-			
-			if user.name == userName then
-				textComp.Text = self:GetRankText(userRank, user.name, user.score)
-				continue
+			if user == nil then
+				log("rank to set rank of" .. i)
 			end
 			
 			textComp.Text = self:GetRankText(i, user.name, user.score)
@@ -44,7 +47,7 @@ script RankUI extends Component
 			strRank = "4+"
 		end
 		
-		return "#" .. strRank .." [" ..   name .. "] " .. tostring(score / 1000) .. "." .. tostring(score % 1000)
+		return "#" .. strRank .." [" ..   name .. "] " .. tostring(score / 1000)
 	end
 
 end

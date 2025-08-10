@@ -4,7 +4,7 @@ script GameClearChecker extends Component
 	@Sync
 	property boolean isClear = false
 
-	@ExecSpace("ServerOnly")
+	@ExecSpace("ClientOnly")
 	method void OnUpdate(number delta)
 		if self.isClear then
 			return
