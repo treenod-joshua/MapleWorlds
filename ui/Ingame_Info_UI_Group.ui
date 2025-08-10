@@ -2643,20 +2643,20 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 1768.62012,
-                "y": -58.3379974
+                "x": 1778.62012,
+                "y": -50.8379974
               },
               "OffsetMin": {
-                "x": 1588.62012,
-                "y": -118.338
+                "x": 1578.62012,
+                "y": -125.838
               },
               "Pivot": {
                 "x": 0.5,
                 "y": 0.5
               },
               "RectSize": {
-                "x": 180.0,
-                "y": 60.0
+                "x": 200.0,
+                "y": 75.0
               },
               "UIMode": 1,
               "UIScale": {
@@ -2696,13 +2696,16 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "ImageRUID": {
-                "DataId": "ef57c27c09ef428eb88b9bb8c4b32999"
+                "DataId": "ece9727091d245f5bc8312b7b092d0b0"
               },
               "LocalScale": {
                 "x": 1.0,
                 "y": 1.0
               },
               "OverrideSorting": false,
+              "FlipX": true,
+              "Outline": true,
+              "OutlineWidth": 1.0,
               "Type": 0,
               "Enable": true
             },
@@ -3224,19 +3227,19 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 32.0,
-                "y": -22.0
+                "x": 125.0,
+                "y": -122.0
               },
               "OffsetMin": {
-                "x": -32.0,
-                "y": -38.0
+                "x": -125.0,
+                "y": -138.0
               },
               "Pivot": {
                 "x": 0.5,
                 "y": 0.5
               },
               "RectSize": {
-                "x": 64.0,
+                "x": 250.0,
                 "y": 16.0
               },
               "UIMode": 1,
@@ -3248,7 +3251,7 @@
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": 0.0,
-                "y": -30.0
+                "y": -130.0
               },
               "Rotation": {
                 "x": 0.0,
@@ -3257,7 +3260,7 @@
               },
               "Position": {
                 "x": 0.0,
-                "y": -30.0,
+                "y": -130.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -3321,20 +3324,20 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 55.0,
-                "y": 70.0
+                "x": 155.0,
+                "y": 170.0
               },
               "OffsetMin": {
-                "x": -45.0,
-                "y": -30.0
+                "x": -145.0,
+                "y": -130.0
               },
               "Pivot": {
                 "x": 0.5,
                 "y": 0.5
               },
               "RectSize": {
-                "x": 100.0,
-                "y": 100.0
+                "x": 300.0,
+                "y": 300.0
               },
               "UIMode": 1,
               "UIScale": {

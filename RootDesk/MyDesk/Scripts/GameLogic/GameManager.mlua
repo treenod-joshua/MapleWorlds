@@ -36,7 +36,7 @@ script GameManager extends Logic
 	property Entity gameClearResult = "bd109aaa-b307-4160-b918-a09b05a6d4d9"
 
 	property RankUI rankUI = "daa5b02b-f478-4f97-a216-d17e6b71634a"
-	
+
 	property Entity failPopupUI = "60300db6-e074-4ae3-9db1-9142f3a47a24"
 
 	@ExecSpace("ClientOnly")
@@ -157,6 +157,10 @@ script GameManager extends Logic
 		self.failPopupUI.Enable = false
 		self.failPopupUI.Visible = false
 		
+		-- 닉네임 설정
+		local userNameUI = _EntityService:GetEntityByPath("/ui/Ingame_Info_UI_Group/UserInfo/UserName")
+		userNameUI.TextComponent.Text = _UserService.LocalPlayer.PlayerComponent.Nickname
+		
 		self.unitShop.UnitShop:InitShop()
 		
 		for i = 1, 2 do
@@ -266,6 +270,8 @@ script GameManager extends Logic
 		
 		local userStage = _UserService.LocalPlayer.UserStage
 		
+		local userAvatar = _EntityService:GetEntityByPath("/ui/GameClearUI/Frame/UserAvatar/UnitAvartar")
+		
 		userStage:SetClearStage(userStage.selectStage)
 		
 		local key = _RankingService:GetRankKeyByTable({chapter=userStage.selectChapter, stage=userStage.selectStage})
@@ -275,6 +281,8 @@ script GameManager extends Logic
 		
 		self.gameClearResult.Enable = true
 		self.gameClearResult.Visible = true
+		
+		userAvatar.AvatarGUIRendererComponent:PlayEmotion(EmotionalType.Love, 100)
 	end
 
 	@EventSender("Service", "InputService")
