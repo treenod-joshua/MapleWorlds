@@ -107,7 +107,7 @@ script UnitShopItem extends Component
 			return
 		end
 		
-		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
+		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'], Vector3.zero)
 		
 		self.shop:OnSpawn(self.id, self.unitData['summonCost'])
 	end
@@ -155,7 +155,7 @@ script UnitShopItem extends Component
 			return
 		end
 		
-		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'])
+		_SpawnManager:Spawn(self.unitData['id'], self.unitData['summonCost'], Vector3.zero)
 		
 		self.shop:OnSpawn(self.id, self.unitData['summonCost'])
 	end
