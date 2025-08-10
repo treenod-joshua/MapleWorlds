@@ -8,15 +8,20 @@ script RankUI extends Component
 		
 		local rankTable = {}
 		local userRank = -1
-		for _, user in ipairs(currentRankTable) do
-			if user.score <= userScore then
-				rankTable[#rankTable + 1] = user
-				break
+		for _, ranker in ipairs(currentRankTable) do
+			if userRank > 0 then
+				rankTable[#rankTable + 1] = ranker
+				continue
+			end
+			
+			if ranker.score <= userScore then
+				rankTable[#rankTable + 1] = ranker
+				continue
 			end
 			
 			rankTable[#rankTable + 1] = {name=userName, score=userScore}
 			userRank = #rankTable
-			rankTable[#rankTable + 1] = user
+			rankTable[#rankTable + 1] = ranker
 		end
 		
 		rankTable[4] = {name=userName, score=userScore}
@@ -27,6 +32,7 @@ script RankUI extends Component
 			
 			if user.name == userName then
 				textComp.Text = self:GetRankText(userRank, user.name, user.score)
+				continue
 			end
 			
 			textComp.Text = self:GetRankText(i, user.name, user.score)

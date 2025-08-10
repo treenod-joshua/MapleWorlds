@@ -23,7 +23,7 @@ script GameManager extends Logic
 	property boolean isTest = false
 
 	@Sync
-	property number playTime = 0
+	property integer playStartTs = 0
 
 	property Entity timeText = "f229ed5a-4dbc-4c26-8ff0-3fa8ebf7f5ce"
 
@@ -98,6 +98,11 @@ script GameManager extends Logic
 		self.chapterIndex = chapterIndex
 		self.mapIndex = mapIndex
 		self.isPlaying = true
+		self.playStartTs = DateTime.UtcNow.Elapsed
+		
+		
+		local key = _RankingService:GetRankKeyByTable({chapter=chapterIndex, stage=mapIndex})
+		_RankingService:FETCH(key)
 		
 		self:SetPlayerCharacter()
 		self:EnableUI()
@@ -106,7 +111,11 @@ script GameManager extends Logic
 	end
 
 	method void GameEnd()
+		local user _UserService.LocalPlayer.PlayerComponent.Nickname
 		
+		local userStage = _UserService.LocalPlayer.UserStage
+		local rankKey = _RankingService:GetRankKeyByTable({chapter=userStage.selectChapter, stage=userStage.selectStage})
+		_RankingService:AddPoint(rankKey, user.Nick)
 	end
 
 	method string GetGameMapName()
@@ -146,8 +155,8 @@ script GameManager extends Logic
 	@ExecSpace("Client")
 	method void SetTimer()
 		_TimerService:SetTimerRepeat(function()
-			self.playTime += 1.0
-			self.timeText.TextComponent.Text = self:FormatMMSS(self.playTime)
+			local playTime = DateTime.UtcNow.Elapsed - self.playStartTs
+			self.timeText.TextComponent.Text = self:FormatMMSS(playTime / 1000)
 		end, 1.0, 0)
 	end
 

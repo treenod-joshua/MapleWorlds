@@ -45,7 +45,7 @@ script RankingService extends Logic
 		
 		for rank = 1, 3 do
 			if rank > #self.RankData then
-				table[rank] = {name="NONE", score=3599}
+				table[rank] = {name="NONE", score=9999}
 				continue
 			end
 			
