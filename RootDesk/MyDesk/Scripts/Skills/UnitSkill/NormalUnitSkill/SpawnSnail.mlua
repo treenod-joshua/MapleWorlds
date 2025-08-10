@@ -20,14 +20,13 @@ script SpawnSnail extends SkillParent
 			local parent
 			
 			if self.caster.Unit.isEnemy then
-				pos = Vector3(self.caster.TransformComponent.WorldPosition.x + 5, self.caster.TransformComponent.WorldPosition.y, 0)
-				parent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/EnemyList')
+				pos = Vector3(self.caster.TransformComponent.Position.x + 0.5, self.caster.TransformComponent.Position.y, 0)
+				_SpawnManager:SpawnEnemy(selectedModel, pos)
 			else
-				pos = Vector3(self.caster.TransformComponent.WorldPosition.x - 5, self.caster.TransformComponent.WorldPosition.y, 0)
-				parent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/MyMonsterList')
+				pos = Vector3(self.caster.TransformComponent.Position.x - 0.5, self.caster.TransformComponent.Position.y, 0)
+				_SpawnManager:Spawn(selectedModel, 0, pos)
 			end
 			
-			_SpawnService:SpawnByModelId(selectedModel, "snail", pos, parent)
 		end
 		
 		-- 스킬 사용 종료 처리

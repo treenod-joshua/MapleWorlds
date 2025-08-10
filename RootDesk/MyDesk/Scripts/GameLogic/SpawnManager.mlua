@@ -5,14 +5,20 @@ script SpawnManager extends Logic
 	property Entity userWallet = "03a1c87b-00aa-49d9-9d14-ada3697851e0"
 
 	@ExecSpace("Server")
-	method void Spawn(string modelID, integer price)
+	method void Spawn(string modelID, integer price, Vector3 pos)
 		if not self:IsCanSpawn(price) then
 			return
 		end
-		log("맵 네임: ".._GameManager:GetGameMapName())
+		
 		local spawnParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName()..'/MyMonsterList')
 		local spawnPos = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/MyMonsterList/MySpawnPoint")
-		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
+		local spawnEntity
+		if pos == Vector3.zero then
+			spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
+		else
+			log(pos)
+			spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", pos, spawnParent)
+		end
 		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
 		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
 			
@@ -22,12 +28,17 @@ script SpawnManager extends Logic
 	end
 
 	@ExecSpace("Server")
-	method void SpawnEnemy(string modelID)
+	method void SpawnEnemy(string modelID, Vector3 pos)
 		local spawnParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName() .."/EnemyList")
 		local spawnPos = _EntityService:GetEntityByPath(_GameManager:GetGameMapName() .."/EnemyList/EnemySpawnPoint")
 		local unitData = _UnitService:GetUnitByIDFromServer(modelID)
 		local skillData = _SkillService:GetSkillByIDFromServer(unitData["skillID"])
-		local spawnEntity = _SpawnService:SpawnByModelId(modelID, "적"..unitData["name"], spawnPos.TransformComponent.Position, spawnParent)
+		local spawnEntity
+		if pos == Vector3.zero then
+			spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", spawnPos.TransformComponent.Position, spawnParent)
+		else
+			spawnEntity = _SpawnService:SpawnByModelId(modelID, "Pig", pos, spawnParent)
+		end
 			
 		spawnEntity.Unit:SpawnEnemy(unitData, skillData)
 	end

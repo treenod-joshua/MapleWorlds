@@ -365,6 +365,11 @@ script Unit extends Component
 			return
 		end
 		
+		if self.mp >= self.maxMP and self.curTarget.TagComponent.Tags[2] ~= "Tower" then
+			self:SetState("useSkill")
+			return
+		end
+		
 		self.AttackTimer += delta;
 		
 		if self.AttackTimer >= self.attackSpeed and self.attackRange == 1 then
@@ -666,6 +671,7 @@ script Unit extends Component
 		-- 죽는 애니메이션이 없는 경우 직접 처리
 		if self.dieAnimationPlayingTime == 0 then
 			self:DestroyAction()
+		
 		end
 		
 		-- 어태커의 타겟 엔티티 제거
@@ -700,7 +706,7 @@ script Unit extends Component
 	end
 
 	method void IncreaseMp()
-		if self.curState == "useSkill" then
+		if self.curState == "useSkill" or self.curTarget.TagComponent.Tags[2] == "Tower" then
 			return
 		end
 		
@@ -715,6 +721,12 @@ script Unit extends Component
 
 	method void UseSkill()
 		if self.mp == 0 or self.curState ~= "useSkill" or self.isUsingSkill or self.activeSkill == nil and self.Entity.StateComponent.CurrentStateName ~= "stand" then
+			return
+		end
+		
+		if self.curTarget == nil or self:GetDistance() > self.attackRange then
+			self:SetState("stand")
+			self.curTarget = nil
 			return
 		end
 		

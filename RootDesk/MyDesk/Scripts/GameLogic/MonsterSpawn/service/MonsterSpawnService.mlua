@@ -22,7 +22,7 @@ script MonsterSpawnService extends Component
 		
 		log('summon ', value.unit)
 		log('next summon delay', value.delayTs)
-		_SpawnManager:SpawnEnemy(value.unit)
+		_SpawnManager:SpawnEnemy(value.unit, Vector3.zero)
 		
 		table.remove(group, 1)
 		

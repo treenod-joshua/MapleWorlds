@@ -3229,7 +3229,8 @@
             {
               "@type": "MOD.Core.TagComponent",
               "Tags": [
-                "Enemy"
+                "Enemy",
+                "Tower"
               ],
               "Enable": true
             },
@@ -3490,7 +3491,8 @@
             {
               "@type": "MOD.Core.TagComponent",
               "Tags": [
-                "MyMonster"
+                "MyMonster",
+                "Tower"
               ],
               "Enable": true
             },
