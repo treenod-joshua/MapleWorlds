@@ -33,6 +33,10 @@ script GameManager extends Logic
 	@Sync
 	property integer timer = 0
 
+	property Entity gameClearResult = "bd109aaa-b307-4160-b918-a09b05a6d4d9"
+
+	property RankUI rankUI = "daa5b02b-f478-4f97-a216-d17e6b71634a"
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		for i = 1, 3 do
@@ -119,6 +123,8 @@ script GameManager extends Logic
 		self.shopUI.Visible = false
 		self.infoUI.Enable = false
 		self.infoUI.Visible = false
+		self.gameClearResult.Enable = false
+		self.gameClearResult.Visible = false
 		
 		self:ClearObjects()
 		self:ClearTimer()
@@ -140,6 +146,8 @@ script GameManager extends Logic
 		self.shopUI.Visible = true
 		self.infoUI.Enable = true
 		self.infoUI.Visible = true
+		self.gameClearResult.Enable = false
+		self.gameClearResult.Visible = false
 		
 		self.unitShop.UnitShop:InitShop()
 		
@@ -221,7 +229,6 @@ script GameManager extends Logic
 
 	@ExecSpace("Client")
 	method void ClearTimer()
-		self.playTime = 0
 		_TimerService:ClearTimer(self.timer)
 	end
 
@@ -240,6 +247,34 @@ script GameManager extends Logic
 		local ss = s % 60
 		
 		return string.format("%d:%02d", m, ss)
+	end
+
+	@ExecSpace("Server")
+	method void StageClear()
+		local playTime = DateTime.UtcNow.Elapsed - self.playStartTs 
+		
+		local user = _UserService.LocalPlayer
+		local userStage = user.UserStage
+		
+		local key = _RankingService:GetRankKeyByTable({chapter=userStage.selectChapter, stage=userStage.selectStage})
+		_RankingService:AddPoint(key, user.PlayerComponent.Nickname, playTime)
+		
+		userStage:SetClearStage()
+		userStage:SAVE()
+		
+		self:EnableStageClearUI()
+	end
+
+	@ExecSpace("Client")
+	method void EnableStageClearUI()
+		local playTime = DateTime.UtcNow.Elapsed - self.playStartTs 
+		
+		local userName = _UserService.LocalPlayer.PlayerComponent.Nickname
+		
+		self.rankUI:UpdateRankData(userName, playTime)
+		
+		self.gameClearResult.Enable = true
+		self.gameClearResult.Visible = true
 	end
 
 	@EventSender("Service", "InputService")

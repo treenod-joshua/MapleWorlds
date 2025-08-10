@@ -1,0 +1,21 @@
+@Component
+script GameClearChecker extends Component
+
+	@Sync
+	property boolean isClear = false
+
+	@ExecSpace("ServerOnly")
+	method void OnUpdate(number delta)
+		if self.isClear then
+			return
+		end
+		
+		local hp = self.Entity.Unit.hp
+		
+		if hp <= 0 then
+			self.isClear = true
+			_GameManager:StageClear()
+		end
+	end
+
+end

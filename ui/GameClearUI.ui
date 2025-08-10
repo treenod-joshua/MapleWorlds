@@ -15,11 +15,11 @@
     "Entities": [
       {
         "id": "bd109aaa-b307-4160-b918-a09b05a6d4d9",
-        "path": "/ui/RankingTestUI",
+        "path": "/ui/GameClearUI",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.UIGroupComponent,MOD.Core.CanvasGroupComponent",
         "jsonString": {
-          "name": "RankingTestUI",
-          "path": "/ui/RankingTestUI",
+          "name": "GameClearUI",
+          "path": "/ui/GameClearUI",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -83,7 +83,7 @@
             },
             {
               "@type": "MOD.Core.UIGroupComponent",
-              "DefaultShow": true,
+              "DefaultShow": false,
               "GroupOrder": 11,
               "GroupType": 2,
               "Enable": true
@@ -97,18 +97,104 @@
         }
       },
       {
-        "id": "daa5b02b-f478-4f97-a216-d17e6b71634a",
-        "path": "/ui/RankingTestUI/ScrollRankList",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ScrollLayoutGroupComponent,script.RankUI",
+        "id": "f792dfbc-bd35-43cc-8be2-3070ce735603",
+        "path": "/ui/GameClearUI/Frame",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
-          "name": "ScrollRankList",
-          "path": "/ui/RankingTestUI/ScrollRankList",
+          "name": "Frame",
+          "path": "/ui/GameClearUI/Frame",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
           "pathConstraints": "///",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uisprite",
+            "sub_entity_id": null
+          },
+          "modelId": "uisprite",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -350.0,
+                "y": -200.0
+              },
+              "OffsetMin": {
+                "x": 350.0,
+                "y": 200.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 1220.0,
+                "y": 680.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "b2f74ef6e0a9442da201c3c8a19bd064"
+              },
+              "OverrideSorting": false,
+              "Color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.8027344
+              },
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "daa5b02b-f478-4f97-a216-d17e6b71634a",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ScrollLayoutGroupComponent,script.RankUI",
+        "jsonString": {
+          "name": "ScrollRankList",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "////",
           "revision": 0,
           "origin": {
             "type": "Model",
@@ -130,12 +216,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 104.497124,
-                "y": 249.998749
+                "x": 176.379623,
+                "y": 161.969833
               },
               "OffsetMin": {
-                "x": -250.001923,
-                "y": -78.71534
+                "x": -178.119431,
+                "y": -166.744247
               },
               "Pivot": {
                 "x": 0.5,
@@ -153,25 +239,31 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": -72.7524,
-                "y": 85.6417
+                "x": -0.8699,
+                "y": -2.3872
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
               },
               "Position": {
-                "x": -72.7524,
-                "y": 85.6417,
+                "x": -0.8699,
+                "y": -2.3872,
                 "z": 0.0
               },
               "QuaternionRotation": {
                 "x": 0.0,
                 "y": 0.0,
                 "z": 0.0,
-                "w": 1.0
+                "w": -1.0
               },
               "Scale": {
                 "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
               },
+              "ZRotation": 0.0,
               "Enable": true
             },
             {
@@ -196,7 +288,7 @@
                 "r": 0.223990083,
                 "g": 0.223990083,
                 "b": 0.223990083,
-                "a": 0.5
+                "a": 0.0
               },
               "DropShadow": false,
               "DropShadowAngle": 30.0,
@@ -282,17 +374,17 @@
       },
       {
         "id": "e435c5e0-4292-4fa0-ba99-7685eec01e7c",
-        "path": "/ui/RankingTestUI/ScrollRankList/Rank_1",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_1",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "Rank_1",
-          "path": "/ui/RankingTestUI/ScrollRankList/Rank_1",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_1",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
-          "pathConstraints": "////",
+          "pathConstraints": "/////",
           "revision": 0,
           "origin": {
             "type": "Model",
@@ -419,17 +511,17 @@
       },
       {
         "id": "a3603b6d-9d46-43aa-8b4c-6dc5fd80990c",
-        "path": "/ui/RankingTestUI/ScrollRankList/Rank_1/UIText",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_1/UIText",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "UIText",
-          "path": "/ui/RankingTestUI/ScrollRankList/Rank_1/UIText",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_1/UIText",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
-          "pathConstraints": "/////",
+          "pathConstraints": "//////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -516,17 +608,17 @@
       },
       {
         "id": "e2b18067-6dee-41c6-af02-e6580f834e1a",
-        "path": "/ui/RankingTestUI/ScrollRankList/Rank_2",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_2",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "Rank_2",
-          "path": "/ui/RankingTestUI/ScrollRankList/Rank_2",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_2",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 1,
-          "pathConstraints": "////",
+          "pathConstraints": "/////",
           "revision": 0,
           "origin": {
             "type": "Model",
@@ -653,17 +745,17 @@
       },
       {
         "id": "6edd7e30-b97a-4f7a-b8b9-2819b6687d81",
-        "path": "/ui/RankingTestUI/ScrollRankList/Rank_2/UIText",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_2/UIText",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "UIText",
-          "path": "/ui/RankingTestUI/ScrollRankList/Rank_2/UIText",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_2/UIText",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
-          "pathConstraints": "/////",
+          "pathConstraints": "//////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -751,17 +843,17 @@
       },
       {
         "id": "d145481e-e078-49f1-ba2f-5fec173cc266",
-        "path": "/ui/RankingTestUI/ScrollRankList/Rank_3",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_3",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "Rank_3",
-          "path": "/ui/RankingTestUI/ScrollRankList/Rank_3",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_3",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 2,
-          "pathConstraints": "////",
+          "pathConstraints": "/////",
           "revision": 0,
           "origin": {
             "type": "Model",
@@ -888,17 +980,17 @@
       },
       {
         "id": "5bc12381-940d-4b89-a58b-6d17b50ebc41",
-        "path": "/ui/RankingTestUI/ScrollRankList/Rank_3/UIText",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_3/UIText",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "UIText",
-          "path": "/ui/RankingTestUI/ScrollRankList/Rank_3/UIText",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_3/UIText",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
-          "pathConstraints": "/////",
+          "pathConstraints": "//////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -986,17 +1078,17 @@
       },
       {
         "id": "b1d1fbdb-3098-449a-a24f-9e67aad0de08",
-        "path": "/ui/RankingTestUI/ScrollRankList/Rank_4",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_4",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "Rank_4",
-          "path": "/ui/RankingTestUI/ScrollRankList/Rank_4",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_4",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 3,
-          "pathConstraints": "////",
+          "pathConstraints": "/////",
           "revision": 0,
           "origin": {
             "type": "Model",
@@ -1124,17 +1216,17 @@
       },
       {
         "id": "b1685cf1-472b-41cf-929e-a0b8f0a3e906",
-        "path": "/ui/RankingTestUI/ScrollRankList/Rank_4/UIText",
+        "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_4/UIText",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "UIText",
-          "path": "/ui/RankingTestUI/ScrollRankList/Rank_4/UIText",
+          "path": "/ui/GameClearUI/Frame/ScrollRankList/Rank_4/UIText",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
-          "pathConstraints": "/////",
+          "pathConstraints": "//////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -1214,6 +1306,361 @@
                 "y": -1.0
               },
               "OverrideSorting": false,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "23c62327-94d1-42dc-8e3a-cf0f7e21c47e",
+        "path": "/ui/GameClearUI/Frame/UIText",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
+        "jsonString": {
+          "name": "UIText",
+          "path": "/ui/GameClearUI/Frame/UIText",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 1,
+          "pathConstraints": "////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uitext",
+            "sub_entity_id": null
+          },
+          "modelId": "uitext",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 4,
+              "AnchorsMax": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 1.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": 1124.15576,
+                "y": -50.00027
+              },
+              "OffsetMin": {
+                "x": 49.9990845,
+                "y": -136.796326
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 1074.15662,
+                "y": 86.79606
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 587.0774,
+                "y": -93.3983
+              },
+              "Position": {
+                "x": -22.9226074,
+                "y": 246.6017,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "adf619e2efc84d4ab93e5236b73771c7"
+              },
+              "OverrideSorting": false,
+              "Color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.7636719
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TextComponent",
+              "Alignment": 3,
+              "Font": 1,
+              "FontColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "FontSize": 65,
+              "MaxSize": 85,
+              "MinSize": 10,
+              "OutlineDistance": {
+                "x": 1.0,
+                "y": -1.0
+              },
+              "OverrideSorting": false,
+              "Padding": {
+                "left": 20,
+                "right": 0,
+                "top": 0,
+                "bottom": 0
+              },
+              "Text": "Game Result",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "9e67cfad-9156-4a42-8dbe-ceb35a41f1c0",
+        "path": "/ui/GameClearUI/Frame/UIButton",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.StageClearButton",
+        "jsonString": {
+          "name": "UIButton",
+          "path": "/ui/GameClearUI/Frame/UIButton",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 2,
+          "pathConstraints": "////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 10,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -400.0,
+                "y": -200.7756
+              },
+              "OffsetMin": {
+                "x": 400.0,
+                "y": -290.7756
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 420.0,
+                "y": 90.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": -245.7756
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": -245.7756,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "5e1626341c064c9fa3a83e8f0957f4b2"
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "script.StageClearButton",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "1aec7fd2-85fa-4ff6-a085-27213725ea32",
+        "path": "/ui/GameClearUI/Frame/UIButton/UIText",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
+        "jsonString": {
+          "name": "UIText",
+          "path": "/ui/GameClearUI/Frame/UIButton/UIText",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 0,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uitext",
+            "sub_entity_id": null
+          },
+          "modelId": "uitext",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 15,
+              "AnchorsMax": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "AnchorsMin": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -10.0,
+                "y": -10.0
+              },
+              "OffsetMin": {
+                "x": 10.0,
+                "y": 10.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 400.0,
+                "y": 70.0
+              },
+              "UIMode": 1,
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": 0.0,
+                "y": 0.0
+              },
+              "Position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.TextComponent",
+              "Font": 1,
+              "FontColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "FontSize": 51,
+              "MaxSize": 51,
+              "MinSize": 10,
+              "OutlineDistance": {
+                "x": 1.0,
+                "y": -1.0
+              },
+              "OverrideSorting": false,
+              "Text": "STAGE CLEAR",
               "Enable": true
             }
           ],

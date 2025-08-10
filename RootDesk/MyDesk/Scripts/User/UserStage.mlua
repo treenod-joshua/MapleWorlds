@@ -66,6 +66,20 @@ script UserStage extends Component
 		end
 	end
 
+	@ExecSpace("Server")
+	method void SetClearStage()
+		if self.selectStage < self.openStage then
+			return
+		end
+		
+		if self.openStage > 5 then
+			return
+		end
+		
+		self.openStage = self.openStage + 1
+		self.selectStage = self.selectStage + 1
+	end
+
 	@ExecSpace("ClientOnly")
 	method void OnSyncProperty(string name, any value)
 		if name == "openStage" or name == "openChapter" or name == "selectStage" or name == "selectChapter" then

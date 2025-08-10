@@ -3178,7 +3178,7 @@
       {
         "id": "f5af730d-fbdb-40ee-adeb-57c1caeda316",
         "path": "/maps/Chapter1/EnemyTower",
-        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService,script.Tower,MOD.Core.HitComponent,script.Unit",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService,script.Tower,MOD.Core.HitComponent,script.Unit,script.GameClearChecker",
         "jsonString": {
           "name": "EnemyTower",
           "path": "/maps/Chapter1/EnemyTower",
@@ -3267,6 +3267,10 @@
               "isEnemy": true,
               "projectileSpeed": 0.0,
               "attackTiming": 0.0
+            },
+            {
+              "@type": "script.GameClearChecker",
+              "Enable": true
             }
           ],
           "@version": 1

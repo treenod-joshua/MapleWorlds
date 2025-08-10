@@ -1,0 +1,19 @@
+@Component
+script StageClearButton extends Component
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		--------------- Native Event Sender Info ----------------
+		-- Sender: ButtonComponent
+		-- Space: Client
+		---------------------------------------------------------
+		
+		-- Parameters
+		-- local Entity = event.Entity
+		---------------------------------------------------------
+		_GameManager:GameEnd()
+		
+		_TeleportService:TeleportToMapPosition(_UserService.LocalPlayer, Vector3.zero, "LobbyTest")
+	end
+
+end

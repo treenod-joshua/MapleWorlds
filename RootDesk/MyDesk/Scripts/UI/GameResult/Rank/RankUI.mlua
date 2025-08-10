@@ -24,8 +24,6 @@ script RankUI extends Component
 			rankTable[#rankTable + 1] = ranker
 		end
 		
-		rankTable[4] = {name=userName, score=userScore}
-		
 		for i = 1, 4 do
 			local textComp = _EntityService:GetEntityByPath(path .. "/Rank_" .. tostring(i) .. "/UIText").TextComponent
 			local user = rankTable[i]
@@ -46,12 +44,7 @@ script RankUI extends Component
 			strRank = "4+"
 		end
 		
-		return "#" .. strRank .." [" ..   name .. "] " .. tostring(score)
-	end
-
-	@ExecSpace("ClientOnly")
-	method void OnBeginPlay()
-		self:UpdateRankData("frank", 110)
+		return "#" .. strRank .." [" ..   name .. "] " .. tostring(score / 1000) .. "." .. tostring(score % 1000)
 	end
 
 end
