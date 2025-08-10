@@ -1126,7 +1126,7 @@
             {
               "@type": "MOD.Core.SpriteGUIRendererComponent",
               "AnimClipPlayType": 0,
-              "EndFrameIndex": 0,
+              "EndFrameIndex": 2147483647,
               "ImageRUID": {
                 "DataId": "87cb6db3c2cd491e9944fe662caf8a40"
               },

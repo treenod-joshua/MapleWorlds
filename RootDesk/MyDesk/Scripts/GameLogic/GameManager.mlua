@@ -116,7 +116,13 @@ script GameManager extends Logic
 		self:SetPlayerCharacter()
 		self:EnableUI()
 		self:SetTimer()
-		-- 인게임 UI 활성화
+		
+		local stageData = _StageService:GetStageByIdFromServer(self.mapIndex)
+		local enemyTower = _EntityService:GetEntityByPath(self:GetGameMapName().."/EnemyTower")
+		
+		enemyTower.Unit.originMaxHP = stageData["enemy_tower_hp"]
+		enemyTower.Unit.maxHP = stageData["enemy_tower_hp"]
+		enemyTower.Unit.hp = stageData["enemy_tower_hp"]
 	end
 
 	method void GameEnd()
