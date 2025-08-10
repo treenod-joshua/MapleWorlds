@@ -7,7 +7,7 @@
   "Usage": 0,
   "UsePublish": 1,
   "UseService": 0,
-  "CoreVersion": "1.24.0.0",
+  "CoreVersion": "1.25.0.0",
   "StudioVersion": "0.1.0.0",
   "DynamicLoading": 0,
   "ContentProto": {
@@ -51,7 +51,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "f4cc1ce251cc45178302a8b81940605a"
+          "Value": "1f3eaca9da614c01a3f74b48eb7dfb58"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -69,7 +69,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "2eaff26e25c742588d16c7afd50d54f8"
+          "Value": "1245344f4356430e8ba586f0fcee9288"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -78,7 +78,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "d5dff88d11db416c9961c2c55c3f387e"
+          "Value": "085189375ff0497b86a7d9d3efd153d5"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -87,7 +87,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "c4598e6b878f4ea9954a714dd6a8900f"
+          "Value": "2f49c8aed68d419b8d4fcb192d59ef12"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -123,7 +123,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "c7e79f934db1430a8da9e88a5497ed50"
+          "Value": "29459cbfc27c4c6a84d626b5ffa71ad4"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -157,7 +157,7 @@
           "Name": "Rotation",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector3, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODVector3, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODVector3, MOD.Core",
@@ -171,7 +171,7 @@
           "Name": "Position",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector3, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODVector3, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODVector3, MOD.Core",
@@ -185,7 +185,7 @@
           "Name": "QuaternionRotation",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODQuaternion, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODQuaternion, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODQuaternion, MOD.Core",
@@ -236,7 +236,7 @@
           "Name": "MoveVelocity",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODVector2, MOD.Core",
@@ -249,7 +249,7 @@
           "Name": "RealMoveVelocity",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODVector2, MOD.Core",
@@ -289,7 +289,7 @@
           "Name": "BoxSize",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODVector2, MOD.Core",
@@ -302,7 +302,7 @@
           "Name": "ColliderOffset",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODVector2, MOD.Core",
@@ -351,7 +351,7 @@
           "Name": "BoxSize",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODVector2, MOD.Core",
@@ -364,7 +364,7 @@
           "Name": "ColliderOffset",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODVector2, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODVector2, MOD.Core",
@@ -404,7 +404,7 @@
           "Name": "StateToAvatarBodyActionSheet",
           "ValueType": {
             "$type": "MODNativeType",
-            "type": "MOD.Core.MODSyncDictionary`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[MOD.Core.AvatarBodyActionElement, MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null]], MOD.Core, Version=1.24.0.0, Culture=neutral, PublicKeyToken=null"
+            "type": "MOD.Core.MODSyncDictionary`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[MOD.Core.AvatarBodyActionElement, MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null]], MOD.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=null"
           },
           "Value": {
             "$type": "MOD.Core.MODSyncDictionary`2[[System.String, mscorlib],[MOD.Core.AvatarBodyActionElement, MOD.Core]], MOD.Core",
