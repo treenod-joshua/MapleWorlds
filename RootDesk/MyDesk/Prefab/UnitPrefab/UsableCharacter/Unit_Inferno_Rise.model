@@ -52,7 +52,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "cdf551aaaeb649b3aebfea69b7549750"
+          "Value": "cf3daa41add94f759dbd15d75ea2997c"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -70,7 +70,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "8355ad1710e04ea3b1fc800951caa977"
+          "Value": "002edb95ebe24b40856d19b9fc8ffe39"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -79,7 +79,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "e5e4af6a741d4ea091bc9065aeaa481a"
+          "Value": "00199c1161e843f8b1f3d3b92b039b8b"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
