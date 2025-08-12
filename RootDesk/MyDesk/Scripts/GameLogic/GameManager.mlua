@@ -139,6 +139,7 @@ script GameManager extends Logic
 		self:ClearObjects()
 		self:ClearTimer()
 		self:ClearGameData()
+		self:ClearGameDataInClient()
 	end
 
 	method string GetGameMapName()
@@ -257,7 +258,17 @@ script GameManager extends Logic
 		
 		local mesoWallet = _EntityService:GetEntityByPath(_GameManager:GetGameMapName() .. "/userWallet")
 		
-		mesoWallet.MesoWallet:SetMeso(0)
+		mesoWallet.MesoWallet:SetMeso(0) 
+	end
+
+	@ExecSpace("Client")
+	method void ClearGameDataInClient()
+		local skillSlots = _EntityService:GetEntityByPath("/ui/Ingame_Shop_Group/SkillSlots")
+		
+		for i = 1, 2 do
+			skillSlots.Children[i].SkillSlot.remainingTime = 0
+			skillSlots.Children[i].Children[2].SpriteGUIRendererComponent.FillAmount = 0
+		end
 	end
 
 	method string FormatMMSS(number time)
