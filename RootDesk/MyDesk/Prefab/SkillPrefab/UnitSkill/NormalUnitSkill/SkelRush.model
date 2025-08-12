@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "model://92d0f1c2-d100-4f9d-ad0f-e0fee0908f1b",
+  "EntryKey": "model://d37fd779-a8f7-403c-9735-66401cd53106",
   "ContentType": "x-mod/model",
   "Content": "",
   "Usage": 0,
@@ -14,11 +14,12 @@
     "Use": "Json",
     "Json": {
       "Version": 1,
-      "Name": "ThrowPigHead",
+      "Name": "SkelRush",
       "BaseModelId": null,
-      "Id": "92d0f1c2-d100-4f9d-ad0f-e0fee0908f1b",
+      "Id": "d37fd779-a8f7-403c-9735-66401cd53106",
       "Components": [
-        "MOD.Core.TransformComponent"
+        "MOD.Core.TransformComponent",
+        "script.SkelRush"
       ],
       "Properties": [],
       "Values": [],

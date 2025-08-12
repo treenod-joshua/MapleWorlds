@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://09a14aa4a97949d9b20df4bc340a4d48",
+  "EntryKey": "directory://776ea835cf484995866a8b49d8b1a5dc",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://09a14aa4a97949d9b20df4bc340a4d48",
-      "name": "NormalUnitSkill",
+      "entry_id": "directory://776ea835cf484995866a8b49d8b1a5dc",
+      "name": "Perion",
       "lock": false,
       "folding": false,
       "nameEditable": true

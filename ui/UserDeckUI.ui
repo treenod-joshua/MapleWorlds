@@ -711,6 +711,7 @@
                 "DataId": "b57fd007b2b5438591361ec745495f44"
               },
               "OverrideSorting": false,
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -1390,6 +1391,7 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -2070,6 +2072,7 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -2750,6 +2753,7 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -3430,6 +3434,7 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -4110,6 +4115,7 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -4790,6 +4796,7 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Type": 0,
               "Enable": true
             }
           ],
@@ -5470,6 +5477,7 @@
               },
               "OverrideSorting": false,
               "SortingLayer": "MapLayer0",
+              "Type": 0,
               "Enable": true
             }
           ],
