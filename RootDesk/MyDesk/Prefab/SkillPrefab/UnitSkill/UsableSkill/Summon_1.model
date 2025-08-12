@@ -1,0 +1,29 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://85cb3ce8-ef11-4a98-9322-b45807b67a52",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.25.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Summon_1",
+      "BaseModelId": null,
+      "Id": "85cb3ce8-ef11-4a98-9322-b45807b67a52",
+      "Components": [
+        "MOD.Core.TransformComponent"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}

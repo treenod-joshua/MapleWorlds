@@ -141,6 +141,10 @@ script UnitShopItem extends Component
 	handler HandleKeyDownEvent(KeyDownEvent event)
 		local isKeyDown = false
 		
+		if not _GameManager.isPlaying then
+			return
+		end
+		
 		if event.key == KeyboardKey.Q and self.shopItemIndex == 1 then
 			isKeyDown = true
 		elseif event.key == KeyboardKey.W and self.shopItemIndex == 2 then

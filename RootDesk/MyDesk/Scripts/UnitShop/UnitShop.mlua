@@ -93,4 +93,46 @@ script UnitShop extends Component
 		self:SetShop()
 	end
 
+	method void RefreshShop()
+		table.clear(self.summonPools)
+		table.clear(self.summonQueue)
+		table.clear(self.summonDeck)
+		
+		local shopItems = _EntityService:GetEntityByPath("/ui/Ingame_Shop_Group/UnitShop")
+		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
+		local deckList = playerDeck.userDeck
+		
+		-- 덱(최대 8장) -> 풀에 채우기
+		for i = 1, 8 do
+			local modelId = deckList[i]
+			if modelId and modelId ~= 0 then
+				table.insert(self.summonPools, modelId)
+			end
+		end
+		
+		-- 셔플 
+		math.randomseed(os.time())
+		for i = #self.summonPools, 2, -1 do
+			local j = math.random(1, i)
+			self.summonPools[i], self.summonPools[j] = self.summonPools[j], self.summonPools[i]
+		end
+		
+		-- 앞 4장은 화면, 나머지는 큐
+		for i = 1, 4 do
+			self.summonDeck[i] = i
+		end
+		for i = 4 + 1, 8 do
+			table.insert(self.summonQueue, i)
+		end
+		
+		self:SetShop()
+	end
+
+	@EventSender("Service", "InputService")
+	handler HandleKeyDownEvent(KeyDownEvent event)
+		if event.key == KeyboardKey.A and Environment:IsMakerPlay() then
+			self:RefreshShop()
+		end
+	end
+
 end
