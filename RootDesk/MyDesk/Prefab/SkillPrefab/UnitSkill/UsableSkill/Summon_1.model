@@ -18,7 +18,8 @@
       "BaseModelId": null,
       "Id": "85cb3ce8-ef11-4a98-9322-b45807b67a52",
       "Components": [
-        "MOD.Core.TransformComponent"
+        "MOD.Core.TransformComponent",
+        "script.Summon_1"
       ],
       "Properties": [],
       "Values": [],
