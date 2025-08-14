@@ -19,14 +19,6 @@ script DelayAttackComponent extends Component
 
 	@EventSender("Self")
 	handler HandleTriggerEnterEvent(TriggerEnterEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: TriggerComponent
-		-- Space: Server, Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local TriggerBodyEntity = event.TriggerBodyEntity
-		---------------------------------------------------------
 		if event.TriggerBodyEntity.Unit == nil or event.TriggerBodyEntity.Name == "EnemyTower" or event.TriggerBodyEntity.Name == "MyTower" then
 			return
 		end

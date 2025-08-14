@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://caaa5ea9-640b-43fc-b704-fcbf8b5ceb73",
+  "EntryKey": "codeblock://4d4b55b8-e72e-4150-a46f-3e5cc69415e3",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,9 +22,9 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "caaa5ea9-640b-43fc-b704-fcbf8b5ceb73",
+      "Id": "4d4b55b8-e72e-4150-a46f-3e5cc69415e3",
       "Language": 1,
-      "Name": "DelayAttackComponent",
+      "Name": "LoopAttackComponent",
       "Type": 1,
       "Source": 0,
       "Target": null

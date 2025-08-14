@@ -1,0 +1,83 @@
+@Component
+script LoopAttackComponent extends Component
+
+	@Sync
+	property number attackDamage = 0
+
+	@Sync
+	property number loopCount = 0
+
+	@Sync
+	property number loopInterval = 0
+
+	@Sync
+	property Entity caster = nil
+
+	@Sync
+	property integer timerHandle = 0
+
+	@Sync
+	property integer count = 0
+
+	property table insideUnit = {}
+
+	method void Init(number attackDamage, number loopCount, number loopInterval, Entity caster)
+		self.attackDamage = attackDamage
+		self.loopCount = loopCount
+		self.loopInterval = loopInterval
+		self.caster = caster
+		
+		self.timerHandle = _TimerService:SetTimerRepeat(function()
+		    self:Active()
+		end, self.loopInterval)
+	end
+
+	method void Active()
+		self.count = self.count + 1
+		
+		local removeList = {}
+		for target, _ in pairs(self.insideUnit) do
+		    if target == nil or not isvalid(target) then
+		        removeList[#removeList+1] = target
+		    else
+				target.Unit:OnHit(self.caster, self.attackDamage, false, 1)
+		    end
+		end
+		
+		for i = 1, #removeList do
+		    self.insideUnit[removeList[i]] = nil
+		end
+		
+		if self.count >= self.loopCount then
+		    _TimerService:ClearTimer(self.timerHandle)
+			self.Entity:Destroy()
+		end
+	end
+
+	@EventSender("Self")
+	handler HandleTriggerEnterEvent(TriggerEnterEvent event)
+		if event.TriggerBodyEntity.Unit == nil or event.TriggerBodyEntity.Name == "EnemyTower" or event.TriggerBodyEntity.Name == "MyTower" then
+			return
+		end
+		
+		if self.caster.Unit.isEnemy and event.TriggerBodyEntity.Unit.isEnemy == false then -- 적 유닛이 발사했으면서 아군 유닛일 경우
+			self.insideUnit[event.TriggerBodyEntity] = true
+		elseif self.caster.Unit.isEnemy == false and event.TriggerBodyEntity.Unit.isEnemy then -- 아군 유닛이 발사했으면서 적 유닛일 경우
+			self.insideUnit[event.TriggerBodyEntity] = true
+		end
+	end
+
+	@EventSender("Self")
+	handler HandleTriggerLeaveEvent(TriggerLeaveEvent event)
+		if event.TriggerBodyEntity.Unit == nil or event.TriggerBodyEntity.Name == "EnemyTower" or event.TriggerBodyEntity.Name == "MyTower" then
+			return
+		end
+		
+		if self.caster.Unit.isEnemy and event.TriggerBodyEntity.Unit.isEnemy == false then -- 적 유닛이 발사했으면서 아군 유닛일 경우
+			self.insideUnit[event.TriggerBodyEntity] = nil
+		elseif self.caster.Unit.isEnemy == false and event.TriggerBodyEntity.Unit.isEnemy then -- 아군 유닛이 발사했으면서 적 유닛일 경우
+			self.insideUnit[event.TriggerBodyEntity] = nil
+		end
+	end
+
+end

@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://7680aa133a7d42e4909ad3cdfb9c1bf5",
+  "EntryKey": "directory://79573e375a754e719e913487f0131c7d",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://7680aa133a7d42e4909ad3cdfb9c1bf5",
-      "name": "Skills",
+      "entry_id": "directory://79573e375a754e719e913487f0131c7d",
+      "name": "Henesis",
       "lock": false,
       "folding": false,
       "nameEditable": true

@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://7680aa133a7d42e4909ad3cdfb9c1bf5",
+  "EntryKey": "directory://f09e08877c6748c8b05509b1fb435a54",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://7680aa133a7d42e4909ad3cdfb9c1bf5",
-      "name": "Skills",
+      "entry_id": "directory://f09e08877c6748c8b05509b1fb435a54",
+      "name": "LoopAttackPrefab",
       "lock": false,
       "folding": false,
       "nameEditable": true
