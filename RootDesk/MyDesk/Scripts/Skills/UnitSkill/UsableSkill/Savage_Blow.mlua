@@ -5,9 +5,6 @@ script Savage_Blow extends SkillParent
 	method void ActivateSkill()
 		__base:ActivateSkill()
 		
-		-- 피격 f342e1d9953f46e9ab003ba0e363ee2a
-		-- 895ac1e384ea42ca8dd084f54ff3346b 이펙트
-		
 		self:CallAnimation("savageBlow")
 		local options = {
 		    FlipX = true,  -- 좌우 반전
