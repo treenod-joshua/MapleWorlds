@@ -27,6 +27,7 @@ script UnitService extends Logic
 			item['projectileSpriteRUID'] = tostring(dataSet:GetCell(index, 'projectileSpriteRUID'))
 			item['name'] = tostring(dataSet:GetCell(index, 'name'))
 			item['animationName'] = tostring(dataSet:GetCell(index, 'animationName'))
+			item['unitScale'] = tonumber(dataSet:GetCell(index, 'unitScale'))
 			
 			
 			self.UnitTable[item['id']] = item

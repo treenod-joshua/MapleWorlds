@@ -117,6 +117,9 @@ script Unit extends Component
 	@Sync
 	property number stunTimeCounter = 0
 
+	@Sync
+	property number unitScale = 0
+
 	@ExecSpace("Server")
 	method void Spawn(table unitData, table skillData)
 		self.moveSpeed = unitData["moveSpeed"]
@@ -135,6 +138,7 @@ script Unit extends Component
 		self.projectileSpriteRUID = unitData["projectileSpriteRUID"]
 		self.unitName = unitData["name"]
 		self.animationName = unitData["animationName"]
+		self.unitScale = unitData["unitScale"]
 		local isUsableCharacter = unitData["isUsableCharacter"]
 		self.isUsableCharacter = isUsableCharacter == 1
 		
@@ -226,6 +230,13 @@ script Unit extends Component
 			self.imageSize = Vector2.one * 0.5
 			return
 		end
+		
+		if self.unitScale > 0 and not self.isUsableCharacter then
+			local value = self.unitScale
+			self:SetScale(value)
+		end
+		
+		
 		
 		_ResourceService:PreloadAsync({self.Entity.SpriteRendererComponent.SpriteRUID},
 		function() 
@@ -764,6 +775,7 @@ script Unit extends Component
 		self.projectileSpriteRUID = unitData["projectileSpriteRUID"]
 		self.unitName = unitData["name"]
 		self.animationName = unitData["animationName"]
+		self.unitScale = unitData["unitScale"]
 		local isUsableCharacter = unitData["isUsableCharacter"]
 		self.isUsableCharacter = isUsableCharacter == 1
 		
@@ -802,9 +814,9 @@ script Unit extends Component
 			end
 		else
 			if self.isEnemy then
-				self.Entity.TransformComponent.Scale.x = 1
+				self.Entity.TransformComponent.Scale.x = self.Entity.TransformComponent.Scale.x * 1
 			else
-				self.Entity.TransformComponent.Scale.x = -1
+				self.Entity.TransformComponent.Scale.x = self.Entity.TransformComponent.Scale.x * -1
 			end
 		end
 	end
@@ -924,6 +936,18 @@ script Unit extends Component
 		else
 			return Vector3(self.imageSize.x * 0.5, self.imageSize.y * 0.5, 0)
 		end
+	end
+
+	@ExecSpace("Client")
+	method void SetScale(number scale)
+		self.Entity.TransformComponent.Scale.x = self.Entity.TransformComponent.Scale.x * scale
+		self.Entity.TransformComponent.Scale.y = self.Entity.TransformComponent.Scale.y * scale
+		self.Entity.TransformComponent.Scale.z = self.Entity.TransformComponent.Scale.z * scale
+		log("이름"..self.unitName.."  크기:"..self.Entity.TransformComponent.Scale.x)
+		self.Entity.TriggerComponent.BoxSize.x = self.Entity.TriggerComponent.BoxSize.x * scale
+		self.Entity.TriggerComponent.BoxSize.y = self.Entity.TriggerComponent.BoxSize.y * scale
+		self.Entity.HitComponent.BoxSize.x = self.Entity.HitComponent.BoxSize.x * scale
+		self.Entity.HitComponent.BoxSize.y = self.Entity.HitComponent.BoxSize.y * scale
 	end
 
 	@EventSender("Self")
