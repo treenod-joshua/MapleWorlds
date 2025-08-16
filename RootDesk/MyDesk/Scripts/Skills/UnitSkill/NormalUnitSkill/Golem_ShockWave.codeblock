@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "codeblock://5e2a52f4-b4c8-4629-8131-a4b5761c1553",
+  "EntryKey": "codeblock://fcb46dc4-25fd-44e2-846d-3ab0526fd123",
   "ContentType": "x-mod/codeblock",
   "Content": "",
   "Usage": 0,
@@ -22,12 +22,12 @@
         "Minor": 1
       },
       "Description": "",
-      "Id": "5e2a52f4-b4c8-4629-8131-a4b5761c1553",
+      "Id": "fcb46dc4-25fd-44e2-846d-3ab0526fd123",
       "Language": 1,
-      "Name": "eBuffType",
-      "Type": 5,
+      "Name": "Golem_ShockWave",
+      "Type": 1,
       "Source": 0,
-      "Target": null
+      "Target": "codeblock://465afc70-0300-4f88-809a-ac205109680f"
     }
   }
 }

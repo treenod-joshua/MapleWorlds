@@ -29,6 +29,9 @@ script Unit extends Component
 	property number damage = 10
 
 	@Sync
+	property number originDamage = 0
+
+	@Sync
 	property number attackRange = 1
 
 	@Sync
@@ -103,9 +106,6 @@ script Unit extends Component
 	property string projectileSpriteRUID = ""
 
 	@Sync
-	property integer currentTimerID = 0
-
-	@Sync
 	property boolean isUsableCharacter = false
 
 	@Sync
@@ -120,6 +120,15 @@ script Unit extends Component
 	@Sync
 	property number unitScale = 0
 
+	@Sync
+	property integer attackSpeedTimerID = 0
+
+	@Sync
+	property integer maxHPTimerID = 0
+
+	@Sync
+	property integer damageTimerID = 0
+
 	@ExecSpace("Server")
 	method void Spawn(table unitData, table skillData)
 		self.moveSpeed = unitData["moveSpeed"]
@@ -127,6 +136,7 @@ script Unit extends Component
 		self.maxHP = unitData["hp"]
 		self.originMaxHP = unitData["hp"]
 		self.damage = unitData["damage"]
+		self.originDamage = unitData["damage"]
 		self.attackRange = unitData["attackRange"]
 		self.attackSpeed = unitData["attackSpeed"]
 		self.originAttackSpeed = unitData["attackSpeed"]
@@ -235,8 +245,6 @@ script Unit extends Component
 			local value = self.unitScale
 			self:SetScale(value)
 		end
-		
-		
 		
 		_ResourceService:PreloadAsync({self.Entity.SpriteRendererComponent.SpriteRUID},
 		function() 
@@ -614,17 +622,17 @@ script Unit extends Component
 				self.attackSpeed -= buffAmount
 			end
 			
-			if self.currentTimerID ~= 0 then
-				_TimerService:ClearTimer(self.currentTimerID)
+			if self.attackSpeedTimerID ~= 0 then
+				_TimerService:ClearTimer(self.attackSpeedTimerID)
 			end
 			
 			if buffTime ~= 0 then
 				deleteFunction = function()
-					self.currentTimerID = 0
+					self.attackSpeedTimerID = 0
 					self.attackSpeed = self.originAttackSpeed
 				end
 		
-				self.currentTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
+				self.attackSpeedTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
 			end
 		elseif buffType == _eBuffType.MaxHealthMultiplyBuff then
 			local addHP = self.maxHP * buffAmount - self.maxHP
@@ -632,13 +640,13 @@ script Unit extends Component
 			self.maxHP = self.maxHP * buffAmount
 			self.hp += addHP
 		
-			if self.currentTimerID ~= 0 then
-				_TimerService:ClearTimer(self.currentTimerID)
+			if self.maxHPTimerID ~= 0 then
+				_TimerService:ClearTimer(self.maxHPTimerID)
 			end
 			
 			if buffTime ~= 0 then
 				deleteFunction = function()
-					self.currentTimerID = 0
+					self.maxHPTimerID = 0
 					self.maxHP = self.originMaxHP
 					
 					if self.hp >= self.maxHP then
@@ -646,9 +654,25 @@ script Unit extends Component
 					end
 				end
 		
-				self.currentTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
+				self.maxHPTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
+			end
+		elseif buffType == _eBuffType.AttackDamageBuff then
+			self.damage += buffAmount
+			
+			if self.damageTimerID ~= 0 then
+				_TimerService:ClearTimer(self.damageTimerID)
+			end
+			
+			if buffTime ~= 0 then
+				deleteFunction = function()
+					self.damageTimerID = 0
+					self.damage = self.originDamage
+				end
+		
+				self.damageTimerID = _TimerService:SetTimerOnce(deleteFunction, buffTime) 
 			end
 		end
+		
 	end
 
 	method void OnHit(Entity attacker, number damage, boolean isCritical, number attackCount)
@@ -943,7 +967,6 @@ script Unit extends Component
 		self.Entity.TransformComponent.Scale.x = self.Entity.TransformComponent.Scale.x * scale
 		self.Entity.TransformComponent.Scale.y = self.Entity.TransformComponent.Scale.y * scale
 		self.Entity.TransformComponent.Scale.z = self.Entity.TransformComponent.Scale.z * scale
-		log("이름"..self.unitName.."  크기:"..self.Entity.TransformComponent.Scale.x)
 		self.Entity.TriggerComponent.BoxSize.x = self.Entity.TriggerComponent.BoxSize.x * scale
 		self.Entity.TriggerComponent.BoxSize.y = self.Entity.TriggerComponent.BoxSize.y * scale
 		self.Entity.HitComponent.BoxSize.x = self.Entity.HitComponent.BoxSize.x * scale

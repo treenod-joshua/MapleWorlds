@@ -1,0 +1,14 @@
+@Component
+script StoneGolem_PowerUp extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		_TimerService:SetTimerOnce(function()
+			self.caster.Unit:GetBuff(_eBuffType.AttackDamageBuff, self.skillAmount, self.skillTime)
+			self:SkillEnd()	
+		end, self.skillAttackTiming)
+	end
+
+end

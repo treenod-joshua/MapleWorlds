@@ -1,0 +1,52 @@
+@Component
+script Golem_ShockWave extends SkillParent
+
+	@ExecSpace("Client")
+	method void ActivateSkill()
+		__base:ActivateSkill()
+		
+		if self._T.projectileParent == nil then
+			self._T.projectileParent = _EntityService:GetEntityByPath(_GameManager:GetGameMapName().."/ProjectileParent")
+		end
+		
+		local shockWave
+		local deleteTime
+		local spawnOffset
+		if self.caster.Unit.isEnemy then
+			  spawnOffset = Vector3(-2.5, 0.3, 0)
+		else
+			  spawnOffset = Vector3(2.5, 0.3, 0)
+		end
+		
+		local spawnPosition = self.caster.TransformComponent.WorldPosition + spawnOffset
+		
+		
+		local spawnFunction = function()
+			shockWave = _SpawnService:SpawnByModelId("model://ee000550-e099-450d-87e6-1f2f197f2ee3", "Golem_ShockWave", spawnPosition, self._T.projectileParent)
+			deleteTime = _Utils:GetRUIDTime(shockWave.SpriteRendererComponent.SpriteRUID)
+		
+			shockWave.SpriteRendererComponent.FlipX = self.caster.Unit.isEnemy == true
+			shockWave.DelayAttackComponent:Init(self.skillAmount, self.caster, self.caster.Unit.isEnemy == false)
+			self:SkillEnd()
+		end
+		
+		local damageFunction = function()
+			shockWave.TriggerComponent.Enable = true
+		end
+		
+		local deleteFunction = function()
+			-- 스킬 사용 종료 처리
+			_EntityService:Destroy(shockWave)
+		end
+		
+		-- 스킬 이펙트 처리
+		_TimerService:SetTimerOnce(spawnFunction, self.skillAttackTiming)
+		
+		-- 타이밍에 데미지 입히는 처리
+		_TimerService:SetTimerOnce(damageFunction, self.skillAttackTiming + 0.2)
+		
+		-- 스킬 사용 종료 처리
+		_TimerService:SetTimerOnce(deleteFunction, self.skillAttackTiming + 0.84)
+	end
+
+end

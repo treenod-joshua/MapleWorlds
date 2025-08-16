@@ -1,0 +1,30 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://180af03e-7b3e-49a1-8eed-1c7aeaa471de",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.25.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "StoneGolem_PowerUp",
+      "BaseModelId": null,
+      "Id": "180af03e-7b3e-49a1-8eed-1c7aeaa471de",
+      "Components": [
+        "MOD.Core.TransformComponent",
+        "script.StoneGolem_PowerUp"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
