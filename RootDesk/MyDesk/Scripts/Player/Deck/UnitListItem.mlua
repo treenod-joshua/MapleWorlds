@@ -19,6 +19,12 @@ script UnitListItem extends Component
 
 	property Entity unitInfoUI = "53e0a15f-931e-46fe-b601-b05b2575fe14"
 
+	@Sync
+	property Entity unitPriceSprite = nil
+
+	@Sync
+	property Entity unitPriceLabel = nil
+
 	method void Init(table unitData, table skillData)
 		self.unitData = unitData
 		self.skillData = skillData
@@ -27,6 +33,8 @@ script UnitListItem extends Component
 		self.unitAvartarRenderer = self.Entity.Children[2]
 		self.unitName = self.Entity.Children[3]
 		self.skillDesc = self.Entity.Children[4]
+		self.unitPriceSprite = self.Entity.Children[5]
+		self.unitPriceLabel = self.Entity.Children[6]
 		
 		self:RefreshUI()
 	end
@@ -42,7 +50,7 @@ script UnitListItem extends Component
 		
 		self.unitName.TextComponent.Text = self.unitData['name']
 		self.skillDesc.TextComponent.Text = self.skillData['desc']
-		
+		self.unitPriceLabel.TextComponent.Text = self.unitData['summonCost']
 	end
 
 	method void SetCostume()
