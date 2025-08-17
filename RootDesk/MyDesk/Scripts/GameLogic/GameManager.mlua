@@ -41,9 +41,10 @@ script GameManager extends Logic
 
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
-		for i = 1, 3 do
-			table.insert(self.skillBtn, self.skillSelectUI.Children[i])
-		end
+		-- 스킬 선택 UI 비활성화
+		-- for i = 1, 3 do
+			-- table.insert(self.skillBtn, self.skillSelectUI.Children[i])
+		-- end
 	end
 
 	@ExecSpace("Client")

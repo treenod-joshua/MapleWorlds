@@ -1062,23 +1062,23 @@
           "@components": [
             {
               "@type": "MOD.Core.UITransformComponent",
-              "AlignmentOption": 0,
+              "AlignmentOption": 3,
               "AnchorsMax": {
                 "x": 0.5,
-                "y": 0.5
+                "y": 1.0
               },
               "AnchorsMin": {
                 "x": 0.5,
-                "y": 0.5
+                "y": 1.0
               },
               "MobileOnly": false,
               "OffsetMax": {
                 "x": -149.999908,
-                "y": 476.5
+                "y": -77.5
               },
               "OffsetMin": {
                 "x": -649.9999,
-                "y": 431.5
+                "y": -122.5
               },
               "Pivot": {
                 "x": 0.5,
@@ -1097,7 +1097,7 @@
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": -399.9999,
-                "y": 454.0
+                "y": -100.0
               },
               "Rotation": {
                 "x": 0.0,
@@ -1106,7 +1106,7 @@
               },
               "Position": {
                 "x": -399.9999,
-                "y": 454.0,
+                "y": 440.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -1256,23 +1256,23 @@
           "@components": [
             {
               "@type": "MOD.Core.UITransformComponent",
-              "AlignmentOption": 6,
+              "AlignmentOption": 3,
               "AnchorsMax": {
                 "x": 0.5,
-                "y": 0.0
+                "y": 1.0
               },
               "AnchorsMin": {
                 "x": 0.5,
-                "y": 0.0
+                "y": 1.0
               },
               "MobileOnly": false,
               "OffsetMax": {
                 "x": 402.0,
-                "y": 1012.0
+                "y": -98.0
               },
               "OffsetMin": {
                 "x": 398.0,
-                "y": 1008.0
+                "y": -102.0
               },
               "Pivot": {
                 "x": 0.5,
@@ -1291,11 +1291,11 @@
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": 400.0,
-                "y": 1010.0
+                "y": -100.0
               },
               "Position": {
                 "x": 400.0,
-                "y": 470.0,
+                "y": 440.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -1347,7 +1347,7 @@
               },
               "DropShadowDistance": 32.0,
               "FillAmount": 1.0,
-              "FillCenter": true,
+              "FillCenter": false,
               "FillClockWise": true,
               "FillMethod": 0,
               "FillOrigin": 0,
@@ -1366,7 +1366,7 @@
               "OutlineWidth": 3.0,
               "RaycastTarget": false,
               "Type": 1,
-              "Enable": true
+              "Enable": false
             },
             {
               "@type": "script.EnemyHealthBar",
@@ -1415,11 +1415,11 @@
               "MobileOnly": false,
               "OffsetMax": {
                 "x": 250.0,
-                "y": 6.5
+                "y": 22.5
               },
               "OffsetMin": {
                 "x": -250.0,
-                "y": -38.5
+                "y": -22.5
               },
               "Pivot": {
                 "x": 0.5,
@@ -1438,11 +1438,11 @@
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": 0.0,
-                "y": -16.0
+                "y": 0.0
               },
               "Position": {
                 "x": 0.0,
-                "y": -16.0,
+                "y": 0.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -1512,7 +1512,7 @@
               },
               "OutlineWidth": 3.0,
               "RaycastTarget": true,
-              "Type": 1,
+              "Type": 3,
               "Enable": true
             },
             {
@@ -1554,7 +1554,7 @@
               "OverrideSorting": false,
               "UseHandle": false,
               "UseIntegerValue": false,
-              "Value": 0.456878662,
+              "Value": 0.447752774,
               "Enable": true
             }
           ],
@@ -1847,23 +1847,23 @@
           "@components": [
             {
               "@type": "MOD.Core.UITransformComponent",
-              "AlignmentOption": 6,
+              "AlignmentOption": 3,
               "AnchorsMax": {
                 "x": 0.5,
-                "y": 0.0
+                "y": 1.0
               },
               "AnchorsMin": {
                 "x": 0.5,
-                "y": 0.0
+                "y": 1.0
               },
               "MobileOnly": false,
               "OffsetMax": {
                 "x": 100.0,
-                "y": 1040.0
+                "y": -50.0
               },
               "OffsetMin": {
                 "x": -100.0,
-                "y": 940.0
+                "y": -150.0
               },
               "Pivot": {
                 "x": 0.5,
@@ -1882,11 +1882,11 @@
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": 0.0,
-                "y": 990.0
+                "y": -100.0
               },
               "Position": {
                 "x": 0.0,
-                "y": 450.0,
+                "y": 440.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -2611,17 +2611,17 @@
       },
       {
         "id": "c6d70bf4-cc61-4326-8434-eed5f4b03167",
-        "path": "/ui/Ingame_Info_UI_Group/UserInfo/GiveUpButton",
+        "path": "/ui/Ingame_Info_UI_Group/GiveUpButton",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.StageGiveUpButton",
         "jsonString": {
           "name": "GiveUpButton",
-          "path": "/ui/Ingame_Info_UI_Group/UserInfo/GiveUpButton",
+          "path": "/ui/Ingame_Info_UI_Group/GiveUpButton",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
-          "displayOrder": 2,
-          "pathConstraints": "////",
+          "displayOrder": 9,
+          "pathConstraints": "///",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -2643,12 +2643,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 1628.62012,
-                "y": -50.8379974
+                "x": 0.0,
+                "y": 399.162
               },
               "OffsetMin": {
-                "x": 1428.62012,
-                "y": -125.838
+                "x": -200.0,
+                "y": 324.162
               },
               "Pivot": {
                 "x": 0.5,
@@ -2666,31 +2666,25 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 1528.62012,
-                "y": -88.338
-              },
-              "Rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
+                "x": -100.0,
+                "y": 361.662
               },
               "Position": {
-                "x": 1678.62012,
-                "y": -88.338,
+                "x": 860.0,
+                "y": 361.662,
                 "z": 0.0
               },
               "QuaternionRotation": {
                 "x": 0.0,
                 "y": 0.0,
                 "z": 0.0,
-                "w": -1.0
+                "w": 1.0
               },
               "Scale": {
                 "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
               },
-              "ZRotation": 0.0,
               "Enable": true
             },
             {
@@ -2764,17 +2758,17 @@
       },
       {
         "id": "67d363e6-c952-47b6-947a-678b4c141c52",
-        "path": "/ui/Ingame_Info_UI_Group/UserInfo/GiveUpButton/UIText",
+        "path": "/ui/Ingame_Info_UI_Group/GiveUpButton/UIText",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "UIText",
-          "path": "/ui/Ingame_Info_UI_Group/UserInfo/GiveUpButton/UIText",
+          "path": "/ui/Ingame_Info_UI_Group/GiveUpButton/UIText",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": true,
           "displayOrder": 0,
-          "pathConstraints": "/////",
+          "pathConstraints": "////",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -2881,7 +2875,7 @@
           "enable": true,
           "visible": true,
           "localize": true,
-          "displayOrder": 9,
+          "displayOrder": 10,
           "pathConstraints": "///",
           "revision": 1,
           "modelId": null,
