@@ -59,8 +59,8 @@
                 "y": 0.5
               },
               "RectSize": {
-                "x": 2076.923,
-                "y": 1021.84613
+                "x": 1920.0,
+                "y": 1080.0
               },
               "UIMode": 1,
               "UIVersion": 2,
@@ -7673,11 +7673,11 @@
               "MobileOnly": false,
               "OffsetMax": {
                 "x": 600.0,
-                "y": 385.0
+                "y": 435.0
               },
               "OffsetMin": {
                 "x": -600.0,
-                "y": -315.0
+                "y": -365.0
               },
               "Pivot": {
                 "x": 0.5,
@@ -7685,7 +7685,7 @@
               },
               "RectSize": {
                 "x": 1200.0,
-                "y": 700.0
+                "y": 800.0
               },
               "UIMode": 1,
               "UIScale": {
@@ -7740,11 +7740,11 @@
       },
       {
         "id": "f5ef7754-322c-4be8-b304-f738905288d0",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.ScrollLayoutGroupComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
-          "name": "UnitListUIScroll",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll",
+          "name": "UnitListUIScroll_1",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -7768,11 +7768,11 @@
               "MobileOnly": false,
               "OffsetMax": {
                 "x": 525.0,
-                "y": 350.0
+                "y": 300.0
               },
               "OffsetMin": {
                 "x": -525.0,
-                "y": -350.0
+                "y": -400.0
               },
               "Pivot": {
                 "x": 0.5,
@@ -7791,7 +7791,7 @@
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": 0.0,
-                "y": 0.0
+                "y": -50.0
               },
               "Rotation": {
                 "x": 0.0,
@@ -7800,7 +7800,7 @@
               },
               "Position": {
                 "x": 0.0,
-                "y": 0.0,
+                "y": -50.0,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -7888,11 +7888,11 @@
       },
       {
         "id": "2c18dbdf-eb72-47df-8d73-0fdc655fa195",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitListItem,MOD.Core.UITouchReceiveComponent",
         "jsonString": {
           "name": "UnitListItem",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem",
           "nameEditable": true,
           "enable": false,
           "visible": false,
@@ -8026,11 +8026,11 @@
       },
       {
         "id": "4e73338f-c4d7-4cec-be88-600441ffb25a",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitSprite",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/UnitSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "UnitSprite",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitSprite",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/UnitSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -8123,11 +8123,11 @@
       },
       {
         "id": "7db7c97f-dd17-4391-b338-daa98ae3988e",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitAvartar",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/UnitAvartar",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.AvatarGUIRendererComponent,MOD.Core.CostumeManagerComponent",
         "jsonString": {
           "name": "UnitAvartar",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitAvartar",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/UnitAvartar",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -8223,11 +8223,11 @@
       },
       {
         "id": "2a7941f5-9ad5-4130-a786-9d088f5c9fef",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitName",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/UnitName",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "UnitName",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/UnitName",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/UnitName",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -8347,11 +8347,11 @@
       },
       {
         "id": "947c7f8a-2fb6-4766-a46c-18d9f02119cf",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/SkillDesc",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/SkillDesc",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "SkillDesc",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/SkillDesc",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/SkillDesc",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -8472,11 +8472,11 @@
       },
       {
         "id": "78e9c850-7129-4b25-8f94-d496a7690b9b",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/PriceSprite",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/PriceSprite",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent",
         "jsonString": {
           "name": "PriceSprite",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/PriceSprite",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/PriceSprite",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -8568,11 +8568,11 @@
       },
       {
         "id": "be3628da-b5f6-4506-a6c9-4063e5184601",
-        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/PriceLabel",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/PriceLabel",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.TextComponent",
         "jsonString": {
           "name": "PriceLabel",
-          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll/UnitListItem/PriceLabel",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/UnitListUIScroll_1/UnitListItem/PriceLabel",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -8681,6 +8681,310 @@
         }
       },
       {
+        "id": "6e4bea0b-a070-4dd0-ab15-6f34ab58ad8b",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/CharacterButton",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitListUICloseButton",
+        "jsonString": {
+          "name": "CharacterButton",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/CharacterButton",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 1,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -400.0,
+                "y": 352.5
+              },
+              "OffsetMin": {
+                "x": -500.0,
+                "y": 327.5
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 100.0,
+                "y": 25.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": -450.0,
+                "y": 340.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": -450.0,
+                "y": 340.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "07d90a3597561504f90752a4137b57f2"
+              },
+              "LocalScale": {
+                "x": 2.0,
+                "y": 2.0
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "FillCenter": true,
+              "Type": 1,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "script.UnitListUICloseButton",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ea1a7c81-84d3-48af-8de6-71fae1476f85",
+        "path": "/ui/UserDeckUI/UserDeck/UnitListUI/MonsterButton",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitListUICloseButton",
+        "jsonString": {
+          "name": "MonsterButton",
+          "path": "/ui/UserDeckUI/UserDeck/UnitListUI/MonsterButton",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": true,
+          "displayOrder": 2,
+          "pathConstraints": "/////",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "uibutton",
+            "sub_entity_id": null
+          },
+          "modelId": "uibutton",
+          "@components": [
+            {
+              "@type": "MOD.Core.UITransformComponent",
+              "AlignmentOption": 0,
+              "AnchorsMax": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "AnchorsMin": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "MobileOnly": false,
+              "OffsetMax": {
+                "x": -200.0,
+                "y": 350.0
+              },
+              "OffsetMin": {
+                "x": -300.0,
+                "y": 330.0
+              },
+              "Pivot": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "RectSize": {
+                "x": 100.0,
+                "y": 20.0
+              },
+              "UIMode": 1,
+              "UIScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "UIVersion": 2,
+              "anchoredPosition": {
+                "x": -250.0,
+                "y": 340.0
+              },
+              "Rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "Position": {
+                "x": -250.0,
+                "y": 340.0,
+                "z": 0.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": -1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "ZRotation": 0.0,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteGUIRendererComponent",
+              "ImageRUID": {
+                "DataId": "5e1626341c064c9fa3a83e8f0957f4b2"
+              },
+              "LocalScale": {
+                "x": 2.0,
+                "y": 2.0
+              },
+              "OverrideSorting": false,
+              "SortingLayer": "MapLayer0",
+              "FillCenter": true,
+              "Type": 1,
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.ButtonComponent",
+              "Colors": {
+                "NormalColor": {
+                  "r": 1.0,
+                  "g": 1.0,
+                  "b": 1.0,
+                  "a": 1.0
+                },
+                "HighlightedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "PressedColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 1.0
+                },
+                "SelectedColor": {
+                  "r": 0.9607843,
+                  "g": 0.9607843,
+                  "b": 0.9607843,
+                  "a": 1.0
+                },
+                "DisabledColor": {
+                  "r": 0.784313738,
+                  "g": 0.784313738,
+                  "b": 0.784313738,
+                  "a": 0.5019608
+                },
+                "ColorMultiplier": 1.0,
+                "FadeDuration": 0.1
+              },
+              "ImageRUIDs": {
+                "HighlightedSprite": null,
+                "PressedSprite": null,
+                "SelectedSprite": null,
+                "DisabledSprite": null
+              },
+              "OverrideSorting": false,
+              "Enable": true
+            },
+            {
+              "@type": "script.UnitListUICloseButton",
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
         "id": "b7ab5de0-125e-484c-b7c9-a5db4c1bb97f",
         "path": "/ui/UserDeckUI/UserDeck/UnitListUI/CloseButton",
         "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.UnitListUICloseButton",
@@ -8691,7 +8995,7 @@
           "enable": true,
           "visible": true,
           "localize": true,
-          "displayOrder": 1,
+          "displayOrder": 3,
           "pathConstraints": "/////",
           "revision": 1,
           "origin": {
