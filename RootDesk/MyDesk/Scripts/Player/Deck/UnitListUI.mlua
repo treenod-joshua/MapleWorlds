@@ -6,14 +6,25 @@ script UnitListUI extends Component
 	@Sync
 	property number itemIndex = 0
 
+	property Entity characterUIScroll = "f5ef7754-322c-4be8-b304-f738905288d0"
+
+	property Entity monsterUIScroll = "0d91875f-2dfb-401f-a23e-a8593161222f"
+
+	method void OnInitialize()
+		
+	end
+
 	method void OpenListUI(integer index)
-		self:RemoveItem()
-		self:SetItemList()
+		self:RemoveItem(self.characterUIScroll)
+		self:RemoveItem(self.monsterUIScroll)
+		
+		self:SetCharacterItemList()
+		self:SetMonsterItemList()
 		
 		self.itemIndex = index
 	end
 
-	method void SetItemList()
+	method void SetCharacterItemList()
 		-- 1) 덱에 장착된 유닛 ID를 set로 만들기
 		local equipped = {}
 		local player = _EntityService:GetEntityByTag("Player")
@@ -32,21 +43,53 @@ script UnitListUI extends Component
 		    local unitId = unitData and unitData["id"] or id
 		
 		    -- 덱에 있는 유닛이면 스킵
-		    if unitData and not equipped[unitId] then
+		    if unitData and not equipped[unitId] and unitData['isUsableCharacter'] == 1 then
 		        local skillData = nil
 		        if unitData["skillID"] then
 		            skillData = _SkillService:GetSkillByIDFromClient(unitData["skillID"])
 		        end
 		
-		        local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.Entity.Children[1])
+		        local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.characterUIScroll)
 		        button.UnitListItem:Init(unitData, skillData)
 		    end
 		end
 		
 	end
 
-	method void RemoveItem()
-		local root = self.Entity.Children[1]
+	method void SetMonsterItemList()
+		-- 1) 덱에 장착된 유닛 ID를 set로 만들기
+		local equipped = {}
+		local player = _EntityService:GetEntityByTag("Player")
+		if player and player.UserDeck and player.UserDeck.userDeck then
+		    for i = 1, 8 do
+		        local uid = player.UserDeck.userDeck[i]
+		        if uid ~= nil then
+		            equipped[uid] = true
+		        end
+		    end
+		end
+		
+		-- 2) 유닛 리스트 출력 (덱에 있는 건 제외)
+		for id, unitData in pairs(_UnitService.UnitTable) do
+		    -- unitData['id']가 있으면 그걸 우선 사용, 없으면 key 사용
+		    local unitId = unitData and unitData["id"] or id
+		
+		    -- 덱에 있는 유닛이면 스킵
+		    if unitData and not equipped[unitId] and unitData['isUsableCharacter'] == 0 then
+		        local skillData = nil
+		        if unitData["skillID"] then
+		            skillData = _SkillService:GetSkillByIDFromClient(unitData["skillID"])
+		        end
+		
+		        local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.monsterUIScroll)
+		        button.UnitListItem:Init(unitData, skillData)
+		    end
+		end
+		
+	end
+
+	method void RemoveItem(Entity scroll)
+		local root = scroll
 		if not root or not root.Children then return end
 		
 		local toRemove = {}
@@ -61,6 +104,22 @@ script UnitListUI extends Component
 				e:Destroy()
 			end
 		end
+	end
+
+	@EventSender("Entity", "6e4bea0b-a070-4dd0-ab15-6f34ab58ad8b")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		self.characterUIScroll.Enable = true
+		self.characterUIScroll.Visible = true
+		self.monsterUIScroll.Enable = false
+		self.monsterUIScroll.Visible = false
+	end
+
+	@EventSender("Entity", "ea1a7c81-84d3-48af-8de6-71fae1476f85")
+	handler HandleButtonClickEvent2(ButtonClickEvent event)
+		self.characterUIScroll.Enable = false
+		self.characterUIScroll.Visible = false
+		self.monsterUIScroll.Enable = true
+		self.monsterUIScroll.Visible = true
 	end
 
 end
