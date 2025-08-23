@@ -1,7 +1,19 @@
 @Component
 script UserSkillSettingButton extends Component
 
-	@Sync
-	property Entity userSkillSettingUI = nil
+	property Entity userSkillSettingUI = "143c7e21-c067-40e9-899c-b8584f11f15c"
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		local lobbyInfoUI = _EntityService:GetEntityByPath("/ui/LobbyInfoUI")
+		
+		lobbyInfoUI.Enable = false
+		lobbyInfoUI.Visible = false
+		
+		self.userSkillSettingUI.Enable = true
+		self.userSkillSettingUI.Visible = true
+		
+		self.userSkillSettingUI.Children[1].UserSkillSettingUI:OpenUserSkillSettingUI()
+	end
 
 end

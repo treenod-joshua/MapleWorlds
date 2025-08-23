@@ -19,7 +19,7 @@ script UserDeck extends Component
 	end
 
 	@ExecSpace("Server")
-	method void SetUserDeckInClient(table deckData)
+	method void SetUserDeck(table deckData)
 		self.userDeck = deckData
 		self:LoadUserDeck(deckData)
 	end

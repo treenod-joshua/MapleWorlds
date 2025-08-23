@@ -1,34 +1,32 @@
 @Logic
-script UserDeckService extends Logic
+script UserSkillDeckService extends Logic
 
 	@ExecSpace("Server")
 	method integer SAVE(string uid)
 		local ds = _DataStorageService:GetUserDataStorage(uid)
 		
 		local data = {}
-		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
+		local playerSkillDeck = _EntityService:GetEntityByTag("Player").UserSkillDeck
 		
-		-- userDeck을 순회해서 배열로 복사
 		local deckList = {}
-		for i, modelId in ipairs(playerDeck.userDeck) do
+		for i, modelId in ipairs(playerSkillDeck.userSkillDeck) do
 		    table.insert(deckList, modelId)
 		end
 		
-		data["UserDeck"] = deckList
+		data["UserSkillDeck"] = deckList
 		
 		local save =  _HttpService:JSONEncode(data)
 		
 		log(save)
-		return ds:SetAndWait("DECK",save)
-		
+		return ds:SetAndWait("SKILLDECK",save)
 	end
 
 	@ExecSpace("Server")
 	method integer LOAD(string uid)
 		local ds = _DataStorageService:GetUserDataStorage(uid)
-		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
+		local playerSkillDeck = _EntityService:GetEntityByTag("Player").UserSkillDeck
 		
-		local errCode, res = ds:GetAndWait("DECK")
+		local errCode, res = ds:GetAndWait("SKILLDECK")
 		if errCode ~= 0 then
 			return errCode
 		end
@@ -38,7 +36,7 @@ script UserDeckService extends Logic
 			local deckList = {}
 			local data = {}
 			
-			local allUnit = _UnitService:GetUnitList()
+			local allUnit = _SkillService:GetUserSkillList()
 			
 			math.randomseed(os.time())
 			for i = #allUnit, 2, -1 do
@@ -46,30 +44,29 @@ script UserDeckService extends Logic
 				allUnit[i], allUnit[j] = allUnit[j], allUnit[i]
 			end
 			
-			for i = 1,8 do
+			for i = 1,2 do
 				deckList[i] = allUnit[i].id
 			end
 			
 			log(deckList)
 			
-			playerDeck:SetUserDeck(deckList)
+			playerSkillDeck:SetUserSkillDeck(deckList)
 			
-			data["UserDeck"] = deckList
+			data["UserSkillDeck"] = deckList
 			local save =  _HttpService:JSONEncode(data)
 		
-			return ds:SetAndWait("DECK",save)
+			return ds:SetAndWait("SKILLDECK",save)
 		end
 		
 		local resTable = _HttpService:JSONDecode(res)
 		
-		playerDeck:SetUserDeck(resTable["UserDeck"])
+		playerSkillDeck:SetUserSkillDeck(resTable["UserSkillDeck"])
 		
 		log(resTable)
 		
 		return 0
 	end
 
-	@ExecSpace("ServerOnly")
 	@EventSender("Service", "UserService")
 	handler HandleUserLeaveEvent(UserLeaveEvent event)
 		local ProfileCode = event.ProfileCode

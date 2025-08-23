@@ -37,4 +37,15 @@ script SkillService extends Logic
 		return self.skillTable[id]
 	end
 
+	method table GetUserSkillList()
+		local list = {}
+		for k,v in pairs(self.skillTable) do
+			if v.coolTime ~= nil then
+				list[#list + 1] = v
+			end
+		end
+		
+		return list
+	end
+
 end

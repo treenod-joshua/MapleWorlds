@@ -25,7 +25,8 @@
         "script.UIMain",
         "script.UserStage",
         "MOD.Core.TagComponent",
-        "script.UserDeck"
+        "script.UserDeck",
+        "script.UserSkillDeck"
       ],
       "Properties": [],
       "Values": [

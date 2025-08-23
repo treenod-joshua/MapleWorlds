@@ -1,0 +1,30 @@
+@Component
+script UserSkillDeck extends Component
+
+	property table userSkillDeck = {}
+
+	method void OnBeginPlay()
+		_UserSkillDeckService:LOAD(self.Entity.PlayerComponent.UserId)
+	end
+
+	@ExecSpace("Client")
+	method void LoadUserDeck(table skillDeckData)
+		self.userSkillDeck = skillDeckData
+	end
+
+	@ExecSpace("Server")
+	method void SetSkillDeckItem(string skillID, integer index)
+		self.userSkillDeck[index] = skillID
+		self:SetSkillDeckItemInClient(skillID, index)
+	end
+
+	method void SetUserSkillDeck(table skillDeckData)
+		self.userSkillDeck = skillDeckData
+		self:LoadUserDeck(skillDeckData)
+	end
+
+	method void SetSkillDeckItemInClient(string skillID, integer index)
+		self.userSkillDeck[index] = skillID
+	end
+
+end

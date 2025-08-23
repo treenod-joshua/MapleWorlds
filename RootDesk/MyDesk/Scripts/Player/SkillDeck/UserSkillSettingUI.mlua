@@ -1,0 +1,24 @@
+@Component
+script UserSkillSettingUI extends Component
+
+	@Sync
+	property SyncTable<Entity> deckItems
+
+	method void OnBeginPlay()
+		for i = 1, 2 do
+			self.deckItems[i] = self.Entity.Children[1].Children[i]
+		end
+	end
+
+	method void OpenUserSkillSettingUI()
+		local playerDeck = _EntityService:GetEntityByTag("Player").UserSkillDeck
+		 
+		for i = 1, 2 do
+			local skillData = _SkillService:GetSkillByIDFromClient(playerDeck.userSkillDeck[i])
+			
+			self.deckItems[i].SkillDeckItem:Init(skillData)
+			self.deckItems[i].SkillDeckItem.itemIndex = i
+		end
+	end
+
+end

@@ -1,0 +1,55 @@
+@Component
+script SkillDeckItem extends Component
+
+	property table skillData = {}
+
+	@Sync
+	property Entity skillIconSprite = nil
+
+	@Sync
+	property Entity skillName = nil
+
+	@Sync
+	property Entity skillDesc = nil
+
+	@Sync
+	property Entity skillCoolTime = nil
+
+	@Sync
+	property Entity skillAmount = nil
+
+	@Sync
+	property integer itemIndex = 0
+
+	method void Init(table skillData)
+		self.skillData = skillData
+		
+		self.skillIconSprite = self.Entity.Children[1]
+		self.skillName = self.Entity.Children[3]
+		self.skillDesc = self.Entity.Children[4]
+		self.skillCoolTime = self.Entity.Children[6]
+		self.skillAmount = self.Entity.Children[8]
+		
+		self:RefreshUI()
+	end
+
+	method void RefreshUI()
+		self.skillIconSprite.SpriteGUIRendererComponent.ImageRUID = self.skillData['skillIcon']
+		self.skillName.TextComponent.Text = self.skillData['skillName']
+		self.skillDesc.TextComponent.Text = self.skillData['desc']
+		self.skillCoolTime.TextComponent.Text = self.skillData['coolTime']
+		self.skillAmount.TextComponent.Text = self.skillData['skillAmount']
+	end
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		local userDeckUI = _EntityService:GetEntityByPath("/ui/UserDeckUI/UserDeck").UserDeckUI
+		
+		userDeckUI.unitListUI.Enable = true
+		
+		userDeckUI.unitListUI.UnitListUI:OpenListUI(self.itemIndex)
+		
+		userDeckUI.unitListUI.Visible = true
+	end
+
+end
