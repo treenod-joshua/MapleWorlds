@@ -10,6 +10,10 @@ script UnitListUI extends Component
 
 	property Entity monsterUIScroll = "0d91875f-2dfb-401f-a23e-a8593161222f"
 
+	property Entity characterButton = "6e4bea0b-a070-4dd0-ab15-6f34ab58ad8b"
+
+	property Entity monsterButton = "ea1a7c81-84d3-48af-8de6-71fae1476f85"
+
 	method void OnInitialize()
 		
 	end
@@ -112,6 +116,9 @@ script UnitListUI extends Component
 		self.characterUIScroll.Visible = true
 		self.monsterUIScroll.Enable = false
 		self.monsterUIScroll.Visible = false
+		
+		self.characterButton.SpriteGUIRendererComponent.ImageRUID = "33bc2ff3dfc0488f8188fa7e0018d553"
+		self.monsterButton.SpriteGUIRendererComponent.ImageRUID = "a9c5cb3c83fe4a5fa04631063187c36c"
 	end
 
 	@EventSender("Entity", "ea1a7c81-84d3-48af-8de6-71fae1476f85")
@@ -120,6 +127,9 @@ script UnitListUI extends Component
 		self.characterUIScroll.Visible = false
 		self.monsterUIScroll.Enable = true
 		self.monsterUIScroll.Visible = true
+		
+		self.characterButton.SpriteGUIRendererComponent.ImageRUID = "3f6d5af1088149059f00f6e1809d85c3"
+		self.monsterButton.SpriteGUIRendererComponent.ImageRUID = "dd93df16c6ff40ed91236f1eaf950a14"
 	end
 
 end

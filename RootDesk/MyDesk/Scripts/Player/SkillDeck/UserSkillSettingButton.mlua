@@ -1,0 +1,7 @@
+@Component
+script UserSkillSettingButton extends Component
+
+	@Sync
+	property Entity userSkillSettingUI = nil
+
+end
