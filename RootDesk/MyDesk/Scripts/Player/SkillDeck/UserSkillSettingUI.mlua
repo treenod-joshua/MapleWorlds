@@ -4,6 +4,8 @@ script UserSkillSettingUI extends Component
 	@Sync
 	property SyncTable<Entity> deckItems
 
+	property Entity skillListUI = "2af4444e-16ef-40d4-a320-7aa34e3aedf7"
+
 	method void OnBeginPlay()
 		for i = 1, 2 do
 			self.deckItems[i] = self.Entity.Children[1].Children[i]

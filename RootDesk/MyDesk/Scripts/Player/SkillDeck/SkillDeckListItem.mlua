@@ -1,5 +1,5 @@
 @Component
-script SkillDeckItem extends Component
+script SkillDeckListItem extends Component
 
 	property table skillData = {}
 
@@ -17,9 +17,6 @@ script SkillDeckItem extends Component
 
 	@Sync
 	property Entity skillAmount = nil
-
-	@Sync
-	property integer itemIndex = 0
 
 	method void Init(table skillData)
 		self.skillData = skillData
@@ -43,11 +40,15 @@ script SkillDeckItem extends Component
 
 	@EventSender("Self")
 	handler HandleButtonClickEvent(ButtonClickEvent event)
-		local userSkillDeckUI = _EntityService:GetEntityByPath("/ui/UserSkillSettingUI/UserSkillSetting").UserSkillSettingUI
+		local playerSkillDeck = _EntityService:GetEntityByTag("Player").UserSkillDeck
+		local userSkillSettingUI = _EntityService:GetEntityByPath("/ui/UserSkillSettingUI/UserSkillSetting").UserSkillSettingUI
+		local skillListUI = _EntityService:GetEntityByPath("/ui/UserSkillSettingUI/UserSkillSetting/SkillListUI").SkillListUI
+		local index = skillListUI.itemIndex
 		
-		userSkillDeckUI.skillListUI.Enable = true
-		userSkillDeckUI.skillListUI.SkillListUI:OpenListUI(self.itemIndex)
-		userSkillDeckUI.skillListUI.Visible = true
+		userSkillSettingUI.deckItems[index].SkillDeckItem:Init(self.skillData)
+		userSkillSettingUI.skillListUI.Enable = false
+		userSkillSettingUI.skillListUI.Visible = false
+		playerSkillDeck:SetSkillDeckItem(self.skillData['id'], index)
 	end
 
 end

@@ -14,10 +14,6 @@ script UnitListUI extends Component
 
 	property Entity monsterButton = "ea1a7c81-84d3-48af-8de6-71fae1476f85"
 
-	method void OnInitialize()
-		
-	end
-
 	method void OpenListUI(integer index)
 		self:RemoveItem(self.characterUIScroll)
 		self:RemoveItem(self.monsterUIScroll)

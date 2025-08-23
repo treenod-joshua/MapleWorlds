@@ -24,7 +24,7 @@
           "enable": true,
           "visible": true,
           "localize": true,
-          "displayOrder": 9,
+          "displayOrder": 10,
           "pathConstraints": "//",
           "revision": 1,
           "origin": {
@@ -59,7 +59,7 @@
                 "y": 0.5
               },
               "RectSize": {
-                "x": 2175.75,
+                "x": 1920.0,
                 "y": 1080.0
               },
               "UIMode": 1,

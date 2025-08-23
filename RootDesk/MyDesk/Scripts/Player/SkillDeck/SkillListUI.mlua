@@ -1,0 +1,60 @@
+@Component
+script SkillListUI extends Component
+
+	property Entity buttonPrefab = "0c75fd8d-7645-453b-b983-a5115fc1b744"
+
+	property Entity skillUIScroll = "b8a0f27a-83b1-448e-8a38-d48c9deee095"
+
+	@Sync
+	property integer itemIndex = 0
+
+	method void OpenListUI(integer itemIndex)
+		self:RemoveItem()
+		self:SetSkillItemList()
+		
+		self.itemIndex = itemIndex
+	end
+
+	method void SetSkillItemList()
+		local equipped = {}
+		local player = _EntityService:GetEntityByTag("Player")
+		if player and player.UserSkillDeck and player.UserSkillDeck.userSkillDeck then
+		    for i = 1, 2 do
+		        local uid = player.UserSkillDeck.userSkillDeck[i]
+		        if uid ~= nil then
+		            equipped[uid] = true
+		        end
+		    end
+		end
+		
+		for id, skillData in pairs(_SkillService.skillTable) do
+		    local skillID = skillData and skillData["id"] or id
+		
+		    -- 덱에 있는 유닛이면 스킵
+		    if skillData and not equipped[skillID] and skillData['coolTime'] ~= nil  then
+		        local button = _SpawnService:SpawnByEntity(self.buttonPrefab, "button", Vector3.zero, self.skillUIScroll)
+		        button.SkillDeckListItem:Init(skillData)
+		    end
+		end
+		
+	end
+
+	method void RemoveItem()
+		local root = self.skillUIScroll
+		if not root or not root.Children then return end
+		
+		local toRemove = {}
+		for idx, child in ipairs(root.Children) do
+			if idx ~= 1 and child.SkillDeckListItem then
+				table.insert(toRemove, child)
+			end
+		end
+		
+		for _, e in ipairs(toRemove) do
+			if e.Destroy then
+				e:Destroy()
+			end
+		end
+	end
+
+end

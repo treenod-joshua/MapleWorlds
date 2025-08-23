@@ -1,0 +1,20 @@
+@Component
+script UserSkillDeckSaveButton extends Component
+
+	property Entity userSkillDeckUI = "143c7e21-c067-40e9-899c-b8584f11f15c"
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		local player = _EntityService:GetEntityByTag("Player")
+		_UserSkillDeckService:SAVE(player.PlayerComponent.UserId)
+		
+		self.userSkillDeckUI.Enable = false
+		self.userSkillDeckUI.Visible = false
+		
+		local lobbyInfoUI = _EntityService:GetEntityByPath("/ui/LobbyInfoUI")
+		
+		lobbyInfoUI.Enable = true
+		lobbyInfoUI.Visible = true
+	end
+
+end

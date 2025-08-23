@@ -1,0 +1,12 @@
+@Component
+script SkillListUICloseButton extends Component
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		local skillListUI = _EntityService:GetEntityByPath("/ui/UserSkillSettingUI/UserSkillSetting/SkillListUI")
+		
+		skillListUI.Enable = false
+		skillListUI.Visible = false
+	end
+
+end
