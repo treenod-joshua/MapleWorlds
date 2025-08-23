@@ -59,7 +59,7 @@
                 "y": 0.5
               },
               "RectSize": {
-                "x": 1920.0,
+                "x": 2175.75,
                 "y": 1080.0
               },
               "UIMode": 1,
@@ -171,7 +171,7 @@
                 "y": 332.0
               },
               "Position": {
-                "x": 785.1,
+                "x": 912.975,
                 "y": -208.0,
                 "z": 0.0
               },
@@ -493,7 +493,7 @@
                 "y": 193.57
               },
               "Position": {
-                "x": 568.0,
+                "x": 695.875,
                 "y": -346.43,
                 "z": 0.0
               },
@@ -761,8 +761,8 @@
           "name": "UIJoystick",
           "path": "/ui/Ingame_Info_UI_Group/UIJoystick",
           "nameEditable": true,
-          "enable": false,
-          "visible": false,
+          "enable": true,
+          "visible": true,
           "localize": true,
           "displayOrder": 2,
           "pathConstraints": "///",
@@ -788,12 +788,12 @@
               },
               "MobileOnly": false,
               "OffsetMax": {
-                "x": 410.0,
-                "y": 330.0001
+                "x": 441.4303,
+                "y": 481.4994
               },
               "OffsetMin": {
-                "x": 210.0,
-                "y": 129.999908
+                "x": 241.4303,
+                "y": 281.4992
               },
               "Pivot": {
                 "x": 0.5,
@@ -811,12 +811,12 @@
               },
               "UIVersion": 2,
               "anchoredPosition": {
-                "x": 310.0,
-                "y": 230.0
+                "x": 341.4303,
+                "y": 381.4993
               },
               "Position": {
-                "x": -650.0,
-                "y": -310.0,
+                "x": -746.4447,
+                "y": -158.5007,
                 "z": 0.0
               },
               "QuaternionRotation": {
@@ -889,7 +889,7 @@
             },
             {
               "@type": "MOD.Core.JoystickComponent",
-              "DynamicStick": true,
+              "DynamicStick": false,
               "Enable": true
             }
           ],
@@ -957,7 +957,7 @@
                 "y": -251.805115
               },
               "Position": {
-                "x": -591.027466,
+                "x": -718.902466,
                 "y": 288.1949,
                 "z": 0.0
               },
@@ -2276,7 +2276,7 @@
                 "y": 450.0
               },
               "Position": {
-                "x": -810.0,
+                "x": -937.875,
                 "y": 450.0,
                 "z": 0.0
               },
@@ -2670,7 +2670,7 @@
                 "y": 361.662
               },
               "Position": {
-                "x": 860.0,
+                "x": 987.875,
                 "y": 361.662,
                 "z": 0.0
               },

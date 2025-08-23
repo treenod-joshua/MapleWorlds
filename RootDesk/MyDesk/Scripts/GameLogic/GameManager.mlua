@@ -39,6 +39,8 @@ script GameManager extends Logic
 
 	property Entity failPopupUI = "60300db6-e074-4ae3-9db1-9142f3a47a24"
 
+	property Entity joystick = "02c6fd20-fdb0-4b80-bbd3-2241e929c46d"
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		-- 스킬 선택 UI 비활성화
@@ -160,10 +162,19 @@ script GameManager extends Logic
 		self.infoUI.Visible = true
 		self.gameClearResult.Enable = false
 		self.gameClearResult.Visible = false
+		self.joystick.Enable = false
+		self.joystick.Visible = false
 		
 		-- 불필요한 UI 비활성화
 		self.failPopupUI.Enable = false
 		self.failPopupUI.Visible = false
+		
+		-- 모바일 환경 지원
+		if Environment:IsMobilePlatform() then
+			self.joystick.Enable = true
+			self.joystick.Visible = true
+		end
+		
 		
 		-- 닉네임 설정
 		local userNameUI = _EntityService:GetEntityByPath("/ui/Ingame_Info_UI_Group/UserInfo/UserName")
