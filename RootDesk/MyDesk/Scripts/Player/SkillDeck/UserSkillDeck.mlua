@@ -18,11 +18,13 @@ script UserSkillDeck extends Component
 		self:SetSkillDeckItemInClient(skillID, index)
 	end
 
+	@ExecSpace("Server")
 	method void SetUserSkillDeck(table skillDeckData)
 		self.userSkillDeck = skillDeckData
 		self:LoadUserDeck(skillDeckData)
 	end
 
+	@ExecSpace("Client")
 	method void SetSkillDeckItemInClient(string skillID, integer index)
 		self.userSkillDeck[index] = skillID
 	end

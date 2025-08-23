@@ -8,7 +8,6 @@ script UserDeckService extends Logic
 		local data = {}
 		local playerDeck = _EntityService:GetEntityByTag("Player").UserDeck
 		
-		-- userDeck을 순회해서 배열로 복사
 		local deckList = {}
 		for i, modelId in ipairs(playerDeck.userDeck) do
 		    table.insert(deckList, modelId)
