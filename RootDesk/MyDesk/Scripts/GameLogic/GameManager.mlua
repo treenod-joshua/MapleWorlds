@@ -41,6 +41,8 @@ script GameManager extends Logic
 
 	property Entity joystick = "02c6fd20-fdb0-4b80-bbd3-2241e929c46d"
 
+	property Entity screenSkillUI = "c735233f-679d-4f6d-a9c2-ab9db46c5bd6"
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		-- 스킬 선택 UI 비활성화
@@ -192,8 +194,11 @@ script GameManager extends Logic
 
 	@ExecSpace("Client")
 	method void SetPlayerCharacter()
-		local skill1 = _SkillService:GetSkillByIDFromClient('model://83d3e5b8-6dd5-4d93-83ce-e73d364ec46e')
-		local skill2 = _SkillService:GetSkillByIDFromClient('model://02330bcd-8b7c-4146-8d26-89f5e7aa953c')
+		local player = _UserService.LocalPlayer.UserSkillDeck
+		
+		
+		local skill1 = _SkillService:GetSkillByIDFromClient(player.userSkillDeck[1])
+		local skill2 = _SkillService:GetSkillByIDFromClient(player.userSkillDeck[2])
 		
 		_UserService.LocalPlayer.PlayerCharacter:SetSkill(skill1, skill2)
 	end

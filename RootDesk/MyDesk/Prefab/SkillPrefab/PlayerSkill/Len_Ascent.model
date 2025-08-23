@@ -1,0 +1,29 @@
+{
+  "Id": "",
+  "GameId": "",
+  "EntryKey": "model://08b42bbd-7f9e-40fd-af4d-d89714a09e51",
+  "ContentType": "x-mod/model",
+  "Content": "",
+  "Usage": 0,
+  "UsePublish": 1,
+  "UseService": 0,
+  "CoreVersion": "1.25.0.0",
+  "StudioVersion": "0.1.0.0",
+  "DynamicLoading": 0,
+  "ContentProto": {
+    "Use": "Json",
+    "Json": {
+      "Version": 1,
+      "Name": "Len_Ascent",
+      "BaseModelId": null,
+      "Id": "08b42bbd-7f9e-40fd-af4d-d89714a09e51",
+      "Components": [
+        "script.Len_Ascent"
+      ],
+      "Properties": [],
+      "Values": [],
+      "EventLinks": [],
+      "Children": []
+    }
+  }
+}
