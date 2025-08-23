@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "directory://88dd2b972a39497ca1eac04b61d7f795",
+  "EntryKey": "directory://563d78287ab049de9971385b6cdd2efd",
   "ContentType": "x-mod/directory",
   "Content": "",
   "Usage": 0,
@@ -13,8 +13,8 @@
   "ContentProto": {
     "Use": "Json",
     "Json": {
-      "entry_id": "directory://88dd2b972a39497ca1eac04b61d7f795",
-      "name": "Lobby",
+      "entry_id": "directory://563d78287ab049de9971385b6cdd2efd",
+      "name": "StageRanking",
       "lock": false,
       "folding": false,
       "nameEditable": true

@@ -1,0 +1,17 @@
+@Component
+script StageRankingItem extends Component
+
+	@Sync
+	property Entity userName = nil
+
+	method void OnBeginPlay()
+		self.userName = self.Entity.Children[2]
+	end
+
+	method void Init(string name, integer userScore, integer userRank)
+		local strRank = tostring(userRank)
+		
+		self.userName.TextComponent.Text = "#" .. strRank .." [" ..   name .. "] " .. tostring(userScore / 1000)
+	end
+
+end

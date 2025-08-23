@@ -1,0 +1,30 @@
+@Component
+script StageRankingListUI extends Component
+
+	@Sync
+	property SyncTable<Entity> rankItems
+
+	method void OnBeginPlay()
+		for i = 1, 50 do
+			self.rankItems[i] = self.Entity.Children[1].Children[i]
+		end
+	end
+
+	method void Init(integer chapter, integer stage)
+		local key = _RankingService:GetRankKeyByTable({chapter=chapter, stage=stage})
+		_RankingService:FETCH(key)
+		
+		local currentRankTable = _RankingService:GetTop50RankTable()
+		
+		for i = 1, 50 do
+			self.rankItems[i].StageRankingItem:Init(currentRankTable[i].name, currentRankTable[i].score, i)
+		end
+	end
+
+	@EventSender("Entity", "763512f0-58e6-4c2c-ad79-64a76be4eafe")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		self.Entity.Enable = false
+		self.Entity.Visible = false
+	end
+
+end

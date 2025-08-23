@@ -1,0 +1,14 @@
+@Component
+script StageRankingButton extends Component
+
+	@EventSender("Self")
+	handler HandleButtonClickEvent(ButtonClickEvent event)
+		local rankingUI = _EntityService:GetEntityByPath("/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel/RankingListUI")
+		local player = _EntityService:GetEntityByTag("Player")
+		
+		rankingUI.StageRankingListUI:Init(player.UserStage.selectChapter, player.UserStage.selectStage)
+		rankingUI.Enable = true
+		rankingUI.Visible = true
+	end
+
+end

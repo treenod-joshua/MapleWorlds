@@ -81,4 +81,24 @@ script RankingService extends Logic
 		return storageKey
 	end
 
+	@ExecSpace("ClientOnly")
+	method table GetTop50RankTable()
+		local table = {}
+		
+		for rank = 1, 50 do
+			if rank > #self.RankData then
+				table[rank] = {name="NONE", score=9999999}
+				continue
+			end
+			
+			local jsonData = self.RankData[rank]
+			
+			local info  = _HttpService:JSONDecode(jsonData)
+			
+			table[rank] = info
+		end
+		
+		return table
+	end
+
 end
