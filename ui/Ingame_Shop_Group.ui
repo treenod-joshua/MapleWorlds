@@ -5014,23 +5014,23 @@
           "@components": [
             {
               "@type": "MOD.Core.UITransformComponent",
-              "AlignmentOption": 6,
+              "AlignmentOption": 0,
               "AnchorsMax": {
                 "x": 0.5,
-                "y": 0.0
+                "y": 0.5
               },
               "AnchorsMin": {
                 "x": 0.5,
-                "y": 0.0
+                "y": 0.5
               },
               "MobileOnly": false,
               "OffsetMax": {
                 "x": 310.0,
-                "y": 765.999939
+                "y": 225.999939
               },
               "OffsetMin": {
                 "x": -90.0,
-                "y": 515.999939
+                "y": -24.000061
               },
               "Pivot": {
                 "x": 0.5,
@@ -5044,7 +5044,7 @@
               "UIVersion": 2,
               "anchoredPosition": {
                 "x": 110.0,
-                "y": 640.999939
+                "y": 100.999939
               },
               "Position": {
                 "x": 110.0,
