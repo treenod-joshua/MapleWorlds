@@ -31,7 +31,9 @@ script StageSelectorUI extends Component
 			
 			entity.StageSelectItemUI:Init()
 			self.SelectButtonList[i] = entity
-			entity.StageSelectItemUI:AddCallback(function() self:ClickButtonHanddler(i) end)
+			entity.StageSelectItemUI:AddCallback(function() 
+				self:ClickButtonHanddler(i)
+			end)
 			
 			entity.StageSelectItemUI:SetImage(stageDataList[i].button)
 			
@@ -70,6 +72,10 @@ script StageSelectorUI extends Component
 				self.StageInfoPanel.SpriteGUIRendererComponent.ImageRUID = stageDataList[i].info
 				self.userStage.selectStage = stageDataList[i].id
 			end
+			
+			local rankingListUI = _EntityService:GetEntityByPath("/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel/RankingListUI")
+			rankingListUI.Enable = false
+			rankingListUI.Visible = false
 		end
 	end
 
