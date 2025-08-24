@@ -3199,8 +3199,8 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 10.63871,
-                "y": 0.6766229,
+                "x": 10.5226994,
+                "y": -1.48342514,
                 "z": 999.998047
               },
               "QuaternionRotation": {
@@ -3222,7 +3222,7 @@
               "EndFrameIndex": 2147483647,
               "RenderSetting": 0,
               "SortingLayer": "MapLayer0",
-              "SpriteRUID": "9b81168792a4498cb70b0d38ed2941be",
+              "SpriteRUID": "052b38e06e804048be5a67e54dcf75b1",
               "StartFrameIndex": 0,
               "Enable": true
             },
@@ -3469,8 +3469,8 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": -4.877951,
-                "y": 0.6766229,
+                "x": -4.96084452,
+                "y": -1.55657506,
                 "z": 999.998047
               },
               "QuaternionRotation": {
@@ -3489,7 +3489,10 @@
             {
               "@type": "MOD.Core.SpriteRendererComponent",
               "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
               "RenderSetting": 0,
+              "SpriteRUID": "1c13d18f71a745b09510171cfe75cb7a",
+              "StartFrameIndex": 0,
               "Enable": true
             },
             {
