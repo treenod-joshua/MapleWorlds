@@ -10,12 +10,17 @@ script StageRankingListUI extends Component
 		end
 	end
 
-	method void Init(integer chapter, integer stage)
+	method void Init()
 		self.Entity.Children[1].Visible = false
+		self.Entity.Children[4].Visible = true
 		
-		local key = _RankingService:GetRankKeyByTable({chapter=chapter, stage=stage})
-		
+		self:Fetch()
+	end
+
+	@ExecSpace("Client")
+	method void Fetch()
 		_RankingService.fetchCallback = function()
+				log("함수 호출")
 				local currentRankTable = _RankingService:GetTop50RankTable()
 		
 				for i = 1, 50 do
@@ -25,7 +30,6 @@ script StageRankingListUI extends Component
 				self.Entity.Children[4].Visible = false
 				self.Entity.Children[1].Visible = true
 		end
-		_RankingService:FETCH(key)
 	end
 
 	@EventSender("Entity", "763512f0-58e6-4c2c-ad79-64a76be4eafe")

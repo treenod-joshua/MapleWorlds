@@ -45,14 +45,8 @@ script RankingService extends Logic
 		
 		for i, item in pairs(items) do
 		-- SortableDataStorageItem을 통해 Key값과 Value값을 조회할 수 있습니다.
-			if i > 4 then
-				break
-			end
-			
 			self.RankData[i] = _HttpService:JSONEncode({name=item.KeyInfo.Key, score=item.Value})
 		end
-		
-		self:RefreshRankListUI()
 	end
 
 	@ExecSpace("ClientOnly")
@@ -107,6 +101,12 @@ script RankingService extends Logic
 
 	@ExecSpace("Client")
 	method void RefreshRankListUI()
+		self.fetchCallback()
+	end
+
+	@ExecSpace("ClientOnly")
+	method void OnSyncProperty(string name, any value)
+		log("온싱크"..name.."밸류:"..tostring(value))
 		self.fetchCallback()
 	end
 

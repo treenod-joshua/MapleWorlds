@@ -6,6 +6,11 @@ script StageRankingButton extends Component
 		local rankingUI = _EntityService:GetEntityByPath("/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel/RankingListUI")
 		local player = _EntityService:GetEntityByTag("Player")
 		
+		
+		local key = _RankingService:GetRankKeyByTable({chapter=player.UserStage.selectChapter, stage=player.UserStage.selectStage})
+		
+		_RankingService:FETCH(key)
+		
 		rankingUI.StageRankingListUI:Init(player.UserStage.selectChapter, player.UserStage.selectStage)
 		rankingUI.Enable = true
 		rankingUI.Visible = true
