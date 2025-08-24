@@ -45,6 +45,9 @@ script GameManager extends Logic
 
 	property Entity loadingUI = "8430a269-3cee-4cf9-a07c-ba7e814a8051"
 
+	@Sync
+	property number loadingTimer = 0
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		-- 스킬 선택 UI 비활성화
@@ -328,7 +331,7 @@ script GameManager extends Logic
 		
 		local color = self.loadingUI.SpriteGUIRendererComponent.Color
 		self.loadingUI.SpriteGUIRendererComponent.Color = Color(color.r, color.g, color.b, 0)
-		self:FadeSprite(1, 1)
+		self:FadeSprite(1, 0.35)
 	end
 
 	method void HideLoadingScreen()
@@ -337,7 +340,7 @@ script GameManager extends Logic
 		
 		local color = self.loadingUI.SpriteGUIRendererComponent.Color
 		self.loadingUI.SpriteGUIRendererComponent.Color = Color(color.r, color.g, color.b, 0)
-		self:FadeSprite(0, 1)
+		self:FadeSprite(0, 0.35)
 	end
 
 	method void FadeSprite(number targetAlpha, number duration)
@@ -351,9 +354,8 @@ script GameManager extends Logic
 		local steps = math.ceil(duration / tick)
 		
 		local step = 0
-		local timer = nil
 		
-		timer = _TimerService:SetTimerRepeat(function()
+		self.loadingTimer = _TimerService:SetTimerRepeat(function()
 		    step = step + 1
 		    local progress = math.min(step / steps, 1.0)
 		    sprite.Color = Color.Lerp(startColor, endColor, progress)
@@ -361,7 +363,7 @@ script GameManager extends Logic
 		    -- 마지막 스텝이면 보장 처리
 		    if progress >= 1 then
 		        sprite.Color = endColor
-		        _TimerService:ClearTimer(timer)
+		        _TimerService:ClearTimer(self.loadingTimer)
 		    end
 		end, steps, 0)
 	end
