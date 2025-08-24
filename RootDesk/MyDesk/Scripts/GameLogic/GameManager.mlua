@@ -51,6 +51,9 @@ script GameManager extends Logic
 	@Sync
 	property number timerStep = 0
 
+	@Sync
+	property number steps = 0
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		-- 스킬 선택 UI 비활성화
@@ -349,26 +352,28 @@ script GameManager extends Logic
 	method void FadeSprite(number targetAlpha, number duration)
 		duration = duration or 0.35  -- 기본 0.35초
 		
-		local sprite = self.loadingUI.SpriteGUIRendererComponent
-		local startColor = sprite.Color
-		local endColor = Color(startColor.r, startColor.g, startColor.b, targetAlpha)
-		
 		local t, tick = 0, 1/60
-		local steps = math.ceil(duration / tick)
 		
+		self.steps = math.ceil(duration / tick)
 		self.timerStep = 0
 		
 		self.loadingTimer = _TimerService:SetTimerRepeat(function()
 		    self.timerStep = self.timerStep + 1
-		    local progress = math.min(self.timerStep / steps, 1.0)
+			
+		    local progress = math.min(self.timerStep / self.steps, 1.0)
+			local sprite = self.loadingUI.SpriteGUIRendererComponent
+			local startColor = sprite.Color
+			local endColor = Color(startColor.r, startColor.g, startColor.b, targetAlpha)
+			log("로그로그:"..tostring(startColor).. "progress:"..progress)
 		    sprite.Color = Color.Lerp(startColor, endColor, progress)
 		
 		    -- 마지막 스텝이면 보장 처리
 		    if progress >= 1 then
 		        sprite.Color = endColor
 		        _TimerService:ClearTimer(self.loadingTimer)
+				log("로그로그타이머 제거")
 		    end
-		end, steps, 0)
+		end, tick, 0)
 	end
 
 	method table GetPreLoadAssetRuid()
