@@ -110,4 +110,11 @@ script RankingService extends Logic
 		self.fetchCallback()
 	end
 
+	@ExecSpace("Server")
+	method void DeleteData()
+		for rank = 1, 50 do
+			table[rank] = {name="NONE", score=9999999}
+		end
+	end
+
 end

@@ -7,6 +7,8 @@ script SkillListUICloseButton extends Component
 		
 		skillListUI.Enable = false
 		skillListUI.Visible = false
+		
+		_RankingService:DeleteData()
 	end
 
 end
