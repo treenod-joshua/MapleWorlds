@@ -48,6 +48,9 @@ script GameManager extends Logic
 	@Sync
 	property number loadingTimer = 0
 
+	@Sync
+	property number timerStep = 0
+
 	@ExecSpace("ClientOnly")
 	method void OnBeginPlay()
 		-- 스킬 선택 UI 비활성화
@@ -353,11 +356,11 @@ script GameManager extends Logic
 		local t, tick = 0, 1/60
 		local steps = math.ceil(duration / tick)
 		
-		local step = 0
+		self.timerStep = 0
 		
 		self.loadingTimer = _TimerService:SetTimerRepeat(function()
-		    step = step + 1
-		    local progress = math.min(step / steps, 1.0)
+		    self.timerStep = self.timerStep + 1
+		    local progress = math.min(self.timerStep / steps, 1.0)
 		    sprite.Color = Color.Lerp(startColor, endColor, progress)
 		
 		    -- 마지막 스텝이면 보장 처리
