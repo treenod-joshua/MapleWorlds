@@ -112,11 +112,8 @@ script RankingService extends Logic
 
 	@ExecSpace("Server")
 	method void DeleteData()
-		local table = {}
-		for rank = 1, 50 do
-			table[rank] = {name="NONE", score=9999999}
-			
-			self.RankData[rank] = table[rank]
+		for i = 1, 50 do	
+			self.RankData[i] = nil
 		end
 	end
 
