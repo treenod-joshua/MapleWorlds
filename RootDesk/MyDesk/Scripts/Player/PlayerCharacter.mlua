@@ -19,6 +19,9 @@ script PlayerCharacter extends Component
 
 	property table skillData2 = {}
 
+	@Sync
+	property boolean isPlayingUISkill = false
+
 	method void SetSkill(table skillData1, table skillData2)
 		self.skillData1 = skillData1
 		self.skillData2 = skillData2

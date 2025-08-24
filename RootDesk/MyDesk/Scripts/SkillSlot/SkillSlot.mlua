@@ -78,7 +78,7 @@ script SkillSlot extends Component
 			isKeyDown = true
 		end
 		
-		if not isKeyDown then
+		if not isKeyDown or _UserService.LocalPlayer.PlayerCharacter.isPlayingUISkill then
 			return
 		end
 		

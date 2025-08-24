@@ -1,5 +1,5 @@
 @Component
-script Len_Ascent extends SkillParent
+script Fractal_Horizon extends SkillParent
 
 	@ExecSpace("Client")
 	method void ActivateSkill()
@@ -12,7 +12,7 @@ script Len_Ascent extends SkillParent
 		local player = _EntityService:GetEntityByTag("Player")
 		local entity = _EntityService:GetEntityByPath("/ui/Ingame_Shop_Group")
 		
-		_GameManager.screenSkillUI.SpriteGUIRendererComponent.ImageRUID = "dac3d68cd9ba4140b99f373af6902f35"
+		_GameManager.screenSkillUI.SpriteGUIRendererComponent.ImageRUID = "c70059c7bed2422ebd10392459245ce9"
 		_GameManager.screenSkillUI.Enable = true
 		_GameManager.screenSkillUI.Visible = true
 		
@@ -25,7 +25,7 @@ script Len_Ascent extends SkillParent
 				end
 				
 				if monster.Enable then
-					monster.Unit:OnHit(self.caster, self.skillAmount, true, 5)
+					monster.Unit:OnHit(self.caster, self.skillAmount, true, 10)
 				end
 			end
 		end

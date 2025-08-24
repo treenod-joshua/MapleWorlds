@@ -52,7 +52,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "68122cf14d5d45d5a1980ff7ab570475"
+          "Value": "14e0915ea0db4732851ada9324463d42"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -61,7 +61,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "c774f21fed2c41cd8f4822233f6d8bf8"
+          "Value": "df711d366bed447ab4a3cb109c6b998b"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -70,7 +70,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "57b0c4ca9a82439392cc180f87061bf8"
+          "Value": "003131e82862449d9746be27a458115e"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -79,7 +79,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "0858d12a37014eca827209e64b9f59e3"
+          "Value": "01d2b4e805214491acc4a9c8fb8008a3"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -97,7 +97,7 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "eb40859444bd4485b828f57e323763c4"
+          "Value": "dcbfd36033f94f23a829c38ce51de09b"
         },
         {
           "TargetType": "MOD.Core.CostumeManagerComponent",
@@ -611,7 +611,16 @@
             "$type": "MODNativeType",
             "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
           },
-          "Value": "cfff746b45e64155b2c9e7d9dde95fa1"
+          "Value": ""
+        },
+        {
+          "TargetType": "MOD.Core.CostumeManagerComponent",
+          "Name": "CustomEyeAccessoryEquip",
+          "ValueType": {
+            "$type": "MODNativeType",
+            "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+          },
+          "Value": "9d6f1fab3a1949729043024cf55711e7"
         }
       ],
       "EventLinks": [],
