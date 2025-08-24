@@ -369,8 +369,8 @@ script GameManager extends Logic
 			local endTextColor = Color(startTextColor.r, startTextColor.g, startTextColor.b, targetAlpha)
 			
 		    sprite.Color = Color.Lerp(startColor, endColor, progress)
-		    slimeSprite.Color = Color.Lerp(startColor, endColor, progress)
-		    loadingText.FontColor = Color.Lerp(startColor, endColor, progress)
+		    slimeSprite.Color = Color.Lerp(startSlimeColor, endSlimeColor, progress)
+		    loadingText.FontColor = Color.Lerp(startTextColor, endTextColor, progress)
 		
 		    -- 마지막 스텝이면 보장 처리
 		    if progress >= 1 then
