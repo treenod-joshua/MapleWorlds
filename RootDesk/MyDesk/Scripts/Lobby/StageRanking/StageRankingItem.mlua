@@ -9,6 +9,12 @@ script StageRankingItem extends Component
 	end
 
 	method void Init(string name, integer userScore, integer userRank)
+		if name == "NONE" then
+			self.Entity.Visible = false
+		else
+			self.Entity.Visible = true
+		end
+		
 		local strRank = tostring(userRank)
 		
 		self.userName.TextComponent.Text = "#" .. strRank .." [" ..   name .. "] " .. tostring(userScore / 1000)

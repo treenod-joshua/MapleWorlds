@@ -4,6 +4,8 @@ script RankingService extends Logic
 	@Sync
 	property SyncTable<string> RankData
 
+	property any fetchCallback = nil
+
 	@ExecSpace("Server")
 	method void AddPoint(string storageKey, string userName, integer userScore)
 		local ds = _DataStorageService:GetSortableDataStorage(storageKey)
@@ -49,6 +51,8 @@ script RankingService extends Logic
 			
 			self.RankData[i] = _HttpService:JSONEncode({name=item.KeyInfo.Key, score=item.Value})
 		end
+		
+		self:RefreshRankListUI()
 	end
 
 	@ExecSpace("ClientOnly")
@@ -99,6 +103,11 @@ script RankingService extends Logic
 		end
 		
 		return table
+	end
+
+	@ExecSpace("Client")
+	method void RefreshRankListUI()
+		self.fetchCallback()
 	end
 
 end
