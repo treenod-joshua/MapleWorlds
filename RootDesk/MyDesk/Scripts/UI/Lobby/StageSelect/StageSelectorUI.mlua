@@ -76,6 +76,9 @@ script StageSelectorUI extends Component
 			local rankingListUI = _EntityService:GetEntityByPath("/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel/RankingListUI")
 			rankingListUI.Enable = false
 			rankingListUI.Visible = false
+			
+			_RankingService:DeleteData()
+			rankingListUI.StageRankingListUI:RefreshRankListItem()
 		end
 	end
 
