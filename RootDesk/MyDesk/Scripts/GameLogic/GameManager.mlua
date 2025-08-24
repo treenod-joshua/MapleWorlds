@@ -337,19 +337,16 @@ script GameManager extends Logic
 		
 		local color = self.loadingUI.SpriteGUIRendererComponent.Color
 		self.loadingUI.SpriteGUIRendererComponent.Color = Color(color.r, color.g, color.b, 0)
-		self:FadeSprite(1, 0.35)
+		self:FadeSprite(1, 0.35, false)
 	end
 
 	method void HideLoadingScreen()
-		self.loadingUI.Enable = false
-		self.loadingUI.Visible = false
-		
 		local color = self.loadingUI.SpriteGUIRendererComponent.Color
 		self.loadingUI.SpriteGUIRendererComponent.Color = Color(color.r, color.g, color.b, 0)
-		self:FadeSprite(0, 0.35)
+		self:FadeSprite(0, 0.35, true)
 	end
 
-	method void FadeSprite(number targetAlpha, number duration)
+	method void FadeSprite(number targetAlpha, number duration, boolean isFadeOut)
 		duration = duration or 0.35  -- 기본 0.35초
 		
 		local t, tick = 0, 1/60
@@ -362,18 +359,32 @@ script GameManager extends Logic
 			
 		    local progress = math.min(self.timerStep / self.steps, 1.0)
 			local sprite = self.loadingUI.SpriteGUIRendererComponent
+			local slimeSprite = self.loadingUI.Children[1].SpriteGUIRendererComponent
+			local loadingText = self.loadingUI.Children[2].TextComponent
 			local startColor = sprite.Color
 			local endColor = Color(startColor.r, startColor.g, startColor.b, targetAlpha)
-			log("로그로그:"..tostring(startColor).. "progress:"..progress)
+			local startSlimeColor = slimeSprite.Color
+			local endSlimeColor = Color(startSlimeColor.r, startSlimeColor.g, startSlimeColor.b, targetAlpha)
+			local startTextColor = loadingText.FontColor
+			local endTextColor = Color(startTextColor.r, startTextColor.g, startTextColor.b, targetAlpha)
+			
 		    sprite.Color = Color.Lerp(startColor, endColor, progress)
+		    slimeSprite.Color = Color.Lerp(startColor, endColor, progress)
+		    loadingText.FontColor = Color.Lerp(startColor, endColor, progress)
 		
 		    -- 마지막 스텝이면 보장 처리
 		    if progress >= 1 then
 		        sprite.Color = endColor
 		        _TimerService:ClearTimer(self.loadingTimer)
-				log("로그로그타이머 제거")
 		    end
 		end, tick, 0)
+		
+		if isFadeOut then
+			_TimerService:SetTimerOnce(function()
+				self.loadingUI.Enable = false
+				self.loadingUI.Visible = false
+			end, self.steps * tick)
+		end
 	end
 
 	method table GetPreLoadAssetRuid()
