@@ -22920,7 +22920,7 @@
       {
         "id": "763512f0-58e6-4c2c-ad79-64a76be4eafe",
         "path": "/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel/RankingListUI/CloseButton",
-        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent,script.SkillListUICloseButton",
+        "componentNames": "MOD.Core.UITransformComponent,MOD.Core.SpriteGUIRendererComponent,MOD.Core.ButtonComponent",
         "jsonString": {
           "name": "CloseButton",
           "path": "/ui/LobbyInfoUI/StageSelectUI/StageInfoPanel/RankingListUI/CloseButton",
@@ -23059,10 +23059,6 @@
                 "DisabledSprite": null
               },
               "OverrideSorting": false,
-              "Enable": true
-            },
-            {
-              "@type": "script.SkillListUICloseButton",
               "Enable": true
             }
           ],
