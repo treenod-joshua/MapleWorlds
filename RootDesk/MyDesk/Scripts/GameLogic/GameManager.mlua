@@ -325,11 +325,45 @@ script GameManager extends Logic
 	method void ShowLoadingScreen()
 		self.loadingUI.Enable = true
 		self.loadingUI.Visible = true
+		
+		local color = self.loadingUI.SpriteGUIRendererComponent.Color
+		self.loadingUI.SpriteGUIRendererComponent.Color = Color(color.r, color.g, color.b, 0)
+		self:FadeSprite(1, 1)
 	end
 
 	method void HideLoadingScreen()
 		self.loadingUI.Enable = false
 		self.loadingUI.Visible = false
+		
+		local color = self.loadingUI.SpriteGUIRendererComponent.Color
+		self.loadingUI.SpriteGUIRendererComponent.Color = Color(color.r, color.g, color.b, 0)
+		self:FadeSprite(0, 1)
+	end
+
+	method void FadeSprite(number targetAlpha, number duration)
+		duration = duration or 0.35  -- 기본 0.35초
+		
+		local sprite = self.loadingUI.SpriteGUIRendererComponent
+		local startColor = sprite.Color
+		local endColor = Color(startColor.r, startColor.g, startColor.b, targetAlpha)
+		
+		local t, tick = 0, 1/60
+		local steps = math.ceil(duration / tick)
+		
+		local step = 0
+		local timer = nil
+		
+		timer = _TimerService:SetTimerRepeat(function()
+		    step = step + 1
+		    local progress = math.min(step / steps, 1.0)
+		    sprite.Color = Color.Lerp(startColor, endColor, progress)
+		
+		    -- 마지막 스텝이면 보장 처리
+		    if progress >= 1 then
+		        sprite.Color = endColor
+		        _TimerService:ClearTimer(timer)
+		    end
+		end, steps, 0)
 	end
 
 	method table GetPreLoadAssetRuid()

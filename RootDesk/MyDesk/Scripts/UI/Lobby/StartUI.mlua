@@ -3,16 +3,6 @@ script StartUI extends Component
 
 	@EventSender("Self")
 	handler HandleButtonClickEvent(ButtonClickEvent event)
-		--------------- Native Event Sender Info ----------------
-		-- Sender: ButtonComponent
-		-- Space: Client
-		---------------------------------------------------------
-		
-		-- Parameters
-		-- local Entity = event.Entity
-		---------------------------------------------------------
-		
-		
 		local userStage = _UserService.LocalPlayer.UserStage
 		
 		_GameManager:ShowLoadingScreen()
