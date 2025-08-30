@@ -164,7 +164,7 @@ script GameManager extends Logic
 			return "/maps/TestMap"
 		end
 		
-		return "/maps/Chapter"..self.chapterIndex
+		return "/maps/Stage"..self.chapterIndex.."0"..self.mapIndex
 	end
 
 	@ExecSpace("Client")
