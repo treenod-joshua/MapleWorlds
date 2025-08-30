@@ -4699,11 +4699,11 @@
               "nextUpdateTs": 1.0,
               "UIController": {
                 "IsRelative": false,
-                "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
+                "ComponentId": "bf3b4a84-092a-4633-8374-070315997dbf:MesoUI"
               },
               "UserWallet": {
                 "IsRelative": false,
-                "ComponentId": "03a1c87b-00aa-49d9-9d14-ada3697851e0:MesoWallet"
+                "ComponentId": "b1c833a6-2ab8-4053-858b-4db0dc51e250:MesoWallet"
               }
             }
           ],
@@ -4732,7 +4732,7 @@
               "CurrentMeso": 20,
               "UIController": {
                 "IsRelative": false,
-                "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
+                "ComponentId": "bf3b4a84-092a-4633-8374-070315997dbf:MesoUI"
               }
             }
           ],

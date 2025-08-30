@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "map://chapter1",
+  "EntryKey": "map://stage101",
   "ContentType": "x-mod/map",
   "Content": "",
   "Usage": 0,
@@ -15,11 +15,11 @@
     "Entities": [
       {
         "id": "af6976c0-fe90-4203-ba28-4b321cc2bb11",
-        "path": "/maps/Chapter1",
+        "path": "/maps/Stage101",
         "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MinimapManager,MOD.Core.SoundComponent",
         "jsonString": {
-          "name": "Chapter1",
-          "path": "/maps/Chapter1",
+          "name": "Stage101",
+          "path": "/maps/Stage101",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -1222,11 +1222,11 @@
       },
       {
         "id": "d227e205-c1dc-4fa0-a354-fab7d4c35f54",
-        "path": "/maps/Chapter1/Background",
+        "path": "/maps/Stage101/Background",
         "componentNames": "MOD.Core.BackgroundComponent",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/Chapter1/Background",
+          "path": "/maps/Stage101/Background",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1254,11 +1254,11 @@
       },
       {
         "id": "672dad33-0310-4230-a5e8-4d17a99ed6e8",
-        "path": "/maps/Chapter1/MapleMapLayer",
+        "path": "/maps/Stage101/MapleMapLayer",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer",
-          "path": "/maps/Chapter1/MapleMapLayer",
+          "path": "/maps/Stage101/MapleMapLayer",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -1288,11 +1288,11 @@
       },
       {
         "id": "d826a2b0-248c-4564-99e8-a2bdf2d75be4",
-        "path": "/maps/Chapter1/TileMap",
+        "path": "/maps/Stage101/TileMap",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap",
-          "path": "/maps/Chapter1/TileMap",
+          "path": "/maps/Stage101/TileMap",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -3529,11 +3529,11 @@
       },
       {
         "id": "9fa7242c-076a-4887-9bc7-d5700f1e7737",
-        "path": "/maps/Chapter1/Background",
+        "path": "/maps/Stage101/Background",
         "componentNames": "",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/Chapter1/Background",
+          "path": "/maps/Stage101/Background",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3548,11 +3548,11 @@
       },
       {
         "id": "4c6e43e6-e02f-4480-ae3f-61aac802118d",
-        "path": "/maps/Chapter1/Background/foothold-2452",
+        "path": "/maps/Stage101/Background/foothold-2452",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.CustomFootholdComponent",
         "jsonString": {
           "name": "foothold-2452",
-          "path": "/maps/Chapter1/Background/foothold-2452",
+          "path": "/maps/Stage101/Background/foothold-2452",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3661,11 +3661,11 @@
       },
       {
         "id": "c122c501-363f-4fd6-8a45-b103b7a56bd5",
-        "path": "/maps/Chapter1/Background/MapObject_1",
+        "path": "/maps/Stage101/Background/MapObject_1",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_1",
-          "path": "/maps/Chapter1/Background/MapObject_1",
+          "path": "/maps/Stage101/Background/MapObject_1",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3718,11 +3718,11 @@
       },
       {
         "id": "00ef4def-b176-45de-945d-ce0f6056de05",
-        "path": "/maps/Chapter1/Background/MapObject_3",
+        "path": "/maps/Stage101/Background/MapObject_3",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_3",
-          "path": "/maps/Chapter1/Background/MapObject_3",
+          "path": "/maps/Stage101/Background/MapObject_3",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3775,11 +3775,11 @@
       },
       {
         "id": "6ef6f208-19b5-4fbd-b4b1-8c89cbee9588",
-        "path": "/maps/Chapter1/Background/MapObject_9",
+        "path": "/maps/Stage101/Background/MapObject_9",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_9",
-          "path": "/maps/Chapter1/Background/MapObject_9",
+          "path": "/maps/Stage101/Background/MapObject_9",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3832,11 +3832,11 @@
       },
       {
         "id": "3561977f-6b34-4fc8-b279-095160c25816",
-        "path": "/maps/Chapter1/Background/MapObject_10",
+        "path": "/maps/Stage101/Background/MapObject_10",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_10",
-          "path": "/maps/Chapter1/Background/MapObject_10",
+          "path": "/maps/Stage101/Background/MapObject_10",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3889,11 +3889,11 @@
       },
       {
         "id": "6eee2aa6-2b1b-4918-8249-d4050739639d",
-        "path": "/maps/Chapter1/Background/MapObject_7",
+        "path": "/maps/Stage101/Background/MapObject_7",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_7",
-          "path": "/maps/Chapter1/Background/MapObject_7",
+          "path": "/maps/Stage101/Background/MapObject_7",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3946,11 +3946,11 @@
       },
       {
         "id": "18264df9-512e-46d7-b1bd-83d9d07b69cc",
-        "path": "/maps/Chapter1/Background/MapObject_13",
+        "path": "/maps/Stage101/Background/MapObject_13",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_13",
-          "path": "/maps/Chapter1/Background/MapObject_13",
+          "path": "/maps/Stage101/Background/MapObject_13",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4003,11 +4003,11 @@
       },
       {
         "id": "8ed10bc8-18ac-4f08-a63d-ad0af4455fa0",
-        "path": "/maps/Chapter1/Background/MapObject_6",
+        "path": "/maps/Stage101/Background/MapObject_6",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_6",
-          "path": "/maps/Chapter1/Background/MapObject_6",
+          "path": "/maps/Stage101/Background/MapObject_6",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4060,11 +4060,11 @@
       },
       {
         "id": "288dc45f-a83b-4a2a-bb90-9916f6d7d570",
-        "path": "/maps/Chapter1/Background/MapObject_11",
+        "path": "/maps/Stage101/Background/MapObject_11",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_11",
-          "path": "/maps/Chapter1/Background/MapObject_11",
+          "path": "/maps/Stage101/Background/MapObject_11",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4117,11 +4117,11 @@
       },
       {
         "id": "a1b7cd1c-0638-4a66-b567-3578796138b0",
-        "path": "/maps/Chapter1/Background/MapObject_4",
+        "path": "/maps/Stage101/Background/MapObject_4",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_4",
-          "path": "/maps/Chapter1/Background/MapObject_4",
+          "path": "/maps/Stage101/Background/MapObject_4",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4174,11 +4174,11 @@
       },
       {
         "id": "377c2e3b-65e1-46fb-9112-2597fe7d1f00",
-        "path": "/maps/Chapter1/Background/MapObject_8",
+        "path": "/maps/Stage101/Background/MapObject_8",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_8",
-          "path": "/maps/Chapter1/Background/MapObject_8",
+          "path": "/maps/Stage101/Background/MapObject_8",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4231,11 +4231,11 @@
       },
       {
         "id": "5de9230f-1020-442e-9c1e-0becff7055ea",
-        "path": "/maps/Chapter1/Background/MapObject_12",
+        "path": "/maps/Stage101/Background/MapObject_12",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_12",
-          "path": "/maps/Chapter1/Background/MapObject_12",
+          "path": "/maps/Stage101/Background/MapObject_12",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4288,11 +4288,11 @@
       },
       {
         "id": "afbdefac-6a06-4cf0-bf4b-004bdb573127",
-        "path": "/maps/Chapter1/Background/MapObject_5",
+        "path": "/maps/Stage101/Background/MapObject_5",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
           "name": "MapObject_5",
-          "path": "/maps/Chapter1/Background/MapObject_5",
+          "path": "/maps/Stage101/Background/MapObject_5",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4345,11 +4345,11 @@
       },
       {
         "id": "f5af730d-fbdb-40ee-adeb-57c1caeda316",
-        "path": "/maps/Chapter1/EnemyTower",
+        "path": "/maps/Stage101/EnemyTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService,script.Tower,MOD.Core.HitComponent,script.Unit,script.GameClearChecker",
         "jsonString": {
           "name": "EnemyTower",
-          "path": "/maps/Chapter1/EnemyTower",
+          "path": "/maps/Stage101/EnemyTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4447,11 +4447,11 @@
       },
       {
         "id": "b168cb7e-a9ac-4c6f-9973-0835d991e49b",
-        "path": "/maps/Chapter1/ProjectileParent",
+        "path": "/maps/Stage101/ProjectileParent",
         "componentNames": "",
         "jsonString": {
           "name": "ProjectileParent",
-          "path": "/maps/Chapter1/ProjectileParent",
+          "path": "/maps/Stage101/ProjectileParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4466,11 +4466,11 @@
       },
       {
         "id": "587b7214-1aa5-439d-a136-59ddc47e728e",
-        "path": "/maps/Chapter1/MyMonsterList",
+        "path": "/maps/Stage101/MyMonsterList",
         "componentNames": "",
         "jsonString": {
           "name": "MyMonsterList",
-          "path": "/maps/Chapter1/MyMonsterList",
+          "path": "/maps/Stage101/MyMonsterList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4485,11 +4485,11 @@
       },
       {
         "id": "72fb79bb-414b-4712-9e76-d77bc3f8a2fa",
-        "path": "/maps/Chapter1/MyMonsterList/MySpawnPoint",
+        "path": "/maps/Stage101/MyMonsterList/MySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "MySpawnPoint",
-          "path": "/maps/Chapter1/MyMonsterList/MySpawnPoint",
+          "path": "/maps/Stage101/MyMonsterList/MySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4531,11 +4531,11 @@
       },
       {
         "id": "94590250-3c52-4bf9-a9f2-5656ba5ff992",
-        "path": "/maps/Chapter1/EnemyList",
+        "path": "/maps/Stage101/EnemyList",
         "componentNames": "",
         "jsonString": {
           "name": "EnemyList",
-          "path": "/maps/Chapter1/EnemyList",
+          "path": "/maps/Stage101/EnemyList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4550,11 +4550,11 @@
       },
       {
         "id": "76dc306f-fc59-4857-bdb2-e65864bbb4a0",
-        "path": "/maps/Chapter1/EnemyList/EnemySpawnPoint",
+        "path": "/maps/Stage101/EnemyList/EnemySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "EnemySpawnPoint",
-          "path": "/maps/Chapter1/EnemyList/EnemySpawnPoint",
+          "path": "/maps/Stage101/EnemyList/EnemySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4596,11 +4596,11 @@
       },
       {
         "id": "fca8fb87-756a-4d19-9aa6-44cd2fb30dcc",
-        "path": "/maps/Chapter1/SkillParent",
+        "path": "/maps/Stage101/SkillParent",
         "componentNames": "",
         "jsonString": {
           "name": "SkillParent",
-          "path": "/maps/Chapter1/SkillParent",
+          "path": "/maps/Stage101/SkillParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4615,11 +4615,11 @@
       },
       {
         "id": "8ed350f6-5d33-4488-8b83-92ccd146450b",
-        "path": "/maps/Chapter1/PlayerTower",
+        "path": "/maps/Stage101/PlayerTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,MOD.Core.HitComponent,script.Tower,script.Unit",
         "jsonString": {
           "name": "PlayerTower",
-          "path": "/maps/Chapter1/PlayerTower",
+          "path": "/maps/Stage101/PlayerTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -4707,11 +4707,11 @@
       },
       {
         "id": "2f5ab07d-a23b-4671-aa23-d194bca918c1",
-        "path": "/maps/Chapter1/ingameIncome",
+        "path": "/maps/Stage101/ingameIncome",
         "componentNames": "script.MesoIncome",
         "jsonString": {
           "name": "ingameIncome",
-          "path": "/maps/Chapter1/ingameIncome",
+          "path": "/maps/Stage101/ingameIncome",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -4740,11 +4740,11 @@
       },
       {
         "id": "03a1c87b-00aa-49d9-9d14-ada3697851e0",
-        "path": "/maps/Chapter1/userWallet",
+        "path": "/maps/Stage101/userWallet",
         "componentNames": "script.MesoWallet",
         "jsonString": {
           "name": "userWallet",
-          "path": "/maps/Chapter1/userWallet",
+          "path": "/maps/Stage101/userWallet",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -4769,11 +4769,11 @@
       },
       {
         "id": "1114386e-3b5e-42b4-8e05-58984bb86d48",
-        "path": "/maps/Chapter1/ingameWalletUI",
+        "path": "/maps/Stage101/ingameWalletUI",
         "componentNames": "script.MesoUI",
         "jsonString": {
           "name": "ingameWalletUI",
-          "path": "/maps/Chapter1/ingameWalletUI",
+          "path": "/maps/Stage101/ingameWalletUI",
           "nameEditable": true,
           "enable": true,
           "visible": false,

@@ -49,7 +49,7 @@
               "FootholdsByLayer": {
                 "1": [
                   {
-                    "Length": 1.21999979,
+                    "Length": 1.22000027,
                     "NextFootholdId": 2,
                     "PreviousFootholdId": 24,
                     "groupID": 1,
@@ -67,7 +67,7 @@
                     "OwnerId": "0cc263af-acc1-4bd0-8b88-609c3624267a",
                     "Id": 1,
                     "StartPoint": {
-                      "x": -6.62,
+                      "x": -6.62000036,
                       "y": -2.27
                     },
                     "EndPoint": {
@@ -785,7 +785,7 @@
                     "IsDynamic": false
                   },
                   {
-                    "Length": 0.73,
+                    "Length": 0.7299998,
                     "NextFootholdId": 1,
                     "PreviousFootholdId": 25,
                     "groupID": 1,
@@ -803,11 +803,11 @@
                     "OwnerId": "0cc263af-acc1-4bd0-8b88-609c3624267a",
                     "Id": 24,
                     "StartPoint": {
-                      "x": -6.62,
-                      "y": -3.0
+                      "x": -6.62000036,
+                      "y": -2.99999976
                     },
                     "EndPoint": {
-                      "x": -6.62,
+                      "x": -6.62000036,
                       "y": -2.27
                     },
                     "Variance": {
@@ -835,11 +835,11 @@
                     "OwnerId": "0cc263af-acc1-4bd0-8b88-609c3624267a",
                     "Id": 25,
                     "StartPoint": {
-                      "x": -6.62,
+                      "x": -6.62000036,
                       "y": -3.6
                     },
                     "EndPoint": {
-                      "x": -6.62,
+                      "x": -6.62000036,
                       "y": -3.0
                     },
                     "Variance": {
@@ -867,11 +867,11 @@
                     "OwnerId": "0cc263af-acc1-4bd0-8b88-609c3624267a",
                     "Id": 26,
                     "StartPoint": {
-                      "x": -6.62,
+                      "x": -6.62000036,
                       "y": -4.20000029
                     },
                     "EndPoint": {
-                      "x": -6.62,
+                      "x": -6.62000036,
                       "y": -3.60000014
                     },
                     "Variance": {
@@ -4003,11 +4003,11 @@
               "nextUpdateTs": 1.0,
               "UIController": {
                 "IsRelative": false,
-                "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
+                "ComponentId": "e6306210-8a5e-41ec-b189-f101a118b655:MesoUI"
               },
               "UserWallet": {
                 "IsRelative": false,
-                "ComponentId": "03a1c87b-00aa-49d9-9d14-ada3697851e0:MesoWallet"
+                "ComponentId": "160addb5-1135-446d-b2ca-625ccfd1e6c4:MesoWallet"
               }
             }
           ],
@@ -4036,7 +4036,7 @@
               "CurrentMeso": 20,
               "UIController": {
                 "IsRelative": false,
-                "ComponentId": "1114386e-3b5e-42b4-8e05-58984bb86d48:MesoUI"
+                "ComponentId": "e6306210-8a5e-41ec-b189-f101a118b655:MesoUI"
               }
             }
           ],
