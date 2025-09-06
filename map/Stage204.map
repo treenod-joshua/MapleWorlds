@@ -890,7 +890,7 @@
             },
             {
               "@type": "MOD.Core.SoundComponent",
-              "AudioClipRUID": "bcc73825742745089f771fbb23c881e9",
+              "AudioClipRUID": "d479098207e2405a8dfdaff121b04ebc",
               "Bgm": true,
               "Loop": true,
               "PlayOnEnable": true,
@@ -924,7 +924,7 @@
                 "b": 0.5019608,
                 "a": 0.7058824
               },
-              "TemplateRUID": "65c4167ea7484196b890022354e5a4a4",
+              "TemplateRUID": "95ea8ea4fb444689b683cd0df9fbc6ed",
               "Type": 1,
               "Enable": true
             }

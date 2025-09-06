@@ -1,7 +1,7 @@
 {
   "Id": "",
   "GameId": "",
-  "EntryKey": "map://stage205",
+  "EntryKey": "map://stage305",
   "ContentType": "x-mod/map",
   "Content": "",
   "Usage": 0,
@@ -14,12 +14,12 @@
     "Use": "Binary",
     "Entities": [
       {
-        "id": "ee5f04b0-e145-4989-8990-108612c700f7",
-        "path": "/maps/Stage205",
+        "id": "0fb28279-7598-447f-b957-b716247fe051",
+        "path": "/maps/Stage305",
         "componentNames": "MOD.Core.MapComponent,MOD.Core.FootholdComponent,script.MinimapManager,MOD.Core.SoundComponent",
         "jsonString": {
-          "name": "Stage205",
-          "path": "/maps/Stage205",
+          "name": "Stage305",
+          "path": "/maps/Stage305",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -64,7 +64,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 1,
                     "StartPoint": {
                       "x": -6.69,
@@ -96,7 +96,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 2,
                     "StartPoint": {
                       "x": -5.39999962,
@@ -128,7 +128,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 3,
                     "StartPoint": {
                       "x": -4.5,
@@ -160,7 +160,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 4,
                     "StartPoint": {
                       "x": -3.60000014,
@@ -192,7 +192,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 5,
                     "StartPoint": {
                       "x": -2.7,
@@ -224,7 +224,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 6,
                     "StartPoint": {
                       "x": -1.79999983,
@@ -256,7 +256,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 7,
                     "StartPoint": {
                       "x": -0.9,
@@ -288,7 +288,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 8,
                     "StartPoint": {
                       "x": 0.0,
@@ -320,7 +320,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 9,
                     "StartPoint": {
                       "x": 0.9,
@@ -352,7 +352,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 10,
                     "StartPoint": {
                       "x": 1.79999983,
@@ -384,7 +384,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 11,
                     "StartPoint": {
                       "x": 2.69999957,
@@ -416,7 +416,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 12,
                     "StartPoint": {
                       "x": 3.59999967,
@@ -448,7 +448,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 13,
                     "StartPoint": {
                       "x": 4.5,
@@ -480,7 +480,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 14,
                     "StartPoint": {
                       "x": 5.39999962,
@@ -512,7 +512,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 15,
                     "StartPoint": {
                       "x": 6.29999971,
@@ -544,7 +544,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 16,
                     "StartPoint": {
                       "x": 7.2,
@@ -576,7 +576,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 17,
                     "StartPoint": {
                       "x": 8.1,
@@ -608,7 +608,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 18,
                     "StartPoint": {
                       "x": 9.000001,
@@ -640,7 +640,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 19,
                     "StartPoint": {
                       "x": 9.900001,
@@ -672,7 +672,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 20,
                     "StartPoint": {
                       "x": 10.8,
@@ -704,7 +704,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 21,
                     "StartPoint": {
                       "x": 12.0900011,
@@ -736,7 +736,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 22,
                     "StartPoint": {
                       "x": 12.0900011,
@@ -768,7 +768,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 23,
                     "StartPoint": {
                       "x": 12.0900011,
@@ -800,7 +800,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 24,
                     "StartPoint": {
                       "x": -6.69,
@@ -832,7 +832,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 25,
                     "StartPoint": {
                       "x": -6.69,
@@ -864,7 +864,7 @@
                       "isCustomFoothold": false,
                       "inertiaOption": 0
                     },
-                    "OwnerId": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
+                    "OwnerId": "10a21f09-001d-4fd7-83bf-18188a40042b",
                     "Id": 26,
                     "StartPoint": {
                       "x": -6.69,
@@ -890,7 +890,7 @@
             },
             {
               "@type": "MOD.Core.SoundComponent",
-              "AudioClipRUID": "d479098207e2405a8dfdaff121b04ebc",
+              "AudioClipRUID": "3926b48759d246dc8464a876ff7fa5ce",
               "Bgm": true,
               "Loop": true,
               "PlayOnEnable": true,
@@ -901,18 +901,18 @@
         }
       },
       {
-        "id": "014645c2-caec-4457-b3fb-65447d59470d",
-        "path": "/maps/Stage205/Background",
+        "id": "9c9dea88-44ca-462b-8fdc-2480b74508f4",
+        "path": "/maps/Stage305/Background",
         "componentNames": "MOD.Core.BackgroundComponent",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/Stage205/Background",
+          "path": "/maps/Stage305/Background",
           "nameEditable": false,
           "enable": true,
           "visible": true,
           "localize": false,
           "displayOrder": 0,
-          "pathConstraints": "///014645c2-caec-4457-b3fb-65447d59470d",
+          "pathConstraints": "///9c9dea88-44ca-462b-8fdc-2480b74508f4",
           "revision": 2,
           "modelId": null,
           "@components": [
@@ -924,7 +924,7 @@
                 "b": 0.5019608,
                 "a": 0.7058824
               },
-              "TemplateRUID": "95ea8ea4fb444689b683cd0df9fbc6ed",
+              "TemplateRUID": "65c4167ea7484196b890022354e5a4a4",
               "Type": 1,
               "Enable": true
             }
@@ -933,12 +933,12 @@
         }
       },
       {
-        "id": "e5660210-6b8b-455d-b5a6-87396d83af4d",
-        "path": "/maps/Stage205/MapleMapLayer",
+        "id": "545c806b-93b7-4788-a553-dfa3422623a8",
+        "path": "/maps/Stage305/MapleMapLayer",
         "componentNames": "MOD.Core.MapLayerComponent",
         "jsonString": {
           "name": "MapleMapLayer",
-          "path": "/maps/Stage205/MapleMapLayer",
+          "path": "/maps/Stage305/MapleMapLayer",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -967,12 +967,12 @@
         }
       },
       {
-        "id": "c4d7b441-11cd-464c-9337-7f445c7b6bb1",
-        "path": "/maps/Stage205/TileMap",
+        "id": "10a21f09-001d-4fd7-83bf-18188a40042b",
+        "path": "/maps/Stage305/TileMap",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.TileMapComponent",
         "jsonString": {
           "name": "TileMap",
-          "path": "/maps/Stage205/TileMap",
+          "path": "/maps/Stage305/TileMap",
           "nameEditable": false,
           "enable": true,
           "visible": true,
@@ -3320,18 +3320,18 @@
         }
       },
       {
-        "id": "0b4aba24-fbc1-44bd-b729-1fb8804fd2e6",
-        "path": "/maps/Stage205/Background",
+        "id": "6b287631-cf54-4bfa-bf7c-1ac77a269734",
+        "path": "/maps/Stage305/Background",
         "componentNames": "",
         "jsonString": {
           "name": "Background",
-          "path": "/maps/Stage205/Background",
+          "path": "/maps/Stage305/Background",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": false,
           "displayOrder": 3,
-          "pathConstraints": "///0b4aba24-fbc1-44bd-b729-1fb8804fd2e6",
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734",
           "revision": 1,
           "modelId": null,
           "@components": [],
@@ -3339,18 +3339,18 @@
         }
       },
       {
-        "id": "36f81813-3287-4cae-b897-ee516f36c8ab",
-        "path": "/maps/Stage205/Background/MapObject_19",
+        "id": "60508174-8ce5-42f0-9e13-df94f60ab08a",
+        "path": "/maps/Stage305/Background/MapObject_44",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
-          "name": "MapObject_19",
-          "path": "/maps/Stage205/Background/MapObject_19",
+          "name": "MapObject_44",
+          "path": "/maps/Stage305/Background/MapObject_44",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": false,
           "displayOrder": 0,
-          "pathConstraints": "///0b4aba24-fbc1-44bd-b729-1fb8804fd2e6/",
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -3362,9 +3362,9 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 6.856181,
-                "y": -1.23999977,
-                "z": 999.94
+                "x": 3.76848221,
+                "y": -1.41729331,
+                "z": 999.938
               },
               "QuaternionRotation": {
                 "x": 0.0,
@@ -3384,9 +3384,10 @@
               "ActionSheet": {},
               "EndFrameIndex": 2147483647,
               "FlipX": false,
+              "OrderInLayer": -2,
               "RenderSetting": 0,
               "SortingLayer": "MapLayer0",
-              "SpriteRUID": "19578811291c44688b6a5f339cb4d665",
+              "SpriteRUID": "89f2e396488249148fec5766f9aae548",
               "StartFrameIndex": 0,
               "Enable": true
             }
@@ -3395,18 +3396,18 @@
         }
       },
       {
-        "id": "886160a8-24b7-4090-aed5-63017b8accbe",
-        "path": "/maps/Stage205/Background/MapObject_18",
+        "id": "4676d05c-9257-448d-876f-0b7302af01da",
+        "path": "/maps/Stage305/Background/MapObject_28",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
-          "name": "MapObject_18",
-          "path": "/maps/Stage205/Background/MapObject_18",
+          "name": "MapObject_28",
+          "path": "/maps/Stage305/Background/MapObject_28",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": false,
           "displayOrder": 1,
-          "pathConstraints": "///0b4aba24-fbc1-44bd-b729-1fb8804fd2e6/",
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -3418,9 +3419,9 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": -0.677108765,
-                "y": -1.30122113,
-                "z": 999.98
+                "x": 3.221447,
+                "y": -1.54988861,
+                "z": 999.949
               },
               "QuaternionRotation": {
                 "x": 0.0,
@@ -3440,9 +3441,10 @@
               "ActionSheet": {},
               "EndFrameIndex": 2147483647,
               "FlipX": false,
+              "OrderInLayer": -1,
               "RenderSetting": 0,
               "SortingLayer": "MapLayer0",
-              "SpriteRUID": "58487920416e4c4389d0a985466d726e",
+              "SpriteRUID": "8c8df77d25fd4788b6cec5a87c835faf",
               "StartFrameIndex": 0,
               "Enable": true
             }
@@ -3451,18 +3453,18 @@
         }
       },
       {
-        "id": "0bed966d-21fe-40dd-b2d0-96aef8c3b4b2",
-        "path": "/maps/Stage205/Background/MapObject_48",
+        "id": "6ad00937-ac3f-498a-81da-bd2fe1e9b707",
+        "path": "/maps/Stage305/Background/MapObject_36",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
-          "name": "MapObject_48",
-          "path": "/maps/Stage205/Background/MapObject_48",
+          "name": "MapObject_36",
+          "path": "/maps/Stage305/Background/MapObject_36",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": false,
           "displayOrder": 2,
-          "pathConstraints": "///0b4aba24-fbc1-44bd-b729-1fb8804fd2e6/",
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -3474,9 +3476,9 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 2.67941666,
-                "y": -1.27877831,
-                "z": 999.924
+                "x": 2.87144661,
+                "y": -1.79988861,
+                "z": 999.982
               },
               "QuaternionRotation": {
                 "x": 0.0,
@@ -3496,9 +3498,10 @@
               "ActionSheet": {},
               "EndFrameIndex": 2147483647,
               "FlipX": false,
+              "OrderInLayer": -1,
               "RenderSetting": 0,
               "SortingLayer": "MapLayer0",
-              "SpriteRUID": "94f31be232164a6686955a4b420d61ad",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
               "StartFrameIndex": 0,
               "Enable": true
             }
@@ -3507,18 +3510,18 @@
         }
       },
       {
-        "id": "f9ecec7e-1e7b-48a2-8fc9-e9461e014292",
-        "path": "/maps/Stage205/Background/MapObject_43",
+        "id": "d86309af-d781-4b18-a055-49fcf8f5ee76",
+        "path": "/maps/Stage305/Background/MapObject_32",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
-          "name": "MapObject_43",
-          "path": "/maps/Stage205/Background/MapObject_43",
+          "name": "MapObject_32",
+          "path": "/maps/Stage305/Background/MapObject_32",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": false,
           "displayOrder": 3,
-          "pathConstraints": "///0b4aba24-fbc1-44bd-b729-1fb8804fd2e6/",
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -3530,8 +3533,122 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 2.5894165,
-                "y": -2.01877856,
+                "x": 3.12144661,
+                "y": -1.8298893,
+                "z": 999.958
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "e545e8c8-3fa6-47db-9c3f-82e0487a5ec8",
+        "path": "/maps/Stage305/Background/MapObject_29",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_29",
+          "path": "/maps/Stage305/Background/MapObject_29",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 4,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 2.37144661,
+                "y": -1.8498888,
+                "z": 999.997
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": true,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "58a226d1-9da9-4286-8761-f0cb1acee064",
+        "path": "/maps/Stage305/Background/MapObject_31",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_31",
+          "path": "/maps/Stage305/Background/MapObject_31",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 5,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 2.64144516,
+                "y": -1.71988869,
                 "z": 999.991
               },
               "QuaternionRotation": {
@@ -3552,9 +3669,10 @@
               "ActionSheet": {},
               "EndFrameIndex": 2147483647,
               "FlipX": false,
+              "OrderInLayer": -1,
               "RenderSetting": 0,
               "SortingLayer": "MapLayer0",
-              "SpriteRUID": "8ba349328f50424785b65a27733db7a2",
+              "SpriteRUID": "31dedf93878a421085ebca151e30e782",
               "StartFrameIndex": 0,
               "Enable": true
             }
@@ -3563,18 +3681,18 @@
         }
       },
       {
-        "id": "5260ff48-a324-43d8-bbfe-a1ed4f014fa3",
-        "path": "/maps/Stage205/Background/MapObject_44",
+        "id": "c61e086b-7042-44f6-8619-cacb81071cbf",
+        "path": "/maps/Stage305/Background/MapObject_30",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
         "jsonString": {
-          "name": "MapObject_44",
-          "path": "/maps/Stage205/Background/MapObject_44",
+          "name": "MapObject_30",
+          "path": "/maps/Stage305/Background/MapObject_30",
           "nameEditable": true,
           "enable": true,
           "visible": true,
           "localize": false,
-          "displayOrder": 4,
-          "pathConstraints": "///0b4aba24-fbc1-44bd-b729-1fb8804fd2e6/",
+          "displayOrder": 6,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
           "revision": 1,
           "origin": {
             "type": "Model",
@@ -3586,9 +3704,9 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": 3.449417,
-                "y": -2.01877856,
-                "z": 999.929
+                "x": 2.49144554,
+                "y": -1.79988861,
+                "z": 999.983
               },
               "QuaternionRotation": {
                 "x": 0.0,
@@ -3608,9 +3726,10 @@
               "ActionSheet": {},
               "EndFrameIndex": 2147483647,
               "FlipX": false,
+              "OrderInLayer": -1,
               "RenderSetting": 0,
               "SortingLayer": "MapLayer0",
-              "SpriteRUID": "8ba349328f50424785b65a27733db7a2",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
               "StartFrameIndex": 0,
               "Enable": true
             }
@@ -3619,12 +3738,2520 @@
         }
       },
       {
-        "id": "80e67bfd-7878-47ce-859f-8559f59cf97c",
-        "path": "/maps/Stage205/EnemyTower",
+        "id": "f3df8779-e43f-457a-b2e8-e3a268b05fff",
+        "path": "/maps/Stage305/Background/MapObject_35",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_35",
+          "path": "/maps/Stage305/Background/MapObject_35",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 7,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 5.136571,
+                "y": -0.55756855,
+                "z": 999.945
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "86815ace92584b94ba4761fb7b1742ce",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "60689916-6b49-42c6-bdbd-8eb666c2c494",
+        "path": "/maps/Stage305/Background/MapObject_27",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_27",
+          "path": "/maps/Stage305/Background/MapObject_27",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 8,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 0.76953125,
+                "y": -1.85209942,
+                "z": 999.984
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "34fb9fc995394752a1054a3479d14952",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ed4fd77b-5a38-4fb8-a039-4b7db723bf53",
+        "path": "/maps/Stage305/Background/MapObject_25",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_25",
+          "path": "/maps/Stage305/Background/MapObject_25",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 9,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 2.18953133,
+                "y": -1.84209967,
+                "z": 999.985
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "34fb9fc995394752a1054a3479d14952",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "c967577f-d68d-4ede-bc16-607b8d93db64",
+        "path": "/maps/Stage305/Background/MapObject_26",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_26",
+          "path": "/maps/Stage305/Background/MapObject_26",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 10,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 1.82953072,
+                "y": -1.85209942,
+                "z": 999.992
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "34fb9fc995394752a1054a3479d14952",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "7b3d0692-41ab-46dc-8211-a84ff5cc0718",
+        "path": "/maps/Stage305/Background/MapObject_23",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_23",
+          "path": "/maps/Stage305/Background/MapObject_23",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 11,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 2.99953079,
+                "y": -1.85209942,
+                "z": 999.959
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "34fb9fc995394752a1054a3479d14952",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "325ef3a4-b300-4ef3-9bdc-fedd2114017b",
+        "path": "/maps/Stage305/Background/MapObject_3",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_3",
+          "path": "/maps/Stage305/Background/MapObject_3",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 12,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 6.33947659,
+                "y": -1.152431,
+                "z": 999.95
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "ef09a1e5f0eb4c80b38892c9ecaa8edd",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ff302aee-4166-4cf2-8324-51ec152df391",
+        "path": "/maps/Stage305/Background/MapObject_13",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_13",
+          "path": "/maps/Stage305/Background/MapObject_13",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 13,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 5.859477,
+                "y": -1.83243108,
+                "z": 999.998
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "31dedf93878a421085ebca151e30e782",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "efee9da2-5a6f-42ce-b69d-6b0e7c92a3b9",
+        "path": "/maps/Stage305/Background/MapObject_12",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_12",
+          "path": "/maps/Stage305/Background/MapObject_12",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 14,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 6.229476,
+                "y": -1.892431,
+                "z": 999.999
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": true,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "800f6aa9-fe08-4f50-b9cc-2b6b325fb37b",
+        "path": "/maps/Stage305/Background/MapObject_20",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_20",
+          "path": "/maps/Stage305/Background/MapObject_20",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 15,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 5.82947636,
+                "y": -1.902431,
+                "z": 999.986
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "25812c8d-7314-4edc-ac02-0ef80b200bf1",
+        "path": "/maps/Stage305/Background/MapObject_14",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_14",
+          "path": "/maps/Stage305/Background/MapObject_14",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 16,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 4.756255,
+                "y": -0.6899998,
+                "z": 999.962
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "962b2866-96d6-435d-b078-87788ebdf669",
+        "path": "/maps/Stage305/Background/MapObject_7",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_7",
+          "path": "/maps/Stage305/Background/MapObject_7",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 17,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 0.6510763,
+                "y": -1.902431,
+                "z": 999.989
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": true,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ae5a4f31-95ad-4742-a00d-6a730094bded",
+        "path": "/maps/Stage305/Background/MapObject_2",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_2",
+          "path": "/maps/Stage305/Background/MapObject_2",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 18,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 6.779477,
+                "y": -1.622431,
+                "z": 999.953
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "8c8df77d25fd4788b6cec5a87c835faf",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "74ca3ea9-83e6-4d94-a504-8c027333a4b3",
+        "path": "/maps/Stage305/Background/MapObject_11",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_11",
+          "path": "/maps/Stage305/Background/MapObject_11",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 19,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 6.359477,
+                "y": -1.82243085,
+                "z": 999.996
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "31dedf93878a421085ebca151e30e782",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "a505931a-d55e-426a-a78e-7b6009127f77",
+        "path": "/maps/Stage305/Background/MapObject_9",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_9",
+          "path": "/maps/Stage305/Background/MapObject_9",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 20,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 6.949477,
+                "y": -1.902431,
+                "z": 999.956
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "31dedf93878a421085ebca151e30e782",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "2731803c-6cdb-49e9-84de-76543091bfcd",
+        "path": "/maps/Stage305/Background/MapObject_10",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_10",
+          "path": "/maps/Stage305/Background/MapObject_10",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 21,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 6.67947674,
+                "y": -1.902431,
+                "z": 999.963
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "cd29293c-8c0b-4d02-8f42-e1de8e84050f",
+        "path": "/maps/Stage305/Background/MapObject_51",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_51",
+          "path": "/maps/Stage305/Background/MapObject_51",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 22,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -1.47794151,
+                "y": -1.5999999,
+                "z": 999.948
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "8c8df77d25fd4788b6cec5a87c835faf",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "ed7c89e0-ab41-4af6-8365-6198ce7e67bb",
+        "path": "/maps/Stage305/Background/MapObject_53",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_53",
+          "path": "/maps/Stage305/Background/MapObject_53",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 23,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -1.79794121,
+                "y": -1.89999986,
+                "z": 999.977
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "15df32e9-5b25-4d43-9d82-9a1bc67a3a73",
+        "path": "/maps/Stage305/Background/MapObject_52",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_52",
+          "path": "/maps/Stage305/Background/MapObject_52",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 24,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -1.57794189,
+                "y": -1.86999989,
+                "z": 999.957
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "6b496eb8-d783-4b44-8790-4c79fab149d9",
+        "path": "/maps/Stage305/Background/MapObject_5",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_5",
+          "path": "/maps/Stage305/Background/MapObject_5",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 25,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 0.8310766,
+                "y": -1.83243108,
+                "z": 1000.0
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "31dedf93878a421085ebca151e30e782",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "960ea3b0-1cf2-42fd-8515-54bd4faf129c",
+        "path": "/maps/Stage305/Background/MapObject_6",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_6",
+          "path": "/maps/Stage305/Background/MapObject_6",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 26,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 0.981076241,
+                "y": -1.882431,
+                "z": 999.964
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "266c8eac-5a4a-4143-ab8b-3f79caa21f05",
+        "path": "/maps/Stage305/Background/MapObject_33",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_33",
+          "path": "/maps/Stage305/Background/MapObject_33",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 27,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 8.860154,
+                "y": -1.77988935,
+                "z": 999.947
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "5b1c0e235d924037a32d9218bc94a4a1",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "5c0aeff3-f927-42ff-a609-e6fc82ee1557",
+        "path": "/maps/Stage305/Background/MapObject_22",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_22",
+          "path": "/maps/Stage305/Background/MapObject_22",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 28,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -3.957941,
+                "y": -1.92999983,
+                "z": 999.96
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "9a80236d5049458789b57917b1641aa3",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "080aefec-bcc8-411d-8ab0-359835f3c3b2",
+        "path": "/maps/Stage305/Background/MapObject",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject",
+          "path": "/maps/Stage305/Background/MapObject",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 29,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -0.273745537,
+                "y": -1.29999971,
+                "z": 999.952
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "94f31be232164a6686955a4b420d61ad",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "a32685b8-13af-486e-a9eb-33021d0db930",
+        "path": "/maps/Stage305/Background/MapObject_17",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_17",
+          "path": "/maps/Stage305/Background/MapObject_17",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 30,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 0.546254158,
+                "y": -1.88999987,
+                "z": 999.993
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "d8d9ee60-51fb-4848-9104-9cf78ac78fb0",
+        "path": "/maps/Stage305/Background/MapObject_18",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_18",
+          "path": "/maps/Stage305/Background/MapObject_18",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 31,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -0.5037451,
+                "y": -1.90999985,
+                "z": 999.955
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "19f0dbfd-6804-44bd-bb85-092e7da9274a",
+        "path": "/maps/Stage305/Background/MapObject_50",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_50",
+          "path": "/maps/Stage305/Background/MapObject_50",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 32,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -2.707941,
+                "y": -1.94999981,
+                "z": 999.978
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "9a80236d5049458789b57917b1641aa3",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "9c24ae81-18d6-466d-90dc-bc0490e2a553",
+        "path": "/maps/Stage305/Background/MapObject_46",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_46",
+          "path": "/maps/Stage305/Background/MapObject_46",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 33,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -4.06374454,
+                "y": -1.07999969,
+                "z": 999.935
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "2adcb7109b674afba3af768cce609e9f",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "4fea6c9e-29a1-48c7-97d4-ec73a2b76128",
+        "path": "/maps/Stage305/Background/MapObject_45",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_45",
+          "path": "/maps/Stage305/Background/MapObject_45",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 34,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -4.033746,
+                "y": -1.53999972,
+                "z": 999.936
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "c42de4a70e1b473aa67c06518dfe0d9f",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "61e9cb80-06ce-45cf-aa30-282b22cda705",
+        "path": "/maps/Stage305/Background/MapObject_49",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_49",
+          "path": "/maps/Stage305/Background/MapObject_49",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 35,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -5.06374454,
+                "y": -0.6299999,
+                "z": 999.932
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "46684593e22c4fa79a09475872c522ee",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "81f9d6cc-6965-4136-8a2f-0713b1485112",
+        "path": "/maps/Stage305/Background/MapObject_34",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_34",
+          "path": "/maps/Stage305/Background/MapObject_34",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 36,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -3.003745,
+                "y": -1.7099998,
+                "z": 999.946
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "cce437925f6944d0824f3e5bbc2e9019",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "9f5280a8-4ab3-4af3-ac61-d3b5bf53fc83",
+        "path": "/maps/Stage305/Background/MapObject_47",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_47",
+          "path": "/maps/Stage305/Background/MapObject_47",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 37,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -4.10374546,
+                "y": -0.5799997,
+                "z": 999.934
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "e8512b5a9bd548deaaa3b16c46c9f4bb",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "8a93faab-2cf0-4293-83f5-cbfcc222b8c2",
+        "path": "/maps/Stage305/Background/MapObject_19",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_19",
+          "path": "/maps/Stage305/Background/MapObject_19",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 38,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -2.36374569,
+                "y": -1.85999966,
+                "z": 999.987
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "31dedf93878a421085ebca151e30e782",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "2c0ea176-7c26-4f51-85d6-f657f17c3755",
+        "path": "/maps/Stage305/Background/MapObject_41",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_41",
+          "path": "/maps/Stage305/Background/MapObject_41",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 39,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -0.2237463,
+                "y": -1.42999983,
+                "z": 999.94
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "89f2e396488249148fec5766f9aae548",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "1393a771-d3b0-409c-8e35-8d3590efae05",
+        "path": "/maps/Stage305/Background/MapObject_21",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_21",
+          "path": "/maps/Stage305/Background/MapObject_21",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 40,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -5.46794128,
+                "y": -1.93999982,
+                "z": 999.961
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "9a80236d5049458789b57917b1641aa3",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "3b14afdc-f2a8-4afb-82f4-b86e6bef7873",
+        "path": "/maps/Stage305/Background/MapObject_43",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_43",
+          "path": "/maps/Stage305/Background/MapObject_43",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 41,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 8.047632,
+                "y": -1.752101,
+                "z": 999.938
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "cce437925f6944d0824f3e5bbc2e9019",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "b90467cc-9368-4c10-a038-f396362b2581",
+        "path": "/maps/Stage305/Background/MapObject_40",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_40",
+          "path": "/maps/Stage305/Background/MapObject_40",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 42,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 9.177631,
+                "y": -1.97210026,
+                "z": 999.941
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "effc56ceb0864559a0f301abba71df4a",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "b131897d-dfff-44b2-8f9e-68514d598e78",
+        "path": "/maps/Stage305/Background/MapObject_38",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_38",
+          "path": "/maps/Stage305/Background/MapObject_38",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 43,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 9.127632,
+                "y": -1.11210155,
+                "z": 999.943
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "af33c71f13684229b950d2eca6c7e746",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "853c1da0-b0ba-44b4-9ce5-152f7d1d1a80",
+        "path": "/maps/Stage305/Background/MapObject_39",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_39",
+          "path": "/maps/Stage305/Background/MapObject_39",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 44,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 9.207632,
+                "y": -0.612099648,
+                "z": 999.942
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "e8512b5a9bd548deaaa3b16c46c9f4bb",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "402e8c0e-6e50-4a21-8401-9c317873e0e5",
+        "path": "/maps/Stage305/Background/MapObject_37",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_37",
+          "path": "/maps/Stage305/Background/MapObject_37",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 45,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 9.177631,
+                "y": -1.56210041,
+                "z": 999.944
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "8048899af98b4cb0a49402eb7455dca2",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "2c69ed01-0229-4648-991e-c90fe3bbadfe",
+        "path": "/maps/Stage305/Background/MapObject_1",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_1",
+          "path": "/maps/Stage305/Background/MapObject_1",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 46,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 1.181077,
+                "y": -1.25243092,
+                "z": 999.951
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "ef09a1e5f0eb4c80b38892c9ecaa8edd",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "de466645-04be-4cba-96d1-3540e5050856",
+        "path": "/maps/Stage305/Background/MapObject_4",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_4",
+          "path": "/maps/Stage305/Background/MapObject_4",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 47,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 1.221076,
+                "y": -1.83243108,
+                "z": 999.99
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "31dedf93878a421085ebca151e30e782",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "2bf805f7-3593-478f-b1b9-185e6bb40817",
+        "path": "/maps/Stage305/Background/MapObject_8",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_8",
+          "path": "/maps/Stage305/Background/MapObject_8",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 48,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 1.66107655,
+                "y": -1.972431,
+                "z": 999.988
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "d4000f4780ec4cc7b46dbf8130f1610e",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "6b529dbd-4cda-42ca-b4cf-f3c80d9598b9",
+        "path": "/maps/Stage305/Background/MapObject_24",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_24",
+          "path": "/maps/Stage305/Background/MapObject_24",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 49,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": 4.339531,
+                "y": -1.86209965,
+                "z": 999.954
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "34fb9fc995394752a1054a3479d14952",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "a92d1cab-4c99-45bf-a993-6ac5ea281e6c",
+        "path": "/maps/Stage305/Background/MapObject_48",
+        "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent",
+        "jsonString": {
+          "name": "MapObject_48",
+          "path": "/maps/Stage305/Background/MapObject_48",
+          "nameEditable": true,
+          "enable": true,
+          "visible": true,
+          "localize": false,
+          "displayOrder": 50,
+          "pathConstraints": "///6b287631-cf54-4bfa-bf7c-1ac77a269734/",
+          "revision": 1,
+          "origin": {
+            "type": "Model",
+            "entry_id": "mapobject",
+            "sub_entity_id": null
+          },
+          "modelId": "mapobject",
+          "@components": [
+            {
+              "@type": "MOD.Core.TransformComponent",
+              "Position": {
+                "x": -4.133746,
+                "y": -1.94999981,
+                "z": 999.933
+              },
+              "QuaternionRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "Scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "Enable": true
+            },
+            {
+              "@type": "MOD.Core.SpriteRendererComponent",
+              "ActionSheet": {},
+              "EndFrameIndex": 2147483647,
+              "FlipX": false,
+              "OrderInLayer": -1,
+              "RenderSetting": 0,
+              "SortingLayer": "MapLayer0",
+              "SpriteRUID": "effc56ceb0864559a0f301abba71df4a",
+              "StartFrameIndex": 0,
+              "Enable": true
+            }
+          ],
+          "@version": 1
+        }
+      },
+      {
+        "id": "7d1f01c6-aafe-4d6f-8feb-7692eeb2e6e0",
+        "path": "/maps/Stage305/EnemyTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,script.MonsterSpawnService,script.Tower,MOD.Core.HitComponent,script.Unit,script.GameClearChecker",
         "jsonString": {
           "name": "EnemyTower",
-          "path": "/maps/Stage205/EnemyTower",
+          "path": "/maps/Stage305/EnemyTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3722,12 +6349,12 @@
         }
       },
       {
-        "id": "403cf16b-4930-4231-9268-9d3b41e72bdc",
-        "path": "/maps/Stage205/ProjectileParent",
+        "id": "7ddcc22a-1db3-4d7b-a577-75554e2c3da0",
+        "path": "/maps/Stage305/ProjectileParent",
         "componentNames": "",
         "jsonString": {
           "name": "ProjectileParent",
-          "path": "/maps/Stage205/ProjectileParent",
+          "path": "/maps/Stage305/ProjectileParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3741,12 +6368,12 @@
         }
       },
       {
-        "id": "1016464d-1eaf-4ff9-b5c1-0b30386a29e8",
-        "path": "/maps/Stage205/MyMonsterList",
+        "id": "1f15d3ce-3b63-43c9-ba19-b1053c2d4e81",
+        "path": "/maps/Stage305/MyMonsterList",
         "componentNames": "",
         "jsonString": {
           "name": "MyMonsterList",
-          "path": "/maps/Stage205/MyMonsterList",
+          "path": "/maps/Stage305/MyMonsterList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3760,12 +6387,12 @@
         }
       },
       {
-        "id": "e2c75433-8ff1-4fa6-93e8-4fde7e7ca596",
-        "path": "/maps/Stage205/MyMonsterList/MySpawnPoint",
+        "id": "3693717c-0fdf-45bb-b9f8-892144ee6061",
+        "path": "/maps/Stage305/MyMonsterList/MySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "MySpawnPoint",
-          "path": "/maps/Stage205/MyMonsterList/MySpawnPoint",
+          "path": "/maps/Stage305/MyMonsterList/MySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3806,12 +6433,12 @@
         }
       },
       {
-        "id": "d8fdfb02-3986-47c6-9227-b6c6b141268d",
-        "path": "/maps/Stage205/EnemyList",
+        "id": "c5579cef-5652-4fe1-95b8-f83ba1013fd3",
+        "path": "/maps/Stage305/EnemyList",
         "componentNames": "",
         "jsonString": {
           "name": "EnemyList",
-          "path": "/maps/Stage205/EnemyList",
+          "path": "/maps/Stage305/EnemyList",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3825,12 +6452,12 @@
         }
       },
       {
-        "id": "4de8f723-1626-4736-ab78-9bd66e23f8bc",
-        "path": "/maps/Stage205/EnemyList/EnemySpawnPoint",
+        "id": "5989306e-a58d-4ad9-8a82-d075e295cd54",
+        "path": "/maps/Stage305/EnemyList/EnemySpawnPoint",
         "componentNames": "MOD.Core.TransformComponent",
         "jsonString": {
           "name": "EnemySpawnPoint",
-          "path": "/maps/Stage205/EnemyList/EnemySpawnPoint",
+          "path": "/maps/Stage305/EnemyList/EnemySpawnPoint",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3871,12 +6498,12 @@
         }
       },
       {
-        "id": "7c3ccd33-ae07-4016-bf5e-88c450ffbb7c",
-        "path": "/maps/Stage205/SkillParent",
+        "id": "168bb71e-a060-4b03-a3b9-2a4e461a8a4b",
+        "path": "/maps/Stage305/SkillParent",
         "componentNames": "",
         "jsonString": {
           "name": "SkillParent",
-          "path": "/maps/Stage205/SkillParent",
+          "path": "/maps/Stage305/SkillParent",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3890,12 +6517,12 @@
         }
       },
       {
-        "id": "93b46580-f865-4d5d-a4ab-06df5141098b",
-        "path": "/maps/Stage205/PlayerTower",
+        "id": "c0381a2e-5b36-427d-8dfd-5f443af71c68",
+        "path": "/maps/Stage305/PlayerTower",
         "componentNames": "MOD.Core.TransformComponent,MOD.Core.SpriteRendererComponent,MOD.Core.TagComponent,MOD.Core.HitComponent,script.Tower,script.Unit",
         "jsonString": {
           "name": "PlayerTower",
-          "path": "/maps/Stage205/PlayerTower",
+          "path": "/maps/Stage305/PlayerTower",
           "nameEditable": true,
           "enable": true,
           "visible": true,
@@ -3913,7 +6540,7 @@
             {
               "@type": "MOD.Core.TransformComponent",
               "Position": {
-                "x": -4.520823,
+                "x": -4.51036453,
                 "y": 0.780000031,
                 "z": 999.998047
               },
@@ -3982,12 +6609,12 @@
         }
       },
       {
-        "id": "3d705f88-abc0-4503-8552-08ef00934f4e",
-        "path": "/maps/Stage205/ingameIncome",
+        "id": "4a6e0dd0-4e7f-413c-80bb-d2646eab20bf",
+        "path": "/maps/Stage305/ingameIncome",
         "componentNames": "script.MesoIncome",
         "jsonString": {
           "name": "ingameIncome",
-          "path": "/maps/Stage205/ingameIncome",
+          "path": "/maps/Stage305/ingameIncome",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -4015,12 +6642,12 @@
         }
       },
       {
-        "id": "839bc352-3afe-40a8-837d-15a8f93652bc",
-        "path": "/maps/Stage205/userWallet",
+        "id": "4e53f04c-f518-40dd-8ee7-09064892b749",
+        "path": "/maps/Stage305/userWallet",
         "componentNames": "script.MesoWallet",
         "jsonString": {
           "name": "userWallet",
-          "path": "/maps/Stage205/userWallet",
+          "path": "/maps/Stage305/userWallet",
           "nameEditable": true,
           "enable": true,
           "visible": false,
@@ -4044,12 +6671,12 @@
         }
       },
       {
-        "id": "64ea8790-44b6-4c98-b78c-247f8985f452",
-        "path": "/maps/Stage205/ingameWalletUI",
+        "id": "d5e9bb61-6963-41d7-8669-0f11ecf71c7d",
+        "path": "/maps/Stage305/ingameWalletUI",
         "componentNames": "script.MesoUI",
         "jsonString": {
           "name": "ingameWalletUI",
-          "path": "/maps/Stage205/ingameWalletUI",
+          "path": "/maps/Stage305/ingameWalletUI",
           "nameEditable": true,
           "enable": true,
           "visible": false,
